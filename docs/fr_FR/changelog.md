@@ -1,3 +1,9 @@
+1.52 - 2019-11-27
+-   Tuya : lampes globe en stable
+-   nettoyage du code 
+-	correction bogues
+-	déplacement de la doc
+
 1.51 - 2019-11-23
 -   Tuya : ajout du pont MiBoxer de Milight (module en Beta), seuls ON/OFF de la box complète fonctionne. Mis à disposition pour ceux qui arriveraient à récupérer l'ApiKey avec l'appli MiBoxer.
 -   Tuya : ajout d'un périphérique custom permettant de configurer n'importe quel périphérique
