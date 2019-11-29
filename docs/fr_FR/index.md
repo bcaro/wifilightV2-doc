@@ -340,7 +340,6 @@ Pour les autres périphériques (Sonoff Ifan, variateur de lumière par exemple)
 	
 et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) le contenu des accolades afin de permettre l'intégration du module dans le plugin.
 
-Sauf pour les lampes, l'intégration personnalisée est toujours possible, voir ci-après.
 # Cas particulier des périphériques compatibles Tuya Smart/Jinvoo/eFamilyCloud apps
 
 ## Compatibilité
