@@ -1,9 +1,10 @@
-1.53 - 2019-11-28
+1.53 - 2019-11-30
 -   Ewelink : ajout du Sonoff RF bridge 433 - uniquement les capteurs
+-   Sonoff TH10/TH16 : ajout des actions/informations du thermostat interne
 -   correction bogues 
 
 1.52 - 2019-11-27
--   Tuya : lampes glbe en stable
+-   Tuya : lampes globe en stable
 -   nettoyage du code 
 -	correction bogues
 -	déplacement de la doc

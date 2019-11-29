@@ -334,6 +334,8 @@ De nombreuses marques sont compatibles dont les Sonoff.
 - Sonoff T4EUC1
 - Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur, télécommande)
 
+Pour les périphériques multicanaux (comme le Sonoff 4CH) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tache, ensuite il faut changer le n° de canal.
+
 Pour les autres périphériques (Sonoff Ifan, variateur de lumière par exemple) ou si la configuration ne fonctionne pas et après avoir intégré le périphérique dans Jeedom (avec la configuration Sonoff Basic par exemple) repérer dans les logs :
 
 	Receive after decode :{...............}
@@ -359,6 +361,8 @@ Les équipements suivants sont compatibles en firmware 1.0. et en firmware 2.0.
 -  ampoules RGBW globe et modèles similaires en fonctionnement
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs.
+
+Pour les périphériques multicanaux (comme les prises multiples) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tache, ensuite il faut changer le n° de canal.
 
 Les capteurs de présence et d'ouverture ne sont pas compatibles car ils ne dialoguent pas en local.
 
@@ -395,11 +399,9 @@ Pour les plugs 2 prises, en général il faut : 9;7;8 (mis par défaut par le pl
 
 Pour les autres prises, la valeur 20;18;19 est mise par défaut.
 
-Dans le cas des prises multiples, la consommation totale est ajoutée au canal le plus élevé, il faut donc déclarer ce canal.
+## Périphérique custom
 
-## Personnalisation des commandes
-
-Devant la diversité des périphériques compatibles Tuya, il peut être nécessaire d'utiliser un périphérique custom. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de soulution.
+Il est possible de créer un périphérique entièrement custom. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de soulution.
 
 ### Configuration
 -   désactiver tous les périphériques wifilightV2 sauf celui à tester
@@ -412,7 +414,7 @@ Devant la diversité des périphériques compatibles Tuya, il peut être nécess
 -   appuyer sur un bouton du périphérique (on,off,haut,bas,etc.) ou sur l'appli Smart Live
 -   repérer dans les logs le passage ressemblant à ceci :
 
-		Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"off","101":true}}<1ig+
+		Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"off","101":true}}
 		[2019-10-13 09:15:30][DEBUG] :       >>> : devId | 50701244cc50e37e9aff : 50701244cc50e37e9aff
 		[2019-10-13 09:15:30][DEBUG] :       >>> : dps | Array : Array
 		[2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 1 | stop : stop
@@ -420,7 +422,7 @@ Devant la diversité des périphériques compatibles Tuya, il peut être nécess
 	
 	Ici, le bouton off a été sélectionné sur le périphérique et on observe que le dps 1  a changé.
 	
-		Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"on","101":true}}<1ig+
+		Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"on","101":true}}
 		[2019-10-13 09:15:30][DEBUG] :       >>> : devId | 50701244cc50e37e9aff : 50701244cc50e37e9aff
 		[2019-10-13 09:15:30][DEBUG] :       >>> : dps | Array : Array
 		[2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 1 | stop : stop
@@ -440,7 +442,7 @@ Devant la diversité des périphériques compatibles Tuya, il peut être nécess
 
 	Dans le cas d'une information numérique :
 	
-		Receive after decode :{devId:50701244cc50e37e9aff,dps:{"3":850,"101":true}}<1ig+
+		Receive after decode :{devId:50701244cc50e37e9aff,dps:{"3":850,"101":true}}
 		[2019-10-13 09:15:30][DEBUG] :       >>> : devId | 50701244cc50e37e9aff : 50701244cc50e37e9aff
 		[2019-10-13 09:15:30][DEBUG] :       >>> : dps | Array : Array
 		[2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 3 | 850 : 850
