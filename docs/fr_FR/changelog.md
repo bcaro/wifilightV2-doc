@@ -1,5 +1,9 @@
+1.53 - 2019-11-28
+-   Ewelink : ajout du Sonoff RF bridge 433 - uniquement les capteurs
+-   correction bogues 
+
 1.52 - 2019-11-27
--   Tuya : lampes globe en stable
+-   Tuya : lampes glbe en stable
 -   nettoyage du code 
 -	correction bogues
 -	déplacement de la doc

@@ -320,24 +320,27 @@ Quand un périphérique se connecte au wifi, le plugin sera immédiatement prév
 ## Compatibilité
 
 De nombreuses marques sont compatibles dont les Sonoff. 
-	- Interrupteurs, prises murales, switch : simples de toutes marques
-	- Interrupteurs, prises murales, switch : doubles ou triples de toutes marques
-	- Sonoff TH10/1H16 capteur de température
-	- Sonoff basic, RF, POW, Mini
-	- Sonoff Dual
-	- Sonoff 4CH/4CH PRO
-	- Sonoff Touch
-	- Sonoff S20/S26
-	- Sonoff T1/TX
-	- Sonoff SLAMPHER
-	- Sonoff T4EUC1
+- Interrupteurs, prises murales, switch : simples de toutes marques
+- Interrupteurs, prises murales, switch : multiples de toutes marques
+- 2 types de lampes (tester les 2 types)
+- Sonoff TH10/1H16 capteur de température
+- Sonoff basic, RF, POW, Mini
+- Sonoff Dual
+- Sonoff 4CH/4CH PRO
+- Sonoff Touch
+- Sonoff S20/S26
+- Sonoff T1/TX
+- Sonoff SLAMPHER
+- Sonoff T4EUC1
+- Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur, télécommande)
 
-Pour les autres modules (Sonoff Ifan, variateur de lumière, ampoules etc.) et après l'avoir intégré dans Jeedom (avec la configuration Sonoff Basic par exemple) repérer dans les logs :
+Pour les autres périphériques (Sonoff Ifan, variateur de lumière par exemple) ou si la configuration ne fonctionne pas et après avoir intégré le périphérique dans Jeedom (avec la configuration Sonoff Basic par exemple) repérer dans les logs :
 
 	Receive after decode :{...............}
 	
 et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) le contenu des accolades afin de permettre l'intégration du module dans le plugin.
 
+Sauf pour les lampes, l'intégration personnalisée est toujours possible, voir ci-après.
 # Cas particulier des périphériques compatibles Tuya Smart/Jinvoo/eFamilyCloud apps
 
 ## Compatibilité
@@ -392,6 +395,8 @@ Pour les plugs 1 prise, en général il faut : 6;4;5 (mis par défaut par le plu
 Pour les plugs 2 prises, en général il faut : 9;7;8 (mis par défaut par le plugin).
 
 Pour les autres prises, la valeur 20;18;19 est mise par défaut.
+
+Dans le cas des prises multiples, la consommation totale est ajoutée au canal le plus élevé, il faut donc déclarer ce canal.
 
 ## Personnalisation des commandes
 
