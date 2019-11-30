@@ -320,23 +320,23 @@ Quand un périphérique se connecte au wifi, le plugin sera immédiatement prév
 ## Compatibilité
 
 De nombreuses marques sont compatibles dont les Sonoff. 
-- Interrupteurs, prises murales, switch : simples de toutes marques
-- Interrupteurs, prises murales, switch : multiples de toutes marques
-- 2 types de lampes (tester les 2 types)
-- Sonoff TH10/1H16 capteur de température
-- Sonoff basic, RF, POW, Mini
-- Sonoff Dual
-- Sonoff 4CH/4CH PRO
-- Sonoff Touch
-- Sonoff S20/S26
-- Sonoff T1/TX
-- Sonoff SLAMPHER
-- Sonoff T4EUC1
-- Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur, télécommande)
+-  Interrupteurs, prises murales, switch : simples de toutes marques
+-  Interrupteurs, prises murales, switch : multiples de toutes marques
+-  2 types de lampes (tester les 2 types)
+-  Sonoff TH10/1H16 capteur de température
+-  Sonoff basic, RF, POW, Mini
+-  Sonoff Dual
+-  Sonoff 4CH/4CH PRO
+-  Sonoff Touch
+-  Sonoff S20/S26
+-  Sonoff T1/TX
+-  Sonoff SLAMPHER
+-  Sonoff T4EUC1
+-  Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur de présence, télécommande)
 
 Pour les périphériques multicanaux (comme le Sonoff 4CH) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tache, ensuite il faut changer le n° de canal.
 
-Pour les autres périphériques (Sonoff Ifan, variateur de lumière par exemple) ou si la configuration ne fonctionne pas et après avoir intégré le périphérique dans Jeedom (avec la configuration Sonoff Basic par exemple) repérer dans les logs :
+Pour les périphériques non présents dans cette liste (Sonoff Ifan, variateur de lumière par exemple) ou si la configuration ne fonctionne pas et après avoir intégré le périphérique dans Jeedom (avec la configuration Sonoff Basic par exemple) repérer dans les logs :
 
 	Receive after decode :{...............}
 	
@@ -386,9 +386,9 @@ Tout changement de configuration nécessite de redémarrer le démon.
 ## Configuration de la récupération de la consommation des prises
 
 Selon les marques, la consommation n'est pas envoyée de façon unique par la prise. Pour récupérer ce paramétrage, installer la prise dans Jeedom et conserver le retour d'état dans la configuration, puis aller dans les logs de wifilightV2. La prise est interrogée toutes les minutes. Repérer la message qui ressemble à :
-
+`
 return decoded : {"devId":"xxxxxxxxx","dps":{"1":false,"2":false,"9":0,"10":0,"18":0,"19":0,"20":2281,"21":1,"22":726,"23":28971,"24":19417,"25":1070}}
-
+`
 L'index "20" correspond ici à la tension d'alimentation en centaine de mV soit : 228.1 V, elle doit légèrement bouger. Les index "18" et "19" correspondent au courant (mA) et à la puissance en W, ici aucun appareil n'est branché et donc les informations sont à zéro. C'est un bon moyen de trouver la tension, en branchant un appareil, ces 2 valeurs doivent être modifiées et la tension est juste après.
 
 La syntaxe est alors : 20;18;19 qu'il faut mettre dans le champ 'Paramétrage de l'énergie'.
@@ -399,9 +399,28 @@ Pour les plugs 2 prises, en général il faut : 9;7;8 (mis par défaut par le pl
 
 Pour les autres prises, la valeur 20;18;19 est mise par défaut.
 
+## Personnalisation des commandes
+
+Devant la diversité des périphériques compatibles Tuya, il peut être nécessaire de créer des commandes personnalisées.
+
+Créer une nouvelle commande action/défaut, mettre la commande Tuya dans paramètres et laisser dps vide. Les commandes Tuya sont au format JSON et contiennent dps:{xxxxxx}. C'est le xxxxxx qu'il faut mettre dans paramètres. 
+
+Exemples :
+
+Pour lever certains volets roulant : xxxxxx vaut "1":"1" . 
+
+Pour mettre la prise n°2 de certains plugs à on : xxxxxx vaut "2":true .
+
+Pour éteindre la prise n°1 et la prise n°2 de certains plugs : xxxxxx vaut "1":false,"2":false
+
+Le paragraphe suivant donne des éléments pour interpréter les logs wifilightV2.
+-   Noter qu'il est nécessaire que le périphérique renvoie son état.
+-   Dans de nombreux cas il n'y aura pas de retour d'état si les commandes de base ne récupèrent pas le dps. Dans ce cas il est possible de récupérer le retour d'atat en ajoutant une commande custom en spécifiant le dps comme indiqué dans le paragraphe suivant.
+-   Il est donc possible de mixer des commandes personnalisées en spécifiant le dps (paragraphe suivant) ou sans spécifier le dps.
+
 ## Périphérique custom
 
-Il est possible de créer un périphérique entièrement custom. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de soulution.
+Il est possible de créer un périphérique entièrement custom. Contrairement aux commandes personnalisées, un périphérique custom n'a aucune commande prédéfinie et tout doit être configuré pour chaque commande. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de soulution.
 
 ### Configuration
 -   désactiver tous les périphériques wifilightV2 sauf celui à tester
