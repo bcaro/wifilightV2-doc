@@ -386,9 +386,9 @@ Tout changement de configuration nécessite de redémarrer le démon.
 ## Configuration de la récupération de la consommation des prises
 
 Selon les marques, la consommation n'est pas envoyée de façon unique par la prise. Pour récupérer ce paramétrage, installer la prise dans Jeedom et conserver le retour d'état dans la configuration, puis aller dans les logs de wifilightV2. La prise est interrogée toutes les minutes. Repérer la message qui ressemble à :
-`
+
 return decoded : {"devId":"xxxxxxxxx","dps":{"1":false,"2":false,"9":0,"10":0,"18":0,"19":0,"20":2281,"21":1,"22":726,"23":28971,"24":19417,"25":1070}}
-`
+
 L'index "20" correspond ici à la tension d'alimentation en centaine de mV soit : 228.1 V, elle doit légèrement bouger. Les index "18" et "19" correspondent au courant (mA) et à la puissance en W, ici aucun appareil n'est branché et donc les informations sont à zéro. C'est un bon moyen de trouver la tension, en branchant un appareil, ces 2 valeurs doivent être modifiées et la tension est juste après.
 
 La syntaxe est alors : 20;18;19 qu'il faut mettre dans le champ 'Paramétrage de l'énergie'.
@@ -403,15 +403,15 @@ Pour les autres prises, la valeur 20;18;19 est mise par défaut.
 
 Devant la diversité des périphériques compatibles Tuya, il peut être nécessaire de créer des commandes personnalisées.
 
-Créer une nouvelle commande action/défaut, mettre la commande Tuya dans paramètres et laisser dps vide. Les commandes Tuya sont au format JSON et contiennent dps:{xxxxxx}. C'est le xxxxxx qu'il faut mettre dans paramètres. 
+Créer une nouvelle commande action/défaut. Donner un nom et un Id identiques et mettre la commande Tuya dans paramètres. Laisser dps vide. Les commandes Tuya sont au format JSON et contiennent dps:{xxxxxx}. C'est le xxxxxx qu'il faut mettre dans paramètres. 
 
 Exemples :
 
-Pour lever certains volets roulant : xxxxxx vaut "1":"1" . 
+Pour lever certains volets roulant : xxxxxx vaut "1":"1" qui est à mettre dans paramètres.
 
-Pour mettre la prise n°2 de certains plugs à on : xxxxxx vaut "2":true .
+Pour mettre la prise n°2 de certains plugs à on : xxxxxx vaut "2":true qui est à mettre dans paramètres.
 
-Pour éteindre la prise n°1 et la prise n°2 de certains plugs : xxxxxx vaut "1":false,"2":false
+Pour éteindre la prise n°1 et la prise n°2 de certains plugs : xxxxxx vaut "1":false,"2":false qui est à mettre dans paramètres.
 
 Le paragraphe suivant donne des éléments pour interpréter les logs wifilightV2.
 -   Noter qu'il est nécessaire que le périphérique renvoie son état.
