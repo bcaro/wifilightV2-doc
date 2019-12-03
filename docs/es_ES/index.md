@@ -1,300 +1,346 @@
 # Presentación
 
-Este complemento puede administrar muchas tiras de LED, bombillas LED o enchufes eléctricos controlados por wifi o radiofrecuencia de 2.4 GHz a través de una caja de wifi que se vende con el producto.
+Este complemento puede gestionar muchas tiras LED o bombillas LED o enchufes eléctricos controlados por wifi o radiofrecuencia de 2,4 GHz a través de una caja wifi que se vende con el producto.
 
 
-![ampoules](../images/icon0203.png)  ![Prises](../images/icon1204.png) ![Bandeau led](../images/icon0500.png) ![Plafonnier](../images/icon0606.png) ![Sonoff](../images/icon1700.png) ![Ewelink](../images/icon1800.png)
+![Milight](../images/wifilightV2_screenshot01.png) ![Tuya](../images/wifilightV2_screenshot03.png) ![Plafonnier](../images/wifilightV2_screenshot05.png) ![Prise](../images/wifilightV2_screenshot07.png) 
+
+![Sonoff](../images/wifilightV2_screenshot02.png) ![MagicHome](../images/wifilightV2_screenshot04.png)
 
 # Compatibilidad y limitaciones.
 
 ## Productos compatibles
 
-Hay muchos productos compatibles con el complemento, pero marcas muy diferentes o sin marca.
+Hay muchos productos compatibles con el complemento, pero marcas o marcas muy diferentes.
 
 Productos compatibles:
--   Bombillas Mi.Light / EasyBulb / LimitlessLED: sin estado de retorno
--   Strip-led Mi.Light / EasyBulb / LimitlessLED: sin retroalimentación de estado
--   Controlador LED Mi.Light / EasyBulb / LimitlessLED V3.0 a V5.0: sin retroalimentación de estado
--   Controlador LED Mi.Light / EasyBulb / LimitlessLED V6.0 / iBox1 / iBox2: sin retroalimentación de estado
--   Blanco y color Xiaomi Yeelight bombillas WiFi con retroalimentación de estado
--   Strip-led WiFi Xiaomi Yeelight color con retroalimentación de estado
--   Luz de techo WiFi Xiaomi Yeelight con retorno de estado
--   Lámpara de escritorio WiFi Xiaomi Mijia con retroalimentación de estado
--   Sonoff Basic R3 en mode DIY avec retour d'état
+-   Bombillas Mi.Light / EasyBulb / LimitlessLED conectadas a los controladores a continuación: sin comentarios \ *
+-   Strip-led Mi.Light / EasyBulb / LimitlessLED conectado a los controladores a continuación: sin comentarios de estado \ *
+-   Controlador LED Mi.Light / EasyBulb / LimitlessLED V3.0 a V5.0 (el miboxer no es compatible): sin comentarios \ *
+-   Mi.Light / EasyBulb / LimitlessLED led controller V6.0 / iBox1 / iBox2: no hay comentarios de estado \ *
+-   Ampoules WiFi Xiaomi Yeelight blanches et couleur avec retour d'état \*
+-   Color de Xiaomi Yeelight WiFi con LED de banda con retroalimentación de estado \ *
+-   Plafonnier WiFi Xiaomi Yeelight avec retour d'état \*
+-   Lampe de bureau WiFi Xiaomi Mijia avec retour d'état \*
+-   Sonoff Basic R3 en modo bricolaje con retroalimentación de estado \ * \ *
 
-Produits pouvant être compatibles et non garantis :
--   LW12/Lagute : RGB strip-led contrôleur : retour d'état
--   Wifi 320/370 RGB/RGBW strip-led contrôleur : retour d’état partiel
--   Magic UFO : RGBW strip-led contrôleur, gère le blanc
--   MagicHome : RGBW/RGBWW strip-led contrôleur et ampoules/spots RGBW compatibles avec l'appli MagicHome
--   H801 : RGBW strip-led contrôleur, pas de retour d’état
--   Arilux AL-C01/02/03/04/06/10 : RGB/RGBW/RGBWW strip-led contrôleur, retour d’état
--   TP-Link LB100/110/120/130 : ampoules avec retour d’état
--   Lampe Extel Meli avec retour d'état
--   Xiaomi Philips : Lampe bureau, ampoule et plafonnier avec retour d'état
--   Ampoules, prises, interrupteur, interrupteurs volets, humidifieur, thermostat compatibles Tuya Smart live ou Jinvoo smart ou eFamilyCloud apps avec retour d'état
--   Prises électriques TP-link HS100 HS110 avec retour d'état
--   Contrôleurs de pixel strip leds compatible Magic home avec retour d'état
--   Périphériques contrôlés par l'appli Ewelink dont les Sonoff en mode LAN
+Productos que pueden ser compatibles y sin garantía:
+-   LW12 / Lagute: controlador de tira de RGB: retorno de estado \ *
+-   Wifi 320/370 RGB / RGBW controlador de tira: retorno de estado parcial \ *
+-   Magic UFO: controlador de tira RGBW, maneja el blanco \ *
+-   MagicHome: controlador LED de tira RGBW / RGBWW y focos / focos RGBW compatibles con la aplicación MagicHome \ *
+-   H801: controlador de tira RGBW, sin estado de retorno \ * \ *
+-   Arilux AL-C01/02/03/04/06/10 : RGB/RGBW/RGBWW strip-led contrôleur, retour d’état \*
+-   TP-Link LB100/110/120/130 : ampoules avec retour d’état \*
+-   Lampe Extel Meli avec retour d'état \*
+-   Xiaomi Philips: lámpara de escritorio, bombilla y lámpara de techo con retorno de estado \ * \ * \ *
+-   Bombillas, enchufes, interruptores, interruptores de aleta, humidificador, termostato compatible con aplicaciones Tuya Smart live o Jinvoo smart o eFamilyCloud con comentarios de estado \ * \ * \ *
+-   TP-link HS100 HS110 enchufes eléctricos con retroalimentación de estado \ * \ *
+-   Controladores de tira de píxeles LED compatibles con Magic Home con retroalimentación de estado \ *
+-   Dispositivos controlados por la aplicación Ewelink, incluido Sonoff en modo LAN con comentarios de estado \ * \ * \ *
 
-Pour ces contrôleurs, ampoules ou prises, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin.
+Para estos controladores, bombillas o enchufes, el protocolo de intercambio no viene directamente del fabricante, que puede cambiarlo en cualquier momento. Existen varias versiones en el mercado que no son todas compatibles con el complemento.
 
-Produits incompatibles et qui ne le seront pas :
--   Les ampoules, prises ou contrôleurs de bandeau led qui contiennent un récepteur bluetoooth au lieu d'un récepteur radiofréquence 2.4 Ghz ou WiFi.
--   Les contrôleurs de bandeau led ou d'ampoules et les ampoules ou prises qui utilisent une connexion WiFi point à point avec l'application mobile.
--   La lampe de chevet Xiaomi n'est pas compatible (par construction).
+Asteriscos:
+- \ *: integración fácil para una persona que lee la documentación antes de actuar
+- \ * \ *: además de \ *, requiere seguir un procedimiento particular, adaptado a una persona que entiende que un procedimiento está hecho para ser seguido escrupulosamente
+- \ * \ * \ *: además de \ * \ * requiere habilidades informáticas básicas y está acostumbrado a investigar en Internet para un propósito específico
 
-## Test de compatibilité
+Productos incompatibles y quienes no serán:
+-   El puente Mi.light MiBoxer (excepto el cuadro ON / OFF)
+-   Controladores Led Milight (tipo YL, etc.) sin puente.
+-   Las bombillas led, enchufes o controladores que contienen un receptor bluetoooth en lugar de un receptor de radio de 2.4 Ghz o WiFi.
+-   Los controladores de tira led o bombillas y bombillas o enchufes que utilizan una conexión WiFi punto a punto con la aplicación móvil.
+-   La lámpara de cabecera de Xiaomi no es compatible (por construcción).
 
-Sur demande, un plugin de test pour les produits non validés peut être fourni.
+## Prueba de compatibilidad
 
-Il est conseillé de se renseigner sur le forum pour connaitre la compatibilité d'un produit peu diffusé.
+A petición, se puede proporcionar un complemento de prueba para productos no validados.
 
-Aller sur le forum de Jeedom [ici](https://www.jeedom.com/forum/viewtopic.php?f=28&amp;t=24322)
+Es recomendable consultar en el foro para conocer la compatibilidad de un producto poco difundido.
 
+Vaya al foro de Jeedom [aquí] (https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
 
-# Limitations
 
-Mi.Light/EasyBulb/LimitlessLED :
--   Toutes les fonctionnalités sont prises en compte par le plugin.
+# limitaciones
 
-LW12/Lagute :
--   La programmation des modes custom n'est pas possible, il faut utiliser l'application fournie avec le contrôleur (Magic Home). Par contre, les modes customs peuvent être déclenchés avec le plugin.
--   Il existe plusieurs versions de LW12 qui peuvent ne pas être compatibles avec le plugin.
+Mi.Light / EasyBulb / LimitlessLED:
+-   Todas las características son tomadas en cuenta por el complemento.
+-   El puente MiBoxer no es compatible.
 
-Magic UFO, MagicHome et Arilux AL-C01/02/03/04/06/10 :
--   La programmation des modes custom, le mode radio et les timers ne sont pas gérés. Il faut utiliser l'application fournie avec le contrôleur (Magic Home). Par contre, les modes customs peuvent être déclenchés avec le plugin.
--   Il existe différents modèles qui peuvent ne pas être compatibles avec le plugin.
+LW12 / Lagute:
+-   No es posible programar modos personalizados, es necesario usar la aplicación provista con el controlador (Magic Home). Por otro lado, los modos personalizados se pueden activar con el complemento.
+-   Hay varias versiones de LW12 que pueden no ser compatibles con el complemento.
 
-Xiaomi Yeelight :
--   Les commandes HSV ne sont pas gérées. Flow et scène le sont en créant des commandes avec le code JSON correspondant à l'effet recherché (voir la documentation de l'API YeeLight).
--   La lampe de chevet Xiaomi n'est pas compatible.
--   La lampe de bureau Xiaomi Mijia est partiellement compatible (pas de retour d'état complet).
+Magic UFO, MagicHome y Arilux AL-C01 / 02/03/04/06/10:
+-   La programación en modo personalizado, el modo de radio y los temporizadores no son compatibles. Debe usar la aplicación suministrada con el controlador (Magic Home). Por otro lado, los modos personalizados se pueden activar con el complemento.
+-   Existen diferentes modelos que pueden no ser compatibles con el complemento.
 
-Wifi 320/370 :
--   Le retour d'état des modes scènes n'est pas géré, seul ON/OFF est géré.
--   Il existe différents modèles qui peuvent ne pas être compatibles avec le plugin.
+Xiaomi Yeelight:
+-   Los comandos HSV no son compatibles. El flujo y la escena se crean mediante la creación de comandos con el código JSON correspondiente al efecto deseado (consulte la documentación de la API de YeeLight).
+-   La lámpara de noche Xiaomi no es compatible.
+-   La lámpara de escritorio Xiaomi Mijia es parcialmente compatible (sin comentarios de estado completos).
 
-H810 :
--   les jeux de scène ne sont pas gérés.
--   Il existe différents modèles qui peuvent ne pas être compatibles avec le plugin.
+Wifi 320/370:
+-   El estado de los modos de escena no se gestiona, solo se gestiona ON / OFF.
+-   Existen diferentes modelos que pueden no ser compatibles con el complemento.
 
-TP-Link :
--   Les timers ne sont pas gérés.
--   Les informations de consommation électrique ne sont pas gérées pour les ampoules.
+H810:
+-   los juegos de escenario no se gestionan.
+-   Existen diferentes modelos que pueden no ser compatibles con el complemento.
 
-Extel Meli :
--   La partie son de la lampe n'est pas prise en compte
+TP-Link:
+-   Los temporizadores no se gestionan.
+-   La información de consumo de energía no es compatible con las bombillas.
 
-Xiaomi Philips :
--   Toutes les fonctionnalités sont prises en compte
+Extel Meli:
+-   La parte de sonido de la lámpara no se tiene en cuenta.
 
-Contrôleurs de pixel strip leds compatibles Magic Home :
--   les scènes custom ne sont pas gérées.
+Xiaomi Philips:
+-   Todas las funciones son tomadas en cuenta.
 
-Périphériques compatibles Tuya Smart/Jinvoo/eFamilyCloud :
--   toutes les commandes des périphériques validés (voir le forum) du firmware 1.0 et du firmware 2.0 sont compatibles (en particulier les prises Neo CoolCam).
+Controladores LED de tira de píxeles compatibles con Magic Home:
+-   No se admiten escenas personalizadas.
 
-Sonoff :
--   Basic R3 avec le firmware 3.3.0 .
+Dispositivos compatibles Tuya Smart / Jinvoo / eFamilyCloud:
+-   Todos los comandos para dispositivos validados (ver el foro) de firmware 1.0 y firmware 2.0 son compatibles (especialmente los sockets Neo CoolCam).
 
-Ewelink :
--   périphériques avec le firmware 3.0.1 .
+Sonoff DIY:
+-   Basic R3 con dispositivos de firmware 3.3.0 con un solo contacto.
 
-# Configuration du module wifi
+Ewelink y Sonoff LAN:
+-   dispositivos con firmware 3.0.1 (la lista se proporciona a continuación en la sección eWelink)
 
-## Installer les périphériques
+# Configuración del módulo WiFi
 
-Télécharger l'application mobile du constructeur et suivre les indications afin de contrôler le périphérique avec le mobile. Pour chaque équipement wifilightV2, une aide détaillée est fournie dans la page de configuration.
+## Instalar dispositivos
 
-Tant que le périphérique n'est pas contrôlé avec l'application mobile, le plugin ne pourra pas fonctionner.
+Descargue la aplicación móvil del fabricante y siga las instrucciones para controlar el dispositivo con el móvil. Para cada dispositivo wifilightV2, se proporciona ayuda detallada en la página de configuración.
 
-Consultez l'aide et les forums du constructeur des périphériques.
+Mientras el dispositivo no esté controlado con la aplicación móvil, el complemento no funcionará.
 
+Consulte la ayuda y los foros para el generador de dispositivos.
 
-## Configurer le routeur
-Il faut configurer le DHCP de votre routeur (généralement fourni par votre fournisseur d'accès) pour modifier l'attribution de l'adresse IP du module wifi ou de l'ampoule ou la prise pour qu'elle soit statique. Noter cette adresse. En général, elle sera de la forme :
-192.168.1.xxx 
-où xxx correspond à l'adresse du module wifi (2 à 254)
 
-Consultez les forums de votre box pour apprendre à configurer votre DHCP.
+## Configurar el enrutador
+Es necesario configurar el DHCP de su enrutador (generalmente proporcionado por su proveedor de servicios) para modificar la atribución de la dirección IP del módulo wifi o la bombilla o la captura para que sea estático. Califica esta dirección. En general, tendrá la forma: 192.168.1.xxx donde xxx es la dirección del módulo wifi (2 a 254)
 
-Après cette modification, vérifier que l'application mobile contrôle toujours le périphérique.
+Verifique los foros en su casilla para aprender cómo configurar su DHCP.
 
-Vous pouvez alors passer à la configuration du plugin wifilightV2.
+Después de este cambio, verifique que la aplicación móvil aún controle el dispositivo.
 
-## Installation et Configuration du plugin
+Luego puede ir a la configuración del complemento wifilightV2.
 
-Aide : 
--   Utiliser l'icône sous forme de point d'interrogation pour obtenir une aide sur chaque élément de configuration.
+## Instalación y configuración de complementos
 
-Paramétrage :
--   Pour paramétrer un équipement, choisir le menu Plugins / Objets communicants / wifilightV2
--   Puis cliquer sur le bouton en haut à gauche Ajouter un module Wifi 
--   Saisir le nom du module wifi
--   Saisir l'objet parent
--   Choisir la catégorie Lumière (par défaut)
--   Activer et rendre visible (par défaut)
--   Saisir l'adresse IP du module de la prise ou de l'ampoule WiFi (voir la FAQ pour plus d'explications)
--   Pour certains périphériques il est demandé de saisir le canal utilisé, créer un équipement wifilightV2 par canal
--   Pour certains périphériques il est demandé de saisir un jeton ou (et) un identifiant, consulter l'aide sur la page de configuration du périphérique
--   Pour certains périphériques il est possible de supprimer le retour d'état s'il provoque des microcoupures 
--   Pour certains contrôleurs il faut indiquer le nombre de leds des pixel strip leds
--   Pour certains contrôleurs il faut indiquer l'ordre des couleurs si les couleurs par défaut ne correspondent pas
--   Saisir la marque ou le type de périphérique
--   Saisir le sous-type exact du contrôleur, de l'ampoule, de la prise ou du strip-led, ceci est indispensable pour créer les commandes afin de piloter le périphérique
--   Saisir le nombre d'envois de commandes : permet de répéter la commande pour un équipement éloigné en cas de mauvaise transmission. (1 par défaut). Certaines ampoules ou prises ne gèrent pas cette répétition car le plugin s'assure par retour d'état de la transmission. Certaines commandes relatives (incrémentations) ne sont pas répétées.
--   Saisir le délai d'envoi en cas de répétition (0 ms par défaut, 100 ms max)
--   Saisir le % d'incrémentation de l'intensité lors de l'appui sur les boutons d'incrémentation ou de décrémentation de l'intensité lumineuse
--   Saisir le n° de groupe pour la synchronisation, voir plus bas
+wifilightV2 no crea ningún dispositivo automáticamente, debe crearlos en el complemento antes de configurarlos.
 
-## Ajout des commandes
-lors de la sauvegarde du module, les commandes sont automatiquement créées.
+Ayuda :
+-   Use el icono de signo de interrogación para obtener ayuda en cada elemento de configuración.
 
-le nom des commandes peut être modifié. Les commandes automatiquement créées et effacées sont recréées lors d'une sauvegarde.
+Ajuste:
+-   Para configurar un dispositivo, elija el menú Complementos / Comunicar objetos / wifilightV2
+-   Luego haga clic en el botón en la parte superior izquierda Agregar un módulo Wifi
+-   Ingrese el nombre del módulo wifi
+-   Ingrese el objeto padre
+-   Elija la categoría Luz (predeterminado)
+-   Habilitar y hacer visible (predeterminado)
+-   Ingrese la dirección IP del módulo de la toma WiFi o la bombilla (consulte las preguntas frecuentes para obtener más información)
+-   Para algunos dispositivos se le solicita ingresar al canal utilizado, crear un dispositivo wifilightV2 por canal
+-   Para algunos dispositivos se le solicita que ingrese un token o (y) un identificador, consulte la ayuda en la página de configuración del dispositivo
+-   Para algunos dispositivos es posible suprimir la retroalimentación si causa microcortes
+-   Para algunos controladores es necesario indicar el número de leds de los leds de la tira de píxeles
+-   Para algunos controladores es necesario indicar el orden de los colores si los colores por defecto no corresponden
+-   Ingrese la marca o tipo de dispositivo
+-   Ingrese el subtipo exacto del controlador, bombilla, enchufe o tira de led, esto es esencial para crear los comandos para controlar el dispositivo
+-   Ingrese el número de envíos de comandos: le permite repetir el comando para un dispositivo remoto en caso de una transmisión incorrecta. (1 por defecto). Algunas bombillas o enchufes no manejan esta repetición porque el complemento se asegura mediante el retorno del estado de la transmisión. Algunos comandos relativos (incrementos) no se repiten.
+-   Ingrese el retraso de envío en caso de repetición (predeterminado 0 ms, 100 ms máx.)
+-   Ingrese el% de incremento de intensidad al presionar los botones para aumentar o disminuir la intensidad de la luz
+-   Ingrese el número de grupo para la sincronización, vea a continuación
 
-lorsque toutes les commandes sont créées, elles peuvent alourdir l'interface, il est possible de ne pas les afficher en configurant la commande.
+## Agregar comandos
+Al guardar el módulo, los comandos se crean automáticamente.
 
-## Modification du type ou de sous-type de périphérique
+El nombre de los comandos se puede cambiar. Los comandos creados y eliminados automáticamente se recrean durante una copia de seguridad.
 
--   supprimer toutes les commandes
--   modifier le type ou le sous-type de périphérique
--   sauvegarder 2 fois
+cuando se crean todos los comandos, pueden pesar la interfaz, es posible no mostrarlos configurando la creación de los comandos.
 
-# Fonctionnement du retour d'état et état de connexion
+## Cambiar el tipo o subtipo de dispositivo
 
-## Compatibilité du retour d'état
+-   eliminar todos los pedidos
+-   cambiar el tipo o subtipo de dispositivo
+-   ahorre 2 veces
 
-Le retour d'état fonctionne avec les contrôleurs LW12/Lagute, Magic UFO, Arilux et Wifi 3x0 (partiellement) ainsi que les ampoules et bandeau led Xiaomi YeeLight, les ampoules et prises TP-Link, les ampoules Xiaomi Philips, les périphériques compatibles Tuya smart app, Extel Meli et les contrôleurs de de pixel strip leds compatibles Magic Home.
+# Operación de retroalimentación de estado y estado de conexión
 
-## Principe
+## Compatibilidad del retorno estatal
 
-Le retour d'état consiste à ce que Jeedom récupère l'état du contrôleur si son état a été changé par un autre maitre que Jeedom : appli portable ou télécommande.
+La retroalimentación de estado es inmediata para los siguientes dispositivos:
+- Yeelight
+- compatible con ewelink
+- compatible con la aplicación inteligente Tuya en vivo
+- Sonoff en modo LAN
 
-## Mise à jour périodique de Jeedom
-LW12/Lagute, Magic UFO, Arilux, Wifi 3x0, TP-Link, Extel Meli, Xiaomi Yeelight, Xiaomi Philips, Tuya Smart/Jinvoo/eFamilyCloud apps et contrôleurs de pixel leds compatibles magic home : toutes les minutes Jeedom interroge le contrôleur ou le périphérique pour connaitre son état et mettre à jour l'allure des widgets du plugin ( sliders et couleur ). Des informations correspondant à l'état sont mises à jour et peuvent être interrogées par les scénarios.
+Por ejemplo, si se opera un interruptor, Jeedom lo sabrá de inmediato.
 
-## Mise à jour par scénario
+Para dispositivos:
+ - LW12 / Lagute
+ - OVNI Mágico / Inicio
+ - Arilux
+ - Wifi 3x0 (parcialmente)
+ - TP-Link
+ - Xiaomi Philips
+ - Extel Meli
+ - Sonoff en modo bricolaje
 
-Les commandes xxxxGet et Etat peuvent être utilisées dans un scénario Jeedom.
+El complemento consulta regularmente el dispositivo para conocer su estado. El retraso para que Jeedom conozca el estado puede exceder 1 minuto.
 
-## Information de connexion :
+Para otros dispositivos no hay comentarios de estado;
 
-La commande ConnectedGet permet de récupérer l'état de la connexion de chaque périphérique. Elle est mise à jour toutes les minutes.
--  -1 : périphérique avec retour d'état OK
--  -2 : impossible de préparer la connexion au périphérique
--  -3 : périphérique non connecté
--  -4 : pas de réponse du périphérique
--  -5 : mauvaise réponse du périphérique
--  -6 : périphérique sans retour d'état
+## Actualización por escenario
 
-# Fonctionnement de la synchronisation
+Los comandos xxxxGet y Status se pueden usar en un escenario Jeedom.
 
-##  Principe de la synchronisation
+## Información de conexión
 
-Il est possible de synchroniser plusieurs périphériques de marques différentes :
+El comando ConnectedGet recupera el estado de conexión de cada dispositivo. Se actualiza cada minuto.
+-  -1: dispositivo con retroalimentación de estado OK
+-  -2: no se puede preparar la conexión del dispositivo
+-  -3: dispositivo no conectado
+-  -4: no hay respuesta del dispositivo
+-  -5: respuesta incorrecta del dispositivo
+-  -6: Dispositivo sin retorno de estado
 
-Toutes les périphériques qui ont le même numéro de groupe sont synchronisées
+# Cómo funciona la sincronización
 
-Le groupe 0 n'est pas synchronisé (groupe par défaut)
+## Principio de sincronización
 
-Lors de l'utilisation d'une commande d'un périphérique du groupe, la même commande est appliquée sur tous les périphériques du même groupe
+Es posible sincronizar múltiples dispositivos de diferentes marcas:
 
-Si la commande n'existe pas pour le périphérique synchronisé, elle est simplement ignorée.
+Todos los dispositivos que tienen el mismo número de grupo están sincronizados
 
-Attention, les périphériques ne vont pas être commandées exactement en même temps à cause des délais de latence lors de l'envoi des commandes qui se fait les uns après les autres.
+El grupo 0 no está sincronizado (grupo predeterminado)
 
-## Configuration de la synchronisation
+Cuando se usa un comando de un dispositivo en el grupo, el mismo comando se aplica a todos los dispositivos en el mismo grupo
 
-Il suffit de mettre un nombre différent de zéro dans le champ groupe lors de la configuration de l'équipement. Tous les équipements ayant les mêmes numéros seront synchronisés.
+Si el comando no existe para el dispositivo sincronizado, simplemente se ignora.
 
-# Cas particulier des box Mi.Light
+Advertencia, los dispositivos no se ordenarán exactamente al mismo tiempo debido a la latencia al enviar pedidos uno tras otro.
 
-## Configuration de l'iBox 1 ou 2
+## Configuración de sincronización
 
-Depuis la version 1.0.58 des iBox 1 et 2, il peut être nécessaire de modifier leur configuration pour qu'elles puissent dialoguer avec Jeedom. 
+Simplemente ponga un número diferente de cero en el campo de grupo al configurar el equipo. Todos los equipos con los mismos números serán sincronizados.
 
-Se connecter en http (avec un navigateur Web) à l'adresse IP de votre iBox. Les identifiants par defaut sont admin/admin. Aller dans l'onglet "Other Setting" et dans "Network Parameters setting/Protocol" choisir UDP et sauvegarder.
+# Estuche especial de cajas Mi.Light
 
-# Cas particulier des Xiaomi Yeelight
+## Configurar iBox 1 o 2
 
-## Configuration de l'ampoule
-Il est indispensable d'activer le contrôle par réseau local via l'application  Xiaomi Yeelight.
+Desde la versión 1.0.58 de iBox 1 y 2, puede ser necesario modificar su configuración para que puedan interactuar con Jeedom.
 
-## Mode Scène Xiaomi Yeelight
-Il est possible de configurer les modes scène. Plusieurs modes scène sont préprogrammés dans le plugin mais il est possible d'ajouter d'autres modes scène.
+Conéctese a http (con un navegador web) a la dirección IP de su iBox. Las credenciales predeterminadas son admin / admin. Vaya a la pestaña &quot;Otra configuración&quot; y en &quot;Configuración de parámetros de red / Protocolo&quot; elija UDP y guarde.
 
-Il suffit de respecter certaines conditions :
--   Ajouter une commande wifilightV2 action de type Défaut
--   Lui donner un nom (par exemple Scene Clignote)
--   Dans paramètres, mettre la commande scène Yeelight, par exemple : "id":1, "method":"set_scene","params":["cf",0,0,"500,1,255,100,1000,1,16776960,70"]
+# Caso especial de Xiaomi Yeelight
 
-Ne pas mettre les accolades de début et de fin ainsi que les caractères de retour à la ligne, le plugin les ajoutera automatiquement
-S'inspirer des commandes préconfigurées pour créer ces modes scène supplémentaires.
+## Configuración de la bombilla
+Es esencial habilitar el control de LAN a través de la aplicación Xiaomi Yeelight.
 
-## Mise à jour de l'état dans Jeedom
-Lors de l'activation du plugin et dès que le démon est lancé ainsi que toutes les minutes, le plugin recherche les ampoules alimentées et connectées à Jeedom.
+## Modo de escena Xiaomi Yeelight
+Es posible configurar los modos de escena. Varios modos de escena están preprogramados en el complemento, pero es posible agregar otros modos de escena.
 
-Dès que l'ampoule est trouvée, l'état de l'ampoule est remonté au plugin immédiatement.
+Es suficiente respetar ciertas condiciones:
+-   Agregue un comando de acción wifilightV2 de tipo Predeterminado
+-   Ponle un nombre (por ejemplo, Scene Blink)
+-   En los parámetros, coloque el comando de escena Yeelight, por ejemplo: &quot;id&quot;: 1, &quot;method&quot;: &quot;set_scene&quot;, &quot;params&quot;: [&quot;cf&quot;, 0,0, &quot;500,1,255,100,1000,1,16776960, 70 &quot;]
 
-Noter que le plugin peut mettre jusqu'à 1 minute pour trouver une ampoule et 4 minutes pour trouver qu'un périphérique est déconnecté.
+No coloque las llaves de inicio y fin, así como los caracteres de nueva línea, el complemento los agregará automáticamente. Inspire comandos preconfigurados para crear estos modos de escena adicionales.
 
-# Cas particulier des périphériques TP-Link
+## Actualizar estado en Jeedom
+Al activar el complemento y tan pronto como se inicia el demonio y cada minuto, el complemento busca las bombillas alimentadas y conectadas a Jeedom.
 
-## Configuration de l'ampoule
+Tan pronto como se encuentra la bombilla, el estado de la bombilla se vuelve a montar en el complemento de inmediato.
 
-Depuis mi 2019, de nouveaux périphériques sortent en protocole version 2. Le protocole V2 nécessite de récupérer un jeton (token) permettant au plugin de dialoguer avec les périphériques TP-Link.
+Tenga en cuenta que el complemento puede tomar hasta 1 minuto para encontrar una bombilla y 4 minutos para encontrar que un dispositivo está desconectado.
 
-Pour obtenir ce jeton, il faut capturer les trames échangées entre l'appli Kasa sur le téléphone et le périphérique à ajouter dans le plugin. Sous Android il faut utiliser Packet Capture.
+# Caso especial de dispositivos TP-Link
 
-Le plugin permet ensuite d'extraire le jeton. Il faut copier la trame récupérée dans le champ Paramètres de la commande getKey puis exécuter cette commande. Si la trame est décodable, le jeton sera affiché dans les logs et dans le centre de messages (attention : effacer à chaque fois le message après lecture).
+## Configuración de la bombilla
 
-La trame à mettre dans "Paramètres" doit avoir l'allure suivante (les ... remplacent d'autres valeurs) :
+Desde mediados de 2019, salen nuevos dispositivos en la versión 2 del protocolo. El protocolo V2 requiere recuperar un token (token) que permita que el complemento interactúe con los dispositivos TP-Link.
 
-    00 00 00 5f d0 f2 91 fe 90 e4 81 f9 8d af 95 ... 99 bb 81 fa 87 fa 87
+Para obtener este token, es necesario capturar los marcos intercambiados entre la aplicación Kasa en el teléfono y el dispositivo que se agregará en el complemento. En Android debes usar Packet Capture.
 
-Les données sont séparées par des espaces et représentent des nombres héxadécimaux qui sont issus directement de Packet Capture. En général, la trame commence par 3 zéros puis, ici, 5f donne la taille de la trame en hexadécimal soit 95 en décimal.
+El complemento luego permite extraer el token. Debe copiar el marco recuperado en el campo Parámetros del comando GetKey y ejecutar este comando. Si el marco es decodificable, el token se mostrará en los registros y en el centro de mensajes (tenga cuidado: elimine el mensaje cada vez que lo lea).
 
-Aucune aide ne sera donnée pour récupérer la trame à partir de Packet Capure.
+El marco para poner en &quot;Parámetros&quot; debe tener el siguiente ritmo (el ... reemplazar otros valores):
 
-Pour l'instant seules les prises sont utilisables en V2, contacter l'auteur si vous avez des ampoules en V2.
+00 00 00 5f d0 f2 91 fe 90 e4 81 f9 8d af 95 ... 99 bb 81 fa 87 fa 87
 
-# Cas particulier des Xiaomi Philips
+Los datos están separados por espacios y representan números hexadecimales que provienen directamente de Packet Capture. En general, el marco comienza con 3 ceros y aquí 5f da el tamaño del marco en hexadecimal o 95 en decimal.
 
-## Configuration de l'ampoule
+No se brindará ayuda para recuperar el marco de Packet Capure.
 
-Il est indispensable de récupérer un jeton (token) permettant au plugin de dialoguer avec les périphériques Xiaomi Philips.
+Por el momento, solo los enchufes son utilizables en V2, para contactar al autor si tiene bombillas en V2.
 
-La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Xiaomi token.
+# Caso especial de Philips Xiaomi
 
-Aucune aide ne sera donnée pour récupérer le jeton.
+## Configuración de la bombilla
 
-# Cas particulier des Sonoff en mode DIY
+Es esencial recuperar un token que permita que el complemento interactúe con los dispositivos Philips Xiaomi.
 
-## Configuration du mode DIY
+El procedimiento es complejo y requiere varias manipulaciones. Haga una búsqueda en la web con la siguiente palabra clave: token Xiaomi.
 
-Sonoff donne tous les éléments [ici]( https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) pour configurer les modules en mode DIY.
+No se brindará ayuda para recuperar el token.
 
-Un téléphone portable et un PC sous windows avec carte Wifi sont nécessaires.
-Le logiciel à faire tourner pour trouver le Sonoff donne dans la colonne de gauche l'identifiant nécessaire à la configuration du périphérique.
+# Caso especial de Sonoff en modo bricolaje
 
-Le périphérique Sonoff doit être en firmware 3.0.1 ou plus, l'appli Windows ci-dessus permet de mettre à jour le firmware.
+## Configuración del modo de bricolaje
 
-# Cas particulier des périphériques Ewelink en mode LAN
+Sonoff proporciona todos los elementos [aquí] (https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) para configurar los módulos en modo DIY.
 
-## Récupération de l'APiKey et du DeviceID
+Se requiere un teléfono móvil y una PC con Windows con tarjeta WiFi. El software a ejecutar para encontrar el Sonoff le da en la columna izquierda el identificador necesario para configurar el dispositivo.
 
-Suivre les indications [ici](https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) pour récupérer ces 2 informations. Le deviceid est à mettre dans l'identifiant du plugin. L'Apikey est à mettre dans le jeton. Il ne faut mettre ni espace ni guillements.
+El dispositivo Sonoff debe ser firmware 3.3.0 o superior, la aplicación de Windows anterior permite actualizar el firmware.
 
-Le périphérique doit être en firmware 3.3.0 ou plus, l'appli Ewelink permet de mettre à jour le firmware.
+# Caso especial de dispositivos compatibles con la aplicación Ewelink en modo LAN
 
-## Compatibilité :
+## Recuperando APiKey y DeviceID
 
-De nombreuses marques sont compatibles dont les Sonoff. Pour l'instant seuls les interrupteurs et prises murales simples sont compatibles ainsi que les sonoff avec un seul contact.
+Siga las instrucciones [aquí] (https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) para recuperar estos 2 datos. El deviceid debe poner el identificador del complemento. El Apikey es poner la ficha. No debe poner espacios ni comillas.
+
+El dispositivo debe ser firmware 3.0.1 o superior, la aplicación Ewelink permite actualizar el firmware.
+
+## Información de conexión
+
+Cuando un dispositivo se conecta a wifi, el complemento será notificado de inmediato. Por otro lado, cuando se desconecta un dispositivo, el complemento solo puede saber si el complemento envía un comando.
+
+## compatibilidad
+
+Muchas marcas son compatibles, incluido Sonoff.
+- Interrupteurs, prises murales, switch : simples de toutes marques
+- Interrupteurs, prises murales, switch : multiples de toutes marques
+- 2 types de lampes (tester les 2 types)
+- Sonoff TH10/1H16 capteur de température
+- Sonoff basic, RF, POW, Mini
+- Sonoff Dual
+- Sonoff 4CH/4CH PRO
+- Sonoff Touch
+- Sonoff S20/S26
+- Sonoff T1/TX
+- Sonoff SLAMPHER
+- Sonoff T4EUC1
+- Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur, télécommande)
+
+Pour les périphériques multicanaux (comme le Sonoff 4CH) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tache, ensuite il faut changer le n° de canal.
+
+Pour les autres périphériques (Sonoff Ifan, variateur de lumière par exemple) ou si la configuration ne fonctionne pas et après avoir intégré le périphérique dans Jeedom (avec la configuration Sonoff Basic par exemple) repérer dans les logs :
+
+    Receive after decode :{...............}
+
+et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) le contenu des accolades afin de permettre l'intégration du module dans le plugin.
 
 # Cas particulier des périphériques compatibles Tuya Smart/Jinvoo/eFamilyCloud apps
 
-## Compatibilité :
+## Compatibilité
 
 De nombreuses marques sont compatibles avec le plugin. Consulter le forum pour plus d'informations. Le plugin permet de contrôler de nombreux actionneurs.
 Il peut récupérer l'état des périphériques dès que celui-ci envoie une information de changement d'état ou quand il les interroge toutes les minutes. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
@@ -308,12 +354,15 @@ Les équipements suivants sont compatibles en firmware 1.0. et en firmware 2.0.
 -  interrupteur mural avec variateur
 -  humidificateur NEWKBO 300 ml et uniquement celui-ci
 -  thermostat BHT-6000GCLW / BHT 6000 et uniquement ces modèles
+-  ampoules RGBW globe et modèles similaires en fonctionnement
 
-Néanmoins, la compatibilité de ces périphériques n'est pas garantiear le protocole peut être modifié par les constructeurs.
+Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs.
+
+Pour les périphériques multicanaux (comme les prises multiples) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tache, ensuite il faut changer le n° de canal.
 
 Les capteurs de présence et d'ouverture ne sont pas compatibles car ils ne dialoguent pas en local.
 
-Le plugin teste les périphériques (mais ils doivent être ajoutés manuellement) et affiche un message dans le centre de messages lorsqu'un prériphérique a été configuré avec le mauvais firmware.
+Le plugin teste les périphériques (mais ils doivent être ajoutés manuellement) et affiche un message dans le centre de messages lorsqu'un périphérique a été configuré avec le mauvais firmware.
 
 
 ## Configuration du périphérique
@@ -350,13 +399,79 @@ Pour les autres prises, la valeur 20;18;19 est mise par défaut.
 
 Devant la diversité des périphériques compatibles Tuya, il peut être nécessaire de créer des commandes personnalisées.
 
-Créer une nouvelle commande action/défaut et mettre la commande Tuya dans paramètres. Les commandes Tuya sont au format JSON et contiennent dps:{xxxxxx}. C'est le xxxxxx qu'il faut mettre dans paramètres. 
+Créer une nouvelle commande action/défaut, lui donner un nom et mettre la commande Tuya dans paramètres. Les commandes Tuya sont au format JSON et contiennent dps:{xxxxxx}. C'est le xxxxxx qu'il faut mettre dans paramètres. 
 
 Exemples :
 
 Pour lever un volet roulant : xxxxxx vaut "1":"1" . 
 
 Pour mettre la prise n°2 d'un plug à on : xxxxxx vaut "2":true .
+
+Voir le paragraphe suivant pour l'interprétation des logs.
+
+## Périphérique custom
+
+Il est possible de créer un périphérique entièrement custom et pas seulement une commande custom comme précédemment. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de soulution.
+
+### Configuration
+-   désactiver tous les périphériques wifilightV2 sauf celui à tester
+-   bien configurer le périphérique (adresse IP statique, LocalKey, Id, App Tuya arrêtée)
+-   vérifier que le demon tourne, sinon le démarrer
+-   configurer les logs wifilightV2 en mode debug
+-   effacer les logs
+
+### Récupération des informations
+-   appuyer sur un bouton du périphérique (on,off,haut,bas,etc.) ou sur l'appli Smart Live
+-   repérer dans les logs le passage ressemblant à ceci :
+
+        Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"off","101":true}}
+        [2019-10-13 09:15:30][DEBUG] :       >>> : devId | 50701244cc50e37e9aff : 50701244cc50e37e9aff
+        [2019-10-13 09:15:30][DEBUG] :       >>> : dps | Array : Array
+        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 1 | stop : stop
+        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 101 | 1 : 1
+
+    Ici, le bouton off a été sélectionné sur le périphérique et on observe que le dps 1  a changé.
+
+        Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"on","101":true}}
+        [2019-10-13 09:15:30][DEBUG] :       >>> : devId | 50701244cc50e37e9aff : 50701244cc50e37e9aff
+        [2019-10-13 09:15:30][DEBUG] :       >>> : dps | Array : Array
+        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 1 | stop : stop
+        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 101 | 1 : 1
+
+    Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps 1  a changé.
+
+-   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
+    *    Dans la colonne interface mettre ON comme nom du bouton
+    *    Dans la colonne nom interne et n° de commande, mettre comme Id unique : ON, comme dps : 1 (sans les double guillemets) et comme paramètre : "on" (si le on n'est pas entouré de guillemets, il faut les enlever).
+-   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
+    *    Dans la colonne interface mettre OFF comme nom du bouton
+    *    Dans la colonne nom interne et n° de commande, mettre comme Id unique : OFF, comme dps : 1 (sans les double guillemets) et comme paramètre : "off" (si le off n'est pas entouré de guillemets, il faut les enlever).
+-   Créer une nouvelle commande info/autre dans les commandes du périphérique :
+    *    Dans la colonne interface mettre ETAT comme nom de l'info
+    *    Dans la colonne nom interne et n° de commande, mettre comme Id unique : ETAT, comme dps : 1 (sans les double guillemets) et rien dans paramètres.
+
+    Dans le cas d'une information numérique :
+
+        Receive after decode :{devId:50701244cc50e37e9aff,dps:{"3":850,"101":true}}
+        [2019-10-13 09:15:30][DEBUG] :       >>> : devId | 50701244cc50e37e9aff : 50701244cc50e37e9aff
+        [2019-10-13 09:15:30][DEBUG] :       >>> : dps | Array : Array
+        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 3 | 850 : 850
+        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 101 | 1 : 1
+
+    Ici, un curseur d'intensité a été sélectionné sur le l'application du périphérique et on observe que le dps 3  a changé.
+
+-   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
+    *    Dans la colonne interface mettre Intensité comme nom du curseur
+    *    Dans la colonne nom interne et n° de commande, mettre comme Id unique : Intensite, comme dps : 3 (sans les double guillemets) et comme paramètre : #slider# (ici la valeur numérique n'est pas entourée de guillemets, il ne faut donc pas les mettre).
+-   Créer une nouvelle commande info/autre dans les commandes du périphérique :
+    *    Dans la colonne interface mettre IntensiteGet comme nom de l'info
+    *    Dans la colonne nom interne et n° de commande, mettre comme Id unique : IntensiteGet, comme dps : 3 (sans les double guillemets)et rien dans paramètres.
+
+Remarques :
+-   rien dans les logs : mauvaise adresse IP ou périphérique qui ne renvoie pas son état
+-   retour avec erreur : Id incorrect
+-   retour non décodé : localkey incorrect
+-   la commande ne fonctionne pas : vérifier la commande
 
 ## Mise à jour de l'état dans Jeedom
 Lors de l'activation du plugin et dès que le démon est lancé ainsi que toutes les minutes, le plugin recherche les périphériques alimentés et connectés à Jeedom.
@@ -379,7 +494,7 @@ Faire d'abord fonctionner le périphérique avec l'application mobile fournie pa
 Utiliser le bouton <tester> dans le menu Plugin/Objets Connectés/wifilightV2/commandes.
 
 Aucune aide ne sera apportée sans que les périphériques soient opérationnels avec l'application constructeur sur un téléphone portable.
-Il est nécessaire de donner une adresse IP fixe au contrôleur ou à la lampe.
+Il est nécessaire de donner une adresse IP fixe au périphérique.
 
 
 ## Je ne sais pas configurer ma box internet
@@ -448,7 +563,7 @@ Pour dialoguer avec ces ampoules, prises et autres périphériques, il est néce
 # Comment obtenir de l'aide ?
 
 
-Aller sur le forum de Jeedom [ici](https://www.jeedom.com/forum/viewtopic.php?f=141&t=24322)
+Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632)
 
 # Bogues connus
 

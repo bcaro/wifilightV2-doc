@@ -1,9 +1,54 @@
-1.45 - 2019-09-27 (beta)
+1.53 - 2019-11-30
+-   Ewelink : ajout du Sonoff RF bridge 433 - uniquement les capteurs
+-   Sonoff TH10/TH16 : ajout des actions/informations du thermostat interne
+-   correction bogues 
+
+1.52 - 2019-11-27
+-   Tuya : lampes globe en stable
+-   nettoyage du code 
+-   correction bogues
+-   déplacement de la doc
+
+1.51 - 2019-11-23
+-   Tuya : ajout du pont MiBoxer de Milight (module en Beta), seuls ON/OFF de la box complète fonctionne. Mis à disposition pour ceux qui arriveraient à récupérer l'ApiKey avec l'appli MiBoxer.
+-   Tuya : ajout d'un périphérique custom permettant de configurer n'importe quel périphérique
+-   Tuya : refonte des commandes customs : pour les commandes custom existantes -> nécessité de les reconfigurer avec le nouveau format
+-   Tuya : nécessité de sauvegarder tous les équipements
+-   eWeLink : utilisation d'une fake key pour la SelfApiKey
+-   eWeLink : correction de l'info de connexion
+-   Tuya : correction de l'info de connexion
+-   correction de bogues mineurs
+-   relance du demon après la modification d'une configuration
+
+1.50 - 2019-10-28 
+-   Tuya : ajout lampe RGBW type 2 (module en beta)
+-   correction bogue Sonoff Dual
+-   Ewelink : ajout des périphériques 3 et 4 canaux
+-   Sonoff : compatible TH10/1H16 capteur de température, basic, RF, POW, Mini, Dual, 4CH/4CH PRO, Touch, S20/S26, T1/TX, SLAMPHER, T4EUC1
+
+1.49 - 2019-10-23 
+-   correction bogue Tuya curtain mod2
+-   correction bogue Sonoff Dual
+
+1.48 - 2019-10-18 
+-   eWelink : ajout modules avec 2 canaux (dont Sonoff Dual) en Beta
+-   correction bogue retour état Sonoff
+
+1.47 - 2019-10-16 
+-   ajout tuya volets mod2 (on/off/stop au lieu de 1/2/3 dans les commandes)
+-   correction bogues
+
+1.46 - 2019-10-12 
+-   ajout ewelink capteur température/humidité dont Sonoff TH10/16
+-   ajout ewelink mode inching (ON pendant un temps donné)
+-   correction bogues
+
+1.45 - 2019-10-2 
 -   Compatible périphériques avec Appli Ewelink en mode LAN
 -   Compatible SonOff en mode LAN
 
 1.44 - 2019-09-27
--   Ajout Sonoff Basic R3 en mode DIY
+-   Compatible Sonoff Basic R3 en mode DIY
 -   Compatible V4 Jeedom
 -   Compatible Buster
 -   Suppression du widget couleur sans Off non compatible V4, le plugin n'offrira plus de widgets personnalisés.

@@ -3,7 +3,9 @@
 This plugin can manage many LED strips or LED bulbs or electrical plugs controlled by wifi or radio frequency 2.4 GHz via a box wifi sold with the product.
 
 
-![ampoules](../images/icon0203.png)  ![Prises](../images/icon1204.png) ![Bandeau led](../images/icon0500.png) ![Plafonnier](../images/icon0606.png) ![Sonoff](../images/icon1700.png) ![Ewelink](../images/icon1800.png)
+![Milight](../images/wifilightV2_screenshot01.png) ![Tuya](../images/wifilightV2_screenshot03.png) ![Plafonnier](../images/wifilightV2_screenshot05.png) ![Prise](../images/wifilightV2_screenshot07.png) 
+
+![Sonoff](../images/wifilightV2_screenshot02.png) ![MagicHome](../images/wifilightV2_screenshot04.png)
 
 # Compatibility and limitations
 
@@ -12,448 +14,559 @@ This plugin can manage many LED strips or LED bulbs or electrical plugs controll
 There are many products compatible with the plugin but very different brands or brands.
 
 Compatible products:
--   Light bulbs Mi.Light / EasyBulb / LimitlessLED: no return status
--   Strip-led Mi.Light / EasyBulb / LimitlessLED: no status feedback
--   Mi.Light / EasyBulb / LimitlessLED LED Controller V3.0 to V5.0: no status feedback
--   Mi.Light / EasyBulb / LimitlessLED V6.0 / iBox1 / iBox2 led controller: no status feedback
--   White and color Xiaomi Yeelight WiFi bulbs with status feedback
--   Strip-led WiFi Xiaomi Yeelight color with status feedback
--   Xiaomi Yeelight WiFi Ceiling Light with Status Return
--   Xiaomi Mijia WiFi Desk Lamp with Status Return
--   Sonoff Basic R3 en mode DIY avec retour d'état
+-   Light bulbs Mi.Light / EasyBulb / LimitlessLED connected to the controllers below: no feedback \ *
+-   Strip-led Mi.Light / EasyBulb / LimitlessLED connected to the controllers below: no status feedback \ *
+-   Led controller Mi.Light / EasyBulb / LimitlessLED V3.0 to V5.0 (the miboxer is not compatible): no feedback \ *
+-   Mi.Light / EasyBulb / LimitlessLED led controller V6.0 / iBox1 / iBox2: no status feedback \ *
+-   Ampoules WiFi Xiaomi Yeelight blanches et couleur avec retour d'état \*
+-   Strip-led WiFi Xiaomi Yeelight color with status feedback \ *
+-   Plafonnier WiFi Xiaomi Yeelight avec retour d'état \*
+-   Lampe de bureau WiFi Xiaomi Mijia avec retour d'état \*
+-   Sonoff Basic R3 in DIY mode with status feedback \ * \ *
 
-Produits pouvant être compatibles et non garantis :
--   LW12/Lagute : RGB strip-led contrôleur : retour d'état
--   Wifi 320/370 RGB/RGBW strip-led contrôleur : retour d’état partiel
--   Magic UFO : RGBW strip-led contrôleur, gère le blanc
--   MagicHome : RGBW/RGBWW strip-led contrôleur et ampoules/spots RGBW compatibles avec l'appli MagicHome
--   H801 : RGBW strip-led contrôleur, pas de retour d’état
--   Arilux AL-C01/02/03/04/06/10 : RGB/RGBW/RGBWW strip-led contrôleur, retour d’état
--   TP-Link LB100/110/120/130 : ampoules avec retour d’état
--   Lampe Extel Meli avec retour d'état
--   Xiaomi Philips : Lampe bureau, ampoule et plafonnier avec retour d'état
--   Ampoules, prises, interrupteur, interrupteurs volets, humidifieur, thermostat compatibles Tuya Smart live ou Jinvoo smart ou eFamilyCloud apps avec retour d'état
--   Prises électriques TP-link HS100 HS110 avec retour d'état
--   Contrôleurs de pixel strip leds compatible Magic home avec retour d'état
--   Périphériques contrôlés par l'appli Ewelink dont les Sonoff en mode LAN
+Products that can be compatible and unsecured:
+-   LW12 / Lagute: RGB strip-led controller: return of state \ *
+-   Wifi 320/370 RGB / RGBW strip-led controller: partial state return \ *
+-   Magic UFO: RGBW strip-led controller, handles the white \ *
+-   MagicHome: RGBW / RGBWW strip-led controller and bulbs / spots RGBW compatible with the MagicHome app \ *
+-   H801: RGBW strip-led controller, no return status \ * \ *
+-   Arilux AL-C01/02/03/04/06/10 : RGB/RGBW/RGBWW strip-led contrôleur, retour d’état \*
+-   TP-Link LB100/110/120/130 : ampoules avec retour d’état \*
+-   Lampe Extel Meli avec retour d'état \*
+-   Xiaomi Philips: Desk lamp, bulb and ceiling lamp with state return \ * \ * \ *
+-   Bulbs, sockets, switch, flap switches, humidifier, thermostat compatible Tuya Smart live or Jinvoo smart or eFamilyCloud apps with status feedback \ * \ * \ *
+-   TP-link HS100 HS110 electrical outlets with status feedback \ * \ *
+-   Magic home compatible LED pixel strip controllers with status feedback \ *
+-   Devices controlled by the Ewelink app including Sonoff in LAN mode with status feedback \ * \ * \ *
 
-Pour ces contrôleurs, ampoules ou prises, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin.
+For these controllers, bulbs or sockets, the exchange protocol does not come directly from the manufacturer who can change it at any time. Several versions exist on the market that are not all compatible with the plugin.
 
-Produits incompatibles et qui ne le seront pas :
--   Les ampoules, prises ou contrôleurs de bandeau led qui contiennent un récepteur bluetoooth au lieu d'un récepteur radiofréquence 2.4 Ghz ou WiFi.
--   Les contrôleurs de bandeau led ou d'ampoules et les ampoules ou prises qui utilisent une connexion WiFi point à point avec l'application mobile.
--   La lampe de chevet Xiaomi n'est pas compatible (par construction).
+Asterisks:
+- \ *: easy integration for a person who reads the documentation before acting
+- \ * \ *: in addition to \ *, requires to follow a particular procedure, adapted to a person who understands that a procedure is made to be followed scrupulously
+- \ * \ * \ *: in addition to \ * \ * requires basic computer skills and is accustomed to researching the internet for a specific purpose
 
-## Test de compatibilité
+Incompatible products and who will not be:
+-   The Mi.light MiBoxer bridge (except ON / OFF box)
+-   Controllers Led Milight (type YL etc.) without bridge.
+-   The led bulbs, sockets or controllers that contain a bluetoooth receiver instead of a 2.4 Ghz radio receiver or WiFi.
+-   The led strip controllers or bulbs and bulbs or sockets that use a point-to-point WiFi connection with the mobile application.
+-   The Xiaomi bedside lamp is not compatible (by construction).
 
-Sur demande, un plugin de test pour les produits non validés peut être fourni.
+## Compatibility test
 
-Il est conseillé de se renseigner sur le forum pour connaitre la compatibilité d'un produit peu diffusé.
+On request, a test plugin for non validated products can be provided.
 
-Aller sur le forum de Jeedom [ici](https://www.jeedom.com/forum/viewtopic.php?f=28&amp;t=24322)
+It is advisable to inquire on the forum to know the compatibility of a product little diffused.
 
+Go to Jeedom&#39;s forum [here] (https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
 
-# Limitations
 
-Mi.Light/EasyBulb/LimitlessLED :
--   Toutes les fonctionnalités sont prises en compte par le plugin.
+# limitations
 
-LW12/Lagute :
--   La programmation des modes custom n'est pas possible, il faut utiliser l'application fournie avec le contrôleur (Magic Home). Par contre, les modes customs peuvent être déclenchés avec le plugin.
--   Il existe plusieurs versions de LW12 qui peuvent ne pas être compatibles avec le plugin.
+Mi.Light / EasyBulb / LimitlessLED:
+-   All features are taken into account by the plugin.
+-   The MiBoxer bridge is not compatible
 
-Magic UFO, MagicHome et Arilux AL-C01/02/03/04/06/10 :
--   La programmation des modes custom, le mode radio et les timers ne sont pas gérés. Il faut utiliser l'application fournie avec le contrôleur (Magic Home). Par contre, les modes customs peuvent être déclenchés avec le plugin.
--   Il existe différents modèles qui peuvent ne pas être compatibles avec le plugin.
+LW12 / Lagute:
+-   Programming custom modes is not possible, it is necessary to use the application provided with the controller (Magic Home). On the other hand, custom modes can be triggered with the plugin.
+-   There are several versions of LW12 that may not be compatible with the plugin.
 
-Xiaomi Yeelight :
--   Les commandes HSV ne sont pas gérées. Flow et scène le sont en créant des commandes avec le code JSON correspondant à l'effet recherché (voir la documentation de l'API YeeLight).
--   La lampe de chevet Xiaomi n'est pas compatible.
--   La lampe de bureau Xiaomi Mijia est partiellement compatible (pas de retour d'état complet).
+Magic UFO, MagicHome and Arilux AL-C01 / 02/03/04/06/10:
+-   Custom mode programming, radio mode and timers are not supported. You must use the application supplied with the controller (Magic Home). On the other hand, custom modes can be triggered with the plugin.
+-   There are different models that may not be compatible with the plugin.
 
-Wifi 320/370 :
--   Le retour d'état des modes scènes n'est pas géré, seul ON/OFF est géré.
--   Il existe différents modèles qui peuvent ne pas être compatibles avec le plugin.
+Xiaomi Yeelight:
+-   HSV commands are not supported. Flow and scene are created by creating commands with the JSON code corresponding to the desired effect (see the YeeLight API documentation).
+-   The Xiaomi bedside lamp is not compatible.
+-   The Xiaomi Mijia desk lamp is partially compatible (no full status feedback).
 
-H810 :
--   les jeux de scène ne sont pas gérés.
--   Il existe différents modèles qui peuvent ne pas être compatibles avec le plugin.
+Wifi 320/370:
+-   The status of the scene modes is not managed, only ON / OFF is managed.
+-   There are different models that may not be compatible with the plugin.
 
-TP-Link :
--   Les timers ne sont pas gérés.
--   Les informations de consommation électrique ne sont pas gérées pour les ampoules.
+H810:
+-   stage games are not managed.
+-   There are different models that may not be compatible with the plugin.
 
-Extel Meli :
--   La partie son de la lampe n'est pas prise en compte
+TP-Link:
+-   Timers are not managed.
+-   Power consumption information is not supported for light bulbs.
 
-Xiaomi Philips :
--   Toutes les fonctionnalités sont prises en compte
+Extel Meli:
+-   The sound part of the lamp is not taken into account
 
-Contrôleurs de pixel strip leds compatibles Magic Home :
--   les scènes custom ne sont pas gérées.
+Xiaomi Philips:
+-   All features are taken into account
 
-Périphériques compatibles Tuya Smart/Jinvoo/eFamilyCloud :
--   toutes les commandes des périphériques validés (voir le forum) du firmware 1.0 et du firmware 2.0 sont compatibles (en particulier les prises Neo CoolCam).
+Magic Home compatible pixel strip LED controllers:
+-   custom scenes are not supported.
 
-Sonoff :
--   Basic R3 avec le firmware 3.3.0 .
+Compatible devices Tuya Smart / Jinvoo / eFamilyCloud:
+-   all commands for validated devices (see the forum) of firmware 1.0 and firmware 2.0 are compatible (especially the Neo CoolCam sockets).
 
-Ewelink :
--   périphériques avec le firmware 3.0.1 .
+Sonoff DIY:
+-   Basic R3 with firmware 3.3.0 devices with a single contact.
 
-# Configuration du module wifi
+Ewelink and Sonoff LAN:
+-   devices with firmware 3.0.1 (list given below in the eWelink section)
 
-## Installer les périphériques
+# WiFi module configuration
 
-Télécharger l'application mobile du constructeur et suivre les indications afin de contrôler le périphérique avec le mobile. Pour chaque équipement wifilightV2, une aide détaillée est fournie dans la page de configuration.
+## Install devices
 
-Tant que le périphérique n'est pas contrôlé avec l'application mobile, le plugin ne pourra pas fonctionner.
+Download the mobile application from the manufacturer and follow the instructions to control the device with the mobile. For each wifilightV2 device, detailed help is provided in the configuration page.
 
-Consultez l'aide et les forums du constructeur des périphériques.
+As long as the device is not controlled with the mobile application, the plugin will not work.
 
+See help and forums for the device builder.
 
-## Configurer le routeur
-Il faut configurer le DHCP de votre routeur (généralement fourni par votre fournisseur d'accès) pour modifier l'attribution de l'adresse IP du module wifi ou de l'ampoule ou la prise pour qu'elle soit statique. Noter cette adresse. En général, elle sera de la forme :
-192.168.1.xxx 
-où xxx correspond à l'adresse du module wifi (2 à 254)
 
-Consultez les forums de votre box pour apprendre à configurer votre DHCP.
+## Configure the router
+It is necessary to configure the DHCP of your router (generally provided by your service provider) to modify the attribution of the IP address of the module wifi or the bulb or the catch so that it is static. Rate this address. In general, it will be of the form: 192.168.1.xxx where xxx is the address of the wifi module (2 to 254)
 
-Après cette modification, vérifier que l'application mobile contrôle toujours le périphérique.
+Check the forums in your box to learn how to configure your DHCP.
 
-Vous pouvez alors passer à la configuration du plugin wifilightV2.
+After this change, verify that the mobile app is still controlling the device.
 
-## Installation et Configuration du plugin
+You can then go to the configuration of the wifilightV2 plugin.
 
-Aide : 
--   Utiliser l'icône sous forme de point d'interrogation pour obtenir une aide sur chaque élément de configuration.
+## Plugin Installation and Configuration
 
-Paramétrage :
--   Pour paramétrer un équipement, choisir le menu Plugins / Objets communicants / wifilightV2
--   Puis cliquer sur le bouton en haut à gauche Ajouter un module Wifi 
--   Saisir le nom du module wifi
--   Saisir l'objet parent
--   Choisir la catégorie Lumière (par défaut)
--   Activer et rendre visible (par défaut)
--   Saisir l'adresse IP du module de la prise ou de l'ampoule WiFi (voir la FAQ pour plus d'explications)
--   Pour certains périphériques il est demandé de saisir le canal utilisé, créer un équipement wifilightV2 par canal
--   Pour certains périphériques il est demandé de saisir un jeton ou (et) un identifiant, consulter l'aide sur la page de configuration du périphérique
--   Pour certains périphériques il est possible de supprimer le retour d'état s'il provoque des microcoupures 
--   Pour certains contrôleurs il faut indiquer le nombre de leds des pixel strip leds
--   Pour certains contrôleurs il faut indiquer l'ordre des couleurs si les couleurs par défaut ne correspondent pas
--   Saisir la marque ou le type de périphérique
--   Saisir le sous-type exact du contrôleur, de l'ampoule, de la prise ou du strip-led, ceci est indispensable pour créer les commandes afin de piloter le périphérique
--   Saisir le nombre d'envois de commandes : permet de répéter la commande pour un équipement éloigné en cas de mauvaise transmission. (1 par défaut). Certaines ampoules ou prises ne gèrent pas cette répétition car le plugin s'assure par retour d'état de la transmission. Certaines commandes relatives (incrémentations) ne sont pas répétées.
--   Saisir le délai d'envoi en cas de répétition (0 ms par défaut, 100 ms max)
--   Saisir le % d'incrémentation de l'intensité lors de l'appui sur les boutons d'incrémentation ou de décrémentation de l'intensité lumineuse
--   Saisir le n° de groupe pour la synchronisation, voir plus bas
+wifilightV2 does not create any device automatically, you have to create them in the plugin before setting them up.
 
-## Ajout des commandes
-lors de la sauvegarde du module, les commandes sont automatiquement créées.
+Help :
+-   Use the question mark icon for help on each configuration item.
 
-le nom des commandes peut être modifié. Les commandes automatiquement créées et effacées sont recréées lors d'une sauvegarde.
+Setting :
+-   To set up a device, choose the menu Plugins / Communicating objects / wifilightV2
+-   Then click on the button at the top left Add a Wifi module
+-   Enter the name of the wifi module
+-   Enter the parent object
+-   Choose the category Light (default)
+-   Enable and make visible (default)
+-   Enter the IP address of the module of the WiFi socket or light bulb (see the FAQ for more information)
+-   For some devices it is requested to enter the channel used, create a device wifilightV2 per channel
+-   For some devices it is requested to enter a token or (and) an identifier, see help on the device configuration page
+-   For some devices it is possible to suppress the feedback if it causes micro-cuts
+-   For some controllers it is necessary to indicate the number of leds of the pixel strip leds
+-   For some controllers it is necessary to indicate the order of the colors if the colors by default do not correspond
+-   Enter the brand or type of device
+-   Enter the exact sub-type of the controller, bulb, plug or strip-led, this is essential to create the commands to control the device
+-   Enter the number of command sends: allows you to repeat the command for a remote device in the event of a bad transmission. (1 by default). Some bulbs or plugs do not manage this repetition because the plugin ensures by return of state of the transmission. Some relative commands (increments) are not repeated.
+-   Enter the sending delay in case of repetition (default 0 ms, 100 ms max)
+-   Enter the intensity increment% when pressing the buttons for incrementing or decrementing the light intensity
+-   Enter the group number for synchronization, see below
 
-lorsque toutes les commandes sont créées, elles peuvent alourdir l'interface, il est possible de ne pas les afficher en configurant la commande.
+## Adding commands
+when saving the module, the commands are automatically created.
 
-## Modification du type ou de sous-type de périphérique
+the name of the commands can be changed. The commands automatically created and deleted are recreated during a backup.
 
--   supprimer toutes les commandes
--   modifier le type ou le sous-type de périphérique
--   sauvegarder 2 fois
+when all the commands are created, they can weigh down the interface, it is possible not to display them by configuring the creation of the commands.
 
-# Fonctionnement du retour d'état et état de connexion
+## Changing the device type or subtype
 
-## Compatibilité du retour d'état
+-   remove all orders
+-   change device type or subtype
+-   save 2 times
 
-Le retour d'état fonctionne avec les contrôleurs LW12/Lagute, Magic UFO, Arilux et Wifi 3x0 (partiellement) ainsi que les ampoules et bandeau led Xiaomi YeeLight, les ampoules et prises TP-Link, les ampoules Xiaomi Philips, les périphériques compatibles Tuya smart app, Extel Meli et les contrôleurs de de pixel strip leds compatibles Magic Home.
+# Operation of state feedback and connection status
 
-## Principe
+## Compatibility of the state return
 
-Le retour d'état consiste à ce que Jeedom récupère l'état du contrôleur si son état a été changé par un autre maitre que Jeedom : appli portable ou télécommande.
+Status feedback is immediate for the following devices:
+- Yeelight
+- compatible with ewelink
+- compatible with the live Tuya smart app
+- Sonoff in LAN mode
 
-## Mise à jour périodique de Jeedom
-LW12/Lagute, Magic UFO, Arilux, Wifi 3x0, TP-Link, Extel Meli, Xiaomi Yeelight, Xiaomi Philips, Tuya Smart/Jinvoo/eFamilyCloud apps et contrôleurs de pixel leds compatibles magic home : toutes les minutes Jeedom interroge le contrôleur ou le périphérique pour connaitre son état et mettre à jour l'allure des widgets du plugin ( sliders et couleur ). Des informations correspondant à l'état sont mises à jour et peuvent être interrogées par les scénarios.
+For example, if a switch is operated, Jeedom will know it immediately.
 
-## Mise à jour par scénario
+For devices:
+ - LW12 / Lagute
+ - Magic UFO / Home
+ - Arilux
+ - Wifi 3x0 (partially)
+ - TP-Link
+ - Xiaomi Philips
+ - Extel Meli
+ - Sonoff in DIY mode
 
-Les commandes xxxxGet et Etat peuvent être utilisées dans un scénario Jeedom.
+The plugin regularly queries the device to know its status. The delay for Jeedom to know the state can exceed 1 minute.
 
-## Information de connexion :
+For other devices there is no status feedback;
 
-La commande ConnectedGet permet de récupérer l'état de la connexion de chaque périphérique. Elle est mise à jour toutes les minutes.
--  -1 : périphérique avec retour d'état OK
--  -2 : impossible de préparer la connexion au périphérique
--  -3 : périphérique non connecté
--  -4 : pas de réponse du périphérique
--  -5 : mauvaise réponse du périphérique
--  -6 : périphérique sans retour d'état
+## Update by scenario
 
-# Fonctionnement de la synchronisation
+The xxxxGet and Status commands can be used in a Jeedom scenario.
 
-##  Principe de la synchronisation
+## Connection Information
 
-Il est possible de synchroniser plusieurs périphériques de marques différentes :
+The ConnectedGet command retrieves the connection status of each device. It is updated every minute.
+-  -1: Device with status feedback OK
+-  -2: Can not prepare device connection
+-  -3: Device not connected
+-  -4: no response from the device
+-  -5: wrong device response
+-  -6: Device without status return
 
-Toutes les périphériques qui ont le même numéro de groupe sont synchronisées
+# How synchronization works
 
-Le groupe 0 n'est pas synchronisé (groupe par défaut)
+## Principle of synchronization
 
-Lors de l'utilisation d'une commande d'un périphérique du groupe, la même commande est appliquée sur tous les périphériques du même groupe
+It is possible to synchronize multiple devices of different brands:
 
-Si la commande n'existe pas pour le périphérique synchronisé, elle est simplement ignorée.
+All devices that have the same group number are synchronized
 
-Attention, les périphériques ne vont pas être commandées exactement en même temps à cause des délais de latence lors de l'envoi des commandes qui se fait les uns après les autres.
+Group 0 is not synchronized (default group)
 
-## Configuration de la synchronisation
+When using a command from a device in the group, the same command is applied to all devices in the same group
 
-Il suffit de mettre un nombre différent de zéro dans le champ groupe lors de la configuration de l'équipement. Tous les équipements ayant les mêmes numéros seront synchronisés.
+If the command does not exist for the synchronized device, it is simply ignored.
 
-# Cas particulier des box Mi.Light
+Warning, the devices will not be ordered exactly at the same time due to latency when sending orders one after the other.
 
-## Configuration de l'iBox 1 ou 2
+## Synchronization configuration
 
-Depuis la version 1.0.58 des iBox 1 et 2, il peut être nécessaire de modifier leur configuration pour qu'elles puissent dialoguer avec Jeedom. 
+Simply put a different number of zero in the group field when configuring the equipment. All equipment with the same numbers will be synchronized.
 
-Se connecter en http (avec un navigateur Web) à l'adresse IP de votre iBox. Les identifiants par defaut sont admin/admin. Aller dans l'onglet "Other Setting" et dans "Network Parameters setting/Protocol" choisir UDP et sauvegarder.
+# Special case of Mi.Light boxes
 
-# Cas particulier des Xiaomi Yeelight
+## Configuring iBox 1 or 2
 
-## Configuration de l'ampoule
-Il est indispensable d'activer le contrôle par réseau local via l'application  Xiaomi Yeelight.
+Since version 1.0.58 of iBox 1 and 2, it may be necessary to modify their configuration so that they can interact with Jeedom.
 
-## Mode Scène Xiaomi Yeelight
-Il est possible de configurer les modes scène. Plusieurs modes scène sont préprogrammés dans le plugin mais il est possible d'ajouter d'autres modes scène.
+Connect to http (with a web browser) to the IP address of your iBox. The default credentials are admin / admin. Go to the &quot;Other Setting&quot; tab and in &quot;Network Parameters setting / Protocol&quot; choose UDP and save.
 
-Il suffit de respecter certaines conditions :
--   Ajouter une commande wifilightV2 action de type Défaut
--   Lui donner un nom (par exemple Scene Clignote)
--   Dans paramètres, mettre la commande scène Yeelight, par exemple : "id":1, "method":"set_scene","params":["cf",0,0,"500,1,255,100,1000,1,16776960,70"]
+# Special case of Xiaomi Yeelight
 
-Ne pas mettre les accolades de début et de fin ainsi que les caractères de retour à la ligne, le plugin les ajoutera automatiquement
-S'inspirer des commandes préconfigurées pour créer ces modes scène supplémentaires.
+## Bulb configuration
+It is essential to enable LAN control via the Xiaomi Yeelight application.
 
-## Mise à jour de l'état dans Jeedom
-Lors de l'activation du plugin et dès que le démon est lancé ainsi que toutes les minutes, le plugin recherche les ampoules alimentées et connectées à Jeedom.
+## Xiaomi Yeelight Scene Mode
+It is possible to configure the scene modes. Several scene modes are preprogrammed in the plugin but it is possible to add other scene modes.
 
-Dès que l'ampoule est trouvée, l'état de l'ampoule est remonté au plugin immédiatement.
+It suffices to respect certain conditions:
+-   Add a wifilightV2 action command of type Default
+-   Give it a name (eg Scene Blink)
+-   In parameters, put the scene command Yeelight, for example: &quot;id&quot;: 1, &quot;method&quot;: &quot;set_scene&quot;, &quot;params&quot;: [&quot;cf&quot;, 0,0, &quot;500,1,255,100,1000,1,16776960, 70 &quot;]
 
-Noter que le plugin peut mettre jusqu'à 1 minute pour trouver une ampoule et 4 minutes pour trouver qu'un périphérique est déconnecté.
+Do not put the start and end braces as well as the newline characters, the plugin will add them automatically. Inspire preconfigured commands to create these additional scene modes.
 
-# Cas particulier des périphériques TP-Link
+## Update status in Jeedom
+When activating the plugin and as soon as the daemon is started and every minute, the plugin searches for the bulbs powered and connected to Jeedom.
 
-## Configuration de l'ampoule
+As soon as the bulb is found, the state of the bulb is reassembled to the plugin immediately.
 
-Depuis mi 2019, de nouveaux périphériques sortent en protocole version 2. Le protocole V2 nécessite de récupérer un jeton (token) permettant au plugin de dialoguer avec les périphériques TP-Link.
+Note that the plugin can take up to 1 minute to find a light bulb and 4 minutes to find that a device is disconnected.
 
-Pour obtenir ce jeton, il faut capturer les trames échangées entre l'appli Kasa sur le téléphone et le périphérique à ajouter dans le plugin. Sous Android il faut utiliser Packet Capture.
+# Special case of TP-Link devices
 
-Le plugin permet ensuite d'extraire le jeton. Il faut copier la trame récupérée dans le champ Paramètres de la commande getKey puis exécuter cette commande. Si la trame est décodable, le jeton sera affiché dans les logs et dans le centre de messages (attention : effacer à chaque fois le message après lecture).
+## Bulb configuration
 
-La trame à mettre dans "Paramètres" doit avoir l'allure suivante (les ... remplacent d'autres valeurs) :
+Since mid 2019, new devices are coming out in protocol version 2. The V2 protocol requires to recover a token (token) allowing the plugin to interact with the TP-Link devices.
 
-    00 00 00 5f d0 f2 91 fe 90 e4 81 f9 8d af 95 ... 99 bb 81 fa 87 fa 87
+To obtain this token, it is necessary to capture the frames exchanged between the Kasa app on the phone and the device to be added in the plugin. In Android you have to use Packet Capture.
 
-Les données sont séparées par des espaces et représentent des nombres héxadécimaux qui sont issus directement de Packet Capture. En général, la trame commence par 3 zéros puis, ici, 5f donne la taille de la trame en hexadécimal soit 95 en décimal.
+The plugin then allows to extract the token. You must copy the retrieved frame to the GetKey Command Parameters field and execute this command. If the frame is decodable, the token will be displayed in the logs and in the message center (be careful: delete the message each time after reading).
 
-Aucune aide ne sera donnée pour récupérer la trame à partir de Packet Capure.
+The frame to put in &quot;Parameters&quot; must have the following pace (the ... replace other values):
 
-Pour l'instant seules les prises sont utilisables en V2, contacter l'auteur si vous avez des ampoules en V2.
+00 00 00 5f d0 f2 91 fe 90 e4 81 f9 8d af 95 ... 99 bb 81 fa 87 fa 87
 
-# Cas particulier des Xiaomi Philips
+The data is separated by spaces and represents hexadecimal numbers that come directly from Packet Capture. In general, the frame starts with 3 zeros and here 5f gives the size of the frame in hexadecimal or 95 in decimal.
 
-## Configuration de l'ampoule
+No help will be given to recover the frame from Packet Capure.
 
-Il est indispensable de récupérer un jeton (token) permettant au plugin de dialoguer avec les périphériques Xiaomi Philips.
+For the moment only the plugs are usable in V2, to contact the author if you have bulbs in V2.
 
-La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Xiaomi token.
+# Special case of Philips Xiaomi
 
-Aucune aide ne sera donnée pour récupérer le jeton.
+## Bulb configuration
 
-# Cas particulier des Sonoff en mode DIY
+It is essential to recover a token allowing the plugin to interact with Philips Xiaomi devices.
 
-## Configuration du mode DIY
+The procedure is complex and requires several manipulations. Do a search on the web with the following keyword: Xiaomi token.
 
-Sonoff donne tous les éléments [ici]( https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) pour configurer les modules en mode DIY.
+No help will be given to recover the token.
 
-Un téléphone portable et un PC sous windows avec carte Wifi sont nécessaires.
-Le logiciel à faire tourner pour trouver le Sonoff donne dans la colonne de gauche l'identifiant nécessaire à la configuration du périphérique.
+# Special case of Sonoff in DIY mode
 
-Le périphérique Sonoff doit être en firmware 3.0.1 ou plus, l'appli Windows ci-dessus permet de mettre à jour le firmware.
+## DIY mode setup
 
-# Cas particulier des périphériques Ewelink en mode LAN
+Sonoff gives all the elements [here] (https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) to configure the modules in DIY mode.
 
-## Récupération de l'APiKey et du DeviceID
+A mobile phone and a Windows PC with WiFi card are required. The software to run to find the Sonoff gives in the left column the identifier needed to configure the device.
 
-Suivre les indications [ici](https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) pour récupérer ces 2 informations. Le deviceid est à mettre dans l'identifiant du plugin. L'Apikey est à mettre dans le jeton. Il ne faut mettre ni espace ni guillements.
+The Sonoff device must be firmware 3.3.0 or higher, the above Windows application allows to update the firmware.
 
-Le périphérique doit être en firmware 3.3.0 ou plus, l'appli Ewelink permet de mettre à jour le firmware.
+# Special case of devices compatible with the Ewelink application in LAN mode
 
-## Compatibilité :
+## Retrieving APiKey and DeviceID
 
-De nombreuses marques sont compatibles dont les Sonoff. Pour l'instant seuls les interrupteurs et prises murales simples sont compatibles ainsi que les sonoff avec un seul contact.
+Follow the directions [here] (https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) to retrieve these 2 pieces of information. The deviceid is to put in the identifier of the plugin. The Apikey is to put in the token. You must not put spaces or quotes.
 
-# Cas particulier des périphériques compatibles Tuya Smart/Jinvoo/eFamilyCloud apps
+The device must be firmware 3.0.1 or higher, the Ewelink app allows to update the firmware.
 
-## Compatibilité :
+## Connection Information
 
-De nombreuses marques sont compatibles avec le plugin. Consulter le forum pour plus d'informations. Le plugin permet de contrôler de nombreux actionneurs.
-Il peut récupérer l'état des périphériques dès que celui-ci envoie une information de changement d'état ou quand il les interroge toutes les minutes. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
+When a device connects to the wifi, the plugin will immediately be notified. On the other hand, when a device is disconnected, the plugin can only know if a command is sent by the plugin.
 
-Les équipements suivants sont compatibles en firmware 1.0. et en firmware 2.0.
+## Compatibility
 
--  prises simples avec et sans retour sur la consommation, en particulier les prises wifi Neo Coolcam
--  prises multiples avec et sans consommation avec et sans USB
--  commande de volets roulants
--  interrupteurs muraux : 1, 2 ou 3 inters
--  interrupteur mural avec variateur
--  humidificateur NEWKBO 300 ml et uniquement celui-ci
--  thermostat BHT-6000GCLW / BHT 6000 et uniquement ces modèles
+Many brands are compatible including Sonoff.
+- Switches, wall sockets, switch: simple of all brands
+- Switches, wall outlets, switch: multiples of all brands
+- 2 types of lamps (test both types)
+- Sonoff TH10 / 1H16 temperature sensor
+- Sonoff Basic, RF, POW, Mini
+- Sonoff Dual
+- Sonoff 4CH / 4CH PRO
+- Sonoff Touch
+- Sonoff S20 / S26
+- Sonoff T1 / TX
+- Sonoff SLAMPHER
+- Sonoff T4EUC1
+- Sonoff RF bridge 433 for sensors only (door, detector, remote control)
 
-Néanmoins, la compatibilité de ces périphériques n'est pas garantiear le protocole peut être modifié par les constructeurs.
+For multichannel devices (like the Sonoff 4CH) you have to create as many wifilightV2 devices as there are channels, a copy of the first created easy task, then you have to change the channel number.
 
-Les capteurs de présence et d'ouverture ne sont pas compatibles car ils ne dialoguent pas en local.
+For other devices (Sonoff Ifan, dimmer for example) or if the configuration does not work and after embedding the device in Jeedom (with the Sonoff Basic configuration for example) locate in the logs:
 
-Le plugin teste les périphériques (mais ils doivent être ajoutés manuellement) et affiche un message dans le centre de messages lorsqu'un prériphérique a été configuré avec le mauvais firmware.
+Receive after decode: {...............}
 
+and give in the [forum] (https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) the contents of the braces to allow integration of the module in the plugin.
 
-## Configuration du périphérique
+# Special case of compatible devices Tuya Smart / Jinvoo / eFamilyCloud apps
 
-Il est indispensable de récupérer une clé locale (LocalKey) et un identifiant permettant au plugin de dialoguer avec les périphériques.
+## Compatibility
 
-La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localkey, sur Github en particulier ou sur le forum Jeedom.
+Many brands are compatible with the plugin. Consult the forum for more information. The plugin can control many actuators. It can retrieve the status of devices as soon as it sends status change information or when it queries them every minute. If a wall switch is used, Jeedom will know it immediately.
 
-Le périphérique ne doit pas être connecté à une application sur téléphone mobile, sinon il ne répondra pas aux ordres de Jeedom. Il faut donc fermer toute application possiblement connectée au périphérique.
+The following devices are compatible with firmware 1.0. and in firmware 2.0.
 
-Si le périphérique est désinstallé puis réinstallé dans l'application mobile, alors sa clé sera modifiée. Il faudra retrouver la clé avec la procédure ci-dessus. 
+-  simple plugs with and without a return on consumption, especially Neo Coolcam wifi sockets
+-  multiple outlets with and without power consumption with and without USB
+-  roller shutter control
+-  wall switches: 1, 2 or 3 inters
+-  wall switch with dimmer
+-  humidifier NEWKBO 300 ml and only this one
+-  thermostat BHT-6000GCLW / BHT 6000 and only these models
+-  RGBW globe bulbs and similar models in operation
 
-Aucune aide ne sera donnée pour récupérer la clé ou l'identifiant.
+Nevertheless, the compatibility of these devices is not guaranteed because the protocol can be modified by the manufacturers.
 
-Tout changement de configuration nécessite de redémarrer le démon.
+For multi-channel devices (such as multiple sockets) you need to create as many wifilightV2 devices as you can channel, a copy of the first created easy task, then you have to change the channel number.
 
-## Configuration de la récupération de la consommation des prises
+Presence and opening sensors are not compatible because they do not communicate locally.
 
-Selon les marques, la consommation n'est pas envoyée de façon unique par la prise. Pour récupérer ce paramétrage, installer la prise dans Jeedom et conserver le retour d'état dans la configuration, puis aller dans les logs de wifilightV2. La prise est interrogée toutes les minutes. Repérer la message qui ressemble à :
+The plugin tests the devices (but they must be added manually) and displays a message in the message center when a device has been configured with the wrong firmware.
 
-return decoded : {"devId":"xxxxxxxxx","dps":{"1":false,"2":false,"9":0,"10":0,"18":0,"19":0,"20":2281,"21":1,"22":726,"23":28971,"24":19417,"25":1070}}
 
-L'index "20" correspond ici à la tension d'alimentation en centaine de mV soit : 228.1 V, elle doit légèrement bouger. Les index "18" et "19" correspondent au courant (mA) et à la puissance en W, ici aucun appareil n'est branché et donc les informations sont à zéro. C'est un bon moyen de trouver la tension, en branchant un appareil, ces 2 valeurs doivent être modifiées et la tension est juste après.
+## Device configuration
 
-La syntaxe est alors : 20;18;19 qu'il faut mettre dans le champ 'Paramétrage de l'énergie'.
+It is essential to recover a local key (LocalKey) and an identifier allowing the plugin to interact with the devices.
 
-Pour les plugs 1 prise, en général il faut : 6;4;5 (mis par défaut par le plugin).
+The procedure is complex and requires several manipulations. Search the web with keyword: Tuya localkey, on Github in particular or on the forum Jeedom.
 
-Pour les plugs 2 prises, en général il faut : 9;7;8 (mis par défaut par le plugin).
+The device must not be connected to a mobile phone application, otherwise it will not respond to Jeedom&#39;s orders. It is therefore necessary to close any application possibly connected to the device.
 
-Pour les autres prises, la valeur 20;18;19 est mise par défaut.
+If the device is uninstalled and reinstalled in the mobile app, then its key will be changed. It will be necessary to find the key with the procedure above.
 
-## Personnalisation des commandes
+No help will be given to recover the key or the identifier.
 
-Devant la diversité des périphériques compatibles Tuya, il peut être nécessaire de créer des commandes personnalisées.
+Any configuration change requires restarting the daemon.
 
-Créer une nouvelle commande action/défaut et mettre la commande Tuya dans paramètres. Les commandes Tuya sont au format JSON et contiennent dps:{xxxxxx}. C'est le xxxxxx qu'il faut mettre dans paramètres. 
+## Configuring recovery of socket consumption
 
-Exemples :
+According to brands, consumption is not sent uniquely by the outlet. To retrieve this setting, install the plug in Jeedom and keep the status back in the configuration, then go to the logs of wifilightV2. The catch is interrogated every minute. Spot the message that looks like:
 
-Pour lever un volet roulant : xxxxxx vaut "1":"1" . 
+return decoded: {&quot;devId&quot;: &quot;xxxxxxxxx&quot;, &quot;dps&quot;: {&quot;1&quot;: false, &quot;2&quot;: false, &quot;9&quot;: 0, &quot;10&quot;: 0, &quot;18&quot;: 0, &quot;19&quot; : 0, &quot;20&quot;: 2281, &quot;21&quot;: 1, &quot;22&quot;: 726, &quot;23&quot;: 28971, &quot;24&quot;: 19417, &quot;25&quot;: 1070}}
 
-Pour mettre la prise n°2 d'un plug à on : xxxxxx vaut "2":true .
+The index &quot;20&quot; here corresponds to the supply voltage in the hundred mV or 228.1 V, it must move slightly. The indexes &quot;18&quot; and &quot;19&quot; correspond to the current (mA) and the power in W, here no device is connected and therefore the information is at zero. This is a good way to find the voltage, by connecting a device, these 2 values must be changed and the voltage is just after.
 
-## Mise à jour de l'état dans Jeedom
-Lors de l'activation du plugin et dès que le démon est lancé ainsi que toutes les minutes, le plugin recherche les périphériques alimentés et connectés à Jeedom.
+The syntax is then: 20; 18; 19 which must be put in the &#39;Energy setting&#39; field.
 
-Dès que le périphérique est trouvé, l'état du périphérique est remonté au plugin immédiatement.
+For plugs 1 taken, in general you need: 6; 4; 5 (defaulted by the plugin).
 
-Noter que le plugin peut mettre jusqu'à 1 minute pour trouver qu'un périphérique est connecté ou déconnecté.
+For plugs 2 taken, in general you need: 9; 7; 8 (defaulted by the plugin).
+
+For other outlets, the value 20; 18; 19 is set by default.
+
+## Order customization
+
+Given the variety of Tuya-compatible devices, it may be necessary to create custom commands.
+
+Create a new action / default command, give it a name and put the command Tuya in parameters. Tuya commands are in JSON format and contain dps: {xxxxxx}. It is the xxxxxx that must be put in parameters.
+
+Examples:
+
+To lift a shutter: xxxxxx is &quot;1&quot;: &quot;1&quot;.
+
+To put plug 2 of a plug to on: xxxxxx is &quot;2&quot;: true.
+
+See the following paragraph for log interpretation.
+
+## Custom device
+
+It is possible to create a fully custom device and not just a custom command as before. The procedure requires that the device returns its state in the logs, otherwise there is no relief.
+
+### Configuration
+-   disable all wifilightV2 devices except the one to be tested
+-   configure the device (static IP address, LocalKey, Id, Hose App stopped)
+-   check that the demon is running, otherwise start it
+-   configure wifilightV2 logs in debug mode
+-   clear the logs
+
+### Retrieving information
+-   press a device button (on, off, up, down, etc.) or on the Smart Live app
+-   find in the logs the passage that looks like this:
+
+        Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"off","101":true}}
+        [2019-10-13 09:15:30][DEBUG] :       >>> : devId | 50701244cc50e37e9aff : 50701244cc50e37e9aff
+        [2019-10-13 09:15:30][DEBUG] :       >>> : dps | Array : Array
+        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 1 | stop : stop
+        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 101 | 1 : 1
+
+    Here, the off button has been selected on the device and it is observed that the dps 1 has changed.
+
+        Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"on","101":true}}
+        [2019-10-13 09:15:30][DEBUG] :       >>> : devId | 50701244cc50e37e9aff : 50701244cc50e37e9aff
+        [2019-10-13 09:15:30][DEBUG] :       >>> : dps | Array : Array
+        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 1 | stop : stop
+        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 101 | 1 : 1
+
+    Here, the button has been selected on the device and it is observed that the dps 1 has changed.
+
+-   Create a new action / default command in the device commands:
+    *    In the interface column put ON as the name of the button
+    *    In the column internal name and order number, set as unique Id: ON, as dps: 1 (without the double quotation marks) and as parameter: &quot;on&quot; (if you are not surrounded by quotation marks, you need them to take off).
+-   Create a new action / default command in the device commands:
+    *    In the interface column put OFF as the name of the button
+    *    In the internal name and order number column, set as unique Id: OFF, as dps: 1 (without the double quotation marks) and as parameter: &quot;off&quot; (if the off is not surrounded by quotation marks, you need them to take off).
+-   Create a new info / other command in the device commands:
+    *    In the interface column put STAT as the name of the info
+    *    In the Internal Name and Order ID column, set as unique Id: STATUS, like dps: 1 (without double quotation marks) and nothing in parameters.
+
+    In the case of digital information:
+
+        Receive after decode :{devId:50701244cc50e37e9aff,dps:{"3":850,"101":true}}
+        [2019-10-13 09:15:30][DEBUG] :       >>> : devId | 50701244cc50e37e9aff : 50701244cc50e37e9aff
+        [2019-10-13 09:15:30][DEBUG] :       >>> : dps | Array : Array
+        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 3 | 850 : 850
+        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 101 | 1 : 1
+
+    Here, an intensity slider has been selected on the device application and it is observed that the dps 3 has changed.
+
+-   Create a new action / cursor command in the device commands:
+    *    In the interface column put Intensity as cursor name
+    *    In the column internal name and order number, set as unique Id: Intensity, as dps: 3 (without the double quotation marks) and as parameter: # slider # (here the numerical value is not surrounded by quotation marks, it does not do not put them).
+-   Create a new info / other command in the device commands:
+    *    In the interface column put IntensiteGet as the name of the info
+    *    In the column internal name and order number, set as unique Id: IntensiteGet, as dps: 3 (without the double quotation marks) and nothing in parameters.
+
+Notes:
+-   nothing in the logs: bad IP address or device that does not return its status
+-   return with error: Incorrect Id
+-   return not decoded: incorrect localkey
+-   the command does not work: check the command
+
+## Update status in Jeedom
+When activating the plugin and as soon as the daemon is launched and every minute, the plugin searches for devices powered and connected to Jeedom.
+
+As soon as the device is found, the device status is returned to the plugin immediately.
+
+Note that the plugin can take up to 1 minute to find that a device is connected or disconnected.
 
 # FAQ
 
 
-## Quels périphériques peuvent être utilisés ?
+## Which devices can be used?
 
-Lire la documentation
+Read the documentation
 
-## Rien ne se passe
+## Nothing is happening
 
-Faire d'abord fonctionner le périphérique avec l'application mobile fournie par le constructeur.
+First run the device with the mobile application provided by the manufacturer.
 
-Utiliser le bouton <tester> dans le menu Plugin/Objets Connectés/wifilightV2/commandes.
+Use the button <tester> in the Plugin / Connected Objects / wifilightV2 / commands menu.
 
-Aucune aide ne sera apportée sans que les périphériques soient opérationnels avec l'application constructeur sur un téléphone portable.
-Il est nécessaire de donner une adresse IP fixe au contrôleur ou à la lampe.
-
-
-## Je ne sais pas configurer ma box internet
-
-Aucune aide ne sera apportée sur la box et les notions nécessaires pour configurer le routeur pour attribuer une adresse IP fixe. Consulter les forums de la box.
-
-## Toutes les commandes ne sont pas créées lors d'un changement de modèle de périphérique
-
-Sauvegarder 2 fois.
-
-## La gestion de l'intensité des ampoules blanches  Mi.Light/EasyBulb/LimitlessLED n'est pas pratique
-
-Le constructeur des leds n'a pas prévu de pouvoir affecter directement l'intensité de l'ampoule. On ne peut qu'incrémenter ou décrémenter par rapport à la valeur précédente. Le plugin ne fait que reproduire ce fonctionnement. Le curseur qui est proposé est en conséquence capricieux.
-
-## La gestion de l'intensité de la couleur a quelquefois des comportements imprévus
-
-Aucun protocole ne gère l'intensité de la couleur, bien que généralement les applications mobiles le fassent. Tant que Jeedom gère couleur et intensité, tout se passe bien. Mais si l'intensité est modifiée par une application mobile, les résultats ne sont pas toujours ceux attendus. Le plugin essaye de corriger le souci quand la lampe ou le contrôleur possède un retour d'état.
-
-## Y a-t-il un retour d'état ?
-
-Lire la documentation
-
-## Impossible de faire fonctionner les ampoules Xiaomi Yeelight
-
-Il est indispensable d'activer le mode contrôle par réseau local via l'application  Xiaomi Yeelight.
-
-## Je ne contrôle pas le son des ampoules Extel Meli
-
-Le son n'est pas géré par le plugin
-
-## Impossible de faire fonctionner les ampoules Xiaomi Philips
-
-Pour dialoguer avec les ampoules Xiaomi Philips, il est nécessaire de transmettre un jeton ou token en anglais. Sans ce jeton, l'ampoule ne prendra pas en compte les ordres qui lui sont envoyés. Ce jeton se trouve dans l'application Mi-Home et, selon votre téléphone, il existe plusieurs méthodes pour récupérer le jeton. La procédure est décrite sur plusieurs sites mais elle n'est pas reproduite ici pour deux raisons principales :
-
--   Xiaomi a déjà modifié son protocole ce qui a obligé à modifier la procédure pour récupérer le jeton, il pourrait encore le faire.
--   De nouvelles procédures plus simples peuvent être mises à disposition des internautes.
--   Cette documentation ne sera pas maintenue aussi rapidement qu'une simple recherche sur le web avec les mots clés : xiaomi token .
-
-## Impossible de faire fonctionner les périphériques compatibles Tuya/Smart live/Jinvoo/eFamilyCloud apps
-
-Pour dialoguer avec ces ampoules, prises et autres périphériques, il est nécessaire de transmettre une clé locale ou Localkey ou token en anglais et un identifiant. Sans ces paramètres, l'ampoule ne prendra pas en compte les ordres qui lui sont envoyés. Il existe plusieurs méthodes pour récupérer ces informations. La procédure est décrite sur plusieurs sites mais elle n'est pas reproduite ici pour deux raisons principales :
-
--   Les applications ont été mises à jour, ce qui a obligé à modifier la procédure pour récupérer les informations.
--   De nouvelles procédures plus simples peuvent être mises à disposition des internautes.
--   Cette documentation ne sera pas maintenue aussi rapidement qu'une simple recherche sur le web avec les mots clés : Tuya LocalKey et en particulier sur Github.
-
-## Erreur lors de l'envoi de commande / roue crantée sans arrêt / Emission sans arrêt
--   les équipements wifilightV2 doivent être mis à jour
--   aller dans chaque équipement et sauvegarder 2 fois
--   tester avec un nouvel équipement si cela persiste
-
-## Pont Mi.Light IBox1, iBox2, V6 : commande prise en compte aléatoirement
--   les ordres sont envoyés trop rapidement
--   dans les scénarios, mettre des pauses de durée suffisante
-
-## Pont Mi.Light IBox1, iBox2, V6 : commande non prise en compte
--   lors de l'appairage avec l'application Mi.Light sur mobile et lors de la configuration de wifilightV2, bien choisir la même télécommande.
-
-## LW12 Magic UFO Arilux Wifi3x0 H801 Contrôleurs compatibles Magic Home Tuya/Jinvoo/eFamilyCloud
--   de nombreuses versions existent et certaines peuvent être incompatibles avec le plugin. Contacter l'auteur pour une éventuelle mise à jour.
-
-## Des commandes sont manquantes lors de la création ou de la modification du sous type d'ampoule
--   sauvegarder l'équipement (2 fois)
+No help will be provided without the devices being operational with the build application on a mobile phone. It is necessary to give a fixed IP address to the device.
 
 
-# Comment obtenir de l'aide ?
+## I do not know how to configure my internet box
+
+No help will be provided on the box and the concepts necessary to configure the router to assign a fixed IP address. Consult the forums of the box.
+
+## All commands are not created during a device model change
+
+Save 2 times.
+
+## White light intensity management Mi.Light / EasyBulb / LimitlessLED is not practical
+
+The manufacturer of LEDs has not planned to directly affect the intensity of the bulb. We can only increment or decrement from the previous value. The plugin only replicates this operation. The cursor that is proposed is therefore capricious.
+
+## Color intensity management sometimes has unexpected behaviors
+
+No protocol handles color intensity, although generally mobile applications do. As long as Jeedom manages color and intensity, everything goes well. But if the intensity is changed by a mobile application, the results are not always the expected ones. The plugin tries to fix the problem when the lamp or controller has a status feedback.
+
+## Is there a return of state?
+
+Read the documentation
+
+## Can not operate Xiaomi Yeelight bulbs
+
+It is essential to activate LAN control mode via the Xiaomi Yeelight application.
+
+## I do not control the sound of Extel Meli bulbs
+
+Sound is not supported by the plugin
+
+## Can not operate Philips Xiaomi bulbs
+
+To interact with Philips Xiaomi bulbs, it is necessary to transmit a token or token in English. Without this token, the bulb will not take into account the orders sent to it. This token is in the Mi-Home app and, depending on your phone, there are several ways to recover the token. The procedure is described on several sites but it is not reproduced here for two main reasons:
+
+-   Xiaomi has already modified its protocol which has forced to modify the procedure to recover the token, it could still do it.
+-   New and simpler procedures can be made available to Internet users.
+-   This documentation will not be maintained as quickly as a simple search on the web with the keywords: xiaomi token.
+
+## Unable to operate compatible devices Tuya / Smart live / Jinvoo / eFamilyCloud apps
+
+To interact with these bulbs, sockets and other devices, it is necessary to transmit a local key or Localkey or token in English and an identifier. Without these parameters, the bulb will not take into account the orders sent to it. There are several methods to retrieve this information. The procedure is described on several sites but it is not reproduced here for two main reasons:
+
+-   The applications have been updated, which has meant changing the procedure to retrieve the information.
+-   New and simpler procedures can be made available to Internet users.
+-   This documentation will not be maintained as quickly as a simple search on the web with the keywords: Tuya LocalKey and in particular on Github.
+
+## Error sending command / notched wheel without stop / Emission without stop
+-   wifilightV2 devices need to be updated
+-   go into each equipment and save 2 times
+-   test with new equipment if this persists
+
+## Mi.Light bridge IBox1, iBox2, V6: command taken into account randomly
+-   orders are sent too quickly
+-   in the scenarios, put breaks of sufficient duration
+
+## Mi.Light bridge IBox1, iBox2, V6: command not taken into account
+-   when pairing with the Mi.Light mobile application and when configuring wifilightV2, choose the same remote control.
+
+## LW12 UFO Magic Arilux Wifi3x0 H801 Compatible Magic Home Tuya / Jinvoo / eFamilyCloud Controllers
+-   many versions exist and some may be incompatible with the plugin. Contact the author for a possible update.
+
+## Orders are missing when creating or changing the subtype of the bulb
+-   save the equipment (2 times)
 
 
-Aller sur le forum de Jeedom [ici](https://www.jeedom.com/forum/viewtopic.php?f=141&t=24322)
+# How to get help?
 
-# Bogues connus
 
-La mémoire diminue drastiquement
--   Bogue corrigé.
+Go to Jeedom&#39;s forum [here] (https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632)
 
-Pour les prises compatibles Tuya des microcoupures surviennent régulièrement
--   Bogue corrigé.
+# Known bugs
+
+The memory decreases drastically
+-   Bug fixed.
+
+For Tuya-compatible outlets, micro-cuts occur regularly
+-   Bug fixed.
