@@ -1,4 +1,4 @@
-1.53 - 2019-12-03
+1.53 - 2019-12-03 (version beta)
 -   Ewelink : ajout du Sonoff RF bridge 433 - uniquement les capteurs
 -   Sonoff TH10/TH16 : ajout des informations du thermostat interne
 -   Sonoff Pow R2 : ajout des informations électriques

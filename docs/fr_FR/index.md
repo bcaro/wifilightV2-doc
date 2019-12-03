@@ -14,37 +14,37 @@ Ce plugin permet de gérer de nombreux bandeaux de leds ou ampoules leds ou pris
 Il existe de nombreux produits compatibles avec le plugin mais de marques très différents ou sans marque.
  
 Les produits compatibles :
--   Ampoules Mi.Light/EasyBulb/LimitlessLED reliées aux contrôleurs ci-dessous : pas de retour d'état \*
--   Strip-led Mi.Light/EasyBulb/LimitlessLED reliée aux contrôleurs ci-dessous : pas de retour d'état \*
--   Contrôleur led Mi.Light/EasyBulb/LimitlessLED V3.0 à V5.0 (la miboxer n'est pas compatible): pas de retour d'état \*
--   Contrôleur led Mi.Light/EasyBulb/LimitlessLED V6.0/iBox1/iBox2 : pas de retour d'état \*
--   Ampoules WiFi Xiaomi Yeelight blanches et couleur avec retour d'état \*
--   Strip-led WiFi Xiaomi Yeelight couleur avec retour d'état \*
--   Plafonnier WiFi Xiaomi Yeelight avec retour d'état \*
--   Lampe de bureau WiFi Xiaomi Mijia avec retour d'état \*
-- 	Sonoff Basic R3 en mode DIY avec retour d'état \*\*
+-   Ampoules Mi.Light/EasyBulb/LimitlessLED reliées aux contrôleurs ci-dessous : pas de retour d'état !
+-   Strip-led Mi.Light/EasyBulb/LimitlessLED reliée aux contrôleurs ci-dessous : pas de retour d'état !
+-   Contrôleur led Mi.Light/EasyBulb/LimitlessLED V3.0 à V5.0 (la miboxer n'est pas compatible): pas de retour d'état !
+-   Contrôleur led Mi.Light/EasyBulb/LimitlessLED V6.0/iBox1/iBox2 : pas de retour d'état !
+-   Ampoules WiFi Xiaomi Yeelight blanches et couleur avec retour d'état !
+-   Strip-led WiFi Xiaomi Yeelight couleur avec retour d'état !
+-   Plafonnier WiFi Xiaomi Yeelight avec retour d'état !
+-   Lampe de bureau WiFi Xiaomi Mijia avec retour d'état !
+- 	Sonoff Basic R3 en mode DIY avec retour d'état !!
 
 Produits pouvant être compatibles et non garantis :
--   LW12/Lagute : RGB strip-led contrôleur : retour d'état \*
--   Wifi 320/370 RGB/RGBW strip-led contrôleur : retour d’état partiel \*
--   Magic UFO : RGBW strip-led contrôleur, gère le blanc \*
--   MagicHome : RGBW/RGBWW strip-led contrôleur et ampoules/spots RGBW compatibles avec l'appli MagicHome \*
--   H801 : RGBW strip-led contrôleur, pas de retour d’état \*\*
--   Arilux AL-C01/02/03/04/06/10 : RGB/RGBW/RGBWW strip-led contrôleur, retour d’état \*
--   TP-Link LB100/110/120/130 : ampoules avec retour d’état \*
--   Lampe Extel Meli avec retour d'état \*
--   Xiaomi Philips : Lampe bureau, ampoule et plafonnier avec retour d'état \*\*\*
--   Ampoules, prises, interrupteur, interrupteurs volets, humidifieur, thermostat compatibles Tuya Smart live ou Jinvoo smart ou eFamilyCloud apps avec retour d'état \*\*\*
--   Prises électriques TP-link HS100 HS110 avec retour d'état \*\*
--   Contrôleurs de pixel strip leds compatible Magic home avec retour d'état \*
--	Périphériques contrôlés par l'appli Ewelink dont les Sonoff en mode LAN avec retour d'état \*\*\*
+-   LW12/Lagute : RGB strip-led contrôleur : retour d'état !
+-   Wifi 320/370 RGB/RGBW strip-led contrôleur : retour d’état partiel !
+-   Magic UFO : RGBW strip-led contrôleur, gère le blanc !
+-   MagicHome : RGBW/RGBWW strip-led contrôleur et ampoules/spots RGBW compatibles avec l'appli MagicHome !
+-   H801 : RGBW strip-led contrôleur, pas de retour d’état !!
+-   Arilux AL-C01/02/03/04/06/10 : RGB/RGBW/RGBWW strip-led contrôleur, retour d’état !
+-   TP-Link LB100/110/120/130 : ampoules avec retour d’état !
+-   Lampe Extel Meli avec retour d'état !
+-   Xiaomi Philips : Lampe bureau, ampoule et plafonnier avec retour d'état !!!
+-   Ampoules, prises, interrupteur, interrupteurs volets, humidifieur, thermostat compatibles Tuya Smart live ou Jinvoo smart ou eFamilyCloud apps avec retour d'état !!!
+-   Prises électriques TP-link HS100 HS110 avec retour d'état !!
+-   Contrôleurs de pixel strip leds compatible Magic home avec retour d'état !
+-	Périphériques contrôlés par l'appli Ewelink dont les Sonoff en mode LAN avec retour d'état !!!
 
 Pour ces contrôleurs, ampoules ou prises, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin.
 
-Astérisques :
-- \* : intégration facile pour pour une personne qui lit la documentation avant d'agir
-- \*\* : en plus de \*, nécessite de suivre une procédure particulière, adapté à une personne qui comprend qu'une procédure est faite pour être suivie scrupuleusement
-- \*\*\* : en plus de \*\* nécessite des connaissances de base en informatique et être habitué à faire des recherches sur internet dans un but précis
+Attention :
+- ! : intégration facile pour pour une personne qui lit la documentation avant d'agir
+- !! : en plus de !, nécessite de suivre une procédure particulière, adapté à une personne qui comprend qu'une procédure est faite pour être suivie scrupuleusement
+- !!! : en plus de !! nécessite des connaissances de base en informatique et être habitué à faire des recherches sur internet dans un but précis
 
 Produits incompatibles et qui ne le seront pas :
 -   Le pont Mi.light MiBoxer (sauf ON/OFF de la box)
@@ -407,15 +407,15 @@ Créer une nouvelle commande action/défaut. Donner un nom et un Id identiques e
 
 Exemples :
 
-Pour lever certains volets roulant : xxxxxx vaut "1":"1" qui est à mettre dans paramètres.
+Pour lever certains volets roulant : xxxxxx vaut "1":"1" qui est à mettre dans paramètres (utiliser les doubles guillemets de la touche 3).
 
-Pour mettre la prise n°2 de certains plugs à on : xxxxxx vaut "2":true qui est à mettre dans paramètres.
+Pour mettre la prise n°2 de certains plugs à on : xxxxxx vaut "2":true qui est à mettre dans paramètres (utiliser les doubles guillemets de la touche 3).
 
-Pour éteindre la prise n°1 et la prise n°2 de certains plugs : xxxxxx vaut "1":false,"2":false qui est à mettre dans paramètres.
+Pour éteindre la prise n°1 et la prise n°2 de certains plugs : xxxxxx vaut "1":false,"2":false qui est à mettre dans paramètres (utiliser les doubles guillemets de la touche 3).
 
 Le paragraphe suivant donne des éléments pour interpréter les logs wifilightV2.
 -   Noter qu'il est nécessaire que le périphérique renvoie son état.
--   Dans de nombreux cas il n'y aura pas de retour d'état si les commandes de base ne récupèrent pas le dps. Dans ce cas il est possible de récupérer le retour d'atat en ajoutant une commande custom en spécifiant le dps comme indiqué dans le paragraphe suivant.
+-   Dans de nombreux cas il n'y aura pas de retour d'état si les commandes ajoutées par défaut ne récupèrent pas le dps. Dans ce cas il est possible de récupérer le retour d'état en ajoutant une commande custom en spécifiant le dps comme indiqué dans le paragraphe suivant.
 -   Il est donc possible de mixer des commandes personnalisées en spécifiant le dps (paragraphe suivant) ou sans spécifier le dps.
 
 ## Périphérique custom
@@ -424,13 +424,13 @@ Il est possible de créer un périphérique entièrement custom. Contrairement a
 
 ### Configuration
 -   désactiver tous les périphériques wifilightV2 sauf celui à tester
--   bien configurer le périphérique (adresse IP statique, LocalKey, Id, App Tuya arrêtée)
+-   bien configurer le périphérique (adresse IP statique, LocalKey, Id)
 -   vérifier que le demon tourne, sinon le démarrer
 -   configurer les logs wifilightV2 en mode debug
 -   effacer les logs
 
 ### Récupération des informations
--   appuyer sur un bouton du périphérique (on,off,haut,bas,etc.) ou sur l'appli Smart Live
+-   appuyer sur un bouton du périphérique (on,off,haut,bas,etc.) ou attendre que le prériphérique renvoie son état ou appuyer sur un bouton de l'appli Smart Live (mais dans ce dernier cela peut empêcher le retour d'état)
 -   repérer dans les logs le passage ressemblant à ceci :
 
 		Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"off","101":true}}
@@ -467,7 +467,7 @@ Il est possible de créer un périphérique entièrement custom. Contrairement a
 		[2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 3 | 850 : 850
 		[2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 101 | 1 : 1
 	
-	Ici, un curseur d'intensité a été sélectionné sur le l'application du périphérique et on observe que le dps 3  a changé.
+	Ici, un curseur d'intensité a été sélectionné sur l'application du périphérique et on observe que le dps 3 a changé.
 	
 -   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Intensité comme nom du curseur
@@ -481,6 +481,7 @@ Remarques :
 -   retour avec erreur : Id incorrect
 -   retour non décodé : localkey incorrect
 -   la commande ne fonctionne pas : vérifier la commande
+-   pour modifier la couleur d'une lampe, la technique du slider n'est pas possible il faut programmer plusieurs boutons avec des couleurs prédéfinies
 
 ## Mise à jour de l'état dans Jeedom
 Lors de l'activation du plugin et dès que le démon est lancé ainsi que toutes les minutes, le plugin recherche les périphériques alimentés et connectés à Jeedom.
