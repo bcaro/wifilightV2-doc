@@ -1,6 +1,8 @@
-1.53 - 2019-11-30
+1.53 - 2019-12-03 (beta version)
 -   Ewelink: adding the Sonoff RF bridge 433 - only the sensors
--   Sonoff TH10 / TH16: addition of actions / information of the internal thermostat
+-   Sonoff TH10 / TH16: adding internal thermostat information
+-   Sonoff Pow R2: adding electrical information
+-   Tuya: best return of state of the multiple catch
 -   bug fixes
 
 1.52 - 2019-11-27

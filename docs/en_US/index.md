@@ -14,37 +14,37 @@ This plugin can manage many LED strips or LED bulbs or electrical plugs controll
 There are many products compatible with the plugin but very different brands or brands.
 
 Compatible products:
--   Light bulbs Mi.Light / EasyBulb / LimitlessLED connected to the controllers below: no feedback \ *
--   Strip-led Mi.Light / EasyBulb / LimitlessLED connected to the controllers below: no status feedback \ *
--   Led controller Mi.Light / EasyBulb / LimitlessLED V3.0 to V5.0 (the miboxer is not compatible): no feedback \ *
--   Mi.Light / EasyBulb / LimitlessLED led controller V6.0 / iBox1 / iBox2: no status feedback \ *
--   Ampoules WiFi Xiaomi Yeelight blanches et couleur avec retour d'état \*
--   Strip-led WiFi Xiaomi Yeelight color with status feedback \ *
--   Plafonnier WiFi Xiaomi Yeelight avec retour d'état \*
--   Lampe de bureau WiFi Xiaomi Mijia avec retour d'état \*
--   Sonoff Basic R3 in DIY mode with status feedback \ * \ *
+-   Mi.Light / EasyBulb / LimitlessLED bulbs connected to the controllers below: no feedback!
+-   Strip-led Mi.Light / EasyBulb / LimitlessLED connected to the controllers below: no feedback!
+-   Led controller Mi.Light / EasyBulb / LimitlessLED V3.0 to V5.0 (the miboxer is not compatible): no feedback!
+-   Mi.Light / EasyBulb / LimitlessLED LED controller V6.0 / iBox1 / iBox2: No feedback!
+-   White and color Xiaomi Yeelight WiFi bulbs with status feedback!
+-   Strip-led WiFi Xiaomi Yeelight color with status feedback!
+-   Xiaomi Yeelight WiFi ceiling light with status feedback!
+-   WiFi desktop lamp Xiaomi Mijia with status feedback!
+-   Sonoff Basic R3 in DIY mode with status feedback !!
 
 Products that can be compatible and unsecured:
--   LW12 / Lagute: RGB strip-led controller: return of state \ *
--   Wifi 320/370 RGB / RGBW strip-led controller: partial state return \ *
--   Magic UFO: RGBW strip-led controller, handles the white \ *
--   MagicHome: RGBW / RGBWW strip-led controller and bulbs / spots RGBW compatible with the MagicHome app \ *
--   H801: RGBW strip-led controller, no return status \ * \ *
--   Arilux AL-C01/02/03/04/06/10 : RGB/RGBW/RGBWW strip-led contrôleur, retour d’état \*
--   TP-Link LB100/110/120/130 : ampoules avec retour d’état \*
--   Lampe Extel Meli avec retour d'état \*
--   Xiaomi Philips: Desk lamp, bulb and ceiling lamp with state return \ * \ * \ *
--   Bulbs, sockets, switch, flap switches, humidifier, thermostat compatible Tuya Smart live or Jinvoo smart or eFamilyCloud apps with status feedback \ * \ * \ *
--   TP-link HS100 HS110 electrical outlets with status feedback \ * \ *
--   Magic home compatible LED pixel strip controllers with status feedback \ *
--   Devices controlled by the Ewelink app including Sonoff in LAN mode with status feedback \ * \ * \ *
+-   LW12 / Lagute: RGB strip-led controller: back state!
+-   Wifi 320/370 RGB / RGBW strip-led controller: partial state return!
+-   Magic UFO: RGBW strip-led controller, handles the white!
+-   MagicHome: RGBW / RGBWW strip-led controller and bulbs / spots RGBW compatible with the MagicHome app!
+-   H801: RGBW strip-led controller, no return status !!
+-   Arilux AL-C01 / 02/03/04/06/10: RGB / RGBW / RGBWW strip-led controller, status feedback!
+-   TP-Link LB100 / 110/120/130: bulbs with status feedback!
+-   Extel Meli lamp with status feedback!
+-   Xiaomi Philips: Desk lamp, bulb and ceiling with status feedback!
+-   Bulbs, sockets, switch, flap switches, humidifier, thermostat compatible Tuya Smart live or Jinvoo smart or eFamilyCloud apps with feedback!
+-   TP-link HS100 HS110 power sockets with status feedback !!
+-   Magic home compatible LED pixel strip controllers with status feedback!
+-   Devices controlled by the Ewelink app including Sonoff in LAN mode with status feedback !!!
 
 For these controllers, bulbs or sockets, the exchange protocol does not come directly from the manufacturer who can change it at any time. Several versions exist on the market that are not all compatible with the plugin.
 
-Asterisks:
-- \ *: easy integration for a person who reads the documentation before acting
-- \ * \ *: in addition to \ *, requires to follow a particular procedure, adapted to a person who understands that a procedure is made to be followed scrupulously
-- \ * \ * \ *: in addition to \ * \ * requires basic computer skills and is accustomed to researching the internet for a specific purpose
+Warning :
+- ! : easy integration for someone reading the literature before acting
+- !! : in addition to!, requires to follow a particular procedure, adapted to a person who understands that a procedure is made to be followed scrupulously
+- !!! : in addition to !! requires basic computer skills and is accustomed to researching the internet for a specific purpose
 
 Incompatible products and who will not be:
 -   The Mi.light MiBoxer bridge (except ON / OFF box)
@@ -316,23 +316,23 @@ When a device connects to the wifi, the plugin will immediately be notified. On 
 ## Compatibility
 
 Many brands are compatible including Sonoff.
-- Switches, wall sockets, switch: simple of all brands
-- Switches, wall outlets, switch: multiples of all brands
-- 2 types of lamps (test both types)
-- Sonoff TH10 / 1H16 temperature sensor
-- Sonoff Basic, RF, POW, Mini
-- Sonoff Dual
-- Sonoff 4CH / 4CH PRO
-- Sonoff Touch
-- Sonoff S20 / S26
-- Sonoff T1 / TX
-- Sonoff SLAMPHER
-- Sonoff T4EUC1
-- Sonoff RF bridge 433 for sensors only (door, detector, remote control)
+-  Switches, wall sockets, switch: simple of all brands
+-  Switches, wall outlets, switch: multiples of all brands
+-  2 types of lamps (test both types)
+-  Sonoff TH10 / 1H16 temperature sensor
+-  Sonoff Basic, RF, POW, Mini
+-  Sonoff Dual
+-  Sonoff 4CH / 4CH PRO
+-  Sonoff Touch
+-  Sonoff S20 / S26
+-  Sonoff T1 / TX
+-  Sonoff SLAMPHER
+-  Sonoff T4EUC1
+-  Sonoff RF bridge 433 for sensors only (door, presence detector, remote control)
 
 For multichannel devices (like the Sonoff 4CH) you have to create as many wifilightV2 devices as there are channels, a copy of the first created easy task, then you have to change the channel number.
 
-For other devices (Sonoff Ifan, dimmer for example) or if the configuration does not work and after embedding the device in Jeedom (with the Sonoff Basic configuration for example) locate in the logs:
+For devices not present in this list (Sonoff Ifan, dimmer for example) or if the configuration does not work and after integrating the device into Jeedom (with the Sonoff Basic configuration for example) locate in the logs:
 
 Receive after decode: {...............}
 
@@ -398,29 +398,34 @@ For other outlets, the value 20; 18; 19 is set by default.
 
 Given the variety of Tuya-compatible devices, it may be necessary to create custom commands.
 
-Create a new action / default command, give it a name and put the command Tuya in parameters. Tuya commands are in JSON format and contain dps: {xxxxxx}. It is the xxxxxx that must be put in parameters.
+Create a new action / default command. Give an identical name and Id and put the command Tuya in parameters. Leave empty. Tuya commands are in JSON format and contain dps: {xxxxxx}. It is the xxxxxx that must be put in parameters.
 
 Examples:
 
-To lift a shutter: xxxxxx is &quot;1&quot;: &quot;1&quot;.
+To lift certain shutters: xxxxxx is &quot;1&quot;: &quot;1&quot; which is to put in parameters (use the double quotes of the key 3).
 
-To put plug 2 of a plug to on: xxxxxx is &quot;2&quot;: true.
+To put the plug n ° 2 of some plugs to one: xxxxxx worth &quot;2&quot;: true which is to put in parameters (to use the double quotation marks of the key 3).
 
-See the following paragraph for log interpretation.
+To turn off # 1 and # 2 of some plugs: xxxxxx is &quot;1&quot;: false, &quot;2&quot;: false which is to be set in parameters (use the double quotes on key 3).
+
+The following paragraph provides elements for interpreting wifilightV2 logs.
+-   Note that the device needs to return its state.
+-   In many cases there will be no state feedback if the commands added by default do not recover the dps. In this case it is possible to recover the state return by adding a custom command by specifying the dps as indicated in the following paragraph.
+-   It is therefore possible to mix custom commands by specifying the dps (next paragraph) or without specifying the dps.
 
 ## Custom device
 
-It is possible to create a fully custom device and not just a custom command as before. The procedure requires that the device returns its state in the logs, otherwise there is no relief.
+It is possible to create a fully custom device. Unlike custom commands, a custom device has no predefined command and everything must be configured for each command. The procedure requires that the device returns its state in the logs, otherwise there is no relief.
 
 ### Configuration
 -   disable all wifilightV2 devices except the one to be tested
--   configure the device (static IP address, LocalKey, Id, Hose App stopped)
+-   configure the device (static IP address, LocalKey, Id)
 -   check that the demon is running, otherwise start it
 -   configure wifilightV2 logs in debug mode
 -   clear the logs
 
 ### Retrieving information
--   press a device button (on, off, up, down, etc.) or on the Smart Live app
+-   press a device button (on, off, up, down, etc.) or wait for the device to return to its status or press a button on the Smart Live app (but in the latter it may prevent the return of status )
 -   find in the logs the passage that looks like this:
 
         Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"off","101":true}}
@@ -471,6 +476,7 @@ Notes:
 -   return with error: Incorrect Id
 -   return not decoded: incorrect localkey
 -   the command does not work: check the command
+-   to modify the color of a lamp, the technique of the slider is not possible it is necessary to program several buttons with predefined colors
 
 ## Update status in Jeedom
 When activating the plugin and as soon as the daemon is launched and every minute, the plugin searches for devices powered and connected to Jeedom.

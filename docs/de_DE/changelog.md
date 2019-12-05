@@ -1,6 +1,8 @@
-1,53 - 2019-11-30
+1.53 - 2019-12-03 (Beta-Version)
 -   Ewelink: Hinzufügen der Sonoff RF Bridge 433 - nur die Sensoren
--   Sonoff TH10 / TH16: Hinzufügen von Aktionen / Informationen des internen Thermostats
+-   Sonoff TH10 / TH16: Hinzufügen von Informationen zum internen Thermostat
+-   Sonoff Pow R2: Hinzufügen von elektrischen Informationen
+-   Tuya: beste Staatsrendite des Mehrfachfangs
 -   Fehlerbehebungen
 
 1,52 - 2019-11-27
@@ -18,7 +20,7 @@
 -   eWeLink: Anmeldeinformationen korrigieren
 -   Tuya: Korrektur der Verbindungsinformationen
 -   kleinere Fehlerbehebungen
--   Neustart des Dämons nach Änderung einer Konfiguration
+-   Starten Sie den Dämon neu, nachdem Sie eine Konfiguration geändert haben
 
 1,50 - 2019-10-28
 -   Tuya: Zusatzlampe RGBW Typ 2 (Modul in Beta)
@@ -208,7 +210,7 @@
 -   Fehlerbehebungen
 
 1.07 - 2017-05-03
--   Korrektur der RGBWW-Statusrückmeldung
+-   RGBWW-Statusrückkopplungskorrektur
 
 1.06 - 2017-05-01
 -   Hinzufügen von Arilux RGBWW
