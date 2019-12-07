@@ -119,7 +119,7 @@ Laden Sie die mobile Anwendung vom Hersteller herunter und befolgen Sie die Anwe
 
 Solange das Gerät nicht mit der mobilen Anwendung gesteuert wird, funktioniert das Plugin nicht.
 
-Informationen zum Geräte-Builder finden Sie in der Hilfe und in den Foren.
+Weitere Informationen zum Geräte-Builder finden Sie in der Hilfe und in den Foren.
 
 
 ## Konfigurieren Sie den Router
@@ -140,7 +140,7 @@ Hilfe:
 
 Einstellung:
 -   Um ein Gerät einzurichten, wählen Sie das Menü Plugins / Kommunikationsobjekte / wifilightV2
--   Klicken Sie dann auf die Schaltfläche oben links. Fügen Sie ein WLAN-Modul hinzu
+-   Klicken Sie dann oben links auf die Schaltfläche Ein WLAN-Modul hinzufügen
 -   Geben Sie den Namen des WLAN-Moduls ein
 -   Geben Sie das übergeordnete Objekt ein
 -   Wählen Sie die Kategorie Licht (Standard)
@@ -152,7 +152,7 @@ Einstellung:
 -   Bei einigen Controllern muss die Anzahl der LEDs der Pixelstreifen-LEDs angegeben werden
 -   Bei einigen Controllern muss die Reihenfolge der Farben angegeben werden, wenn die Farben standardmäßig nicht übereinstimmen
 -   Geben Sie die Marke oder den Gerätetyp ein
--   Geben Sie den genauen Untertyp des Controllers, der Glühlampe, des Steckers oder der LED ein. Dies ist wichtig, um die Befehle zur Steuerung des Geräts zu erstellen
+-   Geben Sie den genauen Untertyp des Controllers, der Glühbirne, des Steckers oder der LED-Leiste ein. Dies ist wichtig, um die Befehle zur Steuerung des Geräts zu erstellen
 -   Anzahl der gesendeten Befehle eingeben: Mit dieser Option können Sie den Befehl für ein entferntes Gerät wiederholen, wenn die Übertragung fehlerhaft ist. (1 standardmäßig). Einige Glühbirnen oder Stecker schaffen diese Wiederholung nicht, da das Plugin durch Rückkehr den Zustand des Getriebes sicherstellt. Einige relative Befehle (Inkremente) werden nicht wiederholt.
 -   Geben Sie die Sendeverzögerung im Wiederholungsfall ein (Standard: 0 ms, max. 100 ms)
 -   Geben Sie das Intensitätsinkrement% ein, wenn Sie die Tasten zum Erhöhen oder Verringern der Lichtintensität drücken
@@ -231,7 +231,7 @@ Achtung, die Geräte werden aufgrund der Latenz nicht exakt zur gleichen Zeit be
 
 Geben Sie bei der Konfiguration des Geräts einfach eine andere Null in das Gruppenfeld ein. Alle Geräte mit den gleichen Nummern werden synchronisiert.
 
-# Sonderfall Mi.Light-Boxen
+# Sonderfall von Mi.Light-Boxen
 
 ## IBox 1 oder 2 konfigurieren
 
@@ -267,9 +267,9 @@ Beachten Sie, dass das Plug-in bis zu 1 Minute dauern kann, um eine Glühbirne z
 
 Seit Mitte 2019 sind neue Geräte in Protokollversion 2 verfügbar. Für das V2-Protokoll muss ein Token (Token) wiederhergestellt werden, damit das Plugin mit den TP-Link-Geräten interagieren kann.
 
-Um dieses Token zu erhalten, müssen die zwischen der Kasa-App auf dem Telefon und dem Gerät ausgetauschten Frames erfasst werden, die im Plugin hinzugefügt werden sollen. In Android müssen Sie Packet Capture verwenden.
+Um dieses Token zu erhalten, müssen die zwischen der Kasa-App auf dem Telefon und dem Gerät, das im Plugin hinzugefügt werden soll, ausgetauschten Frames aufgezeichnet werden. In Android müssen Sie Packet Capture verwenden.
 
-Das Plugin ermöglicht dann das Extrahieren des Tokens. Sie müssen den abgerufenen Frame in das Feld GetKey Command Parameters kopieren und diesen Befehl ausführen. Wenn der Frame decodierbar ist, wird das Token in den Protokollen und in der Mitteilungszentrale angezeigt (Achtung: Löschen Sie die Mitteilung jedes Mal nach dem Lesen).
+Das Plugin erlaubt es dann, den Token zu extrahieren. Sie müssen den abgerufenen Frame in das Feld GetKey Command Parameters kopieren und diesen Befehl ausführen. Wenn der Frame decodierbar ist, wird der Token in den Protokollen und in der Mitteilungszentrale angezeigt (Achtung: Löschen Sie die Mitteilung jedes Mal nach dem Lesen).
 
 Der Frame, der in &quot;Parameter&quot; eingefügt werden soll, muss die folgende Geschwindigkeit haben (... andere Werte ersetzen):
 
@@ -289,7 +289,7 @@ Ein Token muss unbedingt wiederhergestellt werden, damit das Plugin mit Philips 
 
 Das Verfahren ist komplex und erfordert mehrere Manipulationen. Führen Sie eine Suche im Web mit dem folgenden Schlüsselwort durch: Xiaomi-Token.
 
-Es wird keine Hilfe zur Wiederherstellung des Tokens gegeben.
+Keine Unterstützung wird gegeben, das Token zu erholen.
 
 # Sonderfall von Sonoff im DIY-Modus
 
@@ -355,7 +355,7 @@ Die folgenden Geräte sind mit Firmware 1.0 kompatibel. und in Firmware 2.0.
 -  Thermostat BHT-6000GCLW / BHT 6000 und nur diese Modelle
 -  RGBW-Glühlampen und ähnliche Modelle in Betrieb
 
-Trotzdem kann die Kompatibilität dieser Geräte nicht garantiert werden, da das Protokoll vom Hersteller geändert werden kann.
+Dennoch kann die Kompatibilität dieser Geräte nicht garantiert werden, da das Protokoll vom Hersteller geändert werden kann.
 
 Bei mehrkanaligen Geräten (z. B. Mehrfachsteckdosen) müssen Sie so viele wifilight V2-Geräte erstellen, wie Sie kanalisieren können. Dies ist eine Kopie der ersten erstellten einfachen Aufgabe. Anschließend müssen Sie die Kanalnummer ändern.
 
@@ -382,7 +382,7 @@ Jede Konfigurationsänderung erfordert einen Neustart des Daemons.
 
 Laut Marken wird der Verbrauch nicht ausschließlich über die Verkaufsstelle versandt. Um diese Einstellung abzurufen, installieren Sie das Plug-in in Jeedom und behalten Sie den Status in der Konfiguration bei. Wechseln Sie dann zu den Protokollen von wifilightV2. Der Fang wird jede Minute abgefragt. Finde die Nachricht, die so aussieht:
 
-return decodiert: {&quot;devId&quot;: &quot;xxxxxxxxx&quot;, &quot;dps&quot;: {&quot;1&quot;: false, &quot;2&quot;: false, &quot;9&quot;: 0, &quot;10&quot;: 0, &quot;18&quot;: 0, &quot;19&quot; : 0, &quot;20&quot;: 2281, &quot;21&quot;: 1 &quot;22&quot;: 726 &quot;23&quot;: 28971, &quot;24&quot;: 19417, &quot;25&quot;: 1070}}
+return decodiert: {&quot;devId&quot;: &quot;xxxxxxxxx&quot;, &quot;dps&quot;: {&quot;1&quot;: falsch, &quot;2&quot;: falsch, &quot;9&quot;: 0, &quot;10&quot;: 0, &quot;18&quot;: 0, &quot;19&quot; : 0, &quot;20&quot;: 2281, &quot;21&quot;: 1 &quot;22&quot;: 726 &quot;23&quot;: 28971, &quot;24&quot;: 19417, &quot;25&quot;: 1070}}
 
 Der Index &quot;20&quot; entspricht hier der Versorgungsspannung in den hundert mV oder 228,1 V, sie muss sich geringfügig bewegen. Die Indizes &quot;18&quot; und &quot;19&quot; entsprechen dem Strom (mA) und der Leistung in W, hier ist kein Gerät angeschlossen und daher die Information auf Null. Dies ist ein guter Weg, um die Spannung zu finden, indem Sie ein Gerät anschließen, diese 2 Werte müssen geändert werden und die Spannung ist gleich danach.
 
@@ -425,8 +425,8 @@ Es ist möglich, ein vollständig benutzerdefiniertes Gerät zu erstellen. Im Ge
 -   Löschen Sie die Protokolle
 
 ### Informationen abrufen
--   appuyer sur un bouton du périphérique (on,off,haut,bas,etc.) ou attendre que le prériphérique renvoie son état ou appuyer sur un bouton de l'appli Smart Live (mais dans ce dernier cela peut empêcher le retour d'état)
--   repérer dans les logs le passage ressemblant à ceci :
+-   Drücken Sie eine Gerätetaste (Ein, Aus, Auf, Ab usw.) oder warten Sie, bis das Gerät wieder in den Status zurückgekehrt ist, oder drücken Sie eine Taste in der Smart Live-App (in letzterer kann jedoch die Statusrückkehr verhindert werden) )
+-   finde in den Logs die Passage, die so aussieht:
 
         Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"off","101":true}}
         [2019-10-13 09:15:30][DEBUG] :       >>> : devId | 50701244cc50e37e9aff : 50701244cc50e37e9aff
@@ -434,7 +434,7 @@ Es ist möglich, ein vollständig benutzerdefiniertes Gerät zu erstellen. Im Ge
         [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 1 | stop : stop
         [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 101 | 1 : 1
 
-    Ici, le bouton off a été sélectionné sur le périphérique et on observe que le dps 1  a changé.
+    Hier wurde der Aus-Schalter am Gerät ausgewählt und es wird beobachtet, dass sich der dps 1 geändert hat.
 
         Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"on","101":true}}
         [2019-10-13 09:15:30][DEBUG] :       >>> : devId | 50701244cc50e37e9aff : 50701244cc50e37e9aff
@@ -442,19 +442,19 @@ Es ist möglich, ein vollständig benutzerdefiniertes Gerät zu erstellen. Im Ge
         [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 1 | stop : stop
         [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 101 | 1 : 1
 
-    Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps 1  a changé.
+    Hier wurde die Schaltfläche am Gerät ausgewählt und es wird beobachtet, dass sich der dps 1 geändert hat.
 
--   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
-    *    Dans la colonne interface mettre ON comme nom du bouton
-    *    Dans la colonne nom interne et n° de commande, mettre comme Id unique : ON, comme dps : 1 (sans les double guillemets) et comme paramètre : "on" (si le on n'est pas entouré de guillemets, il faut les enlever).
--   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
-    *    Dans la colonne interface mettre OFF comme nom du bouton
-    *    Dans la colonne nom interne et n° de commande, mettre comme Id unique : OFF, comme dps : 1 (sans les double guillemets) et comme paramètre : "off" (si le off n'est pas entouré de guillemets, il faut les enlever).
--   Créer une nouvelle commande info/autre dans les commandes du périphérique :
-    *    Dans la colonne interface mettre ETAT comme nom de l'info
-    *    Dans la colonne nom interne et n° de commande, mettre comme Id unique : ETAT, comme dps : 1 (sans les double guillemets) et rien dans paramètres.
+-   Erstellen Sie einen neuen Aktions- / Standardbefehl in den Gerätebefehlen:
+    *    In der Interface-Spalte setzen Sie als Name des Buttons ON
+    *    Stellen Sie in der Spalte interner Name und Bestellnummer als eindeutige ID: ON, als dps: 1 (ohne doppelte Anführungszeichen) und als Parameter: &quot;on&quot; (wenn Sie nicht von Anführungszeichen umgeben sind, benötigen Sie diese off).
+-   Erstellen Sie einen neuen Aktions- / Standardbefehl in den Gerätebefehlen:
+    *    In der Interface-Spalte als Name der Schaltfläche OFF setzen
+    *    Stellen Sie in der Spalte mit dem internen Namen und der Bestellnummer als eindeutige ID: OFF, als dps: 1 (ohne doppelte Anführungszeichen) und als Parameter: &quot;off&quot; (wenn off nicht in Anführungszeichen eingeschlossen ist, benötigen Sie diese off).
+-   Erstellen Sie einen neuen info / other-Befehl in den Gerätebefehlen:
+    *    In der Interface-Spalte geben Sie STAT als Namen der Info ein
+    *    Legen Sie in der Spalte Interner Name und Auftrags-ID als eindeutige ID: STATUS fest, z. B. dps: 1 (ohne doppelte Anführungszeichen) und nichts in Parametern.
 
-    Dans le cas d'une information numérique :
+    Bei digitalen Informationen:
 
         Receive after decode :{devId:50701244cc50e37e9aff,dps:{"3":850,"101":true}}
         [2019-10-13 09:15:30][DEBUG] :       >>> : devId | 50701244cc50e37e9aff : 50701244cc50e37e9aff
@@ -462,118 +462,117 @@ Es ist möglich, ein vollständig benutzerdefiniertes Gerät zu erstellen. Im Ge
         [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 3 | 850 : 850
         [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 101 | 1 : 1
 
-    Ici, un curseur d'intensité a été sélectionné sur l'application du périphérique et on observe que le dps 3 a changé.
+    Hier wurde ein Intensitätsregler in der Geräteanwendung ausgewählt, und es wird beobachtet, dass sich der dps 3 geändert hat.
 
--   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
-    *    Dans la colonne interface mettre Intensité comme nom du curseur
-    *    Dans la colonne nom interne et n° de commande, mettre comme Id unique : Intensite, comme dps : 3 (sans les double guillemets) et comme paramètre : #slider# (ici la valeur numérique n'est pas entourée de guillemets, il ne faut donc pas les mettre).
--   Créer une nouvelle commande info/autre dans les commandes du périphérique :
-    *    Dans la colonne interface mettre IntensiteGet comme nom de l'info
-    *    Dans la colonne nom interne et n° de commande, mettre comme Id unique : IntensiteGet, comme dps : 3 (sans les double guillemets)et rien dans paramètres.
+-   Erstellen Sie einen neuen Aktions- / Cursorbefehl in den Gerätebefehlen:
+    *    In der Spalte Interface geben Sie Intensität als Cursornamen ein
+    *    Stellen Sie in der Spalte Interner Name und Bestellnummer als eindeutige ID: Intensität, als dps: 3 (ohne doppelte Anführungszeichen) und als Parameter: # Schieberegler # (hier ist der numerische Wert nicht in Anführungszeichen eingeschlossen, nicht in Anführungszeichen) ein setzen Sie sie nicht).
+-   Erstellen Sie einen neuen info / other-Befehl in den Gerätebefehlen:
+    *    In der Interface-Spalte geben Sie IntensiteGet als Namen der Info ein
+    *    Legen Sie in der Spalte Interner Name und Bestellnummer als eindeutige ID fest: IntensiteGet, als dps: 3 (ohne doppelte Anführungszeichen) und nichts in Parametern.
 
-Remarques :
--   rien dans les logs : mauvaise adresse IP ou périphérique qui ne renvoie pas son état
--   retour avec erreur : Id incorrect
--   retour non décodé : localkey incorrect
--   la commande ne fonctionne pas : vérifier la commande
--   pour modifier la couleur d'une lampe, la technique du slider n'est pas possible il faut programmer plusieurs boutons avec des couleurs prédéfinies
+Anmerkungen:
+-   nichts in den Protokollen: schlechte IP-Adresse oder Gerät, das seinen Status nicht zurückgibt
+-   Rückgabe mit Fehler: Falsche ID
+-   return nicht decodiert: falscher localkey
+-   Der Befehl funktioniert nicht: Überprüfen Sie den Befehl
+-   Um die Farbe einer Lampe zu ändern, ist es nicht möglich, die Technik des Schiebereglers zu ändern. Es müssen mehrere Tasten mit vordefinierten Farben programmiert werden
 
-## Mise à jour de l'état dans Jeedom
-Lors de l'activation du plugin et dès que le démon est lancé ainsi que toutes les minutes, le plugin recherche les périphériques alimentés et connectés à Jeedom.
+## Status in Jeedom aktualisieren
+Wenn Sie das Plugin aktivieren und sobald der Daemon gestartet wird, sucht das Plugin jede Minute nach Geräten, die mit Strom versorgt werden und mit Jeedom verbunden sind.
 
-Dès que le périphérique est trouvé, l'état du périphérique est remonté au plugin immédiatement.
+Sobald das Gerät gefunden wird, wird der Gerätestatus sofort an das Plugin zurückgegeben.
 
-Noter que le plugin peut mettre jusqu'à 1 minute pour trouver qu'un périphérique est connecté ou déconnecté.
+Beachten Sie, dass das Plug-in bis zu 1 Minute dauern kann, bis festgestellt wird, dass ein Gerät verbunden oder getrennt ist.
 
 # FAQ
 
 
-## Quels périphériques peuvent être utilisés ?
+## Welche Geräte können verwendet werden?
 
-Lire la documentation
+Lesen Sie die Dokumentation
 
-## Rien ne se passe
+## Es passiert nichts
 
-Faire d'abord fonctionner le périphérique avec l'application mobile fournie par le constructeur.
+Führen Sie das Gerät zunächst mit der vom Hersteller bereitgestellten mobilen Anwendung aus.
 
-Utiliser le bouton <tester> dans le menu Plugin/Objets Connectés/wifilightV2/commandes.
+Verwenden Sie die Taste <tester> im Menü Plugin / Verbundene Objekte / wifilightV2 / Befehle.
 
-Aucune aide ne sera apportée sans que les périphériques soient opérationnels avec l'application constructeur sur un téléphone portable.
-Il est nécessaire de donner une adresse IP fixe au périphérique.
+Es wird keine Hilfe bereitgestellt, ohne dass die Geräte mit der Build-Anwendung auf einem Mobiltelefon ausgeführt werden können. Es ist erforderlich, dem Gerät eine feste IP-Adresse zuzuweisen.
 
 
-## Je ne sais pas configurer ma box internet
+## Ich kann meine Internetbox nicht konfigurieren
 
-Aucune aide ne sera apportée sur la box et les notions nécessaires pour configurer le routeur pour attribuer une adresse IP fixe. Consulter les forums de la box.
+Für die Box und die Konzepte, die zur Konfiguration des Routers für die Zuweisung einer festen IP-Adresse erforderlich sind, wird keine Hilfe bereitgestellt. Konsultieren Sie die Foren der Box.
 
-## Toutes les commandes ne sont pas créées lors d'un changement de modèle de périphérique
+## Bei einer Gerätemodelländerung werden nicht alle Befehle erstellt
 
-Sauvegarder 2 fois.
+2 mal speichern.
 
-## La gestion de l'intensité des ampoules blanches  Mi.Light/EasyBulb/LimitlessLED n'est pas pratique
+## Weißlichtintensitätsmanagement Mi.Light / EasyBulb / LimitlessLED ist nicht praktikabel
 
-Le constructeur des leds n'a pas prévu de pouvoir affecter directement l'intensité de l'ampoule. On ne peut qu'incrémenter ou décrémenter par rapport à la valeur précédente. Le plugin ne fait que reproduire ce fonctionnement. Le curseur qui est proposé est en conséquence capricieux.
+Der Hersteller von LEDs hat nicht vor, die Intensität der Glühlampe direkt zu beeinflussen. Wir können nur vom vorherigen Wert inkrementieren oder dekrementieren. Das Plugin repliziert nur diesen Vorgang. Der vorgeschlagene Cursor ist daher launisch.
 
-## La gestion de l'intensité de la couleur a quelquefois des comportements imprévus
+## Das Farbintensitätsmanagement weist manchmal unerwartete Verhaltensweisen auf
 
-Aucun protocole ne gère l'intensité de la couleur, bien que généralement les applications mobiles le fassent. Tant que Jeedom gère couleur et intensité, tout se passe bien. Mais si l'intensité est modifiée par une application mobile, les résultats ne sont pas toujours ceux attendus. Le plugin essaye de corriger le souci quand la lampe ou le contrôleur possède un retour d'état.
+Kein Protokoll verarbeitet die Farbintensität, obwohl dies in der Regel bei mobilen Anwendungen der Fall ist. Solange Jeedom Farbe und Intensität verwaltet, läuft alles gut. Wenn sich die Intensität jedoch durch eine mobile Anwendung ändert, sind die Ergebnisse nicht immer die erwarteten. Das Plugin versucht, das Problem zu beheben, wenn die Lampe oder der Controller eine Statusrückmeldung hat.
 
-## Y a-t-il un retour d'état ?
+## Gibt es eine Rückkehr des Staates?
 
-Lire la documentation
+Lesen Sie die Dokumentation
 
-## Impossible de faire fonctionner les ampoules Xiaomi Yeelight
+## Kann nicht Xiaomi Yeelight Glühbirnen betreiben
 
-Il est indispensable d'activer le mode contrôle par réseau local via l'application  Xiaomi Yeelight.
+Der LAN-Steuerungsmodus muss unbedingt über die Xiaomi Yeelight-Anwendung aktiviert werden.
 
-## Je ne contrôle pas le son des ampoules Extel Meli
+## Ich kann den Klang von Extel Meli-Glühbirnen nicht steuern
 
-Le son n'est pas géré par le plugin
+Sound wird vom Plugin nicht unterstützt
 
-## Impossible de faire fonctionner les ampoules Xiaomi Philips
+## Philips Xiaomi-Lampen können nicht betrieben werden
 
-Pour dialoguer avec les ampoules Xiaomi Philips, il est nécessaire de transmettre un jeton ou token en anglais. Sans ce jeton, l'ampoule ne prendra pas en compte les ordres qui lui sont envoyés. Ce jeton se trouve dans l'application Mi-Home et, selon votre téléphone, il existe plusieurs méthodes pour récupérer le jeton. La procédure est décrite sur plusieurs sites mais elle n'est pas reproduite ici pour deux raisons principales :
+Um mit Philips Xiaomi-Lampen interagieren zu können, muss ein Token oder ein Token in englischer Sprache gesendet werden. Ohne diesen Token berücksichtigt die Glühbirne die an sie gesendeten Bestellungen nicht. Dieses Token befindet sich in der Mi-Home-App. Abhängig von Ihrem Telefon gibt es verschiedene Möglichkeiten, das Token wiederherzustellen. Das Verfahren ist an mehreren Stellen beschrieben, wird hier jedoch aus zwei Hauptgründen nicht wiedergegeben:
 
--   Xiaomi a déjà modifié son protocole ce qui a obligé à modifier la procédure pour récupérer le jeton, il pourrait encore le faire.
+-   Xiaomi hat bereits sein Protokoll geändert, wodurch das Verfahren zur Wiederherstellung des Tokens geändert werden musste.
 -   Internetnutzern können neue und einfachere Verfahren zur Verfügung gestellt werden.
--   Cette documentation ne sera pas maintenue aussi rapidement qu'une simple recherche sur le web avec les mots clés : xiaomi token .
+-   Diese Dokumentation wird nicht so schnell gepflegt wie eine einfache Suche im Web mit den Schlüsselwörtern: xiaomi token.
 
-## Impossible de faire fonctionner les périphériques compatibles Tuya/Smart live/Jinvoo/eFamilyCloud apps
+## Kompatible Geräte können nicht bedient werden. Tuya / Smart live / Jinvoo / eFamilyCloud-Apps
 
-Pour dialoguer avec ces ampoules, prises et autres périphériques, il est nécessaire de transmettre une clé locale ou Localkey ou token en anglais et un identifiant. Sans ces paramètres, l'ampoule ne prendra pas en compte les ordres qui lui sont envoyés. Il existe plusieurs méthodes pour récupérer ces informations. La procédure est décrite sur plusieurs sites mais elle n'est pas reproduite ici pour deux raisons principales :
+Für die Interaktion mit diesen Lampen, Fassungen und anderen Geräten ist es erforderlich, einen lokalen Schlüssel oder Localkey oder Token in englischer Sprache und eine Kennung zu übertragen. Ohne diese Parameter berücksichtigt die Lampe die an sie gesendeten Bestellungen nicht. Es gibt verschiedene Methoden, um diese Informationen abzurufen. Das Verfahren ist an mehreren Stellen beschrieben, wird hier jedoch aus zwei Hauptgründen nicht wiedergegeben:
 
--   Les applications ont été mises à jour, ce qui a obligé à modifier la procédure pour récupérer les informations.
--   De nouvelles procédures plus simples peuvent être mises à disposition des internautes.
--   Cette documentation ne sera pas maintenue aussi rapidement qu'une simple recherche sur le web avec les mots clés : Tuya LocalKey et en particulier sur Github.
+-   Die Anwendungen wurden aktualisiert, was bedeutet, dass das Verfahren zum Abrufen der Informationen geändert wurde.
+-   Internetnutzern können neue und einfachere Verfahren zur Verfügung gestellt werden.
+-   Diese Dokumentation wird nicht so schnell gepflegt wie eine einfache Suche im Web mit den Schlüsselwörtern: Tuya LocalKey und insbesondere auf Github.
 
-## Erreur lors de l'envoi de commande / roue crantée sans arrêt / Emission sans arrêt
--   les équipements wifilightV2 doivent être mis à jour
--   aller dans chaque équipement et sauvegarder 2 fois
--   tester avec un nouvel équipement si cela persiste
+## Fehler beim Senden des Befehls / Zahnrad ohne Stopp / Emission ohne Stopp
+-   wifilightV2-Geräte müssen aktualisiert werden
+-   gehe in jedes Gerät und spare 2 mal
+-   Testen Sie mit neuen Geräten, ob dies weiterhin der Fall ist
 
-## Pont Mi.Light IBox1, iBox2, V6 : commande prise en compte aléatoirement
--   les ordres sont envoyés trop rapidement
--   dans les scénarios, mettre des pauses de durée suffisante
+## Mi.Light Bridge IBox1, iBox2, V6: Befehl wird zufällig berücksichtigt
+-   Bestellungen werden zu schnell versendet
+-   Legen Sie in den Szenarien ausreichend lange Pausen ein
 
-## Pont Mi.Light IBox1, iBox2, V6 : commande non prise en compte
--   lors de l'appairage avec l'application Mi.Light sur mobile et lors de la configuration de wifilightV2, bien choisir la même télécommande.
+## Mi.Light Bridge IBox1, iBox2, V6: Befehl nicht berücksichtigt
+-   Wählen Sie beim Koppeln mit der mobilen Mi.Light-Anwendung und beim Konfigurieren von wifilightV2 dieselbe Fernbedienung.
 
-## LW12 Magic UFO Arilux Wifi3x0 H801 Contrôleurs compatibles Magic Home Tuya/Jinvoo/eFamilyCloud
--   de nombreuses versions existent et certaines peuvent être incompatibles avec le plugin. Contacter l'auteur pour une éventuelle mise à jour.
+## LW12 UFO Magic Arilux Wifi3x0 H801 Kompatible Magic Home Tuya / Jinvoo / eFamilyCloud-Steuerungen
+-   Es gibt viele Versionen und einige sind möglicherweise nicht mit dem Plugin kompatibel. Kontaktieren Sie den Autor für ein mögliches Update.
 
-## Des commandes sont manquantes lors de la création ou de la modification du sous type d'ampoule
--   sauvegarder l'équipement (2 fois)
-
-
-# Comment obtenir de l'aide ?
+## Befehle fehlen beim Erstellen oder Ändern des Untertyps der Glühlampe
+-   Rette die Ausrüstung (2 Mal)
 
 
-Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632)
+# Wie bekomme ich Hilfe?
 
-# Bogues connus
 
-La mémoire diminue drastiquement
--   Bogue corrigé.
+Zum Jeedom-Forum [hier] (https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632)
 
-Pour les prises compatibles Tuya des microcoupures surviennent régulièrement
--   Bogue corrigé.
+# Bekannte Fehler
+
+Das Gedächtnis nimmt drastisch ab
+-   Fehler behoben.
+
+Bei Tuya-kompatiblen Steckdosen treten regelmäßig Mikroschnitte auf
+-   Fehler behoben.
