@@ -1,8 +1,9 @@
-1.53 - 2019-12-03 (version beta)
--   Ewelink : ajout du Sonoff RF bridge 433 - uniquement les capteurs
--   Sonoff TH10/TH16 : ajout des informations du thermostat interne
--   Sonoff Pow R2 : ajout des informations électriques
--   Tuya : meilleur retour d'état des prises multiples
+1.53 - 2019-12-12
+-   Sonoff : ajout du  RF bridge 433 - uniquement les capteurs
+-   Sonoff TH10/TH16 : ajout des informations du thermostat interne (mais pas possible de les modifier)
+-   Sonoff Pow R2 : ajout des informations électriques (mais d'une efficacité limitée, ceci n'est pas dû au plugin)
+-   Tuya : meilleur retour d'état des prises multiples V2
+-	Tuya : ajout 2ème type lampe Blanche
 -   correction bogues 
 
 1.52 - 2019-11-27

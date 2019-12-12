@@ -252,7 +252,9 @@ It suffices to respect certain conditions:
 -   Give it a name (eg Scene Blink)
 -   In parameters, put the scene command Yeelight, for example: &quot;id&quot;: 1, &quot;method&quot;: &quot;set_scene&quot;, &quot;params&quot;: [&quot;cf&quot;, 0,0, &quot;500,1,255,100,1000,1,16776960, 70 &quot;]
 
-Do not put the start and end braces as well as the newline characters, the plugin will add them automatically. Inspire preconfigured commands to create these additional scene modes.
+Ne pas mettre les accolades de début et de fin ainsi que les caractères de retour à la ligne, le plugin les ajoutera automatiquement
+S'inspirer des commandes préconfigurées pour créer ces modes scène supplémentaires.
+Pour la syntaxe Yeelight, voir [ici](https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf)
 
 ## Update status in Jeedom
 When activating the plugin and as soon as the daemon is started and every minute, the plugin searches for the bulbs powered and connected to Jeedom.

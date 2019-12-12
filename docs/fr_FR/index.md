@@ -256,6 +256,7 @@ Il suffit de respecter certaines conditions :
 
 Ne pas mettre les accolades de début et de fin ainsi que les caractères de retour à la ligne, le plugin les ajoutera automatiquement
 S'inspirer des commandes préconfigurées pour créer ces modes scène supplémentaires.
+Pour la syntaxe Yeelight, voir [ici](https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf)
 
 ## Mise à jour de l'état dans Jeedom
 Lors de l'activation du plugin et dès que le démon est lancé ainsi que toutes les minutes, le plugin recherche les ampoules alimentées et connectées à Jeedom.

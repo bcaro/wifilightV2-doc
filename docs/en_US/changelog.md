@@ -1,8 +1,9 @@
-1.53 - 2019-12-03 (beta version)
--   Ewelink: adding the Sonoff RF bridge 433 - only the sensors
--   Sonoff TH10 / TH16: adding internal thermostat information
--   Sonoff Pow R2: adding electrical information
--   Tuya: best return of state of the multiple catch
+1.53 - 2019-12-12
+-   Sonoff: adding RF bridge 433 - only sensors
+-   Sonoff TH10 / TH16: adding information from the internal thermostat (but not possible to modify them)
+-   Sonoff Pow R2: adding electrical information (but of limited effectiveness, this is not due to the plugin)
+-   Tuya: best return of state of the multiple catch V2
+-   Tuya: addition 2nd type lamp Blanche
 -   bug fixes
 
 1.52 - 2019-11-27

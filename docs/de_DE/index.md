@@ -252,7 +252,9 @@ Es genügt, bestimmte Bedingungen einzuhalten:
 -   Gib ihm einen Namen (zB Scene Blink)
 -   Geben Sie als Parameter den Szenenbefehl Yeelight ein, zum Beispiel: &quot;id&quot;: 1, &quot;method&quot;: &quot;set_scene&quot;, &quot;params&quot;: [&quot;cf&quot;, 0,0, &quot;500,1,255,100,1000,1,16776960, 70 „]
 
-Platzieren Sie nicht die Anfangs- und Endklammern sowie die Zeilenumbruchzeichen, das Plugin fügt sie automatisch hinzu. Inspirieren Sie vorkonfigurierte Befehle, um diese zusätzlichen Szenenmodi zu erstellen.
+Ne pas mettre les accolades de début et de fin ainsi que les caractères de retour à la ligne, le plugin les ajoutera automatiquement
+S'inspirer des commandes préconfigurées pour créer ces modes scène supplémentaires.
+Pour la syntaxe Yeelight, voir [ici](https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf)
 
 ## Status in Jeedom aktualisieren
 Wenn Sie das Plugin aktivieren und sobald der Daemon gestartet wird, sucht das Plugin jede Minute nach den Lampen, die mit Strom versorgt und mit Jeedom verbunden sind.

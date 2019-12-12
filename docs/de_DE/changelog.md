@@ -1,8 +1,9 @@
-1.53 - 2019-12-03 (Beta-Version)
--   Ewelink: Hinzufügen der Sonoff RF Bridge 433 - nur die Sensoren
--   Sonoff TH10 / TH16: Hinzufügen von Informationen zum internen Thermostat
--   Sonoff Pow R2: Hinzufügen von elektrischen Informationen
--   Tuya: beste Staatsrendite des Mehrfachfangs
+1,53 - 2019-12-12
+-   Sonoff: Hinzufügen von RF Bridge 433 - nur Sensoren
+-   Sonoff TH10 / TH16: Hinzufügen von Informationen aus dem internen Thermostat (aber nicht möglich, sie zu ändern)
+-   Sonoff Pow R2: Hinzufügen von elektrischen Informationen (aber von begrenzter Wirksamkeit, dies ist nicht auf das Plugin zurückzuführen)
+-   Tuya: beste Zustandsrückgabe des Mehrfachfanges V2
+-   Tuya: Zusatz 2. Typ Lampe Blanche
 -   Fehlerbehebungen
 
 1,52 - 2019-11-27
@@ -20,7 +21,7 @@
 -   eWeLink: Anmeldeinformationen korrigieren
 -   Tuya: Korrektur der Verbindungsinformationen
 -   kleinere Fehlerbehebungen
--   Starten Sie den Dämon neu, nachdem Sie eine Konfiguration geändert haben
+-   Neustart des Dämons nach Änderung einer Konfiguration
 
 1,50 - 2019-10-28
 -   Tuya: Zusatzlampe RGBW Typ 2 (Modul in Beta)
@@ -200,7 +201,7 @@
 -   Möglichkeit zum Bearbeiten des Standardfarbwidgets
 
 1.10 - 2017-06-17
--   Hinzufügen von Extel Meli Glühbirnen
+-   Hinzufügen von Extel Meli Glühlampen
 
 1,09 - 2017-05-22
 -   Jeedom V3.0-Kompatibilität
@@ -210,11 +211,11 @@
 -   Fehlerbehebungen
 
 1.07 - 2017-05-03
--   RGBWW-Statusrückkopplungskorrektur
+-   Korrektur der RGBWW-Statusrückmeldung
 
 1.06 - 2017-05-01
 -   Hinzufügen von Arilux RGBWW
--   Fügen Sie MagicHome-Streifen-LED-RGBWW- und RGBW-Lampen hinzu
+-   Fügen Sie MagicHome-LED-RGBWW- und RGBW-Lampen hinzu
 -   Korrektur der Staatsrendite wifi3x0
 
 1,05 - 2017-04-17
