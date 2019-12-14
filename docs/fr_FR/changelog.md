@@ -5,6 +5,7 @@
 -   Tuya : meilleur retour d'état des prises multiples V2
 -	Tuya : ajout 2ème type lampe Blanche
 -   correction bogues 
+-   Il est nécessaire de sauvegarder les équipements Tuys
 
 1.52 - 2019-11-27
 -   Tuya : lampes globe en stable
