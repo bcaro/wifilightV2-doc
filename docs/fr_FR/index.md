@@ -491,6 +491,19 @@ Dès que le périphérique est trouvé, l'état du périphérique est remonté a
 
 Noter que le plugin peut mettre jusqu'à 1 minute pour trouver qu'un périphérique est connecté ou déconnecté.
 
+# Cas particulier du Nanoleaf
+
+
+## Récupération de la clé
+
+Appuyer pendant 5-7 s sur le bouton power du Nanoleaf et appuyer sur la commande getKey du plugin. Vérifier que l'Apikey a été placée dans le champ "jeton" de la configuration du plugin.
+
+
+## Utilisation d'effets custom
+
+Créer un effet avec l'appli du NanoLeaf et lui donner un nom. Créer une commande action/défaut dans la liste des commandes du périphérique dans le plugin. Mettre le nom dans paramètres. Donner ensuite un identifiant unique et un nom, ils peuvent être identiques au nom de la commande.
+
+
 # FAQ
 
 

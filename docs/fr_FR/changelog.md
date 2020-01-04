@@ -1,3 +1,11 @@
+1.54 - 2020-01-05
+-   Sonoff : correction du connectedget (enfin)
+-   Tuya : correction du connectedget (enfin)
+-   Sonoff RF bridge : passage à 32 triggers
+-   Magic Home : ajout du mode custom
+-   ajout du Nanoleaf
+-   correction bogues 
+
 1.53 - 2019-12-12
 -   Sonoff : ajout du  RF bridge 433 - uniquement les capteurs
 -   Sonoff TH10/TH16 : ajout des informations du thermostat interne (mais pas possible de les modifier)
