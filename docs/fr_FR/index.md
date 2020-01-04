@@ -23,6 +23,7 @@ Les produits compatibles :
 -   Plafonnier WiFi Xiaomi Yeelight avec retour d'état !
 -   Lampe de bureau WiFi Xiaomi Mijia avec retour d'état !
 - 	Sonoff Basic R3 en mode DIY avec retour d'état !!
+-   Nanoleaf Aurora avec retour d'état !
 
 Produits pouvant être compatibles et non garantis :
 -   LW12/Lagute : RGB strip-led contrôleur : retour d'état !
@@ -111,6 +112,9 @@ Sonoff DIY :
 Ewelink et Sonoff LAN :
 -   périphériques avec le firmware 3.0.1 (liste donnée ci-après dans le paragraphe eWelink)
 
+Nanoleaf AUrora :
+-   Rythm non implémentés
+
 # Configuration du module wifi
 
 ## Installer les périphériques
@@ -194,6 +198,7 @@ Pour les périphériques :
  - Xiaomi Philips
  - Extel Meli
  - Sonoff en mode DIY
+ - Nanoleaf Aurora
 
 Le plugin interroge régulièrement le périphérique pour connaitre son état. Le délai pour que Jeedom connaisse l'état peut dépasser 1 minute.
 
