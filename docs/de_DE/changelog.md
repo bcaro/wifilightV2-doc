@@ -1,49 +1,57 @@
+1.54 - 2020-01-05
+-   Sonoff: fixed connectedget (endlich)
+-   Tuya: fixed connectedget (endlich)
+-   Sonoff RF Bridge: Übergang zu 32 Triggern
+-   Magic Home: Hinzufügen eines benutzerdefinierten Modus
+-   Zugabe von Nanoleaf
+-   Fehlerbehebungen
+
 1,53 - 2019-12-12
--   Sonoff: Hinzufügen von RF Bridge 433 - nur Sensoren
--   Sonoff TH10 / TH16: Hinzufügen von Informationen aus dem internen Thermostat (aber nicht möglich, sie zu ändern)
--   Sonoff Pow R2: Hinzufügen von elektrischen Informationen (aber von begrenzter Wirksamkeit, dies ist nicht auf das Plugin zurückzuführen)
--   Tuya: beste Zustandsrückgabe des Mehrfachfanges V2
--   Tuya: Zusatz 2. Typ Lampe Blanche
+-   Sonoff: Hinzufügung von RF Bridge 433 - nur Sensoren
+-   Sonoff TH10 / TH16: Informationen vom internen Thermostat hinzugefügt (aber nicht änderbar)
+-   Sonoff Pow R2: Hinzufügen von elektrischen Informationen (aber von begrenzter Effizienz, dies ist nicht auf das Plugin zurückzuführen)
+-   Tuya: Besseres Feedback von V2-Steckdosen
+-   Tuya: Zusatz einer weißen Lampe 2. Typs
 -   Fehlerbehebungen
 
 1,52 - 2019-11-27
 -   Tuya: Globuslampen im Stall
--   Code-Reinigung
+-   Code-Bereinigung
 -   Fehlerbehebungen
 -   Verschieben des Dokuments
 
 1,51 - 2019-11-23
--   Tuya: Hinzufügen der MiBoxer-Brücke von Milight (Modul in der Beta), nur EIN / AUS der gesamten Box funktioniert. Verfügbar für diejenigen, die den ApiKey mit der MiBoxer-App wiederherstellen möchten.
--   Tuya: Fügen Sie ein benutzerdefiniertes Gerät hinzu, um ein beliebiges Gerät zu konfigurieren
+-   Tuya: Ergänzung der MiBoxer-Brücke von Milight (Modul in Beta), nur EIN / AUS der kompletten Box funktioniert. Verfügbar für diejenigen, die den ApiKey mit der MiBoxer-App wiederherstellen können.
+-   Tuya: Hinzufügen eines benutzerdefinierten Geräts zum Konfigurieren eines beliebigen Geräts
 -   Tuya : refonte des commandes customs : pour les commandes custom existantes -> nécessité de les reconfigurer avec le nouveau format
--   Tuya: Müssen alle Geräte sichern
--   eWeLink: Verwenden eines gefälschten Schlüssels für SelfApiKey
--   eWeLink: Anmeldeinformationen korrigieren
--   Tuya: Korrektur der Verbindungsinformationen
+-   Tuya: müssen alle Geräte retten
+-   eWeLink: Verwendung eines gefälschten Schlüssels für den SelfApiKey
+-   eWeLink: Korrektur der Verbindungsinformationen
+-   Tuya: Verbindungsinfo korrigieren
 -   kleinere Fehlerbehebungen
--   Neustart des Dämons nach Änderung einer Konfiguration
+-   Neustart des Daemons nach Änderung einer Konfiguration
 
 1,50 - 2019-10-28
--   Tuya: Zusatzlampe RGBW Typ 2 (Modul in Beta)
--   Fehlerkorrektur Sonoff Dual
+-   Tuya: Ergänzung der RGBW Typ 2 Lampe (Modul in Beta)
+-   Sonoff Dual Bugfix
 -   Ewelink: Hinzufügen von 3- und 4-Kanal-Geräten
 -   Sonoff: Kompatibler TH10 / 1H16-Temperatursensor, Basis, HF, POW, Mini, Dual, 4CH / 4CH PRO, Touch, S20 / S26, T1 / TX, SLAMPHER, T4EUC1
 
 1,49 - 2019-10-23
--   Korrektur Bug Tuya Vorhang mod2
--   Fehlerkorrektur Sonoff Dual
+-   Bugfix Tuya Vorhang mod2
+-   Sonoff Dual Bugfix
 
 1,48 - 2019-10-18
--   eWelink: Fügen Sie in der Beta Module mit 2 Kanälen (einschließlich Sonoff Dual) hinzu
--   Korrekturfehler Rückgabestatus Sonoff
+-   eWelink: Hinzufügen von Modulen mit 2 Kanälen (einschließlich Sonoff Dual) in der Beta
+-   Fehlerkorrektur Sonoff State Return
 
 1,47 - 2019-10-16
--   Hinzufügen von Tuya Mod2-Rollläden (Ein / Aus / Stopp anstelle von 1/2/3 in den Steuerelementen)
+-   Zusatz von Shutters mod2 (on / off / stop statt 1/2/3 in den Aufträgen)
 -   Fehlerbehebungen
 
 1,46 - 2019-10-12
--   Hinzufügen eines Temperatur- / Feuchtigkeitssensors einschließlich Sonoff TH10 / 16
--   Hinzufügen von Inching im Ewelink-Modus (für eine bestimmte Zeit eingeschaltet)
+-   Fügen Sie einen Temperatur- / Feuchtigkeitssensor einschließlich Sonoff TH10 / 16 hinzu
+-   Zwölf-Zoll-Modus hinzufügen (für eine bestimmte Zeit eingeschaltet)
 -   Fehlerbehebungen
 
 1,45 - 2019-10-2
@@ -51,191 +59,191 @@
 -   SonOff-kompatibel im LAN-Modus
 
 1,44 - 2019-09-27
--   Kompatibel mit Sonoff Basic R3 im DIY-Modus
--   Kompatibler V4 Jeedom
+-   Sonoff Basic R3 kompatibel im DIY-Modus
+-   Jeedom V4 kompatibel
 -   Buster kompatibel
--   Wenn Sie das Farb-Widget entfernen, ohne dass Off nicht mit V4 kompatibel ist, bietet das Plugin keine benutzerdefinierten Widgets mehr an.
+-   Das Entfernen des Farbwidgets ohne Off ist nicht mit V4 kompatibel. Das Plugin bietet keine benutzerdefinierten Widgets mehr an.
 
 1.43 - 2019-07-08
--   TP-Link: Unter Berücksichtigung des neuen V2-Protokolls für die Outlets ist ein Token erforderlich.
--   Tuya: Die Öffnungs- und PIR-Sensoren sind nicht mit dem Plugin kompatibel. Diese Sensoren müssen die Cloud passieren, um die Verwendung von Alarmen zu vermeiden.
--   Fehlerbehebung: Berechnung des Stroms der Stecker Tuya jetzt in Ampere (Modifizieren Sie Ihre Szenarien, da die Einheit des Stroms falsch ist)
--   Tuya und TP-Link, Verbrauchseinheiten: AVW kWh. Speichern Sie die Ausrüstung für eine korrekte Anzeige des Geräts in der Befehlsliste.
+-   TP-Link: Unter Berücksichtigung des neuen V2-Protokolls für Sockets ist ein Token erforderlich.
+-   Tuya: Die Öffnungs- und PIR-Sensoren sind nicht mit dem Plugin kompatibel. Diese Sensoren müssen durch die Cloud gehen: um bei Alarmgebrauch vermieden zu werden.
+-   Fehlerkorrektur: Berechnung des Stroms der Tuya-Steckdosen jetzt in Ampere (Modifizieren Sie Ihre Szenarien, da die aktuelle Einheit falsch ist)
+-   Tuya und TP-Link, Verbrauchseinheiten: AVW kWh. Speichern Sie die Ausrüstung für die korrekte Anzeige des Geräts in der Befehlsliste.
 
 1.42 - 2019-06-02
--   Tuya: Bugfix zurück Zustand
--   Daemon: kein Speicherverlust mehr
+-   Tuya: Bug Return Status Bug
+-   Dämon: Keine Speicherlecks mehr
 
 1.41 - 2019-06-19
--   Tuya: bidirektionale Kompatibilität mit dem Firmware-Plugin 2.0 (OK Aktor)
--   Tuya: Hinzufügen des Dimmerschalters
--   Dämon: umgeschrieben, um Verbindungen / Verbindungen Tuya und Yeelight besser handhaben zu können
--   Möglicherweise muss jedes Gerät neu registriert werden
+-   Tuya: bidirektionale Kompatibilität mit dem Plugin in Firmware 2.0 (Aktor OK)
+-   Tuya: Hinzufügung des Dimmerschalters
+-   Daemon: umgeschrieben, um Pipa- / Yeelight-Verbindungen / -Trennungen besser verwalten zu können
+-   Möglicherweise ist eine erneute Registrierung jedes Geräts erforderlich
 
 1,40 - 2019-06-16
--   Tuya: Sofortige Statusrückmeldung für Geräte, die ihren Status zurückgeben
--   Tuya: Einige Geräte sind auf Firmware 2.0 umgestellt: Sie sind nur im Rückgabezustand mit dem Plugin kompatibel
+-   Tuya: Hinzufügen einer sofortigen Statusrückmeldung für Geräte, die ihren Status zurückgeben
+-   Tuya: Einige Geräte werden auf Firmware 2.0 aktualisiert: Sie sind nur im Rückgabestatus mit dem Plugin kompatibel
 -   Tuya: Die mobile Anwendung muss gestoppt werden, damit das Plugin funktioniert
--   Tuya: Für Benutzer der Beta-Version müssen Tuya V2-Geräte neu konfiguriert werden (Firmware V1 ist von Firmware V2 getrennt)
--   Cron löschen 1 min
+-   Tuya: Für Benutzer der Beta-Version müssen Tuya V2-Geräte neu konfiguriert werden (V1-Firmware ist nicht mit V2-Firmware identisch).
+-   Cronentfernung 1 min
 -   Ein PhP-Fehler führt zu Speicherverlusten. In diesem Fall konfigurieren Sie den Heartbeat des Plugins so, dass er regelmäßig neu gestartet wird
 
 1.39 - 2019-05-05
--   Tuya: Thermostatzusatz
+-   Tuya: Thermostat hinzufügen
 
 1,38 - 2019-04-05
--   Tuya: Korrekturrückzustand
--   Desktop: Fehlerbehebung bei der Statusanzeige
+-   Tuya: Korrekturrückgabestatus
+-   Desktop: Fehleranzeige gibt Statusfehler zurück
 
 1,37 - 2019-04-04
--   Tuya: Mehrverbrauch an allen Tuya-Verkaufsstellen
--   Tuya: Konfiguration der Wiederherstellung der Energieparameter
--   Achtung: Die Konfiguration zum Abrufen der Energieparameter wurde geändert. Alte Konfigurationen bleiben kompatibel.
+-   Tuya: Mehrverbrauch an allen Tuya-Steckdosen
+-   Tuya: Konfiguration der Energierückgewinnung
+-   Bitte beachten Sie: Die Konfiguration zum Abrufen der Energieparameter wurde geändert. Die alten Konfigurationen bleiben kompatibel.
 
 1,36 - 2019-04-03
 -   Tuya: Hinzufügen von Wandschaltern
--   Tuya: Hinzufügen eines Luftbefeuchters
--   Tuya: Mehr Verbrauch für alle Verkaufsstellen
--   Achtung: Es wird notwendig sein, die Ausgänge Tuya neu zu konfigurieren: um die Konfiguration Xplugs + USB zu nehmen und die Unterdrückung der Rückkehr des Zustands für die Buchsen mit Mikroschnitten zu überprüfen.
+-   Tuya: Zugabe eines Luftbefeuchters
+-   Tuya: Verbrauchszuschlag an allen Verkaufsstellen
+-   Achtung: Sie müssen die Tuya-Buchsen neu konfigurieren: Nehmen Sie die Konfiguration der Buchse Xplugs + USB und überprüfen Sie die Unterdrückung der Statusrückmeldung für die Buchsen mit Mikroschnitten.
 
 1,35 - 2019-03-13
--   Tuya: Hinzufügen von Schaltern für Rollläden
--   Tuya: Hinzufügen von benutzerdefinierten Befehlen für alle Geräte (ermöglicht das Testen neuer Aktoren)
+-   Tuya: Hinzufügung von Schaltern für Rollläden
+-   Tuya: Hinzufügen von benutzerdefinierten Befehlen für alle Geräte (ermöglicht das Testen neuer Aktuatoren)
 
 1.34 - 2019-03-02
--   Fügen Sie eine Konfiguration mit Statusrückmeldung für alle Ausgänge hinzu. Achtung es können Mikroschnitte auftreten, dann wird die Konfiguration ohne Rückmeldung übernommen.
+-   Hinzufügen einer Konfiguration mit Statusrückmeldung für alle Buchsen. Beachten Sie, dass Mikroschnitte auftreten können, und nehmen Sie die Konfiguration dann ohne Statusrückmeldung vor.
 
 1,33 - 2019-02-15
--   Parametrierung für die Rückgewinnung des Verbrauchs an den Tuya-Buchsen möglich: Die Buchsen Typ 2 müssen vor der Installation des Plugins in Typ 1 neu konfiguriert werden.
+-   Mögliche Konfiguration für die Rückgewinnung des Verbrauchs an den Rohren: Die Verbrauchsbuchsen Typ 2 müssen vor der Installation des Plugins in Typ 1 neu konfiguriert werden.
 
 1,32 - 2019-02-13
 -   TP-Link HS110 Bugfixes.
 -   Modification du protocole (UDP -> TCP) pour les équipements TP-Link. Normalement sans incidence.
 
 1.31 - 2019-02-12
--   Ein zweiter Steckertyp mit Smart Live-kompatibler Konsole wurde hinzugefügt.
+-   Hinzufügen eines zweiten Steckertyps mit Smart Live-kompatiblem Verbrauch.
 
 1,30 - 2019-02-01
--   Status-Feedback für Tuya-Stecker ohne Verbrauchsmessung entfernt: Nutzlose Funktion, da nur Jeedom den Stecker steuern kann und Mikroschnitte verursacht.
--   Ändern des Dokuments für die neue Mi.Light iBox-Konfiguration
+-   Unterdrückung der Statusrückmeldung bei Tuya-Steckern ohne Verbrauchsmessung: Nutzlose Funktionalität, da nur Jeedom den Stecker steuern kann und Mikroschnitte verursacht.
+-   Änderung des Dokuments für die neue Konfiguration von iBox Mi.Light
 
 1,29 - 2019-1-27
--   Korrekturfarben HSV Birnen Tuya
--   Hinzufügen von RGB-Lampen Tuya
+-   Farbkorrektur HSV Tuya Glühlampen
+-   Fügen Sie RGB-Tuya-Lampen hinzu
 
 1,28 - 2019-1-16
--   TP_Link-Stecker hinzufügen
--   Verbesserung der Kommunikation Tuya Smart Plug
+-   Stecker TP_Link hinzufügen
+-   Kommunikationsverbesserung Tuya Smart Plug
 
 1,27 - 2019-1-11
 -   Tuya Smart Plug in stabil
--   Verbesserung der Kommunikation Tuya Smart Plug
+-   Kommunikationsverbesserung Tuya Smart Plug
 
 1,26 - 2019-1-1
--   Hinzufügen von mit Tuya / Smart Live / Jinvoo / eFamillyCloud-Apps kompatiblen Steckdosen
+-   Fügen Sie mit Tuya / Smart Live / Jinvoo / eFamillyCloud-Apps kompatible Steckdosen hinzu
 -   Kleinere Fehlerbehebungen
--   Neufassung der Dokumentation
+-   Neugestaltung der Dokumentation
 
 1,25 - 2018-11-25
--   Beta-Erweiterung der ansteuerbaren LED-Controller SP108 Led Shop (ON / OFF)
+-   Erweiterung der Beta des adressierbaren LED-Controllers SP108 Led Shop (ON / OFF)
 -   Hinzufügung der RGB Mi.Light-Fernbedienung
 -   Kleinere Fehlerbehebungen
 
 1,24 - 2018-11-14
--   Geräte zur Anzeige von Fehlerseiten wurden behoben
+-   Anzeigeseite für Geräte zur Fehlerbehebung
 
 1,23 - 2018-09-06
--   Magic Home kompatible Pixel Strip LED Controller hinzugefügt
+-   Hinzufügung von Pixel Strip Controllern, die mit Magic Home kompatibel sind
 
 1,22 - 2018-07-10
--   Hinzufügen kompatibler Tuya / Jinvoo Smart Apps-Lampen
+-   Hinzufügung kompatibler Tuya / Jinvoo Smart Apps-Lampen
 -   Hinzufügung der Mi.Light Floodlight Birne
--   Zugabe von Philips Zhiuri Birne
+-   Hinzufügung der Philips Zhiuri Birne
 -   Kleinere Fehlerbehebungen
 
 1,21 - 2018-03-10
--   Ergänzung der Sunix-LED-Leistensteuerung
--   Behobene Fehler Arilux RGBWW
+-   Hinzufügung von Sunix-LED-Strip-Controllern
+-   Fehlerbehebungen Arilux RGBWW
 
 1.20 - 2018-03-02
--   Hinzufügen der sofortigen Rückmeldung des Staates Xiaomi Yeelight Glühbirnen
--   Verbesserte Plugin-Konfigurationsoberfläche
+-   Hinzufügen der sofortigen Rückmeldung über den Zustand der Xiaomi Yeelight-Lampen
+-   Verbesserung der Plugin-Konfigurationsoberfläche
 -   Fehlerbehebungen
 
 1.19 - 2018-02-15
--   Neben Xiaomi Philips verzögerte Herunterfahren
--   Verbesserte EIN / AUS-Statusrückmeldung aller Lampen mit Statusrückmeldung
+-   Zeitgesteuertes Herunterfahren hinzufügen Xiaomi Philips
+-   Verbesserung der EIN / AUS-Statusrückmeldung aller Lampen mit Statusrückmeldung
 -   Fehlerbehebungen
 
 1.18 - 2018-02-13
--   Korrekturen Yeelight JIAOYUE
--   Fügen Sie benutzerdefinierte Modi für Yeelight-Farben hinzu
+-   Yeelight JIAOYUE Korrekturen
+-   Hinzufügen von benutzerdefinierten Modi für Yeelight-Farben
 
 1.17 - 2018-02-11
 -   Hinzufügen von Mi.Light: Track Light RGBW / WW
--   Hinzufügen von benutzerdefinierten Modi Yeelight JIAOYUE
+-   Hinzufügen von benutzerdefinierten Modi für Yeelight JIAOYUE
 -   Listen sortieren
 
 1.16 - 2018-01-25
--   Zusatz Xiaomi Philips: Schreibtischlampe, Glühlampe und Deckenlampe
--   Zugabe von Deckenleuchte Yeelight JIAOYUE 650
--   Zusatz für alle Lampen von Inkrement-Tasten und Intensitäts-Dekrement
--   Mi.Light: Speichern der Intensität RGB und Weiß
--   Mi.Light Fernbedienung 8 Tasten
--   Kleinere Fehler behoben.
+-   Hinzufügen Xiaomi Philips: Schreibtischlampe, Glühbirne und Deckenlampe
+-   Ergänzung der Deckenleuchte Yeelight JIAOYUE 650
+-   Zusatz für alle Lampen der Intensität erhöhen und verringern Tasten
+-   Mi.Light: Speichern der RGB- und Weißintensität
+-   8 Tasten Mi.Light Fernbedienungskorrektur
+-   Kleinere Fehlerbehebungen.
 
 1.15 - 29.11.2017
--   Zusatz MiLight: Fernbedienung 8 Kanäle RGBW CT und LED-Streifen RGBW CT
--   Aktualisiertes Dokument (Rechtschreibung, Hilfe Yeelight)
+-   MiLight-Zusatz: 8-Kanal-RGBW-CT-Fernbedienung und RGBW-CT-LED-Streifen
+-   Update des Dokuments (Rechtschreibung, Yeelight-Hilfe)
 
 1.14 - 28.09.2017
--   Bugfixes: Yeelight und LW12 Deckenleuchte. Geschwindigkeit hinzufügen H801
+-   Bugfixes: Yeelight und LW12 Deckenleuchte. Zusatzgeschwindigkeit H801
 
 1.13 - 2017-09-26
--   Fehlerbehebungen: Yeelight-Deckenleuchte, RUN / STOP LW12, bewegliches Symbol
+-   Fehlerkorrektur: Yeelight Deckenleuchte, RUN / STOP LW12, bewegliches Symbol
 
 1.12 - 2017-09-13
--   Anzeige von Befehlen, auf die direkt in der Registerkarte Befehle zugegriffen werden kann
+-   Zeigen Sie Bestellungen an, auf die Sie direkt auf der Registerkarte Bestellungen zugreifen können
 
 1.11 - 2017-09-04
--   Möglichkeit zum Bearbeiten des Standardfarbwidgets
+-   Möglichkeit zum Ändern des Standardfarbwidgets
 
 1.10 - 2017-06-17
--   Hinzufügen von Extel Meli Glühlampen
+-   Zugabe von Extel Meli Glühlampen
 
 1,09 - 2017-05-22
--   Jeedom V3.0-Kompatibilität
+-   Kompatibilität mit Jeedom V3.0
 
 1,08 - 2017-05-13
 -   Zugabe von TP-Link Glühlampen
 -   Fehlerbehebungen
 
 1.07 - 2017-05-03
--   Korrektur der RGBWW-Statusrückmeldung
+-   RGBWW-Statusrückkopplungskorrektur
 
 1.06 - 2017-05-01
--   Hinzufügen von Arilux RGBWW
--   Fügen Sie MagicHome-LED-RGBWW- und RGBW-Lampen hinzu
--   Korrektur der Staatsrendite wifi3x0
+-   Fügen Sie Arilux RGBWW hinzu
+-   Fügen Sie MagicHome-Streifen-LED-RGBWW- und RGBW-Lampen hinzu
+-   Wifi3x0 Status Feedback Korrektur
 
 1,05 - 2017-04-17
--   H801-Fehler behoben
+-   Fehlerkorrektur H801
 
 1.04 - 2017-04-16
--   Yeelight Sonnenuntergang / Sonnenaufgang Bugfix
+-   Fehlerkorrektur Yeelight Sonnenuntergang / Sonnenaufgang
 
 1.03 - 2017-04-12
 -   Fehlerbehebungen
--   Sonnenaufgangs- und Sonnenuntergangsmodus für Yeelight RGBW hinzugefügt
--   Hinzufügen eines Synchronisationsmodus für die Lampen
+-   Hinzufügen von Sonnenaufgangs- und Sonnenuntergangsmodi für Yeelight RGBW
+-   Hinzufügen eines Lampensynchronisationsmodus
 -   Xiaomi Mijia-Kompatibilität hinzugefügt
 
 1.02 - 2017-04-02
 -   Fehlerbehebungen
--   Zusätzlicher Mondlichtmodus für Deckenlicht
+-   Mondlichtmodus für Helligkeitsdecken hinzugefügt
 
 1,01 - 29.01.2017
--   Anmeldeinformationen hinzufügen
+-   Fügen Sie Verbindungsinformationen hinzu
 -   Fehlerbehebungen
 -   Standardmäßig werden die Statusinformationen nicht mehr angezeigt
 
