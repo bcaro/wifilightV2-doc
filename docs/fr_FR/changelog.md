@@ -1,4 +1,4 @@
-1.54 - 2020-01-05
+1.54 - 2020-01-11
 -   Sonoff : correction du connectedget (enfin)
 -   Tuya : correction du connectedget (enfin)
 -   Sonoff RF bridge : passage à 32 triggers
