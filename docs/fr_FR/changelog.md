@@ -1,4 +1,4 @@
-1.55 - 2020-01-11
+1.55 - 2020-01-26
 -   TPlink prises HS110 V1/V2 : ajout des statistiques de conso + correction retour état led
 -   Ajout de la surveillance de certains cas de fuite mémoire : deamon relancé la nuit si détection de fuite
 -   Yeelight : ajout Smart Meteorite
