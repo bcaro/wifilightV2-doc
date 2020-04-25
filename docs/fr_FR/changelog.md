@@ -1,8 +1,19 @@
+1.56 - 2020-04-26
+-   Tuya : correction des blocages suite à déconnexion (mais la déconnexion n'est pas due au plugin)
+-   Tuya  et Yeeelight : récupérarion de l'état à la connexion
+-	Tuya  et Yeeelight : l'état des widgets n'est modifié que si le périphérique est connecté et répond
+-	Correction de la fuite mémoire dans le deamon
+-	Sonoff RF Bridge : correction pour le nouveau firmware 3.4
+-	Sonoff TH10/16 : le firmware 3.4 supprime le mode LAN et donc l'accès par le plugin pour ON/OFF (la température est remontée dans le plugin)
+-	Correction bogues
+	
+	!!Ne modifiez pas les firmwares de vos périphériques!!
+
 1.55 - 2020-01-26
 -   TPlink prises HS110 V1/V2 : ajout des statistiques de conso + correction retour état led
 -   Ajout de la surveillance de certains cas de fuite mémoire : deamon relancé la nuit si détection de fuite
 -   Yeelight : ajout Smart Meteorite
--	Correction bogues 
+-	Correction bogues
 
 1.54 - 2020-01-11
 -   Sonoff : correction du connectedget (enfin)

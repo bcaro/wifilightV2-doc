@@ -53,6 +53,7 @@ Produits incompatibles et qui ne le seront pas :
 -   Les ampoules, prises ou contrôleurs de bandeau led qui contiennent un récepteur bluetoooth au lieu d'un récepteur radiofréquence 2.4 Ghz ou WiFi.
 -   Les contrôleurs de bandeau led ou d'ampoules et les ampoules ou prises qui utilisent une connexion WiFi point à point avec l'application mobile.
 -   La lampe de chevet Xiaomi n'est pas compatible (par construction).
+-	Tuya avec firmare >
 
 ## Test de compatibilité
 
@@ -329,7 +330,7 @@ De nombreuses marques sont compatibles dont les Sonoff.
 -  Interrupteurs, prises murales, switch : simples de toutes marques
 -  Interrupteurs, prises murales, switch : multiples de toutes marques
 -  2 types de lampes (tester les 2 types)
--  Sonoff TH10/1H16 capteur de température
+-  Sonoff TH10/1H16 capteur de température mais pas le ON/OFF (firmware >=3.4)
 -  Sonoff basic, RF, POW, Mini
 -  Sonoff Dual
 -  Sonoff 4CH/4CH PRO
