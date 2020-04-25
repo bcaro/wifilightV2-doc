@@ -6,6 +6,7 @@
 -	Sonoff RF Bridge : correction pour le nouveau firmware 3.4
 -	Sonoff TH10/16 : le firmware 3.4 supprime le mode LAN et donc l'accès par le plugin pour ON/OFF (la température est remontée dans le plugin)
 -	Correction bogues
+	
 	!!Ne modifiez pas les firmwares de vos périphériques!!
 
 1.55 - 2020-01-26
