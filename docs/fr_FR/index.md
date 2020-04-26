@@ -53,7 +53,7 @@ Produits incompatibles et qui ne le seront pas :
 -   Les ampoules, prises ou contrôleurs de bandeau led qui contiennent un récepteur bluetoooth au lieu d'un récepteur radiofréquence 2.4 Ghz ou WiFi.
 -   Les contrôleurs de bandeau led ou d'ampoules et les ampoules ou prises qui utilisent une connexion WiFi point à point avec l'application mobile.
 -   La lampe de chevet Xiaomi n'est pas compatible (par construction).
--	Tuya avec firmare >
+
 
 ## Test de compatibilité
 
@@ -341,6 +341,8 @@ De nombreuses marques sont compatibles dont les Sonoff.
 -  Sonoff T4EUC1
 -  Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur de présence, télécommande)
 
+Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
+
 Pour les périphériques multicanaux (comme le Sonoff 4CH) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tache, ensuite il faut changer le n° de canal.
 
 Pour les périphériques non présents dans cette liste (Sonoff Ifan, variateur de lumière par exemple) ou si la configuration ne fonctionne pas et après avoir intégré le périphérique dans Jeedom (avec la configuration Sonoff Basic par exemple) repérer dans les logs :
@@ -367,7 +369,7 @@ Les équipements suivants sont compatibles en firmware 1.0. et en firmware 2.0.
 -  thermostat BHT-6000GCLW / BHT 6000 et uniquement ces modèles
 -  ampoules RGBW globe et modèles similaires en fonctionnement
 
-Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs.
+Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
 Pour les périphériques multicanaux (comme les prises multiples) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tache, ensuite il faut changer le n° de canal.
 
