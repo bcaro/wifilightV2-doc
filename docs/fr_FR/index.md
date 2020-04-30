@@ -34,7 +34,7 @@ Produits pouvant être compatibles et non garantis :
 -   Arilux AL-C01/02/03/04/06/10 : RGB/RGBW/RGBWW strip-led contrôleur, retour d’état !
 -   TP-Link LB100/110/120/130 : ampoules avec retour d’état !
 -   Lampe Extel Meli avec retour d'état !
--   Xiaomi Philips : Lampe bureau, ampoule et plafonnier avec retour d'état !!!
+-   Xiaomi Philips : Lampe bureau, lampe de chevet (V2), ampoule et plafonnier avec retour d'état !!!
 -   Ampoules, prises, interrupteur, interrupteurs volets, humidifieur, thermostat compatibles Tuya Smart live ou Jinvoo smart ou eFamilyCloud apps avec retour d'état !!!
 -   Prises électriques TP-link HS100 HS110 avec retour d'état !!
 -   Contrôleurs de pixel strip leds compatible Magic home avec retour d'état !
@@ -52,7 +52,8 @@ Produits incompatibles et qui ne le seront pas :
 -	Les contrôleurs de Led Milight(du type YL etc.) sans pont.
 -   Les ampoules, prises ou contrôleurs de bandeau led qui contiennent un récepteur bluetoooth au lieu d'un récepteur radiofréquence 2.4 Ghz ou WiFi.
 -   Les contrôleurs de bandeau led ou d'ampoules et les ampoules ou prises qui utilisent une connexion WiFi point à point avec l'application mobile.
--   La lampe de chevet Xiaomi n'est pas compatible (par construction).
+-   L'anceinne lampe de chevet Xiaomi n'est pas compatible.
+-	Certains périphériques compatibles Magic Home ne fonctionnent plus qu'avec le cloud.
 
 
 ## Test de compatibilité
@@ -203,7 +204,7 @@ Pour les périphériques :
 
 Le plugin interroge régulièrement le périphérique pour connaitre son état. Le délai pour que Jeedom connaisse l'état peut dépasser 1 minute.
 
-Pour les autres périphériques il n'y a pas de retour d'état;
+Pour les autres périphériques il n'y a pas de retour d'état.
 
 ## Mise à jour par scénario
 

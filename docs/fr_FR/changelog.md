@@ -1,3 +1,7 @@
+1.57 - 2020-04-30
+-   Yeelight : ajout de la lampe de chevet V2 (la V1 n'est toujours pas compatible)
+-   Yeelight : amélioration de la rapidité et du retour d'état
+
 1.56 - 2020-04-26
 -   Tuya : correction des blocages suite à déconnexion (mais la déconnexion n'est pas due au plugin)
 -   Tuya  et Yeelight : récupérarion de l'état à la connexion
