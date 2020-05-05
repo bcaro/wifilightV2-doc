@@ -1,3 +1,6 @@
+1.58 - 2020-05-04
+-   Tuya : ajout Smart Garage
+
 1.57 - 2020-04-30
 -   Yeelight : ajout de la lampe de chevet V2 (la V1 n'est toujours pas compatible)
 -   Yeelight : amélioration de la rapidité et du retour d'état
