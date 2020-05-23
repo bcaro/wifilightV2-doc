@@ -3,8 +3,9 @@
 -	Yeelight : filtrage des retours d'état non valides
 -	Nanoleaf : correctif afin de permettre le fonctionnement avec Buster
 -	Compatibilité avec HomeBridge ou autres plugins afin de fournir la température de couleur des lampes en Kelvin : nécessite de sauvegarder chaque équipement (partie en beta à tester par les plugins pouvant l'utiliser).
+-	les valeurs min et max des sliders sont modifiables par l'utilisateur. Ne les modifier que pour la température de couleur (KelvinVal), pour tous les autres, un dysfonctionnement est possible
 
-ATTENTION : Il est nécessaire de sauvegarder les périphériques de type lampe ou led qui gèrent la température de couleur.
+ATTENTION : Il est nécessaire de sauvegarder TOUS les périphériques de type lampe ou led qui gèrent la température de couleur.
 
 1.58 - 2020-05-04
 -   Tuya : ajout Smart Garage
