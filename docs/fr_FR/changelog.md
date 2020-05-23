@@ -1,8 +1,8 @@
 1.59 - 2020-05-26
--   Xiaomi : ajout de la gateway Xiaomi WiFi utilisant des périphériques Zigbee compatibles Tuya 
+-   Xiaomi : ajout de la gateway Xiaomi WiFi utilisant des périphériques Zigbee compatibles Tuya : ajoute la compatibilité de nombreux périphériques dont une gâche connectée.
 -	Yeelight : filtrage des retours d'état non valides
 -	Nanoleaf : correctif afin de permettre le fonctionnement avec Buster
--	compatibilité avec HomeBridge pour les Kelvins : nécessite de sauvegarder chaque équipement.
+-	compatibilité avec HomeBridge ou autres plugins adin de foournir la température de couleur des lampes en Kelvin : nécessite de sauvegarder chaque équipement(partie en beta à tester par les plugins pouvant l'utiliser).
 
 1.58 - 2020-05-04
 -   Tuya : ajout Smart Garage
