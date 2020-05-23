@@ -499,7 +499,7 @@ Ici, le bouton off a été sélectionné sur le périphérique et on observe que
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"on","101":true}}
 
 	
-	Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps 1  a changé.
+Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps 1  a changé.
 	
 -   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
     *    Dans la colonne interface mettre ON comme nom du bouton
