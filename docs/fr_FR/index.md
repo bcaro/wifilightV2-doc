@@ -45,7 +45,7 @@ Produits pouvant être compatibles et non garantis :
 Pour ces contrôleurs, ampoules ou prises, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin.
 
 Attention :
-- ! : intégration facile pour pour une personne qui lit la documentation avant d'agir
+- ! : intégration facile pour une personne qui lit la documentation avant d'agir
 - !! : en plus de !, nécessite de suivre une procédure particulière, adapté à une personne qui comprend qu'une procédure est faite pour être suivie scrupuleusement
 - !!! : en plus de !! nécessite des connaissances de base en informatique et être habitué à faire des recherches sur internet dans un but précis
 
@@ -56,6 +56,7 @@ Produits incompatibles et qui ne le seront pas :
 -   Les contrôleurs de bandeau led ou d'ampoules et les ampoules ou prises qui utilisent une connexion WiFi point à point avec l'application mobile.
 -   L'anceinne lampe de chevet Xiaomi Yeelight n'est pas compatible.
 -	Certains périphériques compatibles Magic Home ne fonctionnent plus qu'avec le cloud.
+- 	Tous les capteurs WiFi sur pile (détecteur de présence, déteteur d'ouverture) compatibles Tuya qui ne fonctionnent plus qu'avec le cloud.
 
 
 ## Test de compatibilité
@@ -116,8 +117,11 @@ Sonoff DIY :
 Ewelink et Sonoff LAN :
 -   périphériques avec le firmware 3.0.1 (liste donnée ci-après dans le paragraphe eWelink)
 
-Nanoleaf AUrora :
+Nanoleaf Aurora :
 -   Rythm non implantés
+
+Passerelle Xiaomi :
+-   La configuration est manuelle. La gestion de la couleur des ampoules sera limitée à des boutons de couleur individuelle (mais via des scénarios, ce problème peut être controurné par les experts).
 
 # Configuration du module wifi
 
@@ -228,7 +232,7 @@ La commande ConnectedGet permet de récupérer l'état de la connexion de chaque
 
 Il est possible de synchroniser plusieurs périphériques de marques différentes :
 
-Toutes les périphériques qui ont le même numéro de groupe sont synchronisées
+Tous les périphériques qui ont le même numéro de groupe sont synchronisées
 
 Le groupe 0 n'est pas synchronisé (groupe par défaut)
 
@@ -359,9 +363,9 @@ et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sono
 
 ## Compatibilité
 
+Le dialogue entre le plugin et la passerelle se fait en WiFi. Ensuite, le dialogue entre les capteurs et actionneurs et la passerelle se fait via Zigbee. Ils doivent être compatibles Tuya.
 La passerelle doit être entièrement configurée en mode "custom" car le plugin ne peut connaitre la configuration des  périphériques connectés à la passerelle.
-Le plugin permet de contrôler de nombreux actionneurs et capteurs connectés à la passerelle. Ils doivent ête compatibles Tuya.
-Il peut récupérer l'état des périphériques dès que celui-ci envoie une information de changement d'état ou quand il les interroge toutes les minutes. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
+Le plugin peut récupérer l'état des périphériques dès que ceux-ci envoient une information de changement d'état ou quand le plugin les interroge au lancement du demon. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
 
 Les équipements suivants sont compatibles mais la liste n'est pas exclusive et sera complétée en fonction du retour des utilisateurs.
 
@@ -395,7 +399,7 @@ Si aucun message en clair n'apparait, c'est que la clé n'est pas bonne.
 
 ##Configurer la passerelle
 
-La configuration est identique à celle du chapitre <<Périphérique custom>> concernant les périphériques Tuya. Pour l'instant, la configuration est entièrement manuelle.
+La configuration est identique à celle du paragraphe [Périphérique custom](#Périphérique-custom) concernant les périphériques Tuya. Pour l'instant, la configuration est entièrement manuelle.
 
 
 # Cas particulier des périphériques compatibles Tuya Smart/Jinvoo/eFamilyCloud apps
