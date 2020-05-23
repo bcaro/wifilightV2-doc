@@ -494,7 +494,7 @@ Il est possible de créer un périphérique entièrement custom. Contrairement a
 
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"off","101":true}}
 	
-	Ici, le bouton off a été sélectionné sur le périphérique et on observe que le dps 1  a changé.
+Ici, le bouton off a été sélectionné sur le périphérique et on observe que le dps 1  a changé.
 	
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"on","101":true}}
 
@@ -516,7 +516,7 @@ Il est possible de créer un périphérique entièrement custom. Contrairement a
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"3":850,"101":true}}
 
 	
-	Ici, un curseur d'intensité a été sélectionné sur l'application du périphérique et on observe que le dps 3 a changé.
+Ici, un curseur d'intensité a été sélectionné sur l'application du périphérique et on observe que le dps 3 a changé.
 	
 -   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Intensité comme nom du curseur
@@ -530,7 +530,7 @@ Il est possible de créer un périphérique entièrement custom. Contrairement a
 	
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"8":23,"101":true}}
 	
-	Ici, c'est une température qui est envoyée régulièrement et on observe que le dps 8 a changé.
+Ici, c'est une température qui est envoyée régulièrement et on observe que le dps 8 a changé.
 	
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre TempGet comme nom de l'info
@@ -543,7 +543,7 @@ Il est possible de créer un périphérique entièrement custom. Contrairement a
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"12":0}}
 
 	
-	Ici, c'est l'information d'ouverture/fermeture qui est envoyée et on observe que le dps 12 a changé.
+Ici, c'est l'information d'ouverture puis de fermeture qui est envoyée et on observe que le dps 12 a changé.
 	
 -   Créer une nouvelle commande info/binaire dans les commandes du périphérique :
     *    Dans la colonne interface mettre PorteGet comme nom de l'info
