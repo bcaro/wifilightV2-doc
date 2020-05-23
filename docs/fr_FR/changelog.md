@@ -1,8 +1,14 @@
+1.59 - 2020-05-20
+-   Xiaomi : ajout de la gateway Xiaomi Zigbee utilisant des périphériques compatibles Tuya
+-	Yeelight : filtrage des retours d'état non valides
+-	Nanoleaf : correctif afin de permettre le fonctionnement avec Buster
+-	compatibilité avec HomeBridge pour les Kelvins : nécessite de sauvegarder chaque équipement.
+
 1.58 - 2020-05-04
 -   Tuya : ajout Smart Garage
 
 1.57 - 2020-04-30
--   Yeelight : ajout de la lampe de chevet V2 (la V1 n'est toujours pas compatible)
+-   Yeelight : ajout de la lampe de chevet V2 (la V1 ne sera toujours pas compatible)
 -   Yeelight : amélioration de la rapidité et du retour d'état
 
 1.56 - 2020-04-26
