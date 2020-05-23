@@ -1,5 +1,5 @@
-1.59 - 2020-05-20
--   Xiaomi : ajout de la gateway Xiaomi Zigbee utilisant des périphériques compatibles Tuya
+1.59 - 2020-05-26
+-   Xiaomi : ajout de la gateway Xiaomi WiFi utilisant des périphériques Zigbee compatibles Tuya 
 -	Yeelight : filtrage des retours d'état non valides
 -	Nanoleaf : correctif afin de permettre le fonctionnement avec Buster
 -	compatibilité avec HomeBridge pour les Kelvins : nécessite de sauvegarder chaque équipement.
@@ -17,7 +17,7 @@
 -	Tuya  et Yeelight : l'état des widgets n'est modifié que si le périphérique est connecté et répond
 -	Correction de la fuite mémoire dans le deamon
 -	Sonoff RF Bridge : correction pour le nouveau firmware 3.4
--	Sonoff TH10/16 : le firmware 3.4 supprime le mode LAN et donc l'accès par le plugin pour ON/OFF (la température est remontée dans le plugin)
+-	Sonoff TH10/16 : le firmware 3.4 supprime le mode LAN et donc l'accès par le plugin pour ON/OFF (par contre, la température est remontée dans le plugin)
 -	Correction bogues
 	
 	!!Ne modifiez pas les firmwares de vos périphériques!!

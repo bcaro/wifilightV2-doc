@@ -1,6 +1,6 @@
 # Présentation
 
-Ce plugin permet de gérer de nombreux bandeaux de leds ou ampoules leds ou prises électriques pilotés en wifi ou par radiofréquence 2.4 GHz via une box wifi vendue avec le produit. Le principe du plugin est de ne jamais utliser le cloud et donc la connexion internet entre le plugin et le périphérique, toutes les actions sont donc locales au réseau domestique.
+Ce plugin permet de gérer de nombreux bandeaux de leds ou ampoules leds ou prises électriques pilotés en wifi ou par radiofréquence 2.4 GHz via une box wifi vendue avec le produit. Le principe du plugin est de ne jamais utiliser le cloud et donc une connexion internet entre le plugin et le périphérique via un serveur lointain, toutes les actions sont donc locales au réseau domestique.
 
 
 ![Milight](../images/wifilightV2_screenshot01.png) ![Tuya](../images/wifilightV2_screenshot03.png) ![Plafonnier](../images/wifilightV2_screenshot05.png) ![Prise](../images/wifilightV2_screenshot07.png) 
@@ -35,12 +35,12 @@ Produits pouvant être compatibles et non garantis :
 -   Arilux AL-C01/02/03/04/06/10 : RGB/RGBW/RGBWW strip-led contrôleur, retour d’état !
 -   TP-Link LB100/110/120/130 : ampoules avec retour d’état !
 -   Lampe Extel Meli avec retour d'état !
--   Xiaomi Philips : Lampe bureau,  ampoule et plafonnier avec retour d'état !!!
--   Ampoules, prises, interrupteur, interrupteurs volets, humidifieur, thermostat compatibles Tuya Smart live ou Jinvoo smart ou eFamilyCloud apps avec retour d'état !!!
+-   Xiaomi Philips : Lampe bureau, ampoule et plafonnier avec retour d'état !!!
+-   Ampoules, prises, interrupteur, interrupteurs volets, humidificateur, thermostat compatibles Tuya Smart live ou Jinvoo smart ou eFamilyCloud apps avec retour d'état !!!
 -   Prises électriques TP-link HS100 HS110 avec retour d'état !!
 -   Contrôleurs de pixel strip leds compatible Magic home avec retour d'état !
 -	Périphériques contrôlés par l'appli Ewelink dont les Sonoff en mode LAN avec retour d'état !!!
--	Xiaomi passerelle wifi utilisant le protocole Tuya pour les périphérique Zigbee !!!
+-	Xiaomi passerelle wifi utilisant le protocole Tuya pour les périphériques Zigbee !!!
 
 Pour ces contrôleurs, ampoules ou prises, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin.
 
@@ -56,7 +56,7 @@ Produits incompatibles et qui ne le seront pas :
 -   Les contrôleurs de bandeau led ou d'ampoules et les ampoules ou prises qui utilisent une connexion WiFi point à point avec l'application mobile.
 -   L'anceinne lampe de chevet Xiaomi Yeelight n'est pas compatible.
 -	Certains périphériques compatibles Magic Home ne fonctionnent plus qu'avec le cloud.
-- 	Tous les capteurs WiFi sur pile (détecteur de présence, déteteur d'ouverture) compatibles Tuya qui ne fonctionnent plus qu'avec le cloud.
+- 	Tous les capteurs WiFi sur pile (détecteur de présence, détecteur d'ouverture) compatibles Tuya qui ne fonctionnent plus qu'avec le cloud.
 
 
 ## Test de compatibilité
@@ -121,7 +121,7 @@ Nanoleaf Aurora :
 -   Rythm non implantés
 
 Passerelle Xiaomi :
--   La configuration est manuelle. La gestion de la couleur des ampoules sera limitée à des boutons de couleur individuelle (mais via des scénarios, ce problème peut être controurné par les experts).
+-   La configuration est manuelle. La gestion de la couleur des ampoules sera limitée à des boutons de couleur individuelle (mais via des scénarios, ce problème peut être contourné par les experts).
 
 # Configuration du module wifi
 
@@ -177,7 +177,7 @@ lors de la sauvegarde du module, les commandes sont automatiquement créées.
 
 le nom des commandes peut être modifié. Les commandes automatiquement créées et effacées sont recréées lors d'une sauvegarde.
 
-lorsque toutes les commandes sont créées, elles peuvent alourdir l'interface, il est possible de ne pas les afficher en configurant la création des commandes.
+Lorsque toutes les commandes sont créées, elles peuvent alourdir l'interface, il est possible de ne pas les afficher en configurant la création des commandes.
 
 ## Modification du type ou de sous-type de périphérique
 
@@ -191,7 +191,7 @@ lorsque toutes les commandes sont créées, elles peuvent alourdir l'interface, 
 
 Le retour d'état est immédiat pour les périphériques suivants :
 - Yeelight
-- compatibles avec ewelink
+- compatibles avec Ewelink
 - compatibles avec l'appli Tuya smart live
 - Sonoff en mode LAN
 
@@ -228,7 +228,7 @@ La commande ConnectedGet permet de récupérer l'état de la connexion de chaque
 
 # Fonctionnement de la synchronisation
 
-##  Principe de la synchronisation
+## Principe de la synchronisation
 
 Il est possible de synchroniser plusieurs périphériques de marques différentes :
 
@@ -257,7 +257,7 @@ Se connecter en http (avec un navigateur Web) à l'adresse IP de votre iBox. Les
 # Cas particulier des Xiaomi Yeelight
 
 ## Configuration de l'ampoule
-Il est indispensable d'activer le contrôle par réseau local via l'application  Xiaomi Yeelight.
+Il est indispensable d'activer le contrôle par réseau local via l'application Xiaomi Yeelight.
 
 ## Mode Scène Xiaomi Yeelight
 Il est possible de configurer les modes scène. Plusieurs modes scène sont préprogrammés dans le plugin mais il est possible d'ajouter d'autres modes scène.
@@ -282,6 +282,7 @@ Noter que le plugin peut mettre jusqu'à 1 minute pour trouver une ampoule et 4 
 
 ## Configuration de l'ampoule
 
+Note : certains périphériques en version 2 ne nécessitent pas de récupérer un jeton : laisser le champ vide dans la configuration du périphérique.
 Depuis mi 2019, de nouveaux périphériques sortent en protocole version 2. Le protocole V2 nécessite de récupérer un jeton (token) permettant au plugin de dialoguer avec les périphériques TP-Link.
 
 Pour obtenir ce jeton, il faut capturer les trames échangées entre l'appli Kasa sur le téléphone et le périphérique à ajouter dans le plugin. Sous Android il faut utiliser Packet Capture.
@@ -323,7 +324,7 @@ Le périphérique Sonoff doit être en firmware 3.3.0 ou plus, l'appli Windows c
 
 ## Récupération de l'APiKey et du DeviceID
 
-Suivre les indications [ici](https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) pour récupérer ces 2 informations. Le deviceid est à mettre dans l'identifiant du plugin. L'Apikey est à mettre dans le jeton. Il ne faut mettre ni espace ni guillements.
+Suivre les indications [ici](https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) pour récupérer ces 2 informations. Le deviceid est à mettre dans l'identifiant du plugin. L'Apikey est à mettre dans le jeton. Il ne faut mettre ni espace ni guillemets.
 
 Le périphérique doit être en firmware 3.0.1 ou plus, l'appli Ewelink permet de mettre à jour le firmware.
 
@@ -351,7 +352,7 @@ De nombreuses marques sont compatibles dont les Sonoff.
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
-Pour les périphériques multicanaux (comme le Sonoff 4CH) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tache, ensuite il faut changer le n° de canal.
+Pour les périphériques multicanaux (comme le Sonoff 4CH) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal.
 
 Pour les périphériques non présents dans cette liste (Sonoff Ifan, variateur de lumière par exemple) ou si la configuration ne fonctionne pas et après avoir intégré le périphérique dans Jeedom (avec la configuration Sonoff Basic par exemple) repérer dans les logs :
 
@@ -364,7 +365,7 @@ et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sono
 ## Compatibilité
 
 Le dialogue entre le plugin et la passerelle se fait en WiFi. Ensuite, le dialogue entre les capteurs et actionneurs et la passerelle se fait via Zigbee. Ils doivent être compatibles Tuya.
-La passerelle doit être entièrement configurée en mode "custom" car le plugin ne peut connaitre la configuration des  périphériques connectés à la passerelle.
+La passerelle doit être entièrement configurée en mode "custom" car le plugin ne peut connaitre la configuration des périphériques connectés à la passerelle.
 Le plugin peut récupérer l'état des périphériques dès que ceux-ci envoient une information de changement d'état ou quand le plugin les interroge au lancement du demon. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
 
 Les équipements suivants sont compatibles mais la liste n'est pas exclusive et sera complétée en fonction du retour des utilisateurs.
@@ -383,7 +384,7 @@ Pour récupérer la clé, la procédure est complexe et nécessite plusieurs man
 
 Si le périphérique est désinstallé puis réinstallé dans l'application mobile, alors sa clé sera modifiée. Il faudra retrouver la clé avec la procédure ci-dessus. 
 
-Aucune aide ne sera donnée pour récupérer la clé .
+Aucune aide ne sera donnée pour récupérer la clé.
 
 
 ##Récupération de l'identifiant du périphérique
@@ -393,7 +394,7 @@ Vous trouverez une information comme celle-ci :
     
     Receive after decode :{"dps":{"161":"Esc"},"cid":"ec1bbdfffe781b28","t":1589301302}
  
-Le cid est à copier dans le champ id du périphérique du plugin (sans les  " "). C'est lui qui permet de distinguer 2 équipements connectés à la passerelle.
+Le cid est à copier dans le champ id du périphérique du plugin (sans les " "). C'est lui qui permet de distinguer 2 équipements connectés à la passerelle.
 
 Si aucun message en clair n'apparait, c'est que la clé n'est pas bonne.
 
@@ -423,7 +424,7 @@ Les équipements suivants sont compatibles en firmware 1.0. et en firmware 2.0.
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
-Pour les périphériques multicanaux (comme les prises multiples) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tache, ensuite il faut changer le n° de canal.
+Pour les périphériques multicanaux (comme les prises multiples) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal.
 
 Les capteurs de présence et d'ouverture ne sont pas compatibles car ils ne dialoguent pas en local.
 
@@ -446,7 +447,7 @@ Tout changement de configuration nécessite de redémarrer le démon.
 
 ## Configuration de la récupération de la consommation des prises
 
-Selon les marques, la consommation n'est pas envoyée de façon unique par la prise. Pour récupérer ce paramétrage, installer la prise dans Jeedom et conserver le retour d'état dans la configuration, puis aller dans les logs de wifilightV2. La prise est interrogée toutes les minutes. Repérer la message qui ressemble à :
+Selon les marques, la consommation n'est pas envoyée de façon unique par la prise. Pour récupérer ce paramétrage, installer la prise dans Jeedom et conserver le retour d'état dans la configuration, puis aller dans les logs de wifilightV2. La prise est interrogée toutes les minutes. Repérer le message qui ressemble à :
 
     return decoded : {"devId":"xxxxxxxxx","dps":{"1":false,"2":false,"9":0,"10":0,"18":0,"19":0,"20":2281,"21":1,"22":726,"23":28971,"24":19417,"25":1070}}
 
@@ -481,7 +482,7 @@ Le paragraphe suivant donne des éléments pour interpréter les logs wifilightV
 
 ## Périphérique custom
 
-Il est possible de créer un périphérique entièrement custom. Contrairement aux commandes personnalisées, un périphérique custom n'a aucune commande prédéfinie et tout doit être configuré pour chaque commande. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de soulution.
+Il est possible de créer un périphérique entièrement custom. Contrairement aux commandes personnalisées, un périphérique custom n'a aucune commande prédéfinie (sauf connectedGet) et tout doit être configuré pour chaque commande. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de solution.
 
 ### Configuration
 -   désactiver tous les périphériques wifilightV2 sauf celui à tester
@@ -491,29 +492,29 @@ Il est possible de créer un périphérique entièrement custom. Contrairement a
 -   effacer les logs
 
 ### Récupération des informations
--   appuyer sur un bouton du périphérique (on,off,haut,bas,etc.) ou attendre que le prériphérique renvoie son état ou appuyer sur un bouton de l'appli Smart Live (mais dans ce dernier cela peut empêcher le retour d'état)
+-   appuyer sur un bouton du périphérique (on,off,haut,bas,etc.) ou attendre que le périphérique renvoie son état ou appuyer sur un bouton de l'appli Smart Live (mais dans ce dernier cas, cela peut empêcher le retour d'état).
 -   repérer dans les logs le retour d'état
 
 #### Cas d'un actionneur tout ou rien, tel que ON/OFF
 
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"off","101":true}}
 	
-Ici, le bouton off a été sélectionné sur le périphérique et on observe que le dps 1  a changé.
+Ici, le bouton off a été sélectionné sur le périphérique et on observe que le dps 1 a changé.
 	
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"on","101":true}}
 
 	
-Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps 1  a changé.
+Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps 1 a changé.
 	
 -   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
     *    Dans la colonne interface mettre ON comme nom du bouton
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : ON, comme dps : 1 (sans les double guillemets) et comme paramètre : "on" (si le on n'est pas entouré de guillemets, il faut les enlever).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : ON, comme dps : 1 (sans les doubles guillemets) et comme paramètre : "on" (si le on n'est pas entouré de guillemets, il faut les enlever).
 -   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
     *    Dans la colonne interface mettre OFF comme nom du bouton
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : OFF, comme dps : 1 (sans les double guillemets) et comme paramètre : "off" (si le off n'est pas entouré de guillemets, il faut les enlever).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : OFF, comme dps : 1 (sans les doubles guillemets) et comme paramètre : "off" (si le off n'est pas entouré de guillemets, il faut les enlever).
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre ETAT comme nom de l'info
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : ETAT, comme dps : 1 (sans les double guillemets) et rien dans paramètres.
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : ETAT, comme dps : 1 (sans les doubles guillemets) et rien dans paramètres.
 
 #### Dans le cas d'une commande numérique, comme une commande d'intensité :
 	
@@ -524,10 +525,10 @@ Ici, un curseur d'intensité a été sélectionné sur l'application du périph�
 	
 -   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Intensité comme nom du curseur
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : Intensite, comme dps : 3 (sans les double guillemets) et comme paramètre : #slider# (ici la valeur numérique n'est pas entourée de guillemets, il ne faut donc pas les mettre).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : Intensite, comme dps : 3 (sans les doubles guillemets) et comme paramètre : #slider# (ici la valeur numérique n'est pas entourée de guillemets, il ne faut donc pas les mettre).
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre IntensiteGet comme nom de l'info
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : IntensiteGet, comme dps : 3 (sans les double guillemets)et rien dans paramètres.
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : IntensiteGet, comme dps : 3 (sans les doubles guillemets) et rien dans paramètres.
 
 
 #### Dans le cas d'un capteur numérique, comme un capteur de température :
@@ -538,7 +539,7 @@ Ici, c'est une température qui est envoyée régulièrement et on observe que l
 	
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre TempGet comme nom de l'info
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : TempGet, comme dps : 8 (sans les double guillemets) et rien dans paramètres.
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : TempGet, comme dps : 8 (sans les doubles guillemets) et rien dans paramètres.
 
 #### Dans le cas d'un capteur tout ou rien, comme un détecteur de porte :
 	
@@ -551,11 +552,11 @@ Ici, c'est l'information d'ouverture puis de fermeture qui est envoyée et on ob
 	
 -   Créer une nouvelle commande info/binaire dans les commandes du périphérique :
     *    Dans la colonne interface mettre PorteGet comme nom de l'info
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : PorteGet, comme dps : 12 (sans les double guillemets) et rien dans paramètres.
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : PorteGet, comme dps : 12 (sans les doubles guillemets) et rien dans paramètres.
 
 #### Dans le cas de la couleur d'une lampe :
 
-Pour modifier la couleur d'une lampe, on peut utiliser la technique du slider en utilisant #color# au lieu de #slider#. Cependant, dans la majorité des cas, la couleur ne correspondra pas car le codage de la couleur par Jeedom est souevent différent du codage de la couleur par le périphérique. Dans ce cas, il faut configurer des boutons pour chaque couleur individuelle désirée en mettant comme valeur du dps le codage de la couleur attendue par le périphérique. Le retour d'état devra faire l'objet d'un décodage avec un bloc code dans un scénario par exemple.
+Pour modifier la couleur d'une lampe, on peut utiliser la technique du slider en utilisant #color# au lieu de #slider#. Cependant, dans la majorité des cas, la couleur ne correspondra pas car le codage de la couleur par Jeedom est souvent différent du codage de la couleur par le périphérique. Dans ce cas, il faut configurer des boutons pour chaque couleur individuelle désirée en mettant comme valeur du dps le codage de la couleur attendue par le périphérique. Le retour d'état devra faire l'objet d'un décodage avec un bloc code dans un scénario par exemple.
 
 
 ## Remarques :
@@ -658,7 +659,7 @@ Pour dialoguer avec ces ampoules, prises et autres périphériques, il est néce
 -   lors de l'appairage avec l'application Mi.Light sur mobile et lors de la configuration de wifilightV2, bien choisir la même télécommande.
 
 ## LW12 Magic UFO Arilux Wifi3x0 H801 Contrôleurs compatibles Magic Home Tuya/Jinvoo/eFamilyCloud
--   de nombreuses versions existent et certaines peuvent être incompatibles avec le plugin. Contacter l'auteur pour une éventuelle mise à jour.
+-   de nombreuses versions existent et certaines peuvent être incompatibles avec le plugin. Contacter l'auteur pour un diagnostic.
 
 ## Des commandes sont manquantes lors de la création ou de la modification du sous type d'ampoule
 -   sauvegarder l'équipement (2 fois)
