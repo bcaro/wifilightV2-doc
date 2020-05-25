@@ -246,6 +246,13 @@ Attention, les périphériques ne vont pas être commandés exactement en même 
 
 Il suffit de mettre un nombre différent de zéro dans le champ groupe lors de la configuration de l'équipement. Tous les équipements ayant les mêmes numéros seront synchronisés.
 
+# Configuration de la valeur en Kelvin de la température de couleur de certaines lampes
+
+Il y a 2 curseurs pour la température en Kelvin. Kelvin exprimé en % de 0 (chaud) à 100 (froid) et KelvinVal exprimé en Kelvin de min à max. 
+Les valeurs par défaut correspondent la plupart du temps aux données du constructeur. Pour certaines lampes qui ne donnent pas les valeurs min et max, le plugin utilise par défaut 2700 à 6500.
+Pour certaines lampes, les valeurs min et max peuvent être erronées et les valeurs extrêmes non comprises par la lampe. Il faut ajuster ces valeurs pour qu'elles soient dans les limites acceptées par la lampe. 
+Vous pouvez prévenir le développeur pour qu'il modifie la configuration par défaut pour éviter ces ajustements.
+
 # Cas particulier des box Mi.Light
 
 ## Configuration de l'iBox 1 ou 2
