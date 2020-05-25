@@ -394,7 +394,7 @@ Si le périphérique est désinstallé puis réinstallé dans l'application mobi
 Aucune aide ne sera donnée pour récupérer la clé.
 
 
-##Récupération de l'identifiant du périphérique
+## Récupération de l'identifiant du périphérique
 
 Configurer le périphérique et renseigner la clé trouvée ci-dessus. Il faut ensuite modifier l'état du périphérique avec l'application fournie par Xiaomi et consulter les logs.
 Vous trouverez une information comme celle-ci :
@@ -405,7 +405,7 @@ Le cid est à copier dans le champ id du périphérique du plugin (sans les " ")
 
 Si aucun message en clair n'apparait, c'est que la clé n'est pas bonne.
 
-##Configurer la passerelle
+## Configurer la passerelle
 
 La configuration est identique à celle du paragraphe [Périphérique custom](#Périphérique-custom) concernant les périphériques Tuya. Pour l'instant, la configuration est entièrement manuelle.
 
