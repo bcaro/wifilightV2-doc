@@ -40,7 +40,7 @@ Produits pouvant être compatibles et non garantis :
 -   Prises électriques TP-link HS100 HS110 avec retour d'état !!
 -   Contrôleurs de pixel strip leds compatible Magic home avec retour d'état !
 -	Périphériques contrôlés par l'appli Ewelink dont les Sonoff en mode LAN avec retour d'état !!!
--	Xiaomi passerelle wifi utilisant le protocole Tuya pour les périphériques Zigbee !!!
+-	Passerelles wifi utilisant le protocole Tuya pour les périphériques Zigbee !!!
 
 Pour ces contrôleurs, ampoules ou prises, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin.
 
@@ -367,7 +367,7 @@ Pour les périphériques non présents dans cette liste (Sonoff Ifan, variateur 
 	
 et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) le contenu des accolades afin de permettre l'intégration du module dans le plugin.
 
-# Cas particulier de la passerelle Xiaomi Zigbee en mode Tuya
+# Cas particulier de la passerelle Zigbee Tuya
 
 ## Compatibilité
 
@@ -376,7 +376,7 @@ La passerelle doit être entièrement configurée en mode "custom" car le plugin
 Le plugin peut récupérer l'état des périphériques dès que ceux-ci envoient une information de changement d'état ou quand le plugin les interroge au lancement du demon. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
 
 Les équipements suivants sont compatibles mais la liste n'est pas exclusive et sera complétée en fonction du retour des utilisateurs.
-- passerelle ZNDMWG03LM
+- passerelle MoesHouse
 - serrure Vima
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
