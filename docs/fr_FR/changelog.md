@@ -4,7 +4,7 @@ Si rien n'est présent dans le changelog :
 - corrections orthographiques
 - suppression/ajout de logs
 
-Ne jamais uiliser la version beta sans échange avec le développeur.
+Ne jamais utiliser la version beta sans échange avec le développeur.
 
 1.60 - 2020-06-01
 -   Nanoleaf : correction bogue température de couleur du blanc 
