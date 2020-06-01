@@ -6,6 +6,9 @@ Si rien n'est présent dans le changelog :
 
 Ne jamais uiliser la version beta sans échange avec le développeur.
 
+1.60 - 2020-06-01
+-   Nanoleaf : correction bogue température de couleur du blanc 
+
 1.59 - 2020-05-26
 -   Ajout d'une gateway WiFi utilisant des périphériques Zigbee compatibles Tuya : ajoute la compatibilité de nombreux périphériques dont une gâche connectée.
 -	Yeelight : filtrage des retours d'état non valides
