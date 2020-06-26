@@ -54,7 +54,7 @@ Produits incompatibles et qui ne le seront pas :
 -	Les contrôleurs de Led Milight(du type YL etc.) sans pont.
 -   Les ampoules, prises ou contrôleurs de bandeau led qui contiennent un récepteur bluetoooth au lieu d'un récepteur radiofréquence 2.4 Ghz ou WiFi.
 -   Les contrôleurs de bandeau led ou d'ampoules et les ampoules ou prises qui utilisent une connexion WiFi point à point avec l'application mobile.
--   L'anceinne lampe de chevet Xiaomi Yeelight n'est pas compatible.
+-   L'ancienne lampe de chevet Xiaomi Yeelight n'est pas compatible.
 -	Certains périphériques compatibles Magic Home ne fonctionnent plus qu'avec le cloud.
 - 	Tous les capteurs WiFi sur pile (détecteur de présence, détecteur d'ouverture) compatibles Tuya qui ne fonctionnent plus qu'avec le cloud.
 
@@ -106,7 +106,11 @@ Xiaomi Philips :
 -   Toutes les fonctionnalités sont prises en compte
 
 Contrôleurs de pixel strip leds compatibles Magic Home :
+-	le plugin permet uniquement de gérer les scènes de l'appli mobile
 -   les scènes custom ne sont pas gérées.
+
+Contrôleurs de pixel strip leds SP108 :
+-	version beta à tester
 
 Périphériques compatibles Tuya Smart/Jinvoo/eFamilyCloud :
 -   toutes les commandes des périphériques validés (voir le forum) du firmware 1.0 et du firmware 2.0 sont compatibles (en particulier les prises Neo CoolCam).
@@ -120,7 +124,7 @@ Ewelink et Sonoff LAN :
 Nanoleaf Aurora :
 -   Rythm non implantés
 
-Passerelle Xiaomi :
+Passerelle Wifi Tuya et périohériques Zigbee :
 -   La configuration est manuelle. La gestion de la couleur des ampoules sera limitée à des boutons de couleur individuelle (mais via des scénarios, ce problème peut être contourné par les experts).
 
 # Configuration du module wifi
@@ -318,6 +322,13 @@ Aucune aide ne sera donnée pour récupérer le jeton.
 
 # Cas particulier des Sonoff en mode DIY
 
+## Compatibilité
+
+Les périphériques Sonoff compatibles sont : 
+-  Sonoff D1 smart Dimmer
+-  Sonoff BASICR3 et RFR3
+-  Sonoff MINI
+
 ## Configuration du mode DIY
 
 Sonoff donne tous les éléments [ici]( https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) pour configurer les modules en mode DIY.
@@ -344,8 +355,10 @@ Quand un périphérique se connecte au wifi, le plugin sera immédiatement prév
 De nombreuses marques sont compatibles dont les Sonoff. 
 -  Interrupteurs, prises murales, switch : simples de toutes marques
 -  Interrupteurs, prises murales, switch : multiples de toutes marques
+-  Interrupteurs, prises murales, switch : simples avec variateur de toutes marques
+-  Sonoff D1 smart Dimmer
 -  2 types de lampes (tester les 2 types)
--  Sonoff TH10/1H16 capteur de température mais pas le ON/OFF (firmware >=3.4)
+-  Sonoff TH10/1H16 capteur de température. ON/OFF non fonctionnel en firmware >= 3.4
 -  Sonoff basic, RF, POW, Mini
 -  Sonoff Dual
 -  Sonoff 4CH/4CH PRO
