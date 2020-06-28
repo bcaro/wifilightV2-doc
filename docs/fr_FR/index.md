@@ -124,7 +124,7 @@ Ewelink et Sonoff LAN :
 Nanoleaf Aurora :
 -   Rythm non implantés
 
-Passerelle Wifi Tuya et périohériques Zigbee :
+Passerelle Wifi Tuya et périphériques Zigbee :
 -   La configuration est manuelle. La gestion de la couleur des ampoules sera limitée à des boutons de couleur individuelle (mais via des scénarios, ce problème peut être contourné par les experts).
 
 # Configuration du module wifi
@@ -177,9 +177,9 @@ Paramétrage :
 -   Saisir le n° de groupe pour la synchronisation, voir plus bas
 
 ## Ajout des commandes
-lors de la sauvegarde du module, les commandes sont automatiquement créées.
+Lors de la sauvegarde du module, les commandes sont automatiquement créées.
 
-le nom des commandes peut être modifié. Les commandes automatiquement créées et effacées sont recréées lors d'une sauvegarde.
+Le nom des commandes peut être modifié. Les commandes automatiquement créées et effacées sont recréées lors d'une sauvegarde.
 
 Lorsque toutes les commandes sont créées, elles peuvent alourdir l'interface, il est possible de ne pas les afficher en configurant la création des commandes.
 
@@ -331,9 +331,9 @@ Les périphériques Sonoff compatibles sont :
 
 ## Configuration du mode DIY
 
-Sonoff donne tous les éléments [ici]( https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) pour configurer les modules en mode DIY.
+Sonoff donne tous les éléments [ici]( https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) ou [ici] (http://developers.sonoff.tech/sonoff-diy-mode-api-protocol.html#Supported-Device) pour configurer les modules en mode DIY.
 
-Un téléphone portable et un PC sous windows avec carte Wifi sont nécessaires.
+Un téléphone portable et un PC sous Windows avec carte Wifi sont nécessaires.
 Le logiciel à faire tourner pour trouver le Sonoff donne dans la colonne de gauche l'identifiant nécessaire à la configuration du périphérique.
 
 Le périphérique Sonoff doit être en firmware 3.3.0 ou plus, l'appli Windows ci-dessus permet de mettre à jour le firmware.
@@ -420,7 +420,7 @@ Si aucun message en clair n'apparait, c'est que la clé n'est pas bonne.
 
 ## Configurer la passerelle
 
-La configuration est identique à celle du paragraphe [Périphérique custom](#Périphérique-custom) concernant les périphériques Tuya. Pour l'instant, la configuration est entièrement manuelle.
+La configuration est identique à celle du paragraphe [Périphérique custom](#peripherique-custom) concernant les périphériques Tuya. Pour l'instant, la configuration est entièrement manuelle.
 
 
 # Cas particulier des périphériques compatibles Tuya Smart/Jinvoo/eFamilyCloud apps
@@ -690,5 +690,4 @@ Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilig
 
 # Bogues connus
 
-Le Nanoleaf sous buster ne renvoie ni son Id ni son état :
-- bogue corrigé
+

@@ -6,6 +6,9 @@ Si rien n'est présent dans le changelog :
 
 Ne jamais utiliser la version beta sans échange avec le développeur.
 
+1.61 - 2020-06-16
+-   Ewelink Sonoff LAN et Sonoff DIY : ajout de l'interrupteur avec variateur
+
 1.60 - 2020-06-01
 -   Nanoleaf : correction bogue température de couleur du blanc 
 
