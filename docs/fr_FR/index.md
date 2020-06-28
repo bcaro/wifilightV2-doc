@@ -500,8 +500,8 @@ Le paragraphe suivant donne des éléments pour interpréter les logs wifilightV
 -   Dans de nombreux cas il n'y aura pas de retour d'état si les commandes ajoutées par défaut ne récupèrent pas le dps. Dans ce cas il est possible de récupérer le retour d'état en ajoutant une commande custom en spécifiant le dps comme indiqué dans le paragraphe suivant.
 -   Il est donc possible de mixer des commandes personnalisées en spécifiant le dps (paragraphe suivant) ou sans spécifier le dps.
 
-## Périphérique custom
 <a id="periphcustom"></a>
+## Périphérique custom
 
 Il est possible de créer un périphérique entièrement custom. Contrairement aux commandes personnalisées, un périphérique custom n'a aucune commande prédéfinie (sauf connectedGet) et tout doit être configuré pour chaque commande. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de solution.
 
