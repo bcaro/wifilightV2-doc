@@ -331,7 +331,8 @@ Les périphériques Sonoff compatibles sont :
 
 ## Configuration du mode DIY
 
-Sonoff donne tous les éléments [ici]( https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) ou [ici] (http://developers.sonoff.tech/sonoff-diy-mode-api-protocol.html#Supported-Device) pour configurer les modules en mode DIY.
+Sonoff donne tous les éléments [ici]( https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) ou 
+[ici] ( http://developers.sonoff.tech/sonoff-diy-mode-api-protocol.html#Supported-Device) pour configurer les modules en mode DIY.
 
 Un téléphone portable et un PC sous Windows avec carte Wifi sont nécessaires.
 Le logiciel à faire tourner pour trouver le Sonoff donne dans la colonne de gauche l'identifiant nécessaire à la configuration du périphérique.
