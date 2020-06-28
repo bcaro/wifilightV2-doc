@@ -688,7 +688,7 @@ Pour dialoguer avec ces ampoules, prises et autres périphériques, il est néce
 
 # Comment obtenir de l'aide ?
 
-Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632)
+Aller sur le forum de Jeedom  [ici](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
 
 # Bogues connus
 
