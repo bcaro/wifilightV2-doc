@@ -420,7 +420,7 @@ Si aucun message en clair n'apparait, c'est que la clé n'est pas bonne.
 
 ## Configurer la passerelle
 
-La configuration est identique à celle du paragraphe [Périphérique custom](#peripherique-custom) concernant les périphériques Tuya. Pour l'instant, la configuration est entièrement manuelle.
+La configuration est identique à celle du paragraphe [Périphérique custom](#periphcustom) concernant les périphériques Tuya. Pour l'instant, la configuration est entièrement manuelle.
 
 
 # Cas particulier des périphériques compatibles Tuya Smart/Jinvoo/eFamilyCloud apps
@@ -501,6 +501,7 @@ Le paragraphe suivant donne des éléments pour interpréter les logs wifilightV
 -   Il est donc possible de mixer des commandes personnalisées en spécifiant le dps (paragraphe suivant) ou sans spécifier le dps.
 
 ## Périphérique custom
+<a id="periphcustom"></a>
 
 Il est possible de créer un périphérique entièrement custom. Contrairement aux commandes personnalisées, un périphérique custom n'a aucune commande prédéfinie (sauf connectedGet) et tout doit être configuré pour chaque commande. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de solution.
 
