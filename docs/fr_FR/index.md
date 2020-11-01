@@ -106,11 +106,7 @@ Xiaomi Philips :
 -   Toutes les fonctionnalités sont prises en compte
 
 Contrôleurs de pixel strip leds compatibles Magic Home :
--	le plugin permet uniquement de gérer les scènes de l'appli mobile
 -   les scènes custom ne sont pas gérées.
-
-Contrôleurs de pixel strip leds SP108 :
--	version beta à tester
 
 Périphériques compatibles Tuya Smart/Jinvoo/eFamilyCloud :
 -   toutes les commandes des périphériques validés (voir le forum) du firmware 1.0 et du firmware 2.0 sont compatibles (en particulier les prises Neo CoolCam).
@@ -124,7 +120,7 @@ Ewelink et Sonoff LAN :
 Nanoleaf Aurora :
 -   Rythm non implantés
 
-Passerelle Wifi Tuya et périphériques Zigbee :
+Passerelle Wifi Tuya et périohériques Zigbee :
 -   La configuration est manuelle. La gestion de la couleur des ampoules sera limitée à des boutons de couleur individuelle (mais via des scénarios, ce problème peut être contourné par les experts).
 
 # Configuration du module wifi
@@ -177,9 +173,9 @@ Paramétrage :
 -   Saisir le n° de groupe pour la synchronisation, voir plus bas
 
 ## Ajout des commandes
-Lors de la sauvegarde du module, les commandes sont automatiquement créées.
+lors de la sauvegarde du module, les commandes sont automatiquement créées.
 
-Le nom des commandes peut être modifié. Les commandes automatiquement créées et effacées sont recréées lors d'une sauvegarde.
+le nom des commandes peut être modifié. Les commandes automatiquement créées et effacées sont recréées lors d'une sauvegarde.
 
 Lorsque toutes les commandes sont créées, elles peuvent alourdir l'interface, il est possible de ne pas les afficher en configurant la création des commandes.
 
@@ -331,10 +327,9 @@ Les périphériques Sonoff compatibles sont :
 
 ## Configuration du mode DIY
 
-Sonoff donne tous les éléments [ici]( https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) ou 
-[ici](http://developers.sonoff.tech/sonoff-diy-mode-api-protocol.html#Supported-Device) pour configurer les modules en mode DIY.
+Sonoff donne tous les éléments [ici]( https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) pour configurer les modules en mode DIY.
 
-Un téléphone portable et un PC sous Windows avec carte Wifi sont nécessaires.
+Un téléphone portable et un PC sous windows avec carte Wifi sont nécessaires.
 Le logiciel à faire tourner pour trouver le Sonoff donne dans la colonne de gauche l'identifiant nécessaire à la configuration du périphérique.
 
 Le périphérique Sonoff doit être en firmware 3.3.0 ou plus, l'appli Windows ci-dessus permet de mettre à jour le firmware.
@@ -359,7 +354,7 @@ De nombreuses marques sont compatibles dont les Sonoff.
 -  Interrupteurs, prises murales, switch : simples avec variateur de toutes marques
 -  Sonoff D1 smart Dimmer
 -  2 types de lampes (tester les 2 types)
--  Sonoff TH10/1H16 capteur de température. ON/OFF non fonctionnel en firmware >= 3.4
+-  Sonoff TH10/1H16 capteur de température. ON/OFF non fonctionnel en firmware = 3.4 mais fonctionnel en 3.4.1
 -  Sonoff basic, RF, POW, Mini
 -  Sonoff Dual
 -  Sonoff 4CH/4CH PRO
@@ -391,7 +386,9 @@ Le plugin peut récupérer l'état des périphériques dès que ceux-ci envoient
 
 Les équipements suivants sont compatibles mais la liste n'est pas exclusive et sera complétée en fonction du retour des utilisateurs.
 - passerelle MoesHouse
-- serrure Vima
+- serrure Vima (mais pas MiHome)
+- capteur de température et d'humidité TYZS2
+- tête thermostatique Hessway
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
@@ -419,10 +416,11 @@ Le cid est à copier dans le champ id du périphérique du plugin (sans les " ")
 
 Si aucun message en clair n'apparait, c'est que la clé n'est pas bonne.
 
-## Configurer la passerelle
+## Configurer les périphériques
 
-La configuration est identique à celle du paragraphe [Périphérique custom](#periphcustom) concernant les périphériques Tuya. Pour l'instant, la configuration est entièrement manuelle.
+Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. SI votre périphérique est un peu différent, les dps peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changant le n° de dps et la formule de calul pour retrouver la valeur voulue. Voir [Périphérique custom](#Périphérique-custom) pour comprendre la signification de la configuration par défaut.
 
+Si le périphérique est complètement différent, il faut configurer manuellement le plugin en choisissant le sous-type "Custom" et en se référant au paragraphe [Périphérique custom](#Périphérique-custom) concernant les périphériques Tuya. Partagez alors votre configuration sur le forum pour l'intégrer dans le plugin.
 
 # Cas particulier des périphériques compatibles Tuya Smart/Jinvoo/eFamilyCloud apps
 
@@ -501,7 +499,6 @@ Le paragraphe suivant donne des éléments pour interpréter les logs wifilightV
 -   Dans de nombreux cas il n'y aura pas de retour d'état si les commandes ajoutées par défaut ne récupèrent pas le dps. Dans ce cas il est possible de récupérer le retour d'état en ajoutant une commande custom en spécifiant le dps comme indiqué dans le paragraphe suivant.
 -   Il est donc possible de mixer des commandes personnalisées en spécifiant le dps (paragraphe suivant) ou sans spécifier le dps.
 
-<a id="periphcustom"></a>
 ## Périphérique custom
 
 Il est possible de créer un périphérique entièrement custom. Contrairement aux commandes personnalisées, un périphérique custom n'a aucune commande prédéfinie (sauf connectedGet) et tout doit être configuré pour chaque commande. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de solution.
@@ -688,8 +685,9 @@ Pour dialoguer avec ces ampoules, prises et autres périphériques, il est néce
 
 # Comment obtenir de l'aide ?
 
-Aller sur le forum de Jeedom  [ici](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
+Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632)
 
 # Bogues connus
 
-
+Le Nanoleaf sous buster ne renvoie ni son Id ni son état :
+- bogue corrigé
