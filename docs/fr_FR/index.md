@@ -61,7 +61,6 @@ Produits incompatibles et qui ne le seront pas :
 
 ## Test de compatibilité
 
-Sur demande, un plugin de test pour les produits non validés peut être fourni.
 
 Il est conseillé de se renseigner sur le forum pour connaitre la compatibilité d'un produit peu diffusé.
 
