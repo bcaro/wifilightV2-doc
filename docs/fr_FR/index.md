@@ -1,6 +1,6 @@
 # Présentation
 
-Ce plugin permet de gérer de nombreux bandeaux de leds ou ampoules leds ou prises électriques pilotés en wifi ou par radiofréquence 2.4 GHz via une box wifi vendue avec le produit. Le principe du plugin est de ne jamais utiliser le cloud et donc une connexion internet entre le plugin et le périphérique via un serveur lointain, toutes les actions sont donc locales au réseau domestique.
+Ce plugin permet de gérer de nombreux bandeaux de leds, ampoules leds, prises électriques, thermostats, capteur de température, capteur de porte, etc.  pilotés en wifi ou par radiofréquence 2.4 GHz via une box wifi vendue avec le produit. Le principe du plugin est de ne jamais utiliser le cloud et donc une connexion internet entre le plugin et le périphérique via un serveur lointain, toutes les actions sont donc locales au réseau domestique.
 
 <img src="../images/wifilightV2_screenshot01.png" alt="image" style="height:100px;"/>
 <img src="../images/wifilightV2_screenshot02.png" alt="image" style="height:100px;"/>
