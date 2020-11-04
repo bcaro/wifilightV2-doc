@@ -381,18 +381,23 @@ et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sono
 ## Compatibilité
 
 Le dialogue entre le plugin et la passerelle se fait en WiFi. Ensuite, le dialogue entre les capteurs et actionneurs et la passerelle se fait via Zigbee. Ils doivent être compatibles Tuya.
-La passerelle doit être entièrement configurée en mode "custom" car le plugin ne peut connaitre la configuration des périphériques connectés à la passerelle.
+
 Le plugin peut récupérer l'état des périphériques dès que ceux-ci envoient une information de changement d'état ou quand le plugin les interroge au lancement du demon. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
 
 Les équipements suivants sont compatibles mais la liste n'est pas exclusive et sera complétée en fonction du retour des utilisateurs.
 - passerelle MoesHouse
 - serrure Vima (mais pas MiHome)
+	le plugin ne peut ouvrir/fermer mais il peut connaitre la dernière clé utilisée
 - capteur de température et d'humidité TYZS2
+	fonctionnement comple
 - tête thermostatique Hessway
+	test complet OK. Ne gère pas la programmation des plages horaires des différents modes mais peut démarrer n'importe quel mode
+- pour les autres périphériques, ils doit être entièrement configurée en mode "custom".
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
 Il faut créer un équipement, avec la même adresse IP, pour chaque périphérique connecté à la passerelle et lui attribuer un n° de canal (le numéro entre 1 et 100 est sans importance mais chaque périphérique doit avoir un n° de canal différent).
+
 
 ## Récupération de la clé du périphérique
 
@@ -407,7 +412,7 @@ Aucune aide ne sera donnée pour récupérer la clé.
 
 ## Récupération de l'identifiant du périphérique
 
-Configurer le périphérique et renseigner la clé trouvée ci-dessus. Il faut ensuite modifier l'état du périphérique avec l'application fournie par Xiaomi et consulter les logs.
+Configurer le périphérique et renseigner la clé trouvée ci-dessus. Il faut ensuite modifier l'état du périphérique avec l'application fournie par le constructeur de la passerelle et consulter les logs.
 Vous trouverez une information comme celle-ci :
     
     Receive after decode :{"dps":{"161":"Esc"},"cid":"ec1bbdfffe781b28","t":1589301302}
@@ -418,7 +423,7 @@ Si aucun message en clair n'apparait, c'est que la clé n'est pas bonne.
 
 ## Configurer les périphériques
 
-Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. SI votre périphérique est un peu différent, les dps peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changant le n° de dps et la formule de calul pour retrouver la valeur voulue. Voir [Périphérique custom](#Périphérique-custom) pour comprendre la signification de la configuration par défaut.
+Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les dps peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changant le n° de dps et la formule de calul pour retrouver la valeur voulue. Voir [Périphérique custom](#Périphérique-custom) pour comprendre la signification de la configuration par défaut.
 
 Si le périphérique est complètement différent, il faut configurer manuellement le plugin en choisissant le sous-type "Custom" et en se référant au paragraphe [Périphérique custom](#Périphérique-custom) concernant les périphériques Tuya. Partagez alors votre configuration sur le forum pour l'intégrer dans le plugin.
 
