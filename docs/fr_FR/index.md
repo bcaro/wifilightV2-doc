@@ -11,7 +11,7 @@ Ce plugin permet de gérer de nombreux bandeaux de leds ou ampoules leds ou pris
 
 ## Produits compatibles 
  
-Il existe de nombreux produits compatibles avec le plugin mais de marques très différents ou sans marque.
+Il existe de nombreux produits compatibles avec le plugin mais de marques très différentes ou sans marque.
  
 Les produits compatibles :
 -   Ampoules Mi.Light/EasyBulb/LimitlessLED reliées aux contrôleurs ci-dessous : pas de retour d'état !
@@ -119,8 +119,8 @@ Ewelink et Sonoff LAN :
 Nanoleaf Aurora :
 -   Rythm non implantés
 
-Passerelle Wifi Tuya et périohériques Zigbee :
--   La configuration est manuelle. La gestion de la couleur des ampoules sera limitée à des boutons de couleur individuelle (mais via des scénarios, ce problème peut être contourné par les experts).
+Passerelle Wifi Tuya et périphériques Zigbee :
+-   La configuration est manuelle sauf pour un nombre limité de périphériques. La gestion de la couleur des ampoules sera limitée à des boutons de couleur individuelle (mais via des scénarios, ce problème peut être contourné par les experts).
 
 # Configuration du module wifi
 
@@ -369,7 +369,7 @@ Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le p
 
 Pour les périphériques multicanaux (comme le Sonoff 4CH) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal.
 
-Pour les périphériques non présents dans cette liste (Sonoff Ifan, variateur de lumière par exemple) ou si la configuration ne fonctionne pas et après avoir intégré le périphérique dans Jeedom (avec la configuration Sonoff Basic par exemple) repérer dans les logs :
+Pour les périphériques non présents dans cette liste (Sonoff Ifan par exemple) ou si la configuration ne fonctionne pas et après avoir intégré le périphérique dans Jeedom (avec la configuration Sonoff Basic par exemple) repérer dans les logs :
 
 	Receive after decode :{...............}
 	
@@ -386,12 +386,12 @@ Le plugin peut récupérer l'état des périphériques dès que ceux-ci envoient
 Les équipements suivants sont compatibles mais la liste n'est pas exclusive et sera complétée en fonction du retour des utilisateurs.
 - passerelle MoesHouse
 - serrure Vima (mais pas MiHome)
-	le plugin ne peut ouvrir/fermer mais il peut connaitre la dernière clé utilisée
+	le plugin ne peut ouvrir/fermer car la serrure n'est pas prévue pour le faire, mais il peut connaitre la dernière clé utilisée
 - capteur de température et d'humidité TYZS2
-	fonctionnement comple
+	fonctionnement complet
 - tête thermostatique Hessway
 	test complet OK. Ne gère pas la programmation des plages horaires des différents modes mais peut démarrer n'importe quel mode
-- pour les autres périphériques, ils doit être entièrement configurée en mode "custom".
+- pour les autres périphériques, ils doivent être entièrement configurés en mode "custom".
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
@@ -422,7 +422,7 @@ Si aucun message en clair n'apparait, c'est que la clé n'est pas bonne.
 
 ## Configurer les périphériques
 
-Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les dps peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changant le n° de dps et la formule de calul pour retrouver la valeur voulue. Voir [Périphérique custom](#Périphérique-custom) pour comprendre la signification de la configuration par défaut.
+Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les dps peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et la formule de calcul pour retrouver la valeur voulue. Voir [Périphérique custom](#Périphérique-custom) pour comprendre la signification de la configuration par défaut.
 
 Si le périphérique est complètement différent, il faut configurer manuellement le plugin en choisissant le sous-type "Custom" et en se référant au paragraphe [Périphérique custom](#Périphérique-custom) concernant les périphériques Tuya. Partagez alors votre configuration sur le forum pour l'intégrer dans le plugin.
 
@@ -515,7 +515,7 @@ Il est possible de créer un périphérique entièrement custom. Contrairement a
 -   effacer les logs
 
 ### Récupération des informations
--   appuyer sur un bouton du périphérique (on,off,haut,bas,etc.) ou attendre que le périphérique renvoie son état ou appuyer sur un bouton de l'appli Smart Live (mais dans ce dernier cas, cela peut empêcher le retour d'état).
+-   appuyer sur un bouton du périphérique (on, off, haut, bas, etc.) ou attendre que le périphérique renvoie son état ou appuyer sur un bouton de l'appli Smart Live (mais dans ce dernier cas, cela peut empêcher le retour d'état).
 -   repérer dans les logs le retour d'état
 
 #### Cas d'un actionneur tout ou rien, tel que ON/OFF
@@ -633,7 +633,7 @@ Aucune aide ne sera apportée sur la box et les notions nécessaires pour config
 
 Sauvegarder 2 fois.
 
-## La gestion de l'intensité des ampoules blanches  Mi.Light/EasyBulb/LimitlessLED n'est pas pratique
+## La gestion de l'intensité des ampoules blanches Mi.Light/EasyBulb/LimitlessLED n'est pas pratique
 
 Le constructeur des leds n'a pas prévu de pouvoir affecter directement l'intensité de l'ampoule. On ne peut qu'incrémenter ou décrémenter par rapport à la valeur précédente. Le plugin ne fait que reproduire ce fonctionnement. Le curseur qui est proposé est en conséquence capricieux.
 
@@ -647,7 +647,7 @@ Lire la documentation
 
 ## Impossible de faire fonctionner les ampoules Xiaomi Yeelight
 
-Il est indispensable d'activer le mode contrôle par réseau local via l'application  Xiaomi Yeelight.
+Il est indispensable d'activer le mode contrôle par réseau local via l'application Xiaomi Yeelight.
 
 ## Je ne contrôle pas le son des ampoules Extel Meli
 
@@ -693,5 +693,3 @@ Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilig
 
 # Bogues connus
 
-Le Nanoleaf sous buster ne renvoie ni son Id ni son état :
-- bogue corrigé
