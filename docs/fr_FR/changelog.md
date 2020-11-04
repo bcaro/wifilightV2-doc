@@ -9,7 +9,8 @@ Ne jamais utiliser la version beta sans échange avec le développeur.
 1.62 - 2020-10-31
 -   passerelle Tuya/Zigbee : ajout d'une tête thermostatique, d'une serrure et d'un capteur de température
 -   Ewelink : ajout d'un nouveau type de commande de volets roulants
--	Sonoff TH10/16 : le nouveau firmware 3.4.1 ne permet pas le ON/OFF 
+-	Sonoff TH10/16 : le nouveau firmware 3.4.1 ne permet pas le ON/OFF
+-   Correction de bogues
 
 1.61 - 2020-06-16
 -   Ewelink Sonoff LAN et Sonoff DIY : ajout de l'interrupteur avec variateur
