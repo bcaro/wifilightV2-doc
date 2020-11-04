@@ -2,11 +2,17 @@
 
 Ce plugin permet de gérer de nombreux bandeaux de leds ou ampoules leds ou prises électriques pilotés en wifi ou par radiofréquence 2.4 GHz via une box wifi vendue avec le produit. Le principe du plugin est de ne jamais utiliser le cloud et donc une connexion internet entre le plugin et le périphérique via un serveur lointain, toutes les actions sont donc locales au réseau domestique.
 
+<img src="../images/wifilightV2_screenshot01.png" alt="image3" style="height:100px;"/>
 <img src="../images/wifilightV2_screenshot02.png" alt="image3" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot03.png" alt="image3" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot04.png" alt="image3" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot05.png" alt="image3" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot06.png" alt="image3" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot07.png" alt="image3" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot08.png" alt="image3" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot09.png" alt="image3" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot10.png" alt="image3" style="height:100px;"/>
 
-![Milight](../images/wifilightV2_screenshot01.png) ![Tuya](../images/wifilightV2_screenshot03.png) ![Plafonnier](../images/wifilightV2_screenshot05.png) ![Prise](../images/wifilightV2_screenshot07.png) 
-
-![Sonoff](../images/wifilightV2_screenshot02.png) ![MagicHome](../images/wifilightV2_screenshot04.png)
 
 # Compatibilités et limitations
 
