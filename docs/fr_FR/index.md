@@ -51,6 +51,7 @@ Produits pouvant être compatibles et non garantis :
 -   Contrôleurs de pixel strip leds compatible Magic home avec retour d'état !
 -	Périphériques contrôlés par l'appli Ewelink dont les Sonoff en mode LAN avec retour d'état !!!
 -	Passerelles wifi utilisant le protocole Tuya pour les périphériques Zigbee !!!
+-   Périphériques Meross !!!
 
 Pour ces contrôleurs, ampoules ou prises, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin.
 
@@ -184,9 +185,11 @@ Paramétrage :
 ## Ajout des commandes
 lors de la sauvegarde du module, les commandes sont automatiquement créées.
 
+Configurer le paramètre "Création des commandes" pour créer tout ou partie des commandes.
+
 le nom des commandes peut être modifié. Les commandes automatiquement créées et effacées sont recréées lors d'une sauvegarde.
 
-Lorsque toutes les commandes sont créées, elles peuvent alourdir l'interface, il est possible de ne pas les afficher en configurant la création des commandes.
+Lorsque toutes les commandes sont créées, elles peuvent alourdir l'interface, il est possible de ne pas les afficher en configurant la ftion des commandes.
 
 ## Modification du type ou de sous-type de périphérique
 
@@ -216,6 +219,7 @@ Pour les périphériques :
  - Extel Meli
  - Sonoff en mode DIY
  - Nanoleaf Aurora
+ - Meross
 
 Le plugin interroge régulièrement le périphérique pour connaitre son état. Le délai pour que Jeedom connaisse l'état peut dépasser 1 minute.
 
@@ -325,6 +329,14 @@ La procédure est complexe et nécessite plusieurs manipulations. Faire une rech
 
 Aucune aide ne sera donnée pour récupérer le jeton.
 
+# Cas particulier des périphériques Meross
+
+## Configuration
+
+Il est indispensable de récupérer un namespace qui correspond au Jeton dans le plugin, un messageId qui correspond à Identifiant dans le plugin et un timestamp. Pour trouver ces 3 paramètres, voir sur le web : Meross Credentials ou sur le forum.
+
+Aucune aide ne sera donnée pour récupérer les 3 informations.
+
 # Cas particulier des Sonoff en mode DIY
 
 ## Compatibilité
@@ -363,7 +375,7 @@ De nombreuses marques sont compatibles dont les Sonoff.
 -  Interrupteurs, prises murales, switch : simples avec variateur de toutes marques
 -  Sonoff D1 smart Dimmer
 -  2 types de lampes (tester les 2 types)
--  Sonoff TH10/1H16 capteur de température. ON/OFF non fonctionnel en firmware = 3.4 mais fonctionnel en 3.4.1
+-  Sonoff TH10/1H16 capteur de température. ON/OFF non fonctionnel depuis le firmware 3.4 
 -  Sonoff basic, RF, POW, Mini
 -  Sonoff Dual
 -  Sonoff 4CH/4CH PRO
@@ -401,6 +413,7 @@ Les équipements suivants sont compatibles mais la liste n'est pas exclusive et 
 	fonctionnement complet
 - tête thermostatique Hessway
 	test complet OK. Ne gère pas la programmation des plages horaires des différents modes mais peut démarrer n'importe quel mode
+	Utiliser l'option "mode étendu" de création des commandes pour créer toutes les commandes du thermostat.
 - pour les autres périphériques, ils doivent être entièrement configurés en mode "custom".
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
@@ -459,7 +472,7 @@ Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le p
 
 Pour les périphériques multicanaux (comme les prises multiples) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal.
 
-Les capteurs de présence et d'ouverture ne sont pas compatibles car ils ne dialoguent pas en local.
+Les capteurs de présence et d'ouverture ne sont pas compatibles car ils ne dialoguent pas en local. D'autres périphériques de la liste ci-dessus peuvent aussi avoir un fonctionnement uniquement par internet, ils ne sont pas compatibles avec le plugin. Il faut demander au vendeur si le mode LAN est actif.
 
 Le plugin teste les périphériques (mais ils doivent être ajoutés manuellement) et affiche un message dans le centre de messages lorsqu'un périphérique a été configuré avec le mauvais firmware.
 
@@ -589,8 +602,45 @@ Ici, c'est l'information d'ouverture puis de fermeture qui est envoyée et on ob
 
 #### Dans le cas de la couleur d'une lampe :
 
-Pour modifier la couleur d'une lampe, on peut utiliser la technique du slider en utilisant #color# au lieu de #slider#. Cependant, dans la majorité des cas, la couleur ne correspondra pas car le codage de la couleur par Jeedom est souvent différent du codage de la couleur par le périphérique. Dans ce cas, il faut configurer des boutons pour chaque couleur individuelle désirée en mettant comme valeur du dps le codage de la couleur attendue par le périphérique. Le retour d'état devra faire l'objet d'un décodage avec un bloc code dans un scénario par exemple.
+Le codage de la couleur chez tuya a plusieurs format et est différent de celui utilisé par Jeedom. Jeedom utilise le format RGB alors que tuya utilise différents formats HSV ou combinant HSV et RGB. Le RGB code chaque couleur de 0 à 255 ou en hexadéciaml de 0 à FF. Le rouge est donc codé FF0000, le bleu : 0000FF, le blanc : FFFFFF et le noir : 000000. Les valeur pour HSV sont les suivantes : Hue de 0 à 360° (couleur), S de 0 à 100% (Saturation) et V de 0 à 100% (Intensité). Voir [ici](https://www.rapidtables.com/convert/color/) pour aller plus loin.
 
+Afin de permettre au plugin de fonctionner correctement pour les couleurs, il faut identifier les formats utilisés par tuya lors d'un changement de couleur avec l'appli tuya et en recupérant à cet instant dans les logs le dps qui a été modifié.
+
+1 - format HSV : H (0 à 360 ) S(codé de 0 à 1000) V (codé de 0 à 1000) le résultat est ensuite donné en base 16, soit 12 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya  000003E803E8
+
+2 - format RGB00HSV : RGB est codé sur 6 digits (chacun de 00 à FF pour chaque couleur). 00 est intercallé puis H (0 à 255 ) S(codé de 0 à 255) V (codé de 0 à 255). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya  FF00000000FFFF
+
+3 - format RGB0HSV : RGB sont codés comme ci-dessus. 0 est intercallé puis H (0 à 360 ) S(codé de 0 à 100) V (codé de 0 à 255). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du violet : RGB = FF00FF et H= 300° S=100% V=100% soit en codage Tuya  FF0000012C64FF
+
+
+Dans le champ paramètre des dps (couleur et info couleur/action saturation/action intensité/) il faut mettre : 
+si format 1 : #colorH4S4V4_1000# #slider_satH4S4V4_1000# #slider_intH4S4V4_1000# 
+si format 2 : #colorR2G2B200H2S2V2_255# #slider_satR2G2B200H2S2V2_255#  #slider_intR2G2B200H2S2V2_255#
+si format 2 : #colorR2G2B20H3S2V2_100# #slider_satR2G2B20H3S2V2_100#  #slider_intR2G2B20H3S2V2_100#
+
+Si le codage ne correspond pas à ceux ci-dessus, il faut configurer des boutons pour chaque couleur individuelle désirée en mettant comme valeur du dps le codage de la couleur attendue par le périphérique, il faut pour cela changer les couleurs avec l'appli tuya et consulter les logs. Le retour d'état ne pourra pas fonctionner.
+
+Vous pouvez aider en échangeant sur le forum pour communiquer d'autres codages utilisés par tuya.
+
+Exemple :
+
+    Receive after decode :{devId:50701244cc50e37e9aff,dps:{"120":"012F003F00FF","101":true}}
+
+	
+Ici, une couleur a été modifiée sur l'application du périphérique et on observe que le dps 120 a changé il a le format 1.
+	
+-   Créer une nouvelle commande action/couleur dans les commandes du périphérique :
+    *    Dans la colonne interface mettre Couleur comme nom
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : Couleur, comme dps : 120 (sans les doubles guillemets) et comme paramètre : "#colorH4S4V4_1000#" (ici la valeur est entourée de guillemets, il faut donc les mettre).
+-   Créer une nouvelle commande info/autre dans les commandes du périphérique :
+    *    Dans la colonne interface mettre ColorGet comme nom de l'info
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : ColorGet, comme dps : 120 (sans les doubles guillemets) et "#colorH4S4V4_1000#" dans paramètres.
+-   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
+    *    Dans la colonne interface mettre Intensité comme nom
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : Intensité, comme dps : 120 (sans les doubles guillemets) et comme paramètre : "#slider_intH4S4V4_1000#" (ici la valeur est entourée de guillemets, il faut donc les mettre).
+	-   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
+    *    Dans la colonne interface mettre Saturation comme nom
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : Saturation, comme dps : 120 (sans les doubles guillemets) et comme paramètre : "#slider_satH4S4V4_1000#" (ici la valeur est entourée de guillemets, il faut donc les mettre).
 
 ## Remarques :
 -   rien dans les logs : mauvaise adresse IP ou périphérique qui ne renvoie pas son état
