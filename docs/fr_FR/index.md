@@ -631,7 +631,7 @@ Exemple :
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"120":"012F003F00FF","101":true}}
 
 	
-Ici, une couleur a été modifiée sur l'application du périphérique et on observe que le dps 120 a changé il a le format 1.
+Ici, une couleur a été modifiée sur l'application du périphérique et on observe que le dps 120 a changé, il a le format 1.
 	
 -   Créer une nouvelle commande action/couleur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Couleur comme nom
@@ -642,9 +642,11 @@ Ici, une couleur a été modifiée sur l'application du périphérique et on obs
 -   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Intensité comme nom
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : Intensité, comme dps : 120 (sans les doubles guillemets) et comme paramètre : "#slider_intH4S4V4_1000#" (ici la valeur est entourée de guillemets, il faut donc les mettre).
-	-   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
+-   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Saturation comme nom
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : Saturation, comme dps : 120 (sans les doubles guillemets) et comme paramètre : "#slider_satH4S4V4_1000#" (ici la valeur est entourée de guillemets, il faut donc les mettre).
+	
+Nota : il est indispensable de mettre le même dps pour ces 4 commandes et de n'ajouter aucune autre commande action ou info sinon le plugin ne pourra pas décoder correctement la couleur.
 
 ## Remarques :
 -   rien dans les logs : mauvaise adresse IP ou périphérique qui ne renvoie pas son état
