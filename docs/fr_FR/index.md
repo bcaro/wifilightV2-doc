@@ -617,10 +617,10 @@ Afin de permettre au plugin de fonctionner correctement pour les couleurs, il fa
 3 - format RGB0HSV : RGB sont codés comme ci-dessus. 0 est intercallé puis H (codé de 0 à 360 ) S (codé de 0 à 100) V (codé de 0 à 100). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du violet : RGB = FF00FF et H= 300° S=100% V=100% soit en codage Tuya  FF0000012C6464
 
 
-Dans le champ paramètre des dps (couleur et info couleur/action saturation/action intensité/) il faut mettre : 
-si format 1 : #colorH4S4V4_1000# #slider_satH4S4V4_1000# #slider_intH4S4V4_1000# 
-si format 2 : #colorR2G2B200H2S2V2_255# #slider_satR2G2B200H2S2V2_255#  #slider_intR2G2B200H2S2V2_255#
-si format 2 : #colorR2G2B20H3S2V2_100# #slider_satR2G2B20H3S2V2_100#  #slider_intR2G2B20H3S2V2_100#
+Dans le champ paramètre des dps (couleur/info couleur/action saturation/action intensité/action) il faut mettre : 
+-  si format 1 : #colorH4S4V4_1000# #colorH4S4V4_1000# #slider_satH4S4V4_1000# #slider_intH4S4V4_1000# 
+-  si format 2 : #colorR2G2B200H2S2V2_255# #colorR2G2B200H2S2V2_255# #slider_satR2G2B200H2S2V2_255#  #slider_intR2G2B200H2S2V2_255#
+-  si format 2 : #colorR2G2B20H3S2V2_100# #colorR2G2B20H3S2V2_100# #slider_satR2G2B20H3S2V2_100#  #slider_intR2G2B20H3S2V2_100#
 
 Si le codage ne correspond pas à ceux ci-dessus, il faut configurer des boutons pour chaque couleur individuelle désirée en mettant comme valeur du dps le codage de la couleur attendue par le périphérique, il faut pour cela changer les couleurs avec l'appli tuya et consulter les logs. Le retour d'état ne pourra pas fonctionner.
 
