@@ -641,10 +641,10 @@ Ici, une couleur a été modifiée sur l'application du périphérique et on obs
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : ColorGet, comme dps : 120 (sans les doubles guillemets) et "#colorH4S4V4_1000#" dans paramètres.
 -   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Intensité comme nom
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : Intensité, comme dps : 120 (sans les doubles guillemets) et comme paramètre : "#slider_intH4S4V4_1000#" (ici la valeur est entourée de guillemets, il faut donc les mettre).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : Intensité, comme dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_intH4S4V4_1000# (ne pas mettre de guillemets).
 -   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Saturation comme nom
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : Saturation, comme dps : 120 (sans les doubles guillemets) et comme paramètre : "#slider_satH4S4V4_1000#" (ici la valeur est entourée de guillemets, il faut donc les mettre).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : Saturation, comme dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_satH4S4V4_1000# (ne pas mettre de guillemets).
 	
 Nota : il est indispensable de mettre le même dps pour ces 4 commandes et de n'ajouter aucune autre commande action ou info sinon le plugin ne pourra pas décoder correctement la couleur.
 
