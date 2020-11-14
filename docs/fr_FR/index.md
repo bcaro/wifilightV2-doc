@@ -575,6 +575,8 @@ Ici, un curseur d'intensité a été sélectionné sur l'application du périph�
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre IntensiteGet comme nom de l'info
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : IntensiteGet, comme dps : 3 (sans les doubles guillemets) et rien dans paramètres.
+	
+Dans le champ paramètres, il est possible de mettre une formule en utilisant #value# dans la commande info et #slider# dans la commande action, sinon laisser entièrement vide.
 
 
 #### Dans le cas d'un capteur numérique, comme un capteur de température :
@@ -586,6 +588,8 @@ Ici, c'est une température qui est envoyée régulièrement et on observe que l
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre TempGet comme nom de l'info
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : TempGet, comme dps : 8 (sans les doubles guillemets) et rien dans paramètres.
+	
+Dans le champ paramètres, il est possible de mettre une formule en utilisant #value# dans la commande info.
 
 #### Dans le cas d'un capteur tout ou rien, comme un détecteur de porte :
 	
@@ -606,11 +610,11 @@ Le codage de la couleur chez tuya a plusieurs format et est différent de celui 
 
 Afin de permettre au plugin de fonctionner correctement pour les couleurs, il faut identifier les formats utilisés par tuya lors d'un changement de couleur avec l'appli tuya et en recupérant à cet instant dans les logs le dps qui a été modifié.
 
-1 - format HSV : H (0 à 360 ) S(codé de 0 à 1000) V (codé de 0 à 1000) le résultat est ensuite donné en base 16, soit 12 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya  000003E803E8
+1 - format HSV : H (codé de 0 à 360 ) S (codé de 0 à 1000) V (codé de 0 à 1000) le résultat est ensuite donné en base 16, soit 12 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya  000003E803E8
 
-2 - format RGB00HSV : RGB est codé sur 6 digits (chacun de 00 à FF pour chaque couleur). 00 est intercallé puis H (0 à 255 ) S(codé de 0 à 255) V (codé de 0 à 255). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya  FF00000000FFFF
+2 - format RGB00HSV : RGB est codé sur 6 digits (chacun de 00 à FF pour chaque couleur). 00 est intercallé puis H (codé de 0 à 255 ) S (codé de 0 à 255) V (codé de 0 à 255). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya  FF00000000FFFF
 
-3 - format RGB0HSV : RGB sont codés comme ci-dessus. 0 est intercallé puis H (0 à 360 ) S(codé de 0 à 100) V (codé de 0 à 255). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du violet : RGB = FF00FF et H= 300° S=100% V=100% soit en codage Tuya  FF0000012C64FF
+3 - format RGB0HSV : RGB sont codés comme ci-dessus. 0 est intercallé puis H (codé de 0 à 360 ) S (codé de 0 à 100) V (codé de 0 à 100). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du violet : RGB = FF00FF et H= 300° S=100% V=100% soit en codage Tuya  FF0000012C6464
 
 
 Dans le champ paramètre des dps (couleur et info couleur/action saturation/action intensité/) il faut mettre : 
