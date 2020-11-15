@@ -541,6 +541,9 @@ Il est possible de créer un périphérique entièrement custom. Contrairement a
 -   appuyer sur un bouton du périphérique (on, off, haut, bas, etc.) ou attendre que le périphérique renvoie son état ou appuyer sur un bouton de l'appli Smart Live (mais dans ce dernier cas, cela peut empêcher le retour d'état).
 -   repérer dans les logs le retour d'état
 
+Pour les Id uniques, toujours commencer par le caractère _ColorGet
+Le plugin est équipé de boutons permettant de créer autmatiquement les cas les plus courants, il suffira de modifier le dps automatiquement céé.
+
 #### Cas d'un actionneur tout ou rien, tel que ON/OFF
 
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"off","101":true}}
@@ -554,13 +557,13 @@ Ici, le bouton on a été sélectionné sur le périphérique et on observe que 
 	
 -   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
     *    Dans la colonne interface mettre ON comme nom du bouton
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : ON, comme dps : 1 (sans les doubles guillemets) et comme paramètre : "on" (si le on n'est pas entouré de guillemets, il faut les enlever).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ON, comme dps : 1 (sans les doubles guillemets) et comme paramètre : "on" (si le on n'est pas entouré de guillemets, il faut les enlever).
 -   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
     *    Dans la colonne interface mettre OFF comme nom du bouton
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : OFF, comme dps : 1 (sans les doubles guillemets) et comme paramètre : "off" (si le off n'est pas entouré de guillemets, il faut les enlever).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _OFF, comme dps : 1 (sans les doubles guillemets) et comme paramètre : "off" (si le off n'est pas entouré de guillemets, il faut les enlever).
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre ETAT comme nom de l'info
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : ETAT, comme dps : 1 (sans les doubles guillemets) et rien dans paramètres.
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ETAT, comme dps : 1 (sans les doubles guillemets) et rien dans paramètres.
 
 #### Dans le cas d'une commande numérique, comme une commande d'intensité :
 	
@@ -571,10 +574,10 @@ Ici, un curseur d'intensité a été sélectionné sur l'application du périph�
 	
 -   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Intensité comme nom du curseur
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : Intensite, comme dps : 3 (sans les doubles guillemets) et comme paramètre : #slider# (ici la valeur numérique n'est pas entourée de guillemets, il ne faut donc pas les mettre).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _Intensite, comme dps : 3 (sans les doubles guillemets) et comme paramètre : #slider# (ici la valeur numérique n'est pas entourée de guillemets, il ne faut donc pas les mettre).
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre IntensiteGet comme nom de l'info
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : IntensiteGet, comme dps : 3 (sans les doubles guillemets) et rien dans paramètres.
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _IntensiteGet, comme dps : 3 (sans les doubles guillemets) et rien dans paramètres.
 	
 Dans le champ paramètres, il est possible de mettre une formule en utilisant #value# dans la commande info et #slider# dans la commande action, sinon laisser entièrement vide.
 
@@ -587,7 +590,7 @@ Ici, c'est une température qui est envoyée régulièrement et on observe que l
 	
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre TempGet comme nom de l'info
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : TempGet, comme dps : 8 (sans les doubles guillemets) et rien dans paramètres.
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _TempGet, comme dps : 8 (sans les doubles guillemets) et rien dans paramètres.
 	
 Dans le champ paramètres, il est possible de mettre une formule en utilisant #value# dans la commande info.
 
@@ -602,7 +605,7 @@ Ici, c'est l'information d'ouverture puis de fermeture qui est envoyée et on ob
 	
 -   Créer une nouvelle commande info/binaire dans les commandes du périphérique :
     *    Dans la colonne interface mettre PorteGet comme nom de l'info
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : PorteGet, comme dps : 12 (sans les doubles guillemets) et rien dans paramètres.
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _PorteGet, comme dps : 12 (sans les doubles guillemets) et rien dans paramètres.
 
 #### Dans le cas de la couleur d'une lampe :
 
@@ -635,16 +638,16 @@ Ici, une couleur a été modifiée sur l'application du périphérique et on obs
 	
 -   Créer une nouvelle commande action/couleur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Couleur comme nom
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : Couleur, comme dps : 120 (sans les doubles guillemets) et comme paramètre : "#colorH4S4V4_1000#" (ici la valeur est entourée de guillemets, il faut donc les mettre).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _Couleur, comme dps : 120 (sans les doubles guillemets) et comme paramètre : "#colorH4S4V4_1000#" (ici la valeur est entourée de guillemets, il faut donc les mettre).
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre ColorGet comme nom de l'info
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : ColorGet, comme dps : 120 (sans les doubles guillemets) et "#colorH4S4V4_1000#" dans paramètres.
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ColorGet, comme dps : 120 (sans les doubles guillemets) et "#colorH4S4V4_1000#" dans paramètres.
 -   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Intensité comme nom
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : Intensité, comme dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_intH4S4V4_1000# (ne pas mettre de guillemets).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _Intensité, comme dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_intH4S4V4_1000# (ne pas mettre de guillemets).
 -   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Saturation comme nom
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : Saturation, comme dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_satH4S4V4_1000# (ne pas mettre de guillemets).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _Saturation, comme dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_satH4S4V4_1000# (ne pas mettre de guillemets).
 	
 Nota : il est indispensable de mettre le même dps pour ces 4 commandes et de n'ajouter aucune autre commande action ou info sinon le plugin ne pourra pas décoder correctement la couleur.
 
