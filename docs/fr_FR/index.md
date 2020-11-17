@@ -541,8 +541,8 @@ Il est possible de créer un périphérique entièrement custom. Contrairement a
 -   appuyer sur un bouton du périphérique (on, off, haut, bas, etc.) ou attendre que le périphérique renvoie son état ou appuyer sur un bouton de l'appli Smart Live (mais dans ce dernier cas, cela peut empêcher le retour d'état).
 -   repérer dans les logs le retour d'état
 
-Pour les Id uniques, toujours commencer par le caractère _ColorGet
-Le plugin est équipé de boutons permettant de créer autmatiquement les cas les plus courants, il suffira de modifier le dps automatiquement céé.
+Pour les Id uniques, toujours commencer par le caractère "_"
+Le plugin est équipé de boutons permettant de créer autmatiquement les cas les plus courants, il suffira de modifier le dps automatiquement créé.
 
 #### Cas d'un actionneur tout ou rien, tel que ON/OFF
 
@@ -648,8 +648,14 @@ Ici, une couleur a été modifiée sur l'application du périphérique et on obs
 -   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Saturation comme nom
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _Saturation, comme dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_satH4S4V4_1000# (ne pas mettre de guillemets).
+-   Créer une nouvelle commande info/numérique dans les commandes du périphérique :
+    *    Dans la colonne interface mettre Intensité comme nom
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _IntensitéGet, comme dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_intH4S4V4_1000# (ne pas mettre de guillemets).
+-   Créer une nouvelle commande info/numérique dans les commandes du périphérique :
+    *    Dans la colonne interface mettre Saturation comme nom
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _SaturationGet, comme dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_satH4S4V4_1000# (ne pas mettre de guillemets).
 	
-Nota : il est indispensable de mettre le même dps pour ces 4 commandes et de n'ajouter aucune autre commande action ou info sinon le plugin ne pourra pas décoder correctement la couleur.
+Nota : il est indispensable de mettre le même dps pour ces 6 commandes et de n'ajouter aucune autre commande action ou info sur ce dps sinon le plugin ne pourra pas décoder correctement les informations.
 
 ## Remarques :
 -   rien dans les logs : mauvaise adresse IP ou périphérique qui ne renvoie pas son état
