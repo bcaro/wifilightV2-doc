@@ -1,3 +1,4 @@
+[Retour à la documentation générale](./index.md)
 
 # Cas particulier de la passerelle Zigbee Tuya
 
@@ -278,5 +279,7 @@ Nota : il est indispensable de mettre le même dps pour ces 6 commandes et de n'
 -   retour avec erreur : Id incorrect
 -   retour non décodé : localkey incorrect
 -   la commande ne fonctionne pas : vérifier la commande
+
+[Retour à la documentation générale](./index.md)
 
 
