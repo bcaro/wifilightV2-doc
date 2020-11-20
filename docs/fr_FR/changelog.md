@@ -11,9 +11,10 @@ Ne jamais utiliser la version beta sans échange avec le développeur.
 -	passerelle Tuya/Zigbee : ajout prise connectée
 -   Tuya : ajout d'une interface de création des commandes de base facilitant la création de périphériques custom (valable aussi par la passerelle Zigbee) 
 -   Tuya : avec l'interface custom, possibilité d'intégrer des lampes permettant de contrôler leur couleur/saturation/intensité avec retour d'état
+-   Merros : nouvelle marque prise en compte, en mode LAN, donc sans internet, comme tous les périphériques compatiblers wifilightV2
 -   Meross : ajout des prises MSS210HK MSS210 MSS425EHK MSS425FHK et switch MSS710
--   Meross : ajout du module pour porte de garage en beta (incomplet et à tester)
--   Meross : ajout du plug avec conso MSS310 en beta (à tester)
+-   Merros : ajout du module pour porte de garage en beta (incomplet et à tester)
+-   Merros : ajout du plug avec conso MSS310 en beta (à tester)
 -   Correction de bogues
 -   Simplification et correction de la doc
 
