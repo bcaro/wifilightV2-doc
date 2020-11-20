@@ -19,7 +19,7 @@ Les équipements suivants sont compatibles mais la liste n'est pas exclusive et 
 	Utiliser l'option "mode étendu" de création des commandes pour créer toutes les commandes du thermostat.
 - le double switch variateur  QS-Zigbee-D02-TRIAC-LN
 
-Tous les autres périphériques, ou les périphériques similaires d'une autre marque ou modèle, doivent être entièrement configurés en mode "custom". Cependant a configuration de ces modèles peut aider pour un autre modèle.
+Tous les autres périphériques, ou les périphériques similaires d'une autre marque ou modèle, doivent être entièrement configurés en mode "custom". Cependant la configuration générée pour ces modèles peut aider pour un autre.
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
@@ -161,7 +161,7 @@ Ici, le bouton off a été sélectionné sur le périphérique et on observe que
 
 Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps 1 a changé.
 
-Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer un bouton ON/OFF. Il suffit de modifier le dps et les paramètres.
+Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer un bouton ON/OFF. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées.
 	
 -   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
     *    Dans la colonne interface mettre ON comme nom du bouton
@@ -181,7 +181,7 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 
 Ici, un curseur d'intensité a été sélectionné sur l'application du périphérique et on observe que le dps 3 a changé.
 
-Cliquer sur le bouton Curseur de l'interface afin de créer automatiquement les 2 commandes pour gérer le curseur. Il suffit de modifier le dps.
+Cliquer sur le bouton Curseur de l'interface afin de créer automatiquement les 2 commandes pour gérer le curseur.. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres insi que le nom de la commande. Les autres informations ne doivent pas être modifiées.
 	
 -   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Intensité comme nom du curseur
@@ -201,7 +201,7 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 	
 Ici, c'est une température qui est envoyée régulièrement et on observe que le dps 8 a changé.
 
-Cliquer sur le bouton Info Num de l'interface afin de créer automatiquement la commande pour récupérer la température. Il suffit de modifier le dps.
+Cliquer sur le bouton Info Num de l'interface afin de créer automatiquement la commande pour récupérer la température. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées.
 	
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre TempGet comme nom de l'info
@@ -219,7 +219,7 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 	
 Ici, c'est l'information d'ouverture puis de fermeture qui est envoyée et on observe que le dps 12 a changé.
 
-Cliquer sur le bouton Info Bin de l'interface afin de créer automatiquement la commande pour récupérer la valeur. Il suffit de modifier le dps.
+Cliquer sur le bouton Info Bin de l'interface afin de créer automatiquement la commande pour récupérer la valeur. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées.
 	
 -   Créer une nouvelle commande info/binaire dans les commandes du périphérique :
     *    Dans la colonne interface mettre PorteGet comme nom de l'info
@@ -253,7 +253,7 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 
 Ici, une couleur a été modifiée sur l'application du périphérique et on observe que le dps 120 a changé, il a le format 1.
 
-Cliquer sur le bouton Couleur 1 de l'interface afin de créer automatiquement la commande pour récupérer la valeur. Il suffit de modifier le dps et de corriger les guillemets.
+Cliquer sur le bouton Couleur 1 de l'interface afin de créer automatiquement la commande pour récupérer la valeur.. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres insi que le nom de la commande. Les autres informations ne doivent pas être modifiées.
 	
 -   Créer une nouvelle commande action/couleur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Couleur comme nom

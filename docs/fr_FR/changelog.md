@@ -9,10 +9,13 @@ Ne jamais utiliser la version beta sans échange avec le développeur.
 1.63 - 2020-12-01
 -   passerelle Tuya/Zigbee : ajout capteurs présence, switch gradateur double, télécommande 3 boutons
 -	passerelle Tuya/Zigbee : ajout prise connectée
+-   Tuya : ajout d'une interface de création des commandes de base facilitant la création de périphériques custom (valable aussi par la passerelle Zigbee) 
+-   Tuya : avec linterface custom : possibilité d'intégrer des lampes permettant de contrôler la couleur/saturation/intensité des lampes avec retour d'état
 -   Meross : ajout des prises MSS210HK MSS210 MSS425EHK MSS425FHK et switch MSS710
--   Meross : ajout du module pour porte de garage
--   Tuya : possibilité de contrôler la couleur/saturation/intensité des lampes avec retourd d'état
+-   Meross : ajout du module pour porte de garage en beta (incomplet et à tester)
+-   Meross : ajout du plug avec conso MSS310 en beta (à tester)
 -   Correction de bogues
+-   Simplification et correction de la doc
 
 1.62 - 2020-10-31
 -   passerelle Tuya/Zigbee : ajout d'une tête thermostatique, d'une serrure et d'un capteur de température
