@@ -7,7 +7,7 @@ Si rien n'est présent dans le changelog :
 Ne jamais utiliser la version beta sans échange avec le développeur.
 
 1.63 - 2020-12-01
--   passerelle Tuya/Zigbee : ajout capteur présence, switch gradateur double, télécommande 3 boutons
+-   passerelle Tuya/Zigbee : ajout capteur présence, switch gradateur double, télécommande 3 boutons LoraTap
 -	passerelle Tuya/Zigbee : ajout prise connectée
 -   Tuya : ajout d'une interface de création des commandes de base facilitant la création de périphériques custom (valable aussi par la passerelle Zigbee) 
 -   Tuya : avec l'interface custom, possibilité d'intégrer des lampes permettant de contrôler leur couleur/saturation/intensité avec retour d'état
