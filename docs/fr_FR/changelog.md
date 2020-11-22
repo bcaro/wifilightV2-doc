@@ -7,16 +7,19 @@ Si rien n'est présent dans le changelog :
 Ne jamais utiliser la version beta sans échange avec le développeur.
 
 1.63 - 2020-12-01
--   passerelle Tuya/Zigbee : ajout capteur présence, switch gradateur double, télécommande 3 boutons LoraTap
--	passerelle Tuya/Zigbee : ajout prise connectée
--   Tuya : ajout d'une interface de création des commandes de base facilitant la création de périphériques custom (valable aussi par la passerelle Zigbee) 
+-   passerelle Tuya/Zigbee : ajout capteurs présences, capteur d'ouverture, switch gradateur double, télécommande 3 boutons LoraTap
+-   Tuya : ajout d'une interface de création des commandes de base facilitant la configuration des périphériques custom (valable aussi par la passerelle Zigbee/Tuya) 
 -   Tuya : avec l'interface custom, possibilité d'intégrer des lampes permettant de contrôler leur couleur/saturation/intensité avec retour d'état
--   Meross : nouvelle marque prise en compte, en mode LAN, donc sans internet, comme tous les périphériques compatibles wifilightV2
+-   Tuya : ajout d'un interrupteur de  volet roulant avec positionnement
+-	Meross : nouvelle marque prise en compte, en mode LAN, donc sans internet, comme tous les périphériques compatibles wifilightV2
 -   Meross : ajout des prises MSS210HK MSS210 MSS425EHK MSS425FHK et switch MSS710
 -   Meross : ajout du module pour porte de garage en beta (incomplet et à tester)
--   Meross : ajout du plug avec conso MSS310 en beta (à tester)
+-   Meross : ajout du plug avec conso MSS310 en beta (à tester) (la conso ne remonte que toutes les minutes)
 -   Correction de bogues
 -   Simplification et correction de la doc
+
+Attention : les config tuya/zigbee devront être refaites pour le passage en stable
+			ne plus utiliser la config passrelle wifi/zigbee V1 -> passez en V2. La V1 n'est plus proposée et sera suprimée lors de la prochaine relese du plugin.
 
 1.62 - 2020-10-31
 -   passerelle Tuya/Zigbee : ajout d'une tête thermostatique, d'une serrure et d'un capteur de température

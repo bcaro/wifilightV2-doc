@@ -9,15 +9,20 @@ Le dialogue entre le plugin et la passerelle se fait en WiFi. Ensuite, le dialog
 Le plugin peut récupérer l'état des périphériques dès que ceux-ci envoient une information de changement d'état ou quand le plugin les interroge au lancement du demon. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
 
 Les équipements suivants sont compatibles mais la liste n'est pas exclusive et sera complétée en fonction du retour des utilisateurs.
-- passerelle MoesHouse (toutes les passerelles Zigbee Tuya sont normalement compatibles)
+- passerelle MoesHouse, BENEXMART,(toutes les passerelles Zigbee Tuya sont normalement compatibles)
 - serrure Vima (mais pas MiHome)
 	le plugin ne peut ouvrir/fermer car la serrure n'est pas prévue pour le faire, mais il peut connaitre la dernière clé utilisée
 - capteur de température et d'humidité TYZS2
 	fonctionnement complet
 - tête thermostatique Hessway
-	test complet OK. Ne gère pas la programmation des plages horaires des différents modes mais peut démarrer n'importe quel mode.
+	Ne gère pas la programmation des plages horaires des différents modes mais peut démarrer n'importe quel mode.
 	Utiliser l'option "mode étendu" de création des commandes pour créer toutes les commandes du thermostat.
 - le double switch variateur  QS-Zigbee-D02-TRIAC-LN
+- capteur de présence Moes
+- capteur de présence BENEXMART
+- capteur de température BENEXMART
+- capteur de porte BENEXMART
+
 
 Tous les autres périphériques, ou les périphériques similaires d'une autre marque ou modèle, doivent être entièrement configurés en mode "custom". Cependant la configuration générée pour ces modèles peut aider pour un autre.
 
