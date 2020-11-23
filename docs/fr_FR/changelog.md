@@ -18,9 +18,9 @@ Ne jamais utiliser la version beta sans échange avec le développeur.
 -   Correction de bogues
 -   Simplification et correction de la doc
 
-Attention : les configs tuya/zigbee V1 devront être refaites en V2 pour le passage en stable.
-
-			Ne plus utiliser la config passerelle wifi/zigbee V1, il faut passer en V2. La V1 n'est plus proposée et sera suprimée lors de la prochaine release du plugin.
+Attention : 
+- les configs tuya/zigbee V1 devront être refaites en V2 pour le passage en stable.
+- Ne plus utiliser la config passerelle wifi/zigbee V1, il faut passer en V2. La V1 n'est plus proposée et sera suprimée lors de la prochaine release du plugin.
 
 1.62 - 2020-10-31
 -   passerelle Tuya/Zigbee : ajout d'une tête thermostatique, d'une serrure et d'un capteur de température
