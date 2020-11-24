@@ -31,15 +31,17 @@ Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le p
 Il faut créer un équipement, avec la même adresse IP, pour chaque périphérique connecté à la passerelle et lui attribuer un n° de canal (le numéro entre 1 et 100 est sans importance mais chaque périphérique doit avoir un n° de canal différent).
 
 
-## Récupération de la clé du périphérique
+## Récupération de la clé de la passerelle
 
-Il est indispensable de récupérer une clé locale (LocalKey) permettant au plugin de dialoguer avec les périphériques.
+Il est indispensable de récupérer la clé locale (LocalKey) d ela passerelle permettant au plugin de dialoguer avec les périphériques.
 
 Pour récupérer la clé, la procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localkey, sur Github en particulier ou sur le forum Jeedom.
 
-Si le périphérique est désinstallé puis réinstallé dans l'application mobile, alors sa clé sera modifiée. Il faudra retrouver la clé avec la procédure ci-dessus. 
+Si la passerelle est désinstallé puis réinstallé dans l'application mobile, alors sa clé sera modifiée. Il faudra retrouver la clé avec la procédure ci-dessus. 
 
 Aucune aide ne sera donnée pour récupérer la clé.
+
+La clé des périphériques connectés à la passerelle est la même que celle de la passerelle.
 
 
 ## Récupération de l'identifiant du périphérique
@@ -52,6 +54,8 @@ Vous trouverez une information comme celle-ci :
 Le cid est à copier dans le champ id du périphérique du plugin (sans les " "). C'est lui qui permet de distinguer 2 équipements connectés à la passerelle.
 
 Si aucun message en clair n'apparait, c'est que la clé n'est pas bonne.
+
+
 
 ## Configurer les périphériques
 
