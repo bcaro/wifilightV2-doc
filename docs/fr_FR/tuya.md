@@ -132,13 +132,10 @@ Pour mettre la prise n°2 de certains plugs à on : xxxxxx vaut "2":true qui est
 Pour éteindre la prise n°1 et la prise n°2 de certains plugs : xxxxxx vaut "1":false,"2":false qui est à mettre dans paramètres (utiliser les doubles guillemets de la touche 3).
 
 Le paragraphe suivant donne des éléments pour interpréter les logs wifilightV2.
--   Noter qu'il est nécessaire que le périphérique renvoie son état.
--   Dans de nombreux cas il n'y aura pas de retour d'état si les commandes ajoutées par défaut ne récupèrent pas le dps. Dans ce cas il est possible de récupérer le retour d'état en ajoutant une commande custom en spécifiant le dps comme indiqué dans le paragraphe suivant.
--   Il est donc possible de mixer des commandes personnalisées en spécifiant le dps (paragraphe suivant) ou sans spécifier le dps.
 
 ## Périphérique custom
 
-Il est possible de créer un périphérique entièrement custom. Contrairement aux commandes personnalisées, un périphérique custom n'a aucune commande prédéfinie (sauf connectedGet) et tout doit être configuré pour chaque commande. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de solution.
+Il est possible de créer un périphérique entièrement custom ou d'ajouter des commandes custom à un périphérique existant. L'interface propose de créer des commandes automatiquement, ceci a l'avantage de mieux faire fonctionner le retour d'état. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de solution.
 
 ### Configuration
 -   désactiver tous les périphériques wifilightV2 sauf celui à tester
@@ -148,11 +145,11 @@ Il est possible de créer un périphérique entièrement custom. Contrairement a
 -   effacer les logs
 
 ### Récupération des informations
--   appuyer sur un bouton du périphérique (on, off, haut, bas, etc.) ou attendre que le périphérique renvoie son état ou appuyer sur un bouton de l'appli Smart Live (mais dans ce dernier cas, cela peut empêcher le retour d'état).
+-   appuyer sur un bouton du périphérique physique (on, off, haut, bas, etc.) ou attendre que le périphérique renvoie son état ou appuyer sur un bouton de l'appli Smart Live (mais dans ce dernier cas, cela peut empêcher le retour d'état).
 -   repérer dans les logs le retour d'état
 
 Pour les Id uniques, toujours commencer par le caractère "_"
-Le plugin est équipé de boutons permettant de créer autmatiquement les cas les plus courants, il suffira de modifier le dps automatiquement créé.
+Le plugin est équipé de boutons permettant de créer autmatiquement les cas les plus courants, il suffira de modifier le dps ou le paramètre automatiquement créé.
 
 #### Cas d'un actionneur tout ou rien, tel que ON/OFF
 
@@ -166,7 +163,7 @@ Ici, le bouton off a été sélectionné sur le périphérique et on observe que
 
 Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps 1 a changé.
 
-Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer un bouton ON/OFF. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées.
+Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer un bouton ON/OFF. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées. La configuration générée est la suivante :
 	
 -   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
     *    Dans la colonne interface mettre ON comme nom du bouton
@@ -186,7 +183,7 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 
 Ici, un curseur d'intensité a été sélectionné sur l'application du périphérique et on observe que le dps 3 a changé.
 
-Cliquer sur le bouton Curseur de l'interface afin de créer automatiquement les 2 commandes pour gérer le curseur.. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres insi que le nom de la commande. Les autres informations ne doivent pas être modifiées.
+Cliquer sur le bouton Curseur de l'interface afin de créer automatiquement les 2 commandes pour gérer le curseur.. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres insi que le nom de la commande. Les autres informations ne doivent pas être modifiées. La configuration générée est la suivante :
 	
 -   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Intensité comme nom du curseur
@@ -206,7 +203,7 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 	
 Ici, c'est une température qui est envoyée régulièrement et on observe que le dps 8 a changé.
 
-Cliquer sur le bouton Info Num de l'interface afin de créer automatiquement la commande pour récupérer la température. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées.
+Cliquer sur le bouton Info Num de l'interface afin de créer automatiquement la commande pour récupérer la température. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées. La configuration générée est la suivante :
 	
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre TempGet comme nom de l'info
@@ -224,7 +221,7 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 	
 Ici, c'est l'information d'ouverture puis de fermeture qui est envoyée et on observe que le dps 12 a changé.
 
-Cliquer sur le bouton Info Bin de l'interface afin de créer automatiquement la commande pour récupérer la valeur. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées.
+Cliquer sur le bouton Info Bin de l'interface afin de créer automatiquement la commande pour récupérer la valeur. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées.  La configuration générée est la suivante :
 	
 -   Créer une nouvelle commande info/binaire dans les commandes du périphérique :
     *    Dans la colonne interface mettre PorteGet comme nom de l'info
@@ -258,7 +255,7 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 
 Ici, une couleur a été modifiée sur l'application du périphérique et on observe que le dps 120 a changé, il a le format 1.
 
-Cliquer sur le bouton Couleur 1 de l'interface afin de créer automatiquement la commande pour récupérer la valeur.. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres insi que le nom de la commande. Les autres informations ne doivent pas être modifiées.
+Cliquer sur le bouton Couleur 1 de l'interface afin de créer automatiquement la commande pour récupérer la valeur.. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres insi que le nom de la commande. Les autres informations ne doivent pas être modifiées. La configuration générée est la suivante :
 	
 -   Créer une nouvelle commande action/couleur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Couleur comme nom
@@ -280,6 +277,12 @@ Cliquer sur le bouton Couleur 1 de l'interface afin de créer automatiquement la
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _SaturationGet, comme dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_satH4S4V4_1000# (ne pas mettre de guillemets).
 	
 Nota : il est indispensable de mettre le même dps pour ces 6 commandes et de n'ajouter aucune autre commande action ou info sur ce dps sinon le plugin ne pourra pas décoder correctement les informations et mettre à jour le retour d'état.
+
+#### Pour envoyer plusieurs dps en même temps :
+
+Ceci peut être utile pour éteindre une prise complète en même temps. Utiliser alors le bouton +Commande pour créer une commande action. Il n'y aura pas de commande info associée, mais il est possible de les créer manuellement pour chaque dps, elles seront mises à jour par le retour d'état.
+
+
 
 ## Remarques :
 -   rien dans les logs : mauvaise adresse IP ou périphérique qui ne renvoie pas son état
