@@ -33,7 +33,7 @@ Il faut créer un équipement, avec la même adresse IP et la même clé, pour c
 
 ## Récupération de la clé de la passerelle
 
-Il est indispensable de récupérer la clé locale (LocalKey) d ela passerelle permettant au plugin de dialoguer avec les périphériques.
+Il est indispensable de récupérer la clé locale (LocalKey) de la passerelle permettant au plugin de dialoguer avec les périphériques.
 
 Pour récupérer la clé, la procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localkey, sur Github en particulier ou sur le forum Jeedom.
 
