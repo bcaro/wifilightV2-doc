@@ -28,7 +28,7 @@ Tous les autres périphériques, ou les périphériques similaires d'une autre m
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
-Il faut créer un équipement, avec la même adresse IP, pour chaque périphérique connecté à la passerelle et lui attribuer un n° de canal (le numéro entre 1 et 100 est sans importance mais chaque périphérique doit avoir un n° de canal différent).
+Il faut créer un équipement, avec la même adresse IP et la même clé, pour chaque périphérique connecté à la passerelle et lui attribuer un n° de canal (le numéro entre 1 et 100 est sans importance mais chaque périphérique doit avoir un n° de canal différent).
 
 
 ## Récupération de la clé de la passerelle
