@@ -149,7 +149,7 @@ Il est possible de créer un périphérique entièrement custom ou d'ajouter des
 -   repérer dans les logs le retour d'état
 
 Pour les Id uniques, toujours commencer par le caractère "_"
-Le plugin est équipé de boutons permettant de créer autmatiquement les cas les plus courants, il suffira de modifier le dps ou le paramètre automatiquement créé.
+Le plugin est équipé de boutons permettant de créer automatiquement les cas les plus courants, il suffira de modifier le dps ou le paramètre automatiquement créé.
 
 #### Cas d'un actionneur tout ou rien, tel que ON/OFF
 
@@ -163,7 +163,7 @@ Ici, le bouton off a été sélectionné sur le périphérique et on observe que
 
 Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps 1 a changé.
 
-Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer un bouton ON/OFF. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées. La configuration générée est la suivante :
+Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer un bouton ON/OFF. Pour les adapter au besoin, il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées. La configuration générée est la suivante :
 	
 -   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
     *    Dans la colonne interface mettre ON comme nom du bouton
@@ -183,7 +183,7 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 
 Ici, un curseur d'intensité a été sélectionné sur l'application du périphérique et on observe que le dps 3 a changé.
 
-Cliquer sur le bouton Curseur de l'interface afin de créer automatiquement les 2 commandes pour gérer le curseur.. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres insi que le nom de la commande. Les autres informations ne doivent pas être modifiées. La configuration générée est la suivante :
+Cliquer sur le bouton Curseur de l'interface afin de créer automatiquement les 2 commandes pour gérer le curseur. Pour les adapter au besoin, il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées. La configuration générée est la suivante :
 	
 -   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Intensité comme nom du curseur
@@ -203,7 +203,7 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 	
 Ici, c'est une température qui est envoyée régulièrement et on observe que le dps 8 a changé.
 
-Cliquer sur le bouton Info Num de l'interface afin de créer automatiquement la commande pour récupérer la température. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées. La configuration générée est la suivante :
+Cliquer sur le bouton Info Num de l'interface afin de créer automatiquement la commande pour récupérer la température. Pour les adapter au besoin, il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées. La configuration générée est la suivante :
 	
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre TempGet comme nom de l'info
@@ -221,7 +221,7 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 	
 Ici, c'est l'information d'ouverture puis de fermeture qui est envoyée et on observe que le dps 12 a changé.
 
-Cliquer sur le bouton Info Bin de l'interface afin de créer automatiquement la commande pour récupérer la valeur. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées.  La configuration générée est la suivante :
+Cliquer sur le bouton Info Bin de l'interface afin de créer automatiquement la commande pour récupérer la valeur. Pour les adapter au besoin, il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées.  La configuration générée est la suivante :
 	
 -   Créer une nouvelle commande info/binaire dans les commandes du périphérique :
     *    Dans la colonne interface mettre PorteGet comme nom de l'info
@@ -235,9 +235,9 @@ Afin de permettre au plugin de fonctionner correctement pour les couleurs, il fa
 
 1 - format HSV : H (codé de 0 à 360 ) S (codé de 0 à 1000) V (codé de 0 à 1000) le résultat est ensuite donné en base 16, soit 12 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya  000003E803E8
 
-2 - format RGB00HSV : RGB est codé sur 6 digits (chacun de 00 à FF pour chaque couleur). 00 est intercallé puis H (codé de 0 à 255 ) S (codé de 0 à 255) V (codé de 0 à 255). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya  FF00000000FFFF
+2 - format RGB00HSV : RGB est codé sur 6 digits (chacun de 00 à FF pour chaque couleur). 00 est intercalé puis H (codé de 0 à 255 ) S (codé de 0 à 255) V (codé de 0 à 255). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya  FF00000000FFFF
 
-3 - format RGB0HSV : RGB sont codés comme ci-dessus. 0 est intercallé puis H (codé de 0 à 360 ) S (codé de 0 à 100) V (codé de 0 à 100). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du violet : RGB = FF00FF et H= 300° S=100% V=100% soit en codage Tuya  FF0000012C6464
+3 - format RGB0HSV : RGB sont codés comme ci-dessus. 0 est intercalé puis H (codé de 0 à 360 ) S (codé de 0 à 100) V (codé de 0 à 100). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du violet : RGB = FF00FF et H= 300° S=100% V=100% soit en codage Tuya  FF0000012C6464
 
 
 Dans le champ paramètre des dps (couleur/info couleur/action saturation/action intensité/action) il faut mettre : 
@@ -255,7 +255,7 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 
 Ici, une couleur a été modifiée sur l'application du périphérique et on observe que le dps 120 a changé, il a le format 1.
 
-Cliquer sur le bouton Couleur 1 de l'interface afin de créer automatiquement la commande pour récupérer la valeur.. Pour les adapter au besoin,il suffit de modifier le dps et les paramètres insi que le nom de la commande. Les autres informations ne doivent pas être modifiées. La configuration générée est la suivante :
+Cliquer sur le bouton Couleur 1 de l'interface afin de créer automatiquement la commande pour récupérer la valeur. Pour les adapter au besoin, il suffit de modifier le dps et les paramètres insi que le nom de la commande. Les autres informations ne doivent pas être modifiées. La configuration générée est la suivante :
 	
 -   Créer une nouvelle commande action/couleur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Couleur comme nom
