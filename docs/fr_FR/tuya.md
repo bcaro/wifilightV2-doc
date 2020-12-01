@@ -37,7 +37,7 @@ Il est indispensable de récupérer la clé locale (LocalKey) de la passerelle p
 
 Pour récupérer la clé, la procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localkey, sur Github en particulier ou sur le forum Jeedom.
 
-Si la passerelle est désinstallé puis réinstallé dans l'application mobile, alors sa clé sera modifiée. Il faudra retrouver la clé avec la procédure ci-dessus. 
+Si la passerelle est désinstallée puis réinstallée dans l'application mobile, alors sa clé sera modifiée. Il faudra retrouver la clé avec la procédure ci-dessus. 
 
 Aucune aide ne sera donnée pour récupérer la clé.
 
@@ -92,7 +92,7 @@ Le plugin teste les périphériques (mais ils doivent être ajoutés manuellemen
 - le type V2 correspond aux périphériques en firmware 2.0
 - le type V3 correspond aux périphériques en firmware 2.0 mais avec la possibilité de modifier le dps et les paramètres de dps afin de les adapter aux périphériques. Pour ce type, la notion de canal a disparue et toutes les commandes prises sont créées dans le même périphérique.
 
-En V1 et V2, pour les périphériques multicanaux (comme les prises multiples), il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal.
+En V1 et V2, pour les périphériques multicanaux (comme les prises multiples), il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal. Le n° de canal correspond au n° de prise (USB en plus si présent).
 
 Dans les 3 cas, testez de préférence les configurations standards avant de créer manuellement les commandes
 
@@ -130,13 +130,13 @@ Pour les autres prises, la valeur 20;18;19 est mise par défaut.
 
 ## Personnalisation des commandes
 
-Devant la diversité des périphériques compatibles Tuya, il peut être nécessaire de créer des commandes personnalisées. Avant de passer aux commandes personnalisées, tester d'abord les configurations par standard qui fonctionnent dans la majorité des cas. Ces configurations standards peuvent, en V3, être modifiées pour ajuster le dps et le paramètre afin qu'ils correspondent au périphérique.
+Devant la diversité des périphériques compatibles Tuya, il peut être nécessaire de créer des commandes personnalisées. Avant de passer aux commandes personnalisées, tester d'abord les configurations standard qui fonctionnent dans la majorité des cas. Ces configurations standards peuvent, en V3, être modifiées pour ajuster le dps et le paramètre afin qu'ils correspondent au périphérique.
 
 Le paragraphe suivant donne des éléments pour interpréter les logs wifilightV2 et configurer soit entièrement un périphérique ou modifier une configuration standard V3.
 
 ## Périphérique custom
 
-Il est possible de créer un périphérique entièrement custom ou d'ajouter des commandes custom à un périphérique existant ou de modifier les dps/parmètres d'une commande. L'interface propose de créer des commandes automatiquement, ceci a l'avantage de mieux faire fonctionner le retour d'état. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de solution.
+Il est possible de créer un périphérique entièrement custom ou d'ajouter des commandes custom à un périphérique existant ou de modifier les dps/paramètres d'une commande. L'interface propose de créer des commandes automatiquement, ceci a l'avantage de mieux faire fonctionner le retour d'état. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de solution.
 
 ### Configuration
 -   désactiver tous les périphériques wifilightV2 sauf celui à tester
@@ -151,7 +151,7 @@ Il est possible de créer un périphérique entièrement custom ou d'ajouter des
 
 Utiliser toutes les possibilités de l'application Tuya et bien repérer dans les logs le dps et la valeur qui sont envoyés au plugin. 
 
-Le plugin est équipé de boutons permettant de créer automatiquement les cas les plus courants, il suffira de modifier le dps ou le paramètre automatiquement créé.
+Le plugin est équipé de boutons permettant de créer automatiquement les cas les plus courants, il suffira de modifier le dps ou le paramètre automatiquement créés.
 
 #### Cas d'un actionneur tout ou rien, tel que ON/OFF
 
@@ -165,9 +165,9 @@ Ici, le bouton off a été sélectionné sur le périphérique et on observe que
 
 Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps 1 a changé.
 
-Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer les boutons ON/OFF. Il suffit de modifier le dps en mettant 1. Pour es paramètres mettre "on" et "off" les guillets compris.
+Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer les boutons ON/OFF. Il suffit de modifier le dps en mettant 1. Pour les paramètres mettre "on" et "off", les guillemets compris.
 
-Pour cinfigurer manuellement :
+Pour configurer manuellement :
 
 -   Création d'une nouvelle commande action/défaut dans les commandes du périphérique :
     *    Dans la colonne interface mettre ON comme nom du bouton
@@ -205,7 +205,7 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"8":23,"101":true}}
 	
-Ici, c'est une température qui est envoyée régulièrement et on observe que le dps 8 a changé. Pour les adapter au besoin, il suffit de modifier les dps et de mettre 3 (sans parenthèse(sans parenthèse)Pour le paramètre de l'info, soit ne rien mettre, soit mettre #value# soit mettre une formule par exemple : #value#/10 .
+Ici, c'est une température qui est envoyée régulièrement et on observe que le dps 8 a changé. Il suffit de modifier le dps et de mettre 3 (sans parenthèse). Pour le paramètre de l'info, soit ne rien mettre, soit mettre #value# soit mettre une formule par exemple : #value#/10 .
 
 Cliquer sur le bouton Info Num de l'interface afin de créer automatiquement la commande pour récupérer la température. Pour les adapter au besoin, il suffit de modifier le dps, ici 8 (sans parenthèse). Pour le paramètre de l'info, soit ne rien mettre, soit mettre #value# soit mettre une formule par exemple : #value#/10 .
 
@@ -226,7 +226,7 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 	
 Ici, c'est l'information d'ouverture puis de fermeture qui est envoyée et on observe que le dps 12 a changé.
 
-Cliquer sur le bouton Info Bin de l'interface afin de créer automatiquement la commande pour récupérer la valeur. our les adapter au besoin, il suffit de modifier les dps et de mettre 12 (sans parenthèse). Pour les paramètresne rien mettre.  
+Cliquer sur le bouton Info Bin de l'interface afin de créer automatiquement la commande pour récupérer la valeur. Pour les adapter au besoin, il suffit de modifier les dps et de mettre 12 (sans parenthèse). Pour les paramètres, mettre 1 et 0 sans guillemets.  
 
 Pour configurer manuellement :
 	
@@ -252,7 +252,7 @@ Dans les logs, lors de l'utilisation de la modification de la couleur de la lamp
 
     Receive after decode:{"devId":"63322540bcddc254e92c","dps":{"1":true,"27":true,"28":"white","29":254,"31":"08ff0000766464","32":"cf38000168ffff","33":"ffff500100ff00"}
 
-Il faut repérer le dps qui change, ici c'est le 31 soit 08ff0000766464 . les 2 derniers 64 en hexadéciaml font 100 en décimal. 08=R FF=G 00=B 076= hue, c'est le format 3. Cliquer sur le bouton Couleur 3 et modifier les dps pour mettre 31. Ne pas modifier les paramètres. 
+Il faut repérer le dps qui change, ici c'est le 31 soit 08ff0000766464 . Les 2 derniers 64 en hexadéciaml font 100 en décimal. 08=R FF=G 00=B 076= hue, c'est le format 3. Cliquer sur le bouton Couleur 3 et modifier les dps pour mettre 31. Ne pas modifier les paramètres. 
 
 Pour créer manuellement les 6 boutons dans le cas d'un format de couleur 1 :
 	
