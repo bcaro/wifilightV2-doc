@@ -84,15 +84,15 @@ Les équipements suivants sont compatibles en firmware 1.0. et en firmware 2.0.
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
-Pour les périphériques multicanaux (comme les prises multiples) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal.
-
 Les capteurs de présence et d'ouverture ne sont pas compatibles car ils ne dialoguent pas en local. D'autres périphériques de la liste ci-dessus peuvent aussi avoir un fonctionnement uniquement par internet, ils ne sont pas compatibles avec le plugin. Il faut demander au vendeur si le mode LAN est actif.
 
 Le plugin teste les périphériques (mais ils doivent être ajoutés manuellement) et affiche un message dans le centre de messages lorsqu'un périphérique a été configuré avec le mauvais firmware.
 
-le type V1 correspond aux périphériques en firmware 1.0
-le type V2 correspond aux périphériques en firmware 2.0
-le type V3 correspond aux péripéhriques en firmware 2.0 mais avec la possibilité de modifier le dps et les paramètres de dps afin de les adapter aux périphériques. Pour ce type, la notion de canal a disparue et toutes les commandes prises sont créées dans le même périphérique.
+- le type V1 correspond aux périphériques en firmware 1.0
+- le type V2 correspond aux périphériques en firmware 2.0
+- le type V3 correspond aux périphériques en firmware 2.0 mais avec la possibilité de modifier le dps et les paramètres de dps afin de les adapter aux périphériques. Pour ce type, la notion de canal a disparue et toutes les commandes prises sont créées dans le même périphérique.
+
+En V1 et V2, pour les périphériques multicanaux (comme les prises multiples), il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal.
 
 Dans les 3 cas, testez de préférence les configurations standards avant de créer manuellement les commandes
 
@@ -149,7 +149,7 @@ Il est possible de créer un périphérique entièrement custom ou d'ajouter des
 -   appuyer sur un bouton du périphérique physique (on, off, haut, bas, etc.) ou attendre que le périphérique renvoie son état ou appuyer sur un bouton de l'appli Smart Live (mais dans ce dernier cas, cela peut empêcher le retour d'état).
 -   repérer dans les logs le retour d'état
 
-Utiliser toutes les possibilités de l'application Tuya et bien repérer dans les logs le dps et sa valeur qui sont envoyées au plugin. 
+Utiliser toutes les possibilités de l'application Tuya et bien repérer dans les logs le dps et la valeur qui sont envoyés au plugin. 
 
 Le plugin est équipé de boutons permettant de créer automatiquement les cas les plus courants, il suffira de modifier le dps ou le paramètre automatiquement créé.
 
@@ -165,8 +165,10 @@ Ici, le bouton off a été sélectionné sur le périphérique et on observe que
 
 Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps 1 a changé.
 
-Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer un bouton ON/OFF. Pour les adapter au besoin, il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées. La configuration générée est la suivante :
-	
+Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer les boutons ON/OFF. Il suffit de modifier le dps en mettant 1. Pour es paramètres mettre "on" et "off" les guillets compris.
+
+Pour cinfigurer manuellement :
+
 -   Création d'une nouvelle commande action/défaut dans les commandes du périphérique :
     *    Dans la colonne interface mettre ON comme nom du bouton
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ON, comme dps : 1 (sans les doubles guillemets) et comme paramètre : "on" (si le on n'est pas entouré de guillemets, il faut les enlever).
