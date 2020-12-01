@@ -89,8 +89,8 @@ Les capteurs de présence et d'ouverture ne sont pas compatibles car ils ne dial
 Le plugin teste les périphériques (mais ils doivent être ajoutés manuellement) et affiche un message dans le centre de messages lorsqu'un périphérique a été configuré avec le mauvais firmware.
 
 - le type V1 correspond aux périphériques en firmware 1.0
-- le type V2 correspond aux périphériques en firmware 2.0
-- le type V3 correspond aux périphériques en firmware 2.0 mais avec la possibilité de modifier le dps et les paramètres de dps afin de les adapter aux périphériques. Pour ce type, la notion de canal a disparue et toutes les commandes prises sont créées dans le même périphérique.
+- le type V2 correspond aux périphériques en firmware 2.0 possibilité d'ajouter des commandes custom
+- le type V3 correspond aux périphériques en firmware 2.0 possibilité en plus de modifier le dps et les paramètres de dps des périphériques standard afin de les adapter au besoin. Pour ce type, la notion de canal a disparue et toutes les commandes de prises électriques sont créées dans le même périphérique.
 
 En V1 et V2, pour les périphériques multicanaux (comme les prises multiples), il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal. Le n° de canal correspond au n° de prise (USB en plus si présent).
 
