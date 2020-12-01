@@ -90,6 +90,13 @@ Les capteurs de présence et d'ouverture ne sont pas compatibles car ils ne dial
 
 Le plugin teste les périphériques (mais ils doivent être ajoutés manuellement) et affiche un message dans le centre de messages lorsqu'un périphérique a été configuré avec le mauvais firmware.
 
+le type V1 correspond aux périphériques en firmware 1.0
+le type V2 correspond aux périphériques en firmware 2.0
+le type V3 correspond aux péripéhriques en firmware 2.0 mais avec la possibilité de modifier le dps et les paramètres de dps afin de les adapter aux périphériques. Pour ce type, la notion de canal a disparue et toutes les commandes prises sont créées dans le même périphérique.
+
+Dans les 3 cas, testez de préférence les configurations standards avant de créer manuellement les commandes
+
+
 
 ## Configuration du périphérique
 
@@ -107,7 +114,7 @@ Tout changement de configuration nécessite de redémarrer le démon.
 
 ## Configuration de la récupération de la consommation des prises
 
-Selon les marques, la consommation n'est pas envoyée de façon unique par la prise. Pour récupérer ce paramétrage, installer la prise dans Jeedom et conserver le retour d'état dans la configuration, puis aller dans les logs de wifilightV2. La prise est interrogée toutes les minutes. Repérer le message qui ressemble à :
+Pour les configurations standards concernant les prises avec consommation, selon les marques, la consommation n'est pas envoyée de façon unique par la prise. Pour récupérer ce paramétrage, installer la prise dans Jeedom et conserver le retour d'état dans la configuration, puis aller dans les logs de wifilightV2. La prise est interrogée toutes les minutes. Repérer le message qui ressemble à :
 
     return decoded : {"devId":"xxxxxxxxx","dps":{"1":false,"2":false,"9":0,"10":0,"18":0,"19":0,"20":2281,"21":1,"22":726,"23":28971,"24":19417,"25":1070}}
 
@@ -123,23 +130,13 @@ Pour les autres prises, la valeur 20;18;19 est mise par défaut.
 
 ## Personnalisation des commandes
 
-Devant la diversité des périphériques compatibles Tuya, il peut être nécessaire de créer des commandes personnalisées.
+Devant la diversité des périphériques compatibles Tuya, il peut être nécessaire de créer des commandes personnalisées. Avant de passer aux commandes personnalisées, tester d'abord les configurations par standard qui fonctionnent dans la majorité des cas. Ces configurations standards peuvent, en V3, être modifiées pour ajuster le dps et le paramètre afin qu'ils correspondent au périphérique.
 
-Créer une nouvelle commande action/défaut. Donner un nom et un Id identiques et mettre la commande Tuya dans paramètres. Laisser dps vide. Les commandes Tuya sont au format JSON et contiennent dps:{xxxxxx}. C'est le xxxxxx qu'il faut mettre dans paramètres. 
-
-Exemples :
-
-Pour lever certains volets roulant : xxxxxx vaut "1":"1" qui est à mettre dans paramètres (utiliser les doubles guillemets de la touche 3).
-
-Pour mettre la prise n°2 de certains plugs à on : xxxxxx vaut "2":true qui est à mettre dans paramètres (utiliser les doubles guillemets de la touche 3).
-
-Pour éteindre la prise n°1 et la prise n°2 de certains plugs : xxxxxx vaut "1":false,"2":false qui est à mettre dans paramètres (utiliser les doubles guillemets de la touche 3).
-
-Le paragraphe suivant donne des éléments pour interpréter les logs wifilightV2.
+Le paragraphe suivant donne des éléments pour interpréter les logs wifilightV2 et configurer soit entièrement un périphérique ou modifier une configuration standard V3.
 
 ## Périphérique custom
 
-Il est possible de créer un périphérique entièrement custom ou d'ajouter des commandes custom à un périphérique existant. L'interface propose de créer des commandes automatiquement, ceci a l'avantage de mieux faire fonctionner le retour d'état. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de solution.
+Il est possible de créer un périphérique entièrement custom ou d'ajouter des commandes custom à un périphérique existant ou de modifier les dps/parmètres d'une commande. L'interface propose de créer des commandes automatiquement, ceci a l'avantage de mieux faire fonctionner le retour d'état. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de solution.
 
 ### Configuration
 -   désactiver tous les périphériques wifilightV2 sauf celui à tester
@@ -152,12 +149,13 @@ Il est possible de créer un périphérique entièrement custom ou d'ajouter des
 -   appuyer sur un bouton du périphérique physique (on, off, haut, bas, etc.) ou attendre que le périphérique renvoie son état ou appuyer sur un bouton de l'appli Smart Live (mais dans ce dernier cas, cela peut empêcher le retour d'état).
 -   repérer dans les logs le retour d'état
 
-Pour les Id uniques, toujours commencer par le caractère "_"
+Utiliser toutes les possibilités de l'application Tuya et bien repérer dans les logs le dps et sa valeur qui sont envoyées au plugin. 
+
 Le plugin est équipé de boutons permettant de créer automatiquement les cas les plus courants, il suffira de modifier le dps ou le paramètre automatiquement créé.
 
 #### Cas d'un actionneur tout ou rien, tel que ON/OFF
 
-Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
+Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve par exemple :
 
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"off","101":true}}
 	
@@ -169,7 +167,7 @@ Ici, le bouton on a été sélectionné sur le périphérique et on observe que 
 
 Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer un bouton ON/OFF. Pour les adapter au besoin, il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées. La configuration générée est la suivante :
 	
--   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
+-   Création d'une nouvelle commande action/défaut dans les commandes du périphérique :
     *    Dans la colonne interface mettre ON comme nom du bouton
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ON, comme dps : 1 (sans les doubles guillemets) et comme paramètre : "on" (si le on n'est pas entouré de guillemets, il faut les enlever).
 -   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
@@ -187,7 +185,9 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 
 Ici, un curseur d'intensité a été sélectionné sur l'application du périphérique et on observe que le dps 3 a changé.
 
-Cliquer sur le bouton Curseur de l'interface afin de créer automatiquement les 2 commandes pour gérer le curseur. Pour les adapter au besoin, il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées. La configuration générée est la suivante :
+Cliquer sur le bouton Curseur de l'interface afin de créer automatiquement les 2 commandes pour gérer le curseur. Pour les adapter au besoin, il suffit de modifier les dps et de mettre 3 (sans parenthèse). Pour le paramètre de la commande action : soit ne rien mettre, soit mettre #slider# soit mettre une formule par exemple : #slider#/10. Pour le paramètre de l'info, c'est identique sauf qu'il faut utiliser #value# . 
+
+Pour configurer manuellement :
 	
 -   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Intensité comme nom du curseur
@@ -195,8 +195,6 @@ Cliquer sur le bouton Curseur de l'interface afin de créer automatiquement les 
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre IntensiteGet comme nom de l'info
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _IntensiteGet, comme dps : 3 (sans les doubles guillemets) et rien dans paramètres.
-	
-Dans le champ paramètres, il est possible de mettre une formule en utilisant #value# dans la commande info et #slider# dans la commande action, sinon laisser entièrement vide.
 
 
 #### Dans le cas d'un capteur numérique, comme un capteur de température :
@@ -205,15 +203,16 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"8":23,"101":true}}
 	
-Ici, c'est une température qui est envoyée régulièrement et on observe que le dps 8 a changé.
+Ici, c'est une température qui est envoyée régulièrement et on observe que le dps 8 a changé. Pour les adapter au besoin, il suffit de modifier les dps et de mettre 3 (sans parenthèse(sans parenthèse)Pour le paramètre de l'info, soit ne rien mettre, soit mettre #value# soit mettre une formule par exemple : #value#/10 .
 
-Cliquer sur le bouton Info Num de l'interface afin de créer automatiquement la commande pour récupérer la température. Pour les adapter au besoin, il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées. La configuration générée est la suivante :
+Cliquer sur le bouton Info Num de l'interface afin de créer automatiquement la commande pour récupérer la température. Pour les adapter au besoin, il suffit de modifier le dps, ici 8 (sans parenthèse). Pour le paramètre de l'info, soit ne rien mettre, soit mettre #value# soit mettre une formule par exemple : #value#/10 .
+
+Pour configurer manuellement :
 	
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre TempGet comme nom de l'info
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _TempGet, comme dps : 8 (sans les doubles guillemets) et rien dans paramètres.
 	
-Dans le champ paramètres, il est possible de mettre une formule en utilisant #value# dans la commande info.
 
 #### Dans le cas d'un capteur tout ou rien, comme un détecteur de porte :
 
@@ -225,7 +224,9 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 	
 Ici, c'est l'information d'ouverture puis de fermeture qui est envoyée et on observe que le dps 12 a changé.
 
-Cliquer sur le bouton Info Bin de l'interface afin de créer automatiquement la commande pour récupérer la valeur. Pour les adapter au besoin, il suffit de modifier le dps et les paramètres ainsi que le nom de la commande. Les autres informations ne doivent pas être modifiées.  La configuration générée est la suivante :
+Cliquer sur le bouton Info Bin de l'interface afin de créer automatiquement la commande pour récupérer la valeur. our les adapter au besoin, il suffit de modifier les dps et de mettre 12 (sans parenthèse). Pour les paramètresne rien mettre.  
+
+Pour configurer manuellement :
 	
 -   Créer une nouvelle commande info/binaire dans les commandes du périphérique :
     *    Dans la colonne interface mettre PorteGet comme nom de l'info
@@ -233,9 +234,11 @@ Cliquer sur le bouton Info Bin de l'interface afin de créer automatiquement la 
 
 #### Dans le cas de la couleur d'une lampe :
 
-Le codage de la couleur chez tuya a plusieurs format et est différent de celui utilisé par Jeedom. Jeedom utilise le format RGB alors que Tuya utilise différents formats HSV ou combinant HSV et RGB. Le RGB code chaque couleur de 0 à 255 ou en hexadéciaml de 0 à FF. Le rouge est donc codé FF0000, le bleu : 0000FF, le blanc : FFFFFF et le noir : 000000. Les valeur pour HSV sont les suivantes : Hue de 0 à 360° (couleur), S de 0 à 100% (Saturation) et V de 0 à 100% (Intensité). Voir [ici](https://www.rapidtables.com/convert/color/) pour aller plus loin.
+Cette partie est complexe et demande une lecture très attentive. 
 
-Afin de permettre au plugin de fonctionner correctement pour les couleurs, il faut identifier les formats utilisés par tuya lors d'un changement de couleur avec l'appli tuya et en recupérant à cet instant dans les logs le dps qui a été modifié.
+Le codage de la couleur chez Tuya a plusieurs format et est différent de celui utilisé par Jeedom. Jeedom utilise le format RGB alors que Tuya utilise différents formats HSV ou combinant HSV et RGB. Le RGB code chaque couleur de 0 à 255 ou en hexadéciaml de 0 à FF. Le rouge est donc codé FF0000, le bleu : 0000FF, le blanc : FFFFFF et le noir : 000000. Les valeur pour HSV sont les suivantes : Hue de 0 à 360° (couleur), S de 0 à 100% (Saturation) et V de 0 à 100% (Intensité). Voir [ici](https://www.rapidtables.com/convert/color/) pour aller plus loin.
+
+Afin de permettre au plugin de fonctionner correctement pour les couleurs, il faut identifier les formats utilisés par Tuya lors d'un changement de couleur avec l'appli tuya et en recupérant à cet instant dans les logs le dps qui a été modifié.
 
 1 - format HSV : H (codé de 0 à 360 ) S (codé de 0 à 1000) V (codé de 0 à 1000) le résultat est ensuite donné en base 16, soit 12 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya  000003E803E8
 
@@ -243,23 +246,13 @@ Afin de permettre au plugin de fonctionner correctement pour les couleurs, il fa
 
 3 - format RGB0HSV : RGB sont codés comme ci-dessus. 0 est intercalé puis H (codé de 0 à 360 ) S (codé de 0 à 100) V (codé de 0 à 100). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du violet : RGB = FF00FF et H= 300° S=100% V=100% soit en codage Tuya  FF0000012C6464
 
+Dans les logs, lors de l'utilisation de la modification de la couleur de la lampe, on trouve :
 
-Dans le champ paramètre des dps (couleur/info couleur/action saturation/action intensité/action) il faut mettre : 
--  si format 1 : #colorH4S4V4_1000# #colorH4S4V4_1000# #slider_satH4S4V4_1000# #slider_intH4S4V4_1000# 
--  si format 2 : #colorR2G2B200H2S2V2_255# #colorR2G2B200H2S2V2_255# #slider_satR2G2B200H2S2V2_255#  #slider_intR2G2B200H2S2V2_255#
--  si format 2 : #colorR2G2B20H3S2V2_100# #colorR2G2B20H3S2V2_100# #slider_satR2G2B20H3S2V2_100#  #slider_intR2G2B20H3S2V2_100#
+    Receive after decode:{"devId":"63322540bcddc254e92c","dps":{"1":true,"27":true,"28":"white","29":254,"31":"08ff0000766464","32":"cf38000168ffff","33":"ffff500100ff00"}
 
-Si le codage ne correspond pas à ceux ci-dessus, il faut configurer des boutons pour chaque couleur individuelle désirée en mettant comme valeur du dps le codage de la couleur attendue par le périphérique, il faut pour cela changer les couleurs avec l'appli tuya et consulter les logs. Le retour d'état ne pourra pas fonctionner.
+Il faut repérer le dps qui change, ici c'est le 31 soit 08ff0000766464 . les 2 derniers 64 en hexadéciaml font 100 en décimal. 08=R FF=G 00=B 076= hue, c'est le format 3. Cliquer sur le bouton Couleur 3 et modifier les dps pour mettre 31. Ne pas modifier les paramètres. 
 
-Vous pouvez aider en échangeant sur le forum pour communiquer d'autres codages utilisés par tuya.
-
-Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
-
-    Receive after decode :{devId:50701244cc50e37e9aff,dps:{"120":"012F003F00FF","101":true}}
-
-Ici, une couleur a été modifiée sur l'application du périphérique et on observe que le dps 120 a changé, il a le format 1.
-
-Cliquer sur le bouton Couleur 1 de l'interface afin de créer automatiquement la commande pour récupérer la valeur. Pour les adapter au besoin, il suffit de modifier le dps et les paramètres insi que le nom de la commande. Les autres informations ne doivent pas être modifiées. La configuration générée est la suivante :
+Pour créer manuellement les 6 boutons dans le cas d'un format de couleur 1 :
 	
 -   Créer une nouvelle commande action/couleur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Couleur comme nom
@@ -289,9 +282,8 @@ Ceci peut être utile pour éteindre une prise complète en même temps. Utilise
 
 
 ## Remarques :
--   rien dans les logs : mauvaise adresse IP ou périphérique qui ne renvoie pas son état
--   retour avec erreur : Id incorrect
--   retour non décodé : localkey incorrect
+-   rien dans les logs en provenance de l'appli tuya : mauvaise adresse IP ou périphérique qui ne renvoie pas son état
+-   information cryptée (n'apparait pas en clair) : localkey incorrect
 -   la commande ne fonctionne pas : vérifier la commande
 
 [Retour à la documentation générale](./index.md)
