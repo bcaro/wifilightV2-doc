@@ -10,9 +10,9 @@ Ne jamais utiliser la version beta sans échange avec le développeur.
 1.64 - 2020-12-05
 -   passerelle Tuya/Zigbee : ajout plug Lonsonho avec conso (le pilotage de la led est KO : pas le temps de corriger leur JSON mal généré)
 -   Tuya : ajout prise + led de couleur
--   Xiomi Philips : améliorarion du dialogue afin de ne pas perdre de commandes
--   Correction de bogues
-
+-   Tuya : ajout commande VR avec éclairage des boutons
+-   Xiaomi Philips : amélioration du dialogue afin de ne pas perdre de commandes
+-   Correction de bogues (H810, inter simple tuya)
 
 1.63 - 2020-12-01
 -   passerelle Tuya/Zigbee : ajout capteurs présences, capteur d'ouverture, switch gradateur double, télécommande 3 boutons LoraTap

@@ -298,7 +298,7 @@ Dès que l'ampoule est trouvée, l'état de l'ampoule est remonté au plugin imm
 
 Noter que le plugin peut mettre jusqu'à 1 minute pour trouver une ampoule et 4 minutes pour trouver qu'un périphérique est déconnecté.
 
-# Cas particulier des périphériques TP-Link
+# TP-Link
 
 ## Configuration de l'ampoule
 
@@ -319,7 +319,7 @@ Aucune aide ne sera donnée pour récupérer la trame à partir de Packet Capure
 
 Pour l'instant seules les prises sont utilisables en V2, contacter l'auteur si vous avez des ampoules en V2.
 
-# Cas particulier des Xiaomi Philips
+# Xiaomi Philips
 
 ## Configuration de l'ampoule
 
@@ -329,7 +329,7 @@ La procédure est complexe et nécessite plusieurs manipulations. Faire une rech
 
 Aucune aide ne sera donnée pour récupérer le jeton.
 
-# Cas particulier des périphériques Meross
+# Meross
 
 ## Configuration
 
@@ -337,7 +337,7 @@ Il est indispensable de récupérer un namespace qui correspond au Jeton dans le
 
 Aucune aide ne sera donnée pour récupérer les 3 informations.
 
-# Cas particulier des Sonoff en mode DIY
+# Sonoff en mode DIY
 
 ## Compatibilité
 
@@ -355,7 +355,7 @@ Le logiciel à faire tourner pour trouver le Sonoff donne dans la colonne de gau
 
 Le périphérique Sonoff doit être en firmware 3.3.0 ou plus, l'appli Windows ci-dessus permet de mettre à jour le firmware.
 
-# Cas particulier des périphériques compatibles avec l'application Ewelink en mode LAN
+# Sonoff et compatibles Ewelink en mode LAN
 
 ## Récupération de l'APiKey et du DeviceID
 
@@ -397,13 +397,13 @@ Pour les périphériques non présents dans cette liste (Sonoff Ifan par exemple
 	
 et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) le contenu des accolades afin de permettre l'intégration du module dans le plugin.
 
-# Cas particulier de la passerelle Zigbee Tuya
+# Passerelle Zigbee Tuya
 
- [Voir la documentation spécifique](./tuya.md)
+ [Voir la documentation spécifique](./tuya.md/#zigbee-tuya)
 
-# Cas particulier des périphériques compatibles Tuya Smart/Jinvoo/eFamilyCloud apps
+# Tuya 
 
-[Voir la documentation spécifique](./tuya.md)
+[Voir la documentation spécifique](./tuya.md/#tuya)
 
 # Cas particulier du Nanoleaf
 
