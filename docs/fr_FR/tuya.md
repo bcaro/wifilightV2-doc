@@ -154,7 +154,7 @@ Utiliser toutes les possibilités de l'application Tuya et bien repérer dans le
 
 Le plugin est équipé de boutons permettant de créer automatiquement les cas les plus courants, il suffira de modifier le dps ou le paramètre automatiquement créés.
 
-#### Cas d'un actionneur tout ou rien, tel que ON/OFF
+### Cas d'un actionneur tout ou rien, tel que ON/OFF
 
 Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve par exemple :
 
@@ -180,7 +180,7 @@ Pour configurer manuellement :
     *    Dans la colonne interface mettre ETAT comme nom de l'info
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ETAT, comme dps : 1 (sans les doubles guillemets) et rien dans paramètres.
 
-#### Dans le cas d'une commande numérique, comme une commande d'intensité :
+### Dans le cas d'une commande numérique, comme une commande d'intensité :
 	
 Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 
@@ -200,7 +200,7 @@ Pour configurer manuellement :
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _IntensiteGet, comme dps : 3 (sans les doubles guillemets) et rien dans paramètres.
 
 
-#### Dans le cas d'un capteur numérique, comme un capteur de température :
+### Dans le cas d'un capteur numérique, comme un capteur de température :
 	
 Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 
@@ -217,7 +217,7 @@ Pour configurer manuellement :
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _TempGet, comme dps : 8 (sans les doubles guillemets) et rien dans paramètres.
 	
 
-#### Dans le cas d'un capteur tout ou rien, comme un détecteur de porte :
+### Dans le cas d'un capteur tout ou rien, comme un détecteur de porte :
 
 Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 	
@@ -235,7 +235,7 @@ Pour configurer manuellement :
     *    Dans la colonne interface mettre PorteGet comme nom de l'info
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _PorteGet, comme dps : 12 (sans les doubles guillemets) et rien dans paramètres.
 
-#### Dans le cas de la couleur d'une lampe :
+### Dans le cas de la couleur d'une lampe :
 
 Cette partie est complexe et demande une lecture très attentive. 
 
@@ -278,7 +278,7 @@ Pour créer manuellement les 6 boutons dans le cas d'un format de couleur 1 :
 	
 Nota : il est indispensable de mettre le même dps pour ces 6 commandes et de n'ajouter aucune autre commande action ou info sur ce dps sinon le plugin ne pourra pas décoder correctement les informations et mettre à jour le retour d'état.
 
-#### Pour envoyer plusieurs dps en même temps :
+### Pour envoyer plusieurs dps en même temps :
 
 Ceci peut être utile pour éteindre une prise complète en même temps. Utiliser alors le bouton +Commande pour créer une commande action. Il n'y aura pas de commande info associée, mais il est possible de les créer manuellement pour chaque dps, elles seront mises à jour par le retour d'état.
 
