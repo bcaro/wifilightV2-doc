@@ -391,11 +391,11 @@ et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sono
 
 # Zigbee/Tuya
 
- [Voir la documentation spécifique](./tuya.md/#zigbee-tuya)
+ [Voir la documentation spécifique](./tuya.md/tuya#tocAnchor-1-1)
 
 # Tuya 
 
-[Voir la documentation spécifique](./tuya.md/#tuya)
+[Voir la documentation spécifique](./tuya.md/tuya#tocAnchor-1-1-4)
 
 # Nanoleaf
 
