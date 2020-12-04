@@ -127,7 +127,7 @@ Pour les plugs 2 prises, en général il faut : 9;7;8 (mis par défaut par le pl
 
 Pour les autres prises, la valeur 20;18;19 est mise par défaut.
 
-## Personnalisation des commandes
+##Personnalisation des commandes
 
 Devant la diversité des périphériques compatibles Tuya, il peut être nécessaire de créer des commandes personnalisées. Avant de passer aux commandes personnalisées, tester d'abord les configurations standard qui fonctionnent dans la majorité des cas. Ces configurations standards peuvent, en V3, être modifiées pour ajuster le dps et le paramètre afin qu'ils correspondent au périphérique.
 
