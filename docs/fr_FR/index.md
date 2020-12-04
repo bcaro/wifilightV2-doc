@@ -405,7 +405,7 @@ et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sono
 
 [Voir la documentation spécifique](./tuya.md/#tuya)
 
-# Cas particulier du Nanoleaf
+#Nanoleaf
 
 
 ## Récupération de la clé
@@ -416,90 +416,10 @@ Appuyer pendant 5-7 s sur le bouton power du Nanoleaf et appuyer sur la commande
 ## Utilisation d'effets custom
 
 Créer un effet avec l'appli du NanoLeaf et lui donner un nom. Créer une commande action/défaut dans la liste des commandes du périphérique dans le plugin. Mettre le nom dans paramètres. Donner ensuite un identifiant unique et un nom, ils peuvent être identiques au nom de la commande.
-
-
-# FAQ
-
-
-## Quels périphériques peuvent être utilisés ?
-
-Lire la documentation
-
-## Rien ne se passe
-
-Faire d'abord fonctionner le périphérique avec l'application mobile fournie par le constructeur.
-
-Utiliser le bouton <tester> dans le menu Plugin/Objets Connectés/wifilightV2/commandes.
-
-Aucune aide ne sera apportée sans que les périphériques soient opérationnels avec l'application constructeur sur un téléphone portable.
-Il est nécessaire de donner une adresse IP fixe au périphérique.
-
-
-## Je ne sais pas configurer ma box internet
-
-Aucune aide ne sera apportée sur la box et les notions nécessaires pour configurer le routeur pour attribuer une adresse IP fixe. Consulter les forums de la box.
-
-## Toutes les commandes ne sont pas créées lors d'un changement de modèle de périphérique
-
-Sauvegarder 2 fois.
-
-## La gestion de l'intensité des ampoules blanches Mi.Light/EasyBulb/LimitlessLED n'est pas pratique
-
-Le constructeur des leds n'a pas prévu de pouvoir affecter directement l'intensité de l'ampoule. On ne peut qu'incrémenter ou décrémenter par rapport à la valeur précédente. Le plugin ne fait que reproduire ce fonctionnement. Le curseur qui est proposé est en conséquence capricieux.
-
-## La gestion de l'intensité de la couleur a quelquefois des comportements imprévus
-
-Aucun protocole ne gère l'intensité de la couleur, bien que généralement les applications mobiles le fassent. Tant que Jeedom gère couleur et intensité, tout se passe bien. Mais si l'intensité est modifiée par une application mobile, les résultats ne sont pas toujours ceux attendus. Le plugin essaye de corriger le souci quand la lampe ou le contrôleur possède un retour d'état.
-
-## Y a-t-il un retour d'état ?
-
-Lire la documentation
-
-## Impossible de faire fonctionner les ampoules Xiaomi Yeelight
-
-Il est indispensable d'activer le mode contrôle par réseau local via l'application Xiaomi Yeelight.
-
-## Je ne contrôle pas le son des ampoules Extel Meli
-
-Le son n'est pas géré par le plugin
-
-## Impossible de faire fonctionner les ampoules Xiaomi Philips
-
-Pour dialoguer avec les ampoules Xiaomi Philips, il est nécessaire de transmettre un jeton ou token en anglais. Sans ce jeton, l'ampoule ne prendra pas en compte les ordres qui lui sont envoyés. Ce jeton se trouve dans l'application Mi-Home et, selon votre téléphone, il existe plusieurs méthodes pour récupérer le jeton. La procédure est décrite sur plusieurs sites mais elle n'est pas reproduite ici pour deux raisons principales :
-
--   Xiaomi a déjà modifié son protocole ce qui a obligé à modifier la procédure pour récupérer le jeton, il pourrait encore le faire.
--   De nouvelles procédures plus simples peuvent être mises à disposition des internautes.
--   Cette documentation ne sera pas maintenue aussi rapidement qu'une simple recherche sur le web avec les mots clés : xiaomi token .
-
-## Impossible de faire fonctionner les périphériques compatibles Tuya/Smart live/Jinvoo/eFamilyCloud apps
-
-Pour dialoguer avec ces ampoules, prises et autres périphériques, il est nécessaire de transmettre une clé locale ou Localkey ou token en anglais et un identifiant. Sans ces paramètres, l'ampoule ne prendra pas en compte les ordres qui lui sont envoyés. Il existe plusieurs méthodes pour récupérer ces informations. La procédure est décrite sur plusieurs sites mais elle n'est pas reproduite ici pour deux raisons principales :
-
--   Les applications ont été mises à jour, ce qui a obligé à modifier la procédure pour récupérer les informations.
--   De nouvelles procédures plus simples peuvent être mises à disposition des internautes.
--   Cette documentation ne sera pas maintenue aussi rapidement qu'une simple recherche sur le web avec les mots clés : Tuya LocalKey et en particulier sur Github.
-
-## Erreur lors de l'envoi de commande / roue crantée sans arrêt / Emission sans arrêt
--   les équipements wifilightV2 doivent être mis à jour
--   aller dans chaque équipement et sauvegarder 2 fois
--   tester avec un nouvel équipement si cela persiste
-
-## Pont Mi.Light IBox1, iBox2, V6 : commande prise en compte aléatoirement
--   les ordres sont envoyés trop rapidement
--   dans les scénarios, mettre des pauses de durée suffisante
-
-## Pont Mi.Light IBox1, iBox2, V6 : commande non prise en compte
--   lors de l'appairage avec l'application Mi.Light sur mobile et lors de la configuration de wifilightV2, bien choisir la même télécommande.
-
-## LW12 Magic UFO Arilux Wifi3x0 H801 Contrôleurs compatibles Magic Home Tuya/Jinvoo/eFamilyCloud
--   de nombreuses versions existent et certaines peuvent être incompatibles avec le plugin. Contacter l'auteur pour un diagnostic.
-
-## Des commandes sont manquantes lors de la création ou de la modification du sous type d'ampoule
--   sauvegarder l'équipement (2 fois)
+d
 
 # Comment obtenir de l'aide ?
 
 Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632)
 
-# Bogues connus
 

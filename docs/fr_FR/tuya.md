@@ -1,6 +1,6 @@
 [Retour à la documentation générale](./index.md)
 
-#Zigbee Tuya
+#Zigbee Tuya <a id="zigbee-tuya"></a>
 
 ##Compatibilité
 
@@ -64,7 +64,7 @@ Si votre périphérique est dans la liste proposée, il devrait fonctionner imm�
 
 Si le périphérique est complètement différent, il faut configurer manuellement le plugin en choisissant le sous-type "Custom" et en se référant au paragraphe [Périphérique custom](#Périphérique-custom). Partagez alors votre configuration sur le forum pour l'intégrer dans le plugin.
 
-#Tuya
+#Tuya <a id="tuya"></a>
 
 ## Compatibilité
 
