@@ -32,11 +32,11 @@ Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le p
 Il faut créer un équipement, avec la même adresse IP et la même clé, pour la passerelle et chaque périphérique connecté à la passerelle et lui attribuer un n° de canal (le numéro entre 1 et 100 est sans importance mais chaque périphérique doit avoir un n° de canal différent).
 
 
-##Récupération de la clé de la passerelle
+##Clé et identifiant passerelle
 
-Il est indispensable de récupérer la clé locale (LocalKey) de la passerelle permettant au plugin de dialoguer avec les périphériques.
+Il est indispensable de récupérer la clé locale (LocalKey) et l'ID de la passerelle permettant au plugin de dialoguer avec les périphériques.
 
-Pour récupérer la clé, la procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localkey, sur Github en particulier ou sur le forum Jeedom.
+Pour récupérer la clé et l'ID, la procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localkey, sur Github en particulier ou sur le forum Jeedom.
 
 Si la passerelle est désinstallée puis réinstallée dans l'application mobile, alors sa clé sera modifiée. Il faudra retrouver la clé avec la procédure ci-dessus. 
 
@@ -45,7 +45,7 @@ Aucune aide ne sera donnée pour récupérer la clé.
 La clé des périphériques connectés à la passerelle est la même que celle de la passerelle.
 
 
-##Récupération de l'identifiant du périphérique
+##Clé et identifiant périphérique
 
 Configurer le périphérique et renseigner la clé trouvée ci-dessus. Il faut ensuite modifier l'état du périphérique avec l'application fournie par le constructeur de la passerelle et consulter les logs.
 Vous trouverez une information comme celle-ci :
@@ -57,8 +57,7 @@ Le cid est à copier dans le champ id du périphérique du plugin (sans les " ")
 Si aucun message en clair n'apparait, c'est que la clé n'est pas bonne.
 
 
-
-##Configurer les périphériques
+##Configuration
 
 Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Périphérique custom](#Périphérique-custom) pour comprendre les commandes de la configuration par défaut.
 

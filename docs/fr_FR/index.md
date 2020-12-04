@@ -70,9 +70,6 @@ Produits incompatibles et qui ne le seront pas :
 - 	Tous les capteurs WiFi sur pile (détecteur de présence, détecteur d'ouverture) compatibles Tuya qui ne fonctionnent plus qu'avec le cloud.
 
 
-## Test de compatibilité
-
-
 Il est conseillé de se renseigner sur le forum pour connaitre la compatibilité d'un produit peu diffusé.
 
 Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
@@ -131,7 +128,7 @@ Nanoleaf Aurora :
 -   Rythm non implantés
 
 Passerelle Wifi Tuya et périphériques Zigbee :
--   La configuration est manuelle sauf pour un nombre limité de périphériques. La gestion de la couleur des ampoules sera limitée à des boutons de couleur individuelle (mais via des scénarios, ce problème peut être contourné par les experts).
+-   La configuration est manuelle sauf pour un nombre limité de périphériques. La gestion de la couleur des lampes est complexe à configurer.
 
 # Configuration du module wifi
 
@@ -155,7 +152,7 @@ Après cette modification, vérifier que l'application mobile contrôle toujours
 
 Vous pouvez alors passer à la configuration du plugin wifilightV2.
 
-## Installation et Configuration du plugin
+## Configuration du plugin
 
 wifilightV2 ne crée aucun périphérique automatiquement, il faut les créer dans le plugin avant de les paramétrer.
 
@@ -191,15 +188,14 @@ le nom des commandes peut être modifié. Les commandes automatiquement créées
 
 Lorsque toutes les commandes sont créées, elles peuvent alourdir l'interface, il est possible de ne pas les afficher en configurant la ftion des commandes.
 
-## Modification du type ou de sous-type de périphérique
+## Modification du périphérique
 
--   supprimer toutes les commandes
--   modifier le type ou le sous-type de périphérique
--   sauvegarder 2 fois
+-   un chanfement de type ou de sous type supprime toutes les commandes
+-   sauvegarder 2 fois après changement
 
-# Fonctionnement du retour d'état et état de connexion
+# Retour d'étatn
 
-## Compatibilité du retour d'état
+## Compatibilité
 
 Le retour d'état est immédiat pour les périphériques suivants :
 - Yeelight
@@ -239,9 +235,9 @@ La commande ConnectedGet permet de récupérer l'état de la connexion de chaque
 -  -5 : mauvaise réponse du périphérique
 -  -6 : périphérique sans retour d'état
 
-# Fonctionnement de la synchronisation
+# Synchronisation
 
-## Principe de la synchronisation
+## Principe
 
 Il est possible de synchroniser plusieurs périphériques de marques différentes :
 
@@ -255,31 +251,31 @@ Si la commande n'existe pas pour le périphérique synchronisé, elle est simple
 
 Attention, les périphériques ne vont pas être commandés exactement en même temps à cause des délais de latence lors de l'envoi des commandes qui se fait les uns après les autres.
 
-## Configuration de la synchronisation
+## Configuration
 
 Il suffit de mettre un nombre différent de zéro dans le champ groupe lors de la configuration de l'équipement. Tous les équipements ayant les mêmes numéros seront synchronisés.
 
-# Configuration de la valeur en Kelvin de la température de couleur de certaines lampes
+# Kelvin des lampes
 
 Il y a 2 curseurs pour la température en Kelvin. Kelvin exprimé en % de 0 (chaud) à 100 (froid) et KelvinVal exprimé en Kelvin de min à max. 
 Les valeurs par défaut correspondent la plupart du temps aux données du constructeur. Pour certaines lampes qui ne donnent pas les valeurs min et max, le plugin utilise par défaut 2700 à 6500.
 Pour certaines lampes, les valeurs min et max peuvent être erronées et les valeurs extrêmes non comprises par la lampe. Il faut ajuster ces valeurs pour qu'elles soient dans les limites acceptées par la lampe. 
 Vous pouvez prévenir le développeur pour qu'il modifie la configuration par défaut pour éviter ces ajustements.
 
-# Cas particulier des box Mi.Light
+# Box Mi.Light
 
-## Configuration de l'iBox 1 ou 2
+## Configuration
 
 Depuis la version 1.0.58 des iBox 1 et 2, il peut être nécessaire de modifier leur configuration pour qu'elles puissent dialoguer avec Jeedom. 
 
 Se connecter en http (avec un navigateur Web) à l'adresse IP de votre iBox. Les identifiants par défaut sont admin/admin. Aller dans l'onglet "Other Setting" et dans "Network Parameters setting/Protocol" choisir UDP et sauvegarder.
 
-# Cas particulier des Xiaomi Yeelight
+# Xiaomi Yeelight
 
-## Configuration de l'ampoule
+## Configuration
 Il est indispensable d'activer le contrôle par réseau local via l'application Xiaomi Yeelight.
 
-## Mode Scène Xiaomi Yeelight
+## Mode Scène
 Il est possible de configurer les modes scène. Plusieurs modes scène sont préprogrammés dans le plugin mais il est possible d'ajouter d'autres modes scène.
 
 Il suffit de respecter certaines conditions :
@@ -291,7 +287,7 @@ Ne pas mettre les accolades de début et de fin ainsi que les caractères de ret
 S'inspirer des commandes préconfigurées pour créer ces modes scène supplémentaires.
 Pour la syntaxe Yeelight, voir [ici](https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf)
 
-## Mise à jour de l'état dans Jeedom
+## Etat
 Lors de l'activation du plugin et dès que le démon est lancé ainsi que toutes les minutes, le plugin recherche les ampoules alimentées et connectées à Jeedom.
 
 Dès que l'ampoule est trouvée, l'état de l'ampoule est remonté au plugin immédiatement.
@@ -300,7 +296,7 @@ Noter que le plugin peut mettre jusqu'à 1 minute pour trouver une ampoule et 4 
 
 # TP-Link
 
-## Configuration de l'ampoule
+## Configuration
 
 Note : certains périphériques en version 2 ne nécessitent pas de récupérer un jeton : laisser le champ vide dans la configuration du périphérique.
 Depuis mi 2019, de nouveaux périphériques sortent en protocole version 2. Le protocole V2 nécessite de récupérer un jeton (token) permettant au plugin de dialoguer avec les périphériques TP-Link.
@@ -321,8 +317,6 @@ Pour l'instant seules les prises sont utilisables en V2, contacter l'auteur si v
 
 # Xiaomi Philips
 
-## Configuration de l'ampoule
-
 Il est indispensable de récupérer un jeton (token) permettant au plugin de dialoguer avec les périphériques Xiaomi Philips.
 
 La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Xiaomi token.
@@ -330,8 +324,6 @@ La procédure est complexe et nécessite plusieurs manipulations. Faire une rech
 Aucune aide ne sera donnée pour récupérer le jeton.
 
 # Meross
-
-## Configuration
 
 Il est indispensable de récupérer un namespace qui correspond au Jeton dans le plugin, un messageId qui correspond à Identifiant dans le plugin et un timestamp. Pour trouver ces 3 paramètres, voir sur le web : Meross Credentials ou sur le forum.
 
@@ -346,7 +338,7 @@ Les périphériques Sonoff compatibles sont :
 -  Sonoff BASICR3 et RFR3
 -  Sonoff MINI
 
-## Configuration du mode DIY
+## Configuration
 
 Sonoff donne tous les éléments [ici]( https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) pour configurer les modules en mode DIY.
 
@@ -355,15 +347,15 @@ Le logiciel à faire tourner pour trouver le Sonoff donne dans la colonne de gau
 
 Le périphérique Sonoff doit être en firmware 3.3.0 ou plus, l'appli Windows ci-dessus permet de mettre à jour le firmware.
 
-# Sonoff et compatibles Ewelink en mode LAN
+# Sonoff/Ewelink LAN
 
-## Récupération de l'APiKey et du DeviceID
+## APiKey DeviceID
 
 Suivre les indications [ici](https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) pour récupérer ces 2 informations ou faire une recherche sur le web et le forum jeedom avec comme mots clé : Ewelink ou Sonoff Apikey. Le deviceid est à mettre dans l'identifiant du plugin. L'Apikey est à mettre dans le jeton. Il ne faut mettre ni espace ni guillemets.
 
 Le périphérique doit être en firmware 3.0.1 ou plus, l'appli Ewelink permet de mettre à jour le firmware.
 
-## Information de connexion
+## Connexion
 
 Quand un périphérique se connecte au wifi, le plugin sera immédiatement prévenu. Par contre, lorsqu'un périphérique est déconnecté, le plugin ne pourra le savoir que si une commande lui est envoyée par le plugin.
 
@@ -397,7 +389,7 @@ Pour les périphériques non présents dans cette liste (Sonoff Ifan par exemple
 	
 et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) le contenu des accolades afin de permettre l'intégration du module dans le plugin.
 
-# Passerelle Zigbee Tuya
+# Zigbee/Tuya
 
  [Voir la documentation spécifique](./tuya.md/#zigbee-tuya)
 
@@ -408,17 +400,17 @@ et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sono
 #Nanoleaf
 
 
-## Récupération de la clé
+## Clé
 
 Appuyer pendant 5-7 s sur le bouton power du Nanoleaf et appuyer sur la commande getKey du plugin. Vérifier que l'Apikey a été placée dans le champ "jeton" de la configuration du plugin.
 
 
-## Utilisation d'effets custom
+## Effets custom
 
 Créer un effet avec l'appli du NanoLeaf et lui donner un nom. Créer une commande action/défaut dans la liste des commandes du périphérique dans le plugin. Mettre le nom dans paramètres. Donner ensuite un identifiant unique et un nom, ils peuvent être identiques au nom de la commande.
 d
 
-# Comment obtenir de l'aide ?
+# A l'aide ?
 
 Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632)
 
