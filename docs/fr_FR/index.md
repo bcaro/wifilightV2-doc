@@ -75,7 +75,7 @@ Il est conseillé de se renseigner sur le forum pour connaitre la compatibilité
 Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
 
 
-# Limitations
+## Limitations
 
 Mi.Light/EasyBulb/LimitlessLED :
 -   Toutes les fonctionnalités sont prises en compte par le plugin.
@@ -190,10 +190,10 @@ Lorsque toutes les commandes sont créées, elles peuvent alourdir l'interface, 
 
 ## Modification du périphérique
 
--   un chanfement de type ou de sous type supprime toutes les commandes
+-   un changement de type ou de sous type supprime toutes les commandes
 -   sauvegarder 2 fois après changement
 
-# Retour d'étatn
+# Retour d'état
 
 ## Compatibilité
 
@@ -202,6 +202,7 @@ Le retour d'état est immédiat pour les périphériques suivants :
 - compatibles avec Ewelink
 - compatibles avec l'appli Tuya smart live
 - Sonoff en mode LAN
+- compatibles Tuya
 
 Par exemple, si un interrupteur est actionné, Jeedom le saura immédiatement.
 
@@ -391,11 +392,11 @@ et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sono
 
 # Zigbee/Tuya
 
- [Voir la documentation spécifique](./tuya.md/tuya#tocAnchor-1-1)
+ [Voir la documentation spécifique](./tuya#tocAnchor-1-1)
 
 # Tuya 
 
-[Voir la documentation spécifique](./tuya.md/tuya#tocAnchor-1-1-4)
+[Voir la documentation spécifique](./tuya#tocAnchor-1-1-4)
 
 # Nanoleaf
 

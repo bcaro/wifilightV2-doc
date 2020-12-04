@@ -1,6 +1,5 @@
 [Retour à la documentation générale](./index.md)
 
-
 # Zigbee Tuya 
 
 ## Compatibilité
@@ -63,7 +62,6 @@ Si aucun message en clair n'apparait, c'est que la clé n'est pas bonne.
 Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Périphérique custom](#Périphérique-custom) pour comprendre les commandes de la configuration par défaut.
 
 Si le périphérique est complètement différent, il faut configurer manuellement le plugin en choisissant le sous-type "Custom" et en se référant au paragraphe [Périphérique custom](#Périphérique-custom). Partagez alors votre configuration sur le forum pour l'intégrer dans le plugin.
-
 
 # Tuya 
 
