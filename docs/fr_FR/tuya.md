@@ -113,7 +113,7 @@ Aucune aide ne sera donnée pour récupérer la clé ou l'identifiant.
 
 Tout changement de configuration nécessite de redémarrer le démon.
 
-## Configuration de la récupération de la consommation des prises
+## Consommation des prises
 
 Pour les configurations standards concernant les prises avec consommation, selon les marques, la consommation n'est pas envoyée de façon unique par la prise. Pour récupérer ce paramétrage, installer la prise dans Jeedom et conserver le retour d'état dans la configuration, puis aller dans les logs de wifilightV2. La prise est interrogée toutes les minutes. Repérer le message qui ressemble à :
 
