@@ -310,7 +310,7 @@ Permet d'allumer la lampe et de modifier l'intensité, la commande info de dps 3
  
 Créer une commande action/color, mettre 3\* dans le champ dps et mettre dans paramètres :
 
-    "3":"color","3":"#colorR2G2B200H2S2V2_255#"
+    "2":"color","3":"#colorR2G2B200H2S2V2_255#"
    
 Permet de passer la lampe en mode couleur et de spécifier la couleur. Le plugin utilisera l'intensité et la saturation des curseurs intensité et saturation de dps 3.
 
