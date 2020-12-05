@@ -285,7 +285,7 @@ Ceci peut être utile pour éteindre une prise complète en même temps. Utilise
 ## Remarques :
 -   rien dans les logs en provenance de l'appli tuya : mauvaise adresse IP ou périphérique qui ne renvoie pas son état
 -   information cryptée (n'apparait pas en clair, message vide) : localkey incorrect
--   message d'erreur dans la réponse du périphérique (GW id invalid parexemple)
+-   message d'erreur dans la réponse du périphérique (GW id invalid par exemple) : id ou cid incorrrect
 -   la commande ne fonctionne pas : vérifier la commande
 
 [Retour à la documentation générale](./index.md)
