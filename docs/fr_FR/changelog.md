@@ -1,23 +1,32 @@
-Si rien n'est présent dans le changelog :
-- modification de la doc
+Si rien n'est présent dans le changelog lors d'une mise à jour stable :
+- modification de la doc 
 - modification de l'aide dans l'interface
 - corrections orthographiques
 - suppression/ajout de logs
-Lonsonho
+- corrections mineures de la configuration de périphériques
 
-Ne jamais utiliser la version beta sans échange avec le développeur.
+Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
+
+todo : 
+- permettre des commandes tuya avec plusieurs dps (déjà possible mais sans interprétation des codes couleurs, non documenté).
+- ajout de périphériques Tuya/Zigbee (diffuseur
+- nettoyer les logs nécessaires aux retours utilisateurs pour les nouvelles fonctionnalités Tuya (dps et paramètres modifiables)
 
 1.64 - 2020-12-05
 -   passerelle Tuya/Zigbee : ajout plug Lonsonho avec conso (le pilotage de la led est KO : pas le temps de corriger leur JSON mal généré)
--   Tuya : ajout prise + led de couleur
+-   Tuya : ajout prise + led de veille couleur, radiateur électrique
 -   Tuya : ajout commande VR avec éclairage des boutons
+-	Tuya : ajout d'un type V3 qui permet de modifier les dsp et les paramètres de toutes les commandes. Disparition de la notion de canal. Les type 1 et 2 ne seront plus maintenus (sauf correction de bogues).
+-	Tuya/Zigbee : type V2, les dps et les paramètres de toutes les commandes peuvent être modifiés. Le type V1 ne doit plus être utilisé et sera supprimé. La notion de canal est conservée pour distinguer 2 périphériques connectés à la même passerelle.
+-	Tuya/Zigbee ajout d'un mode custom (oublié en 1.63)
 -   Xiaomi Philips : amélioration du dialogue afin de ne pas perdre de commandes
--   Correction de bogues (H810, inter simple tuya)
+-   Correction de bogues (H810, inter simple tuya, lampe tuya H4S4V4)
+-   Corrections mineures de bogues
 
 1.63 - 2020-12-01
 -   passerelle Tuya/Zigbee : ajout capteurs présences, capteur d'ouverture, switch gradateur double, télécommande 3 boutons LoraTap
 -   Tuya : ajout d'une interface de création des commandes de base facilitant la configuration des périphériques custom (valable aussi par la passerelle Zigbee/Tuya) 
--   Tuya : avec l'interface custom, possibilité d'intégrer des lampes permettant de contrôler leur couleur/saturation/intensité avec retour d'état
+-   Tuya : avec l'interface custom, possibilité d'intégrer des lampes avec contrôle de leur couleur/saturation/intensité et retour d'état
 -   Tuya : ajout d'un interrupteur de  volet roulant avec positionnement
 -	Meross : nouvelle marque prise en compte, en mode LAN, donc sans internet, comme tous les périphériques compatibles wifilightV2
 -   Meross : ajout des prises MSS210HK MSS210 MSS425EHK MSS425FHK et switch MSS710
