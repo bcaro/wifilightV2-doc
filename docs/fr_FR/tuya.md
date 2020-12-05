@@ -294,7 +294,7 @@ Permet d'allumer la lampe et de modifier l'intensité.
  
 Créer une commande action/couleur et mettre dans paramètres :
 
-    "3":"color","3":"#colorR2G2B200H2S2V2_255#"
+    "2":"color","3":"#colorR2G2B200H2S2V2_255#"
    
 Permet de passer la lampe en mode couleur et de spécifier la couleur. Le plugin utilisera la couleur, l'intensité et la saturation du widget color.
 
