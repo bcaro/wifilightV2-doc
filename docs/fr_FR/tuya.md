@@ -276,11 +276,43 @@ Pour créer manuellement les 6 boutons dans le cas d'un format de couleur 1 :
 	
 Nota : il est indispensable de mettre le même dps pour ces 6 commandes et de n'ajouter aucune autre commande action ou info sur ce dps sinon le plugin ne pourra pas décoder correctement les informations et mettre à jour le retour d'état.
 
-### Pour envoyer plusieurs dps en même temps :
+### Modifier plusieurs dps
 
-Ceci peut être utile pour éteindre une prise complète en même temps. Utiliser alors le bouton +Commande pour créer une commande action. Il n'y aura pas de commande info associée, mais il est possible de les créer manuellement pour chaque dps, elles seront mises à jour par le retour d'état.
+Pour envoyer plusieurs dps en même temps, laisser le champ dps vide et mettre la commande complète sans les allocades dans le champ paramètres. Un et seul des dps pourra être un curseur ou (exclusivement) une couleur.
 
+Créer une commande action/autre et mettre dans paramètres :
 
+   "1":true,"3":"color"
+   
+Permet d'allumer la lampe et de passer en couleur 
+
+Créer une commande action/curseur et mettre dans paramètres et mettre dans paramètres :
+
+   "1":true,"3":#slider#/10
+   
+Permet d'allumer la lampe et de modifier l'intensité.
+ 
+Créer une commande action/color et mettre dans paramètres :
+
+   "3":"color","3":"#colorR2G2B200H2S2V2_255#"
+   
+Permet de passer la lampe en mode couleur et de spécifier la couleur. Le plugin utilisera la couleur, l'intensité et la saturation du widget color.
+
+### Modifier plusieurs dps avec retour d'état
+
+Pour envoyer plusieurs dps en même temps avec retour d'état, mettre dans le champ dps, le dps qui doit être mis à jour suivi du caractère \*. Mettre la commande complète sans les allocades dans le champ paramètres. Un et seul des dps pourra être un curseur ou (exclusivement) une couleur.
+
+Créer une commande action/curseur, mettre 3\* dans le champ dps et mettre dans paramètres :
+
+   "1":true,"3":#slider#/10
+   
+Permet d'allumer la lampe et de modifier l'intensité, la commande info de dps 3 sera mise à jour.
+ 
+Créer une commande action/color, mettre 3\* dans le champ dps et mettre dans paramètres :
+
+   "3":"color","3":"#colorR2G2B200H2S2V2_255#"
+   
+Permet de passer la lampe en mode couleur et de spécifier la couleur. Le plugin utilisera l'intensité et la saturation des curseurs saturation et intensité de dps 3.
 
 ## Remarques :
 -   rien dans les logs en provenance de l'appli tuya : mauvaise adresse IP ou périphérique qui ne renvoie pas son état
