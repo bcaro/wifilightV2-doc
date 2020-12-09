@@ -12,12 +12,12 @@ todo :
 - nettoyer les logs nécessaires aux retours utilisateurs pour les nouvelles fonctionnalités Tuya (dps et paramètres modifiables)
 
 1.65 - 2020-12-15 beta
--   Tuya/Zigbee V2: suppression de la notion de canal (le cid est utilisé à la place) nécessite de sauvegarder chaque périphérique
--   Tuya : ajout 3 inters muraux
--   Tuya : ajout de plusieurs dps dans une même commande
--	Ajout timeout sur Meross et Nanoleaf
+-   Tuya/Zigbee V2 : suppression de la notion de canal (le cid est utilisé à la place) nécessite de sauvegarder chaque périphérique
+-   Tuya/Zigbee V2 : ajout de 3 inters muraux
+-   Tuya : possibilité de plusieurs dps dans une même commande
+-	Ajout d'un timeout sur Meross et Nanoleaf pour ne pas bloquer le demon
 -	Correction de bogues
--	Correction doc
+-	Correction de la doc
 
 1.64 - 2020-12-05
 -   passerelle Tuya/Zigbee : ajout plug Lonsonho avec conso (le pilotage de la led est KO : pas le temps de corriger leur JSON mal généré)
