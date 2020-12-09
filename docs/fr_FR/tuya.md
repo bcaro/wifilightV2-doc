@@ -31,6 +31,8 @@ Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le p
 
 Il faut créer un équipement, avec la même adresse IP et la même clé, pour la passerelle et chaque périphérique connecté à la passerelle et lui attribuer un n° de canal (le numéro entre 1 et 100 est sans importance mais chaque périphérique doit avoir un n° de canal différent).
 
+Si l'application Tuya est connectée au périphérique, avant le plugin, le plugin ne pourra pas y accéder.
+
 
 ## Clé et identifiant passerelle
 
@@ -94,7 +96,9 @@ Le plugin teste les périphériques (mais ils doivent être ajoutés manuellemen
 
 En V1 et V2, pour les périphériques multicanaux (comme les prises multiples), il faut donc créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal. Le n° de canal correspond au n° de prise (USB en plus si présent).
 
-Dans les 3 cas, testez de préférence les configurations standards avant de créer manuellement les commandes
+Dans les 3 cas, testez de préférence les configurations standards avant de créer manuellement les commandes.
+
+Si l'application Tuya est connectée au périphérique, avant le plugin, le plugin ne pourra pas y accéder.
 
 
 ## Configuration du périphérique
