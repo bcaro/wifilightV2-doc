@@ -297,6 +297,10 @@ Noter que le plugin peut mettre jusqu'à 1 minute pour trouver une ampoule et 4 
 
 # TP-Link
 
+Les périphériques compatibles sont :
+-   ampoules LB 100/110/120/130
+-   prises HS110 V1/V2
+
 ## Configuration
 
 Note : certains périphériques en version 2 ne nécessitent pas de récupérer un jeton : laisser le champ vide dans la configuration du périphérique.
@@ -326,6 +330,11 @@ Aucune aide ne sera donnée pour récupérer le jeton.
 
 # Meross
 
+Les périphériques compatibles sont :
+-   prises MSS210HK MSS210 MSS425EHK MSS425FHK
+-   switch MSS710
+-   prise avec conso MSS310 en beta (à tester) (la conso ne remonte que toutes les minutes)
+
 Il est indispensable de récupérer un namespace qui correspond au Jeton dans le plugin, un messageId qui correspond à Identifiant dans le plugin et un timestamp. Pour trouver ces 3 paramètres, voir sur le web : Meross Credentials ou sur le forum.
 
 Aucune aide ne sera donnée pour récupérer les 3 informations.
@@ -334,7 +343,7 @@ Aucune aide ne sera donnée pour récupérer les 3 informations.
 
 ## Compatibilité
 
-Les périphériques Sonoff compatibles sont : 
+Les périphériques compatibles sont : 
 -  Sonoff D1 smart Dimmer
 -  Sonoff BASICR3 et RFR3
 -  Sonoff MINI

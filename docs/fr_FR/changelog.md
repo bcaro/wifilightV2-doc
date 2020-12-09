@@ -8,15 +8,22 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
 todo : 
-- permettre des commandes tuya avec plusieurs dps (déjà possible mais sans interprétation des codes couleurs, non documenté).
-- ajout de périphériques Tuya/Zigbee (diffuseur
+- ajout de périphériques Tuya/Zigbee (diffuseur, capteurs divers)
 - nettoyer les logs nécessaires aux retours utilisateurs pour les nouvelles fonctionnalités Tuya (dps et paramètres modifiables)
+
+1.65 - 2020-12-15 beta
+-   Tuya/Zigbee V2: suppression de la notion de canal (le cid est utilisé à la place) nécessite de sauvegarder chaque périphérique
+-   Tuya : ajout 3 inters muraux
+-   Tuya : ajout de plusieurs dps dans une même commande
+-	Ajout timeout sur Meross et Nanoleaf
+-	Correction de bogues
+-	Correction doc
 
 1.64 - 2020-12-05
 -   passerelle Tuya/Zigbee : ajout plug Lonsonho avec conso (le pilotage de la led est KO : pas le temps de corriger leur JSON mal généré)
 -   Tuya : ajout prise + led de veille couleur, radiateur électrique
 -   Tuya : ajout commande VR avec éclairage des boutons
--	Tuya : ajout d'un type V3 qui permet de modifier les dsp et les paramètres de toutes les commandes. Disparition de la notion de canal. Les type 1 et 2 ne seront plus maintenus (sauf correction de bogues).
+-	Tuya : ajout d'un type V3 qui permet de modifier les dsp et les paramètres de toutes les commandes. Disparition de la notion de canal. Les types 1 et 2 ne seront plus maintenus (sauf correction de bogues).
 -	Tuya/Zigbee : type V2, les dps et les paramètres de toutes les commandes peuvent être modifiés. Le type V1 ne doit plus être utilisé et sera supprimé. La notion de canal est conservée pour distinguer 2 périphériques connectés à la même passerelle.
 -	Tuya/Zigbee ajout d'un mode custom (oublié en 1.63)
 -   Xiaomi Philips : amélioration du dialogue afin de ne pas perdre de commandes
