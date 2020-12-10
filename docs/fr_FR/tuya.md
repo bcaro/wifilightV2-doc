@@ -414,7 +414,7 @@ le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la 
 
 ## trouver de l'aide sur le forum
 
-Sans application des tests ci-dessous et de l'envoi des logs associés, votre réponse pénible à écrire et probablement pénible à lire sera : lire la doc. Notez que rare sont les cas où le passage par les 3 étapes ci-dessous ne permet pas de résoudre le problème.
+Sans application des tests ci-dessous et de l'envoi des logs associés, la réponse pénible à écrire et probablement pénible à lire sera : lire la doc. Notez que rares sont les cas où le passage par les 3 étapes ci-dessous ne permet pas de résoudre le problème.
 
 [Retour à la documentation générale](./index.md)
 
