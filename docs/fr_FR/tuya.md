@@ -23,9 +23,10 @@ Les équipements suivants sont compatibles mais la liste n'est pas exclusive et 
 - capteur de température BENEXMART
 - capteur de porte BENEXMART
 - plug Lonsoho
+- interrupteurs muraux simples/doubles/triples
 
 
-Tous les autres périphériques, ou les périphériques similaires d'une autre marque ou d'un autre modèle, doivent être entièrement configurés en mode "custom". Cependant la configuration générée pour ces modèles peut aider pour un autre.
+Tous les autres périphériques, ou les périphériques similaires d'une autre marque ou d'un autre modèle, doivent être entièrement configurés en mode personnalisé. Cependant la configuration générée pour ces modèles peut aider pour un autre.
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
@@ -36,9 +37,9 @@ Si l'application Tuya est connectée au périphérique, avant le plugin, le plug
 
 ## Clé et identifiant passerelle
 
-Il est indispensable de récupérer la clé locale (LocalKey) et l'ID de la passerelle permettant au plugin de dialoguer avec les périphériques.
+Il est indispensable de récupérer la clé locale (LocalKey) et le devId de la passerelle permettant au plugin de dialoguer avec les périphériques.
 
-Pour récupérer la clé et l'ID, la procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localkey, sur Github en particulier ou sur le forum Jeedom.
+Pour récupérer la clé et le devId, la procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localkey, sur Github en particulier ou sur le forum Jeedom.
 
 Si la passerelle est désinstallée puis réinstallée dans l'application mobile, alors sa clé sera modifiée. Il faudra retrouver la clé avec la procédure ci-dessus. 
 
@@ -54,14 +55,14 @@ Vous trouverez une information comme celle-ci :
     
     Receive after decode :{"dps":{"161":"Esc"},"cid":"ec1bbdfffe781b28","t":1589301302}
  
-Le cid est à copier dans le champ id du périphérique du plugin (sans les " "). C'est lui qui permet de distinguer 2 équipements connectés à la passerelle.
+Le cid est à copier dans le champ identifiant du périphérique du plugin (sans les " "). C'est lui qui permet de distinguer 2 équipements connectés à la passerelle.
 
 Si aucun message en clair n'apparait, c'est que la clé n'est pas bonne.
 
 
 ## Configuration
 
-Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Personnalisation des commandes](./tuya#tocAnchor-1-6-4) pour comprendre les commandes de la configuration par défaut.
+Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les n° de dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Personnalisation des commandes](./tuya#tocAnchor-1-6-4) pour comprendre les commandes de la configuration par défaut.
 
 Si le périphérique est complètement différent, il faut configurer manuellement le plugin en choisissant le sous-type "Custom" et en se référant au paragraphe [Personnalisation des commandes](./tuya#tocAnchor-1-6-4). Partagez alors votre configuration sur le forum pour l'intégrer dans le plugin.
 
@@ -91,10 +92,10 @@ Les capteurs de présence et d'ouverture ne sont pas compatibles car ils ne dial
 Le plugin teste les périphériques (mais ils doivent être ajoutés manuellement) et affiche un message dans le centre de messages lorsqu'un périphérique a été configuré avec le mauvais firmware.
 
 - le type V1 correspond aux périphériques en firmware 1.0
-- le type V2 correspond aux périphériques en firmware 2.0 possibilité d'ajouter des commandes custom
-- le type V3 correspond aux périphériques en firmware 2.0 possibilité en plus de modifier le dps et les paramètres de dps de tous les périphériques présents en V3 afin de les adapter au besoin. Pour ce type, la notion de canal a disparue et toutes les commandes de prises électriques sont créées dans le même périphérique.
+- le type V2 correspond aux périphériques en firmware 2.0 : possibilité d'ajouter des commandes custom
+- le type V3 correspond aux périphériques en firmware 2.0 : possibilité en plus de modifier le n° de dps et les paramètres de dps de tous les périphériques présents en V3 afin de les adapter au besoin. Pour ce type, la notion de canal a disparue et toutes les commandes de prises électriques sont créées dans le même périphérique.
 
-En V1 et V2, pour les périphériques multicanaux (comme les prises multiples), il faut donc créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal. Le n° de canal correspond au n° de prise (USB en plus si présent).
+En V1 et V2, pour les périphériques multicanaux (comme les prises multiples), il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal. Le n° de canal correspond au n° de prise (USB en plus si présent)et par défaut au n° de dps.
 
 Dans les 3 cas, testez de préférence les configurations standards avant de créer manuellement les commandes.
 
@@ -103,7 +104,7 @@ Si l'application Tuya est connectée au périphérique, avant le plugin, le plug
 
 ## Configuration du périphérique
 
-Il est indispensable de récupérer une clé locale (LocalKey) et un identifiant permettant au plugin de dialoguer avec les périphériques.
+Il est indispensable de récupérer une clé locale (LocalKey) et un identifiant devId permettant au plugin de dialoguer avec les périphériques.
 
 La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localkey, sur Github en particulier ou sur le forum Jeedom.
 
@@ -133,13 +134,13 @@ Pour les autres prises, la valeur 20;18;19 est mise par défaut.
 
 ##Personnalisation des commandes
 
-Devant la diversité des périphériques compatibles Tuya, il peut être nécessaire de créer des commandes personnalisées. Avant de passer aux commandes personnalisées, tester d'abord les configurations standard qui fonctionnent dans la majorité des cas. Ces configurations standards peuvent, en V3, être modifiées pour ajuster le dps et le paramètre afin qu'ils correspondent au périphérique.
+Devant la diversité des périphériques compatibles Tuya, il peut être nécessaire de créer des commandes personnalisées. Avant de passer aux commandes personnalisées, tester d'abord les configurations standard qui fonctionnent dans la majorité des cas. Ces configurations standards peuvent, en V3, être modifiées pour ajuster le n° de dps et le paramètre afin qu'ils correspondent au périphérique.
 
 Le paragraphe suivant donne des éléments pour interpréter les logs wifilightV2 et configurer soit entièrement un périphérique ou modifier une configuration standard V3.
 
-## Périphérique custom
+## Périphérique personnalisé
 
-Il est possible de créer un périphérique entièrement custom ou d'ajouter des commandes custom à un périphérique existant ou de modifier les dps/paramètres d'une commande. L'interface propose de créer des commandes automatiquement, ceci a l'avantage de mieux faire fonctionner le retour d'état. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de solution.
+Il est possible de créer un périphérique entièrement personnalisé ou d'ajouter des commandes personnalisées (en V3 uniquement) à un périphérique existant ou de modifier les n° de dps et paramètres d'une commande. L'interface propose de créer des commandes automatiquement, ceci a l'avantage de mieux faire fonctionner le retour d'état. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de solution.
 
 ### Configuration
 -   désactiver tous les périphériques wifilightV2 sauf celui à tester
@@ -152,9 +153,9 @@ Il est possible de créer un périphérique entièrement custom ou d'ajouter des
 -   appuyer sur un bouton du périphérique physique (on, off, haut, bas, etc.) ou attendre que le périphérique renvoie son état ou appuyer sur un bouton de l'appli Smart Live (mais dans ce dernier cas, cela peut empêcher le retour d'état).
 -   repérer dans les logs le retour d'état
 
-Utiliser toutes les possibilités de l'application Tuya et bien repérer dans les logs le dps et sa valeur qui sont envoyés au plugin. 
+Utiliser toutes les possibilités de l'application Tuya et bien repérer dans les logs le n° de dps et sa valeur qui sont envoyés au plugin. 
 
-Le plugin est équipé de boutons permettant de créer automatiquement les cas les plus courants, il suffira de modifier le dps ou le paramètre automatiquement créés.
+Le plugin est équipé de boutons permettant de créer automatiquement les cas les plus courants, il suffira de modifier le n° de dps ou le paramètre automatiquement créés.
 
 ### Cas d'un actionneur tout ou rien, tel que ON/OFF
 
@@ -162,25 +163,25 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve par exemple :
 
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"off","101":true}}
 	
-Ici, le bouton off a été sélectionné sur le périphérique et on observe que le dps 1 a changé.
+Ici, le bouton off a été sélectionné sur le périphérique et on observe que le dps de n° 1 a changé.
 	
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"on","101":true}}
 
-Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps 1 a changé.
+Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps de n° 1 a changé.
 
-Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer les boutons ON/OFF. Il suffit de modifier le dps en mettant 1. Pour les paramètres mettre "on" et "off", les guillemets compris car ils sont présents après le dps 1.
+Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer les boutons ON/OFF. Il suffit de modifier le n° de dps en mettant 1. Pour les paramètres mettre "on" et "off", les guillemets compris car ils sont présents après le n° de dps 1.
 
 Pour configurer manuellement :
 
 -   Création d'une nouvelle commande action/défaut dans les commandes du périphérique :
     *    Dans la colonne interface mettre ON comme nom du bouton
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ON, comme dps : 1 (sans les doubles guillemets) et comme paramètre : "on" (si le on n'est pas entouré de guillemets, il faut les enlever).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ON, comme n° de dps : 1 (sans les doubles guillemets) et comme paramètre : "on" (si le on n'est pas entouré de guillemets, il faut les enlever).
 -   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
     *    Dans la colonne interface mettre OFF comme nom du bouton
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _OFF, comme dps : 1 (sans les doubles guillemets) et comme paramètre : "off" (si le off n'est pas entouré de guillemets, il faut les enlever).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _OFF, comme n° de dps : 1 (sans les doubles guillemets) et comme paramètre : "off" (si le off n'est pas entouré de guillemets, il faut les enlever).
 -   Créer une nouvelle commande info/binary dans les commandes du périphérique :
     *    Dans la colonne interface mettre ETAT comme nom de l'info
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ETAT, comme dps : 1 (sans les doubles guillemets) et rien dans paramètres.
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ETAT, comme n° de dps : 1 (sans les doubles guillemets) et rien dans paramètres.
 
 ### Dans le cas d'une commande numérique, comme une commande d'intensité :
 	
@@ -188,18 +189,18 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"3":850,"101":true}}
 
-Ici, un curseur d'intensité a été sélectionné sur l'application du périphérique et on observe que le dps 3 a changé.
+Ici, un curseur d'intensité a été sélectionné sur l'application du périphérique et on observe que le dps de n° 3 a changé.
 
-Cliquer sur le bouton Curseur de l'interface afin de créer automatiquement les 2 commandes pour gérer le curseur. Pour les adapter au besoin, il suffit de modifier les dps et de mettre 3 (sans guillemets). Pour le paramètre de la commande action : soit ne rien mettre, soit mettre #slider# soit mettre une formule par exemple : #slider#/10. Pour le paramètre de l'info, c'est identique sauf qu'il faut utiliser #value# . Ne pas mettre de guillemets car il n'y en a pas après le dps.
+Cliquer sur le bouton Curseur de l'interface afin de créer automatiquement les 2 commandes pour gérer le curseur. Pour les adapter au besoin, il suffit de modifier les n° de dps et de mettre 3 (sans guillemets). Pour le paramètre de la commande action : soit ne rien mettre, soit mettre #slider# soit mettre une formule par exemple : #slider#/10. Pour le paramètre de l'info, c'est identique sauf qu'il faut utiliser #value# . Ne pas mettre de guillemets car il n'y en a pas après le n° de dps.
 
 Pour configurer manuellement :
 	
 -   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Intensité comme nom du curseur
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _Intensite, comme dps : 3 (sans les doubles guillemets) et comme paramètre : #slider# (ici la valeur numérique n'est pas entourée de guillemets, il ne faut donc pas les mettre).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _Intensite, comme n° de dps : 3 (sans les doubles guillemets) et comme paramètre : #slider# (ici la valeur numérique n'est pas entourée de guillemets, il ne faut donc pas les mettre).
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre IntensiteGet comme nom de l'info
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _IntensiteGet, comme dps : 3 (sans les doubles guillemets) et rien dans paramètres.
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _IntensiteGet, comme n° de dps : 3 (sans les doubles guillemets) et rien dans paramètres.
 
 
 ### Dans le cas d'un capteur numérique, comme un capteur de température :
@@ -208,15 +209,15 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"8":23,"101":true}}
 	
-Ici, c'est une température qui est envoyée régulièrement et on observe que le dps 8 a changé.
+Ici, c'est une température qui est envoyée régulièrement et on observe que le dps de n° 8 a changé.
 
-Cliquer sur le bouton Info Num de l'interface afin de créer automatiquement la commande pour récupérer la température. Pour les adapter au besoin, il suffit de modifier le dps, ici 8 (sans parenthèse). Pour le paramètre de l'info, soit ne rien mettre, soit mettre #value# soit mettre une formule par exemple : #value#/10 . Ne pas mettre de guillemets car il n'y en a pas après le dps.
+Cliquer sur le bouton Info Num de l'interface afin de créer automatiquement la commande pour récupérer la température. Pour les adapter au besoin, il suffit de modifier le n° de dps, ici 8 (sans parenthèse). Pour le paramètre de l'info, soit ne rien mettre, soit mettre #value# soit mettre une formule par exemple : #value#/10 . Ne pas mettre de guillemets car il n'y en a pas après le n° de dps.
 
 Pour configurer manuellement :
 	
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre TempGet comme nom de l'info
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _TempGet, comme dps : 8 (sans les doubles guillemets) et rien dans paramètres.
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _TempGet, comme n° de dps : 8 (sans les doubles guillemets) et rien dans paramètres.
 	
 
 ### Dans le cas d'un capteur tout ou rien, comme un détecteur de porte :
@@ -227,15 +228,15 @@ Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 		
     Receive after decode :{devId:50701244cc50e37e9aff,dps:{"12":0}}
 	
-Ici, c'est l'information d'ouverture puis de fermeture qui est envoyée et on observe que le dps 12 a changé.
+Ici, c'est l'information d'ouverture puis de fermeture qui est envoyée et on observe que le dps de n° 12 a changé.
 
-Cliquer sur le bouton Info Bin de l'interface afin de créer automatiquement la commande pour récupérer la valeur. Pour l'adapter au besoin, il suffit de modifier le dps et de mettre 12 (sans guillemets). Les paramètres doivent être laissés vides.  
+Cliquer sur le bouton Info Bin de l'interface afin de créer automatiquement la commande pour récupérer la valeur. Pour l'adapter au besoin, il suffit de modifier le n° de dps et de mettre 12 (sans guillemets). Les paramètres doivent être laissés vides.  
 
 Pour configurer manuellement :
 	
 -   Créer une nouvelle commande info/binaire dans les commandes du périphérique :
     *    Dans la colonne interface mettre PorteGet comme nom de l'info
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _PorteGet, comme dps : 12 (sans les doubles guillemets) et rien dans paramètres.
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _PorteGet, comme n° de dps : 12 (sans les doubles guillemets) et rien dans paramètres.
 
 ### Dans le cas de la couleur d'une lampe :
 
@@ -243,7 +244,7 @@ Cette partie est complexe et demande une lecture très attentive.
 
 Le codage de la couleur chez Tuya a plusieurs formats qui sont différents de celui utilisé par Jeedom. Jeedom utilise le format RGB (Reg Green Blue) alors que Tuya utilise différents formats HSV (Hue Saturation Value) ou combinant HSV et RGB. Le RGB code chaque couleur de 0 à 255 ou en hexadécimal de 0 à FF. Le rouge est donc codé FF0000, le bleu : 0000FF, le blanc : FFFFFF et le noir : 000000. Les valeur pour HSV sont les suivantes : Hue de 0 à 360° (couleur), S de 0 à 100% (Saturation) et V de 0 à 100% (Intensité). Voir [ici](https://www.rapidtables.com/convert/color/) pour aller plus loin.
 
-Afin de permettre au plugin de fonctionner correctement pour les couleurs, il faut identifier les formats utilisés par Tuya lors d'un changement de couleur avec l'appli tuya et en observant à cet instant dans les logs le dps qui a été modifié.
+Afin de permettre au plugin de fonctionner correctement pour les couleurs, il faut identifier les formats utilisés par Tuya lors d'un changement de couleur avec l'appli tuya et en observant à cet instant dans les logs le n° de dps qui a été modifié.
 
 1 - format HSV : H (codé de 0 à 360 ) S (codé de 0 à 1000) V (codé de 0 à 1000) le résultat est ensuite donné en base 16, soit 12 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya  000003E803E8 (Hue = 0000 S =03E8 V=03E8)
 
@@ -255,34 +256,34 @@ Dans les logs, lors de l'utilisation de la modification de la couleur de la lamp
 
     Receive after decode:{"devId":"63322540bcddc254e92c","dps":{"1":true,"27":true,"28":"white","29":254,"31":"08ff0000766464","32":"cf38000168ffff","33":"ffff500100ff00"}
 
-Il faut repérer le dps qui change, ici c'est le 31 soit 08ff0000766464 . Les 2 derniers 64 en hexadécimal font 100 en décimal. 08=R FF=G 00=B 076= hue, c'est le format 3. Cliquer sur le bouton Couleur 3 et modifier les dps pour mettre 31. Ne pas modifier les paramètres. 
+Il faut repérer le n° de dps qui change, ici c'est le 31 soit 08ff0000766464 . Les 2 derniers 64 en hexadécimal font 100 en décimal. 08=R FF=G 00=B 076= hue, c'est le format 3. Cliquer sur le bouton Couleur 3 et modifier les n° de dps pour mettre 31. Ne pas modifier les paramètres. 
 
 Pour créer manuellement les 6 boutons dans le cas d'un format de couleur 1 :
 	
 -   Créer une nouvelle commande action/couleur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Couleur comme nom
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _Couleur, comme dps : 120 (sans les doubles guillemets) et comme paramètre : "#colorH4S4V4_1000#" (ici la valeur est entourée de guillemets, il faut donc les mettre).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _Couleur, comme n° de dps : 120 (sans les doubles guillemets) et comme paramètre : "#colorH4S4V4_1000#" (ici la valeur est entourée de guillemets, il faut donc les mettre).
 -   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre ColorGet comme nom de l'info
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ColorGet, comme dps : 120 (sans les doubles guillemets) et "#colorH4S4V4_1000#" dans paramètres.
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ColorGet, comme n° de dps : 120 (sans les doubles guillemets) et "#colorH4S4V4_1000#" dans paramètres.
 -   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Intensité comme nom
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _Intensité, comme dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_intH4S4V4_1000# (ne pas mettre de guillemets).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _Intensité, comme n° de dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_intH4S4V4_1000# (ne pas mettre de guillemets).
 -   Créer une nouvelle commande action/curseur dans les commandes du périphérique :
     *    Dans la colonne interface mettre Saturation comme nom
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _Saturation, comme dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_satH4S4V4_1000# (ne pas mettre de guillemets).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _Saturation, comme n° de dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_satH4S4V4_1000# (ne pas mettre de guillemets).
 -   Créer une nouvelle commande info/numérique dans les commandes du périphérique :
     *    Dans la colonne interface mettre Intensité comme nom
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _IntensitéGet, comme dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_intH4S4V4_1000# (ne pas mettre de guillemets).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _IntensitéGet, comme n° de dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_intH4S4V4_1000# (ne pas mettre de guillemets).
 -   Créer une nouvelle commande info/numérique dans les commandes du périphérique :
     *    Dans la colonne interface mettre Saturation comme nom
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _SaturationGet, comme dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_satH4S4V4_1000# (ne pas mettre de guillemets).
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _SaturationGet, comme n° de dps : 120 (sans les doubles guillemets) et comme paramètre : #slider_satH4S4V4_1000# (ne pas mettre de guillemets).
 	
-Nota : il est indispensable de mettre le même dps pour ces 6 commandes et de n'ajouter aucune autre commande action ou info sur ce dps sinon le plugin ne pourra pas décoder correctement les informations et mettre à jour le retour d'état.
+Nota : il est indispensable de mettre le même n° de dps pour ces 6 commandes et de n'ajouter aucune autre commande action ou info sur ce n° de dps sinon le plugin ne pourra pas décoder correctement les informations et mettre à jour le retour d'état.
 
-### Modifier plusieurs dps
+### Modifier plusieurs n° de dps
 
-Pour envoyer plusieurs dps en même temps, laisser le champ dps vide et mettre la commande complète sans les accolades dans le champ paramètres. Un et un seul des dps pourra être un curseur ou (exclusivement) une couleur.
+Pour envoyer plusieurs n° de dps en même temps, laisser le champ n° de dps vide et mettre la commande complète sans les accolades dans le champ paramètres. Un et un seul des n° de dps pourra être un curseur ou (exclusivement) une couleur.
 
 Créer une commande action/autre et mettre dans paramètres :
 
@@ -302,21 +303,21 @@ Créer une commande action/couleur et mettre dans paramètres :
    
 Permet de passer la lampe en mode couleur et de spécifier la couleur. Le plugin utilisera la couleur, l'intensité et la saturation du widget color.
 
-### Modifier plusieurs dps avec retour d'état
+### Modifier plusieurs n° de dps avec retour d'état
 
-Pour envoyer plusieurs dps en même temps avec retour d'état mettre, dans le champ dps, le dps qui doit être mis à jour suivi du caractère \*. Mettre la commande complète sans les accolades dans le champ paramètres. Un et un seul des dps pourra être un curseur ou (exclusivement) une couleur.
+Pour envoyer plusieurs n° de dps en même temps avec retour d'état mettre, dans le champ n° de dps, le valeur du n° de dps qui doit être mise à jour suivie du caractère \*. Mettre la commande complète sans les accolades dans le champ paramètres. Un et un seul des n° de dps pourra être un curseur ou (exclusivement) une couleur.
 
-Créer une commande action/curseur, mettre 3\* dans le champ dps et mettre dans paramètres :
+Créer une commande action/curseur, mettre 3\* dans le champ n° de dps et mettre dans paramètres :
 
     "1":true,"3":#slider#/10
    
-Permet d'allumer la lampe et de modifier l'intensité, la commande info de dps 3 sera mise à jour.
+Permet d'allumer la lampe et de modifier l'intensité, la commande info de dps n° 3 sera mise à jour.
  
-Créer une commande action/color, mettre 3\* dans le champ dps et mettre dans paramètres :
+Créer une commande action/color, mettre 3\* dans le champ n° de dps et mettre dans paramètres :
 
     "2":"color","3":"#colorR2G2B200H2S2V2_255#"
    
-Permet de passer la lampe en mode couleur et de spécifier la couleur. Le plugin utilisera l'intensité et la saturation des curseurs intensité et saturation de dps 3.
+Permet de passer la lampe en mode couleur et de spécifier la couleur. Le plugin utilisera l'intensité et la saturation des curseurs intensité et saturation de n° de dps 3.
 
 ## Remarques :
 -   rien dans les logs en provenance de l'appli tuya : mauvaise adresse IP ou périphérique qui ne renvoie pas son état
@@ -363,7 +364,7 @@ Il se peut qu'il y ait ensuite des déconnexions, dans ce cas le message dans le
     [2020-12-10 07:36:40][DEBUG] :     Cmd to 192.168.1.122 - Try:192.168.1.122  6668 - Connect OK!
     [2020-12-10 07:36:40][DEBUG] :     Error on:192.168.1.122 is :Connection reset by peer n:104  diff:16
 
-ou il n'y a plus de ping dans les logs pour cette adresse ip, cela correspond à une mauvaise connexion entre le périphérique et Jeedom ou si le périphérique n'est plus alimenté. Quand tout est correct le message est :
+ou il n'y a plus de ping dans les logs pour cette adresse ip, cela correspond à une mauvaise connexion permanente entre le périphérique et Jeedom ou si le périphérique n'est plus alimenté. Quand tout est correct le message est :
 
     [2020-12-10 07:36:43][DEBUG] :     << Ping @192.168.1.106  diff:16
     [2020-12-10 07:36:43][DEBUG] :     Cmd to 192.168.1.106 - Try:192.168.1.106  6668 - Connect OK!
@@ -375,7 +376,7 @@ A ce stade, la seul point testé et OK c'est que l'adresse IP est la bonne et qu
 
 ## vérifier que la localkey est la bonne
 
-1. renseigner la LocalKey sans espace et sans guillemets dans le champ Jeton du plugin. Vérifier plusieurs fois : la LocalKey doit être la même pour tous les périphériques de même adresse IP et que le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
+1. renseigner la LocalKey sans espace et sans guillemets dans le champ Jeton du plugin. Vérifier plusieurs fois : la LocalKey doit être la même pour tous les périphériques de même adresse IP .Le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
 2. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canal), le but est de ne pas mélanger tous les périphériques
 3. effacer les logs
 4. utiliser soit le périphérique, soit l'appli tuya. Noter qu'utiliser l'appli tuya peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli tuya après la connexion ci dessus au périphérique. A l'inverse il se peut que l'appli Tuya réponde très mal. Si le périphérique ne renvoie pas son état, la procédure se termine ici et le périphérique est incompatible avec le plugin.
@@ -392,11 +393,11 @@ Dans le cas où le décodage de la trame est correct, on trouve un message tel q
     [2020-12-10 08:01:56][DEBUG] :     Update other states: - On:0
     [2020-12-10 08:01:58][DEBUG] :     Receive after decode :{"devId":"30800135cc50e3418b4c","dps":{"1":true},"t":1607583717,"s":3}]D"{4K - Read Json OK
 
-Les caractères de la fin du message seront filtrés par le plugin et ne doivent pas inquiéter. C'est ce message qui va permettre de configurer le périphérique dans le plugin en identifiant à quoi servent les dps et quelles valeurs ils prennent, voir plus haut.
+Les caractères de la fin du message seront filtrés par le plugin et ne doivent pas inquiéter. C'est ce message qui va permettre de configurer le périphérique dans le plugin en identifiant à quoi servent les n° de dps et quelles valeurs ils prennent, voir plus haut.
 
 ## vérifier que l'id ou le cid est le bon
 
-1. le cid (pour les périphériques Tuya/Zigbee) et le devId pour les autres a été trouvé en même temps que la LocaKey. Il est spécifique à chaque périphérique et n'est jamais modifié, ela permet de repérer vos périphériques.
+1. le cid (pour les périphériques Tuya/Zigbee) et le devId pour les autres a été trouvé en même temps que la LocaKey. Il est spécifique à chaque périphérique et n'est jamais modifié, cela permet de repérer vos périphériques.
 2. repérer les messages "Receive after decode" en provenance du périphérique.
 
 Pour un périphérique non Zigbee on trouvera :
@@ -409,7 +410,7 @@ Pour un périphérique Zigbee on trouvera :
 
     [2020-12-10 08:14:34][DEBUG] :     Receive after decode :{"dps":{"1":"pir"},"cid":"bc33acfffe525145","t":1607584474}
 
-le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Vous pouvez alors vérifier la concordance avec la procédure permettantd etrouve LocalKey et Id
+le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Vous pouvez alors vérifier la concordance avec la procédure permettant de trouver la LocalKey et le devId.
 
 
 ## trouver de l'aide sur le forum
