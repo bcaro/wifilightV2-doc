@@ -92,7 +92,7 @@ Les capteurs de présence et d'ouverture ne sont pas compatibles car ils ne dial
 Le plugin teste les périphériques (mais ils doivent être ajoutés manuellement) et affiche un message dans le centre de messages lorsqu'un périphérique a été configuré avec le mauvais firmware.
 
 - le type V1 correspond aux périphériques en firmware 1.0
-- le type V2 correspond aux périphériques en firmware 2.0 : possibilité d'ajouter des commandes custom
+- le type V2 correspond aux périphériques en firmware 2.0 : possibilité d'ajouter des commandes personnalisées
 - le type V3 correspond aux périphériques en firmware 2.0 : possibilité en plus de modifier le n° de dps et les paramètres de dps de tous les périphériques présents en V3 afin de les adapter au besoin. Pour ce type, la notion de canal a disparue et toutes les commandes de prises électriques sont créées dans le même périphérique.
 
 En V1 et V2, pour les périphériques multicanaux (comme les prises multiples), il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal. Le n° de canal correspond au n° de prise (USB en plus si présent)et par défaut au n° de dps.
@@ -395,9 +395,9 @@ Dans le cas où le décodage de la trame est correct, on trouve un message tel q
 
 Les caractères de la fin du message seront filtrés par le plugin et ne doivent pas inquiéter. C'est ce message qui va permettre de configurer le périphérique dans le plugin en identifiant à quoi servent les n° de dps et quelles valeurs ils prennent, voir plus haut.
 
-## vérifier que l'id ou le cid est le bon
+## vérifier que le devId ou le cid est le bon
 
-1. le cid (pour les périphériques Tuya/Zigbee) et le devId pour les autres a été trouvé en même temps que la LocaKey. Il est spécifique à chaque périphérique et n'est jamais modifié, cela permet de repérer vos périphériques.
+1. le cid (pour les périphériques Tuya/Zigbee) ou le devId pour les autres a été trouvé en même temps que la LocaKey. Il est spécifique à chaque périphérique et n'est jamais modifié, cela permet de repérer vos périphériques.
 2. repérer les messages "Receive after decode" en provenance du périphérique.
 
 Pour un périphérique non Zigbee on trouvera :
@@ -410,12 +410,21 @@ Pour un périphérique Zigbee on trouvera :
 
     [2020-12-10 08:14:34][DEBUG] :     Receive after decode :{"dps":{"1":"pir"},"cid":"bc33acfffe525145","t":1607584474}
 
-le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Vous pouvez alors vérifier la concordance avec la procédure permettant de trouver la LocalKey et le devId.
+le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Vous pouvez alors vérifier la concordance avec la procédure permettant de trouver la LocalKey et le devId ou le cid.
+
+
+## Un souci avec une commande
+
+1. Vérifier les 3 points ci dessus
+2. Désactiver tous les périphériques wifiLightV2 sauf celui à tester (ne garder qu'un canal pour les multicanaux), attendre que le demon passe et effacer les logs pour plus de clarté
+3. activer la commande qui dysfonctionne  2 fois avec 5s d'intervalle
+4. stopper les logs et les envoyer sur le forum avec la config du périphérique et les valeurs de la commande info ayant le même n° de dps retourné par le périphérique.
+
 
 
 ## trouver de l'aide sur le forum
 
-Sans application des tests ci-dessous et de l'envoi des logs associés, la réponse pénible à écrire et probablement pénible à lire sera : lire la doc. Notez que rares sont les cas où le passage par les 3 étapes ci-dessous ne permet pas de résoudre le problème.
+Sans application des tests ci-dessus et de l'envoi des logs associés, la réponse pénible à écrire et probablement pénible à lire sera : lire la doc. Notez que rares sont les cas où le passage par les 3 étapes ci-dessous ne permet pas de résoudre le problème.
 
 [Retour à la documentation générale](./index.md)
 
