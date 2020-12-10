@@ -11,6 +11,9 @@ todo :
 - ajout de périphériques Tuya/Zigbee (diffuseur, capteurs divers)
 - nettoyer les logs nécessaires aux retours utilisateurs pour les nouvelles fonctionnalités Tuya (dps et paramètres modifiables)
 
+1.66 - 2020-12-09
+-   Tuya/Zigbee V2 : retour à la notion de canal
+
 1.65 - 2020-12-09
 -   Tuya/Zigbee V2 : suppression de la notion de canal (le cid est utilisé à la place) nécessite de sauvegarder chaque périphérique
 -   Tuya/Zigbee V2 : ajout de 3 inters muraux
