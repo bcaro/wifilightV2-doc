@@ -396,7 +396,7 @@ Les caractères de la fin du message seront filtrés par le plugin et ne doivent
 
 ## vérifier que l'id ou le cid est le bon
 
-1. le cid (pour les périphériques Tuya/Zigbee) et l'id pour les autres a été trouvé en même temps que la LocaKey.
+1. le cid (pour les périphériques Tuya/Zigbee) et le devId pour les autres a été trouvé en même temps que la LocaKey. Il est spécifique à chaque périphérique et n'est jamais modifié, ela permet de repérer vos périphériques.
 2. repérer les messages "Receive after decode" en provenance du périphérique.
 
 Pour un périphérique non Zigbee on trouvera :
@@ -409,7 +409,7 @@ Pour un périphérique Zigbee on trouvera :
 
     [2020-12-10 08:14:34][DEBUG] :     Receive after decode :{"dps":{"1":"pir"},"cid":"bc33acfffe525145","t":1607584474}
 
-le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique.
+le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Vous pouvez alors vérifier la concordance avec la procédure permettantd etrouve LocalKey et Id
 
 
 ## trouver de l'aide sur le forum
