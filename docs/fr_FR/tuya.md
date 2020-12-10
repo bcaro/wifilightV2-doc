@@ -328,45 +328,45 @@ Permet de passer la lampe en mode couleur et de spécifier la couleur. Le plugin
 
 Tests préalables :
 
-- l'appli Tuya arrêtée
-- l'adresse IP du périphérique est rendue fixe
+1. l'appli Tuya arrêtée
+2. l'adresse IP du périphérique est rendue fixe
 
 ## vérifier que le périphérique est trouvé et connecté
 
-1 - désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canal), le but est de ne pas mélanger tous les périphériques
-2 - effacer les logs
-3 - sauvegarder le périphérique dans le plugin : cela a pour effet de lancer le demon qui teste toutes les minutes les périphériques wifilightV2
+1. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canal), le but est de ne pas mélanger tous les périphériques
+2. effacer les logs
+3. sauvegarder le périphérique dans le plugin : cela a pour effet de lancer le demon qui teste toutes les minutes les périphériques wifilightV2
 
 Exemple de log KO où le plugin n'a pas trouvé le périphérique donc mauvaise adresse IP
 
-[2020-12-10 07:40:12][DEBUG] : ****** Device listenable Inter BC Tuya 2 OK - Class:Tuya_SW_2 @192.168.1.122 Channel:2 *****
-[2020-12-10 07:40:12][DEBUG] :    Key not set
-[2020-12-10 07:40:12][DEBUG] :    Socket created  @192.168.1.122
-[2020-12-10 07:40:12][DEBUG] :    Connection impossible. Err=115 : Operation now in progress
+    [2020-12-10 07:40:12][DEBUG] : ****** Device listenable Inter BC Tuya 2 OK - Class:Tuya_SW_2 @192.168.1.122 Channel:2 *****
+    [2020-12-10 07:40:12][DEBUG] :    Key not set
+    [2020-12-10 07:40:12][DEBUG] :    Socket created  @192.168.1.122
+    [2020-12-10 07:40:12][DEBUG] :    Connection impossible. Err=115 : Operation now in progress
 
 Exemple de log OK où le plugin a trouvé le périphérique donc bonne adresse IP :
 
-2020-12-10 07:40:12][DEBUG] : ****** Device listenable Telco3 - Class:TuyaCustom2_V2 @192.168.1.106 Channel:5c0272fffec24266 *****
-[2020-12-10 07:40:12][DEBUG] :    Key:0  time diff:0
-[2020-12-10 07:40:12][DEBUG] :    Socket already created @192.168.1.106
-[2020-12-10 07:40:12][DEBUG] :    ADD New device @192.168.1.106 channel:5c0272fffec24266
-[2020-12-10 07:40:12][DEBUG] :    Device and socket exist : key:0 @192.168.1.106 channel:5c0272fffec24266 diff:0
+    [2020-12-10 07:40:12][DEBUG] : ****** Device listenable Telco3 - Class:TuyaCustom2_V2 @192.168.1.106 Channel:5c0272fffec24266 *****
+    [2020-12-10 07:40:12][DEBUG] :    Key:0  time diff:0
+    [2020-12-10 07:40:12][DEBUG] :    Socket already created @192.168.1.106
+    [2020-12-10 07:40:12][DEBUG] :    ADD New device @192.168.1.106 channel:5c0272fffec24266
+    [2020-12-10 07:40:12][DEBUG] :    Device and socket exist : key:0 @192.168.1.106 channel:5c0272fffec24266 diff:0
 
 Par la suite les messages seront du type :
 
-[2020-12-10 07:53:41][DEBUG] : ****** Device listenable Inter BC Tuya OK - Class:Tuya_SW_2 @192.168.1.122 Channel:1 *****
-[2020-12-10 07:53:41][DEBUG] :    Device and socket exist : key:3 @192.168.1.122 channel:1 diff:13
+    [2020-12-10 07:53:41][DEBUG] : ****** Device listenable Inter BC Tuya OK - Class:Tuya_SW_2 @192.168.1.122 Channel:1 *****
+    [2020-12-10 07:53:41][DEBUG] :    Device and socket exist : key:3 @192.168.1.122 channel:1 diff:13
 
 Il se peut qu'il y ait ensuite des déconnexions, dans ce cas le message dans les logs est :
 
-[2020-12-10 07:36:40][DEBUG] :     << Ping @192.168.1.122  diff:16
-[2020-12-10 07:36:40][DEBUG] :     Cmd to 192.168.1.122 - Try:192.168.1.122  6668 - Connect OK!
-[2020-12-10 07:36:40][DEBUG] :     Error on:192.168.1.122 is :Connection reset by peer n:104  diff:16
+    [2020-12-10 07:36:40][DEBUG] :     << Ping @192.168.1.122  diff:16
+    [2020-12-10 07:36:40][DEBUG] :     Cmd to 192.168.1.122 - Try:192.168.1.122  6668 - Connect OK!
+    [2020-12-10 07:36:40][DEBUG] :     Error on:192.168.1.122 is :Connection reset by peer n:104  diff:16
 
 ou il n'y a plus de ping dans les logs pour cette adresse ip, cela correspond à une mauvaise connexion entre le périphérique et Jeedom ou si le périphérique n'est plus alimenté. Quand tout est correct le message est :
 
-[2020-12-10 07:36:43][DEBUG] :     << Ping @192.168.1.106  diff:16
-[2020-12-10 07:36:43][DEBUG] :     Cmd to 192.168.1.106 - Try:192.168.1.106  6668 - Connect OK!
+    [2020-12-10 07:36:43][DEBUG] :     << Ping @192.168.1.106  diff:16
+    [2020-12-10 07:36:43][DEBUG] :     Cmd to 192.168.1.106 - Try:192.168.1.106  6668 - Connect OK!
 
 Le plugin tentera de se reconnecter au périphérique toutes les minutes ou toutes les 3 minutes ce qui lui permettra de retrouver le périphérique s'il est rebranché. 
 
@@ -375,40 +375,39 @@ A ce stade, la seul point testé et OK c'est que l'adresse IP est la bonne et qu
 
 ## vérifier que la localkey est la bonne
 
-1 - renseigner la LocalKey sans espace et sans guillemets dans le champ Jeton du plugin. Vérifier plusieurs fois : la LocalKey doit être la même pour tous les périphériques de même adresse IP et que le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
-2 - désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canal), le but est de ne pas mélanger tous les périphériques
-3 - effacer les logs
-4 - utiliser soit le périphérique, soit l'appli tuya. Noter qu'utiliser l'appli tuya peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli tuya après la connexion ci dessus au périphérique. A l'inverse il se peut que l'appli Tuya réponde très mal. Si le périphérique ne renvoie pas son état, la procédure se termine ici et le périphérique est incompatible avec le plugin.
+1. renseigner la LocalKey sans espace et sans guillemets dans le champ Jeton du plugin. Vérifier plusieurs fois : la LocalKey doit être la même pour tous les périphériques de même adresse IP et que le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
+2. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canal), le but est de ne pas mélanger tous les périphériques
+3. effacer les logs
+4. utiliser soit le périphérique, soit l'appli tuya. Noter qu'utiliser l'appli tuya peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli tuya après la connexion ci dessus au périphérique. A l'inverse il se peut que l'appli Tuya réponde très mal. Si le périphérique ne renvoie pas son état, la procédure se termine ici et le périphérique est incompatible avec le plugin.
 
 Exemple de log KO où la LocalKey n'est pas bonne car la trame reçue par le plugin n'est pas décodée :
 
-[2020-12-10 08:01:56][DEBUG] :    Receive after decode :pr-q;oTEJ^mhvoH]R,(0!]?E?N2KS ]OI!Empty
+    [2020-12-10 08:01:56][DEBUG] :    Receive after decode :pr-q;oTEJ^mhvoH]R,(0!]?E?N2KS ]OI!Empty
 
 Dans le cas où le décodage de la trame est correct, on trouve un message tel que celui-ci :
 
-[2020-12-10 08:01:56][DEBUG] :    Multiple device @192.168.1.122 canal:1
-[2020-12-10 08:01:56][DEBUG] :     CanalDev:1 in MultiC
-[2020-12-10 08:01:56][DEBUG] :     Found Canal:1 OK
-[2020-12-10 08:01:56][DEBUG] :     Update other states: - On:0
-[2020-12-10 08:01:58][DEBUG] :     Receive after decode :{"devId":"30800135cc50e3418b4c","dps":{"1":true},"t":1607583717,"s":3}]D"{4K - Read Json OK
-[2020-12-10 08:01:58][DEBUG] :    Multichanel in state : update all
+    [2020-12-10 08:01:56][DEBUG] :    Multiple device @192.168.1.122 canal:1
+    [2020-12-10 08:01:56][DEBUG] :     CanalDev:1 in MultiC
+    [2020-12-10 08:01:56][DEBUG] :     Found Canal:1 OK
+    [2020-12-10 08:01:56][DEBUG] :     Update other states: - On:0
+    [2020-12-10 08:01:58][DEBUG] :     Receive after decode :{"devId":"30800135cc50e3418b4c","dps":{"1":true},"t":1607583717,"s":3}]D"{4K - Read Json OK
 
 Les caractères de la fin du message seront filtrés par le plugin et ne doivent pas inquiéter. C'est ce message qui va permettre de configurer le périphérique dans le plugin en identifiant à quoi servent les dps et quelles valeurs ils prennent, voir plus haut.
 
 ## vérifier que l'id ou le cid est le bon
 
-1 - le cid (pour les périphériques Tuya/Zigbee) et l'id pour les autres a été trouvé en même temps que la LocaKey.
-2 - repérer les messages "Receive after decode" en provenance du périphérique.
+1. le cid (pour les périphériques Tuya/Zigbee) et l'id pour les autres a été trouvé en même temps que la LocaKey.
+2. repérer les messages "Receive after decode" en provenance du périphérique.
 
 Pour un périphérique non Zigbee on trouvera :
 
-[2020-12-10 08:01:58][DEBUG] :     Receive after decode :{"devId":"30800135cc50e3418b4c","dps":{"1":true},"t":1607583717,"s":3}]D"{4K - Read Json OK
+    [2020-12-10 08:01:58][DEBUG] :     Receive after decode :{"devId":"30800135cc50e3418b4c","dps":{"1":true},"t":1607583717,"s":3}]D"{4K - Read Json OK
 
 le devId est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique.
 
 Pour un périphérique Zigbee on trouvera :
 
-[2020-12-10 08:14:34][DEBUG] :     Receive after decode :{"dps":{"1":"pir"},"cid":"bc33acfffe525145","t":1607584474}
+    [2020-12-10 08:14:34][DEBUG] :     Receive after decode :{"dps":{"1":"pir"},"cid":"bc33acfffe525145","t":1607584474}
 
 le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique.
 
