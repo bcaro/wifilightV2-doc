@@ -379,7 +379,7 @@ A ce stade, la seul point testé et OK c'est que l'adresse IP est la bonne et qu
 1. renseigner la LocalKey sans espace et sans guillemets dans le champ Jeton du plugin. Vérifier plusieurs fois : la LocalKey doit être la même pour tous les périphériques de même adresse IP .Le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
 2. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canal), le but est de ne pas mélanger tous les périphériques
 3. effacer les logs
-4. utiliser soit le périphérique, soit l'appli tuya. Noter qu'utiliser l'appli tuya peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli tuya après la connexion ci dessus au périphérique. A l'inverse il se peut que l'appli Tuya réponde très mal. Si le périphérique ne renvoie pas son état, la procédure se termine ici et le périphérique est incompatible avec le plugin.
+4. utiliser soit les boutons du périphérique physique , soit l'appli tuya pour changer l'état du périphérique. Noter qu'utiliser l'appli Tuya peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli Tuya après la connexion ci dessus au périphérique. A l'inverse il se peut que l'appli Tuya réponde très mal. Si le périphérique ne renvoie pas son état, la procédure se termine ici et le périphérique est incompatible avec le plugin.
 
 Exemple de log KO où la LocalKey n'est pas bonne car la trame reçue par le plugin n'est pas décodée :
 
@@ -413,13 +413,14 @@ Pour un périphérique Zigbee on trouvera :
 le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Vous pouvez alors vérifier la concordance avec la procédure permettant de trouver la LocalKey et le devId ou le cid.
 
 
-## Un souci avec une commande
+## Un souci avec une commande action
 
 1. Vérifier les 3 points ci dessus
 2. Désactiver tous les périphériques wifiLightV2 sauf celui à tester (ne garder qu'un canal pour les multicanaux), attendre que le demon passe et effacer les logs pour plus de clarté
 3. activer la commande qui dysfonctionne  2 fois avec 5s d'intervalle
-4. stopper les logs et les envoyer sur le forum avec la config du périphérique et les valeurs de la commande info ayant le même n° de dps retourné par le périphérique.
-
+4. stopper les logs et les sauvegarder.
+5. récupérer toutes les valeurs qui arrivent dans la commande info associée à cette commande action (généralement une commande info de type xxxxGetyy) et qui a normalement le même dps. Pour cela utiliser soit l'appli Tuya qui correspond à la même commande action à tester, soit vous modifiez ce même bouton physique sur le périphérique. Vous notez toutes les valeurs qui sont remontées dans le plugin (appuyer sur le bouton tester du plugin).
+6. envoyer les logs et les informatons du point 5
 
 
 ## trouver de l'aide sur le forum
