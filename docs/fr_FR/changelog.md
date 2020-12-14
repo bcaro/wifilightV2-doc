@@ -11,6 +11,10 @@ todo :
 - ajout de périphériques Tuya/Zigbee (diffuseur, capteurs divers)
 - nettoyer les logs nécessaires aux retours utilisateurs pour les nouvelles fonctionnalités Tuya (dps et paramètres modifiables)
 
+1.67 - 2020-12-14 (beta)
+-   modifications des images pour compatibilité dark mode V4
+-   correction des bogues suite régressions de la 1.66
+
 1.66 - 2020-12-09
 -   Tuya/Zigbee V2 : retour à la notion de canal
 
