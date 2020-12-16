@@ -12,7 +12,10 @@ todo :
 - nettoyer les logs nécessaires aux retours utilisateurs pour les nouvelles fonctionnalités Tuya (dps et paramètres modifiables)
 
 1.67 - 2020-12-14 (beta)
--   modifications des images pour compatibilité dark mode V4
+-   modifications des images et interfaces pour compatibilité dark mode V4
+-	ajout de l'information de batterie dans l'onglet équipements pour les périphériques qui renvoient cette information
+-   possibilité de modifier l'image du périphérique qui apparait dans la page des périphériques du plugin
+-   suppression de l'arrondi des commandes infos
 -   correction des bogues suite régressions de la 1.66
 
 1.66 - 2020-12-09
