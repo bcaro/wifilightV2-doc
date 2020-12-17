@@ -16,6 +16,7 @@ todo :
 -	ajout de l'information de batterie dans l'onglet équipements pour les périphériques qui renvoient cette information
 -   possibilité de modifier l'image du périphérique qui apparait dans la page des périphériques du plugin
 -   suppression de l'arrondi des commandes infos
+-	Pour les périphériques Tuya, l'option "suppression du retour d'état" est remplacée par l'option "interrogation de l'état" : la suppression n'est plus utile depuis la connexion permanente aux périphériques Tuya. Cette option est maintenant utilisée pour interroger l'état toutes les 20s pour les périphériques qui ne renvoient pas complètement leur état, en particulier la consommation des prises électriques. 
 -   correction des bogues suite régressions de la 1.66
 
 1.66 - 2020-12-09

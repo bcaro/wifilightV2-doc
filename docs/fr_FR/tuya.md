@@ -34,6 +34,8 @@ Il faut créer un équipement, avec la même adresse IP et la même clé, pour l
 
 Si l'application Tuya est connectée au périphérique, avant le plugin, le plugin ne pourra pas y accéder.
 
+L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s même si le périphérique ne le renvoie pas. A utiliser pour les prises électriques qui ne renvoient pas régulièrement la consomation mais ne pas utiliser pour les périphériques à piles sous peine de les vider.
+
 
 ## Clé et identifiant passerelle
 
@@ -100,6 +102,8 @@ En V1 et V2, pour les périphériques multicanaux (comme les prises multiples), 
 Dans les 3 cas, testez de préférence les configurations standards avant de créer manuellement les commandes.
 
 Si l'application Tuya est connectée au périphérique, avant le plugin, le plugin ne pourra pas y accéder.
+
+L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s même si le périphérique ne le renvoie pas. A utiliser pour les prises électriques qui ne renvoient pas régulièrement la consomation mais ne pas utiliser pour les périphériques à piles sous peine de les vider.
 
 
 ## Configuration du périphérique
