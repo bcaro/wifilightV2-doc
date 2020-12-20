@@ -4,7 +4,7 @@
 
 ## Compatibilité
 
-Le dialogue entre le plugin et la passerelle se fait en WiFi. Ensuite, le dialogue entre les capteurs et actionneurs et la passerelle se fait via Zigbee. Ils doivent être compatibles Tuya et avoir été inclus d'abord dans l'application Tuya.
+Le dialogue entre le plugin et la passerelle se fait en Wifi. Ensuite, le dialogue entre les capteurs et actionneurs et la passerelle se fait via Zigbee. Ils doivent être compatibles Tuya et avoir été inclus d'abord dans l'application Tuya.
 
 Le plugin peut récupérer l'état des périphériques dès que ceux-ci envoient une information de changement d'état ou quand le plugin les interroge au lancement du demon. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
 
@@ -34,8 +34,7 @@ Il faut créer un équipement, avec la même adresse IP et la même clé, pour l
 
 Si l'application Tuya est connectée au périphérique, avant le plugin, le plugin ne pourra pas y accéder.
 
-L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s même si le périphérique ne le renvoie pas. A utiliser pour les prises électriques qui ne renvoient pas régulièrement la consomation mais ne pas utiliser pour les périphériques à piles sous peine de les vider.
-
+L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s même si le périphérique ne le renvoie pas. A utiliser pour les prises électriques qui ne renvoient pas régulièrement la consommation mais ne pas utiliser pour les périphériques à piles sous peine de les vider.
 
 ## Clé et identifiant passerelle
 
@@ -68,16 +67,16 @@ Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être
 
 Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les n° de dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Personnalisation des commandes](./tuya#tocAnchor-1-6-4) pour comprendre les commandes de la configuration par défaut.
 
-Si le périphérique est complètement différent, il faut configurer manuellement le plugin en choisissant le sous-type "Custom" et en se référant au paragraphe [Personnalisation des commandes](./tuya#tocAnchor-1-6-4). Partagez alors votre configuration sur le forum pour l'intégrer dans le plugin.
+Si le périphérique est complètement différent, il faut configurer manuellement le plugin en choisissant le sous-type "Personnalisé" et en se référant au paragraphe [Personnalisation des commandes](./tuya#tocAnchor-1-6-4). Partagez alors votre configuration sur le forum pour l'intégrer dans le plugin.
 
 
 ## Mode inclusion
 
-Pour pouvoir utiliser le mode inclusion des périphériques connectés à la passerelle, il faut avoir au préalable connecté et configuré correctement une et une seule passerelle en utilisant le sous-type Gateway Hub Tuya/Zigbee avec son adresse IP et sa localKey. Le périphérique doit retourner son état, si ce n'est pas le cas, la prodédure ne pourra pas fonctionner. Si 2 passerelles sont connectées le plugin utilisera les caractéristiques de l'une d'elles sans savoir laquelle.
+Pour pouvoir utiliser le mode inclusion des périphériques connectés à la passerelle, il faut avoir au préalable connecté et configuré correctement une et une seule passerelle en utilisant le sous-type Gateway Hub Tuya/Zigbee avec son adresse IP et sa localKey. Le périphérique doit retourner son état, si ce n'est pas le cas, la procédure ne pourra pas fonctionner. Si 2 passerelles sont connectées, le plugin utilisera les caractéristiques de l'une d'elles sans savoir laquelle.
 
 - Cliquer sur le mode inclusion et agir sur le périphérique ou modifier l'état du périphérique avec l'appli Tuya (mais l'usage de l'appli peut bloquer le périphérique).
 - Quand le périphérique est détecté, le plugin interroge son état et crée un nouveau wifilightV2 avec l'adresse IP et la localKey de la passerelle, le cid est automatiquement renseigné et le canal est mis à 999 (il faudra le changer avec une valeur entre 1 et 99 avant la sauvegarde).
-- Une commande info par dps est alors créée dans le périphérique. Elles permettent de connaitre les dps du périphérique inclus. Elle ne peuvent être utilisées pour faire fonctionner le périphérique mais sont d'une aide précieuse pour trouver la bonne configuration pré-enregistrées, pour l'adapter ou pour créer un périphérique personnalisé. Il faudra donc par la suite les supprimer.
+- Une commande info par dps est alors créée dans le périphérique. Elles permettent de connaitre les dps du périphérique inclus. Elles ne peuvent être utilisées pour faire fonctionner le périphérique mais sont d'une aide précieuse pour trouver la bonne configuration pré-enregistrées, pour l'adapter ou pour créer un périphérique personnalisé. Il faudra donc par la suite les supprimer.
 - Inclure un seul périphérique à la fois.
 - Pour exclure un périphérique, il suffit de le supprimer dans le plugin.
 
@@ -114,7 +113,7 @@ Le plugin teste les périphériques (mais ils doivent être ajoutés manuellemen
 - le type V2 correspond aux périphériques en firmware 2.0 : possibilité d'ajouter des commandes personnalisées
 - le type V3 correspond aux périphériques en firmware 2.0 : possibilité en plus de modifier le n° de dps et les paramètres de dps de tous les périphériques présents en V3 afin de les adapter au besoin. Pour ce type, la notion de canal a disparue et toutes les commandes de prises électriques sont créées dans le même périphérique.
 
-En V1 et V2, pour les périphériques multicanaux (comme les prises multiples), il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal. Le n° de canal correspond au n° de prise (USB en plus si présent)et par défaut au n° de dps.
+En V1 et V2, pour les périphériques multicanaux (comme les prises multiples), il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal. Le n° de canal correspond au n° de prise (USB en plus si présent) et par défaut au n° de dps.
 
 Dans les 3 cas, testez de préférence les configurations standards avant de créer manuellement les commandes.
 
@@ -269,7 +268,7 @@ Pour configurer manuellement :
 
 Cette partie est complexe et demande une lecture très attentive. 
 
-Le codage de la couleur chez Tuya a plusieurs formats qui sont différents de celui utilisé par Jeedom. Jeedom utilise le format RGB (Reg Green Blue) alors que Tuya utilise différents formats HSV (Hue Saturation Value) ou combinant HSV et RGB. Le RGB code chaque couleur de 0 à 255 ou en hexadécimal de 0 à FF. Le rouge est donc codé FF0000, le bleu : 0000FF, le blanc : FFFFFF et le noir : 000000. Les valeur pour HSV sont les suivantes : Hue de 0 à 360° (couleur), S de 0 à 100% (Saturation) et V de 0 à 100% (Intensité). Voir [ici](https://www.rapidtables.com/convert/color/) pour aller plus loin.
+Le codage de la couleur chez Tuya a plusieurs formats qui sont différents de celui utilisé par Jeedom. Jeedom utilise le format RGB (Reg Green Blue) alors que Tuya utilise différents formats HSV (Hue Saturation Value) ou combinant HSV et RGB. Le RGB code chaque couleur de 0 à 255 ou en hexadécimal de 0 à FF. Le rouge est donc codé FF0000, le bleu : 0000FF, le blanc : FFFFFF et le noir : 000000. Les valeurs pour HSV sont les suivantes : Hue de 0 à 360° (couleur), S de 0 à 100% (Saturation) et V de 0 à 100% (Intensité). Voir [ici](https://www.rapidtables.com/convert/color/) pour aller plus loin.
 
 Afin de permettre au plugin de fonctionner correctement pour les couleurs, il faut identifier les formats utilisés par Tuya lors d'un changement de couleur avec l'appli tuya et en observant à cet instant dans les logs le n° de dps qui a été modifié.
 
@@ -332,7 +331,7 @@ Permet de passer la lampe en mode couleur et de spécifier la couleur. Le plugin
 
 ### Modifier plusieurs n° de dps avec retour d'état
 
-Pour envoyer plusieurs n° de dps en même temps avec retour d'état mettre, dans le champ n° de dps, le valeur du n° de dps qui doit être mise à jour suivie du caractère \*. Mettre la commande complète sans les accolades dans le champ paramètres. Un et un seul des n° de dps pourra être un curseur ou (exclusivement) une couleur.
+Pour envoyer plusieurs n° de dps en même temps avec retour d'état mettre, dans le champ n° de dps, la valeur du n° de dps qui doit être mise à jour suivie du caractère \*. Mettre la commande complète sans les accolades dans le champ paramètres. Un et un seul des n° de dps pourra être un curseur ou (exclusivement) une couleur.
 
 Créer une commande action/curseur, mettre 3\* dans le champ n° de dps et mettre dans paramètres :
 
@@ -405,7 +404,7 @@ A ce stade, la seul point testé et OK c'est que l'adresse IP est la bonne et qu
 1. renseigner la localKey sans espace et sans guillemets dans le champ Jeton du plugin. Vérifier plusieurs fois : la localKey doit être la même pour tous les périphériques de même adresse IP. Le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
 2. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canaux), le but est de ne pas mélanger tous les périphériques.
 3. effacer les logs
-4. utiliser soit les boutons du périphérique physique, soit l'appli Tuya pour changer l'état du périphérique. Noter qu'utiliser l'appli Tuya peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli Tuya après la connexion ci dessus au périphérique. A l'inverse il se peut que l'appli Tuya réponde très mal. Si le périphérique ne renvoie pas son état, la procédure se termine ici et le périphérique est incompatible avec le plugin.
+4. utiliser soit les boutons du périphérique physique, soit l'appli Tuya pour changer l'état du périphérique. Noter qu'utiliser l'appli Tuya peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli Tuya après la connexion ci-dessus au périphérique. A l'inverse il se peut que l'appli Tuya réponde très mal. Si le périphérique ne renvoie pas son état, la procédure se termine ici et le périphérique est incompatible avec le plugin.
 
 Nota : les experts pourront retrouver les dps car ils sont affichés à côté de la localKey ou du cid (pour les périphériques Tuya/Zigbee) lors de la procédure pour trouver ces derniers.
 
@@ -443,12 +442,12 @@ le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la 
 
 ## Un souci avec une commande action
 
-1. Vérifier les 3 points ci dessus
+1. Vérifier les 3 points ci-dessus
 2. Désactiver tous les périphériques wifiLightV2 sauf celui à tester (ne garder qu'un canal pour les multicanaux), attendre que le demon passe et effacer les logs pour plus de clarté
-3. activer la commande qui dysfonctionne  2 fois avec 5s d'intervalle
+3. activer la commande qui dysfonctionne 2 fois avec 5s d'intervalle
 4. stopper les logs et les sauvegarder.
 5. récupérer toutes les valeurs qui arrivent dans la commande info associée à cette commande action (généralement une commande info de type xxxxGetyy) et qui a normalement le même dps. Pour cela utiliser soit l'appli Tuya qui correspond à la même commande action à tester, soit vous modifiez ce même bouton physique sur le périphérique. Vous notez toutes les valeurs qui sont remontées dans le plugin (appuyer sur le bouton tester du plugin).
-6. envoyer les logs et les informatons du point 5
+6. envoyer les logs et les informations du point 5
 
 
 ## trouver de l'aide sur le forum
