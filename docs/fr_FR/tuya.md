@@ -4,7 +4,7 @@
 
 ## Compatibilité
 
-Le dialogue entre le plugin et la passerelle se fait en WiFi. Ensuite, le dialogue entre les capteurs et actionneurs et la passerelle se fait via Zigbee. Ils doivent être compatibles Tuya.
+Le dialogue entre le plugin et la passerelle se fait en WiFi. Ensuite, le dialogue entre les capteurs et actionneurs et la passerelle se fait via Zigbee. Ils doivent être compatibles Tuya et avoir été inclus d'abord dans l'application Tuya.
 
 Le plugin peut récupérer l'état des périphériques dès que ceux-ci envoient une information de changement d'état ou quand le plugin les interroge au lancement du demon. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
 
@@ -39,9 +39,9 @@ L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s
 
 ## Clé et identifiant passerelle
 
-Il est indispensable de récupérer la clé locale (LocalKey) et le devId de la passerelle permettant au plugin de dialoguer avec les périphériques.
+Il est indispensable de récupérer la clé locale (localKey) et le devId de la passerelle permettant au plugin de dialoguer avec les périphériques.
 
-Pour récupérer la clé et le devId, la procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localkey, sur Github en particulier ou sur le forum Jeedom.
+Pour récupérer la clé et le devId, la procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localKey, sur Github en particulier ou sur le forum Jeedom.
 
 Si la passerelle est désinstallée puis réinstallée dans l'application mobile, alors sa clé sera modifiée. Il faudra retrouver la clé avec la procédure ci-dessus. 
 
@@ -67,6 +67,17 @@ Si aucun message en clair n'apparait, c'est que la clé n'est pas bonne.
 Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les n° de dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Personnalisation des commandes](./tuya#tocAnchor-1-6-4) pour comprendre les commandes de la configuration par défaut.
 
 Si le périphérique est complètement différent, il faut configurer manuellement le plugin en choisissant le sous-type "Custom" et en se référant au paragraphe [Personnalisation des commandes](./tuya#tocAnchor-1-6-4). Partagez alors votre configuration sur le forum pour l'intégrer dans le plugin.
+
+
+## Mode inclusion
+
+Pour pouvoir utiliser le mode inclusion des périphériques connectés à la passerelle, il faut avoir au préalable connecté et configuré correctement une et une seule passerelle en utilisant le sous-type Gateway Hub Tuya/Zigbee avec son adresse IP et sa localKey. Le périphérique doit retourner son état, si ce n'est pas le cas, la prodédure ne pourra pas fonctionner. Si 2 passerelles sont connectées le plugin utilisera les caractéristiques de l'une d'elles sans savoir laquelle.
+
+- Cliquer sur le mode inclusion et agir sur le périphérique ou modifier l'état du périphérique avec l'appli Tuya (mais l'usage de l'appli peut bloquer le périphérique).
+- Quand le périphérique est détecté, le plugin interroge son état et crée un nouveau wifilightV2 avec l'adresse IP et la localKey de la passerelle, le cid est automatiquement renseigné et le canal est mis à 999 (il faudra le changer avec une valeur entre 1 et 99 avant la sauvegarde).
+- Une commande info par dps est alors créée dans le périphérique. Elles permettent de connaitre les dps du périphérique inclus. Elle ne peuvent être utilisées pour faire fonctionner le périphérique mais sont d'une aide précieuse pour trouver la bonne configuration pré-enregistrées, pour l'adapter ou pour créer un périphérique personnalisé. Il faudra donc par la suite les supprimer.
+- Inclure un seul périphérique à la fois.
+- Pour exclure un périphérique, il suffit de le supprimer dans le plugin.
 
 # Tuya 
 
@@ -108,9 +119,9 @@ L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s
 
 ## Configuration du périphérique
 
-Il est indispensable de récupérer une clé locale (LocalKey) et un identifiant devId permettant au plugin de dialoguer avec les périphériques.
+Il est indispensable de récupérer une clé locale (localKey) et un identifiant devId permettant au plugin de dialoguer avec les périphériques.
 
-La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localkey, sur Github en particulier ou sur le forum Jeedom.
+La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localKey, sur Github en particulier ou sur le forum Jeedom.
 
 Le périphérique ne doit pas être connecté à une application sur téléphone mobile, sinon il ne répondra pas aux ordres de Jeedom. Il faut donc fermer toute application possiblement connectée au périphérique.
 
@@ -148,7 +159,7 @@ Il est possible de créer un périphérique entièrement personnalisé ou d'ajou
 
 ### Configuration
 -   désactiver tous les périphériques wifilightV2 sauf celui à tester
--   bien configurer le périphérique (adresse IP statique, LocalKey, Id)
+-   bien configurer le périphérique (adresse IP statique, localKey, Id)
 -   vérifier que le demon tourne, sinon le démarrer
 -   configurer les logs wifilightV2 en mode debug, redémarrer le demon
 -   effacer les logs
@@ -325,7 +336,7 @@ Permet de passer la lampe en mode couleur et de spécifier la couleur. Le plugin
 
 ## Remarques :
 -   rien dans les logs en provenance de l'appli tuya : mauvaise adresse IP ou périphérique qui ne renvoie pas son état
--   information cryptée (n'apparait pas en clair, message vide) : localkey incorrect
+-   information cryptée (n'apparait pas en clair, message vide) : localKey incorrect
 -   message d'erreur dans la réponse du périphérique (GW id invalid par exemple) : id ou cid incorrect
 -   la commande ne fonctionne pas : vérifier la commande
 
@@ -378,14 +389,14 @@ Le plugin tentera de se reconnecter au périphérique toutes les minutes ou tout
 
 A ce stade, la seul point testé et OK c'est que l'adresse IP est la bonne et que le périphérique est joignable
 
-## vérifier que la localkey est la bonne
+## vérifier que la localKey est la bonne
 
-1. renseigner la LocalKey sans espace et sans guillemets dans le champ Jeton du plugin. Vérifier plusieurs fois : la LocalKey doit être la même pour tous les périphériques de même adresse IP .Le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
+1. renseigner la localKey sans espace et sans guillemets dans le champ Jeton du plugin. Vérifier plusieurs fois : la localKey doit être la même pour tous les périphériques de même adresse IP .Le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
 2. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canal), le but est de ne pas mélanger tous les périphériques
 3. effacer les logs
 4. utiliser soit les boutons du périphérique physique , soit l'appli tuya pour changer l'état du périphérique. Noter qu'utiliser l'appli Tuya peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli Tuya après la connexion ci dessus au périphérique. A l'inverse il se peut que l'appli Tuya réponde très mal. Si le périphérique ne renvoie pas son état, la procédure se termine ici et le périphérique est incompatible avec le plugin.
 
-Exemple de log KO où la LocalKey n'est pas bonne car la trame reçue par le plugin n'est pas décodée :
+Exemple de log KO où la localKey n'est pas bonne car la trame reçue par le plugin n'est pas décodée :
 
     [2020-12-10 08:01:56][DEBUG] :    Receive after decode :pr-q;oTEJ^mhvoH]R,(0!]?E?N2KS ]OI!Empty
 
@@ -414,7 +425,7 @@ Pour un périphérique Zigbee on trouvera :
 
     [2020-12-10 08:14:34][DEBUG] :     Receive after decode :{"dps":{"1":"pir"},"cid":"bc33acfffe525145","t":1607584474}
 
-le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Vous pouvez alors vérifier la concordance avec la procédure permettant de trouver la LocalKey et le devId ou le cid.
+le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Vous pouvez alors vérifier la concordance avec la procédure permettant de trouver la localKey et le devId ou le cid.
 
 
 ## Un souci avec une commande action

@@ -276,6 +276,13 @@ Se connecter en http (avec un navigateur Web) à l'adresse IP de votre iBox. Les
 ## Configuration
 Il est indispensable d'activer le contrôle par réseau local via l'application Xiaomi Yeelight.
 
+## Coix de la version
+
+Le plugin permet le choix entre 2 versions :
+
+- V1 : la connexion entre le plugin et le périphérique n'est pas permanente, le temps de réaction est un peu plus important et le retour d'état n'est pas immédiat.
+- V2 : la connexion est mermanente donc plus réactif et retour d'état immédiat. Par contre cela entraine une plus grande sensibilité aux mauvaises connexions wifi et provoquant des déconnexion avecimpossibilité pendant quelques minutes d'accéder au périphérique.
+
 ## Mode Scène
 Il est possible de configurer les modes scène. Plusieurs modes scène sont préprogrammés dans le plugin mais il est possible d'ajouter d'autres modes scène.
 
@@ -289,11 +296,13 @@ S'inspirer des commandes préconfigurées pour créer ces modes scène suppléme
 Pour la syntaxe Yeelight, voir [ici](https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf)
 
 ## Etat
-Lors de l'activation du plugin et dès que le démon est lancé ainsi que toutes les minutes, le plugin recherche les ampoules alimentées et connectées à Jeedom.
+En V2, lors de l'activation du plugin et dès que le démon est lancé ainsi que toutes les minutes, le plugin recherche les ampoules alimentées et connectées à Jeedom.
 
 Dès que l'ampoule est trouvée, l'état de l'ampoule est remonté au plugin immédiatement.
 
 Noter que le plugin peut mettre jusqu'à 1 minute pour trouver une ampoule et 4 minutes pour trouver qu'un périphérique est déconnecté.
+
+En V1, le retour d'état peut prendre jusqu'à une minute.
 
 # TP-Link
 
