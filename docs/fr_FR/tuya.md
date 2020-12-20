@@ -61,6 +61,8 @@ Le cid est à copier dans le champ identifiant du périphérique du plugin (sans
 
 Si aucun message en clair n'apparait, c'est que la clé n'est pas bonne.
 
+Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être trouvé dans les logs. Les experts pourront retrouver les dps car ils sont affichés à côté de la localKey lors de la procédure pour trouver ces derniers.
+
 
 ## Configuration
 
@@ -78,6 +80,10 @@ Pour pouvoir utiliser le mode inclusion des périphériques connectés à la pas
 - Une commande info par dps est alors créée dans le périphérique. Elles permettent de connaitre les dps du périphérique inclus. Elle ne peuvent être utilisées pour faire fonctionner le périphérique mais sont d'une aide précieuse pour trouver la bonne configuration pré-enregistrées, pour l'adapter ou pour créer un périphérique personnalisé. Il faudra donc par la suite les supprimer.
 - Inclure un seul périphérique à la fois.
 - Pour exclure un périphérique, il suffit de le supprimer dans le plugin.
+
+## Périphériques alimentés par pile
+
+Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logique de la commande info correspondante doit contenir battery et get .
 
 # Tuya 
 
@@ -153,9 +159,15 @@ Devant la diversité des périphériques compatibles Tuya, il peut être nécess
 
 Le paragraphe suivant donne des éléments pour interpréter les logs wifilightV2 et configurer soit entièrement un périphérique ou modifier une configuration standard V3.
 
+## Périphériques alimentés par pile
+
+Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logique de la commande info correspondante doit contenir battery et get .
+
 ## Périphérique personnalisé
 
 Il est possible de créer un périphérique entièrement personnalisé ou d'ajouter des commandes personnalisées (en V3 uniquement) à un périphérique existant ou de modifier les n° de dps et paramètres d'une commande. L'interface propose de créer des commandes automatiquement, ceci a l'avantage de mieux faire fonctionner le retour d'état. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de solution.
+
+Nota : si le périphérique ne renvoie pas son état, le devId et les dps ne pourront pas être trouvé dans les logs. Les experts pourront retrouver les dps car ils sont affichés à côté de la localKey lors de la procédure pour trouver ces derniers.
 
 ### Configuration
 -   désactiver tous les périphériques wifilightV2 sauf celui à tester
@@ -344,12 +356,12 @@ Permet de passer la lampe en mode couleur et de spécifier la couleur. Le plugin
 
 Tests préalables :
 
-1. l'appli Tuya arrêtée
-2. l'adresse IP du périphérique est rendue fixe
+1. l'appli Tuya est arrêtée
+2. l'adresse IP du périphérique (Tuya ou passerelle Tuya/Zigbee) est rendue fixe
 
 ## vérifier que le périphérique est trouvé et connecté
 
-1. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canal), le but est de ne pas mélanger tous les périphériques
+1. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canaux), le but est de ne pas mélanger tous les périphériques
 2. effacer les logs
 3. sauvegarder le périphérique dans le plugin : cela a pour effet de lancer le demon qui teste toutes les minutes les périphériques wifilightV2
 
@@ -386,15 +398,16 @@ ou il n'y a plus de ping dans les logs pour cette adresse ip, cela correspond à
 
 Le plugin tentera de se reconnecter au périphérique toutes les minutes ou toutes les 3 minutes ce qui lui permettra de retrouver le périphérique s'il est rebranché. 
 
-
-A ce stade, la seul point testé et OK c'est que l'adresse IP est la bonne et que le périphérique est joignable
+A ce stade, la seul point testé et OK c'est que l'adresse IP est la bonne et que le périphérique est joignable.
 
 ## vérifier que la localKey est la bonne
 
-1. renseigner la localKey sans espace et sans guillemets dans le champ Jeton du plugin. Vérifier plusieurs fois : la localKey doit être la même pour tous les périphériques de même adresse IP .Le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
-2. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canal), le but est de ne pas mélanger tous les périphériques
+1. renseigner la localKey sans espace et sans guillemets dans le champ Jeton du plugin. Vérifier plusieurs fois : la localKey doit être la même pour tous les périphériques de même adresse IP. Le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
+2. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canaux), le but est de ne pas mélanger tous les périphériques.
 3. effacer les logs
-4. utiliser soit les boutons du périphérique physique , soit l'appli tuya pour changer l'état du périphérique. Noter qu'utiliser l'appli Tuya peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli Tuya après la connexion ci dessus au périphérique. A l'inverse il se peut que l'appli Tuya réponde très mal. Si le périphérique ne renvoie pas son état, la procédure se termine ici et le périphérique est incompatible avec le plugin.
+4. utiliser soit les boutons du périphérique physique, soit l'appli Tuya pour changer l'état du périphérique. Noter qu'utiliser l'appli Tuya peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli Tuya après la connexion ci dessus au périphérique. A l'inverse il se peut que l'appli Tuya réponde très mal. Si le périphérique ne renvoie pas son état, la procédure se termine ici et le périphérique est incompatible avec le plugin.
+
+Nota : les experts pourront retrouver les dps car ils sont affichés à côté de la localKey ou du cid (pour les périphériques Tuya/Zigbee) lors de la procédure pour trouver ces derniers.
 
 Exemple de log KO où la localKey n'est pas bonne car la trame reçue par le plugin n'est pas décodée :
 
