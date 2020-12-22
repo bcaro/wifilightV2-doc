@@ -17,8 +17,9 @@ todo :
 -   possibilité de modifier l'image du périphérique qui apparait dans la page des périphériques du plugin
 -   suppression de l'arrondi des commandes infos
 -	Pour les périphériques Tuya, l'option "suppression du retour d'état" est remplacée par l'option "interrogation de l'état" : la suppression n'est plus utile depuis la connexion permanente aux périphériques Tuya. Cette option est maintenant utilisée pour permettre d'interroger l'état toutes les 20s pour les périphériques qui ne renvoient pas complètement leur état, en particulier la consommation des prises électriques. 
--   Tuya/Zigbee : ajout d'un mode inclusion automatique des périphériques connectés à la passerelle.
--   Yeelight : ajout d'un nouveau type sans connexion permanente pour les périphériques dont la connexion réseau est de mauvaise qualité
+-   Tuya/Zigbee : ajout d'un mode inclusion automatique des périphériques connectés à la passerelle et ajout automatique des commands.
+-   Tuya : ajout automatique des commandes pour un périphérique non proposé en standard 
+-   Yeelight : ajout d'un nouveau type (V1) sans connexion permanente pour les périphériques dont la connexion réseau est de mauvaise qualité
 -   correction des bogues suite régressions de la 1.66
 
 1.66 - 2020-12-09
