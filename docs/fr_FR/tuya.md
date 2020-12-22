@@ -65,9 +65,9 @@ Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être
 
 ## Configuration
 
-Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les n° de dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Personnalisation des commandes](./tuya#tocAnchor-1-6-4) pour comprendre les commandes de la configuration par défaut.
+Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les n° de dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Périphérique personnalisé](./tuya#tocAnchor-1-6-4) pour comprendre les commandes de la configuration par défaut.
 
-Si le périphérique est complètement différent, il faut configurer manuellement le plugin en choisissant le sous-type "Personnalisé" et en se référant au paragraphe [Personnalisation des commandes](./tuya#tocAnchor-1-6-4). Partagez alors votre configuration sur le forum pour l'intégrer dans le plugin.
+Si le périphérique est complètement différent, il faut configurer manuellement le plugin en choisissant le sous-type "Personnalisé" et en se référant au paragraphe [Périphérique personnalisé](./tuya#tocAnchor-1-6-4). Partagez alors votre configuration sur le forum pour l'intégrer dans le plugin.
 
 
 ## Mode inclusion
@@ -200,6 +200,32 @@ Utiliser toutes les possibilités de l'application Tuya et bien repérer dans le
 
 Le plugin est équipé de boutons permettant de créer automatiquement les cas les plus courants, il suffira de modifier le n° de dps ou le paramètre automatiquement créés.
 
+### Cas d'un actionneur tout ou rien, true/false
+
+Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve par exemple :
+
+    Receive after decode :{devId:50701244cc50e37e9aff,dps:{"2":true,"8":true}}
+	
+Ici, le bouton off a été sélectionné sur le périphérique et on observe que le dps de n° 2 a changé.
+	
+    Receive after decode :{devId:50701244cc50e37e9aff,dps:{"2":false,"8":true}}
+
+Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps de n° 2 a changé.
+
+Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer les boutons ON/OFF. Il suffit de modifier le n° de dps en mettant 2 et le type binaire pour la commande info. Pour les paramètres mettre true et false, ne pas ajouter de guillemets.
+
+Pour configurer manuellement :
+
+-   Création d'une nouvelle commande action/défaut dans les commandes du périphérique :
+    *    Dans la colonne interface mettre ON comme nom du bouton
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ON, comme n° de dps : 2 (sans les doubles guillemets) et comme paramètre : true.
+-   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
+    *    Dans la colonne interface mettre OFF comme nom du bouton
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _OFF, comme n° de dps : 2 (sans les doubles guillemets) et comme paramètre : false .
+-   Créer une nouvelle commande info/binary dans les commandes du périphérique :
+    *    Dans la colonne interface mettre ETAT comme nom de l'info
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ETAT, comme n° de dps : 2 (sans les doubles guillemets) et rien dans paramètres.
+
 ### Cas d'un actionneur tout ou rien, tel que ON/OFF
 
 Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve par exemple :
@@ -212,7 +238,7 @@ Ici, le bouton off a été sélectionné sur le périphérique et on observe que
 
 Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps de n° 1 a changé.
 
-Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer les boutons ON/OFF. Il suffit de modifier le n° de dps en mettant 1. Pour les paramètres mettre "on" et "off", les guillemets compris car ils sont présents après le n° de dps 1.
+Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer les boutons ON/OFF. Il suffit de modifier le n° de dps en mettant 1 et le type autre pour la commande info. Pour les paramètres mettre "on" et "off", les guillemets compris car ils sont présents après le n° de dps 1.
 
 Pour configurer manuellement :
 
@@ -364,7 +390,7 @@ Permet de passer la lampe en mode couleur et de spécifier la couleur. Le plugin
 
 ## Mode apprentissage
 
-Pour lancer l'apprentissage, il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID, la procédure ne permet pas de les retrouver. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos. Pour terminer, cliquer sur le bouton « arrêter l’inclusion ». Pour plus d'information voir ici : [Mode inclusion] (la partie création automatique n'est pas disponible sur les périphériques Tuya non Zigbee).
+Pour lancer l'apprentissage, il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID, la procédure ne permet pas de les retrouver. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos. Pour terminer, cliquer sur le bouton « arrêter l’inclusion ». Pour plus d'information voir ici : [Mode inclusion](./tuya#tocAnchor-1-1-5) (la partie création automatique n'est pas disponible sur les périphériques Tuya non Zigbee).
 
 
 ## Remarques :
