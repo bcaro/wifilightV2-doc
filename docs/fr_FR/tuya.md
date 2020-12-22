@@ -226,7 +226,7 @@ Pour configurer manuellement :
     *    Dans la colonne interface mettre ETAT comme nom de l'info
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ETAT, comme n° de dps : 2 (sans les doubles guillemets) et rien dans paramètres.
 
-### Cas d'un actionneur tout ou rien, tel que ON/OFF
+### Cas d'un actionneur avec plusieurs modes
 
 Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve par exemple :
 
@@ -238,7 +238,11 @@ Ici, le bouton off a été sélectionné sur le périphérique et on observe que
 
 Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps de n° 1 a changé.
 
-Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer les boutons ON/OFF. Il suffit de modifier le n° de dps en mettant 1 et le type autre pour la commande info. Pour les paramètres mettre "on" et "off", les guillemets compris car ils sont présents après le n° de dps 1.
+    Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"stop","101":true}}
+
+Ici, le bouton stop a été sélectionné sur le périphérique et on observe que le dps de n° 1 a changé.
+
+Cliquer sur le bouton "Boutons" de l'interface afin de créer automatiquement les 4 commandes pour gérer les boutons ON/OFF/STOP. Il suffit de modifier le n° de dps en mettant 1. Pour les paramètres mettre "on", "off" et "stop", les guillemets compris car ils sont présents après le n° de dps 1.
 
 Pour configurer manuellement :
 
@@ -248,7 +252,10 @@ Pour configurer manuellement :
 -   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
     *    Dans la colonne interface mettre OFF comme nom du bouton
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _OFF, comme n° de dps : 1 (sans les doubles guillemets) et comme paramètre : "off" (si le off n'est pas entouré de guillemets, il faut les enlever).
--   Créer une nouvelle commande info/binary dans les commandes du périphérique :
+-   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
+    *    Dans la colonne interface mettre STOP comme nom du bouton
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _STOP, comme n° de dps : 1 (sans les doubles guillemets) et comme paramètre : "stop" (si le stop n'est pas entouré de guillemets, il faut les enlever).
+-   Créer une nouvelle commande info/autre dans les commandes du périphérique :
     *    Dans la colonne interface mettre ETAT comme nom de l'info
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ETAT, comme n° de dps : 1 (sans les doubles guillemets) et rien dans paramètres.
 
