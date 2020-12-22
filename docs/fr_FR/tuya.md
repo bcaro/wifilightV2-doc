@@ -74,11 +74,28 @@ Si le périphérique est complètement différent, il faut configurer manuelleme
 
 Pour pouvoir utiliser le mode inclusion des périphériques connectés à la passerelle, il faut avoir au préalable connecté et configuré correctement une et une seule passerelle en utilisant le sous-type Gateway Hub Tuya/Zigbee avec son adresse IP et sa localKey. Le périphérique doit retourner son état, si ce n'est pas le cas, la procédure ne pourra pas fonctionner. Si 2 passerelles sont connectées, le plugin utilisera les caractéristiques de l'une d'elles sans savoir laquelle.
 
-- Cliquer sur le mode inclusion et agir sur le périphérique ou modifier l'état du périphérique avec l'appli Tuya (mais l'usage de l'appli peut bloquer le périphérique).
-- Quand le périphérique est détecté, le plugin interroge son état et crée un nouveau wifilightV2 avec l'adresse IP et la localKey de la passerelle, le cid est automatiquement renseigné et le canal est mis à 999 (il faudra le changer avec une valeur entre 1 et 99 avant la sauvegarde).
-- Une commande info par dps est alors créée dans le périphérique. Elles permettent de connaitre les dps du périphérique inclus. Elles ne peuvent être utilisées pour faire fonctionner le périphérique mais sont d'une aide précieuse pour trouver la bonne configuration pré-enregistrées, pour l'adapter ou pour créer un périphérique personnalisé. Il faudra donc par la suite les supprimer.
-- Inclure un seul périphérique à la fois.
-- Pour exclure un périphérique, il suffit de le supprimer dans le plugin.
+- Cliquer sur le mode inclusion puis agir sur le périphérique ou modifier l'état du périphérique avec l'appli Tuya (mais l'usage de l'appli peut bloquer le périphérique).
+- Quand le périphérique est détecté, le plugin interroge son état et crée un nouveau wifilightV2 avec l'adresse IP et la localKey de la passerelle, le cid est automatiquement renseigné et le canal est mis à 999 (il faudra le changer avec une valeur entre 1 et 100 avant la sauvegarde).
+- Une commande info par dps est alors créée dans le périphérique ainsi qu'autant de commandes action que de valeurs différentes reçues pour ce dps.
+- pendant l'inclusion, il faut agir sur toutes les commandes du périphérique pour créer tous les dps possibles.
+- cliquer ensuite sur le bouton arrêt de l'inclusion.
+- éditer le périphérique, changer son n° de canal et le sauvegarder.
+
+Il faut inclure un seul périphérique à la fois. Pour exclure un périphérique, il suffit de le supprimer dans le plugin.
+
+Ce mode est uniquement là pour aider la configuration personnalisée d'un nouveau périphérique qui n'est pas proposé par le plugin. L'utilisation de ce mode ne peut donner un périphérique complètement fonctionnel.
+
+Nota :
+- Si au dps correspond uniquement une info dans le périphérique (par exemple 3 valeurs possibles d'un même bouton), il faudra supprimer les 3 commandes actions créées automatiquement. Cependant, les commandes actions ont comme paramètre toutes les valeurs récupérées par le plugin et permettent de connaitre les valeurs prises par l'info du dps.
+- Pour les dps numériques, une commande info et une commande action numérique sont créés automatiquement, si seule l'info est utile (cas de la température d'un capteur) il faut supprimer la commande action.
+- Dans le cas d'un dps contenant true ou false, une commande info et deux commandes action (ON et OFF) sont créés automatiquement, si seule l'info est utile (cas d'un capteur de présence) il faut supprimer les commandes actions.
+- Pour les dps contenant une info 0/1 pour un actionneur, comme une prise électrique, le plugin ne pourra pas différentier avec une info numérique et créera une info et une action numérique et non une info et 2 actions ON/OFF.
+- pour des dps contenant une info de couleur, le plugin créera une commande info et une commande action pour chaque couleur sélectionnée. L'intérêt pourra être de garder la commande action pour générer une couleur particulière, ce sera aussi utile pour identifier le codage de la couleur.
+- de manière générale, le sous-type créé par le plugin pourra ne pas correspondre à la donnée, il faudra alors faire des tests en le modifiant.
+
+## Mode apprentissage
+
+Cocher la case « Mode inclusion » du périphérique et le sauvegarder pour ajouter les commandes oubliées dans la phase précédente. Terminer en cliquant sur le bouton « arrêter l’inclusion ».
 
 ## Périphériques alimentés par pile
 
@@ -345,6 +362,11 @@ Créer une commande action/color, mettre 3\* dans le champ n° de dps et mettre 
    
 Permet de passer la lampe en mode couleur et de spécifier la couleur. Le plugin utilisera l'intensité et la saturation des curseurs intensité et saturation de n° de dps 3.
 
+## Mode apprentissage
+
+Pour lancer l'apprentissage, il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID, la procédure ne permet pas de les retrouver. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos. Pour terminer, cliquer sur le bouton « arrêter l’inclusion ». Pour plus d'information voir ici : [Mode inclusion] (la partie création automatique n'est pas disponible sur les périphériques Tuya non Zigbee).
+
+
 ## Remarques :
 -   rien dans les logs en provenance de l'appli tuya : mauvaise adresse IP ou périphérique qui ne renvoie pas son état
 -   information cryptée (n'apparait pas en clair, message vide) : localKey incorrect
@@ -455,5 +477,6 @@ le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la 
 Sans application des tests ci-dessus et de l'envoi des logs associés, la réponse pénible à écrire et probablement pénible à lire sera : lire la doc. Notez que rares sont les cas où le passage par les 3 étapes ci-dessous ne permet pas de résoudre le problème.
 
 [Retour à la documentation générale](./index.md)
+
 
 
