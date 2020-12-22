@@ -65,9 +65,9 @@ Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être
 
 ## Configuration
 
-Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les n° de dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Périphérique personnalisé](./tuya#tocAnchor-1-6-4) pour comprendre les commandes de la configuration par défaut.
+Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les n° de dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Périphérique personnalisé](./tuya#tocAnchor-1-9-5) pour comprendre les commandes de la configuration par défaut.
 
-Si le périphérique est complètement différent, il faut configurer manuellement le plugin en choisissant le sous-type "Personnalisé" et en se référant au paragraphe [Périphérique personnalisé](./tuya#tocAnchor-1-6-4). Partagez alors votre configuration sur le forum pour l'intégrer dans le plugin.
+Si le périphérique est complètement différent, il faut configurer manuellement le plugin en choisissant le sous-type "Personnalisé" et en se référant au paragraphe [Périphérique personnalisé](./tuya#tocAnchor-1-9-5). Partagez alors votre configuration sur le forum pour l'intégrer dans le plugin.
 
 
 ## Mode inclusion
