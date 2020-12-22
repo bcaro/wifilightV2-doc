@@ -212,7 +212,7 @@ Ici, le bouton off a été sélectionné sur le périphérique et on observe que
 
 Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps de n° 2 a changé.
 
-Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer les boutons ON/OFF. Il suffit de modifier le n° de dps en mettant 2 et le type binaire pour la commande info. Pour les paramètres mettre true et false, ne pas ajouter de guillemets.
+Cliquer sur le bouton ON/OFF de l'interface afin de créer automatiquement les 3 commandes pour gérer les boutons ON/OFF. Il suffit de modifier le n° de dps en mettant 2. Pour les paramètres mettre true et false, ne pas ajouter de guillemets.
 
 Pour configurer manuellement :
 
