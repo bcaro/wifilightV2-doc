@@ -126,9 +126,9 @@ Les capteurs de présence et d'ouverture ne sont pas compatibles car ils ne dial
 
 Le plugin teste les périphériques (mais ils doivent être ajoutés manuellement) et affiche un message dans le centre de messages lorsqu'un périphérique a été configuré avec le mauvais firmware.
 
-- le type V1 correspond aux périphériques en firmware 1.0
-- le type V2 correspond aux périphériques en firmware 2.0 : possibilité d'ajouter des commandes personnalisées
-- le type V3 correspond aux périphériques en firmware 2.0 : possibilité en plus de modifier le n° de dps et les paramètres de dps de tous les périphériques présents en V3 afin de les adapter au besoin. Pour ce type, la notion de canal a disparue et toutes les commandes de prises électriques sont créées dans le même périphérique.
+- le type V1 correspond aux périphériques en firmware 1.0 : il n'y aura pas de nouveaux ajouts de périphériques.
+- le type V2 correspond aux périphériques en firmware 2.0 : possibilité d'ajouter des commandes personnalisées, il n'y aura pas de nouveaux ajouts de périphériques.
+- le type V3 correspond aux périphériques en firmware 2.0 : possibilité en plus de modifier le n° de dps et les paramètres de dps de tous les périphériques présents en V3 afin de les adapter au besoin. Pour ce type, la notion de canal a disparue et toutes les commandes de prises électriques sont créées dans le même périphérique. Cette version est aussi munie d'un mode apprentissage des dps pour les périphériques non proposés par le plugin.
 
 En V1 et V2, pour les périphériques multicanaux (comme les prises multiples), il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal. Le n° de canal correspond au n° de prise (USB en plus si présent) et par défaut au n° de dps.
 
@@ -397,7 +397,7 @@ Permet de passer la lampe en mode couleur et de spécifier la couleur. Le plugin
 
 ## Mode apprentissage
 
-Pour lancer l'apprentissage, il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID, la procédure ne permet pas de les retrouver. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos. Pour terminer, cliquer sur le bouton « arrêter l’inclusion ». Pour plus d'information voir ici : [Mode inclusion](./tuya#tocAnchor-1-1-5) (la partie création automatique n'est pas disponible sur les périphériques Tuya non Zigbee).
+Pour lancer l'apprentissage, disponible uniquement en V3,  il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID, la procédure ne permet pas de les retrouver. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos. Pour terminer, cliquer sur le bouton « arrêter l’inclusion ». Pour plus d'information voir ici : [Mode inclusion](./tuya#tocAnchor-1-1-5) (la partie création automatique n'est pas disponible sur les périphériques Tuya non Zigbee).
 
 
 ## Remarques :
