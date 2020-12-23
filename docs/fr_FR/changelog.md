@@ -8,18 +8,20 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
 todo : 
-- ajout de périphériques Tuya/Zigbee (diffuseur, capteurs divers)
+- ajout de périphériques Tuya/Zigbee (diffuseur, capteurs divers) en fonction des retours utilisateurs
+- apprentissage des couleurs Tuya
 
-1.67 - 2020-12-14 (beta)
+1.67 - 2020-12-23 (beta)
 -   Tuya : ajout sirène Action LSC Smart
 -   modifications des images et interfaces pour compatibilité dark mode V4
 -	ajout de l'information de batterie dans l'onglet équipements pour les périphériques qui renvoient cette information
 -   possibilité de modifier l'image du périphérique qui apparait dans la page des périphériques du plugin
 -   suppression de l'arrondi des commandes infos
 -	Pour les périphériques Tuya, l'option "suppression du retour d'état" est remplacée par l'option "interrogation de l'état" : la suppression n'est plus utile depuis la connexion permanente aux périphériques Tuya. Cette option est maintenant utilisée pour permettre d'interroger l'état toutes les 20s pour les périphériques qui ne renvoient pas complètement leur état, en particulier la consommation des prises électriques. 
--   Tuya/Zigbee : ajout d'un mode inclusion automatique des périphériques connectés à la passerelle et ajout automatique des commands.
--   Tuya : ajout automatique des commandes pour un périphérique non proposé en standard 
--   Yeelight : ajout d'un nouveau type (V1) sans connexion permanente pour les périphériques dont la connexion réseau est de mauvaise qualité
+-   Tuya/Zigbee : ajout d'un mode inclusion automatique des périphériques connectés à la passerelle et ajout automatique des commandes.
+-   Tuya : après configuration manuelle (IP? localKey, devId) : ajout automatique par aprpentissage des commandes pour un périphérique non proposé en standard
+- dans les 2 cas précédents, nécessite d'enregistrer le périphérique afin de permettre l'apprentissage des dps
+-   Yeelight : ajout d'un nouveau type (V1) sans connexion permanente pour les périphériques dont la connexion réseau est de mauvaise qualité. Les configurationde la version 1.66 sont renommées V2 mais il n'y a rien à modifier.
 -   correction des bogues suite régressions de la 1.66
 
 1.66 - 2020-12-09
