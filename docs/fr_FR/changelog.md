@@ -22,9 +22,9 @@ Avant application de cette version, faire une sauvegarde de votre jeedom. Elle a
 -   suppression de l'arrondi des commandes infos
 -	Pour les périphériques Tuya, l'option "suppression du retour d'état" est remplacée par l'option "interrogation de l'état" : la suppression n'est plus utile depuis la connexion permanente aux périphériques Tuya. Cette option est maintenant utilisée pour permettre d'interroger l'état toutes les 20s pour les périphériques qui ne renvoient pas complètement leur état, en particulier la consommation des prises électriques. 
 -   Tuya/Zigbee : ajout d'un mode inclusion automatique des périphériques connectés à la passerelle et ajout automatique des commandes.
--   Tuya : après configuration manuelle (IP? localKey, devId) : ajout automatique par apprentissage des commandes pour un périphérique non proposé en standard
--   dans les 2 cas précédents, nécessite d'enregistrer le périphérique créé dans ne version précédente du plugin afin de permettre l'apprentissage des dps
--   Yeelight : ajout d'un nouveau type (V1) sans connexion permanente pour les périphériques dont la connexion réseau est de mauvaise qualité. Les configuration de la version 1.66 sont renommées V2 mais il n'y a rien à modifier.
+-   Tuya : après configuration manuelle (IP, localKey, devId) : ajout automatique par apprentissage des commandes pour un périphérique non proposé en standard
+-   dans les 2 cas précédents, nécessite d'enregistrer le périphérique créé dans une version précédente du plugin afin de permettre l'apprentissage des dps
+-   Yeelight : ajout d'un nouveau type (V1) sans connexion permanente pour les périphériques dont la connexion réseau est de mauvaise qualité. Les configuration de la version 1.66 et inférieures sont renommées V2 mais il n'y a rien à modifier.
 -   correction des bogues suite aux régressions de la 1.66
 
 1.66 - 2020-12-09
