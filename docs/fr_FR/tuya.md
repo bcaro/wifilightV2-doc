@@ -32,11 +32,21 @@ Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le p
 
 Il faut créer un équipement, avec la même adresse IP et la même clé, pour la passerelle et chaque périphérique connecté à la passerelle et lui attribuer un n° de canal (le numéro entre 1 et 100 est sans importance mais chaque périphérique doit avoir un n° de canal différent).
 
-Si l'application Tuya est connectée au périphérique, avant le plugin, le plugin ne pourra pas y accéder.
+Si l'application Tuya est connectée au périphérique, avant le plugin, le plugin ne pourra généralement pas y accéder.
 
 L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s même si le périphérique ne le renvoie pas. A utiliser pour les prises électriques qui ne renvoient pas régulièrement la consommation mais ne pas utiliser pour les périphériques à piles sous peine de les vider.
 
-## Clé et identifiant passerelle
+Il y a 5 méthodes pour créer un périphérique :
+- Utiliser une configuration standard proposées par le plugin, c'est la plus simple si votre périphérique correspond à l'un de ceux proposés
+- Modifier une configuration standard proche du périphérique à contrôler en modifiant les dps, les paramètres et les types là où ils sont différents, ceci nécessite de consulter les logs du plugin
+- Créer entièrement la configuration, ce qui nécessite de consulter les logs du plugin
+- Utiliser les boutons prédéfinis pour créer automatiquement les commandes mais sans les configurer, ce qui nécessite de consulter les logs
+- Utiliser le mode inclusion, complété par l'apprentissage ce qui crée automatiquement les commandes dans le périphérique. Cette méthode permet de récupérer toutes les informations en provenance du périphérique physique sans consulter les logs. Il faudra supprimer les commandes inutiles.
+
+Les 4 premières méthodes peuvent être mixées ainsi que les 4 dernières. La première et la dernière méthode sont recommandées.
+
+
+## Clé et identifiant de la passerelle
 
 Il est indispensable de récupérer la clé locale (localKey) et le devId de la passerelle permettant au plugin de dialoguer avec les périphériques.
 
@@ -46,12 +56,12 @@ Si la passerelle est désinstallée puis réinstallée dans l'application mobile
 
 Aucune aide ne sera donnée pour récupérer la clé.
 
-La clé des périphériques connectés à la passerelle est la même que celle de la passerelle.
+La clé et l'adresse IP des périphériques connectés à la passerelle est la même que celle de la passerelle.
 
 
-## Clé et identifiant périphérique
+## Clé et identifiant du périphérique
 
-Configurer le périphérique et renseigner la clé trouvée ci-dessus. Il faut ensuite modifier l'état du périphérique avec l'application fournie par le constructeur de la passerelle et consulter les logs.
+Configurer le périphérique et renseigner la clé trouvée ci-dessus ainsi que l'adresse IP qui est la même que celle de la passerelle. Il faut ensuite modifier l'état du périphérique avec l'application fournie par le constructeur de la passerelle et consulter les logs.
 Vous trouverez une information comme celle-ci :
     
     Receive after decode :{"dps":{"161":"Esc"},"cid":"ec1bbdfffe781b28","t":1589301302}
@@ -88,6 +98,7 @@ Ce mode est uniquement là pour aider la configuration personnalisée d'un nouve
 Nota :
 - Si au dps correspond uniquement une info dans le périphérique (par exemple 3 valeurs possibles d'un même bouton), il faudra supprimer les 3 commandes actions créées automatiquement. Cependant, les commandes actions ont comme paramètre toutes les valeurs récupérées par le plugin et permettent de connaitre les valeurs prises par l'info du dps.
 - Pour les dps numériques, une commande info et une commande action numérique sont créés automatiquement, si seule l'info est utile (cas de la température d'un capteur) il faut supprimer la commande action.
+- Pour les dps numériques qui prennent les valeurs 0 ou 1, le plugin va créer 3 commandes ETAT/ON/OFF. Mais si la valeur numérique qui arrive au plugin est plus grande que 1, le plugin créera aussi les commandes info et action numériques, il faudra supprimer les commandes ETAT/ON/OFF puisque ce dps est numérique.
 - Dans le cas d'un dps contenant true ou false, une commande info et deux commandes action (ON et OFF) sont créés automatiquement, si seule l'info est utile (cas d'un capteur de présence) il faut supprimer les commandes actions.
 - Pour les dps contenant une info 0/1 pour un actionneur, comme une prise électrique, le plugin ne pourra pas différentier avec une info numérique et créera une info et une action numérique et non une info et 2 actions ON/OFF.
 - pour des dps contenant une info de couleur, le plugin créera une commande info et une commande action pour chaque couleur sélectionnée. L'intérêt pourra être de garder la commande action pour générer une couleur particulière, ce sera aussi utile pour identifier le codage de la couleur.
@@ -134,10 +145,18 @@ En V1 et V2, pour les périphériques multicanaux (comme les prises multiples), 
 
 Dans les 3 cas, testez de préférence les configurations standards avant de créer manuellement les commandes.
 
-Si l'application Tuya est connectée au périphérique, avant le plugin, le plugin ne pourra pas y accéder.
+Si l'application Tuya est connectée au périphérique, avant le plugin, le plugin ne pourra généralement pas y accéder.
 
-L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s même si le périphérique ne le renvoie pas. A utiliser pour les prises électriques qui ne renvoient pas régulièrement la consomation mais ne pas utiliser pour les périphériques à piles sous peine de les vider.
+L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s même si le périphérique ne le renvoie pas. A utiliser pour les prises électriques qui ne renvoient pas régulièrement la consommation mais ne pas utiliser pour les périphériques à piles sous peine de les vider.
 
+Il y a 5 méthodes pour créer un périphérique :
+- Utiliser une configuration standard proposées par le plugin, c'est la plus simple si votre périphérique correspond à l'un de ceux proposés
+- Modifier une configuration standard proche du périphérique à contrôler en modifiant les dps, les paramètres et les types là où ils sont différents, ceci nécessite de consulter les logs du plugin
+- Créer entièrement la configuration, ce qui nécessite de consulter les logs du plugin
+- Utiliser les boutons prédéfinis pour créer automatiquement les commandes mais sans les configurer, ce qui nécessite de consulter les logs
+- Utiliser l'apprentissage ce qui crée automatiquement les commandes et lers paramètres dans le périphérique. Cette méthode permet de récupérer toutes les informations en provenance du périphérique physique sans consulter les logs. Il faudra supprimer les commandes inutiles.
+
+Les 4 premières méthodes peuvent être mixées ainsi que les 4 dernières. La première et la dernière méthode sont recommandées.
 
 ## Configuration du périphérique
 
@@ -397,7 +416,7 @@ Permet de passer la lampe en mode couleur et de spécifier la couleur. Le plugin
 
 ## Mode apprentissage
 
-Pour lancer l'apprentissage, disponible uniquement en V3,  il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID, la procédure ne permet pas de les retrouver. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos. Pour terminer, cliquer sur le bouton « arrêter l’inclusion ». Pour plus d'information voir ici : [Mode inclusion](./tuya#tocAnchor-1-1-5) (la partie création automatique n'est pas disponible sur les périphériques Tuya non Zigbee).
+Pour lancer l'apprentissage, disponible uniquement en V3,  il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID car la procédure ne permet pas de les retrouver. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos. Pour terminer, cliquer sur le bouton « arrêter l’inclusion ». Pour plus d'information voir ici : [Mode inclusion](./tuya#tocAnchor-1-1-5) (la partie création automatique n'est pas disponible sur les périphériques Tuya non Zigbee).
 
 
 ## Remarques :
