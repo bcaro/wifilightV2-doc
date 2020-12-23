@@ -13,8 +13,7 @@ todo :
 
 1.67 - 2020-12-23
 
-Avant application de cette version, faire une sauvegarde de votre jeedom. Elle a été testée avec sur les périphériques Tuya, Tuya/Zigbee, Milight, Yeelight, Philips, Tplink. Pour les autres produits il n'y a pas eu de retour sur les test beta
-Tuya été testé sur des configurations allant jusque 16 périphériques. 
+Avant application de cette version, faire une sauvegarde de votre jeedom. Elle a été testée avec sur les périphériques Tuya, Tuya/Zigbee, Milight, Yeelight, Philips, Tplink. Pour les autres produits il n'y a pas eu de retour sur les tests beta. Tuya été testé sur des configurations allant jusque 16 périphériques. Le mode onclusion a été testé sur plusieurs périphériques dont un avec 16 dps.
 
 -   Tuya : ajout sirène Action LSC Smart
 -   modifications des images et interfaces pour compatibilité dark mode V4
