@@ -281,7 +281,7 @@ Il est indispensable d'activer le contrôle par réseau local via l'application 
 Le plugin permet le choix entre 2 versions :
 
 - V1 : la connexion entre le plugin et le périphérique n'est pas permanente, le temps de réaction est un peu plus important et le retour d'état n'est pas immédiat.
-- V2 : la connexion est mermanente donc plus réactif et retour d'état immédiat. Par contre cela entraine une plus grande sensibilité aux mauvaises connexions wifi et provoquant des déconnexion avecimpossibilité pendant quelques minutes d'accéder au périphérique.
+- V2 : la connexion est permanente donc le plugin est plus réactif et le retour d'état est immédiat. Par contre cela entraine une plus grande sensibilité aux mauvaises connexions wifi, provoquant des déconnexions avec impossibilité pendant quelques minutes d'accéder au périphérique.
 
 ## Mode Scène
 Il est possible de configurer les modes scène. Plusieurs modes scène sont préprogrammés dans le plugin mais il est possible d'ajouter d'autres modes scène.
