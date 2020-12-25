@@ -191,10 +191,10 @@ Pour les autres prises, la valeur 20;18;19 est mise par défaut.
 
 ## Mode apprentissage
 
-Pour lancer l'apprentissage, disponible uniquement en V3,  il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID car la procédure ne permet pas de les retrouver. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos. Pour terminer, cliquer sur le bouton « arrêter l’inclusion ». Pour plus d'information voir ici : [Mode inclusion](./tuya#tocAnchor-1-1-5) (la partie création automatique n'est pas disponible sur les périphériques Tuya non Zigbee).
+Pour lancer l'apprentissage, disponible uniquement en V3,  il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID car la procédure ne permet pas de les retrouver. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos. Pour terminer, cliquer sur le bouton « arrêter l’inclusion ». Pour plus d'information voir ici : [Mode inclusion](./tuya#tocAnchor-1-1-5) (la partie décrivant la création automatique du périphérique n'est pas disponible sur les périphériques Tuya non Zigbee).
 
 
-##Personnalisation des commandes
+## Personnalisation des commandes
 
 Devant la diversité des périphériques compatibles Tuya, il peut être nécessaire de créer des commandes personnalisées. Avant de passer aux commandes personnalisées, tester d'abord les configurations standard qui fonctionnent dans la majorité des cas. Ces configurations standards peuvent, en V3, être modifiées pour ajuster le n° de dps et le paramètre afin qu'ils correspondent au périphérique.
 
