@@ -28,7 +28,7 @@ Avant application de cette version, faire une sauvegarde de votre jeedom. Elle a
 -   Tuya/Zigbee : ajout d'un mode inclusion automatique des périphériques connectés à la passerelle et ajout automatique des commandes.
 -   Tuya : après configuration manuelle (IP, localKey, devId) : ajout automatique par apprentissage des commandes pour un périphérique non proposé en standard
 -   dans les 2 cas précédents, nécessite d'enregistrer le périphérique créé dans une version précédente du plugin afin de permettre l'apprentissage des dps
--   Yeelight : ajout d'un nouveau type (V1) sans connexion permanente pour les périphériques dont la connexion réseau est de mauvaise qualité. Les configuration de la version 1.66 et inférieures sont renommées V2 mais il n'y a rien à modifier.
+-   Yeelight : ajout d'un nouveau type (V1) sans connexion permanente pour les périphériques dont la connexion réseau est de mauvaise qualité. Les configurations de la version 1.66 et inférieures sont renommées V2 mais il n'y a rien à modifier.
 -   correction des bogues suite aux régressions de la 1.66
 
 1.66 - 2020-12-09
