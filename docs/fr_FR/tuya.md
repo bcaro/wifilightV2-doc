@@ -98,9 +98,9 @@ Ce mode est uniquement là pour aider la configuration personnalisée d'un nouve
 Nota :
 - Si au dps correspond uniquement une info dans le périphérique (par exemple 3 valeurs possibles d'un même bouton), il faudra supprimer les 3 commandes actions créées automatiquement. Cependant, les commandes actions ont comme paramètre toutes les valeurs récupérées par le plugin et permettent de connaitre les valeurs prises par l'info du dps.
 - Pour les dps numériques, une commande info et une commande action numérique sont créés automatiquement, si seule l'info est utile (cas de la température d'un capteur) il faut supprimer la commande action.
-- Pour les dps numériques qui prennent les valeurs 0 ou 1, le plugin va créer 3 commandes ETAT/ON/OFF. Mais si la valeur numérique qui arrive au plugin est plus grande que 1, le plugin créera aussi les commandes info et action numériques, il faudra supprimer les commandes ETAT/ON/OFF puisque ce dps est numérique.
+- Pour les dps contenant une info 0/1 pour un actionneur, comme une prise électrique, le plugin va créer une info et 2 actions ON/OFF.
+- Pour les dps numériques, le plugin créera une commande info et action numériques. Si les valeurs numériques prennent les valeurs 0 ou 1 pendant l'apprentissage, le plugin va aussi créer 3 commandes ETAT/ON/OFF, il faudra les supprimer.
 - Dans le cas d'un dps contenant true ou false, une commande info et deux commandes action (ON et OFF) sont créés automatiquement, si seule l'info est utile (cas d'un capteur de présence) il faut supprimer les commandes actions.
-- Pour les dps contenant une info 0/1 pour un actionneur, comme une prise électrique, le plugin ne pourra pas différentier avec une info numérique et créera une info et une action numérique et non une info et 2 actions ON/OFF.
 - pour des dps contenant une info de couleur, le plugin créera une commande info et une commande action pour chaque couleur sélectionnée. L'intérêt pourra être de garder la commande action pour générer une couleur particulière, ce sera aussi utile pour identifier le codage de la couleur.
 - de manière générale, le sous-type créé par le plugin pourra ne pas correspondre à la donnée, il faudra alors faire des tests en le modifiant.
 
@@ -154,7 +154,7 @@ Il y a 5 méthodes pour créer un périphérique :
 - Modifier une configuration standard proche du périphérique à contrôler en modifiant les dps, les paramètres et les types là où ils sont différents, ceci nécessite de consulter les logs du plugin
 - Créer entièrement la configuration, ce qui nécessite de consulter les logs du plugin
 - Utiliser les boutons prédéfinis pour créer automatiquement les commandes mais sans les configurer, ce qui nécessite de consulter les logs
-- Utiliser l'apprentissage ce qui crée automatiquement les commandes et lers paramètres dans le périphérique. Cette méthode permet de récupérer toutes les informations en provenance du périphérique physique sans consulter les logs. Il faudra supprimer les commandes inutiles.
+- Utiliser l'apprentissage ce qui crée automatiquement les commandes et les paramètres dans le périphérique. Cette méthode permet de récupérer toutes les informations en provenance du périphérique physique sans consulter les logs. Il faudra supprimer les commandes inutiles.
 
 Les 4 premières méthodes peuvent être mixées ainsi que les 4 dernières. La première et la dernière méthode sont recommandées.
 
@@ -187,6 +187,12 @@ Pour les plugs 1 prise, en général il faut : 6;4;5 (mis par défaut par le plu
 Pour les plugs 2 prises, en général il faut : 9;7;8 (mis par défaut par le plugin).
 
 Pour les autres prises, la valeur 20;18;19 est mise par défaut.
+
+
+## Mode apprentissage
+
+Pour lancer l'apprentissage, disponible uniquement en V3,  il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID car la procédure ne permet pas de les retrouver. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos. Pour terminer, cliquer sur le bouton « arrêter l’inclusion ». Pour plus d'information voir ici : [Mode inclusion](./tuya#tocAnchor-1-1-5) (la partie création automatique n'est pas disponible sur les périphériques Tuya non Zigbee).
+
 
 ##Personnalisation des commandes
 
@@ -413,11 +419,6 @@ Créer une commande action/color, mettre 3\* dans le champ n° de dps et mettre 
     "2":"color","3":"#colorR2G2B200H2S2V2_255#"
    
 Permet de passer la lampe en mode couleur et de spécifier la couleur. Le plugin utilisera l'intensité et la saturation des curseurs intensité et saturation de n° de dps 3.
-
-## Mode apprentissage
-
-Pour lancer l'apprentissage, disponible uniquement en V3,  il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID car la procédure ne permet pas de les retrouver. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos. Pour terminer, cliquer sur le bouton « arrêter l’inclusion ». Pour plus d'information voir ici : [Mode inclusion](./tuya#tocAnchor-1-1-5) (la partie création automatique n'est pas disponible sur les périphériques Tuya non Zigbee).
-
 
 ## Remarques :
 -   rien dans les logs en provenance de l'appli tuya : mauvaise adresse IP ou périphérique qui ne renvoie pas son état

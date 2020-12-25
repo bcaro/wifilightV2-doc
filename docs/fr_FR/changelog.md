@@ -11,6 +11,10 @@ todo :
 - ajout de périphériques Tuya/Zigbee (diffuseur, capteurs divers) en fonction des retours utilisateurs
 - apprentissage des couleurs Tuya
 
+1.68 - 2020-12-28 (beta)
+
+-   Tuya : suppression de la notion de canal pour Zigbee/Tuya et Tuya V3 (enfin)
+
 1.67 - 2020-12-23
 
 Avant application de cette version, faire une sauvegarde de votre jeedom. Elle a été testée avec sur les périphériques Tuya, Tuya/Zigbee, Milight, Yeelight, Philips, Tplink. Pour les autres produits il n'y a pas eu de retour sur les tests beta. Tuya été testé sur des configurations allant jusque 16 périphériques. Le mode inclusion a été testé sur plusieurs périphériques dont un avec 16 dps.
