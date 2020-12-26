@@ -14,6 +14,7 @@ todo :
 1.68 - 2020-12-28 (beta)
 
 -   Tuya : suppression de la notion de canal pour Zigbee/Tuya et Tuya V3 (enfin)
+-   Milight : les ibox1/2 ne sont plus commercialisées et remplacées par la miBoxer qui est 100% cloud. Pour que le plugin puisse continuer à exploiter les lampes milight ou que vous puissiez remplacer une ibox1/2 défaillante, il est possible d'utiliser une [box DIY proposée par Sidoh](https://github.com/sidoh/esp8266_milight_hub) . Le plugin est compatible avec cette box car elle reproduit le protocole Mi.Light mais il implante aussi le proctocole spécifique à cette box DIY qui est plus simple et plus performant.
 
 1.67 - 2020-12-23
 

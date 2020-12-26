@@ -40,7 +40,7 @@ Il y a 5 méthodes pour créer un périphérique :
 - Utiliser une configuration standard proposées par le plugin, c'est la plus simple si votre périphérique correspond à l'un de ceux proposés
 - Modifier une configuration standard proche du périphérique à contrôler en modifiant les dps, les paramètres et les types là où ils sont différents, ceci nécessite de consulter les logs du plugin
 - Créer entièrement la configuration, ce qui nécessite de consulter les logs du plugin
-- Utiliser les boutons prédéfinis pour créer automatiquement les commandes mais sans les configurer, ce qui nécessite de consulter les logs
+- Utiliser les boutons prédéfinis pour créer les commandes à partir de la configuration personnalisée ou en ajoutant des commandes à une configuration standard. Il faudra configurer les commandes, ce qui nécessite de consulter les logs
 - Utiliser le mode inclusion, complété par l'apprentissage ce qui crée automatiquement les commandes dans le périphérique. Cette méthode permet de récupérer toutes les informations en provenance du périphérique physique sans consulter les logs. Il faudra supprimer les commandes inutiles.
 
 Les 4 premières méthodes peuvent être mixées ainsi que les 4 dernières. La première et la dernière méthode sont recommandées.
@@ -153,7 +153,7 @@ Il y a 5 méthodes pour créer un périphérique :
 - Utiliser une configuration standard proposées par le plugin, c'est la plus simple si votre périphérique correspond à l'un de ceux proposés
 - Modifier une configuration standard proche du périphérique à contrôler en modifiant les dps, les paramètres et les types là où ils sont différents, ceci nécessite de consulter les logs du plugin
 - Créer entièrement la configuration, ce qui nécessite de consulter les logs du plugin
-- Utiliser les boutons prédéfinis pour créer automatiquement les commandes mais sans les configurer, ce qui nécessite de consulter les logs
+- Utiliser les boutons prédéfinis pour créer les commandes à partir de la configuration personnalisée ou en ajoutant des commandes à une configuration standard. Il faudra configurer les commandes, ce qui nécessite de consulter les logs
 - Utiliser l'apprentissage ce qui crée automatiquement les commandes et les paramètres dans le périphérique. Cette méthode permet de récupérer toutes les informations en provenance du périphérique physique sans consulter les logs. Il faudra supprimer les commandes inutiles.
 
 Les 4 premières méthodes peuvent être mixées ainsi que les 4 dernières. La première et la dernière méthode sont recommandées.
