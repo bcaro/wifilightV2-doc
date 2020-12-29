@@ -263,13 +263,40 @@ Les valeurs par défaut correspondent la plupart du temps aux données du constr
 Pour certaines lampes, les valeurs min et max peuvent être erronées et les valeurs extrêmes non comprises par la lampe. Il faut ajuster ces valeurs pour qu'elles soient dans les limites acceptées par la lampe. 
 Vous pouvez prévenir le développeur pour qu'il modifie la configuration par défaut pour éviter ces ajustements.
 
-# Box Mi.Light
+# Mi.Light
 
-## Configuration
+## Ibox 1 et 2 et Mi.Light Box
+
+### Arrêt de la vente
+
+Mi.Light ne diffuse plus les ibox1 et 2 qui les a remplacer par la Miboxer qui est purement cloud et n'est pas compatible avec le plugin.
+
+### Configuration
 
 Depuis la version 1.0.58 des iBox 1 et 2, il peut être nécessaire de modifier leur configuration pour qu'elles puissent dialoguer avec Jeedom. 
 
 Se connecter en http (avec un navigateur Web) à l'adresse IP de votre iBox. Les identifiants par défaut sont admin/admin. Aller dans l'onglet "Other Setting" et dans "Network Parameters setting/Protocol" choisir UDP et sauvegarder.
+
+Il faut laisser le champ Identifiant (ni même un espace).
+
+
+## MiLight-Hub
+
+### Un hub alternatif
+
+Plusieurs projets ont abouti à des hub compatibles avec les ampoules et télécommandes Mi.Light afin de contourner les limitations des hubs du constructeur et qui deviennent encore plus intéressants aujourd'hui avec la disparition des iBox1 et 2. Le plugin est compatible avec le projet de [Sidoh](https://github.com/sidoh/esp8266_milight_hub) qui propose un hub compatible avec le plugin via 2 modes. Le premier mode est celui d'origine des iBox1 et 2, ce qui permet d'utiliser vos périphériques comme habituellement sauf 1 paramètre de configuration qui a été ajouté. Le 2ème mode est complètement nouveau et a comme avantages une très grande réactivité et un retour d'état partiel toutes les minutes.
+
+### Montage du Milight-hub
+
+Le hub est donc DIY, il faut donc le monter et le programmer avec les informations fournies par [Sidoh](https://github.com/sidoh/esp8266_milight_hub). Un tuto sera mis en ligne sur le forum.
+
+### Mode originel Mi.Ligh
+
+Dans ce mode, il suffit de renseigner le paramètre Identifiant avec l'identifiant du mode UDP du Milight-hub. Voir [Sidoh](https://github.com/sidoh/esp8266_milight_hub) pour plus de détails.
+
+### Mode ESP
+
+Dans ce mode, le choix des périphériques se fait par la télécommande. Il faut, après avoir renseigné les paramètres habituels, renseigner l'identifiant du canal,voir [Sidoh](https://github.com/sidoh/esp8266_milight_hub) pour plus de détails. Ce mode propose un retour d'état partiel mis à jour toutes les minutes.
 
 # Xiaomi Yeelight
 
