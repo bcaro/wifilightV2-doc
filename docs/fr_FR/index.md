@@ -284,7 +284,7 @@ Il faut laisser le champ Identifiant (ni même un espace).
 
 ### Un hub alternatif
 
-Plusieurs projets ont abouti à des hub compatibles avec les ampoules et télécommandes Mi.Light afin de contourner les limitations des hubs du constructeur et qui deviennent encore plus intéressants aujourd'hui avec la disparition des iBox1 et 2. Le plugin est compatible avec le projet de [Sidoh](https://github.com/sidoh/esp8266_milight_hub) qui propose un hub compatible avec le plugin via 2 modes. Le premier mode est celui d'origine des iBox1 et 2, ce qui permet d'utiliser vos périphériques comme habituellement sauf 1 paramètre de configuration qui a été ajouté. Le 2ème mode est complètement nouveau et a comme avantages une très grande réactivité et un retour d'état partiel toutes les minutes.
+Plusieurs projets ont abouti à des hubs compatibles avec les ampoules et télécommandes Mi.Light afin de contourner les limitations des hubs du constructeur et qui deviennent encore plus intéressants aujourd'hui avec la disparition des iBox1 et 2. Le plugin est compatible avec le projet de [Sidoh](https://github.com/sidoh/esp8266_milight_hub) et propose 2 modes pour piloter les ampoules. Le premier mode est celui d'origine des iBox1 et 2, ce qui permet d'utiliser vos périphériques comme habituellement sauf 1 paramètre de configuration qui a été ajouté. Le 2ème mode est complètement nouveau et a comme avantages une très grande réactivité et un retour d'état partiel toutes les minutes.
 
 ### Montage du Milight-hub
 
@@ -296,14 +296,14 @@ Dans ce mode, il suffit de renseigner le paramètre Identifiant avec l'identifia
 
 ### Mode ESP
 
-Dans ce mode, le choix des périphériques se fait par la télécommande. Il faut, après avoir renseigné les paramètres habituels, renseigner l'identifiant du canal,voir [Sidoh](https://github.com/sidoh/esp8266_milight_hub) pour plus de détails. Ce mode propose un retour d'état partiel mis à jour toutes les minutes.
+Dans ce mode, le choix des périphériques se fait par la télécommande. Il faut, après avoir renseigné les paramètres habituels, renseigner l'identifiant du canal, voir [Sidoh](https://github.com/sidoh/esp8266_milight_hub) pour plus de détails. Ce mode propose un retour d'état partiel mis à jour toutes les minutes.
 
 # Xiaomi Yeelight
 
 ## Configuration
 Il est indispensable d'activer le contrôle par réseau local via l'application Xiaomi Yeelight.
 
-## Coix de la version
+## Choix de la version
 
 Le plugin permet le choix entre 2 versions :
 
