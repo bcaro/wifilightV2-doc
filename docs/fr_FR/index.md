@@ -28,6 +28,7 @@ Les produits compatibles :
 -   Strip-led Mi.Light/EasyBulb/LimitlessLED reliée aux contrôleurs ci-dessous : pas de retour d'état !
 -   Contrôleur led Mi.Light/EasyBulb/LimitlessLED V3.0 à V5.0 (la miboxer n'est pas compatible): pas de retour d'état !
 -   Contrôleur led Mi.Light/EasyBulb/LimitlessLED V6.0/iBox1/iBox2 : pas de retour d'état !
+-   Contrôleur led DIY MiLight-hub : avec retour d'état !!
 -   Ampoules WiFi Xiaomi Yeelight blanches et couleur avec retour d'état !
 -   Strip-led WiFi Xiaomi Yeelight couleur avec retour d'état !
 -   Plafonnier WiFi Xiaomi Yeelight avec retour d'état !
@@ -66,7 +67,7 @@ Produits incompatibles et qui ne le seront pas :
 -   Les ampoules, prises ou contrôleurs de bandeau led qui contiennent un récepteur bluetoooth au lieu d'un récepteur radiofréquence 2.4 Ghz ou WiFi.
 -   Les contrôleurs de bandeau led ou d'ampoules et les ampoules ou prises qui utilisent une connexion WiFi point à point avec l'application mobile.
 -   L'ancienne lampe de chevet Xiaomi Yeelight n'est pas compatible.
--	Certains périphériques compatibles Magic Home ne fonctionnent plus qu'avec le cloud.
+-	Certains périphériques compatibles Magic Home qui ne fonctionnent plus qu'avec le cloud.
 - 	Tous les capteurs WiFi sur pile (détecteur de présence, détecteur d'ouverture) compatibles Tuya qui ne fonctionnent plus qu'avec le cloud.
 
 
@@ -78,7 +79,7 @@ Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilig
 ## Limitations
 
 Mi.Light/EasyBulb/LimitlessLED :
--   Toutes les fonctionnalités sont prises en compte par le plugin.
+-   Toutes les fonctionnalités sont prises en compte par le plugin (avec les ibox1 et 2 et avec le pont DIY Milight-hub)
 -   Le pont MiBoxer n'est pas compatible
 
 LW12/Lagute :
@@ -128,7 +129,7 @@ Nanoleaf Aurora :
 -   Rythm non implantés
 
 Passerelle Wifi Tuya et périphériques Zigbee :
--   La configuration est manuelle sauf pour un nombre limité de périphériques. La gestion de la couleur des lampes est complexe à configurer.
+-   La configuration est manuelle ou semi-automatique sauf pour un nombre limité de périphériques. La gestion de la couleur des lampes est complexe à configurer.
 
 # Configuration du module wifi
 
@@ -154,7 +155,7 @@ Vous pouvez alors passer à la configuration du plugin wifilightV2.
 
 ## Configuration du plugin
 
-wifilightV2 ne crée aucun périphérique automatiquement, il faut les créer dans le plugin avant de les paramétrer.
+wifilightV2 ne crée aucun périphérique automatiquement (sauf pour les périphériques Tuya/Zigbee en mode inclusion), il faut les créer dans le plugin avant de les paramétrer.
 
 Aide : 
 -   Utiliser l'icône sous forme de point d'interrogation pour obtenir une aide sur chaque élément de configuration.
@@ -167,9 +168,10 @@ Paramétrage :
 -   Choisir la catégorie Lumière (par défaut)
 -   Activer et rendre visible (par défaut)
 -   Saisir l'adresse IP du module de la prise ou de l'ampoule WiFi (voir la FAQ pour plus d'explications)
+-   Pour la box milight-hub, un identifiant et un port doivent être configurés
 -   Pour certains périphériques il est demandé de saisir le canal utilisé, créer un équipement wifilightV2 par canal
 -   Pour certains périphériques il est demandé de saisir un jeton ou (et) un identifiant, consulter l'aide sur la page de configuration du périphérique
--   Pour certains périphériques il est possible de supprimer le retour d'état s'il provoque des microcoupures 
+-   Pour les périphériques Tuya, il est possible de forcer l'interrogation de l'état toutes les minutes, utile pour les prises avec consommation.
 -   Pour certains contrôleurs il faut indiquer le nombre de leds des pixel strip leds
 -   Pour certains contrôleurs il faut indiquer l'ordre des couleurs si les couleurs par défaut ne correspondent pas
 -   Saisir la marque ou le type de périphérique
@@ -204,6 +206,7 @@ Le retour d'état est immédiat pour les périphériques suivants :
 - Sonoff en mode LAN
 - compatibles Tuya
 
+
 Par exemple, si un interrupteur est actionné, Jeedom le saura immédiatement.
 
 Pour les périphériques :
@@ -217,6 +220,7 @@ Pour les périphériques :
  - Sonoff en mode DIY
  - Nanoleaf Aurora
  - Meross
+ - Mi.Light connectés au pont milight-hub
 
 Le plugin interroge régulièrement le périphérique pour connaitre son état. Le délai pour que Jeedom connaisse l'état peut dépasser 1 minute.
 
@@ -261,15 +265,29 @@ Il suffit de mettre un nombre différent de zéro dans le champ groupe lors de l
 Il y a 2 curseurs pour la température en Kelvin. Kelvin exprimé en % de 0 (chaud) à 100 (froid) et KelvinVal exprimé en Kelvin de min à max. 
 Les valeurs par défaut correspondent la plupart du temps aux données du constructeur. Pour certaines lampes qui ne donnent pas les valeurs min et max, le plugin utilise par défaut 2700 à 6500.
 Pour certaines lampes, les valeurs min et max peuvent être erronées et les valeurs extrêmes non comprises par la lampe. Il faut ajuster ces valeurs pour qu'elles soient dans les limites acceptées par la lampe. 
-Vous pouvez prévenir le développeur pour qu'il modifie la configuration par défaut pour éviter ces ajustements.
+Vous pouvez prévenir le développeur pour qu'il modifie la configuration par défaut pour éviter ces ajustements.      
+
+
+# liste des modes Disco et Custom
+
+Certaines lampes possèdent des modes disco et custom. Une liste à choix est associée à chaque option de ces modes. SI les commandes disco ou custom sont supprimées, la liste à choix créée automatiquement ne sera pas modifiée. Pour les commandes custom, vous pouvez ajouter de nouvelles commandes mais il faudra modifier manuellement cette nouvelle commande dans la liste.
+
+Par exemple, la commande action/liste pour les customs a comme nom interne : CMD_LIST_CUSTOM. Son paramètre correspond à la construction de cette liste, par exemple : Scene01|Extinction;Scene02|Allumage
+
+La liste affichera Extinction et Allumage et les commandes qui seront exécutées seront celles de nom interne Scene01 ou Scene02. Si vous ajoutez une nouvelle commande custom, par exemple Scene03 dont le nom est Flash, il faudra modifier le paramètre de cette façon : Scene01|Extinction;Scene02|Allumage;Scene03|Flash .
+
+Si par la suite, la commande Scene01 est supprimée, il faudra manuellement modifier le paramètre de CMD_LIST_CUSTOM : Scene02|Allumage;Scene03|Flash .
+
+Pour les commandes Disco, si vous supprimez une telle commande, il faudra supprimer cette commande dans la liste.
+
 
 # Mi.Light
 
-## Ibox 1 et 2 et Mi.Light Box
+## Ibox 1 / 2 et Mi.Light Box
 
 ### Arrêt de la vente
 
-Mi.Light ne diffuse plus les ibox1 et 2 qui les a remplacer par la Miboxer qui est purement cloud et n'est pas compatible avec le plugin.
+Mi.Light ne diffuse plus les ibox1 et 2 qui les a remplacées par la Miboxer qui est purement cloud et n'est pas compatible avec le plugin.
 
 ### Configuration
 
@@ -277,26 +295,26 @@ Depuis la version 1.0.58 des iBox 1 et 2, il peut être nécessaire de modifier 
 
 Se connecter en http (avec un navigateur Web) à l'adresse IP de votre iBox. Les identifiants par défaut sont admin/admin. Aller dans l'onglet "Other Setting" et dans "Network Parameters setting/Protocol" choisir UDP et sauvegarder.
 
-Il faut laisser le champ Identifiant (ni même un espace).
+Il faut laisser les champs Identifiant et Port vides (ni même un espace).
 
 
 ## MiLight-Hub
 
 ### Un hub alternatif
 
-Plusieurs projets ont abouti à des hubs compatibles avec les ampoules et télécommandes Mi.Light afin de contourner les limitations des hubs du constructeur et qui deviennent encore plus intéressants aujourd'hui avec la disparition des iBox1 et 2. Le plugin est compatible avec le projet de [Sidoh](https://github.com/sidoh/esp8266_milight_hub) et propose 2 modes pour piloter les ampoules. Le premier mode est celui d'origine des iBox1 et 2, ce qui permet d'utiliser vos périphériques comme habituellement sauf 1 paramètre de configuration qui a été ajouté. Le 2ème mode est complètement nouveau et a comme avantages une très grande réactivité et un retour d'état partiel toutes les minutes.
+Plusieurs projets ont abouti à des hubs compatibles avec les ampoules et télécommandes Mi.Light afin de contourner les limitations des hubs du constructeur et qui deviennent encore plus intéressants aujourd'hui avec la disparition des iBox1 et 2. Le plugin est compatible avec le projet de [Sidoh](https://github.com/sidoh/esp8266_milight_hub) et propose 2 modes pour piloter les ampoules. Le premier mode est celui d'origine des iBox1 et 2, ce qui permet d'utiliser vos périphériques comme habituellement, il y aura 2 paramètres de configuration à ajouter. Le 2ème mode est complètement nouveau et a comme avantages une très grande réactivité et un retour d'état partiel toutes les minutes.
 
 ### Montage du Milight-hub
 
-Le hub est donc DIY, il faut donc le monter et le programmer avec les informations fournies par [Sidoh](https://github.com/sidoh/esp8266_milight_hub). Un tuto sera mis en ligne sur le forum.
+Le hub est donc DIY, il faut donc le monter et le programmer avec les informations fournies par [Sidoh](https://github.com/sidoh/esp8266_milight_hub). Un tuto est disponible [sur le forum](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron).
 
-### Mode originel Mi.Ligh
+### Mode historique Mi.Light
 
-Dans ce mode, il suffit de renseigner le paramètre Identifiant avec l'identifiant du mode UDP du Milight-hub. Voir [Sidoh](https://github.com/sidoh/esp8266_milight_hub) pour plus de détails.
+Dans ce mode, il suffit de renseigner les paramètres Identifiants et Port avec l'identifiant et le port du mode UDP du Milight-hub. Voir [Sidoh](https://github.com/sidoh/esp8266_milight_hub)  ou [sur le forum](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron) pour plus de détails.
 
 ### Mode ESP
 
-Dans ce mode, le choix des périphériques se fait par la télécommande. Il faut, après avoir renseigné les paramètres habituels, renseigner l'identifiant du canal, voir [Sidoh](https://github.com/sidoh/esp8266_milight_hub) pour plus de détails. Ce mode propose un retour d'état partiel mis à jour toutes les minutes.
+Dans ce mode, le choix des périphériques se fait par le type de télécommande et non par le type de lampe comme dans le mode historique. Il faut, après avoir renseigné les paramètres habituels, renseigner l'identifiant du groupe de télécommandes, voir [Sidoh](https://github.com/sidoh/esp8266_milight_hub) ou [sur le forum](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron) pour plus de détails. Ce mode propose un retour d'état partiel mis à jour toutes les minutes.
 
 # Xiaomi Yeelight
 
