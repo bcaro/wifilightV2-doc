@@ -104,6 +104,10 @@ Nota :
 - pour des dps contenant une info de couleur, le plugin créera une commande info et une commande action pour chaque couleur sélectionnée. L'intérêt pourra être de garder la commande action pour générer une couleur particulière, ce sera aussi utile pour identifier le codage de la couleur.
 - de manière générale, le sous-type créé par le plugin pourra ne pas correspondre à la donnée, il faudra alors faire des tests en le modifiant.
 
+Attention :
+- si vous partez d'une configuration standard et que vous ajoutez l'apprentissage pour vérifier les dps standards, il faudra modifier les commandes créées par la config standard et supprimer commandes créées par l'apprentissage. En effet, lors d ela sauvegarde, les dps standards sont toujours recréés, sinon il faut ne pas l'afficher.
+- en V3, les paramètres de configuration de l'énergie ne sont pas présents car les dps peuvent être modifiés directement dans les commandes qui correspondent à l'énergie.
+
 ## Mode apprentissage
 
 Cocher la case « Mode inclusion » du périphérique et le sauvegarder pour ajouter les commandes oubliées dans la phase précédente. Terminer en cliquant sur le bouton « arrêter l’inclusion ».
