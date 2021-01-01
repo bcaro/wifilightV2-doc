@@ -105,7 +105,7 @@ Nota :
 - de manière générale, le sous-type créé par le plugin pourra ne pas correspondre à la donnée, il faudra alors faire des tests en le modifiant.
 
 Attention :
-- si vous partez d'une configuration standard et que vous ajoutez l'apprentissage pour vérifier les dps standards, il faudra modifier les commandes créées par la config standard et supprimer commandes créées par l'apprentissage. En effet, lors d ela sauvegarde, les dps standards sont toujours recréés, sinon il faut ne pas l'afficher.
+- si vous partez d'une configuration standard et que vous ajoutez l'apprentissage pour vérifier les dps standards, il faudra modifier les commandes créées par la config standard et supprimer les commandes créées par l'apprentissage. En effet, lors de la sauvegarde, les dps standards sont toujours recréés, sinon il est possible de na pas les afficher.
 - en V3, les paramètres de configuration de l'énergie ne sont pas présents car les dps peuvent être modifiés directement dans les commandes qui correspondent à l'énergie.
 
 ## Mode apprentissage
