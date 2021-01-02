@@ -40,7 +40,7 @@ Il y a 5 méthodes pour créer un périphérique :
 - Utiliser une configuration standard proposées par le plugin, c'est la plus simple si votre périphérique correspond à l'un de ceux proposés
 - Modifier une configuration standard proche du périphérique à contrôler en modifiant les dps, les paramètres et les types là où ils sont différents, ceci nécessite de consulter les logs du plugin
 - Créer entièrement la configuration, ce qui nécessite de consulter les logs du plugin
-- Utiliser les boutons prédéfinis pour créer les commandes à partir de la configuration personnalisée ou en ajoutant des commandes à une configuration standard. Il faudra configurer les commandes, ce qui nécessite de consulter les logs
+- Utiliser les boutons prédéfinis pour créer les commandes à partir de la configuration personnalisée ou en ajoutant des commandes à une configuration standard. Il faudra configurer les commandes, ce qui nécessite de consulter les logs.
 - Utiliser le mode inclusion, complété par l'apprentissage ce qui crée automatiquement les commandes dans le périphérique. Cette méthode permet de récupérer toutes les informations en provenance du périphérique physique sans consulter les logs. Il faudra supprimer les commandes inutiles.
 
 Les 4 premières méthodes peuvent être mixées ainsi que les 4 dernières. La première et la dernière méthode sont recommandées.
@@ -50,7 +50,7 @@ Les 4 premières méthodes peuvent être mixées ainsi que les 4 dernières. La 
 
 Il est indispensable de récupérer la clé locale (localKey) et le devId de la passerelle permettant au plugin de dialoguer avec les périphériques.
 
-Pour récupérer la clé et le devId, la procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localKey, sur Github en particulier ou sur le forum Jeedom.
+Pour récupérer la clé et le devId, la procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localKey, sur Github en particulier ou sur le [forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
 
 Si la passerelle est désinstallée puis réinstallée dans l'application mobile, alors sa clé sera modifiée. Il faudra retrouver la clé avec la procédure ci-dessus. 
 
@@ -70,7 +70,7 @@ Le cid est à copier dans le champ identifiant du périphérique du plugin (sans
 
 Si aucun message en clair n'apparait, c'est que la clé n'est pas bonne.
 
-Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être trouvé dans les logs. Les experts pourront retrouver les dps car ils sont affichés à côté de la localKey lors de la procédure pour trouver ces derniers.
+Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être trouvé dans les logs. Les experts pourront retrouver les dps et le cid car ils sont affichés à côté de la localKey lors de la procédure pour trouver ces derniers.
 
 
 ## Configuration
@@ -80,16 +80,16 @@ Si votre périphérique est dans la liste proposée, il devrait fonctionner imm�
 Si le périphérique est complètement différent, il faut configurer manuellement le plugin en choisissant le sous-type "Personnalisé" et en se référant au paragraphe [Périphérique personnalisé](./tuya#tocAnchor-1-9-5). Partagez alors votre configuration sur le forum pour l'intégrer dans le plugin.
 
 
-## Mode inclusion
+## Configuration en mode inclusion
 
-Pour pouvoir utiliser le mode inclusion des périphériques connectés à la passerelle, il faut avoir au préalable connecté et configuré correctement une et une seule passerelle en utilisant le sous-type Gateway Hub Tuya/Zigbee avec son adresse IP et sa localKey. Le périphérique doit retourner son état, si ce n'est pas le cas, la procédure ne pourra pas fonctionner. Si 2 passerelles sont connectées, le plugin utilisera les caractéristiques de l'une d'elles sans savoir laquelle. Le périphérique ne doit pas déjà se trouver dans le plugin, sinon il faut soit le supprimer soit utiliser le mode apprentissage.
+Pour pouvoir utiliser le mode inclusion des périphériques connectés à la passerelle, il faut au préalable avoir connecté et configuré correctement une et une seule passerelle en utilisant le sous-type Gateway Hub Tuya/Zigbee avec son adresse IP et sa localKey. Le périphérique doit retourner son état, si ce n'est pas le cas, la procédure ne pourra pas fonctionner. Si 2 passerelles sont connectées, le plugin utilisera les caractéristiques de l'une d'elles sans savoir laquelle. Le périphérique ne doit pas déjà se trouver dans le plugin, sinon il faut soit le supprimer soit utiliser le mode apprentissage.
 
-- Cliquer sur le mode inclusion puis agir sur le périphérique ou modifier l'état du périphérique avec l'appli Tuya (mais l'usage de l'appli peut bloquer le périphérique).
-- Quand le périphérique est détecté, le plugin interroge son état et crée un nouveau wifilightV2 avec l'adresse IP et la localKey de la passerelle, le cid est automatiquement renseigné et le canal est mis à 999 (il faudra le changer avec une valeur entre 1 et 100 avant la sauvegarde).
-- Une commande info par dps est alors créée dans le périphérique ainsi qu'autant de commandes action que de valeurs différentes reçues pour ce dps.
-- pendant l'inclusion, il faut agir sur toutes les commandes du périphérique pour créer tous les dps possibles.
+- Cliquer sur le mode inclusion, attendre que le périphérique soit inclus puis agir sur le périphérique ou modifier l'état du périphérique avec l'appli Tuya (mais l'usage de l'appli peut bloquer le périphérique).
+- Quand le périphérique est détecté, le plugin rée un nouveau wifilightV2 avec l'adresse IP et la localKey de la passerelle, le cid est automatiquement renseigné.
+- Ensuite, le plugin interroge l'état du périphérique et crée les commandes infos et action.
+- Tout en restant en mode inclusion, il faut agir sur toutes les commandes du périphérique pour créer tous les dps possibles.
 - cliquer ensuite sur le bouton arrêt de l'inclusion.
-- éditer le périphérique, changer son n° de canal et le sauvegarder.
+- éditer le périphérique, supprimer les commandes infos ou action inutiles et le sauvegarder.
 
 Il faut inclure un seul périphérique à la fois. Pour exclure un périphérique, il suffit de le supprimer dans le plugin.
 
@@ -97,16 +97,14 @@ Ce mode est uniquement là pour aider la configuration personnalisée d'un nouve
 
 Nota :
 - Si au dps correspond uniquement une info dans le périphérique (par exemple 3 valeurs possibles d'un même bouton), il faudra supprimer les 3 commandes actions créées automatiquement. Cependant, les commandes actions ont comme paramètre toutes les valeurs récupérées par le plugin et permettent de connaitre les valeurs prises par l'info du dps.
-- Pour les dps numériques, une commande info et une commande action numérique sont créés automatiquement, si seule l'info est utile (cas de la température d'un capteur) il faut supprimer la commande action.
-- Pour les dps contenant une info 0/1 pour un actionneur, comme une prise électrique, le plugin va créer une info et 2 actions ON/OFF.
-- Pour les dps numériques, le plugin créera une commande info et action numériques. Si les valeurs numériques prennent les valeurs 0 ou 1 pendant l'apprentissage, le plugin va aussi créer 3 commandes ETAT/ON/OFF, il faudra les supprimer.
+- Pour les dps numériques, une commande info et une commande action numériques sont créés automatiquement, si seule l'info est utile (cas de la température d'un capteur) il faut supprimer la commande action. Si les valeurs numériques prennent les valeurs 0 ou 1 pendant l'apprentissage, le plugin va aussi créer 3 commandes ETAT/ON/OFF, il faudra les supprimer.
+- Pour les dps contenant une info 0/1 pour un actionneur tout ou rien, comme une prise électrique, le plugin va créer une info et 2 actions ON/OFF.
 - Dans le cas d'un dps contenant true ou false, une commande info et deux commandes action (ON et OFF) sont créés automatiquement, si seule l'info est utile (cas d'un capteur de présence) il faut supprimer les commandes actions.
-- pour des dps contenant une info de couleur, le plugin créera une commande info et une commande action pour chaque couleur sélectionnée. L'intérêt pourra être de garder la commande action pour générer une couleur particulière, ce sera aussi utile pour identifier le codage de la couleur.
-- de manière générale, le sous-type créé par le plugin pourra ne pas correspondre à la donnée, il faudra alors faire des tests en le modifiant.
+- Pour des dps contenant une info de couleur, le plugin créera une commande info et une commande action pour chaque couleur sélectionnée. L'intérêt pourra être de garder la commande action pour générer une couleur particulière, ce sera aussi utile pour identifier le codage de la couleur.
+- De manière générale, le sous-type créé par le plugin pourra ne pas correspondre à la donnée, il faudra alors faire des tests en le modifiant.
 
 Attention :
 - si vous partez d'une configuration standard et que vous ajoutez l'apprentissage pour vérifier les dps standards, il faudra modifier les commandes créées par la config standard et supprimer les commandes créées par l'apprentissage. En effet, lors de la sauvegarde, les dps standards sont toujours recréés, sinon il est possible de na pas les afficher.
-- en V3, les paramètres de configuration de l'énergie ne sont pas présents car les dps peuvent être modifiés directement dans les commandes qui correspondent à l'énergie.
 
 ## Mode apprentissage
 
@@ -155,18 +153,23 @@ L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s
 
 Il y a 5 méthodes pour créer un périphérique :
 - Utiliser une configuration standard proposées par le plugin, c'est la plus simple si votre périphérique correspond à l'un de ceux proposés
-- Modifier une configuration standard proche du périphérique à contrôler en modifiant les dps, les paramètres et les types là où ils sont différents, ceci nécessite de consulter les logs du plugin
-- Créer entièrement la configuration, ce qui nécessite de consulter les logs du plugin
-- Utiliser les boutons prédéfinis pour créer les commandes à partir de la configuration personnalisée ou en ajoutant des commandes à une configuration standard. Il faudra configurer les commandes, ce qui nécessite de consulter les logs
+- Modifier une configuration standard proche du périphérique à contrôler en modifiant les dps, les paramètres et les types là où ils sont différents, ceci nécessite de consulter les logs du plugin.
+- Créer entièrement la configuration, ce qui nécessite de consulter les logs du plugin.
+- Utiliser les boutons prédéfinis pour créer les commandes à partir de la configuration personnalisée ou en ajoutant des commandes à une configuration standard. Il faudra configurer les commandes, ce qui nécessite de consulter les logs.
 - Utiliser l'apprentissage ce qui crée automatiquement les commandes et les paramètres dans le périphérique. Cette méthode permet de récupérer toutes les informations en provenance du périphérique physique sans consulter les logs. Il faudra supprimer les commandes inutiles.
 
 Les 4 premières méthodes peuvent être mixées ainsi que les 4 dernières. La première et la dernière méthode sont recommandées.
+
+Attention :
+- si vous partez d'une configuration standard et que vous ajoutez l'apprentissage pour vérifier les dps standards, il faudra modifier les commandes créées par la config standard et supprimer les commandes créées par l'apprentissage. En effet, lors de la sauvegarde, les dps standards sont toujours recréés, sinon il est possible de na pas les afficher.
+- en V3, les paramètres de configuration de l'énergie ne sont pas présents car les dps peuvent être modifiés directement dans les commandes qui correspondent à l'énergie.
+
 
 ## Configuration du périphérique
 
 Il est indispensable de récupérer une clé locale (localKey) et un identifiant devId permettant au plugin de dialoguer avec les périphériques.
 
-La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localKey, sur Github en particulier ou sur le forum Jeedom.
+La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localKey, sur Github en particulier ou sur ou sur le [forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
 
 Le périphérique ne doit pas être connecté à une application sur téléphone mobile, sinon il ne répondra pas aux ordres de Jeedom. Il faut donc fermer toute application possiblement connectée au périphérique.
 
@@ -186,12 +189,18 @@ L'index "20" correspond ici à la tension d'alimentation en centaine de mV soit 
 
 La syntaxe est alors : 20;18;19 qu'il faut mettre dans le champ 'Paramétrage de l'énergie'.
 
-Pour les plugs 1 prise, en général il faut : 6;4;5 (mis par défaut par le plugin).
+Pour les plugs 1 prise, en général il faut : 6;4;5 (mis par défaut par le plugin en V1 et V2).
 
-Pour les plugs 2 prises, en général il faut : 9;7;8 (mis par défaut par le plugin).
+Pour les plugs 2 prises, en général il faut : 9;7;8 (mis par défaut par le plugin en V1 et V2).
 
-Pour les autres prises, la valeur 20;18;19 est mise par défaut.
+Pour les autres prises, la valeur 20;18;19 est mise par défaut en V1 et V2.
 
+En V3, les dps peuvent être modifiés directement pour les adapter aux n° qui contiennent les informations de consommation.
+
+
+## Périphériques alimentés par pile
+
+Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logique de la commande info correspondante doit contenir battery et get .
 
 ## Mode apprentissage
 
@@ -202,21 +211,18 @@ Pour lancer l'apprentissage, disponible uniquement en V3,  il faut créer manuel
 
 Devant la diversité des périphériques compatibles Tuya, il peut être nécessaire de créer des commandes personnalisées. Avant de passer aux commandes personnalisées, tester d'abord les configurations standard qui fonctionnent dans la majorité des cas. Ces configurations standards peuvent, en V3, être modifiées pour ajuster le n° de dps et le paramètre afin qu'ils correspondent au périphérique.
 
-Le paragraphe suivant donne des éléments pour interpréter les logs wifilightV2 et configurer soit entièrement un périphérique ou modifier une configuration standard V3.
+Le mode apprentissage doit être privilégié pour créer autmatiquement les commandes. Cependant, le paragraphe suivant donne des éléments pour interpréter les logs wifilightV2 et les commandes créées en mode apprentissage et modifier une configuration standard V3 ou le résultat d el'apprentissage. La configuration des commandes de gestion des couleurs de lampes doit néanmoins passer par la création manuelle des commandes info et action.
 
-## Périphériques alimentés par pile
 
-Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logique de la commande info correspondante doit contenir battery et get .
+## Création manuelle des commandes info et action
 
-## Périphérique personnalisé
+Il est possible de créer un périphérique entièrement personnalisé ou d'ajouter des commandes personnalisées (en V2 et V3 uniquement) à un périphérique existant ou de modifier les n° de dps et paramètres d'une commande (en V3 uniquement). L'interface propose de créer des commandes automatiquement, ceci a l'avantage de mieux faire fonctionner le retour d'état. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de solution.
 
-Il est possible de créer un périphérique entièrement personnalisé ou d'ajouter des commandes personnalisées (en V3 uniquement) à un périphérique existant ou de modifier les n° de dps et paramètres d'une commande. L'interface propose de créer des commandes automatiquement, ceci a l'avantage de mieux faire fonctionner le retour d'état. La procédure nécessite que le périphérique renvoie son état dans les logs, sinon il n'y a pas de solution.
-
-Nota : si le périphérique ne renvoie pas son état, le devId et les dps ne pourront pas être trouvé dans les logs. Les experts pourront retrouver les dps car ils sont affichés à côté de la localKey lors de la procédure pour trouver ces derniers.
+Nota : si le périphérique ne renvoie pas son état, le devId et les dps ne pourront pas être trouvé dans les logs. Les experts pourront retrouver les dps et le devId car ils sont affichés à côté de la localKey lors de la procédure pour trouver ces derniers.
 
 ### Configuration
 -   désactiver tous les périphériques wifilightV2 sauf celui à tester
--   bien configurer le périphérique (adresse IP statique, localKey, Id)
+-   bien configurer le périphérique (adresse IP statique, localKey, devId)
 -   vérifier que le demon tourne, sinon le démarrer
 -   configurer les logs wifilightV2 en mode debug, redémarrer le demon
 -   effacer les logs
