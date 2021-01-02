@@ -187,15 +187,15 @@ Pour les configurations standards concernant les prises avec consommation, selon
 
 L'index "20" correspond ici à la tension d'alimentation en centaine de mV soit : 228.1 V, elle doit légèrement bouger. Les index "18" et "19" correspondent au courant (mA) et à la puissance en W, ici aucun appareil n'est branché et donc les informations sont à zéro. C'est un bon moyen de trouver la tension, en branchant un appareil, ces 2 valeurs doivent être modifiées et la tension est juste après.
 
-La syntaxe est alors : 20;18;19 qu'il faut mettre dans le champ 'Paramétrage de l'énergie'.
+La syntaxe est alors : 20;18;19 qu'il faut mettre dans le champ 'Paramétrage de l'énergie' en V1 et V2. En V3, les dps peuvent être modifiés directement pour les adapter aux n° qui contiennent les informations de consommation.
 
-Pour les plugs 1 prise, en général il faut : 6;4;5 (mis par défaut par le plugin en V1 et V2).
+Pour les plugs 1 prise, en général il faut : 6;4;5 (mis par défaut par le plugin).
 
-Pour les plugs 2 prises, en général il faut : 9;7;8 (mis par défaut par le plugin en V1 et V2).
+Pour les plugs 2 prises, en général il faut : 9;7;8 (mis par défaut par le plugin).
 
-Pour les autres prises, la valeur 20;18;19 est mise par défaut en V1 et V2.
+Pour les autres prises, la valeur 20;18;19 est mise par défaut.
 
-En V3, les dps peuvent être modifiés directement pour les adapter aux n° qui contiennent les informations de consommation.
+
 
 
 ## Périphériques alimentés par pile
@@ -443,7 +443,7 @@ Tests préalables :
 1. l'appli Tuya est arrêtée
 2. l'adresse IP du périphérique (Tuya ou passerelle Tuya/Zigbee) est rendue fixe
 
-## vérifier que le périphérique est trouvé et connecté
+## Vérifier que le périphérique est trouvé et connecté
 
 1. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canaux), le but est de ne pas mélanger tous les périphériques
 2. effacer les logs
@@ -484,7 +484,7 @@ Le plugin tentera de se reconnecter au périphérique toutes les minutes ou tout
 
 A ce stade, la seul point testé et OK c'est que l'adresse IP est la bonne et que le périphérique est joignable.
 
-## vérifier que la localKey est la bonne
+## Vérifier que la localKey est la bonne
 
 1. renseigner la localKey sans espace et sans guillemets dans le champ Jeton du plugin. Vérifier plusieurs fois : la localKey doit être la même pour tous les périphériques de même adresse IP. Le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
 2. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canaux), le but est de ne pas mélanger tous les périphériques.
@@ -507,7 +507,7 @@ Dans le cas où le décodage de la trame est correct, on trouve un message tel q
 
 Les caractères de la fin du message seront filtrés par le plugin et ne doivent pas inquiéter. C'est ce message qui va permettre de configurer le périphérique dans le plugin en identifiant à quoi servent les n° de dps et quelles valeurs ils prennent, voir plus haut.
 
-## vérifier que le devId ou le cid est le bon
+## Vérifier que le devId ou le cid est le bon
 
 1. le cid (pour les périphériques Tuya/Zigbee) ou le devId pour les autres a été trouvé en même temps que la LocaKey. Il est spécifique à chaque périphérique et n'est jamais modifié, cela permet de repérer vos périphériques.
 2. repérer les messages "Receive after decode" en provenance du périphérique.
@@ -535,7 +535,7 @@ le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la 
 6. envoyer les logs et les informations du point 5 sur le forum
 
 
-## trouver de l'aide sur le forum
+## Trouver de l'aide sur le forum
 
 Sans application des tests ci-dessus et de l'envoi des logs associés, la réponse pénible à écrire et probablement pénible à lire sera : lire la doc. Notez que rares sont les cas où le passage par les 3 étapes ci-dessous ne permet pas de résoudre le problème.
 
