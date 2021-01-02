@@ -30,7 +30,7 @@ Tous les autres périphériques, ou les périphériques similaires d'une autre m
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
-Il faut créer un équipement, avec la même adresse IP et la même clé, pour la passerelle et chaque périphérique connecté à la passerelle et lui attribuer un n° de canal (le numéro entre 1 et 100 est sans importance mais chaque périphérique doit avoir un n° de canal différent).
+Il faut créer un équipement, avec la même adresse IP et la même clé, pour la passerelle et chaque périphérique connecté à la passerelle.
 
 Si l'application Tuya est connectée au périphérique, avant le plugin, le plugin ne pourra généralement pas y accéder.
 
@@ -211,7 +211,7 @@ Pour lancer l'apprentissage, disponible uniquement en V3,  il faut créer manuel
 
 Devant la diversité des périphériques compatibles Tuya, il peut être nécessaire de créer des commandes personnalisées. Avant de passer aux commandes personnalisées, tester d'abord les configurations standard qui fonctionnent dans la majorité des cas. Ces configurations standards peuvent, en V3, être modifiées pour ajuster le n° de dps et le paramètre afin qu'ils correspondent au périphérique.
 
-Le mode apprentissage doit être privilégié pour créer autmatiquement les commandes. Cependant, le paragraphe suivant donne des éléments pour interpréter les logs wifilightV2 et les commandes créées en mode apprentissage et modifier une configuration standard V3 ou le résultat d el'apprentissage. La configuration des commandes de gestion des couleurs de lampes doit néanmoins passer par la création manuelle des commandes info et action.
+Le mode apprentissage doit être privilégié pour créer automatiquement les commandes. Cependant, le paragraphe suivant donne des éléments pour interpréter les logs wifilightV2 et les commandes créées en mode apprentissage permettant de modifier une configuration standard V3 ou le résultat d'un apprentissage. La configuration des commandes de gestion des couleurs de lampes doit néanmoins passer par la création manuelle des commandes info et action.
 
 
 ## Création manuelle des commandes info et action
