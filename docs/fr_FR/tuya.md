@@ -491,7 +491,7 @@ A ce stade, la seul point testé et OK c'est que l'adresse IP est la bonne et qu
 3. effacer les logs
 4. utiliser soit les boutons du périphérique physique, soit l'appli Tuya pour changer l'état du périphérique. Noter qu'utiliser l'appli Tuya peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli Tuya après la connexion ci-dessus au périphérique. A l'inverse il se peut que l'appli Tuya réponde très mal. Si le périphérique ne renvoie pas son état, la procédure se termine ici et le périphérique est incompatible avec le plugin.
 
-Nota : les experts pourront retrouver les dps car ils sont affichés à côté de la localKey ou du cid (pour les périphériques Tuya/Zigbee) lors de la procédure pour trouver ces derniers.
+Nota : les experts pourront retrouver les dps et le devID ou le cid car ils sont affichés à côté de la localKey lors de la procédure pour trouver la localKey.
 
 Exemple de log KO où la localKey n'est pas bonne car la trame reçue par le plugin n'est pas décodée :
 
@@ -532,7 +532,7 @@ le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la 
 3. activer la commande qui dysfonctionne 2 fois avec 5s d'intervalle
 4. stopper les logs et les sauvegarder.
 5. récupérer toutes les valeurs qui arrivent dans la commande info associée à cette commande action (généralement une commande info de type xxxxGetyy) et qui a normalement le même dps. Pour cela utiliser soit l'appli Tuya qui correspond à la même commande action à tester, soit vous modifiez ce même bouton physique sur le périphérique. Vous notez toutes les valeurs qui sont remontées dans le plugin (appuyer sur le bouton tester du plugin).
-6. envoyer les logs et les informations du point 5
+6. envoyer les logs et les informations du point 5 sur le forum
 
 
 ## trouver de l'aide sur le forum
