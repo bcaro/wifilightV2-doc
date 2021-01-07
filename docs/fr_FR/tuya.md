@@ -85,7 +85,7 @@ Si le périphérique est complètement différent, il faut configurer manuelleme
 Pour pouvoir utiliser le mode inclusion des périphériques connectés à la passerelle, il faut au préalable avoir connecté et configuré correctement une et une seule passerelle en utilisant le sous-type Gateway Hub Tuya/Zigbee avec son adresse IP et sa localKey. Le périphérique doit retourner son état, si ce n'est pas le cas, la procédure ne pourra pas fonctionner. Si 2 passerelles sont connectées, le plugin utilisera les caractéristiques de l'une d'elles sans savoir laquelle. Le périphérique ne doit pas déjà se trouver dans le plugin, sinon il faut soit le supprimer soit utiliser le mode apprentissage.
 
 - Cliquer sur le mode inclusion, attendre que le périphérique soit inclus puis agir sur le périphérique ou modifier l'état du périphérique avec l'appli Tuya (mais l'usage de l'appli peut bloquer le périphérique).
-- Quand le périphérique est détecté, le plugin rée un nouveau wifilightV2 avec l'adresse IP et la localKey de la passerelle, le cid est automatiquement renseigné.
+- Quand le périphérique est détecté, le plugin crée un nouveau wifilightV2 avec l'adresse IP et la localKey de la passerelle, le cid est automatiquement renseigné.
 - Ensuite, le plugin interroge l'état du périphérique et crée les commandes infos et action.
 - Tout en restant en mode inclusion, il faut agir sur toutes les commandes du périphérique pour créer tous les dps possibles.
 - cliquer ensuite sur le bouton arrêt de l'inclusion.
@@ -439,8 +439,11 @@ Permet de passer la lampe en mode couleur et de spécifier la couleur. Le plugin
 
 Tests préalables :
 
-1. l'appli Tuya est arrêtée
-2. l'adresse IP du périphérique (Tuya ou passerelle Tuya/Zigbee) est rendue fixe
+1. les périphériques ont été inclus dans l'appli Tuya 
+2. les localKey et devID ont été récupérés
+3. les périphériques ne sont pas supprimés de l'appli Tuya et l'appli Tuya n'a pas été supprimée
+4. l'appli tuya est arrêtée sur tous les terminaux pouvant la faire tourner
+5. l'adresse IP du périphérique (Tuya ou passerelle Tuya/Zigbee) est rendue fixe et est connu
 
 ## Vérifier que le périphérique est trouvé et connecté
 
