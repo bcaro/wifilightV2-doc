@@ -197,7 +197,6 @@ Pour les autres prises, la valeur 20;18;19 est mise par défaut.
 
 
 
-
 ## Périphériques alimentés par pile
 
 Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logique de la commande info correspondante doit contenir battery et get .
