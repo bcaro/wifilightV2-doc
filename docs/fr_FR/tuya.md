@@ -471,7 +471,7 @@ Par la suite les messages seront du type :
     [2020-12-10 07:53:41][DEBUG] : ****** Device listenable Inter BC Tuya OK - Class:Tuya_SW_2 @192.168.1.122 Channel:1 *****
     [2020-12-10 07:53:41][DEBUG] :    Device and socket exist : key:3 @192.168.1.122 channel:1 diff:13
 
-Il se peut qu'il y ait ensuite des déconnexions, dans ce cas le message dans les logs est :
+Il se peut qu'il y ait ensuite des déconnexions, ou que l'appli smartlife soit aussi connectée au périphérique, dans ce cas le message dans les logs est :
 
     [2020-12-10 07:36:40][DEBUG] :     << Ping @192.168.1.122  diff:16
     [2020-12-10 07:36:40][DEBUG] :     Cmd to 192.168.1.122 - Try:192.168.1.122  6668 - Connect OK!
