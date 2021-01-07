@@ -442,8 +442,8 @@ Tests préalables :
 1. les périphériques ont été inclus dans l'appli Tuya 
 2. les localKey et devID ont été récupérés
 3. les périphériques ne sont pas supprimés de l'appli Tuya et l'appli Tuya n'a pas été supprimée
-4. l'appli tuya est arrêtée sur tous les terminaux pouvant la faire tourner
-5. l'adresse IP du périphérique (Tuya ou passerelle Tuya/Zigbee) est rendue fixe et est connu
+4. l'appli Tuya est arrêtée sur tous les terminaux pouvant la faire tourner
+5. l'adresse IP du périphérique (Tuya ou passerelle Tuya/Zigbee) est rendue fixe et est connue
 
 ## Vérifier que le périphérique est trouvé et connecté
 
