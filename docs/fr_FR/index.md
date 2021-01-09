@@ -316,6 +316,9 @@ Dans ce mode, il suffit de renseigner les paramètres Identifiants et Port avec 
 
 Dans ce mode, le choix des périphériques se fait par le type de télécommande et non par le type de lampe comme dans le mode historique. Il faut, après avoir renseigné les paramètres habituels, renseigner l'identifiant du groupe de télécommandes, voir [Sidoh](https://github.com/sidoh/esp8266_milight_hub) ou [sur le forum](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron) pour plus de détails. Ce mode propose un retour d'état partiel mis à jour toutes les minutes.
 
+Pour appairer une lampe avec le Milight-Hub, mettre le périphérique sous tension et cliquer sur Sync ON. Utiliser Sync OFF pour désappairer.
+
+Pour connaitre les caratéristiques du hub, cliquer sur getKey, le résultat est obtenu dans getKetget en cliquant sur Tester.
 # Xiaomi Yeelight
 
 ## Configuration
