@@ -295,7 +295,7 @@ Depuis la version 1.0.58 des iBox 1 et 2, il peut être nécessaire de modifier 
 
 Se connecter en http (avec un navigateur Web) à l'adresse IP de votre iBox. Les identifiants par défaut sont admin/admin. Aller dans l'onglet "Other Setting" et dans "Network Parameters setting/Protocol" choisir UDP et sauvegarder.
 
-Il faut laisser les champs Identifiant et Port vides (ni même un espace).
+Il faut laisser le champ Port vide (ni même un espace).
 
 
 ## MiLight-Hub
@@ -310,15 +310,16 @@ Le hub est donc DIY, il faut donc le monter et le programmer avec les informatio
 
 ### Mode historique Mi.Light
 
-Dans ce mode, il suffit de renseigner les paramètres Identifiants et Port avec l'identifiant et le port du mode UDP du Milight-hub. Voir [Sidoh](https://github.com/sidoh/esp8266_milight_hub)  ou [sur le forum](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron) pour plus de détails.
+Dans ce mode, il suffit de renseigner le paramètre Port avec le port du mode UDP du Milight-hub. Voir [Sidoh](https://github.com/sidoh/esp8266_milight_hub)  ou [sur le forum](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron) pour plus de détails.
 
 ### Mode ESP
 
 Dans ce mode, le choix des périphériques se fait par le type de télécommande et non par le type de lampe comme dans le mode historique. Il faut, après avoir renseigné les paramètres habituels, renseigner l'identifiant du groupe de télécommandes, voir [Sidoh](https://github.com/sidoh/esp8266_milight_hub) ou [sur le forum](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron) pour plus de détails. Ce mode propose un retour d'état partiel mis à jour toutes les minutes.
 
-Pour appairer une lampe avec le Milight-Hub, mettre le périphérique sous tension et cliquer sur Sync ON. Utiliser Sync OFF pour désappairer.
+Pour appairer une lampe avec le Milight-Hub, mettre la lampe sous tension et cliquer sur Sync ON. Utiliser Sync OFF pour désappairer. Pour apparirer une télécommande, sélectionner le ON du canal à synchroniser dès la mise sous tension et cliquer sur Sync ON.
 
 Pour connaitre les caratéristiques du hub, cliquer sur getKey, le résultat est obtenu dans getKetget en cliquant sur Tester.
+
 # Xiaomi Yeelight
 
 ## Configuration
