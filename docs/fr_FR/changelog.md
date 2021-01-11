@@ -8,13 +8,14 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
 todo : 
-- ajout de périphériques Tuya/Zigbee (diffuseur, capteurs divers) en fonction des retours utilisateurs
 - apprentissage des couleurs Tuya
+- pouvoir choisir l'image alternative d'un périphérique dans une fenêtre pop-up
 
 1.68 - 2020-12-28 (beta)
 
 -   Tuya : suppression de la notion de canal pour Zigbee/Tuya et Tuya V3 (enfin)
 -   Milight : les ibox1/2 ne sont plus commercialisées et remplacées par la miBoxer qui est 100% cloud. Pour que le plugin puisse continuer à exploiter les lampes milight ou que vous puissiez remplacer une ibox1/2 défaillante, il est possible d'utiliser une [box DIY proposée par Sidoh](https://github.com/sidoh/esp8266_milight_hub) . Le plugin est compatible avec cette box car elle reproduit le protocole Mi.Light mais il implante aussi le proctocole spécifique à cette box DIY qui est plus simple et plus performant.
+-   Ajout des plafonniers iHomma
 -   Les modes custom standard (Nanoleaf, Yeelight) sont regroupés dans un select. La commande select dans la configuration du périphérique peut ensuite être modifiée pour ajouter de nouveaux modes custom.
 -   Les modes disco (Milight, Arilux, Lagute, MagicUFO, Yeelight, H801, TPLink, Extel, Philips, Tuya) sont regroupés dans un select.
 -   réaffectation des commandes génériques lors de la création d'une nouvelle commande (inactif sur les commandes déjà créées).
