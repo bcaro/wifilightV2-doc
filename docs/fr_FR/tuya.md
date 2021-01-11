@@ -509,22 +509,45 @@ Dans le cas où le décodage de la trame est correct, on trouve un message tel q
 
 Les caractères de la fin du message seront filtrés par le plugin et ne doivent pas inquiéter. C'est ce message qui va permettre de configurer le périphérique dans le plugin en identifiant à quoi servent les n° de dps et quelles valeurs ils prennent, voir plus haut.
 
-## Vérifier que le devId ou le cid est le bon
+## Vérifier que le devId ou le cid est le bon si le périphérique le renvoie
 
 1. le cid (pour les périphériques Tuya/Zigbee) ou le devId pour les autres a été trouvé en même temps que la LocaKey. Il est spécifique à chaque périphérique et n'est jamais modifié, cela permet de repérer vos périphériques.
 2. repérer les messages "Receive after decode" en provenance du périphérique.
 
-Pour un périphérique non Zigbee on trouvera :
+**Pour un périphérique non Zigbee on trouvera :**
 
     [2020-12-10 08:01:58][DEBUG] :     Receive after decode :{"devId":"30800135cc50e3418b4c","dps":{"1":true},"t":1607583717,"s":3}]D"{4K - Read Json OK
 
-le devId est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique.
+le devId est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Attention : tous les périphériques ne renvoient pas leur devId.
 
-Pour un périphérique Zigbee on trouvera :
+**Pour un périphérique Zigbee on trouvera :**
 
     [2020-12-10 08:14:34][DEBUG] :     Receive after decode :{"dps":{"1":"pir"},"cid":"bc33acfffe525145","t":1607584474}
 
-le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Vous pouvez alors vérifier la concordance avec la procédure permettant de trouver la localKey et le devId ou le cid.
+le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Attention : tous les périphériques ne renvoient pas leur cid. 
+
+Vous pouvez alors vérifier la concordance avec la procédure permettant de trouver la localKey et le devId ou le cid.
+
+Si le cid ou le devId n'est pas correct, les commandes actions ne seront pas exécutées par le périphérique.
+
+**Exemple d'envoi d'une commande correcte vers un périphérique Tuya non Zigbee :**
+
+    [2021-01-11 22:51:53][DEBUG] :     Cmd to 127.0.0.1: {"t":"1610401913","devId":"bff438f111b78e704dsg6z","dps":{"1":true},"uid":""} - canal:1 - Try:127.0.0.1  6900 - Connect OK!
+    [2021-01-11 22:51:53][DEBUG] :     Receive from Jeedom to Send cmd to device @192.168.1.129 canal:1
+    [2021-01-11 22:51:53][DEBUG] :     Cmd to 192.168.1.129 - Try:192.168.1.129  6668 - Connect OK!
+    [2021-01-11 22:51:53][DEBUG] :     No state update
+    [2021-01-11 22:51:53][DEBUG] :     Receive from:192.168.1.129 (No learning mode)
+    [2021-01-11 22:51:53][DEBUG] :  >>    Receive after decode :{"dps":{"1":true},"t":1610401913}
+    [2021-01-11 22:51:53][DEBUG] :  Tuya  prise Wifi @192.168.1.129    Receive after decode :{"dps":{"1":true},"t":1610401913}
+    [2021-01-11 22:51:53][DEBUG] :   Update devices @192.168.1.129 canal:1
+    [2021-01-11 22:51:54][DEBUG] :     Dps1|dps_1_STATE:1
+    [2021-01-11 22:51:54][DEBUG] :     No other states to update
+
+Le plugin envoie la commande au demon à l'adresse 127.0.0.1.
+
+Puis le demon envoie la commande au périphérique.
+.
+Enfin le périphérique renvoie son état. Si la command en'est pas correcte, le périphérique ne renvoie pas son état ou renvoie un message vide ou une erreur.
 
 
 ## Un souci avec une commande action
