@@ -547,17 +547,16 @@ Le plugin envoie la commande au demon à l'adresse 127.0.0.1.
 
 Puis le demon envoie la commande au périphérique.
 
-Enfin le périphérique renvoie son état. Si la commande n'est pas correcte, le périphérique ne renvoie pas son état ou renvoie un message vide ou une erreur.
+Enfin le périphérique renvoie son état. Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son état ou renvoie un message vide ou une erreur.
 
 
 ## Un souci avec une commande action
 
 1. Vérifier les 3 points ci-dessus
-2. Désactiver tous les périphériques wifiLightV2 sauf celui à tester (ne garder qu'un canal pour les multicanaux), attendre que le demon passe et effacer les logs pour plus de clarté
-3. activer la commande qui dysfonctionne 2 fois avec 5s d'intervalle
+2. Désactiver tous les périphériques wifiLightV2 sauf celui à tester (ne garder qu'un canal pour les multicanaux), attendre que le demon passe (il interroge les périphériques toutes les minutes) et effacer les logs pour plus de clarté
+3. activer la commande du plugin qui dysfonctionne 2 fois avec 5s d'intervalle
 4. stopper les logs et les sauvegarder.
-5. récupérer toutes les valeurs qui arrivent dans la commande info associée à cette commande action (généralement une commande info de type xxxxGetyy) et qui a normalement le même dps. Pour cela utiliser soit l'appli Tuya qui correspond à la même commande action à tester, soit vous modifiez ce même bouton physique sur le périphérique. Vous notez toutes les valeurs qui sont remontées dans le plugin (appuyer sur le bouton tester du plugin).
-6. envoyer les logs et les informations du point 5 sur le forum
+5. envoyer les logs sur le forum
 
 
 ## Trouver de l'aide sur le forum
