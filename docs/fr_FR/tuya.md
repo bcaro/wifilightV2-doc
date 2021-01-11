@@ -546,8 +546,8 @@ Si le cid ou le devId n'est pas correct, les commandes actions ne seront pas ex�
 Le plugin envoie la commande au demon à l'adresse 127.0.0.1.
 
 Puis le demon envoie la commande au périphérique.
-.
-Enfin le périphérique renvoie son état. Si la command en'est pas correcte, le périphérique ne renvoie pas son état ou renvoie un message vide ou une erreur.
+
+Enfin le périphérique renvoie son état. Si la commande n'est pas correcte, le périphérique ne renvoie pas son état ou renvoie un message vide ou une erreur.
 
 
 ## Un souci avec une commande action
