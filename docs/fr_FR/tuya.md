@@ -545,18 +545,20 @@ Si le cid ou le devId n'est pas correct, les commandes actions ne seront pas ex�
 
 Le plugin envoie la commande au demon à l'adresse 127.0.0.1.
 
-Puis le demon envoie la commande au périphérique.
+Puis le demon envoie la commande au périphérique à l'adresse 192.168.1.129.
 
-Enfin le périphérique renvoie son état. Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son état ou renvoie un message vide ou une erreur.
+Enfin, le périphérique renvoie son état. Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son état ou renvoie un message vide ou une erreur.
 
 
 ## Un souci avec une commande action
 
 1. Vérifier les 3 points ci-dessus
-2. Désactiver tous les périphériques wifiLightV2 sauf celui à tester (ne garder qu'un canal pour les multicanaux), attendre que le demon passe (il interroge les périphériques toutes les minutes) et effacer les logs pour plus de clarté
-3. activer la commande du plugin qui dysfonctionne 2 fois avec 5s d'intervalle
-4. stopper les logs et les sauvegarder.
-5. envoyer les logs sur le forum
+2. Désactiver tous les périphériques wifilightV2 sauf celui à tester (ne garder qu'un canal pour les multicanaux), et effacer les logs pour plus de clarté.
+3. Attendre que le demon passe (il interroge les périphériques toutes les minutes le message commençe par : >>>>>>>> Search for) 
+4. Attendre 10s après le message contenant >>>>>>>>>>> End <<<<<<<<<<<< (fin de l'interrogation de périphériques par le demon).
+5. Activer la commande du plugin qui dysfonctionne 2 fois avec 5s d'intervalle
+6. Stopper les logs et les sauvegarder.
+7. Envoyer les logs sur le forum (avec la config du périphérique et l'action qui a été faite))
 
 
 ## Trouver de l'aide sur le forum
