@@ -13,21 +13,21 @@ todo :
 
 1.68 - 2020-12-28 (beta)
 
+-   Tuya Zigbee config V1 : supprimée, les périphériques en V1 ne seront plus visibles et ne pourront plus être configurés. La config V2 est renommée et c'est la seule qui apparait dans le choix des types de périphériques.
 -   Tuya : suppression de la notion de canal pour Zigbee/Tuya et Tuya V3 (enfin)
 -	Tuya : ajout de périphériques Proscenic (friteuse et humidicateur)
--   Yuya : ajout d'une alarme
--   Tuya : export d'une config personnalisée pour la partager 
+-   Tuya : ajout d'une alarme
+-   Tuya : export d'une config personnalisée pour la partager (nécessite de sauvegarder l'équipement)
 -   Milight : les ibox1/2 ne sont plus commercialisées et remplacées par la miBoxer qui est 100% cloud. Pour que le plugin puisse continuer à exploiter les lampes milight ou que vous puissiez remplacer une ibox1/2 défaillante, il est possible d'utiliser une [box DIY proposée par Sidoh](https://github.com/sidoh/esp8266_milight_hub) . Le plugin est compatible avec cette box car elle reproduit le protocole Mi.Light mais il implante aussi le proctocole spécifique à cette box DIY qui est plus simple et plus performant.
--   Ajout des plafonniers iHomma en beta (à tester)
+-   iHomma : ajout des plafonniers en beta (à tester)
 -   Meross : ajout vanne thermostatique
 -   Meross : amélioration du fonctionnement des prises
--   Les modes custom standard (Nanoleaf, Yeelight) sont regroupés dans un select. La commande select dans la configuration du périphérique peut ensuite être modifiée pour ajouter de nouveaux modes custom.
--   Les modes disco (Milight, Arilux, Lagute, MagicUFO, Yeelight, H801, TPLink, Extel, Philips, Tuya) sont regroupés dans un select.
+-   Les modes custom standard (Nanoleaf, Yeelight) sont regroupés dans un select. La commande select dans la configuration du périphérique peut ensuite être modifiée pour ajouter de nouveaux modes custom (nécessite de sauvegarder l'équipement).
+-   Les modes disco (Milight, Arilux, Lagute, MagicUFO, Yeelight, H801, TPLink, Extel, Philips, Tuya) sont regroupés dans un select(nécessite de sauvegarder l'équipement).
 -   réaffectation des commandes génériques lors de la création d'une nouvelle commande (inactif sur les commandes déjà créées).
 -   amélioration de l'apprentissage des modules Tuya
 -   la recharge de l'interface du mode inclusion n'est plus nécessaire
 -   corrections mineures de bogues
--   pour détecter le rare souci du non affichage des images d'un périphérique ou des champs dans sa configuration : ajout de logs dans la console web
 
 1.67 - 2020-12-23
 

@@ -105,6 +105,7 @@ Nota :
 
 Attention :
 - si vous partez d'une configuration standard et que vous ajoutez l'apprentissage pour vérifier les dps standards, il faudra modifier les commandes créées par la config standard et supprimer les commandes créées par l'apprentissage. En effet, lors de la sauvegarde, les dps standards sont toujours recréés, sinon il est possible de na pas les afficher.
+- vous pouvez exporter la configuration obtenue et testée en cliquant sur le bouton Exporter. Transférer le contenu du champ getConfig et une photo du périphérique au développeur.
 
 ## Mode apprentissage
 
@@ -204,6 +205,8 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 ## Mode apprentissage
 
 Pour lancer l'apprentissage, disponible uniquement en V3,  il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID car la procédure ne permet pas de les retrouver. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos. Pour terminer, cliquer sur le bouton « arrêter l’inclusion ». Pour plus d'information voir ici : [Mode inclusion](./tuya#tocAnchor-1-1-5) (la partie décrivant la création automatique du périphérique n'est pas disponible sur les périphériques Tuya non Zigbee).
+
+Vous pouvez exporter la configuration obtenue et testée en cliquant sur le bouton Exporter. Transférer le contenu du champ getConfig et une photo du périphérique au développeur.
 
 
 ## Personnalisation des commandes
@@ -509,18 +512,18 @@ Dans le cas où le décodage de la trame est correct, on trouve un message tel q
 
 Les caractères de la fin du message seront filtrés par le plugin et ne doivent pas inquiéter. C'est ce message qui va permettre de configurer le périphérique dans le plugin en identifiant à quoi servent les n° de dps et quelles valeurs ils prennent, voir plus haut.
 
-## Vérifier que le devId ou le cid est le bon si le périphérique le renvoie
+## Vérifier que le devId ou le cid est le bon
 
 1. le cid (pour les périphériques Tuya/Zigbee) ou le devId pour les autres a été trouvé en même temps que la LocaKey. Il est spécifique à chaque périphérique et n'est jamais modifié, cela permet de repérer vos périphériques.
 2. repérer les messages "Receive after decode" en provenance du périphérique.
 
-**Pour un périphérique non Zigbee on trouvera :**
+**Pour un périphérique non Zigbee qui renvoie son devId,on trouvera :**
 
     [2020-12-10 08:01:58][DEBUG] :     Receive after decode :{"devId":"30800135cc50e3418b4c","dps":{"1":true},"t":1607583717,"s":3}]D"{4K - Read Json OK
 
 le devId est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Attention : tous les périphériques ne renvoient pas leur devId.
 
-**Pour un périphérique Zigbee on trouvera :**
+**Pour un périphérique Zigbee qui renvoie son cid, on trouvera :**
 
     [2020-12-10 08:14:34][DEBUG] :     Receive after decode :{"dps":{"1":"pir"},"cid":"bc33acfffe525145","t":1607584474}
 
@@ -543,11 +546,11 @@ Si le cid ou le devId n'est pas correct, les commandes actions ne seront pas ex�
     [2021-01-11 22:51:54][DEBUG] :     Dps1|dps_1_STATE:1
     [2021-01-11 22:51:54][DEBUG] :     No other states to update
 
-Le plugin envoie la commande au demon à l'adresse 127.0.0.1.
+Le plugin envoie la commande au demon à l'adresse 127.0.0.1 (Cmd to 127.0.0.1).
 
-Puis le demon envoie la commande au périphérique à l'adresse 192.168.1.129.
+Puis le demon envoie la commande au périphérique à l'adresse 192.168.1.129 ( Receive from Jeedom to Send cmd).
 
-Enfin, le périphérique renvoie son état. Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son état ou renvoie un message vide ou une erreur.
+Enfin, le périphérique renvoie son état (Receive after decode). Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son état ou renvoie un message vide ou une erreur.
 
 
 ## Un souci avec une commande action
