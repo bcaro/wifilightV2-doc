@@ -17,7 +17,7 @@ todo :
 
 -   Tuya Zigbee config V1 : supprimée, les périphériques en V1 ne seront plus visibles et ne pourront plus être configurés. La config V2 est renommée et c'est la seule qui apparait dans le choix des types de périphériques.
 -   Tuya : suppression de la notion de canal pour Zigbee/Tuya et Tuya V3 (enfin)
--   Tuya : ajout de périphériques Proscenic (friteuse et humidicateur), tous les autres Proscenic sont compatibles via l'apprentissage. L'utilisation des Proscenic dans le plugin nécessite une astuce lors de l'utilisation de l'appli Proscenic
+-   Tuya : ajout de périphériques Proscenic (friteuse et humidicateur), d'autres Proscenic sont compatibles via l'apprentissage, mais pas tous (les aspirateurs ne le sont pas à cette date). L'utilisation des Proscenic dans le plugin nécessite une astuce lors de l'utilisation de l'appli Proscenic.
 -   Tuya : ajout d'une alarme
 -   Tuya : export d'une config personnalisée pour la partager (nécessite de sauvegarder l'équipement)
 -   Milight : les ibox1/2 ne sont plus commercialisées et remplacées par la miBoxer qui est 100% cloud. Pour que le plugin puisse continuer à exploiter les lampes Milight ou que vous puissiez remplacer une ibox1/2 défaillante, il est possible d'utiliser une [box DIY proposée par Sidoh](https://github.com/sidoh/esp8266_milight_hub) . Le plugin est compatible avec cette box car elle reproduit le protocole Mi.Light mais il implante aussi le protoccole spécifique à cette box DIY qui est plus simple et plus performant.
