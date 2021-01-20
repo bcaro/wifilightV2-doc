@@ -77,7 +77,7 @@ Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être
 
 Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les n° de dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Périphérique personnalisé](./tuya#tocAnchor-1-9-5) pour comprendre les commandes de la configuration par défaut.
 
-Si le périphérique est complètement différent, il faut configurer manuellement le plugin en choisissant le sous-type "Personnalisé" et en se référant au paragraphe [Périphérique personnalisé](./tuya#tocAnchor-1-9-5). Partagez alors votre configuration sur le forum pour l'intégrer dans le plugin, - vous pouvez l'exporter en cliquant sur le bouton Exporter. Transférer le contenu du champ getConfig et une photo du périphérique au développeur.
+Si le périphérique est complètement différent, il faut configurer manuellement le plugin en choisissant le sous-type "Personnalisé" et en se référant au paragraphe [Périphérique personnalisé](./tuya#tocAnchor-1-9-5). Partagez alors votre configuration sur le forum pour l'intégrer dans le plugin, - vous pouvez l'exporter en cliquant sur le bouton Exporter. Transférer le contenu du champ configGet et une photo du périphérique au développeur.
 
 
 ## Configuration en mode inclusion
@@ -105,7 +105,7 @@ Nota :
 
 Attention :
 - si vous partez d'une configuration standard et que vous ajoutez l'apprentissage pour vérifier les dps standards, il faudra modifier les commandes créées par la config standard et supprimer les commandes créées par l'apprentissage. En effet, lors de la sauvegarde, les dps standards sont toujours recréés, sinon il est possible de na pas les afficher.
-- vous pouvez exporter la configuration obtenue et testée en cliquant sur le bouton Exporter. Transférer le contenu du champ getConfig et une photo du périphérique au développeur.
+- vous pouvez exporter la configuration obtenue et testée en cliquant sur le bouton Exporter. Transférer le contenu du champ configGet et une photo du périphérique au développeur.
 
 ## Mode apprentissage
 
@@ -206,7 +206,7 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 
 Pour lancer l'apprentissage, disponible uniquement en V3,  il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID car la procédure ne permet pas de les retrouver. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos. Pour terminer, cliquer sur le bouton « arrêter l’inclusion ». Pour plus d'information voir ici : [Mode inclusion](./tuya#tocAnchor-1-1-5) (la partie décrivant la création automatique du périphérique n'est pas disponible sur les périphériques Tuya non Zigbee).
 
-Vous pouvez exporter la configuration obtenue et testée en cliquant sur le bouton Exporter. Transférer le contenu du champ getConfig et une photo du périphérique au développeur.
+Vous pouvez exporter la configuration obtenue et testée en cliquant sur le bouton Exporter. Transférer le contenu du champ configGet et une photo du périphérique au développeur.
 
 
 ## Personnalisation des commandes
