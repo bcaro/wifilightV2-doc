@@ -23,11 +23,12 @@ todo :
 -   Meross : ajout vanne thermostatique
 -   Meross : amélioration du fonctionnement des prises
 -   Les modes custom standard (Nanoleaf, Yeelight) sont regroupés dans un select. La commande select dans la configuration du périphérique peut ensuite être modifiée pour ajouter de nouveaux modes custom (nécessite de sauvegarder l'équipement).
--   Les modes disco (Milight, Arilux, Lagute, MagicUFO, Yeelight, H801, TPLink, Extel, Philips, Tuya) sont regroupés dans un select(nécessite de sauvegarder l'équipement).
+-   Les modes disco (Milight, Arilux, Lagute, MagicUFO, Yeelight, H801, TPLink, Extel, Philips, Tuya) sont regroupés dans un select (nécessite de sauvegarder l'équipement).
 -   réaffectation des commandes génériques lors de la création d'une nouvelle commande (inactif sur les commandes déjà créées).
 -   amélioration de l'apprentissage des modules Tuya
 -   la recharge de l'interface du mode inclusion n'est plus nécessaire
 -   corrections mineures de bogues
+-   amélioration de l'interface et de la navigation lors des changements de types/sous-types
 
 1.67 - 2020-12-23
 
