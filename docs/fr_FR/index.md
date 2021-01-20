@@ -1,4 +1,4 @@
-# changelog
+# Changelog
 
 [voir ici](https://bcaro.github.io/wifilightV2-doc/fr_FR/changelog)
 

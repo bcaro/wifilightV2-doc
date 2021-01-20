@@ -1,3 +1,5 @@
+[Retour à la documentation du plugin](https://bcaro.github.io/wifilightV2-doc/fr_FR/)
+
 Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 - modification de la doc 
 - modification de l'aide dans l'interface
