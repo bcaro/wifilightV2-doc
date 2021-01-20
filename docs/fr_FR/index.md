@@ -1,3 +1,7 @@
+# changelog
+
+[voir ici](https://bcaro.github.io/wifilightV2-doc/fr_FR/changelog)
+
 # Présentation
 
 Ce plugin permet de gérer de nombreux bandeaux de leds, ampoules leds, prises électriques, thermostats, capteur de température, capteur de porte, etc.  pilotés en wifi ou par radiofréquence 2.4 GHz via une box wifi vendue avec le produit. Le principe du plugin est de ne jamais utiliser le cloud et donc une connexion internet entre le plugin et le périphérique via un serveur lointain, toutes les actions sont donc locales au réseau domestique.
