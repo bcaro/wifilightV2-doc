@@ -209,7 +209,8 @@ Le retour d'état est immédiat pour les périphériques suivants :
 - compatibles avec Ewelink
 - compatibles avec l'appli Tuya smart live
 - Sonoff en mode LAN
-- compatibles Tuya
+- compatibles Tuy 
+- Sonoff en mode DIY (nécessite un firmare récent, sinon interrogation toutes les minutes)
 
 
 Par exemple, si un interrupteur est actionné, Jeedom le saura immédiatement.
@@ -222,7 +223,6 @@ Pour les périphériques :
  - TP-Link
  - Xiaomi Philips
  - Extel Meli
- - Sonoff en mode DIY
  - Nanoleaf Aurora
  - Meross
  - Mi.Light connectés au pont Milight-hub

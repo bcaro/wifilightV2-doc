@@ -13,7 +13,7 @@ todo :
 - apprentissage des couleurs Tuya
 - pouvoir choisir l'image alternative d'un périphérique dans une fenêtre pop-up
 
-1.68 - 2021-01-20 (release) accessible en téléchargeant la beta du plugin
+1.68 - 2021-01-27
 
 -   Tuya Zigbee config V1 : supprimée, les périphériques en V1 ne seront plus visibles et ne pourront plus être configurés. La config V2 est renommée et c'est la seule qui apparait dans le choix des types de périphériques.
 -   Tuya : suppression de la notion de canal pour Zigbee/Tuya et Tuya V3 (enfin)
