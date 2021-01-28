@@ -396,7 +396,7 @@ Nota : il est indispensable de mettre le même n° de dps pour ces 6 commandes e
 
 ### Modifier plusieurs n° de dps
 
-Pour envoyer plusieurs n° de dps en même temps, laisser le champ n° de dps vide et mettre la commande complète sans les accolades dans le champ paramètres. Un et un seul des n° de dps pourra être un curseur ou (exclusivement) une couleur.
+Pour envoyer plusieurs n° de dps en même temps, mettre \* dans le n° de dps et mettre la commande complète sans les accolades dans le champ paramètres. Un et un seul des n° de dps pourra être un curseur ou (exclusivement) une couleur.
 
 Créer une commande action/autre et mettre dans paramètres :
 
@@ -406,7 +406,7 @@ Permet d'allumer la lampe et de passer en couleur.
 
 Créer une commande action/curseur et mettre dans paramètres :
 
-    "1":true,"3":#slider#/10
+    "1":true,"3":#slider#
    
 Permet d'allumer la lampe et de modifier l'intensité.
  
