@@ -209,7 +209,7 @@ Le retour d'état est immédiat pour les périphériques suivants :
 - compatibles avec Ewelink
 - compatibles avec l'appli Tuya smart live
 - Sonoff en mode LAN
-- compatibles Tuy 
+- compatibles Tuya/Zigbee
 - Sonoff en mode DIY (nécessite un firmare récent, sinon interrogation toutes les minutes)
 
 
@@ -230,6 +230,8 @@ Pour les périphériques :
 Le plugin interroge régulièrement le périphérique pour connaitre son état. Le délai pour que Jeedom connaisse l'état peut dépasser 1 minute.
 
 Pour les autres périphériques il n'y a pas de retour d'état.
+
+La commande stateGet permet, pour les périphériques qui renvoient leur état, de forcer la mise à jour de l'état en interrogeant le périphérique.
 
 ## Mise à jour par scénario
 
