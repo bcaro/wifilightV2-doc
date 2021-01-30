@@ -13,6 +13,14 @@ todo :
 - apprentissage des couleurs Tuya
 - pouvoir choisir l'image alternative d'un périphérique dans une fenêtre pop-up
 
+1.69 - 2021-01-30
+
+-   Tuya : Ajout d'un module fil pilote
+-   Ajout d'une commande stateGet permettant, par exemple, à un scénario de remonter l'état des périphériques qui le peuvent. Nécessite de sauvegarder l'équipement créé avant la 1.69 .
+-	Retour de la possibilité de déplacer les commandes (disparu en 1.68)
+- 	Tuya : Commandes avec formules multiples, il est obligatoire de mettre \* dans le champs dps
+-	Tuya : correction bogue calcul de formule info
+ 
 1.68 - 2021-01-27
 
 -   Tuya Zigbee config V1 : supprimée, les périphériques en V1 ne seront plus visibles et ne pourront plus être configurés. La config V2 est renommée et c'est la seule qui apparait dans le choix des types de périphériques.
