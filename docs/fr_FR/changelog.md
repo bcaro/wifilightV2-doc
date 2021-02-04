@@ -13,6 +13,12 @@ todo :
 - apprentissage des couleurs Tuya
 - pouvoir choisir l'image alternative d'un périphérique dans une fenêtre pop-up
 
+1.70 - 2021-02-05 (beta)
+
+-   Tuya : Ajout d'un module chauffage soufflant
+-   Meross : correction bogue switch et plug 1 canal
+- 	Tuya : correction \* dans le champs dps
+
 1.69 - 2021-01-30
 
 -   Tuya : Ajout d'un module fil pilote
