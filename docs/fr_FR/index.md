@@ -210,7 +210,7 @@ Le retour d'état est immédiat pour les périphériques suivants :
 - compatibles avec l'appli Tuya smart live
 - Sonoff en mode LAN
 - compatibles Tuya/Zigbee
-- Sonoff en mode DIY (nécessite un firmare récent, sinon interrogation toutes les minutes)
+- Sonoff en mode DIY (nécessite un firmware récent, sinon interrogation toutes les minutes)
 
 
 Par exemple, si un interrupteur est actionné, Jeedom le saura immédiatement.
@@ -397,8 +397,12 @@ Aucune aide ne sera donnée pour récupérer le jeton.
 
 Les périphériques compatibles sont :
 -   prises MSS210HK MSS210 MSS425EHK MSS425FHK
--   switch MSS710
--   prise avec conso MSS310 en beta (à tester) (la conso ne remonte que toutes les minutes)
+-   switch MSS71
+-   prise avec conso MSS310 : la conso ne remonte que toutes les minutes
+-   MTS100/100H : Hub et têtes thermostatiques
+-   MSG100 (garage) : proposé en beta non testé et incomplet
+-   les capteurs de températures connectés au hub pourraient être compatibles
+
 
 Il est indispensable de récupérer un namespace qui correspond au Jeton dans le plugin, un messageId qui correspond à Identifiant dans le plugin et un timestamp. Pour trouver ces 3 paramètres, voir sur le web : Meross Credentials ou [sur le forum](https://community.jeedom.com/t/meross-credential-et-plugin-wifilightv2/48063?u=bernardfr.caron) .
 
