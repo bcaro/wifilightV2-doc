@@ -16,8 +16,11 @@ todo :
 1.70 - 2021-02-05 (beta)
 
 -   Tuya : Ajout d'un module chauffage soufflant
+-	Tuya : Ajout de deux diffuseurs
+-   Ajout de commandes doubles pour l'humidificateur afin d'améliorer son usage
 -   Meross : correction bogue switch et plug 1 canal
 - 	Tuya : correction \* dans le champs dps
+
 
 1.69 - 2021-01-30
 

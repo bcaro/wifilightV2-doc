@@ -133,6 +133,11 @@ Les équipements suivants sont compatibles en firmware 1.0. et en firmware 2.0.
 -  thermostat BHT-6000GCLW / BHT 6000 et uniquement ces modèles
 -  ampoules RGBW globe et modèles similaires en fonctionnement
 -  smart Garage
+-  diffuseurs 
+-  chauffage
+-  Proscenic (l'aspirateur n'est pas compatible et la procédure d'intégration est complexe)
+-  Fil pilote
+-  Alarme (infos uniquement)
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
