@@ -57,16 +57,12 @@ Vous trouverez une information comme celle-ci :
  
 Le cid est à copier dans le champ identifiant du périphérique du plugin (sans les " "). C'est lui qui permet de distinguer 2 équipements connectés à la passerelle.
 
-Si aucun message en clair n'apparait, c'est que la clé n'est pas bonne.
-
 Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être trouvé dans les logs. Les experts pourront retrouver les dps et le cid car ils sont affichés à côté de la localKey lors de la procédure pour trouver ces derniers.
 
 
 ## Choix du périphérique connecté à la passerelle
 
-Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les n° de dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Périphérique personnalisé](./tuya#tocAnchor-1-9-5) pour comprendre les commandes de la configuration par défaut.
-
-Si le périphérique est complètement différent, il faut configurer manuellement le plugin en choisissant le sous-type "Personnalisé" et en se référant au paragraphe [Périphérique personnalisé](./tuya#tocAnchor-1-9-5). Partagez alors votre configuration sur le forum pour l'intégrer dans le plugin, - vous pouvez l'exporter en cliquant sur le bouton Exporter. Transférer le contenu du champ configGet et une photo du périphérique au développeur.
+Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les n° de dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Mode création manuelle des commandes en V3](./tuya#tocAnchor-1-9-8) de la partie Tuya pour interpréter les logs du plugin et comprendre les commandes de la configuration par défaut.
 
 
 ## Création automatique du périphérique en mode inclusion
@@ -74,7 +70,7 @@ Si le périphérique est complètement différent, il faut configurer manuelleme
 Pour pouvoir utiliser le mode inclusion des périphériques connectés à la passerelle, il faut au préalable avoir connecté et configuré correctement une et une seule passerelle en utilisant le sous-type Gateway Hub Tuya/Zigbee avec son adresse IP et sa localKey. Le périphérique doit retourner son état, si ce n'est pas le cas, la procédure ne pourra pas fonctionner. Si 2 passerelles sont connectées, le plugin utilisera les caractéristiques de l'une d'elles sans savoir laquelle. Le périphérique ne doit pas déjà se trouver dans le plugin, sinon il faut soit le supprimer soit utiliser le mode apprentissage.
 
 - cliquer sur le mode inclusion, attendre que le périphérique soit inclus 
-- agir sur le périphérique ou modifier l'état du périphérique avec l'appli Tuya (mais l'usage de l'appli peut bloquer le périphérique) en utilisants toutes les possibiités
+- agir sur le périphérique ou modifier l'état du périphérique avec l'appli Tuya (mais l'usage de l'appli peut bloquer le périphérique) en utilisant toutes les possibilités
 - cliquer ensuite sur le bouton arrêt de l'inclusion et sauvegarder
 
 Il faut inclure un seul périphérique à la fois. Pour exclure un périphérique, il suffit de le supprimer dans le plugin.
@@ -137,7 +133,7 @@ Le type V1 correspond aux périphériques en firmware 1.0 . Les priphériques av
 
 Le plugin teste les périphériques (mais ils doivent être ajoutés manuellement) et affiche un message dans le centre de messages lorsqu'un périphérique a été configuré avec le mauvais firmware.
 
-Il existe quelques pérphériques qui annoncent un firmware 1.x et qui pourtant sont des firmware 2.x, comme certaines commandes de volets roulants.
+Il existe quelques périphériques qui annoncent un firmware 1.x et qui pourtant sont des firmware 2.x, comme certaines commandes de volets roulants.
 
 Pour les périphériques multicanaux, comme les prises, il faut créer un wifilightV2 par canal.
 
@@ -155,7 +151,7 @@ Les paramètres de configuration de l'énergie, pour les prises qui la gèrent, 
 
 L'index "20" correspond ici à la tension d'alimentation en centaine de mV soit : 228.1 V, elle doit légèrement bouger. Les index "18" et "19" correspondent au courant (mA) et à la puissance en W, ici aucun appareil n'est branché et donc les informations sont à zéro. C'est un bon moyen de trouver la tension, en branchant un appareil, ces 2 valeurs doivent être modifiées et la tension est juste après.
 
-La syntaxe est alors : 20;18;19 qu'il faut mettre dans le champ 'Paramétrage de l'énergie' en V1 et V2. En V3, les dps peuvent être modifiés directement pour les adapter aux n° qui contiennent les informations de consommation.
+La syntaxe est alors : 20;18;19 qu'il faut mettre dans le champ 'Paramétrage de l'énergie' en V1 et V2 .
 
 Pour les plugs 1 prise, en général il faut : 6;4;5 (mis par défaut par le plugin).
 
@@ -165,22 +161,9 @@ Pour les autres prises, la valeur 20;18;19 est mise par défaut.
 
 
 ## Tuya Smartlife compatible V3
-Le type V3 correspond aux périphériques en firmware 2.0 . En plus de cette compatibilité, il y a la possibilité de modifier finement le n° de dps et les paramètres de dps de tous les périphériques présents en V3 afin de les adapter au besoin. Pour ce type, toutes les commandes d'un même périphérique snt créées dans un seul wifilightV2, y compris pour les prises multiples.
-Cette version permet de modifier finement le n° de dps et les paramètres et est munie d'un mode apprentissage des dps pour les périphériques non proposés par le plugin.
+Le type V3 correspond aux périphériques en firmware 2.0 . En plus de cette compatibilité, il y a la possibilité de modifier finement le n° de dps et les paramètres de dps de tous les périphériques présents en V3 afin de les adapter au besoin. Pour ce type, toutes les commandes d'un même périphérique sont créées dans un seul wifilightV2, y compris pour les prises multiples.
 
 L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s même si le périphérique ne le renvoie pas. A utiliser pour les prises électriques qui ne renvoient pas régulièrement la consommation mais ne pas utiliser pour les périphériques à piles sous peine de les vider.
-
-Il y a 5 méthodes pour créer un périphérique :
-- Utiliser une configuration standard proposées par le plugin, c'est la plus simple si votre périphérique correspond à l'un de ceux proposés
-- Modifier une configuration standard proche du périphérique à contrôler en modifiant les dps, les paramètres et les types là où ils sont différents, ceci nécessite de consulter les logs du plugin.
-- Créer entièrement la configuration, ce qui nécessite de consulter les logs du plugin.
-- Utiliser les boutons prédéfinis pour créer les commandes à partir de la configuration personnalisée ou en ajoutant des commandes à une configuration standard. Il faudra configurer les commandes, ce qui nécessite de consulter les logs.
-- Utiliser l'apprentissage ce qui crée automatiquement les commandes et les paramètres dans le périphérique. Cette méthode permet de récupérer toutes les informations en provenance du périphérique physique sans consulter les logs. Il faudra supprimer les commandes inutiles.
-
-Les 4 premières méthodes peuvent être mixées ainsi que les 4 dernières. La première et la dernière méthode sont recommandées.
-
-Attention :
-- si vous partez d'une configuration standard et que vous ajoutez l'apprentissage pour vérifier les dps standards, il faudra modifier les commandes créées par la config standard et supprimer les commandes créées par l'apprentissage. En effet, lors de la sauvegarde, les dps standards sont toujours recréés, sinon il est possible de na pas les afficher.
 
 
 ## Configuration initiale d'un périphérique V3
@@ -196,15 +179,15 @@ Si le périphérique est désinstallé puis réinstallé dans l'application mobi
 Aucune aide ne sera donnée pour récupérer la clé ou l'identifiant.
 
 ## Choix d'un périphérique V3 proposés dans la liste des sous-types
-Cette procédure est à privilégier car elle est la plus simple. Choisir le périphérique du plugin correspondant à celui à intégrer. Certains périphériques très proches visuellement ont cependant des comportements différents, tester tous les sous-types qui peuvent correspondre et tester le bon fonctionnement.
+Cette procédure est à privilégier car elle est la plus simple. Choisir le sous-type correspondant au périphérique à intégrer. Certains périphériques très proches visuellement ont cependant des comportements différents, tester tous les sous-types qui peuvent correspondre et tester le bon fonctionnement.
 
-Vous avez la possibilité de modifier le n° de dps ainsi que ses paramètres pour ajuster un périphérique qui a un comportement légèrement différent de celui proposé par le plugin.
+Vous avez la possibilité de modifier le n° de dps ainsi que ses paramètres pour ajuster un périphérique qui a un comportement légèrement différent de celui proposé par le plugin. Voir le mode création manuelle des commandes ci-dessous pour utiliser les informations présentes dans les logs du plugin.
 
 Si vous supprimez des commandes, elles seront automatiquement recréées lors de la sauvegarde du périphérique, il est préférable de décocher la case "Afficher".
 
 ## Mode apprentissage en V3
 
-Pour lancer l'apprentissage, il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID car la procédure ne permet pas de les retrouver. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos. Pour terminer, cliquer sur le bouton « arrêter l’inclusion ».
+Pour lancer l'apprentissage, il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos, utilisez toutes les possibilités offertes par l'appli Tuya. Pour terminer, cliquer sur le bouton « arrêter l’inclusion ».
 
 Ce mode est uniquement là pour aider la configuration personnalisée d'un nouveau périphérique qui n'est pas proposé par le plugin. L'utilisation de ce mode ne peut donner un périphérique complètement fonctionnel.
 
@@ -223,9 +206,9 @@ Afin de partager votre expérience, vous pouvez exporter la configuration obtenu
 	
 ## Mode création manuelle des commandes en V3
 
-Ce mode est réservé aux experts et pour les commandes qui nécessitent d'envoyer plusieurs dps en même temps ou pour la gestion des couleurs des lampes, sinon utilisez les sous-types proposés ou le mode apprentissage. 
+Ce mode est utile pour les commandes qui nécessitent d'être ajustées (dps, paramètre), pour envoyer plusieurs dps en même temps ou pour la gestion des couleurs des lampes, sinon utilisez les sous-types proposés ou le mode apprentissage. 
 
-La procédure nécessite que le périphérique renvoie son état dans les logs. Si le périphérique ne renvoie pas son état, le devId et les dps ne pourront pas être trouvé dans les logs. Les experts pourront retrouver les dps et le devId car ils sont affichés à côté de la localKey lors de la procédure pour trouver ces derniers.
+La procédure nécessite que le périphérique renvoie son état dans les logs. Si le périphérique ne renvoie pas son état, le devId et les dps ne pourront pas être trouvés dans les logs. Les experts pourront retrouver les dps et le devId car ils sont affichés à côté de la localKey lors de la procédure pour trouver ces derniers.
 
 Le plugin est équipé de boutons permettant de créer automatiquement les commandes des cas les plus courants, il suffira de modifier le n° de dps ou le paramètre automatiquement créés.
 
@@ -413,9 +396,9 @@ Permet d'allumer la lampe et de passer en couleur.
 
 Créer une commande action/curseur et mettre dans paramètres :
 
-    "1":true,"3":#slider#
+    "1":true,"3":#slider#/10
    
-Permet d'allumer la lampe et de modifier l'intensité.
+Permet d'allumer la lampe et de modifier l'intensité. Une formule sur le #slider# peut être appliquée.
  
 Créer une commande action/couleur et mettre dans paramètres :
 
