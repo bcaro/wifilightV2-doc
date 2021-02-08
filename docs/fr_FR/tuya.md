@@ -1,6 +1,6 @@
 [Retour à la documentation générale](./index.md)
 
-# Zigbee Tuya 
+# Passerelles Zigbee Tuya 
 
 ## Compatibilité
 
