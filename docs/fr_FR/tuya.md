@@ -9,7 +9,7 @@ Le dialogue entre le plugin et la passerelle se fait en Wifi. Ensuite, le dialog
 Le plugin peut récupérer l'état des périphériques dès que ceux-ci envoient une information de changement d'état ou quand le plugin les interroge au lancement du demon. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
 
 Les équipements suivants sont compatibles mais la liste n'est pas exclusive et sera complétée en fonction du retour des utilisateurs.
-- passerelle MoesHouse, BENEXMART,(toutes les passerelles Zigbee Tuya sont normalement compatibles)
+- passerelle MoesHouse, BENEXMART (toutes les passerelles Zigbee Tuya sont normalement compatibles)
 - serrure Vima (mais pas MiHome)
 	le plugin ne peut ouvrir/fermer car la serrure n'est pas prévue pour le faire, mais il peut connaitre la dernière clé utilisée
 - capteur de température et d'humidité TYZS2
@@ -347,7 +347,7 @@ Cette partie est complexe et demande une lecture très attentive.
 
 Le codage de la couleur chez Tuya a plusieurs formats qui sont différents de celui utilisé par Jeedom. Jeedom utilise le format RGB (Reg Green Blue) alors que Tuya utilise différents formats HSV (Hue Saturation Value) ou combinant HSV et RGB. Le RGB code chaque couleur de 0 à 255 ou en hexadécimal de 0 à FF. Le rouge est donc codé FF0000, le bleu : 0000FF, le blanc : FFFFFF et le noir : 000000. Les valeurs pour HSV sont les suivantes : Hue de 0 à 360° (couleur), S de 0 à 100% (Saturation) et V de 0 à 100% (Intensité). Voir [ici](https://www.rapidtables.com/convert/color/) pour aller plus loin.
 
-Afin de permettre au plugin de fonctionner correctement pour les couleurs, il faut identifier les formats utilisés par Tuya lors d'un changement de couleur avec l'appli tuya et en observant à cet instant dans les logs le n° de dps qui a été modifié.
+Afin de permettre au plugin de fonctionner correctement pour les couleurs, il faut identifier les formats utilisés par Tuya lors d'un changement de couleur avec l'appli Tuya et en observant à cet instant dans les logs le n° de dps qui a été modifié.
 
 1 - format HSV : H (codé de 0 à 360 ) S (codé de 0 à 1000) V (codé de 0 à 1000) le résultat est ensuite donné en base 16, soit 12 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya  000003E803E8 (Hue = 0000 S =03E8 V=03E8)
 
@@ -384,7 +384,7 @@ Pour créer manuellement les 6 boutons dans le cas d'un format de couleur 1 :
 	
 Nota : il est indispensable de mettre le même n° de dps pour ces 6 commandes et de n'ajouter aucune autre commande action ou info sur ce n° de dps sinon le plugin ne pourra pas décoder correctement les informations et mettre à jour le retour d'état.
 
-### Modifier plusieurs n° de dps
+### Modifier plusieurs n° de dps dans la même commande
 
 Pour envoyer plusieurs n° de dps en même temps, mettre \* dans le n° de dps et mettre la commande complète sans les accolades dans le champ paramètres. Un et un seul des n° de dps pourra être un curseur ou (exclusivement) une couleur.
 
@@ -438,6 +438,7 @@ Tests préalables :
 3. les périphériques ne sont pas supprimés de l'appli Tuya et l'appli Tuya n'a pas été supprimée
 4. l'appli Tuya est arrêtée sur tous les terminaux pouvant la faire tourner
 5. l'adresse IP du périphérique (Tuya ou passerelle Tuya/Zigbee) est rendue fixe et est connue
+6. configurer les logs wifilightV2 en mode debug, redémarrer le demon
 
 ## Vérifier que le périphérique est trouvé et connecté
 
@@ -478,14 +479,14 @@ ou il n'y a plus de ping dans les logs pour cette adresse ip, cela correspond à
 
 Le plugin tentera de se reconnecter au périphérique toutes les minutes ou toutes les 3 minutes ce qui lui permettra de retrouver le périphérique s'il est rebranché. 
 
-A ce stade, la seul point testé et OK c'est que l'adresse IP est la bonne et que le périphérique est joignable.
+A ce stade, la seul point testé et OK est que l'adresse IP est la bonne et que le périphérique est joignable.
 
 ## Vérifier que la localKey est la bonne
 
 1. renseigner la localKey sans espace et sans guillemets dans le champ Jeton du plugin. Vérifier plusieurs fois : la localKey doit être la même pour tous les périphériques de même adresse IP. Le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
 2. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canaux), le but est de ne pas mélanger tous les périphériques.
 3. effacer les logs
-4. utiliser soit les boutons du périphérique physique, soit l'appli Tuya pour changer l'état du périphérique. Noter qu'utiliser l'appli Tuya peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli Tuya après la connexion ci-dessus au périphérique. A l'inverse il se peut que l'appli Tuya réponde très mal. Si le périphérique ne renvoie pas son état, la procédure se termine ici et le périphérique est incompatible avec le plugin.
+4. utiliser soit les boutons du périphérique physique, soit l'appli Tuya pour changer l'état du périphérique. Noter qu'utiliser l'appli Tuya peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli Tuya après la connexion ci-dessus au périphérique. A l'inverse il se peut que l'appli Tuya réponde très mal. Si le périphérique ne renvoie pas son état, les informations sur les dps sont à rechercher dans le fichier ayant permis de récupérer la localKey.
 
 Nota : les experts pourront retrouver les dps et le devID ou le cid car ils sont affichés à côté de la localKey lors de la procédure pour trouver la localKey.
 
