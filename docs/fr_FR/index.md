@@ -477,7 +477,7 @@ et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sono
 
 # Tuya 
 
-[Voir la documentation spécifique](./tuya#tocAnchor-1-1-4)
+[Voir la documentation spécifique](./tuya#tocAnchor-1-9)
 
 # Nanoleaf
 
