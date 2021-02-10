@@ -69,7 +69,7 @@ Si votre périphérique est dans la liste proposée, il devrait fonctionner imm�
 
 Pour pouvoir utiliser le mode inclusion des périphériques connectés à la passerelle, il faut au préalable avoir connecté et configuré correctement une et une seule passerelle en utilisant le sous-type Gateway Hub Tuya/Zigbee avec son adresse IP et sa localKey. Le périphérique doit retourner son état, si ce n'est pas le cas, la procédure ne pourra pas fonctionner. Si 2 passerelles sont connectées, le plugin utilisera les caractéristiques de l'une d'elles sans savoir laquelle. Le périphérique ne doit pas déjà se trouver dans le plugin, sinon il faut soit le supprimer soit utiliser le mode apprentissage.
 
-- cliquer sur le mode inclusion, attendre que le périphérique soit créé dans le plugin 
+- cliquer sur le mode inclusion, attendre quelques instants
 - agir sur le périphérique ou modifier l'état du périphérique avec l'appli Tuya (mais l'usage de l'appli peut bloquer le périphérique) en utilisant toutes les possibilités de l'appli Tuya ou du périphérique
 - cliquer ensuite sur le bouton arrêt de l'inclusion et sauvegarder
 - le périphérique est créé et configuré, vous pouvez l'éditer
