@@ -9,7 +9,9 @@ Le dialogue entre le plugin et la passerelle se fait en Wifi. Ensuite, le dialog
 Le plugin peut récupérer l'état des périphériques dès que ceux-ci envoient une information de changement d'état ou quand le plugin les interroge au lancement du demon. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
 
 Les équipements suivants sont compatibles mais la liste n'est pas exclusive et sera complétée en fonction du retour des utilisateurs.
-- passerelle MoesHouse, BENEXMART (toutes les passerelles Zigbee Tuya sont normalement compatibles)
+- passerelles MoesHouse, BENEXMART 
+- passerelle SilverCrest Smart Home de Lidl
+- toutes les passerelles Zigbee Tuya sont normalement compatibles, il n'y a pas encore eu de retour de passerelle non compatible.
 - serrure Vima (mais pas MiHome)
 	le plugin ne peut ouvrir/fermer car la serrure n'est pas prévue pour le faire, mais il peut connaitre la dernière clé utilisée
 - capteur de température et d'humidité TYZS2
@@ -22,9 +24,9 @@ Les équipements suivants sont compatibles mais la liste n'est pas exclusive et 
 - capteur de présence BENEXMART
 - capteur de température BENEXMART
 - capteur de porte BENEXMART
-- plug Lonsoho
+- plug Lonsoho avec conso
+- télécommande 3 boutons loratap
 - interrupteurs muraux simples/doubles/triples
-
 
 Tous les autres périphériques, ou les périphériques similaires d'une autre marque ou d'un autre modèle, doivent être entièrement configurés en mode personnalisé. Cependant la configuration générée pour ces modèles peut aider pour un autre.
 
@@ -67,18 +69,19 @@ Si votre périphérique est dans la liste proposée, il devrait fonctionner imm�
 
 ## Création automatique du périphérique en mode inclusion
 
-Pour pouvoir utiliser le mode inclusion des périphériques connectés à la passerelle, il faut au préalable avoir connecté et configuré correctement une et une seule passerelle en utilisant le sous-type Gateway Hub Tuya/Zigbee avec son adresse IP et sa localKey. Le périphérique doit retourner son état, si ce n'est pas le cas, la procédure ne pourra pas fonctionner. Si 2 passerelles sont connectées, le plugin utilisera les caractéristiques de l'une d'elles sans savoir laquelle. Le périphérique ne doit pas déjà se trouver dans le plugin, sinon il faut soit le supprimer soit utiliser le mode apprentissage.
+Pour pouvoir utiliser le mode inclusion des périphériques connectés à la passerelle, il faut au préalable avoir connecté et configuré correctement une passerelle en utilisant le sous-type Gateway Hub Tuya/Zigbee avec son adresse IP et sa localKey. Le périphérique à inclure à la passerelle doit retourner son état, si ce n'est pas le cas, la procédure ne pourra pas fonctionner. Si plusieurs passerelles sont connectées et configurées dans le plugin, il faut activer uniquement la passerelle sur laquelle doit être inclus le péripéhrique. 
+Si aucune passerelle ou plusieurs passerelles sont configurées et actives, le processus d'inclusion sera abandonné. Le périphérique à inclure ne doit pas déjà se trouver dans le plugin, sinon il faut soit le supprimer soit utiliser le mode apprentissage.
 
 - cliquer sur le mode inclusion, attendre quelques instants
-- agir sur le périphérique ou modifier l'état du périphérique avec l'appli Tuya (mais l'usage de l'appli peut bloquer le périphérique) en utilisant toutes les possibilités de l'appli Tuya ou du périphérique
+- agir sur le périphérique ou modifier l'état du périphérique avec l'appli Tuya (mais l'usage de l'appli peut bloquer le périphérique : dans ce cas lancer rapidement l'appli Tuya et agir rapidement sur le périphérique puis quitter l'appli Tuya) en utilisant toutes les possibilités de l'appli Tuya ou du périphérique
 - cliquer ensuite sur le bouton arrêt de l'inclusion et sauvegarder
 - le périphérique est créé et configuré, vous pouvez l'éditer
 
 Il faut inclure un seul périphérique à la fois. Pour exclure un périphérique, il suffit de le supprimer dans le plugin.
 
-Ce mode est uniquement là pour aider la configuration personnalisée d'un nouveau périphérique qui n'est pas proposé par le plugin. L'utilisation de ce mode ne peut donner un périphérique complètement fonctionnel.
+Ce mode est uniquement là pour aider la configuration personnalisée d'un nouveau périphérique qui n'est pas proposé par le plugin. L'utilisation de ce mode ne peut donner un périphérique complètement fonctionnel et nécessite de comprendre de supprimer ou de modifier les commandes créées.
 
-Nota :
+Exemples de modifications :
 - Si au dps correspond uniquement une info dans le périphérique (par exemple 3 valeurs possibles d'un même bouton), il faudra supprimer les 3 commandes actions créées automatiquement. Cependant, les commandes actions ont comme paramètre toutes les valeurs récupérées par le plugin et permettent de connaitre les valeurs prises par l'info du dps.
 - Pour les dps numériques, une commande info et une commande action numériques sont créés automatiquement, si seule l'info est utile (cas de la température d'un capteur) il faut supprimer la commande action. Si les valeurs numériques prennent les valeurs 0 ou 1 pendant l'apprentissage, le plugin va aussi créer 3 commandes ETAT/ON/OFF, il faudra les supprimer.
 - Pour les dps contenant une info 0/1 pour un actionneur tout ou rien, comme une prise électrique, le plugin va créer une info et 2 actions ON/OFF.
@@ -90,10 +93,17 @@ Vous pouvez partager la configuration obtenue en cliquant sur le bouton Exporter
 
 ## Mode apprentissage
 
-Cocher la case « Mode inclusion » du périphérique et le sauvegarder pour ajouter les commandes oubliées dans la phase précédente ou les commandes non proposées après avoir choisi le sous-type. Terminer en cliquant sur le bouton « arrêter l’inclusion ».
+Cocher la case « Mode inclusion » dans la configuration du périphérique et le sauvegarder pour ajouter les commandes oubliées dans la phase précédente ou les commandes non proposées après avoir choisi le sous-type. Terminer en cliquant sur le bouton « arrêter l’inclusion » et sauvegarder.
 
-Si vous partez d'une configuration standard et que vous ajoutez l'apprentissage pour vérifier les dps standards, il faudra modifier les commandes créées par la config standard et supprimer les commandes créées par l'apprentissage. En effet, lors de la sauvegarde, les dps standards sont toujours recréés, sinon il est possible de na pas les afficher.
+Si vous partez d'une configuration standard après avoir choisi un sous-type et que vous ajoutez l'apprentissage pour vérifier les dps standards, il faudra modifier les commandes créées par la config standard et supprimer les commandes créées par l'apprentissage. En effet, lors de la sauvegarde, les dps standards sont toujours recréés, sinon il est possible de ne pas les afficher.
 
+## Mode création manuelle des commandes
+
+Ce mode est utile pour les commandes qui nécessitent d'être ajustées (dps, paramètre), pour envoyer plusieurs dps en même temps ou pour la gestion des couleurs des lampes, sinon utilisez les sous-types proposés ou le mode apprentissage. 
+
+La procédure nécessite que le périphérique renvoie son état dans les logs. Si le périphérique ne renvoie pas son état, le cid et les dps ne pourront pas être trouvés dans les logs. Les experts pourront retrouver les dps et le cid car ils sont affichés à côté de la localKey lors de la procédure pour trouver ces derniers.
+
+Le plugin est équipé de boutons permettant de créer automatiquement les commandes des cas les plus courants, il suffira de modifier le n° de dps ou le paramètre automatiquement créés. Voir [ic](    ) pour la compréhension des logs et la création manuelle des commandes.
 
 ## Périphériques alimentés par pile
 
@@ -110,17 +120,18 @@ Les équipements suivants sont compatibles en firmware 1.0. et en firmware 2.0.
 
 -  prises simples avec et sans retour sur la consommation, en particulier les prises wifi Neo Coolcam
 -  prises multiples avec et sans consommation avec et sans USB
--  commande de volets roulants
+-  commande de volets roulants (4 types de modèles dont 1 avec led et info de positionnement)
 -  interrupteurs muraux : 1, 2 ou 3 inters
 -  interrupteur mural avec variateur
 -  humidificateur NEWKBO 300 ml et uniquement celui-ci
 -  thermostat BHT-6000GCLW / BHT 6000 et uniquement ces modèles
 -  ampoules RGBW globe et modèles similaires en fonctionnement
--  smart Garage
--  diffuseurs 
--  chauffage
+-  smart Garage (beta)
+-  2 diffuseurs  dont Maxcio
+-  radiateur électrique
 -  Proscenic (l'aspirateur n'est pas compatible et la procédure d'intégration est complexe)
 -  Fil pilote
+-  sirène
 -  Alarme (infos uniquement)
 -  Radiateur soufflant Lidl
 
@@ -180,7 +191,7 @@ Si le périphérique est désinstallé puis réinstallé dans l'application mobi
 Aucune aide ne sera donnée pour récupérer la clé ou l'identifiant.
 
 ## Choix d'un périphérique V3 proposés dans la liste des sous-types
-Cette procédure est à privilégier car elle est la plus simple. Choisir le sous-type correspondant au périphérique à intégrer. Certains périphériques très proches visuellement ont cependant des comportements différents, tester tous les sous-types qui peuvent correspondre et tester le bon fonctionnement.
+Cette procédure est à privilégier car elle est la plus simple. Choisir le sous-type correspondant au périphérique à intégrer. Certains périphériques très proches visuellement ont cependant des comportements différents, tester tous les sous-types qui peuvent correspondre et vérifier le bon fonctionnement.
 
 Vous avez la possibilité de modifier le n° de dps ainsi que ses paramètres pour ajuster un périphérique qui a un comportement légèrement différent de celui proposé par le plugin. Voir le mode création manuelle des commandes ci-dessous pour utiliser les informations présentes dans les logs du plugin.
 
@@ -188,22 +199,19 @@ Si vous supprimez des commandes, elles seront automatiquement recréées lors de
 
 ## Mode apprentissage en V3
 
-Pour lancer l'apprentissage, il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos, utilisez toutes les possibilités offertes par l'appli Tuya. Pour terminer, cliquer sur le bouton « arrêter l’inclusion ».
+Pour lancer l'apprentissage, il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos, utilisez toutes les possibilités offertes par l'appli Tuya. Pour terminer, cliquer sur le bouton « arrêter l’inclusion » et sauvegarder.
 
-Ce mode est uniquement là pour aider la configuration personnalisée d'un nouveau périphérique qui n'est pas proposé par le plugin. L'utilisation de ce mode ne peut donner un périphérique complètement fonctionnel.
+Ce mode est uniquement là pour aider la configuration personnalisée d'un nouveau périphérique qui n'est pas proposé par le plugin. L'utilisation de ce mode ne peut donner un périphérique complètement fonctionnel et nécessite de comprendre de supprimer ou de modifier les commandes créées.
 
-Nota :
+Exemples de modifications :
 - Si au dps correspond uniquement une info dans le périphérique (par exemple 3 valeurs possibles d'un même bouton), il faudra supprimer les 3 commandes actions créées automatiquement. Cependant, les commandes actions ont comme paramètre toutes les valeurs récupérées par le plugin et permettent de connaitre les valeurs prises par l'info du dps.
 - Pour les dps numériques, une commande info et une commande action numériques sont créés automatiquement, si seule l'info est utile (cas de la température d'un capteur) il faut supprimer la commande action. Si les valeurs numériques prennent les valeurs 0 ou 1 pendant l'apprentissage, le plugin va aussi créer 3 commandes ETAT/ON/OFF, il faudra les supprimer.
 - Pour les dps contenant une info 0/1 pour un actionneur tout ou rien, comme une prise électrique, le plugin va créer une info et 2 actions ON/OFF.
 - Dans le cas d'un dps contenant true ou false, une commande info et deux commandes action (ON et OFF) sont créés automatiquement, si seule l'info est utile (cas d'un capteur de présence) il faut supprimer les commandes actions.
 - Pour des dps contenant une info de couleur, le plugin créera une commande info et une commande action pour chaque couleur sélectionnée. L'intérêt pourra être de garder la commande action pour générer une couleur particulière, ce sera aussi utile pour identifier le codage de la couleur.
-- Le sous-type créé par le plugin pourra ne pas correspondre à la donnée, il faudra alors faire des tests en le modifiant.
+- De manière générale, le sous-type créé par le plugin pourra ne pas correspondre à la donnée, il faudra alors faire des tests en le modifiant.
 
-Si vous renommez l'identifiant interne, et que vous relancez un apprentissage, la commande sera à nouveau créée avec le nom interne d'origine.
-
-Afin de partager votre expérience, vous pouvez exporter la configuration obtenue et testée en cliquant sur le bouton Exporter. Transférer le contenu du champ configGet et une photo du périphérique au développeur.
-
+Vous pouvez partager la configuration obtenue en cliquant sur le bouton Exporter. Transférer le contenu du champ configGet et une photo du périphérique au développeur.
 	
 ## Mode création manuelle des commandes en V3
 

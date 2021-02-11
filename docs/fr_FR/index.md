@@ -398,13 +398,15 @@ Aucune aide ne sera donnée pour récupérer le jeton.
 Les périphériques compatibles sont :
 -   prises MSS210HK MSS210 MSS425EHK MSS425FHK
 -   switch MSS71
--   prise avec conso MSS310 : la conso ne remonte que toutes les minutes
--   MTS100/100H : Hub et têtes thermostatiques
+-   commande volets roulants MRS100
+-   prise avec conso MSS310 : la conso ne remonte que toutes les minutes ou toutes les 20s (à tester)
+-   Hub Meross MSH300
+-   MTS100/100H : têtes thermostatiques reliées au hub
 -   MSG100 (garage) : proposé en beta non testé et incomplet
--   les capteurs de températures connectés au hub pourraient être compatibles
+-   les capteurs de températures connectés au hub pourraient être compatibles (non testé)
 
 
-Il est indispensable de récupérer un namespace qui correspond au Jeton dans le plugin, un messageId qui correspond à Identifiant dans le plugin et un timestamp. Pour trouver ces 3 paramètres, voir sur le web : Meross Credentials ou [sur le forum](https://community.jeedom.com/t/meross-credential-et-plugin-wifilightv2/48063?u=bernardfr.caron) .
+Il est indispensable de récupérer un namespace qui correspond au Jeton dans le plugin, un messageId qui correspond à Identifiant dans le plugin et un timestamp. Pour les équipements reliés au hub Meross, il faut en plus un identifiant local. Pour trouver ces 3 ou 4 paramètres, voir sur le web : Meross Credentials ou [sur le forum](https://community.jeedom.com/t/meross-credential-et-plugin-wifilightv2/48063?u=bernardfr.caron) .
 
 Aucune aide ne sera donnée pour récupérer les 3 informations.
 
