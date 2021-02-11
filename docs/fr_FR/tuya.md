@@ -103,7 +103,7 @@ Ce mode est utile pour les commandes qui nécessitent d'être ajustées (dps, pa
 
 La procédure nécessite que le périphérique renvoie son état dans les logs. Si le périphérique ne renvoie pas son état, le cid et les dps ne pourront pas être trouvés dans les logs. Les experts pourront retrouver les dps et le cid car ils sont affichés à côté de la localKey lors de la procédure pour trouver ces derniers.
 
-Le plugin est équipé de boutons permettant de créer automatiquement les commandes des cas les plus courants, il suffira de modifier le n° de dps ou le paramètre automatiquement créés. Voir [ic](    ) pour la compréhension des logs et la création manuelle des commandes.
+Le plugin est équipé de boutons permettant de créer automatiquement les commandes des cas les plus courants, il suffira de modifier le n° de dps ou le paramètre automatiquement créés. Voir [ici](./tuya#tocAnchor-1-10-8) pour la compréhension des logs et la création manuelle des commandes.
 
 ## Périphériques alimentés par pile
 
