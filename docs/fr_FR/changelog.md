@@ -17,7 +17,7 @@ todo :
 -   Tuya : Ajout d'un module chauffage soufflant
 -	Tuya : Ajout de deux diffuseurs
 -	Tuya : amélioration du fonctionnement des diffuseurs Proscenic
--	Tuya : la passerelle silvercrest de Lidl est compatible avec le plugin en tant que passerelle Zigbee/Tuya
+-	Tuya : la passerelle Silvercrest de Lidl est compatible avec le plugin en tant que passerelle Zigbee/Tuya
 - 	Tuya : correction \* dans le champs dps
 -   Meross : correction bogue switch et plug 1 canal
 -   Meross : ajout de la commande de volets roulants MRS100
