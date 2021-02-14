@@ -11,7 +11,6 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 
 todo : 
 - apprentissage des couleurs Tuya
-- pouvoir choisir l'image alternative d'un périphérique dans une fenêtre pop-up
 
 1.70 - 2021-02-05 (beta)
 
@@ -19,9 +18,11 @@ todo :
 -	Tuya : Ajout de deux diffuseurs
 -	Tuya : amélioration du fonctionnement des diffuseurs Proscenic
 -	Tuya : la passerelle silvercrest de Lidl est compatible avec le plugin en tant que passerelle Zigbee/Tuya
--   Meross : correction bogue switch et plug 1 canal
--   Meross : jout de la commande de volets roulants
 - 	Tuya : correction \* dans le champs dps
+-   Meross : correction bogue switch et plug 1 canal
+-   Meross : ajout de la commande de volets roulants MRS100
+-	ajout de l'upload et de la sélection dans le dossier data du plugin des images alternatives
+-	ajout (retour) d'une option pour les périphériques Tuya permettant d'empêcher le plugin d'interroger l'état lors du démarrage du deamon et régulièrement. 
 
 
 1.69 - 2021-01-30
