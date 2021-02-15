@@ -9,8 +9,6 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-todo : 
-- apprentissage des couleurs Tuya
 
 1.70 - 2021-02-05 (beta)
 
@@ -19,6 +17,7 @@ todo :
 -	Tuya : amélioration du fonctionnement des diffuseurs Proscenic
 -	Tuya : la passerelle Silvercrest de Lidl est compatible avec le plugin en tant que passerelle Zigbee/Tuya
 - 	Tuya : correction \* dans le champs dps
+-   Tuya : ajout de l'apprentissage des couleurs
 -   Meross : correction bogue switch et plug 1 canal
 -   Meross : ajout de la commande de volets roulants MRS100
 -	ajout de l'upload et de la sélection dans le dossier data du plugin des images alternatives
