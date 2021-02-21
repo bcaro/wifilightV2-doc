@@ -398,7 +398,7 @@ Aucune aide ne sera donnée pour récupérer le jeton.
 Les périphériques compatibles sont :
 -   prises MSS210HK MSS210 MSS425EHK MSS425FHK
 -   switch MSS71
--   commande volets roulants MRS100
+-   commande volets roulants MRS100 (retour d'état et positionnement non fonctionnels)
 -   prise avec conso MSS310 : la conso ne remonte que toutes les minutes ou toutes les 20s (à tester)
 -   Hub Meross MSH300
 -   MTS100/100H : têtes thermostatiques reliées au hub
