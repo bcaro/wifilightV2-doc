@@ -4,7 +4,7 @@
 
 # Présentation
 
-Ce plugin permet de gérer de nombreux bandeaux de leds, ampoules leds, prises électriques, thermostats, capteur de température, capteur de porte, etc.  pilotés en wifi ou par radiofréquence 2.4 GHz via une box wifi vendue avec le produit. Le principe du plugin est de ne jamais utiliser le cloud et donc une connexion internet entre le plugin et le périphérique via un serveur lointain, toutes les actions sont donc locales au réseau domestique.
+Ce plugin permet de gérer de nombreux bandeaux de leds, ampoules leds, prises électriques, thermostats, capteur de température, capteur de porte, etc.  pilotés en wifi directement ou via une box wifi vendue avec le produit. Le principe du plugin est de ne jamais utiliser le cloud et donc une connexion internet entre le plugin et le périphérique via un serveur lointain, toutes les actions sont donc locales au réseau domestique.
 
 <img src="../images/wifilightV2_screenshot01.png" alt="image" style="height:100px;"/>
 <img src="../images/wifilightV2_screenshot02.png" alt="image" style="height:100px;"/>
@@ -20,6 +20,14 @@ Ce plugin permet de gérer de nombreux bandeaux de leds, ampoules leds, prises �
 <img src="../images/wifilightV2_screenshot12.png" alt="image" style="height:100px;"/>
 <img src="../images/wifilightV2_screenshot13.png" alt="image" style="height:100px;"/>
 <img src="../images/wifilightV2_screenshot14.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot15.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot16.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot17.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot18.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot19.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot20.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot21.png" alt="image" style="height:100px;"/>
+
 
 # Compatibilités et limitations
 
