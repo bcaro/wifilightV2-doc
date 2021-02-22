@@ -184,7 +184,7 @@ Pour les autres prises, la valeur 20;18;19 est mise par défaut.
 
 
 ## Tuya Smartlife compatible V3
-Le type V3 correspond aux périphériques en firmware 2.0 . En plus de cette compatibilité, il y a la possibilité de modifier finement le n° de dps et les paramètres de dps de tous les périphériques présents en V3 afin de les adapter au besoin. Pour ce type, toutes les commandes d'un même périphérique sont créées dans un seul wifilightV2, y compris pour les prises multiples.
+Le type V3 correspond aux périphériques en firmware 2.0 . En plus de cette compatibilité, il y a la possibilité de modifier finement le n° de dps et les paramètres de dps de tous les périphériques présents en V3 afin de les adapter au besoin. le type V3 possède aussi un mode apprentissage des dps et paramètres du périphérique. Pour ce type, toutes les commandes d'un même périphérique sont créées dans un seul wifilightV2, y compris pour les prises multiples.
 
 L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s même si le périphérique ne le renvoie pas. A utiliser pour les prises électriques qui ne renvoient pas régulièrement la consommation mais ne pas utiliser pour les périphériques à piles sous peine de les vider.
 
