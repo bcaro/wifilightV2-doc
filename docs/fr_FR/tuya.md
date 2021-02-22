@@ -62,7 +62,7 @@ Le cid est à copier dans le champ identifiant du périphérique du plugin (sans
 Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être trouvé dans les logs. Les experts pourront retrouver les dps et le cid car ils sont affichés à côté de la localKey lors de la procédure pour trouver ces derniers.
 
 
-## Choix du périphérique connecté à la passerelle
+## Choix du périphérique standard connecté à la passerelle
 
 Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les n° de dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Mode création manuelle des commandes en V3](./tuya#tocAnchor-1-9-8) de la partie Tuya pour interpréter les logs du plugin et comprendre les commandes de la configuration par défaut.
 
@@ -189,7 +189,7 @@ Le type V3 correspond aux périphériques en firmware 2.0 . En plus de cette com
 L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s même si le périphérique ne le renvoie pas. A utiliser pour les prises électriques qui ne renvoient pas régulièrement la consommation mais ne pas utiliser pour les périphériques à piles sous peine de les vider.
 
 
-## Choix d'un périphérique V3 proposé dans la liste des sous-types
+## Choix d'un périphérique V3 standard proposé dans la liste des sous-types
 Cette procédure est à privilégier car elle est la plus simple. Choisir le sous-type correspondant au périphérique à intégrer. Certains périphériques très proches visuellement ont cependant des comportements différents, tester tous les sous-types qui peuvent correspondre et vérifier le bon fonctionnement.
 
 Vous avez la possibilité de modifier le n° de dps ainsi que ses paramètres pour ajuster un périphérique qui a un comportement légèrement différent de celui proposé par le plugin. Voir le mode création manuelle des commandes ci-dessous pour utiliser les informations présentes dans les logs du plugin.
@@ -209,6 +209,8 @@ Exemples de modifications :
 - Dans le cas d'un dps contenant true ou false, une commande info et deux commandes action (ON et OFF) sont créés automatiquement, si seule l'info est utile (cas d'un capteur de présence) il faut supprimer les commandes actions.
 - Pour des dps contenant une info de couleur, le plugin va identifier le codage de la couleur et créer 3 commandes action et 3 commandes info qui correspondent à Hue Saturation Intensité
 - De manière générale, le sous-type créé par le plugin pourra ne pas correspondre à la donnée, il faudra alors faire des tests en le modifiant.
+
+Si vous partez d’une configuration standard après avoir choisi un sous-type et que vous ajoutez l’apprentissage pour vérifier les dps standards, il faudra modifier les commandes créées par la configuration standard et supprimer les commandes créées par l’apprentissage. En effet, lors de la sauvegarde, les dps standards sont toujours recréés, sinon il est possible de ne pas les afficher.
 
 Vous pouvez partager la configuration obtenue en cliquant sur le bouton Exporter. Transférer le contenu du champ configGet et une photo du périphérique au développeur.
 	
