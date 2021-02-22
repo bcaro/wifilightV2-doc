@@ -79,14 +79,14 @@ Si aucune passerelle ou plusieurs passerelles sont configurées et actives, le p
 
 Il faut inclure un seul périphérique à la fois. Pour exclure un périphérique, il suffit de le supprimer dans le plugin.
 
-Ce mode est uniquement là pour aider la configuration personnalisée d'un nouveau périphérique qui n'est pas proposé par le plugin. L'utilisation de ce mode ne peut donner un périphérique complètement fonctionnel et nécessite de comprendre de supprimer ou de modifier les commandes créées.
+Ce mode est uniquement là pour aider la configuration personnalisée d'un nouveau périphérique qui n'est pas proposé par le plugin. L'utilisation de ce mode ne peut donner un périphérique complètement fonctionnel et nécessite de comprendre, de supprimer ou de modifier les commandes créées.
 
 Exemples de modifications :
 - Si au dps correspond uniquement une info dans le périphérique (par exemple 3 valeurs possibles d'un même bouton), il faudra supprimer les 3 commandes actions créées automatiquement. Cependant, les commandes actions ont comme paramètre toutes les valeurs récupérées par le plugin et permettent de connaitre les valeurs prises par l'info du dps.
 - Pour les dps numériques, une commande info et une commande action numériques sont créés automatiquement, si seule l'info est utile (cas de la température d'un capteur) il faut supprimer la commande action. Si les valeurs numériques prennent les valeurs 0 ou 1 pendant l'apprentissage, le plugin va aussi créer 3 commandes ETAT/ON/OFF, il faudra les supprimer.
 - Pour les dps contenant une info 0/1 pour un actionneur tout ou rien, comme une prise électrique, le plugin va créer une info et 2 actions ON/OFF.
 - Dans le cas d'un dps contenant true ou false, une commande info et deux commandes action (ON et OFF) sont créés automatiquement, si seule l'info est utile (cas d'un capteur de présence) il faut supprimer les commandes actions.
-- Pour des dps contenant une info de couleur, le plugin créera une commande info et une commande action pour chaque couleur sélectionnée. L'intérêt pourra être de garder la commande action pour générer une couleur particulière, ce sera aussi utile pour identifier le codage de la couleur.
+- Pour des dps contenant une info de couleur, le plugin va identifier le codage de la couleur et créer 3 commandes action et 3 commandes info qui correspondent à Hue Saturation Intensité
 - De manière générale, le sous-type créé par le plugin pourra ne pas correspondre à la donnée, il faudra alors faire des tests en le modifiant.
 
 Vous pouvez partager la configuration obtenue en cliquant sur le bouton Exporter. Transférer le contenu du champ configGet et une photo du périphérique au développeur.
@@ -95,13 +95,13 @@ Vous pouvez partager la configuration obtenue en cliquant sur le bouton Exporter
 
 Cocher la case « Mode inclusion » dans la configuration du périphérique et le sauvegarder pour ajouter les commandes oubliées dans la phase précédente ou les commandes non proposées après avoir choisi le sous-type. Terminer en cliquant sur le bouton « arrêter l’inclusion » et sauvegarder.
 
-Si vous partez d'une configuration standard après avoir choisi un sous-type et que vous ajoutez l'apprentissage pour vérifier les dps standards, il faudra modifier les commandes créées par la config standard et supprimer les commandes créées par l'apprentissage. En effet, lors de la sauvegarde, les dps standards sont toujours recréés, sinon il est possible de ne pas les afficher.
+Si vous partez d'une configuration standard après avoir choisi un sous-type et que vous ajoutez l'apprentissage pour vérifier les dps standards, il faudra modifier les commandes créées par la configuration standard et supprimer les commandes créées par l'apprentissage. En effet, lors de la sauvegarde, les dps standards sont toujours recréés, sinon il est possible de ne pas les afficher.
 
 ## Mode création manuelle des commandes
 
 Ce mode est utile pour les commandes qui nécessitent d'être ajustées (dps, paramètre), pour envoyer plusieurs dps en même temps ou pour la gestion des couleurs des lampes, sinon utilisez les sous-types proposés ou le mode apprentissage. 
 
-La procédure nécessite que le périphérique renvoie son état dans les logs. Si le périphérique ne renvoie pas son état, le cid et les dps ne pourront pas être trouvés dans les logs. Les experts pourront retrouver les dps et le cid car ils sont affichés à côté de la localKey lors de la procédure pour trouver ces derniers.
+La procédure nécessite que le périphérique renvoie son état dans les logs. Si le périphérique ne renvoie pas son état, le cid et les dps ne pourront pas être trouvés dans les logs. Les experts pourront retrouver la liste des dps du périphérique et son cid car ils sont affichés à côté de la localKey lors de la procédure pour trouver ces derniers.
 
 Le plugin est équipé de boutons permettant de créer automatiquement les commandes des cas les plus courants, il suffira de modifier le n° de dps ou le paramètre automatiquement créés. Voir [ici](./tuya#tocAnchor-1-10-8) pour la compréhension des logs et la création manuelle des commandes.
 
@@ -139,9 +139,20 @@ Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le p
 
 Les capteurs de présence et d'ouverture ne sont pas compatibles car ils ne dialoguent pas en local. D'autres périphériques de la liste ci-dessus peuvent aussi avoir un fonctionnement uniquement par internet, ils ne sont pas compatibles avec le plugin. Il faut demander au vendeur si le mode LAN est actif.
 
+## Configuration initiale d'un périphérique
+
+Il est indispensable de récupérer une clé locale (localKey) et un identifiant devId permettant au plugin de dialoguer avec les périphériques.
+
+La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localKey, sur Github en particulier ou sur ou sur le [forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
+
+Le périphérique ne doit pas être connecté à une application sur téléphone mobile, sinon il ne répondra pas aux ordres de Jeedom. Il faut donc fermer toute application possiblement connectée au périphérique.
+
+Si le périphérique est désinstallé puis réinstallé dans l'application mobile, alors sa clé sera modifiée. Il faudra retrouver la clé avec la procédure ci-dessus. 
+
+Aucune aide ne sera donnée pour récupérer la clé ou l'identifiant.
 
 ## Tuya Smartlife compatible V1
-Le type V1 correspond aux périphériques en firmware 1.0 . Les priphériques avec ce firmware ne sont plus vendus et leur firmware peut être mis à jour avec l'application smartlife. Il n'y aura pas de nouveaux ajouts de périphériques.
+Le type V1 correspond aux périphériques en firmware 1.0 . Les périphériques avec ce firmware ne sont plus vendus et leur firmware peut être mis à jour avec l'application Smartlife. Il n'y aura pas de nouveaux ajouts de périphériques.
 
 Le plugin teste les périphériques (mais ils doivent être ajoutés manuellement) et affiche un message dans le centre de messages lorsqu'un périphérique a été configuré avec le mauvais firmware.
 
@@ -178,19 +189,7 @@ Le type V3 correspond aux périphériques en firmware 2.0 . En plus de cette com
 L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s même si le périphérique ne le renvoie pas. A utiliser pour les prises électriques qui ne renvoient pas régulièrement la consommation mais ne pas utiliser pour les périphériques à piles sous peine de les vider.
 
 
-## Configuration initiale d'un périphérique V3
-
-Il est indispensable de récupérer une clé locale (localKey) et un identifiant devId permettant au plugin de dialoguer avec les périphériques.
-
-La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localKey, sur Github en particulier ou sur ou sur le [forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
-
-Le périphérique ne doit pas être connecté à une application sur téléphone mobile, sinon il ne répondra pas aux ordres de Jeedom. Il faut donc fermer toute application possiblement connectée au périphérique.
-
-Si le périphérique est désinstallé puis réinstallé dans l'application mobile, alors sa clé sera modifiée. Il faudra retrouver la clé avec la procédure ci-dessus. 
-
-Aucune aide ne sera donnée pour récupérer la clé ou l'identifiant.
-
-## Choix d'un périphérique V3 proposés dans la liste des sous-types
+## Choix d'un périphérique V3 proposé dans la liste des sous-types
 Cette procédure est à privilégier car elle est la plus simple. Choisir le sous-type correspondant au périphérique à intégrer. Certains périphériques très proches visuellement ont cependant des comportements différents, tester tous les sous-types qui peuvent correspondre et vérifier le bon fonctionnement.
 
 Vous avez la possibilité de modifier le n° de dps ainsi que ses paramètres pour ajuster un périphérique qui a un comportement légèrement différent de celui proposé par le plugin. Voir le mode création manuelle des commandes ci-dessous pour utiliser les informations présentes dans les logs du plugin.
@@ -199,7 +198,7 @@ Si vous supprimez des commandes, elles seront automatiquement recréées lors de
 
 ## Mode apprentissage en V3
 
-Pour lancer l'apprentissage, il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Tuya pour que le plugin crée automatiquement les commandes actions et infos, utilisez toutes les possibilités offertes par l'appli Tuya. Pour terminer, cliquer sur le bouton « arrêter l’inclusion » et sauvegarder.
+Pour lancer l'apprentissage, il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID et le sous-type Personnalisé. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Smartlife pour que le plugin crée automatiquement les commandes actions et infos, utilisez toutes les possibilités offertes par l'appli. Pour terminer, cliquer sur le bouton « arrêter l’inclusion » et sauvegarder.
 
 Ce mode est uniquement là pour aider la configuration personnalisée d'un nouveau périphérique qui n'est pas proposé par le plugin. L'utilisation de ce mode ne peut donner un périphérique complètement fonctionnel et nécessite de comprendre de supprimer ou de modifier les commandes créées.
 
@@ -208,7 +207,7 @@ Exemples de modifications :
 - Pour les dps numériques, une commande info et une commande action numériques sont créés automatiquement, si seule l'info est utile (cas de la température d'un capteur) il faut supprimer la commande action. Si les valeurs numériques prennent les valeurs 0 ou 1 pendant l'apprentissage, le plugin va aussi créer 3 commandes ETAT/ON/OFF, il faudra les supprimer.
 - Pour les dps contenant une info 0/1 pour un actionneur tout ou rien, comme une prise électrique, le plugin va créer une info et 2 actions ON/OFF.
 - Dans le cas d'un dps contenant true ou false, une commande info et deux commandes action (ON et OFF) sont créés automatiquement, si seule l'info est utile (cas d'un capteur de présence) il faut supprimer les commandes actions.
-- Pour des dps contenant une info de couleur, le plugin créera une commande info et une commande action pour chaque couleur sélectionnée. L'intérêt pourra être de garder la commande action pour générer une couleur particulière, ce sera aussi utile pour identifier le codage de la couleur.
+- Pour des dps contenant une info de couleur, le plugin va identifier le codage de la couleur et créer 3 commandes action et 3 commandes info qui correspondent à Hue Saturation Intensité
 - De manière générale, le sous-type créé par le plugin pourra ne pas correspondre à la donnée, il faudra alors faire des tests en le modifiant.
 
 Vous pouvez partager la configuration obtenue en cliquant sur le bouton Exporter. Transférer le contenu du champ configGet et une photo du périphérique au développeur.
@@ -440,7 +439,7 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 
 # Débogage 
 
-Tests préalables :
+## Testset configuration préalables
 
 1. les périphériques ont été inclus dans l'appli Tuya 
 2. les localKey et devID ou cid ont été récupérés
@@ -567,7 +566,14 @@ Enfin, le périphérique renvoie son état (Receive after decode). Si le devId o
 
 ## Trouver de l'aide sur le forum
 
-Sans application des tests ci-dessus et de l'envoi des logs associés, la réponse pénible à écrire et probablement pénible à lire sera : lire la doc. Notez que rares sont les cas où le passage par les 3 étapes ci-dessous ne permet pas de résoudre le problème.
+Afin d'obtenir de l'aide rapide et de qualité, il est nécessaire de bien préparer sa question. Donner les éléments, les logs de chaque étape suivante avec votre démarche et le diagnostic :
+1. configuration du périphérique
+2. tests et configuration préalable 
+3. Vérifier que le périphérique est trouvé et connecté
+4. Vérifier que la localKey est la bonne
+5. Vérifier que le devId ou le cid est le bon
+
+Si un étape est KO, ce n'est pas la peine de tester les suivantes. Si vous ne comprenez pas ce que vous faites, les aidants du forum ne pourront pas le savoir pour vous. Il est rappelé au tout début de la doc du plugin qu'utiliser des périphériques Tuya en local nécessite de savoir suivre à la lettre une procédure et d'avoir quelques notions en informatique.
 
 [Retour à la documentation générale](./index.md)
 
