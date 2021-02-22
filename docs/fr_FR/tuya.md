@@ -558,7 +558,7 @@ Enfin, le périphérique renvoie son état (Receive after decode). Si le devId o
 1. Vérifier les 3 points ci-dessus
 2. Désactiver tous les périphériques wifilightV2 sauf celui à tester (ne garder qu'un canal pour les multicanaux), et effacer les logs pour plus de clarté.
 3. Attendre que le demon passe (il interroge les périphériques toutes les minutes le message commençe par : >>>>>>>> Search for) 
-4. Attendre 10s après le message contenant >>>>>>>>>>> End <<<<<<<<<<<< (fin de l'interrogation de périphériques par le demon).
+4. Attendre 10s après le message contenant >>>>>>>>>>> End <<<<<<<<<<<< (fin de l'interrogation des périphériques par le demon).
 5. Activer la commande du plugin qui dysfonctionne 2 fois avec 5s d'intervalle
 6. Stopper les logs et les sauvegarder.
 7. Envoyer les logs sur le forum (avec la config du périphérique et l'action qui a été faite))
