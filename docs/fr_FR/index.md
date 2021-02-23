@@ -63,7 +63,7 @@ Produits pouvant être compatibles et non garantis :
 -   Prises électriques TP-link HS100 HS110 avec retour d'état !!
 -   Contrôleurs de pixel strip leds compatible Magic home avec retour d'état !
 -	Périphériques contrôlés par l'appli Ewelink dont les Sonoff en mode LAN avec retour d'état !!!
--	Passerelles wifi utilisant le protocole Tuya pour les périphériques Zigbee !!!
+-	Passerelles wifi (dont Lidl) utilisant le protocole Tuya pour les périphériques Zigbee !!!
 -   Périphériques Meross !!!
 
 Pour ces contrôleurs, ampoules ou prises, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin.
