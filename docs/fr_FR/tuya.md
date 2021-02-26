@@ -478,13 +478,13 @@ Par la suite les messages seront du type :
 
 Il se peut qu'il y ait ensuite des déconnexions ou que l'appli smartlife soit aussi connectée au périphérique, dans ce cas le message dans les logs est :
 
-    [2020-12-10 07:36:40][DEBUG] :     << Ping @192.168.1.122  diff:16
+    [2020-12-10 07:36:40][DEBUG] :   << Ping of: 5c0272fffe16b0f9 @192.168.1.106  diff:21
     [2020-12-10 07:36:40][DEBUG] :     Cmd to 192.168.1.122 - Try:192.168.1.122  6668 - Connect OK!
     [2020-12-10 07:36:40][DEBUG] :     Error on:192.168.1.122 is :Connection reset by peer n:104  diff:16
 
 ou il n'y a plus de ping dans les logs pour cette adresse ip, cela correspond à une mauvaise connexion permanente entre le périphérique et Jeedom ou si le périphérique n'est plus alimenté. Quand tout est correct le message est :
 
-    [2020-12-10 07:36:43][DEBUG] :     << Ping @192.168.1.106  diff:16
+    [2020-12-10 07:36:43][DEBUG] :   << Ping of: 5c0272fffe16b0f9 @192.168.1.106  diff:21
     [2020-12-10 07:36:43][DEBUG] :     Cmd to 192.168.1.106 - Try:192.168.1.106  6668 - Connect OK!
 
 Le plugin tentera de se reconnecter au périphérique toutes les minutes ou toutes les 3 minutes ce qui lui permettra de retrouver le périphérique s'il est rebranché. 
@@ -502,15 +502,12 @@ Nota : les experts pourront retrouver les dps et le devID ou le cid car ils sont
 
 Exemple de log KO où la localKey n'est pas bonne car la trame reçue par le plugin n'est pas décodée :
 
-    [2020-12-10 08:01:56][DEBUG] :    Receive after decode :pr-q;oTEJ^mhvoH]R,(0!]?E?N2KS ]OI!Empty
+    [2020-12-10 08:01:56][DEBUG] :    Receive after decode :[163][173][254]R5p[202][219]K[250][228][39][20][173][213]n - not decoded
 
 Dans le cas où le décodage de la trame est correct, on trouve un message tel que celui-ci :
 
-    [2020-12-10 08:01:56][DEBUG] :    Multiple device @192.168.1.122 canal:1
-    [2020-12-10 08:01:56][DEBUG] :     CanalDev:1 in MultiC
-    [2020-12-10 08:01:56][DEBUG] :     Found Canal:1 OK
-    [2020-12-10 08:01:56][DEBUG] :     Update other states: - On:0
-    [2020-12-10 08:01:58][DEBUG] :     Receive after decode :{"devId":"30800135cc50e3418b4c","dps":{"1":true},"t":1607583717,"s":3}]D"{4K - Read Json OK
+    [2020-12-10 08:01:56][DEBUG] : Receive from:192.168.1.129
+    [2021-02-26 07:43:04][DEBUG] :  >>    Receive after decode: {"devId":"30800135cc50e3418b4c","dps":{"1":true},"t":1607583717,"s":3}"}[4][4][4][4][163][173][254]R5p[202][219]K[250][228][39][20][173][213]n - Read Json OK
 
 Les caractères de la fin du message seront filtrés par le plugin et ne doivent pas inquiéter. C'est ce message qui va permettre de configurer le périphérique dans le plugin en identifiant à quoi servent les n° de dps et quelles valeurs ils prennent, voir plus haut.
 
@@ -521,13 +518,13 @@ Les caractères de la fin du message seront filtrés par le plugin et ne doivent
 
 **Pour un périphérique non Zigbee qui renvoie son devId,on trouvera :**
 
-    [2020-12-10 08:01:58][DEBUG] :     Receive after decode :{"devId":"30800135cc50e3418b4c","dps":{"1":true},"t":1607583717,"s":3}]D"{4K - Read Json OK
+    [2020-12-10 08:01:58][DEBUG] :     Receive after decode :{"devId":"30800135cc50e3418b4c","dps":{"1":true},"t":1607583717,"s":3}]4][4][4][4][163][173][254]R5p[225]"{4K - Read Json OK
 
 le devId est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Attention : tous les périphériques ne renvoient pas leur devId.
 
 **Pour un périphérique Zigbee qui renvoie son cid, on trouvera :**
 
-    [2020-12-10 08:14:34][DEBUG] :     Receive after decode :{"dps":{"1":"pir"},"cid":"bc33acfffe525145","t":1607584474}
+    [2020-12-10 08:14:34][DEBUG] :     Receive after decode :{"dps":{"1":"pir"},"cid":"bc33acfffe525145","t":1607584474}[219]K[250][228][39][20][173][213]n - Read Json OK
 
 le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Attention : tous les périphériques ne renvoient pas leur cid. 
 
@@ -537,22 +534,24 @@ Si le cid ou le devId n'est pas correct, les commandes actions ne seront pas ex�
 
 **Exemple d'envoi d'une commande correcte vers un périphérique Tuya non Zigbee :**
 
-    [2021-01-11 22:51:53][DEBUG] :     Cmd to 127.0.0.1: {"t":"1610401913","devId":"bff438f111b78e704dsg6z","dps":{"1":true},"uid":""} - canal:1 - Try:127.0.0.1  6900 - Connect OK!
-    [2021-01-11 22:51:53][DEBUG] :     Receive from Jeedom to Send cmd to device @192.168.1.129 canal:1
-    [2021-01-11 22:51:53][DEBUG] :     Cmd to 192.168.1.129 - Try:192.168.1.129  6668 - Connect OK!
-    [2021-01-11 22:51:53][DEBUG] :     No state update
-    [2021-01-11 22:51:53][DEBUG] :     Receive from:192.168.1.129 (No learning mode)
-    [2021-01-11 22:51:53][DEBUG] :  >>    Receive after decode :{"dps":{"1":true},"t":1610401913}
-    [2021-01-11 22:51:53][DEBUG] :  Tuya  prise Wifi @192.168.1.129    Receive after decode :{"dps":{"1":true},"t":1610401913}
-    [2021-01-11 22:51:53][DEBUG] :   Update devices @192.168.1.129 canal:1
-    [2021-01-11 22:51:54][DEBUG] :     Dps1|dps_1_STATE:1
-    [2021-01-11 22:51:54][DEBUG] :     No other states to update
+[2021-02-26 08:23:34][DEBUG] :     Cmd to 127.0.0.1: {"t":"1614324214","devId":"bff438f111b78e704dsg6z","dps":{"1":false},"uid":""} - canal:1 - Try:127.0.0.1  6900 - Connect OK!
+[2021-02-26 08:23:34][DEBUG] :     Receive from Jeedom to Send cmd to device @192.168.1.129 canal:1
+[2021-02-26 08:23:34][DEBUG] :     Cmd to 192.168.1.129 - Try:192.168.1.129  6668 - Connect OK!
+[2021-02-26 08:23:34][DEBUG] :     No state update
+[2021-02-26 08:23:34][DEBUG] : Receive from:192.168.1.129
+[2021-02-26 08:23:34][DEBUG] :  >>    Receive after decode: {"dps":{"1":false},"t":1614324213}[14][14][14][14][14][14][14][14][14][14][14][14][14][14][127][218][165][179][183][243][146][10][135]p[217]k[7][10][129][158] - Read Json OK
+[2021-02-26 08:23:34][DEBUG] :  Tuya  prise Wifi test @192.168.1.129    Receive after decode: {"dps":{"1":false},"t":1614324213}[14][14][14][14][14][14][14][14][14][14][14][14][14][14][127][218][165][179][183][243][146][10][135]p[217]k[7][10][129][158] - Read Json OK
+[2021-02-26 08:23:34][DEBUG] :   Update devices @192.168.1.129 canal:1
+[2021-02-26 08:23:34][DEBUG] :     Dps1|dps_1_STATE:
+[2021-02-26 08:23:34][DEBUG] :     No other states to update
+[2021-02-26 08:23:34][DEBUG] : Receive from:192.168.1.129
+[2021-02-26 08:23:34][DEBUG] :  >>    Receive after decode: [127][218][165][179][183][243][146][10][135]p[217]k[7][10][129][158] - not decoded
 
 Le plugin envoie la commande au demon à l'adresse 127.0.0.1 (Cmd to 127.0.0.1).
 
 Puis le demon envoie la commande au périphérique à l'adresse 192.168.1.129 ( Receive from Jeedom to Send cmd).
 
-Enfin, le périphérique renvoie son état (Receive after decode). Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son état ou renvoie un message vide ou une erreur.
+Enfin, le périphérique renvoie son état (Receive after decode). Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son état ou renvoie un message vide ou une erreur. Ici le prériphérique renvoie aussi un message non décodé car vide.
 
 
 ## Un souci avec une commande action
