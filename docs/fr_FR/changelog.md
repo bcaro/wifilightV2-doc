@@ -12,8 +12,8 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 
 1.71 - 2021-02-26
 
--   Tuya : correction bogue création des slider en mode inclusion
--	Tuya : Ajout des lampes blanches Lidl
+-   Tuya : correction bogue création des sliders en mode inclusion
+-	Tuya : Ajout d'une config pour les lampes blanches Lidl
 
 
 1.70 - 2021-02-21
