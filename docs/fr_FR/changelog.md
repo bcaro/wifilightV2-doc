@@ -10,6 +10,12 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
 
+1.71 - 2021-02-26
+
+-   Tuya : correction bogue création des slider en mode inclusion
+-	Tuya : Ajout des lampes blanches Lidl
+
+
 1.70 - 2021-02-21
 
 -   Tuya : Ajout d'un module chauffage soufflant
