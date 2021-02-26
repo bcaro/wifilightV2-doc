@@ -534,18 +534,18 @@ Si le cid ou le devId n'est pas correct, les commandes actions ne seront pas ex�
 
 **Exemple d'envoi d'une commande correcte vers un périphérique Tuya non Zigbee :**
 
-[2021-02-26 08:23:34][DEBUG] :     Cmd to 127.0.0.1: {"t":"1614324214","devId":"bff438f111b78e704dsg6z","dps":{"1":false},"uid":""} - canal:1 - Try:127.0.0.1  6900 - Connect OK!
-[2021-02-26 08:23:34][DEBUG] :     Receive from Jeedom to Send cmd to device @192.168.1.129 canal:1
-[2021-02-26 08:23:34][DEBUG] :     Cmd to 192.168.1.129 - Try:192.168.1.129  6668 - Connect OK!
-[2021-02-26 08:23:34][DEBUG] :     No state update
-[2021-02-26 08:23:34][DEBUG] : Receive from:192.168.1.129
-[2021-02-26 08:23:34][DEBUG] :  >>    Receive after decode: {"dps":{"1":false},"t":1614324213}[14][14][14][14][14][14][14][14][14][14][14][14][14][14][127][218][165][179][183][243][146][10][135]p[217]k[7][10][129][158] - Read Json OK
-[2021-02-26 08:23:34][DEBUG] :  Tuya  prise Wifi test @192.168.1.129    Receive after decode: {"dps":{"1":false},"t":1614324213}[14][14][14][14][14][14][14][14][14][14][14][14][14][14][127][218][165][179][183][243][146][10][135]p[217]k[7][10][129][158] - Read Json OK
-[2021-02-26 08:23:34][DEBUG] :   Update devices @192.168.1.129 canal:1
-[2021-02-26 08:23:34][DEBUG] :     Dps1|dps_1_STATE:
-[2021-02-26 08:23:34][DEBUG] :     No other states to update
-[2021-02-26 08:23:34][DEBUG] : Receive from:192.168.1.129
-[2021-02-26 08:23:34][DEBUG] :  >>    Receive after decode: [127][218][165][179][183][243][146][10][135]p[217]k[7][10][129][158] - not decoded
+    [2021-02-26 08:23:34][DEBUG] :     Cmd to 127.0.0.1: {"t":"1614324214","devId":"bff438f111b78e704dsg6z","dps":{"1":false},"uid":""} - canal:1 - Try:127.0.0.1  6900 - Connect OK!
+    [2021-02-26 08:23:34][DEBUG] :     Receive from Jeedom to Send cmd to device @192.168.1.129 canal:1
+    [2021-02-26 08:23:34][DEBUG] :     Cmd to 192.168.1.129 - Try:192.168.1.129  6668 - Connect OK!
+    [2021-02-26 08:23:34][DEBUG] :     No state update
+    [2021-02-26 08:23:34][DEBUG] : Receive from:192.168.1.129
+    [2021-02-26 08:23:34][DEBUG] :  >>    Receive after decode: {"dps":{"1":false},"t":1614324213}[14][14][14][14][14][14][14][14][14][14][14][14][14][14][127][218][165][179][183][243][146][10][135]p[217]k[7][10][129][158] - Read Json OK
+    [2021-02-26 08:23:34][DEBUG] :  Tuya  prise Wifi test @192.168.1.129    Receive after decode: {"dps":{"1":false},"t":1614324213}[14][14][14][14][14][14][14][14][14][14][14][14][14][14][127][218][165][179][183][243][146][10][135]p[217]k[7][10][129][158] - Read Json OK
+    [2021-02-26 08:23:34][DEBUG] :   Update devices @192.168.1.129 canal:1
+    [2021-02-26 08:23:34][DEBUG] :     Dps1|dps_1_STATE:
+    [2021-02-26 08:23:34][DEBUG] :     No other states to update
+    [2021-02-26 08:23:34][DEBUG] : Receive from:192.168.1.129
+    [2021-02-26 08:23:34][DEBUG] :  >>    Receive after decode: [127][218][165][179][183][243][146][10][135]p[217]k[7][10][129][158] - not decoded
 
 Le plugin envoie la commande au demon à l'adresse 127.0.0.1 (Cmd to 127.0.0.1).
 
