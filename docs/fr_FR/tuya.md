@@ -441,7 +441,7 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 
 # Débogage 
 
-## Testset configuration préalables
+## Tests et configuration préalables
 
 1. les périphériques ont été inclus dans l'appli Tuya 
 2. les localKey et devID ou cid ont été récupérés
@@ -574,7 +574,7 @@ Afin d'obtenir de l'aide rapide et de qualité, il est nécessaire de bien prép
 4. Vérifier que la localKey est la bonne
 5. Vérifier que le devId ou le cid est le bon
 
-Si un étape est KO, ce n'est pas la peine de tester les suivantes. Si vous ne comprenez pas ce que vous faites, les aidants du forum ne pourront pas le savoir pour vous. Il est rappelé au tout début de la doc du plugin qu'utiliser des périphériques Tuya en local nécessite de savoir suivre à la lettre une procédure et d'avoir quelques notions en informatique.
+Si une étape est KO, ce n'est pas la peine de tester les suivantes. Si vous ne comprenez pas ce que vous faites, les aidants du forum ne pourront pas le savoir pour vous. Il est rappelé au tout début de la doc du plugin qu'utiliser des périphériques Tuya en local nécessite de savoir suivre à la lettre une procédure et d'avoir quelques notions en informatique.
 
 [Retour à la documentation générale](./index.md)
 
