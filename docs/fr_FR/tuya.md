@@ -27,6 +27,7 @@ Les équipements suivants sont compatibles mais la liste n'est pas exclusive et 
 - plug Lonsoho avec conso
 - télécommande 3 boutons loratap
 - interrupteurs muraux simples/doubles/triples
+- lampes N&B Lidl
 
 Tous les autres périphériques, ou les périphériques similaires d'une autre marque ou d'un autre modèle, doivent être entièrement configurés en mode personnalisé. Cependant la configuration générée pour ces modèles peut aider pour un autre.
 
@@ -64,7 +65,7 @@ Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être
 
 ## Choix du périphérique standard connecté à la passerelle
 
-Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les n° de dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Mode création manuelle des commandes en V3](./tuya#tocAnchor-1-9-8) de la partie Tuya pour interpréter les logs du plugin et comprendre les commandes de la configuration par défaut.
+Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les n° de dps ou les paramètres peuvent avoir des valeurs différentes de celles des configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Mode création manuelle des commandes en V3](./tuya#tocAnchor-1-9-8) de la partie Tuya pour interpréter les logs du plugin et comprendre les commandes de la configuration par défaut.
 
 
 ## Création automatique du périphérique en mode inclusion
@@ -116,7 +117,7 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 De nombreuses marques sont compatibles avec le plugin. Consulter le forum pour plus d'informations. Le plugin permet de contrôler de nombreux actionneurs.
 Il peut récupérer l'état des périphériques dès que celui-ci envoie une information de changement d'état ou quand il les interroge toutes les minutes. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
 
-Les équipements suivants sont compatibles en firmware 1.0. et en firmware 2.0.
+Les équipements suivants sont compatibles en firmware 1.0. ou en firmware 2.0.
 
 -  prises simples avec et sans retour sur la consommation, en particulier les prises wifi Neo Coolcam
 -  prises multiples avec et sans consommation avec et sans USB
@@ -132,8 +133,8 @@ Les équipements suivants sont compatibles en firmware 1.0. et en firmware 2.0.
 -  Proscenic (l'aspirateur n'est pas compatible et la procédure d'intégration est complexe)
 -  Fil pilote
 -  sirène
--  Alarme (infos uniquement)
--  Radiateur soufflant Lidl
+-  alarme (infos uniquement)
+-  radiateur soufflant Lidl
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
@@ -184,7 +185,7 @@ Pour les autres prises, la valeur 20;18;19 est mise par défaut.
 
 
 ## Tuya Smartlife compatible V3
-Le type V3 correspond aux périphériques en firmware 2.0 . En plus de cette compatibilité, il y a la possibilité de modifier finement le n° de dps et les paramètres de dps de tous les périphériques présents en V3 afin de les adapter au besoin. le type V3 possède aussi un mode apprentissage des dps et paramètres du périphérique. Pour ce type, toutes les commandes d'un même périphérique sont créées dans un seul wifilightV2, y compris pour les prises multiples.
+Le type V3 correspond aux périphériques en firmware 2.0 . En plus de cette compatibilité, il y a la possibilité de modifier finement le n° de dps et les paramètres de dps de tous les périphériques présents en V3 afin de les adapter au besoin. Le type V3 possède aussi un mode apprentissage des dps et paramètres du périphérique. Pour ce type, toutes les commandes d'un même périphérique sont créées dans un seul wifilightV2, y compris pour les prises multiples.
 
 L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s même si le périphérique ne le renvoie pas. A utiliser pour les prises électriques qui ne renvoient pas régulièrement la consommation mais ne pas utiliser pour les périphériques à piles sous peine de les vider.
 
