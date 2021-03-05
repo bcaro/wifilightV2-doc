@@ -533,7 +533,7 @@ Si le cid ou le devId ne sont pas corrects, les commandes actions ne seront pas 
 
 **Exemple d'envoi d'une commande correcte vers un périphérique Tuya non Zigbee :**
 
-    [2021-03-05 07:23:28][DEBUG] :     Cmd to 127.0.0.1: {"cid":"588e8xxxxxxxx21a","dps":{"1":true},"t":"1614925408"} - canal:12 - Try:127.0.0.1  6900 - Connect OK!
+    [2021-03-05 07:23:28][DEBUG] :     Cmd to 127.0.0.1: {"devId":"588e8xxxxxxxx21a","dps":{"1":true},"t":"1614925408"} - canal:12 - Try:127.0.0.1  6900 - Connect OK!
     [2021-03-05 07:23:28][DEBUG] :     Receive from Jeedom to Send cmd to device @192.168.1.129 canal:12
     [2021-03-05 07:23:28][DEBUG] :     Cmd to 192.168.1.129 - Try:192.168.1.129  6668 - Connect OK!
     [2021-03-05 07:23:28][DEBUG] :     No state update
