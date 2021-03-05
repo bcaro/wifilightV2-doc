@@ -554,7 +554,7 @@ Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son
 ## Un souci avec une commande action (les autres fonctionnent)
 
 1. Vérifier les 4 points ci-dessus
-2. Désactiver tous les périphériques wifilightV2 sauf celui à tester (ne garder qu'un canal pour les multicanaux) (laiser la passerelle Tuya/Zigbee active pour un préiphérique Zigbee) et effacer les logs pour plus de clarté.
+2. Désactiver tous les périphériques wifilightV2 sauf celui à tester (ne garder qu'un canal pour les multicanaux) (laisser la passerelle Tuya/Zigbee active pour un préiphérique Zigbee) et effacer les logs pour plus de clarté.
 3. Attendre que le demon passe (il interroge les périphériques toutes les minutes le message commençe par : >>>>>>>> Search for) 
 4. Attendre 10s après le message contenant >>>>>>>>>>> End <<<<<<<<<<<< (fin de l'interrogation des périphériques par le demon).
 5. Activer la commande du plugin qui dysfonctionne 2 fois avec 5s d'intervalle
