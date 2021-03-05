@@ -64,7 +64,7 @@ Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être
 
 ## Choix du périphérique standard connecté à la passerelle
 
-Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les n° de dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Mode création manuelle des commandes en V3](./tuya#tocAnchor-1-9-8) de la partie Tuya pour interpréter les logs du plugin et comprendre les commandes de la configuration par défaut.
+Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les n° de dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Mode création manuelle des commandes en V3](./tuya#tocAnchor-1-10-8) de la partie Tuya pour interpréter les logs du plugin et comprendre les commandes de la configuration par défaut.
 
 
 ## Création automatique du périphérique en mode inclusion
@@ -184,7 +184,7 @@ Pour les autres prises, la valeur 20;18;19 est mise par défaut.
 
 
 ## Tuya Smartlife compatible V3
-Le type V3 correspond aux périphériques en firmware 2.0 . En plus de cette compatibilité, il y a la possibilité de modifier finement le n° de dps et les paramètres de dps de tous les périphériques présents en V3 afin de les adapter au besoin. le type V3 possède aussi un mode apprentissage des dps et paramètres du périphérique. Pour ce type, toutes les commandes d'un même périphérique sont créées dans un seul wifilightV2, y compris pour les prises multiples.
+Le type V3 correspond aux périphériques en firmware 2.0 . En plus de cette compatibilité, il y a la possibilité de modifier finement le n° de dps et les paramètres de dps de tous les périphériques présents en V3 afin de les adapter au besoin. Le type V3 possède aussi un mode apprentissage des dps et paramètres du périphérique. Pour ce type, toutes les commandes d'un même périphérique sont créées dans un seul wifilightV2, y compris pour les prises multiples.
 
 L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s même si le périphérique ne le renvoie pas. A utiliser pour les prises électriques qui ne renvoient pas régulièrement la consommation mais ne pas utiliser pour les périphériques à piles sous peine de les vider.
 
@@ -567,9 +567,9 @@ Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son
 Afin d'obtenir de l'aide rapide et de qualité, il est nécessaire de bien préparer sa question. Donner les éléments, les logs de chaque étape suivante avec votre démarche et le diagnostic :
 1. copie d'écran de la configuration du périphérique
 2. réaliser les tests et configuration préalable (voir paragraphe ci-dessus)
-3. Vérifier que le périphérique est trouvé et connecté, donner les logs si KO (voir paragraphe ci-dessus)
-4. Vérifier que la localKey est la bonne, donner les logs si KO (voir paragraphe ci-dessus)
-5. Vérifier que le devId ou le cid sont corrects, donner les logs si KO (voir paragraphe ci-dessus)
+3. vérifier que le périphérique est trouvé et connecté, donner les logs si KO (voir paragraphe ci-dessus)
+4. vérifier que la localKey est la bonne, donner les logs si KO (voir paragraphe ci-dessus)
+5. vérifier que le devId ou le cid sont corrects, donner les logs si KO (voir paragraphe ci-dessus)
 
 Si une étape est KO, ce n'est pas la peine de tester les suivantes. Si vous ne comprenez pas ce que vous faites, les aidants du forum ne pourront pas le savoir pour vous. Il est rappelé au tout début de la doc du plugin qu'utiliser des périphériques Tuya en local nécessite de savoir suivre à la lettre une procédure et d'avoir quelques notions en informatique.
 
