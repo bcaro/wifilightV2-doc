@@ -444,8 +444,8 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 
 ## Test et configuration préalables
 
-1. le périphérique à tester a été inclus dans l'appli smartlife,
-2. dans le cas d'un périphérique Tuya/Zigbee, sa passerelle a été incluse dans l'appli smartlife et le péripéhrique doit aussi avoir été inclus
+1. le périphérique à tester a été inclus dans l'appli Smartlife,
+2. dans le cas d'un périphérique Tuya/Zigbee, sa passerelle a été incluse dans l'appli Smartlife et le péripéhrique doit aussi avoir été inclus
 3. les localKey et devId ou cid ont été récupérés (le débogage peut permettre de retrouver cid et devId)
 4. le périphérique et son éventuelle passerelle n'ont pas été supprimés de l'appli Smartlife et l'appli Smartlife n'a pas été supprimée
 5. l'appli Smartlife est arrêtée sur tous les terminaux pouvant la faire tourner
@@ -474,7 +474,7 @@ Par la suite les messages seront du type :
     [2021-03-05 07:15:04][DEBUG] : << Ping of: lidl @192.168.1.130  diff:24
     [2021-03-05 07:15:04][DEBUG] :     Cmd to 192.168.1.130 - Try:192.168.1.130  6668 - Connect OK!
 
-Il se peut qu'il y ait ensuite des déconnexions ou que l'appli smartlife soit aussi connectée au périphérique, dans ce cas le message dans les logs est :
+Il se peut qu'il y ait ensuite des déconnexions ou que l'appli Smartlife soit aussi connectée au périphérique, dans ce cas le message dans les logs est :
 
     [2020-12-10 07:36:40][DEBUG] : << Ping of: Vanne @192.168.1.122  diff:24
     [2020-12-10 07:36:40][DEBUG] :     Cmd to 192.168.1.122 - Try:192.168.1.122  6668 - Connect OK!
