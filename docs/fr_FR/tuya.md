@@ -11,7 +11,7 @@ Le plugin peut récupérer l'état des périphériques dès que ceux-ci envoient
 Les équipements suivants sont compatibles mais la liste n'est pas exclusive et sera complétée en fonction du retour des utilisateurs.
 - passerelles MoesHouse, BENEXMART 
 - passerelle SilverCrest Smart Home de Lidl
-- toutes les passerelles Zigbee Tuya sont normalement compatibles, il n'y a pas encore eu de retour de passerelle non compatible.
+- toutes les passerelles Tuya/Zigbee sont normalement compatibles, il n'y a pas encore eu de retour de passerelle non compatible.
 - serrure Vima (mais pas MiHome)
 	le plugin ne peut ouvrir/fermer car la serrure n'est pas prévue pour le faire, mais il peut connaitre la dernière clé utilisée
 - capteur de température et d'humidité TYZS2
@@ -27,6 +27,7 @@ Les équipements suivants sont compatibles mais la liste n'est pas exclusive et 
 - plug Lonsoho avec conso
 - télécommande 3 boutons loratap
 - interrupteurs muraux simples/doubles/triples
+- télécommande, ampoules blanche et couleur Lidl
 
 Tous les autres périphériques, ou les périphériques similaires d'une autre marque ou d'un autre modèle, doivent être entièrement configurés en mode personnalisé. Cependant la configuration générée pour ces modèles peut aider pour un autre.
 
@@ -69,11 +70,11 @@ Si votre périphérique est dans la liste proposée, il devrait fonctionner imm�
 
 ## Création automatique du périphérique en mode inclusion
 
-Pour pouvoir utiliser le mode inclusion des périphériques connectés à la passerelle, il faut au préalable avoir connecté et configuré correctement une passerelle en utilisant le sous-type Gateway Hub Tuya/Zigbee avec son adresse IP et sa localKey. Le périphérique à inclure à la passerelle doit retourner son état, si ce n'est pas le cas, la procédure ne pourra pas fonctionner. Si plusieurs passerelles sont connectées et configurées dans le plugin, il faut activer uniquement la passerelle sur laquelle doit être inclus le péripéhrique. 
+Pour pouvoir utiliser le mode inclusion des périphériques connectés à la passerelle, il faut au préalable avoir connecté et configuré correctement une passerelle en utilisant le sous-type Gateway Hub Tuya/Zigbee avec son adresse IP et sa localKey. Le périphérique à inclure à la passerelle doit retourner son état, si ce n'est pas le cas, la procédure ne pourra pas fonctionner. Si plusieurs passerelles sont connectées et configurées dans le plugin, il faut activer uniquement la passerelle sur laquelle doit être inclus le périphérique. 
 Si aucune passerelle ou plusieurs passerelles sont configurées et actives, le processus d'inclusion sera abandonné. Le périphérique à inclure ne doit pas déjà se trouver dans le plugin, sinon il faut soit le supprimer soit utiliser le mode apprentissage.
 
 - cliquer sur le mode inclusion, attendre quelques instants
-- agir sur le périphérique ou modifier l'état du périphérique avec l'appli Tuya (mais l'usage de l'appli peut bloquer le périphérique : dans ce cas lancer rapidement l'appli Tuya et agir rapidement sur le périphérique puis quitter l'appli Tuya) en utilisant toutes les possibilités de l'appli Tuya ou du périphérique
+- agir sur le périphérique ou modifier l'état du périphérique avec l'appli Smartlife (mais l'usage de l'appli peut bloquer le périphérique : dans ce cas lancer rapidement l'appli Smartlife et agir rapidement sur le périphérique puis quitter l'appli Smartlife) en utilisant toutes les possibilités de l'appli Smartlife ou du périphérique
 - cliquer ensuite sur le bouton arrêt de l'inclusion et sauvegarder
 - le périphérique est créé et configuré, vous pouvez l'éditer
 
@@ -239,7 +240,7 @@ Utiliser toutes les possibilités de l'application Tuya et bien repérer dans le
 
 ### Cas d'un actionneur tout ou rien, true/false
 
-Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve par exemple :
+Dans les logs, lors de l'utilisation de l'appli Smartlife, on trouve par exemple :
 
     Mess :{"devId":"xxxxxxxxxghekqd",dps:{"2":true,"8":true}}
 	
@@ -258,14 +259,14 @@ Pour configurer manuellement :
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ON, comme n° de dps : 2 (sans les doubles guillemets) et comme paramètre : true.
 -   Créer une nouvelle commande action/défaut dans les commandes du périphérique :
     *    Dans la colonne interface mettre OFF comme nom du bouton
-	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _OFF, comme n° de dps : 2 (sans les doubles guillemets) et comme paramètre : false .
+	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _OFF, comme n° de dps : 2 (sans les doubles guillemets) et comme paramètre : false.
 -   Créer une nouvelle commande info/binary dans les commandes du périphérique :
     *    Dans la colonne interface mettre ETAT comme nom de l'info
 	*    Dans la colonne nom interne et n° de commande, mettre comme Id unique : _ETAT, comme n° de dps : 2 (sans les doubles guillemets) et rien dans paramètres.
 
 ### Cas d'un actionneur avec plusieurs modes
 
-Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve par exemple :
+Dans les logs, lors de l'utilisation de l'appli Smartlife, on trouve par exemple :
 
     Mess :{"devId":"xxxxxxxxxghekqd",dps:{"1":"off","101":true}}
 	
@@ -298,13 +299,13 @@ Pour configurer manuellement :
 
 ### Dans le cas d'une commande numérique, comme une commande d'intensité :
 	
-Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
+Dans les logs, lors de l'utilisation de l'appli Smartlife, on trouve :
 
     Mess :{"devId":"xxxxxxxxxghekqd",dps:{"3":850,"101":true}}
 
 Ici, un curseur d'intensité a été sélectionné sur l'application du périphérique et on observe que le dps de n° 3 a changé.
 
-Cliquer sur le bouton Curseur de l'interface afin de créer automatiquement les 2 commandes pour gérer le curseur. Pour les adapter au besoin, il suffit de modifier les n° de dps et de mettre 3 (sans guillemets). Pour le paramètre de la commande action : soit ne rien mettre, soit mettre #slider# soit mettre une formule par exemple : #slider#/10. Pour le paramètre de l'info, c'est identique sauf qu'il faut utiliser #value# . Ne pas mettre de guillemets car il n'y en a pas après le n° de dps.
+Cliquer sur le bouton Curseur de l'interface afin de créer automatiquement les 2 commandes pour gérer le curseur. Pour les adapter au besoin, il suffit de modifier les n° de dps et de mettre 3 (sans guillemets). Pour le paramètre de la commande action : soit ne rien mettre, soit mettre #slider# soit mettre une formule par exemple : #slider#/10. Pour le paramètre de l'info, c'est identique sauf qu'il faut utiliser #value#. Ne pas mettre de guillemets car il n'y en a pas après le n° de dps.
 
 Pour configurer manuellement :
 	
@@ -318,7 +319,7 @@ Pour configurer manuellement :
 
 ### Dans le cas d'un capteur numérique, comme un capteur de température :
 	
-Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
+Dans les logs, lors de l'utilisation de l'appli Smartlife, on trouve :
 
     Mess :{"devId":"xxxxxxxxxghekqd",dps:{"8":23,"101":true}}
 	
@@ -335,7 +336,7 @@ Pour configurer manuellement :
 
 ### Dans le cas d'un capteur tout ou rien, comme un détecteur de porte :
 
-Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
+Dans les logs, lors de l'utilisation de l'appli Smartlife, on trouve :
 	
     Mess :{"devId":"xxxxxxxxxghekqd",dps:{"12":1}}
 		
@@ -357,7 +358,7 @@ Cette partie est complexe et demande une lecture très attentive.
 
 Le codage de la couleur chez Tuya a plusieurs formats qui sont différents de celui utilisé par Jeedom. Jeedom utilise le format RGB (Reg Green Blue) alors que Tuya utilise différents formats HSV (Hue Saturation Value) ou combinant HSV et RGB. Le RGB code chaque couleur de 0 à 255 ou en hexadécimal de 0 à FF. Le rouge est donc codé FF0000, le bleu : 0000FF, le blanc : FFFFFF et le noir : 000000. Les valeurs pour HSV sont les suivantes : Hue de 0 à 360° (couleur), S de 0 à 100% (Saturation) et V de 0 à 100% (Intensité). Voir [ici](https://www.rapidtables.com/convert/color/) pour aller plus loin.
 
-Afin de permettre au plugin de fonctionner correctement pour les couleurs, il faut identifier les formats utilisés par Tuya lors d'un changement de couleur avec l'appli Tuya et en observant à cet instant dans les logs le n° de dps qui a été modifié.
+Afin de permettre au plugin de fonctionner correctement pour les couleurs, il faut identifier les formats utilisés par Tuya lors d'un changement de couleur avec l'appli Smartlife et en observant à cet instant dans les logs le n° de dps qui a été modifié.
 
 1 - format HSV : H (codé de 0 à 360 ) S (codé de 0 à 1000) V (codé de 0 à 1000) le résultat est ensuite donné en base 16, soit 12 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya  000003E803E8 (Hue = 0000 S =03E8 V=03E8)
 
@@ -446,8 +447,8 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 1. le périphérique à tester a été inclus dans l'appli smartlife,
 2. dans le cas d'un périphérique Tuya/Zigbee, sa passerelle a été incluse dans l'appli smartlife et le péripéhrique doit aussi avoir été inclus
 3. les localKey et devId ou cid ont été récupérés (le débogage peut permettre de retrouver cid et devId)
-4. le périphérique (et son éventuelle passerelle) n'ont pas supprimés de l'appli Tuya et l'appli Tuya n'a pas été supprimée
-5. l'appli Tuya est arrêtée sur tous les terminaux pouvant la faire tourner
+4. le périphérique et son éventuelle passerelle n'ont pas été supprimés de l'appli Smartlife et l'appli Smartlife n'a pas été supprimée
+5. l'appli Smartlife est arrêtée sur tous les terminaux pouvant la faire tourner
 6. l'adresse IP du périphérique (Tuya ou passerelle Tuya/Zigbee) est rendue fixe et est connue
 7. configurer les logs wifilightV2 en mode debug, redémarrer le demon
 
@@ -487,13 +488,13 @@ A ce stade, la seul point testé et OK est que l'adresse IP est la bonne et que 
 
 ## Vérifier que la localKey est la bonne
 
-1. renseigner la localKey sans espace et sans guillemets dans le champ Jeton du périphérique. Vérifier plusieurs fois : la localKey doit être la même pour tous les périphériques de même adresse IP (les périphériques Zigbee connectés à une passerelle ou les péripéhriques multicanaux). Le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
+1. renseigner la localKey sans espace et sans guillemets dans le champ Jeton du périphérique. Vérifier plusieurs fois : la localKey doit être la même pour tous les périphériques de même adresse IP (les périphériques Tuya/Zigbee connectés à une passerelle ou les périphériques multicanaux). Le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
 2. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canaux), le but est de ne pas mélanger tous les périphériques.
 3. effacer les logs
-4. utiliser soit les boutons du périphérique physique, soit l'appli Tuya pour changer l'état du périphérique. 
+4. utiliser soit les boutons du périphérique physique, soit l'appli Smartlife pour changer l'état du périphérique. 
 
 Notas :
-- l'appli Tuya peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli Tuya après la connexion ci-dessus au périphérique. A l'inverse il se peut que l'appli Tuya réponde très mal.
+- l'appli Smartlife peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli Smartlife après la connexion ci-dessus au périphérique. A l'inverse il se peut que l'appli Smartlife réponde très mal.
 - si le périphérique ne renvoie pas son état, les informations sur les dps et le devId ou le cid sont à rechercher dans le fichier ayant permis de récupérer la localKey, ils sont juste à côté de celle-ci.
 
 Exemple de log KO où la localKey n'est pas bonne car la trame reçue par le plugin n'est pas décodée :
@@ -514,7 +515,7 @@ Certains messages ne sont jamais décodés, il suffit qu'un seul message soit co
 1. le cid (pour les périphériques Tuya/Zigbee) ou le devId pour les autres a été trouvé en même temps que la LocaKey. Il est spécifique à chaque périphérique et n'est jamais modifié, cela permet de repérer vos périphériques.
 2. repérer les messages "Mess" en provenance du périphérique.
 
-**Pour un périphérique non Zigbee qui renvoie son devId,on trouvera :**
+**Pour un périphérique non Zigbee qui renvoie son devId, on trouvera :**
 
     [2020-12-10 08:01:58][DEBUG] :     Mess :{"devId":"308001xxxxxxxxxb4c","dps":{"1":true},"t":1607583717,"s":3}[4][4][4][4][163][173][254]R5p[202][219]K[250] - Read Json OK
 
@@ -554,8 +555,8 @@ Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son
 ## Un souci avec une commande action (les autres fonctionnent)
 
 1. Vérifier les 4 points ci-dessus
-2. Désactiver tous les périphériques wifilightV2 sauf celui à tester (ne garder qu'un canal pour les multicanaux) (laisser la passerelle Tuya/Zigbee active pour un préiphérique Zigbee) et effacer les logs pour plus de clarté.
-3. Attendre que le demon passe (il interroge les périphériques toutes les minutes le message commençe par : >>>>>>>> Search for) 
+2. Désactiver tous les périphériques wifilightV2 sauf celui à tester (ne garder qu'un canal pour les multicanaux) (laisser la passerelle Tuya/Zigbee active pour un périphérique Zigbee) et effacer les logs pour plus de clarté.
+3. Attendre que le demon passe (il interroge les périphériques toutes les minutes le message commence par : >>>>>>>> Search for) 
 4. Attendre 10s après le message contenant >>>>>>>>>>> End <<<<<<<<<<<< (fin de l'interrogation des périphériques par le demon).
 5. Activer la commande du plugin qui dysfonctionne 2 fois avec 5s d'intervalle
 6. Stopper les logs et les sauvegarder.
