@@ -18,7 +18,7 @@ todo :
 - les couleurs sont regroupées dans un select (nécessite de sauvegarder l'équipement). Ce select est créé en mode création Minimale des commandes.
 
 -1.71 - 2021-02-26 (V4 uniquement)
-- Tuya : correction bogue crÃ©ation des sliders en mode inclusion
+- Tuya : correction bogue création des sliders en mode inclusion
 - Tuya : Ajout d'une config pour les lampes blanches Lidl
 
 1.70 - 2021-02-21
