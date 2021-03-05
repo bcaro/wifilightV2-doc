@@ -488,7 +488,9 @@ A ce stade, la seul point testé et OK est que l'adresse IP est la bonne et que 
 
 ## Vérifier que la localKey est la bonne
 
-1. renseigner la localKey sans espace et sans guillemets dans le champ Jeton du périphérique. Vérifier plusieurs fois : la localKey doit être la même pour tous les périphériques de même adresse IP (les périphériques Tuya/Zigbee connectés à une passerelle ou les périphériques multicanaux). Le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
+Dans le cas d'un passerelle Tuya/Zigbee, les tests doivent se faire sur un périphérique relié à la passerelle. La passerelle seule ne renvoie aucun message.
+
+1. renseigner la localKey sans espace et sans guillemets dans le champ Jeton du périphérique (et de la passerelle s'il y en a une). Vérifier plusieurs fois : la localKey doit être la même pour tous les périphériques de même adresse IP (les périphériques Tuya/Zigbee connectés à une passerelle ou les périphériques multicanaux). Le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
 2. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canaux), le but est de ne pas mélanger tous les périphériques.
 3. effacer les logs
 4. utiliser soit les boutons du périphérique physique, soit l'appli Smartlife pour changer l'état du périphérique. 
@@ -511,6 +513,8 @@ Les caractères de la fin du message seront filtrés par le plugin et ne doivent
 Certains messages ne sont jamais décodés, il suffit qu'un seul message soit correctement décodé pour être sûr que la localKey est correcte.
 
 ## Vérifier que le devId ou le cid sont corrects
+
+Dans le cas d'un passerelle Tuya/Zigbee, les tests doivent se faire sur un périphérique relié à la passerelle. La passerelle seule ne renvoie aucun message.
 
 1. le cid (pour les périphériques Tuya/Zigbee) ou le devId pour les autres a été trouvé en même temps que la LocaKey. Il est spécifique à chaque périphérique et n'est jamais modifié, cela permet de repérer vos périphériques.
 2. repérer les messages "Mess" en provenance du périphérique.
