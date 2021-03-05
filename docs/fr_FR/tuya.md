@@ -27,7 +27,6 @@ Les équipements suivants sont compatibles mais la liste n'est pas exclusive et 
 - plug Lonsoho avec conso
 - télécommande 3 boutons loratap
 - interrupteurs muraux simples/doubles/triples
-- lampes N&B Lidl
 
 Tous les autres périphériques, ou les périphériques similaires d'une autre marque ou d'un autre modèle, doivent être entièrement configurés en mode personnalisé. Cependant la configuration générée pour ces modèles peut aider pour un autre.
 
@@ -56,7 +55,7 @@ La clé et l'adresse IP des périphériques connectés à la passerelle est la m
 Configurer le périphérique et renseigner la clé trouvée ci-dessus ainsi que l'adresse IP qui est la même que celle de la passerelle. Il faut ensuite modifier l'état du périphérique avec l'application fournie par le constructeur de la passerelle et consulter les logs.
 Vous trouverez une information comme celle-ci :
     
-    Receive after decode :{"dps":{"161":"Esc"},"cid":"ec1bbdfffe781b28","t":1589301302}
+    Receive after decode :{"dps":{"161":"Esc"},"cid":"ec1bxxxxxxxx28","t":1589301302}
  
 Le cid est à copier dans le champ identifiant du périphérique du plugin (sans les " "). C'est lui qui permet de distinguer 2 équipements connectés à la passerelle.
 
@@ -65,7 +64,7 @@ Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être
 
 ## Choix du périphérique standard connecté à la passerelle
 
-Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les n° de dps ou les paramètres peuvent avoir des valeurs différentes de celles des configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Mode création manuelle des commandes en V3](./tuya#tocAnchor-1-9-8) de la partie Tuya pour interpréter les logs du plugin et comprendre les commandes de la configuration par défaut.
+Si votre périphérique est dans la liste proposée, il devrait fonctionner immédiatement. Si votre périphérique est un peu différent, les n° de dps ou les paramètres peuvent avoir des valeurs différentes que les configurations par défaut. Il est possible de modifier les commandes créées en changeant le n° de dps et le paramètre avec un éventuelle formule de calcul pour retrouver la valeur voulue. Voir [Mode création manuelle des commandes en V3](./tuya#tocAnchor-1-9-8) de la partie Tuya pour interpréter les logs du plugin et comprendre les commandes de la configuration par défaut.
 
 
 ## Création automatique du périphérique en mode inclusion
@@ -117,7 +116,7 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 De nombreuses marques sont compatibles avec le plugin. Consulter le forum pour plus d'informations. Le plugin permet de contrôler de nombreux actionneurs.
 Il peut récupérer l'état des périphériques dès que celui-ci envoie une information de changement d'état ou quand il les interroge toutes les minutes. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
 
-Les équipements suivants sont compatibles en firmware 1.0. ou en firmware 2.0.
+Les équipements suivants sont compatibles en firmware 1.0. et en firmware 2.0.
 
 -  prises simples avec et sans retour sur la consommation, en particulier les prises wifi Neo Coolcam
 -  prises multiples avec et sans consommation avec et sans USB
@@ -133,8 +132,8 @@ Les équipements suivants sont compatibles en firmware 1.0. ou en firmware 2.0.
 -  Proscenic (l'aspirateur n'est pas compatible et la procédure d'intégration est complexe)
 -  Fil pilote
 -  sirène
--  alarme (infos uniquement)
--  radiateur soufflant Lidl
+-  Alarme (infos uniquement)
+-  Radiateur soufflant Lidl
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
@@ -171,7 +170,7 @@ Pour les périphériques multicanaux, comme les prises, il faut créer un wifili
 
 Les paramètres de configuration de l'énergie, pour les prises qui la gèrent, permettent d'attribuer le bon dps à la tension, l'ampérage et la puissance. Pour récupérer ce paramétrage, installer la prise dans Jeedom puis aller dans les logs de wifilightV2. La prise est interrogée toutes les minutes. Repérer le message qui ressemble à :
 
-    return decoded : {"devId":"xxxxxxxxx","dps":{"1":false,"2":false,"9":0,"10":0,"18":0,"19":0,"20":2281,"21":1,"22":726,"23":28971,"24":19417,"25":1070}}
+    Mess : {"devId":"xxxxxxxxxghekqd","dps":{"1":false,"2":false,"9":0,"10":0,"18":0,"19":0,"20":2281,"21":1,"22":726,"23":28971,"24":19417,"25":1070}}
 
 L'index "20" correspond ici à la tension d'alimentation en centaine de mV soit : 228.1 V, elle doit légèrement bouger. Les index "18" et "19" correspondent au courant (mA) et à la puissance en W, ici aucun appareil n'est branché et donc les informations sont à zéro. C'est un bon moyen de trouver la tension, en branchant un appareil, ces 2 valeurs doivent être modifiées et la tension est juste après.
 
@@ -185,7 +184,7 @@ Pour les autres prises, la valeur 20;18;19 est mise par défaut.
 
 
 ## Tuya Smartlife compatible V3
-Le type V3 correspond aux périphériques en firmware 2.0 . En plus de cette compatibilité, il y a la possibilité de modifier finement le n° de dps et les paramètres de dps de tous les périphériques présents en V3 afin de les adapter au besoin. Le type V3 possède aussi un mode apprentissage des dps et paramètres du périphérique. Pour ce type, toutes les commandes d'un même périphérique sont créées dans un seul wifilightV2, y compris pour les prises multiples.
+Le type V3 correspond aux périphériques en firmware 2.0 . En plus de cette compatibilité, il y a la possibilité de modifier finement le n° de dps et les paramètres de dps de tous les périphériques présents en V3 afin de les adapter au besoin. le type V3 possède aussi un mode apprentissage des dps et paramètres du périphérique. Pour ce type, toutes les commandes d'un même périphérique sont créées dans un seul wifilightV2, y compris pour les prises multiples.
 
 L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s même si le périphérique ne le renvoie pas. A utiliser pour les prises électriques qui ne renvoient pas régulièrement la consommation mais ne pas utiliser pour les périphériques à piles sous peine de les vider.
 
@@ -199,7 +198,7 @@ Si vous supprimez des commandes, elles seront automatiquement recréées lors de
 
 ## Mode apprentissage en V3
 
-Pour lancer l'apprentissage, il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devID et le sous-type Personnalisé. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Smartlife pour que le plugin crée automatiquement les commandes actions et infos, utilisez toutes les possibilités offertes par l'appli. Pour terminer, cliquer sur le bouton « arrêter l’inclusion » et sauvegarder.
+Pour lancer l'apprentissage, il faut créer manuellement le périphérique avec les bons paramètres : IP, localKey, devId et le sous-type Personnalisé. Cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Smartlife pour que le plugin crée automatiquement les commandes actions et infos, utilisez toutes les possibilités offertes par l'appli. Pour terminer, cliquer sur le bouton « arrêter l’inclusion » et sauvegarder.
 
 Ce mode est uniquement là pour aider la configuration personnalisée d'un nouveau périphérique qui n'est pas proposé par le plugin. L'utilisation de ce mode ne peut donner un périphérique complètement fonctionnel et nécessite de comprendre de supprimer ou de modifier les commandes créées.
 
@@ -242,11 +241,11 @@ Utiliser toutes les possibilités de l'application Tuya et bien repérer dans le
 
 Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve par exemple :
 
-    Receive after decode :{devId:50701244cc50e37e9aff,dps:{"2":true,"8":true}}
+    Mess :{"devId":"xxxxxxxxxghekqd",dps:{"2":true,"8":true}}
 	
 Ici, le bouton off a été sélectionné sur le périphérique et on observe que le dps de n° 2 a changé.
 	
-    Receive after decode :{devId:50701244cc50e37e9aff,dps:{"2":false,"8":true}}
+    Mess :{"devId":"xxxxxxxxxghekqd",dps:{"2":false,"8":true}}
 
 Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps de n° 2 a changé.
 
@@ -268,15 +267,15 @@ Pour configurer manuellement :
 
 Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve par exemple :
 
-    Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"off","101":true}}
+    Mess :{"devId":"xxxxxxxxxghekqd",dps:{"1":"off","101":true}}
 	
 Ici, le bouton off a été sélectionné sur le périphérique et on observe que le dps de n° 1 a changé.
 	
-    Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"on","101":true}}
+    Mess :{"devId":"xxxxxxxxxghekqd",dps:{"1":"on","101":true}}
 
 Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps de n° 1 a changé.
 
-    Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"stop","101":true}}
+    Mess :{"devId":"xxxxxxxxxghekqd",,dps:{"1":"stop","101":true}}
 
 Ici, le bouton stop a été sélectionné sur le périphérique et on observe que le dps de n° 1 a changé.
 
@@ -301,7 +300,7 @@ Pour configurer manuellement :
 	
 Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 
-    Receive after decode :{devId:50701244cc50e37e9aff,dps:{"3":850,"101":true}}
+    Mess :{"devId":"xxxxxxxxxghekqd",dps:{"3":850,"101":true}}
 
 Ici, un curseur d'intensité a été sélectionné sur l'application du périphérique et on observe que le dps de n° 3 a changé.
 
@@ -321,7 +320,7 @@ Pour configurer manuellement :
 	
 Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 
-    Receive after decode :{devId:50701244cc50e37e9aff,dps:{"8":23,"101":true}}
+    Mess :{"devId":"xxxxxxxxxghekqd",dps:{"8":23,"101":true}}
 	
 Ici, c'est une température qui est envoyée régulièrement et on observe que le dps de n° 8 a changé.
 
@@ -338,9 +337,9 @@ Pour configurer manuellement :
 
 Dans les logs, lors de l'utilisation de l'appli Tuya, on trouve :
 	
-    Receive after decode :{devId:50701244cc50e37e9aff,dps:{"12":1}}
+    Mess :{"devId":"xxxxxxxxxghekqd",dps:{"12":1}}
 		
-    Receive after decode :{devId:50701244cc50e37e9aff,dps:{"12":0}}
+    Mess :{"devId":"xxxxxxxxxghekqd",dps:{"12":0}}
 	
 Ici, c'est l'information d'ouverture puis de fermeture qui est envoyée et on observe que le dps de n° 12 a changé.
 
@@ -368,7 +367,7 @@ Afin de permettre au plugin de fonctionner correctement pour les couleurs, il fa
 
 Dans les logs, lors de l'utilisation de la modification de la couleur de la lampe, on trouve :
 
-    Receive after decode:{"devId":"63322540bcddc254e92c","dps":{"1":true,"27":true,"28":"white","29":254,"31":"08ff0000766464","32":"cf38000168ffff","33":"ffff500100ff00"}
+    Mess:{"devId":"633225xxxxx","dps":{"1":true,"27":true,"28":"white","29":254,"31":"08ff0000766464","32":"cf38000168ffff","33":"ffff500100ff00"}
 
 Il faut repérer le n° de dps qui change, ici c'est le 31 soit 08ff0000766464 . Les 2 derniers 64 en hexadécimal font 100 en décimal. 08=R FF=G 00=B 076= hue, c'est le format 3. Cliquer sur le bouton Couleur 3 et modifier les n° de dps pour mettre 31. Ne pas modifier les paramètres. 
 
@@ -442,51 +441,45 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 
 # Débogage 
 
-## Tests et configuration préalables
+## Test et configuration préalables
 
-1. les périphériques ont été inclus dans l'appli Tuya 
-2. les localKey et devID ou cid ont été récupérés
-3. les périphériques ne sont pas supprimés de l'appli Tuya et l'appli Tuya n'a pas été supprimée
-4. l'appli Tuya est arrêtée sur tous les terminaux pouvant la faire tourner
-5. l'adresse IP du périphérique (Tuya ou passerelle Tuya/Zigbee) est rendue fixe et est connue
-6. configurer les logs wifilightV2 en mode debug, redémarrer le demon
+1. le périphérique à tester a été inclus dans l'appli smartlife,
+2. dans le cas d'un périphérique Tuya/Zigbee, sa passerelle a été incluse dans l'appli smartlife et le péripéhrique doit aussi avoir été inclus
+3. les localKey et devId ou cid ont été récupérés (le débogage peut permettre de retrouver cid et devId)
+4. le périphérique (et son éventuelle passerelle) n'ont pas supprimés de l'appli Tuya et l'appli Tuya n'a pas été supprimée
+5. l'appli Tuya est arrêtée sur tous les terminaux pouvant la faire tourner
+6. l'adresse IP du périphérique (Tuya ou passerelle Tuya/Zigbee) est rendue fixe et est connue
+7. configurer les logs wifilightV2 en mode debug, redémarrer le demon
 
 ## Vérifier que le périphérique est trouvé et connecté
 
-1. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canaux), le but est de ne pas mélanger tous les périphériques
+1. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canaux) (dans la cas d'un périphérique connecté à une passerelle, la passerelle doit rester activée), le but est de ne pas mélanger tous les périphériques
 2. effacer les logs
 3. sauvegarder le périphérique dans le plugin : cela a pour effet de lancer le demon qui teste toutes les minutes les périphériques wifilightV2
 
-Exemple de log KO où le plugin n'a pas trouvé le périphérique donc mauvaise adresse IP
-
-    [2020-12-10 07:40:12][DEBUG] : ****** Device listenable Inter BC Tuya 2 OK - Class:Tuya_SW_2 @192.168.1.122 Channel:2 *****
-    [2020-12-10 07:40:12][DEBUG] :    Key not set
-    [2020-12-10 07:40:12][DEBUG] :    Socket created  @192.168.1.122
-    [2020-12-10 07:40:12][DEBUG] :    Connection impossible. Err=115 : Operation now in progress
-
 Exemple de log OK où le plugin a trouvé le périphérique donc bonne adresse IP :
 
-    [2020-12-10 07:40:12][DEBUG] : ****** Device listenable Telco3 - Class:TuyaCustom2_V2 @192.168.1.106 Channel:5c0272fffec24266 *****
-    [2020-12-10 07:40:12][DEBUG] :    Key:0  time diff:0
-    [2020-12-10 07:40:12][DEBUG] :    Socket already created @192.168.1.106
-    [2020-12-10 07:40:12][DEBUG] :    ADD New device @192.168.1.106 channel:5c0272fffec24266
-    [2020-12-10 07:40:12][DEBUG] :    Device and socket exist : key:0 @192.168.1.106 channel:5c0272fffec24266 diff:0
+    [2021-03-05 07:13:54][DEBUG] : ** Zig plug - TuyaCustom2_V2 @192.168.1.106 - c:12 **
+    [2021-03-05 07:13:54][DEBUG] :     Key:0 Diff:0  Socket already created @192.168.1.106 ADD New device @192.168.1.106 channel:12key:0 @192.168.1.106 c:12 d:0
+
+	
+Exemple de log KO où le plugin n'a pas trouvé le périphérique donc mauvaise adresse IP
+
+    [2021-03-05 07:13:55][DEBUG] : ** Test vanne - TuyaCustom2_V2 @192.168.1.199 - c:11 **
+    [2021-03-05 07:13:55][DEBUG] :     Key not set New device: created  @192.168.1.199 close Connection impossible. Err=115 : Operation now in progress ADD New device @192.168.1.199 channel:11
 
 Par la suite les messages seront du type :
 
-    [2020-12-10 07:53:41][DEBUG] : ****** Device listenable Inter BC Tuya OK - Class:Tuya_SW_2 @192.168.1.122 Channel:1 *****
-    [2020-12-10 07:53:41][DEBUG] :    Device and socket exist : key:3 @192.168.1.122 channel:1 diff:13
+    [2021-03-05 07:15:04][DEBUG] : << Ping of: lidl @192.168.1.130  diff:24
+    [2021-03-05 07:15:04][DEBUG] :     Cmd to 192.168.1.130 - Try:192.168.1.130  6668 - Connect OK!
 
 Il se peut qu'il y ait ensuite des déconnexions ou que l'appli smartlife soit aussi connectée au périphérique, dans ce cas le message dans les logs est :
 
-    [2020-12-10 07:36:40][DEBUG] :   << Ping of: 5c0272fffe16b0f9 @192.168.1.106  diff:21
+    [2020-12-10 07:36:40][DEBUG] : << Ping of: Vanne @192.168.1.122  diff:24
     [2020-12-10 07:36:40][DEBUG] :     Cmd to 192.168.1.122 - Try:192.168.1.122  6668 - Connect OK!
     [2020-12-10 07:36:40][DEBUG] :     Error on:192.168.1.122 is :Connection reset by peer n:104  diff:16
 
-ou il n'y a plus de ping dans les logs pour cette adresse ip, cela correspond à une mauvaise connexion permanente entre le périphérique et Jeedom ou si le périphérique n'est plus alimenté. Quand tout est correct le message est :
-
-    [2020-12-10 07:36:43][DEBUG] :   << Ping of: 5c0272fffe16b0f9 @192.168.1.106  diff:21
-    [2020-12-10 07:36:43][DEBUG] :     Cmd to 192.168.1.106 - Try:192.168.1.106  6668 - Connect OK!
+ou il n'y a plus de ping dans les logs pour cette adresse ip, cela correspond à une mauvaise connexion permanente entre le périphérique et Jeedom ou si le périphérique n'est plus alimenté.
 
 Le plugin tentera de se reconnecter au périphérique toutes les minutes ou toutes les 3 minutes ce qui lui permettra de retrouver le périphérique s'il est rebranché. 
 
@@ -494,71 +487,74 @@ A ce stade, la seul point testé et OK est que l'adresse IP est la bonne et que 
 
 ## Vérifier que la localKey est la bonne
 
-1. renseigner la localKey sans espace et sans guillemets dans le champ Jeton du plugin. Vérifier plusieurs fois : la localKey doit être la même pour tous les périphériques de même adresse IP. Le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
+1. renseigner la localKey sans espace et sans guillemets dans le champ Jeton du périphérique. Vérifier plusieurs fois : la localKey doit être la même pour tous les périphériques de même adresse IP (les périphériques Zigbee connectés à une passerelle ou les péripéhriques multicanaux). Le plugin utilise l'une de ces clés pour dialoguer avec le périphérique donc vérifier qu'elles sont correctes et identiques.
 2. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canaux), le but est de ne pas mélanger tous les périphériques.
 3. effacer les logs
-4. utiliser soit les boutons du périphérique physique, soit l'appli Tuya pour changer l'état du périphérique. Noter qu'utiliser l'appli Tuya peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli Tuya après la connexion ci-dessus au périphérique. A l'inverse il se peut que l'appli Tuya réponde très mal. Si le périphérique ne renvoie pas son état, les informations sur les dps sont à rechercher dans le fichier ayant permis de récupérer la localKey.
+4. utiliser soit les boutons du périphérique physique, soit l'appli Tuya pour changer l'état du périphérique. 
 
-Nota : les experts pourront retrouver les dps et le devID ou le cid car ils sont affichés à côté de la localKey lors de la procédure pour trouver la localKey.
+Notas :
+- l'appli Tuya peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli Tuya après la connexion ci-dessus au périphérique. A l'inverse il se peut que l'appli Tuya réponde très mal.
+- si le périphérique ne renvoie pas son état, les informations sur les dps et le devId ou le cid sont à rechercher dans le fichier ayant permis de récupérer la localKey, ils sont juste à côté de celle-ci.
 
 Exemple de log KO où la localKey n'est pas bonne car la trame reçue par le plugin n'est pas décodée :
 
-    [2020-12-10 08:01:56][DEBUG] :    Receive after decode :[163][173][254]R5p[202][219]K[250][228][39][20][173][213]n - not decoded
+    [2021-03-05 07:16:53][DEBUG] : Receive from:192.168.1.106
+    [2021-03-05 07:16:53][DEBUG] :   Mess: [163][173][254]R5p[202][219]K[250][228][39][20][173][213]nhjsv[254]R5p[202][219]K[250]ndnd[228][39][20][173] - not decoded
 
 Dans le cas où le décodage de la trame est correct, on trouve un message tel que celui-ci :
 
-    [2020-12-10 08:01:56][DEBUG] : Receive from:192.168.1.129
-    [2021-02-26 07:43:04][DEBUG] :  >>    Receive after decode: {"devId":"30800135cc50e3418b4c","dps":{"1":true},"t":1607583717,"s":3}"}[4][4][4][4][163][173][254]R5p[202][219]K[250][228][39][20][173][213]n - Read Json OK
+    [2021-03-05 07:16:53][DEBUG] : Receive from:192.168.1.106
+    [2021-03-05 07:16:53][DEBUG] :   Mess: {"dps":{"1":true,"9":0,"17":8370,"18":44,"19":50,"20":2320,"27":"on","28":"relay"},"cid":"588xxxxxxxxxa"}[4][4][4][4][163][173][254]R5p[202][219]K[250][228][39][20][173][213]n - Read Json OK
 
 Les caractères de la fin du message seront filtrés par le plugin et ne doivent pas inquiéter. C'est ce message qui va permettre de configurer le périphérique dans le plugin en identifiant à quoi servent les n° de dps et quelles valeurs ils prennent, voir plus haut.
+Certains messages ne sont jamais décodés, il suffit qu'un seul message soit correctement décodé pour être sûr que la localKey est correcte.
 
-## Vérifier que le devId ou le cid est le bon
+## Vérifier que le devId ou le cid sont corrects
 
 1. le cid (pour les périphériques Tuya/Zigbee) ou le devId pour les autres a été trouvé en même temps que la LocaKey. Il est spécifique à chaque périphérique et n'est jamais modifié, cela permet de repérer vos périphériques.
 2. repérer les messages "Receive after decode" en provenance du périphérique.
 
 **Pour un périphérique non Zigbee qui renvoie son devId,on trouvera :**
 
-    [2020-12-10 08:01:58][DEBUG] :     Receive after decode :{"devId":"30800135cc50e3418b4c","dps":{"1":true},"t":1607583717,"s":3}]4][4][4][4][163][173][254]R5p[225]"{4K - Read Json OK
+    [2020-12-10 08:01:58][DEBUG] :     Mess :{"devId":"308001xxxxxxxxxb4c","dps":{"1":true},"t":1607583717,"s":3}[4][4][4][4][163][173][254]R5p[202][219]K[250] - Read Json OK
 
 le devId est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Attention : tous les périphériques ne renvoient pas leur devId.
 
 **Pour un périphérique Zigbee qui renvoie son cid, on trouvera :**
 
-    [2020-12-10 08:14:34][DEBUG] :     Receive after decode :{"dps":{"1":"pir"},"cid":"bc33acfffe525145","t":1607584474}[219]K[250][228][39][20][173][213]n - Read Json OK
+    [2020-12-10 08:14:34][DEBUG] :     Mess :{"dps":{"1":"pir"},"cid":"bc33xxxxxxxxxxxx45","t":1607584474}[4][4][4][4][163][173][254]R5p[202][219]K[250] - Read Json OK
 
 le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Attention : tous les périphériques ne renvoient pas leur cid. 
 
 Vous pouvez alors vérifier la concordance avec la procédure permettant de trouver la localKey et le devId ou le cid.
 
-Si le cid ou le devId n'est pas correct, les commandes actions ne seront pas exécutées par le périphérique.
+Si le cid ou le devId ne sont pas corrects, les commandes actions ne seront pas exécutées par le périphérique.
 
 **Exemple d'envoi d'une commande correcte vers un périphérique Tuya non Zigbee :**
 
-    [2021-02-26 08:23:34][DEBUG] :     Cmd to 127.0.0.1: {"t":"1614324214","devId":"bff438f111b78e704dsg6z","dps":{"1":false},"uid":""} - canal:1 - Try:127.0.0.1  6900 - Connect OK!
-    [2021-02-26 08:23:34][DEBUG] :     Receive from Jeedom to Send cmd to device @192.168.1.129 canal:1
-    [2021-02-26 08:23:34][DEBUG] :     Cmd to 192.168.1.129 - Try:192.168.1.129  6668 - Connect OK!
-    [2021-02-26 08:23:34][DEBUG] :     No state update
-    [2021-02-26 08:23:34][DEBUG] : Receive from:192.168.1.129
-    [2021-02-26 08:23:34][DEBUG] :  >>    Receive after decode: {"dps":{"1":false},"t":1614324213}[14][14][14][14][14][14][14][14][14][14][14][14][14][14][127][218][165][179][183][243][146][10][135]p[217]k[7][10][129][158] - Read Json OK
-    [2021-02-26 08:23:34][DEBUG] :  Tuya  prise Wifi test @192.168.1.129    Receive after decode: {"dps":{"1":false},"t":1614324213}[14][14][14][14][14][14][14][14][14][14][14][14][14][14][127][218][165][179][183][243][146][10][135]p[217]k[7][10][129][158] - Read Json OK
-    [2021-02-26 08:23:34][DEBUG] :   Update devices @192.168.1.129 canal:1
-    [2021-02-26 08:23:34][DEBUG] :     Dps1|dps_1_STATE:
-    [2021-02-26 08:23:34][DEBUG] :     No other states to update
-    [2021-02-26 08:23:34][DEBUG] : Receive from:192.168.1.129
-    [2021-02-26 08:23:34][DEBUG] :  >>    Receive after decode: [127][218][165][179][183][243][146][10][135]p[217]k[7][10][129][158] - not decoded
+    [2021-03-05 07:23:28][DEBUG] :     Cmd to 127.0.0.1: {"cid":"588e8xxxxxxxx21a","dps":{"1":true},"t":"1614925408"} - canal:12 - Try:127.0.0.1  6900 - Connect OK!
+    [2021-03-05 07:23:28][DEBUG] :     Receive from Jeedom to Send cmd to device @192.168.1.129 canal:12
+    [2021-03-05 07:23:28][DEBUG] :     Cmd to 192.168.1.129 - Try:192.168.1.129  6668 - Connect OK!
+    [2021-03-05 07:23:28][DEBUG] :     No state update
+    [2021-03-05 07:23:28][DEBUG] : Receive from:192.168.1.129
+    [2021-03-05 07:23:28][DEBUG] :   Mess: [163][173][254]R5p[202][219]K[250][228][39][20][173][213]n - not decoded
+    [2021-03-05 07:23:28][DEBUG] : Receive from:192.168.1.129
+    [2021-03-05 07:23:32][DEBUG] :   Mess: {"dps":{"1":false,"9":0,"18":0,"19":0,"20":2367,"21":1,"22":636,"23":28600,"24":16823,"25":2480,"26":0,"38":"on","41":"","42":"","46":true}}[4][4][4][4][127][218][165][179][183][243][146][10][135]p[217]k[7][10][129][158] - Read Json OK
+    [2021-03-05 07:23:32][DEBUG] :    Tuya  prise Wifi test @192.168.1.129  Mess: {"dps":{"1":false,"9":0,"18":0,"19":0,"20":2367,"21":1,"22":636,"23":28600,"24":16823,"25":2480,"26":0,"38":"on","41":"","42":"","46":true}}[4][4][4][4][127][218][165][179][183][243][146][10][135]p[217]k[7][10][129][158] - Read Json OK
+    [2021-03-05 07:23:32][DEBUG] :     Update devices @192.168.1.129 canal:12
+    [2021-03-05 07:23:32][DEBUG] :      Dps18|SwOnOffGet_Det_Fen:0 Dps19|ModeForcedGetZ:0 Dps20|SwOnOffGet_Test:2367 Dps21|VanneGetZ formula:#value# #value#:1 After:1
+    [2021-03-05 07:23:32][DEBUG] :      No other states to update
 
 Le plugin envoie la commande au demon à l'adresse 127.0.0.1 (Cmd to 127.0.0.1).
-
 Puis le demon envoie la commande au périphérique à l'adresse 192.168.1.129 ( Receive from Jeedom to Send cmd).
+Enfin, le périphérique renvoie son état (Receive from). Le premier message n'est pas décodé et le deuxième l'est. Noter que ce périphérique ne renvoie pas son cid.
+Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son état ou renvoie un message vide ou une erreur et n'exécute pas la commande.
 
-Enfin, le périphérique renvoie son état (Receive after decode). Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son état ou renvoie un message vide ou une erreur. Ici le prériphérique renvoie aussi un message non décodé car vide.
 
+## Un souci avec une commande action (les autres fonctionnent)
 
-## Un souci avec une commande action
-
-1. Vérifier les 3 points ci-dessus
-2. Désactiver tous les périphériques wifilightV2 sauf celui à tester (ne garder qu'un canal pour les multicanaux), et effacer les logs pour plus de clarté.
+1. Vérifier les 4 points ci-dessus
+2. Désactiver tous les périphériques wifilightV2 sauf celui à tester (ne garder qu'un canal pour les multicanaux) (laiser la passerelle Tuya/Zigbee active pour un préiphérique Zigbee) et effacer les logs pour plus de clarté.
 3. Attendre que le demon passe (il interroge les périphériques toutes les minutes le message commençe par : >>>>>>>> Search for) 
 4. Attendre 10s après le message contenant >>>>>>>>>>> End <<<<<<<<<<<< (fin de l'interrogation des périphériques par le demon).
 5. Activer la commande du plugin qui dysfonctionne 2 fois avec 5s d'intervalle
@@ -569,11 +565,11 @@ Enfin, le périphérique renvoie son état (Receive after decode). Si le devId o
 ## Trouver de l'aide sur le forum
 
 Afin d'obtenir de l'aide rapide et de qualité, il est nécessaire de bien préparer sa question. Donner les éléments, les logs de chaque étape suivante avec votre démarche et le diagnostic :
-1. configuration du périphérique
-2. tests et configuration préalable 
-3. Vérifier que le périphérique est trouvé et connecté
-4. Vérifier que la localKey est la bonne
-5. Vérifier que le devId ou le cid est le bon
+1. copie d'écran de la configuration du périphérique
+2. réaliser les tests et configuration préalable (voir paragraphe ci-dessus)
+3. Vérifier que le périphérique est trouvé et connecté, donner les logs si KO (voir paragraphe ci-dessus)
+4. Vérifier que la localKey est la bonne, donner les logs si KO (voir paragraphe ci-dessus)
+5. Vérifier que le devId ou le cid sont corrects, donner les logs si KO (voir paragraphe ci-dessus)
 
 Si une étape est KO, ce n'est pas la peine de tester les suivantes. Si vous ne comprenez pas ce que vous faites, les aidants du forum ne pourront pas le savoir pour vous. Il est rappelé au tout début de la doc du plugin qu'utiliser des périphériques Tuya en local nécessite de savoir suivre à la lettre une procédure et d'avoir quelques notions en informatique.
 
