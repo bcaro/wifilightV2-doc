@@ -55,7 +55,7 @@ La clé et l'adresse IP des périphériques connectés à la passerelle est la m
 Configurer le périphérique et renseigner la clé trouvée ci-dessus ainsi que l'adresse IP qui est la même que celle de la passerelle. Il faut ensuite modifier l'état du périphérique avec l'application fournie par le constructeur de la passerelle et consulter les logs.
 Vous trouverez une information comme celle-ci :
     
-    Receive after decode :{"dps":{"161":"Esc"},"cid":"ec1bxxxxxxxx28","t":1589301302}
+    Mess :{"dps":{"161":"Esc"},"cid":"ec1bxxxxxxxx28","t":1589301302}
  
 Le cid est à copier dans le champ identifiant du périphérique du plugin (sans les " "). C'est lui qui permet de distinguer 2 équipements connectés à la passerelle.
 
