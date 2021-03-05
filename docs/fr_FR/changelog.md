@@ -13,11 +13,11 @@ todo :
 - ajout des plugs simple et multiple Lidl
 
 -1.72 - 2021-03-05 (beta)
-- Tuya : ajout lampr couleur Lidl
+- Tuya : ajout lampe couleur Lidl
 - Tuya : ajout télécommande Lidl
 - les couleurs sont regroupées dans un select (nécessite de sauvegarder l'équipement). Ce select est créé en mode création Minimale des commandes.
 
--1.71 - 2021-02-26
+-1.71 - 2021-02-26 (V4 uniquement)
 - Tuya : correction bogue crÃ©ation des sliders en mode inclusion
 - Tuya : Ajout d'une config pour les lampes blanches Lidl
 
