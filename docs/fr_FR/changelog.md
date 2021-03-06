@@ -15,7 +15,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Tuya : ajout télécommande Lidl
 - Tuya : ajout prises simple et triple Lidl
 - les couleurs sont regroupées dans un select (nécessite de sauvegarder l'équipement). Ce select est créé en mode création Minimale des commandes.
-- correction bogus lors de l'affichage des périphériques
+- correction bogue lors de l'affichage des périphériques
 
 -1.71 - 2021-02-26 (V4 uniquement)
 - Tuya : correction bogue création des sliders en mode inclusion
