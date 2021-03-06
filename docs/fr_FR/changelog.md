@@ -9,13 +9,13 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-todo :
-- ajout des plugs simple et multiple Lidl
 
 -1.72 - 2021-03-05 (beta)
 - Tuya : ajout lampe couleur Lidl
 - Tuya : ajout télécommande Lidl
+- Tuya : ajout prises simple et triple Lidl
 - les couleurs sont regroupées dans un select (nécessite de sauvegarder l'équipement). Ce select est créé en mode création Minimale des commandes.
+- correction bogus lors de l'affichage des périphériques
 
 -1.71 - 2021-02-26 (V4 uniquement)
 - Tuya : correction bogue création des sliders en mode inclusion
