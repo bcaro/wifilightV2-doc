@@ -10,7 +10,7 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
 
--1.72 - 2021-03-05 (beta)
+-1.72 - 2021-03-07 (V4 uniquement)
 - Tuya : ajout lampe couleur Lidl
 - Tuya : ajout télécommande Lidl
 - Tuya : ajout prises simple et triple Lidl
