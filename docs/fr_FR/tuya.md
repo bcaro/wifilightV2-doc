@@ -27,7 +27,7 @@ Les équipements suivants sont compatibles mais la liste n'est pas exclusive et 
 - plug Lonsoho avec conso
 - télécommande 3 boutons loratap
 - interrupteurs muraux simples/doubles/triples
-- télécommande, ampoules blanche et couleur Lidl
+- télécommande, ampoules blanche et couleur, prises simple et triple Lidl
 
 Tous les autres périphériques, ou les périphériques similaires d'une autre marque ou d'un autre modèle, doivent être entièrement configurés en mode personnalisé. Cependant la configuration générée pour ces modèles peut aider pour un autre.
 
