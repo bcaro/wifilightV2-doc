@@ -144,7 +144,7 @@ Les capteurs de présence et d'ouverture ne sont pas compatibles car ils ne dial
 
 Il est indispensable de récupérer une clé locale (localKey) et un identifiant devId permettant au plugin de dialoguer avec les périphériques.
 
-La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localKey, sur Github en particulier ou sur ou sur le [forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
+La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localKey, sur Github en particulier ou sur le [forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
 
 Le périphérique ne doit pas être connecté à une application sur téléphone mobile, sinon il ne répondra pas aux ordres de Jeedom. Il faut donc fermer toute application possiblement connectée au périphérique.
 
