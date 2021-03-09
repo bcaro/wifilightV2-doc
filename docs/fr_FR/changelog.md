@@ -11,7 +11,8 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 
 1.74 - 2021-03-09 (Beta V4 uniquement)
 - correction bogue prises Tuya/Lidl avec true/false
-- correction bogue de la MAJ widget binaire 
+- correction bogue de la MAJ widget binaire
+- nettoyage logs 
 
 1.73 - 2021-03-07 (V4 uniquement)
 - correction bogue dans certain cas lors de l'affichage de la liste des périphériques
