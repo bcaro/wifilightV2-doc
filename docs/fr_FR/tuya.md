@@ -60,7 +60,7 @@ Vous trouverez une information comme celle-ci :
  
 Le cid est à copier dans le champ identifiant du périphérique du plugin (sans les " "). C'est lui qui permet de distinguer 2 équipements connectés à la passerelle.
 
-Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être trouvé dans les logs. Les experts pourront retrouver les dps et le cid car ils sont affichés à côté de la localKey lors de la procédure pour trouver ces derniers. ls sont juste à côté de celle-ci. Le cid porte le nom de nodeId.
+Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être trouvé dans les logs. Les experts pourront retrouver les dps et le cid car ils sont affichés à côté de la localKey lors de la procédure pour trouver la trouver, ils sont juste à côté de celle-ci. Le cid porte le nom de nodeId.
 
 
 ## Choix du périphérique standard connecté à la passerelle
