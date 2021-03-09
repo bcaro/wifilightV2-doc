@@ -9,6 +9,10 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.74 - 2021-03-09 (Beta V4 uniquement)
+- correction bogue prises Tuya/Lidl avec true/false
+- correction bogue de la MAJ widget binaire 
+
 1.73 - 2021-03-07 (V4 uniquement)
 - correction bogue dans certain cas lors de l'affichage de la liste des périphériques
 
