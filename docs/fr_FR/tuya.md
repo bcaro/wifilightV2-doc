@@ -502,7 +502,8 @@ Notas :
 Exemple de log KO où la localKey n'est pas bonne car la trame reçue par le plugin n'est pas décodée :
 
     [2021-03-05 07:16:53][DEBUG] : Receive from:192.168.1.106
-    [2021-03-05 07:16:53][DEBUG] :   Mess: - empty
+    [2021-03-05 07:16:53][DEBUG] :   Mess: [163][173][254]R5p[202][219]K[250][228][39][20][173][213]nhjsv[254]R5p[202][219]K[250]ndnd[228][39][20][173] - not decoded
+
 
 Dans le cas où le décodage de la trame est correct, on trouve un message tel que celui-ci :
 
@@ -542,7 +543,7 @@ Si le cid ou le devId ne sont pas corrects, les commandes actions ne seront pas 
     [2021-03-05 07:23:28][DEBUG] :     Cmd to 192.168.1.129 - Try:192.168.1.129  6668 - Connect OK!
     [2021-03-05 07:23:28][DEBUG] :     No state update
     [2021-03-05 07:23:28][DEBUG] : Receive from:192.168.1.129
-    [2021-03-05 07:23:28][DEBUG] :   Mess:  - Empty
+    [2021-03-05 07:23:28][DEBUG] :   Mess:  - empty
     [2021-03-05 07:23:28][DEBUG] : Receive from:192.168.1.129
     [2021-03-05 07:23:28][DEBUG] :   Mess: {"dps":{"1":false,"9":0,"18":0,"19":0,"20":2367,"21":1,"22":636,"23":28600,"24":16823,"25":2480,"26":0,"38":"on","41":"","42":"","46":true}} - Read Json OK
     [2021-03-05 07:23:28][DEBUG] :    Tuya  prise Wifi test @192.168.1.129  Mess: {"dps":{"1":false,"9":0,"18":0,"19":0,"20":2367,"21":1,"22":636,"23":28600,"24":16823,"25":2480,"26":0,"38":"on","41":"","42":"","46":true}} - Read Json OK
