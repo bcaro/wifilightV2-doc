@@ -497,17 +497,17 @@ Dans le cas d'un passerelle Tuya/Zigbee, les tests doivent se faire sur un péri
 
 Notas :
 - l'appli Smartlife peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli Smartlife après la connexion ci-dessus au périphérique. A l'inverse il se peut que l'appli Smartlife réponde très mal.
-- si le périphérique ne renvoie pas son état, les informations sur les dps et le devId ou le cid sont à rechercher dans le fichier ayant permis de récupérer la localKey, ils sont juste à côté de celle-ci.
+- si le périphérique ne renvoie pas son état, les informations sur les dps et le devId ou le cid sont à rechercher dans le fichier ayant permis de récupérer la localKey, ils sont juste à côté de celle-ci. Le cid porte le nom de nodeId.
 
 Exemple de log KO où la localKey n'est pas bonne car la trame reçue par le plugin n'est pas décodée :
 
     [2021-03-05 07:16:53][DEBUG] : Receive from:192.168.1.106
-    [2021-03-05 07:16:53][DEBUG] :   Mess: [163][173][254]R5p[202][219]K[250][228][39][20][173][213]nhjsv[254]R5p[202][219]K[250]ndnd[228][39][20][173] - not decoded
+    [2021-03-05 07:16:53][DEBUG] :   Mess: - empty
 
 Dans le cas où le décodage de la trame est correct, on trouve un message tel que celui-ci :
 
     [2021-03-05 07:16:53][DEBUG] : Receive from:192.168.1.106
-    [2021-03-05 07:16:53][DEBUG] :   Mess: {"dps":{"1":true,"9":0,"17":8370,"18":44,"19":50,"20":2320,"27":"on","28":"relay"},"cid":"588xxxxxxxxxa"}[4][4][4][4][163][173][254]R5p[202][219]K[250][228][39][20][173][213]n - Read Json OK
+    [2021-03-05 07:16:53][DEBUG] :   Mess: {"dps":{"1":true,"9":0,"17":8370,"18":44,"19":50,"20":2320,"27":"on","28":"relay"},"cid":"588xxxxxxxxxa"} - Read Json OK
 
 Les caractères de la fin du message seront filtrés par le plugin et ne doivent pas inquiéter. C'est ce message qui va permettre de configurer le périphérique dans le plugin en identifiant à quoi servent les n° de dps et quelles valeurs ils prennent, voir plus haut.
 Certains messages ne sont jamais décodés, il suffit qu'un seul message soit correctement décodé pour être sûr que la localKey est correcte.
@@ -521,13 +521,13 @@ Dans le cas d'un passerelle Tuya/Zigbee, les tests doivent se faire sur un péri
 
 **Pour un périphérique non Zigbee qui renvoie son devId, on trouvera :**
 
-    [2020-12-10 08:01:58][DEBUG] :     Mess :{"devId":"308001xxxxxxxxxb4c","dps":{"1":true},"t":1607583717,"s":3}[4][4][4][4][163][173][254]R5p[202][219]K[250] - Read Json OK
+    [2020-12-10 08:01:58][DEBUG] :     Mess :{"devId":"308001xxxxxxxxxb4c","dps":{"1":true},"t":1607583717,"s":3} - Read Json OK
 
 le devId est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Attention : tous les périphériques ne renvoient pas leur devId.
 
 **Pour un périphérique Zigbee qui renvoie son cid, on trouvera :**
 
-    [2020-12-10 08:14:34][DEBUG] :     Mess :{"dps":{"1":"pir"},"cid":"bc33xxxxxxxxxxxx45","t":1607584474}[4][4][4][4][163][173][254]R5p[202][219]K[250] - Read Json OK
+    [2020-12-10 08:14:34][DEBUG] :     Mess :{"dps":{"1":"pir"},"cid":"bc33xxxxxxxxxxxx45","t":1607584474} - Read Json OK
 
 le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Attention : tous les périphériques ne renvoient pas leur cid. 
 
@@ -542,10 +542,10 @@ Si le cid ou le devId ne sont pas corrects, les commandes actions ne seront pas 
     [2021-03-05 07:23:28][DEBUG] :     Cmd to 192.168.1.129 - Try:192.168.1.129  6668 - Connect OK!
     [2021-03-05 07:23:28][DEBUG] :     No state update
     [2021-03-05 07:23:28][DEBUG] : Receive from:192.168.1.129
-    [2021-03-05 07:23:28][DEBUG] :   Mess: [163][173][254]R5p[202][219]K[250][228][39][20][173][213]n - not decoded
+    [2021-03-05 07:23:28][DEBUG] :   Mess:  - Empty
     [2021-03-05 07:23:28][DEBUG] : Receive from:192.168.1.129
-    [2021-03-05 07:23:28][DEBUG] :   Mess: {"dps":{"1":false,"9":0,"18":0,"19":0,"20":2367,"21":1,"22":636,"23":28600,"24":16823,"25":2480,"26":0,"38":"on","41":"","42":"","46":true}}[4][4][4][4][127][218][165][179][183][243][146][10][135]p[217]k[7][10][129][158] - Read Json OK
-    [2021-03-05 07:23:28][DEBUG] :    Tuya  prise Wifi test @192.168.1.129  Mess: {"dps":{"1":false,"9":0,"18":0,"19":0,"20":2367,"21":1,"22":636,"23":28600,"24":16823,"25":2480,"26":0,"38":"on","41":"","42":"","46":true}}[4][4][4][4][127][218][165][179][183][243][146][10][135]p[217]k[7][10][129][158] - Read Json OK
+    [2021-03-05 07:23:28][DEBUG] :   Mess: {"dps":{"1":false,"9":0,"18":0,"19":0,"20":2367,"21":1,"22":636,"23":28600,"24":16823,"25":2480,"26":0,"38":"on","41":"","42":"","46":true}} - Read Json OK
+    [2021-03-05 07:23:28][DEBUG] :    Tuya  prise Wifi test @192.168.1.129  Mess: {"dps":{"1":false,"9":0,"18":0,"19":0,"20":2367,"21":1,"22":636,"23":28600,"24":16823,"25":2480,"26":0,"38":"on","41":"","42":"","46":true}} - Read Json OK
     [2021-03-05 07:23:28][DEBUG] :     Update devices @192.168.1.129 canal:12
     [2021-03-05 07:23:28][DEBUG] :      Dps18|SwOnOffGet_Det_Fen:0 Dps19|ModeForcedGetZ:0 Dps20|SwOnOffGet_Test:2367 Dps21|VanneGetZ formula:#value# #value#:1 After:1
     [2021-03-05 07:23:28][DEBUG] :      No other states to update
