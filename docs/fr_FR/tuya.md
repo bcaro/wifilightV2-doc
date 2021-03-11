@@ -502,7 +502,7 @@ Notas :
 Exemple de log KO où la localKey n'est pas bonne car la trame reçue par le plugin n'est pas décodée :
 
     [2021-03-05 07:16:53][DEBUG] : Receive from:192.168.1.106
-    [2021-03-05 07:16:53][DEBUG] :   Mess: [163][173][254]R5p[202][219]K[250][228][39][20][173][213]nhjsv[254]R5p[202][219]K[250]ndnd[228][39][20][173] - not decoded
+    [2021-03-05 07:16:53][DEBUG] :   Mess: Empty
 
 
 Dans le cas où le décodage de la trame est correct, on trouve un message tel que celui-ci :
