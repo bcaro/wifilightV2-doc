@@ -181,7 +181,7 @@ Paramétrage :
 -   Activer et rendre visible (par défaut)
 -   Saisir l'adresse IP du module de la prise ou de l'ampoule WiFi (voir la FAQ pour plus d'explications)
 -   Pour la box milight-hub, un identifiant et un port doivent être configurés
--   VOus pouvez charger dans le dossier /data du plugin des images à l'aide du plugin Jeexplorer Ces images peuvent remplacer les images associées aux périphériques dans la page d'affichage de tous les périphériques wifilightV2. Utile pour les périphériques personnalisés qui ne sont pas associés à une image.
+-   Vous pouvez charger dans le dossier /data du plugin des images à l'aide du plugin Jeexplorer Ces images peuvent remplacer les images associées aux périphériques dans la page d'affichage de tous les périphériques wifilightV2. Utile pour les périphériques personnalisés qui ne sont pas associés à une image.
 -   Pour certains périphériques il est demandé de saisir le canal utilisé, créer un équipement wifilightV2 par canal
 -   Pour certains périphériques il est demandé de saisir un jeton ou (et) un identifiant, consulter l'aide sur la page de configuration du périphérique
 -   Pour les périphériques Tuya, il est possible de forcer l'interrogation de l'état toutes les minutes, utile pour les prises avec consommation.
@@ -297,6 +297,8 @@ Pour les commandes Disco, si vous supprimez une telle commande, il faudra suppri
 
 
 # Mi.Light
+
+Il faut créer un périphérique dans le plugin par canal.
 
 ## Ibox 1 / 2 et Mi.Light Box
 
@@ -416,6 +418,8 @@ Les périphériques compatibles sont :
 
 Il est indispensable de récupérer un Jeton correspond à sign dans le plugin, un Identifiant qui correspond à messageId dans le plugin et un timestamp. Pour les équipements reliés au hub Meross, il faut en plus un identifiant local. Pour trouver ces 3 ou 4 paramètres, voir sur le web : Meross Credentials ou [sur le forum](https://community.jeedom.com/t/meross-credential-et-plugin-wifilightv2/48063?u=bernardfr.caron) .
 
+Dans le cas d'un hub Meross, il faut créer un périphérique dans le plugin pour chaque péripéhrique connecté au hub. Pour les prises multiples, il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondt aux n prises. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
+
 Aucune aide ne sera donnée pour récupérer les 3 ou 4 informations nécessaires.
 
 # Sonoff en mode DIY
@@ -508,5 +512,3 @@ Créer un effet avec l'appli du NanoLeaf et lui donner un nom. Créer une comman
 # A l'aide ?
 
 Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632)
-
-
