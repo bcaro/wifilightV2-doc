@@ -418,7 +418,7 @@ Les périphériques compatibles sont :
 
 Il est indispensable de récupérer un Jeton correspond à sign dans le plugin, un Identifiant qui correspond à messageId dans le plugin et un timestamp. Pour les équipements reliés au hub Meross, il faut en plus un identifiant local. Pour trouver ces 3 ou 4 paramètres, voir sur le web : Meross Credentials ou [sur le forum](https://community.jeedom.com/t/meross-credential-et-plugin-wifilightv2/48063?u=bernardfr.caron) .
 
-Dans le cas d'un hub Meross, il faut créer un périphérique dans le plugin pour chaque péripéhrique connecté au hub. Pour les prises multiples, il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondt aux n prises. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
+Dans le cas d'un hub Meross, il faut créer un périphérique dans le plugin pour chaque périphérique connecté au hub. Pour les prises multiples, il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondt aux n prises. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
 
 Aucune aide ne sera donnée pour récupérer les 3 ou 4 informations nécessaires.
 
