@@ -9,7 +9,12 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.74 - 2021-03-09 (Beta V4 uniquement)
+1.75 - 2021-03-25 (V4 et Beta uniquement)
+- Ajout de l'information de connexion dans la page d'affichage des périphériques wifilightV2
+- correction bogue sur l'interrogation non systématique des périphériques Tuya toutes les minutes
+
+
+1.74 - 2021-03-19 (V4 uniquement)
 - correction bogue prises Tuya/Lidl avec true/false
 - correction bogue de la MAJ widget binaire
 - nettoyage logs 
