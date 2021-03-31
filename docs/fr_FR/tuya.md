@@ -60,7 +60,7 @@ Vous trouverez une information comme celle-ci :
  
 Le cid est à copier dans le champ identifiant du périphérique du plugin (sans les " "). C'est lui qui permet de distinguer 2 équipements connectés à la passerelle.
 
-Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être trouvé dans les logs. Les experts pourront retrouver les dps et le cid car ils sont affichés à côté de la localKey lors de la procédure pour trouver la trouver, ils sont juste à côté de celle-ci. Le cid porte le nom de nodeId.
+Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être trouvé dans les logs. Les experts pourront retrouver les dps et le cid car ils sont affichés à côté de la localKey lors de la procédure pour trouver la trouver, ils sont juste à côté de celle-ci. Le cid porte le nom de nodeId dans les paquets de l'appli Smartlife.
 
 
 ## Choix du périphérique standard connecté à la passerelle
@@ -497,7 +497,7 @@ Dans le cas d'un passerelle Tuya/Zigbee, les tests doivent se faire sur un péri
 
 Notas :
 - l'appli Smartlife peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli Smartlife après la connexion ci-dessus au périphérique. A l'inverse il se peut que l'appli Smartlife réponde très mal.
-- si le périphérique ne renvoie pas son état, les informations sur les dps et le devId ou le cid sont à rechercher dans le fichier ayant permis de récupérer la localKey, ils sont juste à côté de celle-ci. Le cid porte le nom de nodeId.
+- si le périphérique ne renvoie pas son état, les informations sur les dps et le devId ou le cid sont à rechercher dans le fichier ayant permis de récupérer la localKey, ils sont juste à côté de celle-ci. Le cid porte le nom de nodeId  dans les paquets de l'appli SmartLife.
 
 Exemple de log KO où la localKey n'est pas bonne car la trame reçue par le plugin n'est pas décodée :
 
