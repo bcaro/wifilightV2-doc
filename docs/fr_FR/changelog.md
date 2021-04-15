@@ -9,10 +9,11 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.76 - 2021-04-04 (beta Jeedom V4)
+1.76 - 2021-04-15 (beta Jeedom V4)
 - ajout des ampoules blanches Innr
 - ajout spot avec détecteur Action LSC
-
+- ajout d'une alarme Tuya
+- correction bogue détection périphérique zigbee/Tuya
 
 1.75 - 2021-03-31 (Jeedom V4)
 - ajout de l'information de connexion dans la page d'affichage des périphériques wifilightV2
