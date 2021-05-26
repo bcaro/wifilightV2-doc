@@ -9,7 +9,8 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.76 - 2021-04-15 (beta Jeedom V4)
+1.76 - 2021-05-26 (Jeedom V4)
+- Modification de l'intervalle de temps entre 2 interrogations des périphériques Tuya : permet de ne pas 
 - ajout des ampoules blanches Innr
 - ajout spot avec détecteur Action LSC
 - ajout d'une alarme Tuya
