@@ -491,7 +491,7 @@ et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sono
 
 # Tuya 
 
-[Voir la documentation spécifique](./tuya#tocAnchor-1-9)
+[Voir la documentation spécifique](./tuya#tocAnchor-1-10)
 
 # Lidl 
 Les produits Lidl Tuya/Zigbee ne doivent jamais avoir été appairés avec l'application Lidl. Il faut les appairer uniquement avec l'application Tuya SmartLife.
