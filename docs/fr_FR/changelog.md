@@ -9,8 +9,11 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.77 - 2021-06-01 (Jeedom V4 beta)
+- Yeelight, Ewelink, Sonoff DIY, Xiaomi Philips : un id non numérique est maintenant accepté (les nouveaux périphériques ont un id contenant des lettres)
+
 1.76 - 2021-05-26 (Jeedom V4)
-- Modification de l'intervalle de temps entre 2 interrogations des périphériques Tuya : permet de ne pas perdre la connexion
+- Modification de l'intervalle de temps entre 2 interrogations des périphériques Tuya : permet de ne pas perdre la connexion 
 - ajout des ampoules blanches Innr
 - ajout spot avec détecteur Action LSC
 - ajout d'une alarme Tuya
