@@ -403,7 +403,7 @@ Pour l'instant seules les prises sont utilisables en V2, contacter l'auteur si v
 
 Il est indispensable de récupérer un jeton (token) permettant au plugin de dialoguer avec les périphériques Xiaomi Philips.
 
-La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Xiaomi token our sur le forum [ici](https://community.jeedom.com/t/xiaomi-philips-et-wifilightv2/48064) .
+La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Xiaomi token ou sur le forum [ici](https://community.jeedom.com/t/xiaomi-philips-et-wifilightv2/48064) .
 
 Aucune aide ne sera donnée pour récupérer le jeton.
 
@@ -515,4 +515,4 @@ Créer un effet avec l'appli du NanoLeaf et lui donner un nom. Créer une comman
 
 # A l'aide ?
 
-Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632)
+Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
