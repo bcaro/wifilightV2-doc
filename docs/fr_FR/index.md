@@ -287,9 +287,13 @@ Vous pouvez prévenir le développeur pour qu'il modifie la configuration par d�
 
 Certaines lampes possèdent des modes disco et custom. Une liste à choix est associée à chaque option de ces modes. SI les commandes disco ou custom sont supprimées, la liste à choix créée automatiquement ne sera pas modifiée. Pour les commandes custom, vous pouvez ajouter de nouvelles commandes mais il faudra modifier manuellement cette nouvelle commande dans la liste.
 
-Par exemple, la commande action/liste pour les customs a comme nom interne : CMD_LIST_CUSTOM. Son paramètre correspond à la construction de cette liste, par exemple : Scene01|Extinction;Scene02|Allumage
+Par exemple, la commande action/liste pour les customs a comme nom interne : CMD_LIST_CUSTOM. Son paramètre correspond à la construction de cette liste, tel que :
 
-La liste affichera Extinction et Allumage et les commandes qui seront exécutées seront celles de nom interne Scene01 ou Scene02. Si vous ajoutez une nouvelle commande custom, par exemple Scene03 dont le nom est Flash, il faudra modifier le paramètre de cette façon : Scene01|Extinction;Scene02|Allumage;Scene03|Flash .
+   Scene01|Extinction;Scene02|Allumage
+
+La liste affichera Extinction et Allumage et les commandes qui seront exécutées seront celles de nom interne Scene01 ou Scene02. Si vous ajoutez une nouvelle commande custom, par exemple Scene03 dont le nom est Flash, il faudra modifier le paramètre de cette façon : 
+
+   Scene01|Extinction;Scene02|Allumage;Scene03|Flash
 
 Si par la suite, la commande Scene01 est supprimée, il faudra manuellement modifier le paramètre de CMD_LIST_CUSTOM : Scene02|Allumage;Scene03|Flash .
 
