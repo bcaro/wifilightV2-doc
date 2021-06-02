@@ -358,7 +358,8 @@ Il est possible de configurer les modes scène. Plusieurs modes scène sont pré
 Il suffit de respecter certaines conditions :
 -   Ajouter une commande wifilightV2 action de type Défaut
 -   Lui donner un nom (par exemple Scene Clignote)
--   Dans paramètres, mettre la commande scène Yeelight, par exemple : "id":1, "method":"set_scene","params":["cf",0,0,"500,1,255,100,1000,1,16776960,70"]
+-   Dans paramètres, mettre la commande scène Yeelight, par exemple : 
+   "id":1, "method":"set_scene","params":["cf",0,0,"500,1,255,100,1000,1,16776960,70"]
 
 Ne pas mettre les accolades de début et de fin ainsi que les caractères de retour à la ligne, le plugin les ajoutera automatiquement
 S'inspirer des commandes préconfigurées pour créer ces modes scène supplémentaires.
