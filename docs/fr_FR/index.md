@@ -285,9 +285,9 @@ Vous pouvez prévenir le développeur pour qu'il modifie la configuration par d�
 
 # liste des modes Disco et Custom
 
-Certaines lampes possèdent des modes disco et custom. Une liste à choix est associée à chaque option de ces modes. SI les commandes disco ou custom sont supprimées, la liste à choix créée automatiquement ne sera pas modifiée. Pour les commandes custom, vous pouvez ajouter de nouvelles commandes mais il faudra modifier manuellement cette nouvelle commande dans la liste.
+Certaines lampes possèdent des modes disco et custom. Une liste à choix est associée à chaque option de ces modes. Si les commandes disco ou custom sont supprimées, la liste à choix créée automatiquement ne sera pas modifiée. Pour les commandes custom, vous pouvez ajouter de nouvelles commandes mais il faudra modifier manuellement cette nouvelle commande dans la liste.
 
-Par exemple, la commande action/liste pour les customs a comme nom interne : CMD_LIST_CUSTOM. Son paramètre correspond à la construction de cette liste, tel que :
+Par exemple, la commande action/liste pour les customs a comme nom interne : CMD_LIST_CUSTOM. Son paramètre correspond à la construction de cette liste :
 
    Scene01\|Extinction;Scene02\|Allumage
 
@@ -295,10 +295,9 @@ La liste affichera Extinction et Allumage et les commandes qui seront exécutée
 
    Scene01\|Extinction;Scene02\|Allumage;Scene03\|Flash
 
-Si par la suite, la commande Scene01 est supprimée, il faudra manuellement modifier le paramètre de CMD_LIST_CUSTOM : Scene02|Allumage;Scene03|Flash .
+Si par la suite, la commande Scene01 est supprimée, il faudra manuellement modifier le paramètre de CMD_LIST_CUSTOM : 
 
-Pour les commandes Disco, si vous supprimez une telle commande, il faudra supprimer cette commande dans la liste.
-
+   Scene02\|Allumage;Scene03\|Flash
 
 # Mi.Light
 
@@ -420,7 +419,7 @@ Les périphériques compatibles sont :
 -   les capteurs de températures connectés au hub pourraient être compatibles (non testé)
 
 
-Il est indispensable de récupérer un Jeton correspond à sign dans le plugin, un Identifiant qui correspond à messageId dans le plugin et un timestamp. Pour les équipements reliés au hub Meross, il faut en plus un identifiant local. Pour trouver ces 3 ou 4 paramètres, voir sur le web : Meross Credentials ou [sur le forum](https://community.jeedom.com/t/meross-credential-et-plugin-wifilightv2/48063?u=bernardfr.caron) .
+Il est indispensable de récupérer un Jeton correspond à sign dans le plugin, un Identifiant qui correspond à messageId dans le plugin et un timestamp. Pour les équipements reliés au hub Meross, il faut en plus un identifiant local. Pour trouver ces 3 ou 4 paramètres, voir sur le web : Meross Credentials ou [sur le forum](https://community.jeedom.com/t/meross-credential-et-plugin-wifilightv2/48063) .
 
 Dans le cas d'un hub Meross, il faut créer un périphérique dans le plugin pour chaque périphérique connecté au hub. Pour les prises multiples, il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondant aux n prises. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
 
@@ -444,7 +443,7 @@ Le logiciel à faire tourner pour trouver le Sonoff donne dans la colonne de gau
 
 Le périphérique Sonoff doit être en firmware 3.3.0 ou plus, l'appli Windows ci-dessus permet de mettre à jour le firmware.
 
-Pour les firmwares à partir de 3.5.0, la procédure est plus simple et est détaillée [ici sur le forum](https://community.jeedom.com/t/sonoff-diy-et-wifilightv2-en-firmware-3-5-0/48060?u=bernardfr.caron) .
+Pour les firmwares à partir de 3.5.0, la procédure est plus simple et est détaillée [ici sur le forum](https://community.jeedom.com/t/sonoff-diy-et-wifilightv2-en-firmware-3-5-0/48060) .
 
 # Sonoff/Ewelink LAN
 
