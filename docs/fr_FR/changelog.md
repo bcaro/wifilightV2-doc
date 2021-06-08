@@ -11,8 +11,10 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 
 1.77 - 2021-06-01 (Jeedom V4 beta)
 - Yeelight, Ewelink, Sonoff DIY, Xiaomi Philips : un id non numérique est maintenant accepté (les nouveaux périphériques ont un id contenant des lettres)
+- Yeelight Bed : ajout de la couleur
 - Tuya : ajout de l'unité pour les valeurs numériques
 - Tuya : ajout d'une commande volet roulant
+- Tuya : ajout d'un module Volet roulant
 
 1.76 - 2021-05-26 (Jeedom V4)
 - Modification de l'intervalle de temps entre 2 interrogations des périphériques Tuya : permet de ne pas perdre la connexion 
