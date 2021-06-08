@@ -15,6 +15,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Tuya : ajout de l'unité pour les valeurs numériques
 - Tuya : ajout d'une commande volet roulant
 - Tuya : ajout d'un module Volet roulant
+- Tuya : ajout de l'export de l'unité
 
 1.76 - 2021-05-26 (Jeedom V4)
 - Modification de l'intervalle de temps entre 2 interrogations des périphériques Tuya : permet de ne pas perdre la connexion 
