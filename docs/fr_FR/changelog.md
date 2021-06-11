@@ -10,12 +10,14 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
 1.77 - 2021-06-01 (Jeedom V4 beta)
-- Yeelight, Ewelink, Sonoff DIY, Xiaomi Philips : un id non numérique est maintenant accepté (les nouveaux périphériques ont un id contenant des lettres)
+- Yeelight, Ewelink, Sonoff DIY, Xiaomi Philips : un id non numérique est maintenant accepté (certains périphériques ont un id contenant des lettres)
 - Yeelight Bed : ajout de la couleur
 - Tuya : ajout de l'unité pour les valeurs numériques
-- Tuya : ajout d'une commande volet roulant
-- Tuya : ajout d'un module Volet roulant
+- Tuya : ajout d'une commande de volet roulant
+- Tuya : ajout d'un module volet roulant
 - Tuya : ajout de l'export de l'unité
+- Milight : ajout d'une nouvelle télécommande pour strip led CCT
+- Sonoff/eWelink : ajout de la propriété currentTemperature pour le TH16
 
 1.76 - 2021-05-26 (Jeedom V4)
 - Modification de l'intervalle de temps entre 2 interrogations des périphériques Tuya : permet de ne pas perdre la connexion 
@@ -60,6 +62,8 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 -   Meross : ajout de la commande de volets roulants MRS100 (incomplet : le positionnement et le retour d'état sont KO)
 -	ajout de l'upload et de la sélection dans le dossier data du plugin des images alternatives
 -	ajout (retour) d'une option pour les périphériques Tuya permettant d'empêcher le plugin d'interroger l'état lors du démarrage du deamon et régulièrement. 
+
+Dernière version pour Jeedom V3 : passez en V4 pour bénéficier des nouveautés.
 
 
 1.69 - 2021-01-30
