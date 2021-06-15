@@ -1,4 +1,10 @@
-1.54 - 2020-01-05
+1.55 - 2020-01-26
+-   Tomas TPlink HS110 V1 / V2: adición de estadísticas de consumo + corrección del retorno del estado del LED
+-   Adición de monitoreo de ciertos casos de fuga de memoria: el demonio se reinicia por la noche si se detecta una fuga
+-   Yeelight: adición de meteorito inteligente
+-   Correcciones de errores
+
+1.54 - 2020-01-11
 -   Sonoff: fijo conectado (finalmente)
 -   Tuya: fijo conectado (finalmente)
 -   Sonoff RF bridge: transición a 32 disparadores
@@ -10,7 +16,7 @@
 -   Sonoff: adición del puente RF 433 - solo sensores
 -   Sonoff TH10 / TH16: se agregó información del termostato interno (pero no es posible modificarla)
 -   Sonoff Pow R2: adición de información eléctrica (pero de eficiencia limitada, esto no se debe al complemento)
--   Tuya: mejor respuesta de los sockets múltiples V2
+-   Tuya: mejor retroalimentación de estado para sockets múltiples V2
 -   Tuya: adición de segundo tipo de lámpara blanca
 -   correcciones de errores
 
@@ -43,7 +49,7 @@
 
 1.48 - 2019-10-18
 -   eWelink: agregando módulos con 2 canales (incluido Sonoff Dual) en Beta
--   corrección de errores Sonoff retorno del estado
+-   corrección de errores de nuevo estado de Sonoff
 
 1.47 - 2019-10-16
 -   adición de persianas mod2 (activar / desactivar / detener en lugar de 1/2/3 en los pedidos)
@@ -65,26 +71,26 @@
 -   La eliminación del widget de color sin Off no es compatible con V4, el complemento ya no ofrecerá widgets personalizados.
 
 1.43 - 2019-07-08
--   TP-link: teniendo en cuenta el nuevo protocolo V2 para sockets, requiere un token.
+-   TP-link: teniendo en cuenta el nuevo protocolo V2 para sockets, se requiere un token.
 -   Tuya: los sensores de apertura y PIR no serán compatibles con el complemento. Estos sensores deben atravesar la nube: para evitar el uso de alarmas.
 -   Corrección de errores: cálculo de la corriente de los enchufes de Tuya ahora en amperios (modifique sus escenarios porque la unidad actual es incorrecta)
 -   Tuya y TP-Link, unidades de consumo: AVW kWh. Guarde el equipo para la visualización correcta de la unidad en la lista de comandos.
 
 1.42 - 2019-06-02
--   Tuya: error de estado de retorno de error
+-   Tuya: corrección de error de devolución de estado
 -   Demonio: no más pérdidas de memoria
 
 1.41 - 2019-06-19
--   Tuya: compatibilidad bidireccional con el complemento en el firmware 2.0 (actuador OK)
+-   Tuya: compatibilidad bidireccional con el complemento en firmware 2.0 (actuador OK)
 -   Tuya: adición del atenuador
 -   Daemon: reescrito para gestionar mejor las conexiones / desconexiones de pipa / Yeelight
 -   Puede ser necesario volver a registrar cada dispositivo
 
 1.40 - 2019-06-16
--   Tuya: agregando comentarios de estado instantáneos para equipos que devuelven su estado
--   Tuya: algunos equipos se actualizan a firmware 2.0: son compatibles con el complemento solo en estado de retorno
+-   Tuya: agregar comentarios de estado instantáneos para dispositivos que devuelven su estado
+-   Tuya: algunos equipos se actualizan a firmware 2.0: son compatibles con el complemento solo a cambio de estado
 -   Tuya: la aplicación móvil debe detenerse para que el complemento funcione
--   Tuya: para los usuarios de la versión beta, los dispositivos tuya V2 deberán reconfigurarse (el firmware V1 es independiente del firmware V2)
+-   Tuya: para usuarios beta, los dispositivos tuya V2 deberán reconfigurarse (el firmware V1 es independiente del firmware V2)
 -   Cron remoción 1 min
 -   Un error de PhP causa pérdidas de memoria, en este caso, configure los latidos del complemento para reiniciarlo regularmente
 
@@ -104,14 +110,14 @@
 -   Tuya: adición de interruptores de pared
 -   Tuya: adición de un humidificador.
 -   Tuya: adición de consumo en todos los puntos de venta
--   Atención: deberá reconfigurar las tomas Tuya: tome la configuración de la toma Xplugs + USB y verifique la supresión de los comentarios de estado de las tomas con microcortes.
+-   Atención: deberá reconfigurar las tomas Tuya: tome la configuración de la toma USB Xplugs + y verifique la supresión de los comentarios de estado de las tomas con microcortes.
 
 1.35 - 2019-03-13
 -   Tuya: adición de interruptores para persianas
--   Tuya: adición de comandos personalizados para todos los dispositivos (permite probar nuevos actuadores)
+-   Tuya: adición de comandos personalizados para todos los periféricos (permite probar nuevos actuadores)
 
 1.34 - 2019-03-02
--   Adición de una configuración con retroalimentación de estado para todos los sockets. Tenga cuidado con los microcortes que pueden ocurrir, luego tome la configuración sin retroalimentación de estado.
+-   Adición de una configuración con retroalimentación de estado para todos los sockets. Tenga cuidado con los microcortes, por lo tanto, tome la configuración sin comentarios de estado.
 
 1.33 - 2019-02-15
 -   Posible configuración para la recuperación del consumo en las tuberías: los enchufes de consumo tipo 2 deben reconfigurarse en el tipo 1 antes de instalar el complemento.
@@ -146,14 +152,14 @@
 
 1.25 - 2018-11-25
 -   Adición en beta del controlador led direccionable SP108 Led Shop (ON / OFF)
--   Adición del control remoto RGB Mi.Light
+-   Control remoto RGB Mi.Light agregado
 -   Pequeñas correcciones de errores
 
 1.24 - 2018-11-14
 -   Página de visualización del equipo de corrección de errores
 
 1.23 - 2018-09-06
--   Adición de controladores de tira de píxeles compatibles con Magic Home
+-   Adición de controladores de tira de píxeles compatibles con Magic Strip
 
 1.22 - 2018-07-10
 -   Adición de bombillas compatibles de aplicaciones inteligentes Tuya / Jinvoo
@@ -172,7 +178,7 @@
 
 1.19 - 2018-02-15
 -   Agregar apagado programado Xiaomi Philips
--   Mejora del estado de encendido / apagado de todas las lámparas con estado de retroalimentación
+-   Mejora de la retroalimentación de estado ON / OFF de todas las lámparas con retroalimentación de estado
 -   Correcciones de errores
 
 1.18 - 2018-02-13
@@ -188,7 +194,7 @@
 -   Agregar Xiaomi Philips: lámpara de escritorio, bombilla y lámpara de techo
 -   Adición de la luz de techo Yeelight JIAOYUE 650
 -   Además de todas las lámparas de intensidad aumentan y disminuyen botones
--   Mi.Light: memorización de intensidad RGB y White
+-   Mi.Light: almacenamiento de intensidad RGB y White
 -   8 botones Mi.Light corrección de control remoto
 -   Pequeñas correcciones de errores.
 
@@ -200,7 +206,7 @@
 -   Corrección de errores: luz de techo Yeelight y LW12. Velocidad de adición H801
 
 1.13 - 2017-09-26
--   Corrección de errores: luz de techo Yeelight, RUN / STOP LW12, icono en movimiento
+-   Corrección de errores: luz de techo Yeelight, RUN / STOP LW12, desplazamiento de icono
 
 1.12 - 2017-09-13
 -   Ver pedidos directamente accesibles en la pestaña Pedidos
@@ -223,7 +229,7 @@
 
 1.06 - 2017-05-01
 -   Añadir Arilux RGBWW
--   Añadir MagicHome tira led RGBWW y bombillas RGBW
+-   Agregue las tiras MagicHome LED RGBWW y RGBW
 -   Wifi3x0 corrección de retroalimentación de estado
 
 1.05 - 2017-04-17

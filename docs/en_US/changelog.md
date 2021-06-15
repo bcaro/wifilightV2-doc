@@ -1,4 +1,10 @@
-1.54 - 2020-01-05
+1.55 - 2020-01-26
+-   TPlink HS110 V1 / V2 sockets: addition of consumption statistics + correction of LED status return
+-   Addition of monitoring of certain memory leakage cases: deamon restarted at night if leakage detection
+-   Yeelight: Smart Meteorite addition
+-   Bug fixes
+
+1.54 - 2020-01-11
 -   Sonoff: fixed connectedget (finally)
 -   Tuya: fixed connectedget (finally)
 -   Sonoff RF bridge: transition to 32 triggers
@@ -10,7 +16,7 @@
 -   Sonoff: addition of RF bridge 433 - only sensors
 -   Sonoff TH10 / TH16: added information from the internal thermostat (but not possible to modify)
 -   Sonoff Pow R2: addition of electrical information (but of limited efficiency, this is not due to the plugin)
--   Tuya: better feedback from V2 multiple sockets
+-   Tuya: better status feedback for V2 multiple sockets
 -   Tuya: addition of 2nd type white lamp
 -   bug fixes
 
@@ -21,7 +27,7 @@
 -   moving the doc
 
 1.51 - 2019-11-23
--   Tuya: addition of the MiBoxer bridge from Milight (module in Beta), only ON / OFF of the complete box works. Available for those who manage to recover the ApiKey with the MiBoxer app.
+-   Tuya: addition of the MiBoxer bridge from Milight (Beta module), only ON / OFF of the complete box works. Available for those who manage to recover the ApiKey with the MiBoxer app.
 -   Tuya: addition of a custom device to configure any device
 -   Tuya : refonte des commandes customs : pour les commandes custom existantes -> nécessité de les reconfigurer avec le nouveau format
 -   Tuya: need to save all equipment
@@ -43,7 +49,7 @@
 
 1.48 - 2019-10-18
 -   eWelink: adding modules with 2 channels (including Sonoff Dual) in Beta
--   bug correction Sonoff state return
+-   bug correction back Sonoff state
 
 1.47 - 2019-10-16
 -   addition of shutters mod2 (on / off / stop instead of 1/2/3 in the orders)
@@ -67,11 +73,11 @@
 1.43 - 2019-07-08
 -   TP-link: taking into account the new V2 protocol for sockets, requires a token.
 -   Tuya: the opening and PIR sensors will not be compatible with the plugin. These sensors must go through the cloud: to be avoided in alarm use.
--   Bug correction: calculation of the current of the Tuya sockets now in amperes (modify your scenarios because the current unit is incorrect)
+-   Bug correction: calculation of the current of Tuya sockets now in amperes (modify your scenarios because the current unit is incorrect)
 -   Tuya and TP-Link, units for consumption: AVW kWh. Save the equipment for correct display of the unit in the command list.
 
 1.42 - 2019-06-02
--   Tuya: bug return status bug
+-   Tuya: fix bug return of state
 -   Demon: no more memory leaks
 
 1.41 - 2019-06-19
@@ -81,12 +87,12 @@
 -   Re-registration of each device may be required
 
 1.40 - 2019-06-16
--   Tuya: adding instant status feedback for equipment that returns its status
--   Tuya: some equipment is upgraded to firmware 2.0: they are compatible with the plugin only in return status
+-   Tuya: adding instant status feedback for devices that return their status
+-   Tuya: some equipment is upgraded to firmware 2.0: they are compatible with the plugin only in return of status
 -   Tuya: the mobile application must be stopped for the plugin to work
 -   Tuya: For beta version users, tuya V2 devices will need to be reconfigured (V1 firmware is separate from V2 firmware)
 -   Cron removal 1 min
--   A PhP bug causes memory leaks, in this case configure the plugin&#39;s heartbeat to relaunch it regularly
+-   A PhP bug causes memory leaks, in this case configure the plugin heartbeat to relaunch it regularly
 
 1.39 - 2019-05-05
 -   Tuya: adding thermostat
@@ -96,7 +102,7 @@
 -   Desktop: bug display return status bug
 
 1.37 - 2019-04-04
--   Tuya: added consumption on all the tuya sockets
+-   Tuya: added consumption on all tuya sockets
 -   Tuya: configuration of energy parameters recovery
 -   Please note: the configuration for retrieving the energy parameters has been modified. The old configurations remain compatible.
 
@@ -104,17 +110,17 @@
 -   Tuya: addition of wall switches
 -   Tuya: addition of a humidifier
 -   Tuya: addition of consumption on all outlets
--   Warning: you will have to reconfigure the Tuya sockets: take the configuration of the Xplugs + USB socket and check the suppression of the status feedback for the sockets with micro-cuts.
+-   Attention: you will have to reconfigure the Tuya sockets: take the configuration of the Xplugs + USB socket and check the suppression of the status feedback for the sockets with micro-cuts.
 
 1.35 - 2019-03-13
 -   Tuya: addition of switches for roller shutters
--   Tuya: addition of custom commands for all devices (allows testing of new actuators)
+-   Tuya: addition of custom commands for all peripherals (allows to test new actuators)
 
 1.34 - 2019-03-02
--   Addition of a configuration with status feedback for all sockets. Beware of micro-cuts can occur, then take the configuration without status feedback.
+-   Addition of a configuration with status feedback for all sockets. Beware of micro-cuts can occur, so take the configuration without status feedback.
 
 1.33 - 2019-02-15
--   Possible configuration for the recovery of consumption on the tuya sockets: the type 2 consumption sockets must be reconfigured in type 1 before installing the plugin.
+-   Possible configuration for the recovery of consumption on the pipes: the type 2 consumption sockets must be reconfigured in type 1 before installing the plugin.
 
 1.32 - 2019-02-13
 -   TP-Link HS110 bug fixes.
@@ -146,14 +152,14 @@
 
 1.25 - 2018-11-25
 -   Addition in beta of the addressable led controller SP108 Led Shop (ON / OFF)
--   Addition of the RGB Mi.Light remote control
+-   Added RGB Mi.Light remote control
 -   Minor bug fixes
 
 1.24 - 2018-11-14
 -   Bug fix equipment display page
 
 1.23 - 2018-09-06
--   Addition of pixel strip controllers compatible Magic Home
+-   Addition of Magic strip compatible pixel strip controllers
 
 1.22 - 2018-07-10
 -   Addition of compatible Tuya / Jinvoo smart apps bulbs
@@ -188,7 +194,7 @@
 -   Add Xiaomi Philips: desk lamp, bulb and ceiling lamp
 -   Addition of the Yeelight JIAOYUE 650 ceiling light
 -   Addition for all lamps of intensity increase and decrease buttons
--   Mi.Light: memorization of RGB and White intensity
+-   Mi.Light: storage of RGB and White intensity
 -   8 buttons Mi.Light remote control correction
 -   Minor bug fixes.
 
@@ -200,7 +206,7 @@
 -   Bug fixes: Yeelight and LW12 ceiling light. Addition Speed H801
 
 1.13 - 2017-09-26
--   Bug correction: Yeelight ceiling light, RUN / STOP LW12, moving icon
+-   Bug correction: Yeelight ceiling light, RUN / STOP LW12, icon displacement
 
 1.12 - 2017-09-13
 -   View orders directly accessible in the Orders tab
