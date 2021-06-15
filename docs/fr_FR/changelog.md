@@ -9,7 +9,7 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.77 - 2021-06-01 (Jeedom V4)
+1.77 - 2021-06-15 (Jeedom V4)
 - Yeelight, Ewelink, Sonoff DIY, Xiaomi Philips : un id non numérique est maintenant accepté (certains périphériques ont un id contenant des lettres)
 - Yeelight Bed : ajout de la couleur
 - Tuya : ajout de l'unité pour les valeurs numériques
