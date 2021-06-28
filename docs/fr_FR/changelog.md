@@ -9,10 +9,10 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.78 - 2021-06-18 (Jeedom V4 Beta)
+1.78 - 2021-06-28 (Jeedom V4)
 - Commande binaire : possibilité d'inverser 0->1 1->0
 - Tuya : correction des information binaires vides, remplacées par 0
-- Tuya : ajout double relais
+- Tuya : ajout double relai
 
 1.77 - 2021-06-15 (Jeedom V4)
 - Yeelight, Ewelink, Sonoff DIY, Xiaomi Philips : un id non numérique est maintenant accepté (certains périphériques ont un id contenant des lettres)

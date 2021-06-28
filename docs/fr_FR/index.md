@@ -136,6 +136,7 @@ Sonoff DIY :
 
 Ewelink et Sonoff LAN :
 -   périphériques avec le firmware 3.0.1 (liste donnée ci-après dans le paragraphe eWelink)
+-   non compatible zigbee
 
 Nanoleaf Aurora :
 -   Rythm non implantés
@@ -478,6 +479,8 @@ De nombreuses marques sont compatibles dont les Sonoff.
 -  Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur de présence, télécommande)
 
 Le sonoff DW2 n'est pas compatible car purement cloud et ne se met pas en Acces Point permettant de trouver apiKey et DeviceID. Il est probable qu'il en soit de même pour tous les capteurs de porte compatibles ewelink.
+
+Le Hub Zigbee n'est pas compatible (et purement cloud).
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
