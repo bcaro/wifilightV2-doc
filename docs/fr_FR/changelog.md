@@ -9,6 +9,10 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.79 - 2021-07-4 (Beta Jeedom V4)
+- Tuya : ajout télérupteur pour tableau électrique
+- Sonoff TH10/16 : retour du on/off pour version >=3.4.0 A TESTER
+
 1.78 - 2021-06-28 (Jeedom V4)
 - Commande binaire : possibilité d'inverser 0->1 1->0
 - Tuya : correction des information binaires vides, remplacées par 0
