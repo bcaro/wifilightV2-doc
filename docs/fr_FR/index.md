@@ -481,6 +481,8 @@ Le sonoff DW2 n'est pas compatible car purement cloud et ne se met pas en Acces 
 
 Le Hub Zigbee n'est pas compatible (et purement cloud).
 
+Aucune ampoule ou strip led n'est compatible.
+
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
 Pour les périphériques multicanaux (comme le Sonoff 4CH) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal.
