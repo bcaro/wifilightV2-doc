@@ -461,7 +461,7 @@ Quand un périphérique se connecte au wifi, le plugin sera immédiatement prév
 
 ## Compatibilité
 
-De nombreuses marques sont compatibles dont les Sonoff. 
+De nombreuses marques sont compatibles dont les Sonoff. Les produits testés sont les suivants :
 -  Interrupteurs, prises murales, switch : simples de toutes marques
 -  Interrupteurs, prises murales, switch : multiples de toutes marques
 -  Interrupteurs, prises murales, switch : simples avec variateur de toutes marques
