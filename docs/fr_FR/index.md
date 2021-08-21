@@ -466,7 +466,7 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 -  Interrupteurs, prises murales, switch : multiples de toutes marques
 -  Interrupteurs, prises murales, switch : simples avec variateur de toutes marques
 -  Sonoff D1 smart Dimmer
--  Sonoff TH10/1H16 capteur de température. ON/OFF non fonctionnel depuis le firmware 3.4 
+-  Sonoff TH10/1H16 capteur de température. Nouvelle config pour firmware >=3.4 avec ON/OFF OK
 -  Sonoff basic, RF, POW, Mini
 -  Sonoff Dual
 -  Sonoff 4CH/4CH PRO

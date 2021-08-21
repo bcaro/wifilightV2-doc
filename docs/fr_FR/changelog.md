@@ -9,10 +9,10 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.79 - 2021-07-13 (Beta Jeedom V4)
+1.79 - 2021-08-21 (Jeedom V4)
 - Tuya : ajout télérupteur pour tableau électrique et ajout capteur CO2 PM2.5
 - Tuya Zigbee : ajout capteur CO2
-- Sonoff TH10/16 : retour du on/off pour version >=3.4.0 A TESTER
+- Sonoff TH10/16 : retour du on/off pour version >=3.4.0
 
 1.78 - 2021-06-28 (Jeedom V4)
 - Commande binaire : possibilité d'inverser 0->1 1->0
