@@ -49,6 +49,7 @@ Les produits compatibles :
 - 	Sonoff Basic R3 en mode DIY avec retour d'état !!
 -   Nanoleaf Aurora avec retour d'état !
 
+
 Produits pouvant être compatibles et non garantis :
 -   LW12/Lagute : RGB strip-led contrôleur : retour d'état !
 -   Wifi 320/370 RGB/RGBW strip-led contrôleur : retour d’état partiel !
@@ -65,6 +66,7 @@ Produits pouvant être compatibles et non garantis :
 -	Périphériques contrôlés par l'appli Ewelink dont les Sonoff en mode LAN avec retour d'état !!!
 -	Passerelles wifi (dont Lidl) utilisant le protocole Tuya pour les périphériques Zigbee !!!
 -   Périphériques Meross !!!
+-	Produits Wiz!!
 
 Pour ces contrôleurs, ampoules ou prises, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin.
 
@@ -235,6 +237,7 @@ Pour les périphériques :
  - Nanoleaf Aurora
  - Meross
  - Mi.Light connectés au pont Milight-hub
+ - Wiz
 
 Le plugin interroge régulièrement le périphérique pour connaitre son état. Le délai pour que Jeedom connaisse l'état peut dépasser 1 minute.
 
