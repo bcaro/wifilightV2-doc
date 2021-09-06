@@ -8,8 +8,11 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 - corrections mineures de la configuration de périphériques
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
+
 1.80 - 2021-08-28 (Jeedom V4 Beta)
-- Ajout des ampoules blanches et couleur WIZ
+- Ajout des ampoules blanches et couleur Wiz
+- Ajout du plug Wiz : à tester 
+- Ajput des Plugs Meross en firmware plus ancien (V1)
 
 1.79 - 2021-08-21 (Jeedom V4)
 - Tuya : ajout télérupteur pour tableau électrique et ajout capteur CO2 PM2.5
