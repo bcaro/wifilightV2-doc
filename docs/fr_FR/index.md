@@ -417,7 +417,7 @@ Les périphériques compatibles sont :
 -   prises MSS210HK MSS210 MSS425EHK MSS425FHK
 -   switch MSS71
 -   commande volets roulants MRS100 (retour d'état et positionnement non fonctionnels)
--   prise avec conso MSS310 : la conso ne remonte que toutes les minutes ou toutes les 20s (à tester)
+-   prise avec conso MSS310 : la conso ne remonte que toutes les minutes
 -   Hub Meross MSH300
 -   MTS100/100H : têtes thermostatiques reliées au hub
 -   MSG100 (garage) : proposé en beta non testé et incomplet
@@ -427,6 +427,10 @@ Les périphériques compatibles sont :
 Il est indispensable de récupérer un Jeton correspond à sign dans le plugin, un Identifiant qui correspond à messageId dans le plugin et un timestamp. Pour les équipements reliés au hub Meross, il faut en plus un identifiant local. Pour trouver ces 3 ou 4 paramètres, voir sur le web : Meross Credentials ou [sur le forum](https://community.jeedom.com/t/meross-credential-et-plugin-wifilightv2/48063) .
 
 Dans le cas d'un hub Meross, il faut créer un périphérique dans le plugin pour chaque périphérique connecté au hub. Pour les prises multiples, il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondant aux n prises. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
+
+## Récupération plus précise de la consommation.
+
+Créer un scénario : mettre une pause de 10s et un appel à stateGet du périphérique. Récupérer alors la puissance, la diviser par 360 et l'ajouter à une variable qui s'appellera consommation. A la fin relancer ce même scénario.
 
 Aucune aide ne sera donnée pour récupérer les 3 ou 4 informations nécessaires.
 
