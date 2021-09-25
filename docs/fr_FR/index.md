@@ -195,16 +195,17 @@ Paramétrage :
 -   Saisir le nombre d'envois de commandes : permet de répéter la commande pour un équipement éloigné en cas de mauvaise transmission. (1 par défaut). Certaines ampoules ou prises ne gèrent pas cette répétition car le plugin s'assure par retour d'état de la transmission. Certaines commandes relatives (incrémentations) ne sont pas répétées.
 -   Saisir le délai d'envoi en cas de répétition (0 ms par défaut, 100 ms max)
 -   Saisir le % d'incrémentation de l'intensité lors de l'appui sur les boutons d'incrémentation ou de décrémentation de l'intensité lumineuse
+-   Configurer le nombre de commandes créées, la création de toutes les commmandes peut alourdir l'interface
 -   Saisir le n° de groupe pour la synchronisation, voir plus bas
 
 ## Ajout des commandes
-lors de la sauvegarde du module, les commandes sont automatiquement créées.
+Lors de la sauvegarde du module, les commandes sont automatiquement créées.
 
 Configurer le paramètre "Création des commandes" pour créer tout ou partie des commandes.
 
 le nom des commandes peut être modifié. Les commandes automatiquement créées et effacées sont recréées lors d'une sauvegarde.
 
-Lorsque toutes les commandes sont créées, elles peuvent alourdir l'interface, il est possible de ne pas les afficher en configurant la ftion des commandes.
+Lorsque toutes les commandes sont créées, elles peuvent alourdir l'interface, il est possible de ne pas les afficher en configurant la création des commandes.
 
 ## Modification du périphérique
 
