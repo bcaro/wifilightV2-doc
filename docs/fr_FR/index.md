@@ -414,6 +414,8 @@ Aucune aide ne sera donnée pour récupérer le jeton.
 
 # Meross
 
+Attention : il semble que les périphériques en firmware 2.2.2 et plus ne fonctionnent plus.
+
 Les périphériques compatibles sont :
 -   prises MSS210HK MSS210 MSS425EHK MSS425FHK
 -   switch MSS71
