@@ -438,7 +438,7 @@ Attention : certaines prises anciennes ont un comportement différent, utiliser 
 Aucune aide ne sera donnée pour récupérer les 3 ou 4 informations nécessaires.
 
 ## Meross V2 pour firmware >=2.2.2
-Il n'y a pas besoin de renseigner les credentials. Par contre, il faut renseigner les login et mot de passe du compte Meross et cliquer sur getKey. Une clé (key) est récupérée des serveurs Meross et sauvegardée dans le champ key. Pour voir sa valeur il faut recharger la page. vous pouvez recopier cette clé dans tous vos périphériques Meross et effacer les login et mot de passe, mais il ne faut plus cliquer sur getKey. Pour les équipements reliés au hub Meross, il faut néanmoins récupérer un identifiant local (voir Meross firmware <2.2.2).
+Il n'y a pas besoin de renseigner les credentials. Par contre, il faut renseigner les login et mot de passe du compte Meross et cliquer sur getKey. Une clé (key) est récupérée des serveurs Meross et sauvegardée dans le champ key. Pour voir sa valeur il faut recharger la page. Vous pouvez recopier cette clé dans tous vos périphériques Meross et effacer les login et mot de passe, mais il ne faut plus cliquer sur getKey. Pour les équipements reliés au hub Meross, il faut néanmoins récupérer un identifiant local (voir Meross firmware <2.2.2).
 
 ## Hub Meross
 
