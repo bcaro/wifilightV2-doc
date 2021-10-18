@@ -430,12 +430,10 @@ Les périphériques compatibles sont :
 -   MSG100 (garage) : proposé en beta non testé et incomplet
 -   les capteurs de températures connectés au hub pourraient être compatibles (non testé)
 
-Attention : certaines prises anciennes ont un comportement différet, utiliser la version V1 dans le sous type.
-
 Dans le cas d'un hub Meross, il faut créer un périphérique dans le plugin pour chaque périphérique connecté au hub. Pour les prises multiples, il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondant aux n prises. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
 
 ## Meross pour firmware <2.2.2
-Il est indispensable de récupérer un Jeton correspond à sign dans le plugin, un Identifiant qui correspond à messageId dans le plugin et un timestamp. Pour les équipements reliés au hub Meross, il faut en plus un identifiant local. Pour trouver ces 3 ou 4 paramètres, voir sur le web : Meross Credentials ou [sur le forum](https://community.jeedom.com/t/meross-credential-et-plugin-wifilightv2/48063) .
+Attention : certaines prises anciennes ont un comportement différent, utiliser la version V1 dans le sous type. Il est indispensable de récupérer un Jeton correspond à sign dans le plugin, un Identifiant qui correspond à messageId dans le plugin et un timestamp. Pour les équipements reliés au hub Meross, il faut en plus un identifiant local. Pour trouver ces 3 ou 4 paramètres, voir sur le web : Meross Credentials ou [sur le forum](https://community.jeedom.com/t/meross-credential-et-plugin-wifilightv2/48063) .
 
 Aucune aide ne sera donnée pour récupérer les 3 ou 4 informations nécessaires.
 
