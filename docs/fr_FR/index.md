@@ -440,8 +440,6 @@ Aucune aide ne sera donnée pour récupérer les 3 ou 4 informations nécessaire
 ## Meross V2 pour firmware >=2.2.2
 Il n'y a pas besoin de renseigner les credentials. Par contre, il faut renseigner les login et mot de passe du compte Meross et cliquer sur getKey. Une clé (key) est récupérée des serveurs Meross et sauvegardée dans le champ key. Pour voir sa valeur il faut recharger la page. Vous pouvez recopier cette clé dans tous vos périphériques Meross et effacer les login et mot de passe, mais il ne faut plus cliquer sur getKey. Pour les équipements reliés au hub Meross, il faut néanmoins récupérer un identifiant local (voir Meross firmware <2.2.2).
 
-## Hub Meross
-
 ## Récupération plus précise de la consommation.
 
 Créer un scénario : mettre une pause de 10s et un appel à stateGet du périphérique. Récupérer alors la puissance, la diviser par 360 et l'ajouter à une variable qui s'appellera consommation. A la fin, lancer un autre scénario qui relancera ce même scénario (les 2 scénarios sont indispensables pour que le scénario ne s'appelle pas lui même, ne se termine pas et finisse par saturer la mémoire). Si vous trouvez plus simple -> forum.
