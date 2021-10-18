@@ -285,12 +285,16 @@ Il suffit de mettre un nombre différent de zéro dans le champ groupe lors de l
 Il y a 2 curseurs pour la température en Kelvin. Kelvin exprimé en % de 0 (chaud) à 100 (froid) et KelvinVal exprimé en Kelvin de min à max. 
 Les valeurs par défaut correspondent la plupart du temps aux données du constructeur. Pour certaines lampes qui ne donnent pas les valeurs min et max, le plugin utilise par défaut 2700 à 6500.
 Pour certaines lampes, les valeurs min et max peuvent être erronées et les valeurs extrêmes non comprises par la lampe. Il faut ajuster ces valeurs pour qu'elles soient dans les limites acceptées par la lampe. 
-Vous pouvez prévenir le développeur pour qu'il modifie la configuration par défaut pour éviter ces ajustements.      
+Vous pouvez prévenir le développeur pour qu'il modifie la configuration par défaut pour éviter ces ajustements.   
+
+# liste des couleurs
+
+Pour les ampoules couleurs, il faut avoir créé le périphérique en mode étendu + couleurs + disco. Une liste à choix est alors associée à chaque couleur. Si les commandes couleurs sont supprimées, la liste à choix créée automatiquement ne sera pas modifiée mais la liste déroulante ne pourra plus avoir accès à cette couleur. Pour ne pas être gèné dans l'interface, il faut supprimer l'affichage des commandes couleurs.   
 
 
 # liste des modes Disco et Custom
 
-Certaines lampes possèdent des modes disco et custom. Une liste à choix est associée à chaque option de ces modes. Si les commandes disco ou custom sont supprimées, la liste à choix créée automatiquement ne sera pas modifiée. Pour les commandes custom, vous pouvez ajouter de nouvelles commandes mais il faudra modifier manuellement cette nouvelle commande dans la liste.
+Certaines lampes possèdent des modes disco et custom. Une liste à choix est associée à chaque option de ces modes. Si les commandes disco ou custom sont supprimées, la liste à choix créée automatiquement ne sera pas modifiée. Pour les commandes custom, vous pouvez ajouter de nouvelles commandes mais il faudra modifier manuellement cette nouvelle commande dans la liste. Il faut avoir créé le périphérique en mode étendu + couleurs + disco. Si les modes Disco et Custom individuels sont supprimés, la liste déroulante ne pourra plus avoir accès à ce mode. Pour ne pas être gèné dans l'interface, il faut supprimer l'affichage des commandes disco et custom.
 
 Par exemple, la commande action/liste pour les customs a comme nom interne : CMD_LIST_CUSTOM. Son paramètre correspond à la construction de cette liste :
 
@@ -303,6 +307,8 @@ La liste affichera Extinction et Allumage et les commandes qui seront exécutée
 Si par la suite, la commande Scene01 est supprimée, il faudra manuellement modifier le paramètre de CMD_LIST_CUSTOM : 
 
    Scene02\|Allumage;Scene03\|Flash
+   
+
 
 # Mi.Light
 
@@ -429,13 +435,15 @@ Les périphériques compatibles sont :
 
 Il est indispensable de récupérer un Jeton correspond à sign dans le plugin, un Identifiant qui correspond à messageId dans le plugin et un timestamp. Pour les équipements reliés au hub Meross, il faut en plus un identifiant local. Pour trouver ces 3 ou 4 paramètres, voir sur le web : Meross Credentials ou [sur le forum](https://community.jeedom.com/t/meross-credential-et-plugin-wifilightv2/48063) .
 
+Aucune aide ne sera donnée pour récupérer les 3 ou 4 informations nécessaires.
+
 Dans le cas d'un hub Meross, il faut créer un périphérique dans le plugin pour chaque périphérique connecté au hub. Pour les prises multiples, il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondant aux n prises. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
 
 ## Récupération plus précise de la consommation.
 
-Créer un scénario : mettre une pause de 10s et un appel à stateGet du périphérique. Récupérer alors la puissance, la diviser par 360 et l'ajouter à une variable qui s'appellera consommation. A la fin relancer ce même scénario.
+Créer un scénario : mettre une pause de 10s et un appel à stateGet du périphérique. Récupérer alors la puissance, la diviser par 360 et l'ajouter à une variable qui s'appellera consommation. A la fin, lancer un autre scénario qui relancera ce même scénario (les 2 scénarios sont indispensables pour que le scénario ne s'appelle pas lui même, ne se termine pas et finisse par saturer la mémoire). Si vous trouvez plus simple -> forum.
 
-Aucune aide ne sera donnée pour récupérer les 3 ou 4 informations nécessaires.
+
 
 # Sonoff en mode DIY
 
