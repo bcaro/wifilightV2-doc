@@ -437,7 +437,7 @@ Attention : certaines prises anciennes ont un comportement différent, utiliser 
 Ne pas créer de nouveaux périphériques avec cette option, utiliser de préférence Meross V2, ce type est présent pour assurer la compatibilité avec les périphériques configurés avant l'arrivée de la V2.
 
 ## Meross V2 pour tout firmware y compris 2.2.2
-Afin d'obtenir une clé, il faut renseigner les login et mot de passe du compte Meross et cliquer sur getKey. Elle est récupérée des serveurs Meross et sauvegardée dans le champ Clé. Attention : pour voir sa valeur il faut recharger la page et ne pas sauvegarder. Vous pouvez recopier cette clé dans tous vos périphériques Meross et effacer les login et mot de passe, mais alors il ne faut plus cliquer sur getKey. 
+Afin d'obtenir une clé, il faut renseigner les login et mot de passe du compte Meross, sauvegarder et cliquer sur getKey. Elle est récupérée des serveurs Meross et sauvegardée dans le champ Clé. Attention : pour voir sa valeur il faut recharger la page et ne pas sauvegarder. Vous pouvez recopier cette clé dans tous vos périphériques Meross et effacer les login et mot de passe, mais alors il ne faut plus cliquer sur getKey. 
 
 ## Hub Meross 
 Pour les équipements reliés au hub Meross, il faut récupérer un identifiant local. Utiliser un outil permettant de récupérer l'entête http partant de l'appli Meross lors du dialogue avec la vanne. L'information recherché a l'allure suivante :
