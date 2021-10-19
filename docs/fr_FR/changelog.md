@@ -12,6 +12,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 1.81 - 2021-10-18 (Jeedom V4 BETA)
 - Ajout des Meross en firmware 2.2.2 -> Meross V2
 - Correction des prises Meross sans conso qui ne renvoyaient pas leur état
+- plus de credentials pour Meross -> connexion aux serveurs Meross
 - Ajout du switch myStrom
 - Ajout du bouton myStorm (Beta à tester)
 - Ajout du PIR myStrom (Beta à tester)
@@ -19,7 +20,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Par défaut l'état ON/OFF n'est plus inversé lors de la création d'un périphérique
 - refonte de la création des listes de commandes (couleurs, ambiance, disco, custom)
 - corrections mineures de bogues
-- amélioration interface 
+- amélioration interface et aides pour les devid, key, mac (mais les tooltips n'apparaissent pas
 
 
 1.80 - 2021-09-17 (Jeedom V4)

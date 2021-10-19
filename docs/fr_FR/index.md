@@ -431,14 +431,19 @@ Les périphériques compatibles sont :
 -   les capteurs de températures connectés au hub pourraient être compatibles (non testé)
 
 Dans le cas d'un hub Meross, il faut créer un périphérique dans le plugin pour chaque périphérique connecté au hub. Pour les prises multiples, il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondant aux n prises. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
+Attention : certaines prises anciennes ont un comportement différent, utiliser la version V1 dans le sous type.
 
 ## Meross pour firmware <2.2.2
-Attention : certaines prises anciennes ont un comportement différent, utiliser la version V1 dans le sous type. Il est indispensable de récupérer un Jeton correspond à sign dans le plugin, un Identifiant qui correspond à messageId dans le plugin et un timestamp. Pour les équipements reliés au hub Meross, il faut en plus un identifiant local. Pour trouver ces 3 ou 4 paramètres, voir sur le web : Meross Credentials ou [sur le forum](https://community.jeedom.com/t/meross-credential-et-plugin-wifilightv2/48063) .
+Ne pas créer de nouveaux périphériques avec cette option, utiliser de préférence Meross V2, ce type est présent pour assurer la compatibilité avec les périphériques configurés avant l'arrivée de la V2.
 
-Aucune aide ne sera donnée pour récupérer les 3 ou 4 informations nécessaires.
+## Meross V2 pour tout firmware y compris 2.2.2
+Afin d'obtenir une clé, il faut renseigner les login et mot de passe du compte Meross et cliquer sur getKey. Elle est récupérée des serveurs Meross et sauvegardée dans le champ Clé. Attention : pour voir sa valeur il faut recharger la page et ne pas sauvegarder. Vous pouvez recopier cette clé dans tous vos périphériques Meross et effacer les login et mot de passe, mais alors il ne faut plus cliquer sur getKey. 
 
-## Meross V2 pour firmware >=2.2.2
-Il n'y a pas besoin de renseigner les credentials. Par contre, il faut renseigner les login et mot de passe du compte Meross et cliquer sur getKey. Une clé (key) est récupérée des serveurs Meross et sauvegardée dans le champ key. Pour voir sa valeur il faut recharger la page. Vous pouvez recopier cette clé dans tous vos périphériques Meross et effacer les login et mot de passe, mais il ne faut plus cliquer sur getKey. Pour les équipements reliés au hub Meross, il faut néanmoins récupérer un identifiant local (voir Meross firmware <2.2.2).
+## Hub Meross 
+Pour les équipements reliés au hub Meross, il faut récupérer un identifiant local. Utiliser un outil permettant de récupérer l'entête http partant de l'appli Meross lors du dialogue avec la vanne. L'information recherché a l'allure suivante :
+
+    "id" : "01008D5B"
+
 
 ## Récupération plus précise de la consommation.
 
