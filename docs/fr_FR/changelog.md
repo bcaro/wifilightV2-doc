@@ -7,6 +7,7 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 - suppression/ajout de logs
 - corrections mineures de la configuration de périphériques
 
+
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
 1.81 - 2021-10-18 (Jeedom V4 BETA)
