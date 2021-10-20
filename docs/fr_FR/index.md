@@ -430,17 +430,17 @@ Les périphériques compatibles sont :
 -   MSG100 (garage) : proposé en beta non testé et incomplet
 -   les capteurs de températures connectés au hub pourraient être compatibles (non testé)
 
-Dans le cas d'un hub Meross, il faut créer un périphérique dans le plugin pour chaque périphérique connecté au hub. Pour les prises multiples, il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondant aux n prises. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
+Il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondant aux n prises. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
 Attention : certaines prises anciennes ont un comportement différent, utiliser la version V1 dans le sous type.
 
 ## Meross pour firmware <2.2.2
 Ne pas créer de nouveaux périphériques avec cette option, utiliser de préférence Meross V2, ce type est présent pour assurer la compatibilité avec les périphériques configurés avant l'arrivée de la V2.
 
 ## Meross V2 pour tout firmware y compris 2.2.2
-Afin d'obtenir une clé, il faut renseigner les login et mot de passe du compte Meross, sauvegarder et cliquer sur getKey. Elle est récupérée des serveurs Meross et sauvegardée dans le champ Clé. Attention : pour voir sa valeur il faut recharger la page et ne pas sauvegarder. Vous pouvez recopier cette clé dans tous vos périphériques Meross et effacer les login et mot de passe, mais alors il ne faut plus cliquer sur getKey. 
+Afin d'obtenir une clé, il faut renseigner les login et mot de passe du compte Meross, sauvegarder et cliquer sur getKey. Elle est récupérée des serveurs Meross et sauvegardée dans le champ Clé. Vous pouvez recopier cette clé dans tous vos périphériques Meross et effacer les login et mot de passe, mais alors il ne faut plus cliquer sur getKey. 
 
 ## Hub Meross 
-Pour les équipements reliés au hub Meross, il faut récupérer un identifiant local. Utiliser un outil permettant de récupérer l'entête http partant de l'appli Meross lors du dialogue avec la vanne. L'information recherchée a l'allure suivante :
+Pour les équipements reliés au hub Meross,il faut créer un périphérique dans le plugin pour chaque périphérique connecté au hub. Il faut aussi récupérer un identifiant local. Utiliser un outil permettant de récupérer l'entête http partant de l'appli Meross lors du dialogue avec la vanne. L'information recherchée a l'allure suivante :
 
     "id" : "01008D5B"
 
