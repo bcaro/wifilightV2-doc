@@ -21,7 +21,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Par défaut l'état ON/OFF n'est plus inversé lors de la création d'un périphérique
 - Refonte de la création des listes de commandes (couleurs, ambiance, disco, custom)
 - Corrections mineures de bogues
-- Amélioration interface et aides pour les devid, key, mac (mais les tooltips n'apparaissent pas
+- Amélioration interface et aides pour les devid, key, mac (mais les tooltips n'apparaissent pas)
 
 
 1.80 - 2021-09-17 (Jeedom V4)

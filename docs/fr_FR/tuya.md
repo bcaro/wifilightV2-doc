@@ -1,6 +1,8 @@
 [Retour à la documentation générale](./index.md)
 
-# Passerelles Zigbee Tuya 
+# Passerelles Zigbee Tuya
+
+Pour utiliser une telle passerelle, choisir le type : "Gateway Hub Tuya Zigbee"
 
 ## Compatibilité
 
@@ -111,6 +113,8 @@ Le plugin est équipé de boutons permettant de créer automatiquement les comma
 Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logique de la commande info correspondante doit contenir battery et get .
 
 # Tuya 
+
+Pour utiliser ces périphériques sans passerelle Tuya/Zigbee, choisir le type : "Tuya SmartLife compatible V3"
 
 ## Compatibilité
 
