@@ -260,6 +260,8 @@ La commande ConnectedGet permet de récupérer l'état de la connexion de chaque
 -  -5 : mauvaise réponse du périphérique
 -  -6 : périphérique sans retour d'état
 
+Sur la page des périphériques, une émoticône indique si la connexion est OK ou KO.  L'émoticône indifférent est utilisée dans les cas où le plugin ne peut connaitre l'état de la connexion, soit les périphériques qui ne renvoient pas leur état. Noter que pour les périphérique avec passerelle (Tuya Zigbee, Meross), l'état de la connexion est celui de la passerelle et est appliqué à tous les périphériques connectés à la passerelle.
+
 # Synchronisation
 
 ## Principe
