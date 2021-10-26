@@ -157,7 +157,7 @@ Si le périphérique est désinstallé puis réinstallé dans l'application mobi
 Aucune aide ne sera donnée pour récupérer la clé ou l'identifiant.
 
 ## Tuya Smartlife compatible V1
-Le type V1 correspond aux périphériques en firmware 1.0 . Les périphériques avec ce firmware ne sont plus vendus et leur firmware peut être mis à jour avec l'application Smartlife. Il n'y aura pas de nouveaux ajouts de périphériques.
+Le type V1 correspond aux périphériques en firmware 1.0 . Les périphériques avec ce firmware ne sont plus vendus et leur firmware peut être mis à jour avec l'application Smartlife. Il n'y aura pas de nouveaux ajouts de périphériques. Il faut passer en V3.
 
 Le plugin teste les périphériques (mais ils doivent être ajoutés manuellement) et affiche un message dans le centre de messages lorsqu'un périphérique a été configuré avec le mauvais firmware.
 
@@ -169,7 +169,7 @@ Les paramètres de configuration de l'énergie, pour les prises qui la gèrent, 
 
 
 ## Tuya Smartlife compatible V2
-Le type V2 correspond aux périphériques en firmware 2.0 . En plus de cette compatibilité, il y a la possibilité d'ajouter des commandes personnalisées. Il n'y aura pas de nouveaux ajouts de périphériques. Le type V2 ne doit plus être utilisé pour de nouveaux périphériques et est présent pour assurer la compatibilité avec les anciennes versions du plugin.
+Le type V2 correspond aux périphériques en firmware 2.0 . En plus de cette compatibilité, il y a la possibilité d'ajouter des commandes personnalisées. Il n'y aura pas de nouveaux ajouts de périphériques. Le type V2 ne doit plus être utilisé pour de nouveaux périphériques et est présent pour assurer la compatibilité avec les anciennes versions du plugin, il faut passer en V3
 
 Pour les périphériques multicanaux, comme les prises, il faut créer un wifilightV2 par canal. 
 
