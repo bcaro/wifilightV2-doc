@@ -4,6 +4,9 @@
 
 # Présentation
 
+Attention :
+Le fonctionnement permanent du plugin ne peut être garanti : incompatibilité ou compatibilité partielle du produit, protocole mal géré, connexion de mauvaise qualité par exemples. Ne pas utiliser le plugin pour commander des appareils sensibles pouvant générer des désordres de tout ordre. Le plugin est fourni pour des besoins de tests et non pour une installation nécessitant un fonctionnement optimal en toute circonstance.
+
 Ce plugin permet de gérer de nombreux bandeaux de leds, ampoules leds, prises électriques, thermostats, capteur de température, capteur de porte, etc.  pilotés en wifi directement ou via une box wifi vendue avec le produit. Le principe du plugin est de ne jamais utiliser le cloud et donc une connexion internet entre le plugin et le périphérique via un serveur lointain, toutes les actions sont donc locales au réseau domestique.
 
 <img src="../images/wifilightV2_screenshot01.png" alt="image" style="height:100px;"/>
@@ -48,6 +51,7 @@ Les produits compatibles :
 -   Lampe de bureau WiFi Xiaomi Mijia avec retour d'état !
 - 	Sonoff Basic R3 en mode DIY avec retour d'état !!
 -   Nanoleaf Aurora avec retour d'état !
+-	Produits myStrom avec retour d'état
 
 
 Produits pouvant être compatibles et non garantis :
@@ -68,24 +72,18 @@ Produits pouvant être compatibles et non garantis :
 -   Périphériques Meross !!!
 -	Produits Wiz!!
 
-Pour ces contrôleurs, ampoules ou prises, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin.
+
+Pour ces derniers contrôleurs ou péripéhriques wifi, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin. Certains produits particuliers peuvent ne pas être compatibles.
 
 Attention :
 - ! : intégration facile pour une personne qui lit la documentation avant d'agir
 - !! : en plus de !, nécessite de suivre une procédure particulière, adapté à une personne qui comprend qu'une procédure est faite pour être suivie scrupuleusement
 - !!! : en plus de !! nécessite des connaissances de base en informatique et être habitué à faire des recherches sur internet dans un but précis
 
-Produits incompatibles et qui ne le seront pas :
--   Le pont Mi.light MiBoxer (sauf ON/OFF de la box)
--	Les contrôleurs de Led Milight(du type YL etc.) sans pont.
--   Les ampoules, prises ou contrôleurs de bandeau led qui contiennent un récepteur bluetoooth au lieu d'un récepteur radiofréquence 2.4 Ghz ou WiFi.
--   Les contrôleurs de bandeau led ou d'ampoules et les ampoules ou prises qui utilisent une connexion WiFi point à point avec l'application mobile.
--   L'ancienne lampe de chevet Xiaomi Yeelight n'est pas compatible.
--	Certains périphériques compatibles Magic Home qui ne fonctionnent plus qu'avec le cloud.
-- 	Tous les capteurs WiFi sur pile (détecteur de présence, détecteur d'ouverture) compatibles Tuya qui ne fonctionnent plus qu'avec le cloud.
-
 
 Il est conseillé de se renseigner sur le forum pour connaitre la compatibilité d'un produit peu diffusé.
+
+Ne jamais modifier le firmware des produits, ce qui peut les rendre incompatibles avec le plugin.
 
 Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
 
@@ -95,6 +93,7 @@ Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilig
 Mi.Light/EasyBulb/LimitlessLED :
 -   Toutes les fonctionnalités sont prises en compte par le plugin (avec les ibox1 et 2 et avec le pont DIY Milight-hub)
 -   Le pont MiBoxer n'est pas compatible
+-	Les contrôleurs de Led Milight(du type YL etc.) sans pont.
 
 LW12/Lagute :
 -   La programmation des modes custom n'est pas possible, il faut utiliser l'application fournie avec le contrôleur (Magic Home). Par contre, les modes customs peuvent être déclenchés avec le plugin.
@@ -103,10 +102,11 @@ LW12/Lagute :
 Magic UFO, MagicHome et Arilux AL-C01/02/03/04/06/10 :
 -   La programmation des modes custom, le mode radio et les timers ne sont pas gérés. Il faut utiliser l'application fournie avec le contrôleur (Magic Home). Par contre, les modes customs peuvent être déclenchés avec le plugin.
 -   Il existe différents modèles qui peuvent ne pas être compatibles avec le plugin.
+-	Certains périphériques compatibles Magic Home sont incompatibles car ne fonctionnent plus qu'avec le cloud
 
 Xiaomi Yeelight :
 -   Les commandes HSV ne sont pas gérées. Flow et scène le sont en créant des commandes avec le code JSON correspondant à l'effet recherché (voir la documentation de l'API YeeLight).
--   La lampe de chevet Xiaomi n'est pas compatible.
+-   La lampe de chevet Xiaomi de première version n'est pas compatible.
 -   La lampe de bureau Xiaomi Mijia est partiellement compatible (pas de retour d'état complet).
 
 Wifi 320/370 :
@@ -132,6 +132,7 @@ Contrôleurs de pixel strip leds compatibles Magic Home :
 
 Périphériques compatibles Tuya Smart/Jinvoo/eFamilyCloud :
 -   toutes les commandes des périphériques validés (voir le forum) du firmware 1.0 et du firmware 2.0 sont compatibles (en particulier les prises Neo CoolCam).
+-   non compatibles avec les périphériques cloud, en particulier les capteurs d'ouverture
 
 Sonoff DIY :
 -   Basic R3 avec le firmware 3.3.0 périphériques avec un seul contact.
@@ -139,12 +140,19 @@ Sonoff DIY :
 Ewelink et Sonoff LAN :
 -   périphériques avec le firmware 3.0.1 (liste donnée ci-après dans le paragraphe eWelink)
 -   non compatible zigbee
+-   non compatibles avec les périphériques cloud, en particulier les capteurs d'ouverture
 
 Nanoleaf Aurora :
 -   Rythm non implantés
 
 Passerelle Wifi Tuya et périphériques Zigbee :
--   La configuration est manuelle ou semi-automatique sauf pour un nombre limité de périphériques. La gestion de la couleur des lampes est complexe à configurer.
+-   La configuration est manuelle ou semi-automatique sauf pour un nombre limité de périphériques.
+
+Wiz :
+- seule la lampe a été testée, en attente de retours des utilisateurs pour les autres péripéhriques
+
+myStrom :
+- seule la prise commandée a été testée, en attente de retousr des utilisateurs pour les autres péripéhriques
 
 # Configuration du module wifi
 
@@ -239,6 +247,7 @@ Pour les périphériques :
  - Meross
  - Mi.Light connectés au pont Milight-hub
  - Wiz
+ - myStrom
 
 Le plugin interroge régulièrement le périphérique pour connaitre son état. Le délai pour que Jeedom connaisse l'état peut dépasser 1 minute.
 
@@ -448,12 +457,9 @@ Pour les équipements reliés au hub Meross,il faut créer un périphérique dan
 
     "id" : "01008D5B"
 
-
 ## Récupération plus précise de la consommation.
 
-Créer un scénario : mettre une pause de 10s et un appel à stateGet du périphérique. Récupérer alors la puissance, la diviser par 360 et l'ajouter à une variable qui s'appellera consommation. A la fin, lancer un autre scénario qui relancera ce même scénario (les 2 scénarios sont indispensables pour que le scénario ne s'appelle pas lui même, ne se termine pas et finisse par saturer la mémoire). Si vous trouvez plus simple -> forum.
-
-
+Créer un scénario déclenché une seule fois au démarrage de Jeedom : mettre une boucle sur 1 000 000. Mettre à l'intérieur une autre boucle sur 1 000 000 ces 2 boucles imbriquées munies d'une pause vont empêcher la sortie du scénario pendant des centaines d'années. Dans la boucle interne mettre une pause de 10s et un appel à stateGet du périphérique. Récupérer alors la puissance, la diviser par 360 et l'ajouter à une variable qui s'appellera consommation. La pause peut être diminuée jusque 1s selon la puissance et la complexité de l'installation.
 
 # Sonoff en mode DIY
 
