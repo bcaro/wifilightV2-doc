@@ -140,7 +140,11 @@ Sonoff DIY :
 Ewelink et Sonoff LAN :
 -   périphériques avec le firmware 3.0.1 (liste donnée ci-après dans le paragraphe eWelink)
 -   non compatible zigbee
--   non compatibles avec les périphériques cloud, en particulier les capteurs d'ouverture et les lampes ou leds.
+-   non compatibles avec les périphériques cloud, en particulier les capteurs d'ouverture et les lampes ou strip leds.
+
+Meross :
+-   commande de volets roulant : fonctionnement partiel
+-   commande de porte de garage : fonctionnement partiel
 
 Nanoleaf Aurora :
 -   Rythm non implantés
