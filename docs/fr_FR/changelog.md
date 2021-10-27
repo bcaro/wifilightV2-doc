@@ -12,9 +12,9 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 
 1.81 - 2021-10-27 (Jeedom V4)
 - Ajout des Meross en firmware 2.2.2 -> Meross V2. Compatible anciens firmwares : passez à cette version
-- Correction des prises Meross sans conso qui ne renvoyaient pas leur état
 - Plus besoin de credentials pour Meross en Meross V2 -> connexion aux serveurs Meross. Passez à cette version.
 - Suppression de toutes les explications pour les Meross non V2 : ne plus utiliser ce type.
+- Correction des prises Meross (V2) sans conso qui ne renvoyaient pas leur état
 - Ajout du switch myStrom
 - Ajout du bouton myStorm (Beta à tester)
 - Ajout du PIR myStrom (Beta à tester)
