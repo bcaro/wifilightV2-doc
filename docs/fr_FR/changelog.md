@@ -10,7 +10,7 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.81 - 2021-10-26 (Jeedom V4)
+1.81 - 2021-10-27 (Jeedom V4)
 - Ajout des Meross en firmware 2.2.2 -> Meross V2. Compatible anciens firmware : passez à cette version
 - Correction des prises Meross sans conso qui ne renvoyaient pas leur état
 - Plus besoin de credentials pour Meross en Meross V2 -> connexion aux serveurs Meross. Passez à cette version.
@@ -23,7 +23,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Refonte de la création des listes de commandes (couleurs, ambiance, disco, custom)
 - Corrections mineures de bogues
 - Amélioration interface et aides pour les devid, key, mac (mais les tooltips n'apparaissent pas)
-- Compatibilité avec la présentation tableau de spéripéhriques sous Jeedom 4.2
+- Compatibilité avec la présentation tableau des péripéhriques sous Jeedom 4.2
 
 
 1.80 - 2021-09-17 (Jeedom V4)
