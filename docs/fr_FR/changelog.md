@@ -10,7 +10,7 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.81 - 2021-10-26 (Jeedom V4 BETA)
+1.81 - 2021-10-26 (Jeedom V4)
 - Ajout des Meross en firmware 2.2.2 -> Meross V2. Compatible anciens firmware : passez à cette version
 - Correction des prises Meross sans conso qui ne renvoyaient pas leur état
 - Plus besoin de credentials pour Meross en Meross V2 -> connexion aux serveurs Meross. Passez à cette version.
