@@ -455,6 +455,7 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 5. l'appli Smartlife est arrêtée sur tous les terminaux pouvant la faire tourner
 6. l'adresse IP du périphérique (Tuya ou passerelle Tuya/Zigbee) est rendue fixe et est connue
 7. configurer les logs wifilightV2 en mode debug, redémarrer le demon
+8. vérifier que le demon du plugin tourne (configuration du plugin wifilightV2 -> Démon -> Statut :OK)
 
 ## Vérifier que le périphérique est trouvé et connecté
 
@@ -556,7 +557,7 @@ Si le cid ou le devId ne sont pas corrects, les commandes actions ne seront pas 
     [2021-03-05 07:23:28][DEBUG] :      No other states to update
 
 Le plugin envoie la commande au demon à l'adresse 127.0.0.1 (Cmd to 127.0.0.1).
-Puis le demon envoie la commande au périphérique à l'adresse 192.168.1.129 ( Receive from Jeedom to Send cmd).
+Puis le démon envoie la commande au périphérique à l'adresse 192.168.1.129 ( Receive from Jeedom to Send cmd). Si ce message n'apparait pas, alors le démon du plugin ne tourne pas -> voir les vérifications préalables.
 Enfin, le périphérique renvoie son état (Receive from). Le premier message n'est pas décodé et le deuxième l'est. Noter que ce périphérique ne renvoie pas son devId.
 Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son état ou renvoie un message vide ou une erreur et n'exécute pas la commande.
 
