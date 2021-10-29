@@ -449,24 +449,28 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 ## Test et configuration préalables
 
 1. le périphérique à tester a été inclus dans l'appli Smartlife,
-2. dans le cas d'un périphérique Tuya/Zigbee, sa passerelle a été incluse dans l'appli Smartlife et le péripéhrique doit aussi avoir été inclus
+2. dans le cas d'un périphérique Tuya/Zigbee, sa passerelle a été incluse dans l'appli Smartlife et le périphérique doit aussi avoir été inclus
 3. les localKey et devId ou cid ont été récupérés (le débogage peut permettre de retrouver cid et devId)
 4. le périphérique et son éventuelle passerelle n'ont pas été supprimés de l'appli Smartlife et l'appli Smartlife n'a pas été supprimée
 5. l'appli Smartlife est arrêtée sur tous les terminaux pouvant la faire tourner
 6. l'adresse IP du périphérique (Tuya ou passerelle Tuya/Zigbee) est rendue fixe et est connue
 7. configurer les logs wifilightV2 en mode debug, redémarrer le demon
-8. vérifier que le demon du plugin tourne (configuration du plugin wifilightV2 -> Démon -> Statut :OK)
+8. vérifier que le d'mon du plugin tourne (configuration du plugin wifilightV2 -> Démon -> Statut :OK)
 
 ## Vérifier que le périphérique est trouvé et connecté
 
 1. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canaux) (dans la cas d'un périphérique connecté à une passerelle, la passerelle doit rester activée), le but est de ne pas mélanger tous les périphériques
 2. effacer les logs
-3. sauvegarder le périphérique dans le plugin : cela a pour effet de lancer le demon qui teste toutes les minutes les périphériques wifilightV2
+3. sauvegarder le périphérique dans le plugin : cela a pour effet de lancer le démon qui teste toutes les minutes les périphériques wifilightV2
 
-Exemple de log OK où le plugin a trouvé le périphérique donc bonne adresse IP :
+Exemple de log OK où le plugin a trouvé le périphérique donc avec la bonne adresse IP :
 
-    [2021-03-05 07:13:54][DEBUG] : ** Zig plug - TuyaCustom2_V2 @192.168.1.106 - c:12 **
-    [2021-03-05 07:13:54][DEBUG] :     Key:0 Diff:0  Socket already created @192.168.1.106 ADD New device @192.168.1.106 channel:12key:0 @192.168.1.106 c:12 d:0
+    [2021-03-29 06:36:42][DEBUG] : ** Prise Zigbee - TuyaCustom2_V2 @192.168.1.106 - c:12 **
+    [2021-03-29 06:36:42][DEBUG] :     Key not set New device: created  @192.168.1.106 ADD New device @192.168.1.106 channel:12 key:1 @192.168.1.106 c:12 d:0
+
+Par la suite les logs seront du type :	
+	[2021-03-29 06:31:21][DEBUG] : ** Prise Zigbee - TuyaCustom2_V2 @192.168.1.106 - c:12 **
+    [2021-03-29 06:31:21][DEBUG] :      key:1 @192.168.1.106 c:12 d:1
 
 	
 Exemple de log KO où le plugin n'a pas trouvé le périphérique donc mauvaise adresse IP
@@ -507,7 +511,7 @@ Notas :
 Exemple de log KO où la localKey n'est pas bonne car la trame reçue par le plugin n'est pas décodée :
 
     [2021-03-05 07:16:53][DEBUG] : Receive from:192.168.1.106
-    [2021-03-05 07:16:53][DEBUG] :   Mess: Empty
+    [2021-03-05 07:16:53][DEBUG] :   Mess: Bad response
 
 
 Dans le cas où le décodage de la trame est correct, on trouve un message tel que celui-ci :
@@ -515,7 +519,7 @@ Dans le cas où le décodage de la trame est correct, on trouve un message tel q
     [2021-03-05 07:16:53][DEBUG] : Receive from:192.168.1.106
     [2021-03-05 07:16:53][DEBUG] :   Mess: {"dps":{"1":true,"9":0,"17":8370,"18":44,"19":50,"20":2320,"27":"on","28":"relay"},"cid":"588xxxxxxxxxa"} - Read Json OK
 
-Les caractères de la fin du message seront filtrés par le plugin et ne doivent pas inquiéter. C'est ce message qui va permettre de configurer le périphérique dans le plugin en identifiant à quoi servent les n° de dps et quelles valeurs ils prennent, voir plus haut.
+C'est ce message qui va permettre de configurer le périphérique dans le plugin en identifiant à quoi servent les n° de dps et quelles valeurs ils prennent, voir plus haut.
 Certains messages ne sont jamais décodés, il suffit qu'un seul message soit correctement décodé pour être sûr que la localKey est correcte.
 
 ## Vérifier que le devId ou le cid sont corrects
