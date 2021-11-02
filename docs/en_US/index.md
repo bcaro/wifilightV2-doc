@@ -322,7 +322,7 @@ The list will show Power off and Power on and the commands that will be executed
 
 If the Scene01 command is subsequently deleted, you will have to manually modify the CMD_LIST_CUSTOM parameter:
 
-    Scene02|Ignition; Scene03|Flash
+    Scene02|Ignition;Scene03|Flash
    
 
 
