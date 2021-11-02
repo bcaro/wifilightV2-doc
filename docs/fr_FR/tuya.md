@@ -8,7 +8,7 @@ Pour utiliser une telle passerelle, choisir le type : "Gateway Hub Tuya Zigbee"
 
 Le dialogue entre le plugin et la passerelle se fait en Wifi. Ensuite, le dialogue entre les capteurs et actionneurs et la passerelle se fait via Zigbee. Ils doivent être compatibles Tuya et avoir été inclus d'abord dans l'application Tuya.
 
-Le plugin peut récupérer l'état des périphériques dès que ceux-ci envoient une information de changement d'état ou quand le plugin les interroge au lancement du demon. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
+Le plugin peut récupérer l'état des périphériques dès que ceux-ci envoient une information de changement d'état ou quand le plugin les interroge au lancement du démon. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
 
 Les équipements suivants sont compatibles mais la liste n'est pas exclusive et sera complétée en fonction du retour des utilisateurs.
 - passerelles MoesHouse, BENEXMART 
@@ -231,8 +231,8 @@ Le plugin est équipé de boutons permettant de créer automatiquement les comma
 ### Configuration
 -   désactiver tous les périphériques wifilightV2 sauf celui à tester
 -   bien configurer le périphérique (adresse IP statique, localKey, devId)
--   vérifier que le demon tourne, sinon le démarrer
--   configurer les logs wifilightV2 en mode debug, redémarrer le demon
+-   vérifier que le démon tourne, sinon le démarrer
+-   configurer les logs wifilightV2 en mode debug, redémarrer le démon
 -   effacer les logs
 
 ### Récupération des informations
@@ -449,13 +449,12 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 ## Test et configuration préalables
 
 1. le périphérique à tester a été inclus dans l'appli Smartlife,
-2. dans le cas d'un périphérique Tuya/Zigbee, sa passerelle a été incluse dans l'appli Smartlife et le périphérique doit aussi avoir été inclus
+2. dans le cas d'un périphérique Tuya/Zigbee, sa passerelle a été incluse dans l'appli Smartlife et le péripéhrique doit aussi avoir été inclus
 3. les localKey et devId ou cid ont été récupérés (le débogage peut permettre de retrouver cid et devId)
 4. le périphérique et son éventuelle passerelle n'ont pas été supprimés de l'appli Smartlife et l'appli Smartlife n'a pas été supprimée
 5. l'appli Smartlife est arrêtée sur tous les terminaux pouvant la faire tourner
 6. l'adresse IP du périphérique (Tuya ou passerelle Tuya/Zigbee) est rendue fixe et est connue
-7. configurer les logs wifilightV2 en mode debug, redémarrer le demon
-8. vérifier que le d'mon du plugin tourne (configuration du plugin wifilightV2 -> Démon -> Statut :OK)
+7. configurer les logs wifilightV2 en mode debug, redémarrer le démon
 
 ## Vérifier que le périphérique est trouvé et connecté
 
@@ -468,10 +467,9 @@ Exemple de log OK où le plugin a trouvé le périphérique donc avec la bonne a
     [2021-03-29 06:36:42][DEBUG] : ** Prise Zigbee - TuyaCustom2_V2 @192.168.1.106 - c:12 **
     [2021-03-29 06:36:42][DEBUG] :     Key not set New device: created  @192.168.1.106 ADD New device @192.168.1.106 channel:12 key:1 @192.168.1.106 c:12 d:0
 
-Par la suite les logs seront du type :	
-	[2021-03-29 06:31:21][DEBUG] : ** Prise Zigbee - TuyaCustom2_V2 @192.168.1.106 - c:12 **
+-Par la suite les logs seront du type :	
+	 [2021-03-29 06:31:21][DEBUG] : ** Prise Zigbee - TuyaCustom2_V2 @192.168.1.106 - c:12 **
     [2021-03-29 06:31:21][DEBUG] :      key:1 @192.168.1.106 c:12 d:1
-
 	
 Exemple de log KO où le plugin n'a pas trouvé le périphérique donc mauvaise adresse IP
 
@@ -560,7 +558,7 @@ Si le cid ou le devId ne sont pas corrects, les commandes actions ne seront pas 
     [2021-03-05 07:23:28][DEBUG] :      Dps18|SwOnOffGet_Det_Fen:0 Dps19|ModeForcedGetZ:0 Dps20|SwOnOffGet_Test:2367 Dps21|VanneGetZ formula:#value# #value#:1 After:1
     [2021-03-05 07:23:28][DEBUG] :      No other states to update
 
-Le plugin envoie la commande au demon à l'adresse 127.0.0.1 (Cmd to 127.0.0.1).
+Le plugin envoie la commande au démon à l'adresse 127.0.0.1 (Cmd to 127.0.0.1).
 Puis le démon envoie la commande au périphérique à l'adresse 192.168.1.129 ( Receive from Jeedom to Send cmd). Si ce message n'apparait pas, alors le démon du plugin ne tourne pas -> voir les vérifications préalables.
 Enfin, le périphérique renvoie son état (Receive from). Le premier message n'est pas décodé et le deuxième l'est. Noter que ce périphérique ne renvoie pas son devId.
 Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son état ou renvoie un message vide ou une erreur et n'exécute pas la commande.
@@ -570,8 +568,8 @@ Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son
 
 1. Vérifier les 4 points ci-dessus
 2. Désactiver tous les périphériques wifilightV2 sauf celui à tester (ne garder qu'un canal pour les multicanaux) (laisser la passerelle Tuya/Zigbee active pour un périphérique Zigbee) et effacer les logs pour plus de clarté.
-3. Attendre que le demon passe (il interroge les périphériques toutes les minutes le message commence par : >>>>>>>> Search for) 
-4. Attendre 10s après le message contenant >>>>>>>>>>> End <<<<<<<<<<<< (fin de l'interrogation des périphériques par le demon).
+3. Attendre que le démon passe (il interroge les périphériques toutes les minutes le message commence par : >>>>>>>> Search for) 
+4. Attendre 10s après le message contenant >>>>>>>>>>> End <<<<<<<<<<<< (fin de l'interrogation des périphériques par le démon).
 5. Activer la commande du plugin qui dysfonctionne 2 fois avec 5s d'intervalle
 6. Stopper les logs et les sauvegarder.
 7. Envoyer les logs sur le forum (avec la config du périphérique et l'action qui a été faite))

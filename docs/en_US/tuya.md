@@ -13,9 +13,9 @@ The plugin can retrieve the state of the devices as soon as they send a change o
 The following equipment is compatible but the list is not exclusive and will be completed based on user feedback.
 - MoesHouse gateways, BENEXMART
 - Lidl SilverCrest Smart Home gateway
-- all Tuya / Zigbee gateways are normally compatible, there has not yet been a return from an incompatible gateway.
+- all Tuya/Zigbee gateways are normally compatible, there has not yet been a return from an incompatible gateway.
 - Vima lock (but not MiHome)
-the plugin cannot open / close because the lock is not intended to do so, but it can know the last key used
+the plugin cannot open/close because the lock is not intended to do so, but it can know the last key used
 - TYZS2 temperature and humidity sensor
 full operation
 - Hessway thermostatic head
@@ -44,95 +44,8 @@ The "Status query" option allows you to retrieve the status every 20s even if th
 
 It is essential to retrieve the local key (localKey) and the devId of the gateway allowing the plugin to communicate with the devices.
 
-To retrieve the key and the devId, the procedure is complex and requires several operations. Do a search on the web with the keyword: Tuya localKey, on Github in particular or on # Zigbee Tuya gateways
+To retrieve the key and the devId, the procedure is complex and requires several operations. Do a search on the web with the keyword: Tuya localKey, on Github in particular or on  [forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
 
-To use such a gateway, choose the type: "Gateway Hub Tuya Zigbee"
-
-## Compatibility
-
-The dialogue between the plugin and the gateway is done over Wifi. Then, the dialogue between the sensors and actuators and the gateway is done via Zigbee. They must be Tuya compatible and have been included in the Tuya app first.
-
-The plugin can retrieve the state of the devices as soon as they send a change of state information or when the plugin asks them when the daemon is launched. If a wall switch is used, Jeedom will know immediately.
-
-The following equipment is compatible but the list is not exclusive and will be completed based on user feedback.
-- MoesHouse gateways, BENEXMART
-- Lidl SilverCrest Smart Home gateway
-- all Tuya / Zigbee gateways are normally compatible, there has not yet been a return from an incompatible gateway.
-- Vima lock (but not MiHome)
-the plugin cannot open / close because the lock is not intended to do so, but it can know the last key used
-- TYZS2 temperature and humidity sensor
-full operation
-- Hessway thermostatic head
-Does not manage the programming of the time slots of the different modes but can start any mode.
-Use the "extended mode" option for creating commands to create all the thermostat commands.
-- the double dimmer switch QS-Zigbee-D02-TRIAC-LN
-- Moes presence sensor
-- BENEXMART presence sensor
-- BENEXMART temperature sensor
-- BENEXMART door sensor
-- Lonsoho plug with consumption
-- loratap 3-button remote control
-- single / double / triple wall switches
-- remote control, white and colored bulbs, single and triple Lidl sockets
-
-All other devices, or similar devices of another brand or model, must be fully configured in custom mode. However the configuration generated for these models may help for another.
-
-However, the compatibility of these devices is not guaranteed because the protocol can be modified by the manufacturers. Do not modify the firmware of the device without having verified that it is compatible with the plugin.
-
-A device must be created, with the same IP address and the same key, for the gateway and each device connected to the gateway.
-
-The "Status query" option allows you to retrieve the status every 20s even if the peripheral does not send it back. To be used for electrical outlets which do not regularly return consumption but do not use for battery-powered devices, otherwise they will be emptied.
-
-
-## Gateway key and identifier
-
-It is essential to retrieve the local key (localKey) and the devId of the gateway allowing the plugin to communicate with the devices.
-
-To retrieve the key and the devId, the procedure is complex and requires several operations. Do a search on the web with the keyword: Tuya localKey, on Github in particular or on the # Zigbee Tuya gateways
-
-To use such a gateway, choose the type: "Gateway Hub Tuya Zigbee"
-
-## Compatibility
-
-The dialogue between the plugin and the gateway is done over Wifi. Then, the dialogue between the sensors and actuators and the gateway is done via Zigbee. They must be Tuya compatible and have been included in the Tuya app first.
-
-The plugin can retrieve the state of the devices as soon as they send a change of state information or when the plugin asks them when the daemon is launched. If a wall switch is used, Jeedom will know immediately.
-
-The following equipment is compatible but the list is not exclusive and will be completed based on user feedback.
-- MoesHouse gateways, BENEXMART
-- Lidl SilverCrest Smart Home gateway
-- all Tuya / Zigbee gateways are normally compatible, there has not yet been a return from an incompatible gateway.
-- Vima lock (but not MiHome)
-the plugin cannot open / close because the lock is not intended to do so, but it can know the last key used
-- TYZS2 temperature and humidity sensor
-full operation
-- Hessway thermostatic head
-  Does not manage the programming of the time slots of the different modes but can start any mode.
-  Use the "extended mode" option for creating commands to create all the thermostat commands.
-- the double dimmer switch QS-Zigbee-D02-TRIAC-LN
-- Moes presence sensor
-- BENEXMART presence sensor
-- BENEXMART temperature sensor
-- BENEXMART door sensor
-- Lonsoho plug with consumption
-- loratap 3-button remote control
-- single / double / triple wall switches
-- remote control, white and colored bulbs, single and triple Lidl sockets
-
-All other devices, or similar devices of another brand or model, must be fully configured in custom mode. However the configuration generated for these models may help for another.
-
-However, the compatibility of these devices is not guaranteed because the protocol can be modified by the manufacturers. Do not modify the firmware of the device without having verified that it is compatible with the plugin.
-
-A device must be created, with the same IP address and the same key, for the gateway and each device connected to the gateway.
-
-The "Status query" option allows you to retrieve the status every 20s even if the peripheral does not send it back. To be used for electrical outlets which do not regularly return consumption but do not use for battery-powered devices, otherwise they will be emptied.
-
-
-## Gateway key and identifier
-
-It is essential to retrieve the local key (localKey) and the devId of the gateway allowing the plugin to communicate with the devices.
-
-To retrieve the key and the devId, the procedure is complex and requires several operations. Do a search on the web with the keyword: Tuya localKey, on Github in particular or on the  [forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
 
 If the gateway is uninstalled and then reinstalled in the mobile application, then its key will be changed. You will have to find the key with the above procedure.
 
