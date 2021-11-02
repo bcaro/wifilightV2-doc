@@ -2,7 +2,7 @@
 
 [See here](https://bcaro.github.io/wifilightV2-doc/fr_FR/changelog)
 
-# Préeentation
+# Presentation
 
 Warning :
 The permanent functioning of the plugin cannot be guaranteed: incompatibility or partial compatibility of the product, poorly managed protocol, poor quality connection for example. Do not use the plugin to control sensitive devices that can generate any kind of disorder. The plugin is provided for testing purposes and not for an installation requiring optimal operation in all circumstances.
@@ -314,15 +314,15 @@ Some lamps have disco and custom modes. A choice list is associated with each op
 
 For example, the action list command for customs has the internal name: CMD_LIST_CUSTOM. Its parameter corresponds to the construction of this list:
 
-   Scene01|Extinction; Scene02|Ignition
+    Scene01|Extinction; Scene02|Ignition
 
 The list will show Power off and Power on and the commands that will be executed will be those with internal name Scene01 or Scene02. If you add a new custom command, for example Scene03 whose name is Flash, you will need to modify the parameter as follows:
 
-   Scene01|Extinction; Scene02|Ignition; Scene03|Flash
+    Scene01|Extinction; Scene02|Ignition; Scene03|Flash
 
 If the Scene01 command is subsequently deleted, you will have to manually modify the CMD_LIST_CUSTOM parameter:
 
-   Scene02|Ignition; Scene03|Flash
+    Scene02|Ignition; Scene03|Flash
    
 
 
@@ -350,6 +350,7 @@ It is necessary to leave the Port field empty (not even a space).
 ### An alternative hub
 
 Several projects have resulted in hubs compatible with Mi.Light bulbs and remote controls in order to circumvent the limitations of the manufacturer's hubs and which become even more interesting today with the disappearance of iBox1 and 2. The plugin is compatible with the project of [Sidoh] (https://github.com/sidoh/esp8266_milight_hub) and offers 2 modes to drive the bulbs. The first mode is the historical mode of iBox1 and 2, which allows you to use your peripherals as usual, there will be 2 configuration parameters to add. The 2nd mode is completely new and has the advantages of very high reactivity and partial status feedback every minute. 
+
 ### Assembling the Milight-hub
 
 The hub is therefore DIY, so you have to mount it and program it with the information provided by [Sidoh](https://github.com/sidoh/esp8266_milight_hub). A tutorial is available  [on the forum ](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron).
