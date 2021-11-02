@@ -13,6 +13,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 1.82 - 2021-11-01 (Jeedom V4 beta)
 - Ajout PAC Tuya
 - traduction en anglais : doc et interface
+- traduction en espagnol : interface
 
 1.81 - 2021-10-26 (Jeedom V4)
 - Ajout des Meross en firmware 2.2.2 -> Meross V2. Compatible anciens firmware : passez à cette version
