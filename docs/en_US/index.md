@@ -208,7 +208,7 @@ Settings :
 - Enter the number of commands sent: allows you to repeat the command for a remote device in the event of poor transmission. (1 by default). Some bulbs or sockets do not manage this repetition because the plugin ensures by feedback of the state of the transmission. Some relative commands (increments) are not repeated.
 - Enter the sending delay in case of repetition (0 ms by default, 100 ms max)
 - Enter the intensity increment% when pressing the light intensity increment or decrement buttons
-- Configure the number of orders created, the creation of all orders can weigh down the interface
+- Configure the number of orders created, the creation of all orders (energy colors effects) can dramatically slow down the interface
 - Enter the group number for synchronization, see below 
 
 ## Adding commands
