@@ -462,33 +462,36 @@ For the % of capacity to be displayed in Analysis / Equipment, the logical name 
 2.clear logs
 3.save the device in the plugin: this has the effect of launching the daemon which tests every minute wifilightV2 devices
 
-Example of an OK log where the plugin found the device and therefore the correct IP address: 
+Example of an OK log where the plugin found the device therefore with the correct IP address:
 
-    [2021-03-05 07:13:54][DEBUG] : ** Zig plug - TuyaCustom2_V2 @192.168.1.106 - c:12 **
-    [2021-03-05 07:13:54][DEBUG] :     Key:0 Diff:0  Socket already created @192.168.1.106 ADD New device @192.168.1.106 channel:12key:0 @192.168.1.106 c:12 d:0
+    [2021-03-29 06:36:42] [DEBUG]: ** Zigbee plug - TuyaCustom2_V2 @ 192.168.1.106 - c: 12 **
+    [2021-03-29 06:36:42] [DEBUG]: Key not set New device: created @ 192.168.1.106 ADD New device @ 192.168.1.106 channel: 12 key: 1 @ 192.168.1.106 c: 12 d: 0
 
-	
-Example of a KO log where the plugin did not find the device so bad IP address :
+-Then the logs will be of the type:
+    [2021-03-29 06:31:21] [DEBUG]: ** Zigbee plug - TuyaCustom2_V2 @ 192.168.1.106 - c: 12 **
+    [2021-03-29 06:31:21] [DEBUG]: key: 1 @ 192.168.1.106 c: 12 d: 1
 
-    [2021-03-05 07:13:55][DEBUG] : ** Test vanne - TuyaCustom2_V2 @192.168.1.199 - c:11 **
-    [2021-03-05 07:13:55][DEBUG] :     Key not set New device: created  @192.168.1.199 close Connection impossible. Err=115 : Operation now in progress ADD New device @192.168.1.199 channel:11
+Example of a KO log where the plugin did not find the device so bad IP address
 
-Subsequently the messages will be of the type: 
+    [2021-03-05 07:13:55] [DEBUG]: ** Valve test - TuyaCustom2_V2 @ 192.168.1.199 - c: 11 **
+    [2021-03-05 07:13:55] [DEBUG]: Key not set New device: created @ 192.168.1.199 close Connection impossible. Err = 115: Operation now in progress ADD New device @ 192.168.1.199 channel: 11
 
-    [2021-03-05 07:15:04][DEBUG] : << Ping of: lidl @192.168.1.130  diff:24
-    [2021-03-05 07:15:04][DEBUG] :     Cmd to 192.168.1.130 - Try:192.168.1.130  6668 - Connect OK!
+Subsequently the messages will be of the type:
 
-There may then be disconnections or that the Smartlife app is also connected to the device, in this case the message in the logs is: 
+    [2021-03-05 07:15:04] [DEBUG]: << Ping of: lidl @ 192.168.1.130 diff: 24
+    [2021-03-05 07:15:04] [DEBUG]: Cmd to 192.168.1.130 - Try: 192.168.1.130 6668 - Connect OK!
 
-    [2020-12-10 07:36:40][DEBUG] : << Ping of: Vanne @192.168.1.122  diff:24
-    [2020-12-10 07:36:40][DEBUG] :     Cmd to 192.168.1.122 - Try:192.168.1.122  6668 - Connect OK!
-    [2020-12-10 07:36:40][DEBUG] :     Error on:192.168.1.122 is :Connection reset by peer n:104  diff:16
+There may then be disconnections or that the Smartlife app is also connected to the device, in this case the message in the logs is:
+
+    [2020-12-10 07:36:40] [DEBUG]: << Ping of: Vanne @ 192.168.1.122 diff: 24
+    [2020-12-10 07:36:40] [DEBUG]: Cmd to 192.168.1.122 - Try: 192.168.1.122 6668 - Connect OK!
+    [2020-12-10 07:36:40] [DEBUG]: Error on: 192.168.1.122 is: Connection reset by peer n: 104 diff: 16
 
 or there is no more ping in the logs for this ip address, this corresponds to a bad permanent connection between the device and Jeedom or if the device is no longer powered.
 
 The plugin will attempt to reconnect to the device every minute or every 3 minutes which will allow it to find the device if it is reconnected.
 
-At this point, the only point tested and OK is that the IP address is correct and that the device is reachable.
+At this point, the only point tested and OK is that the IP address is correct and that the device is reachable. 
 
 ## Check that the localKey is correct
 
@@ -556,9 +559,9 @@ If the cid or devId is not correct, the action commands will not be executed by 
     [2021-03-05 07:23:28] [DEBUG]: No other states to update
 
 The plugin sends the command to the daemon at the address 127.0.0.1 (Cmd to 127.0.0.1).
-Then the daemon sends the command to the device at the address 192.168.1.129 (Receive from Jeedom to Send cmd).
+Then the daemon sends the command to the device at the address 192.168.1.129 (Receive from Jeedom to Send cmd). If this message does not appear, then the plugin daemon is not running -> see the preliminary checks.
 Finally, the device returns its status (Receive from). The first message is not decoded and the second is. Note that this device does not return its devId.
-If the devId or cid is not correct, the device does not return its status or return an empty message or an error and does not execute the command.
+If the devId or cid is not correct, the device does not return its status or return an empty message or an error and does not execute the command. 
 
 
 ## A problem with an action command (the others work)
@@ -575,11 +578,11 @@ If the devId or cid is not correct, the device does not return its status or ret
 ## Find help on the forum
 
 In order to obtain fast and quality help, it is necessary to prepare your question well. Give the elements, the logs of each next step with your approach and the diagnosis:
-1.Screen shot of the device configuration
-2.perform the tests and preliminary configuration (see paragraph above)
-3.Check that the device is found and connected, give the logs if KO (see paragraph above)
-4.Check that the localKey is the correct one, give the logs if KO (see paragraph above)
-5.Check that the devId or the cid are correct, give the logs if KO (see paragraph above)
+1. Screen shot of the device configuration
+2. perform the tests and preliminary configuration (see paragraph above)
+3. Check that the device is found and connected, give the logs if KO (see paragraph above)
+4. Check that the localKey is the correct one, give the logs if KO (see paragraph above)
+5. Check that the devId or the cid are correct, give the logs if KO (see paragraph above)
 
 If one step is knocked out, you don't need to test the next ones. If you don't understand what you are doing, the forum helpers won't be able to find out for you. It is recalled at the very beginning of the plugin's doc that using Tuya devices locally requires knowing how to follow a procedure to the letter and having some computer knowledge.
 
