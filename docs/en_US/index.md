@@ -314,11 +314,11 @@ Some lamps have disco and custom modes. A choice list is associated with each op
 
 For example, the action list command for customs has the internal name: CMD_LIST_CUSTOM. Its parameter corresponds to the construction of this list:
 
-    Scene01|Extinction; Scene02|Ignition
+    Scene01|Extinction;Scene02|Ignition
 
 The list will show Power off and Power on and the commands that will be executed will be those with internal name Scene01 or Scene02. If you add a new custom command, for example Scene03 whose name is Flash, you will need to modify the parameter as follows:
 
-    Scene01|Extinction; Scene02|Ignition; Scene03|Flash
+    Scene01|Extinction;Scene02|Ignition;Scene03|Flash
 
 If the Scene01 command is subsequently deleted, you will have to manually modify the CMD_LIST_CUSTOM parameter:
 
