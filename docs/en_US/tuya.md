@@ -1,50 +1,50 @@
 [Back to main documentation ](./index.md)
 
-# Passerelles Zigbee Tuya
+# Zigbee Tuya gateways
 
-Pour utiliser une telle passerelle, choisir le type : "Gateway Hub Tuya Zigbee"
+To use such a gateway, choose the type: "Gateway Hub Tuya Zigbee"
 
-## Compatibilité
+## Compatibility
 
-Le dialogue entre le plugin et la passerelle se fait en Wifi. Ensuite, le dialogue entre les capteurs et actionneurs et la passerelle se fait via Zigbee. Ils doivent être compatibles Tuya et avoir été inclus d'abord dans l'application Tuya.
+The dialogue between the plugin and the gateway is done over Wifi. Then, the dialogue between the sensors and actuators and the gateway is done via Zigbee. They must be Tuya compatible and have been included in the Tuya app first.
 
-Le plugin peut récupérer l'état des périphériques dès que ceux-ci envoient une information de changement d'état ou quand le plugin les interroge au lancement du demon. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
+The plugin can retrieve the state of the devices as soon as they send a change of state information or when the plugin asks them when the daemon is launched. If a wall switch is used, Jeedom will know immediately.
 
-Les équipements suivants sont compatibles mais la liste n'est pas exclusive et sera complétée en fonction du retour des utilisateurs.
-- passerelles MoesHouse, BENEXMART 
-- passerelle SilverCrest Smart Home de Lidl
-- toutes les passerelles Tuya/Zigbee sont normalement compatibles, il n'y a pas encore eu de retour de passerelle non compatible.
-- serrure Vima (mais pas MiHome)
-	le plugin ne peut ouvrir/fermer car la serrure n'est pas prévue pour le faire, mais il peut connaitre la dernière clé utilisée
-- capteur de température et d'humidité TYZS2
-	fonctionnement complet
-- tête thermostatique Hessway
-	Ne gère pas la programmation des plages horaires des différents modes mais peut démarrer n'importe quel mode.
-	Utiliser l'option "mode étendu" de création des commandes pour créer toutes les commandes du thermostat.
-- le double switch variateur QS-Zigbee-D02-TRIAC-LN
-- capteur de présence Moes
-- capteur de présence BENEXMART
-- capteur de température BENEXMART
-- capteur de porte BENEXMART
-- plug Lonsoho avec conso
-- télécommande 3 boutons loratap
-- interrupteurs muraux simples/doubles/triples
-- télécommande, ampoules blanche et couleur, prises simple et triple Lidl
+The following equipment is compatible but the list is not exclusive and will be completed based on user feedback.
+- MoesHouse gateways, BENEXMART
+- Lidl SilverCrest Smart Home gateway
+- all Tuya / Zigbee gateways are normally compatible, there has not yet been a return from an incompatible gateway.
+- Vima lock (but not MiHome)
+the plugin cannot open / close because the lock is not intended to do so, but it can know the last key used
+- TYZS2 temperature and humidity sensor
+full operation
+- Hessway thermostatic head
+Does not manage the programming of the time slots of the different modes but can start any mode.
+Use the "extended mode" option for creating commands to create all the thermostat commands.
+- the double dimmer switch QS-Zigbee-D02-TRIAC-LN
+- Moes presence sensor
+- BENEXMART presence sensor
+- BENEXMART temperature sensor
+- BENEXMART door sensor
+- Lonsoho plug with consumption
+- loratap 3-button remote control
+- single / double / triple wall switches
+- remote control, white and colored bulbs, single and triple Lidl sockets
 
-Tous les autres périphériques, ou les périphériques similaires d'une autre marque ou d'un autre modèle, doivent être entièrement configurés en mode personnalisé. Cependant la configuration générée pour ces modèles peut aider pour un autre.
+All other devices, or similar devices of another brand or model, must be fully configured in custom mode. However the configuration generated for these models may help for another.
 
-Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
+However, the compatibility of these devices is not guaranteed because the protocol can be modified by the manufacturers. Do not modify the firmware of the device without having verified that it is compatible with the plugin.
 
-Il faut créer un équipement, avec la même adresse IP et la même clé, pour la passerelle et chaque périphérique connecté à la passerelle.
+A device must be created, with the same IP address and the same key, for the gateway and each device connected to the gateway.
 
-L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s même si le périphérique ne le renvoie pas. A utiliser pour les prises électriques qui ne renvoient pas régulièrement la consommation mais ne pas utiliser pour les périphériques à piles sous peine de les vider.
+The "Status query" option allows you to retrieve the status every 20s even if the peripheral does not send it back. To be used for electrical outlets which do not regularly return consumption but do not use for battery-powered devices, otherwise they will be emptied.
 
 
-## Clé et identifiant de la passerelle
+## Gateway key and identifier
 
-Il est indispensable de récupérer la clé locale (localKey) et le devId de la passerelle permettant au plugin de dialoguer avec les périphériques.
+It is essential to retrieve the local key (localKey) and the devId of the gateway allowing the plugin to communicate with the devices.
 
-Pour récupérer la clé et le devId, la procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localKey, sur Github en particulier ou sur le# Zigbee Tuya gateways
+To retrieve the key and the devId, the procedure is complex and requires several operations. Do a search on the web with the keyword: Tuya localKey, on Github in particular or on # Zigbee Tuya gateways
 
 To use such a gateway, choose the type: "Gateway Hub Tuya Zigbee"
 
