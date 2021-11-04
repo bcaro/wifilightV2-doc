@@ -537,7 +537,7 @@ y dar en el [foro](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewel
 Los productos Lidl Tuya / Zigbee nunca deben haberse emparejado con la aplicación Lidl. Solo necesitan emparejarse con la aplicación Tuya SmartLife.
 [Ver la documentación específica](./tuya#tocAnchor-1-1)
 
-# Nanohoja
+# NanoLeaf
 
 
 ## Llave
