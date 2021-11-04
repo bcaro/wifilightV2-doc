@@ -82,7 +82,7 @@ Es recomendable consultar sobre el foro para conocer la compatibilidad de un pro
 
 Nunca modifique el firmware de los productos, lo que puede hacerlos incompatibles con el complemento.
 
-Vaya al foro de Jeedom [aquí] (https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
+Vaya al foro de Jeedom [aquí](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
 
 
 ## Limitaciones
@@ -342,19 +342,19 @@ Debe dejar el campo Puerto vacío (ni siquiera un espacio).
 
 ### Un centro alternativo
 
-Varios proyectos han dado como resultado hubs compatibles con bombillas Mi.Light y mandos a distancia para sortear las limitaciones de los hubs del fabricante y que se vuelven aún más interesantes hoy con la desaparición de iBox1 y 2. El plugin es compatible con el proyecto de [Sidoh ] (https://github.com/sidoh/esp8266_milight_hub) y ofrece 2 modos para impulsar las bombillas. El primer modo es el modo histórico de iBox1 y 2, que le permite usar sus periféricos como de costumbre, habrá 2 parámetros de configuración para agregar. El segundo modo es completamente nuevo y tiene las ventajas de una reactividad muy alta y una retroalimentación de estado parcial cada minuto.
+Varios proyectos han dado como resultado hubs compatibles con bombillas Mi.Light y mandos a distancia para sortear las limitaciones de los hubs del fabricante y que se vuelven aún más interesantes hoy con la desaparición de iBox1 y 2. El plugin es compatible con el proyecto de [Sidoh ](https://github.com/sidoh/esp8266_milight_hub) y ofrece 2 modos para impulsar las bombillas. El primer modo es el modo histórico de iBox1 y 2, que le permite usar sus periféricos como de costumbre, habrá 2 parámetros de configuración para agregar. El segundo modo es completamente nuevo y tiene las ventajas de una reactividad muy alta y una retroalimentación de estado parcial cada minuto.
 
 ### Montaje del eje Milight
 
-Por lo tanto, el concentrador es de bricolaje, por lo que debe montarse y programarse con la información proporcionada por [Sidoh] (https://github.com/sidoh/esp8266_milight_hub). Hay un tutorial disponible [en el foro ](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron).
+Por lo tanto, el concentrador es de bricolaje, por lo que debe montarse y programarse con la información proporcionada por [Sidoh](https://github.com/sidoh/esp8266_milight_hub). Hay un tutorial disponible [en el foro ](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron).
 
 ### Modo histórico Mi.Light
 
-En este modo, todo lo que tiene que hacer es ingresar el parámetro Port con el puerto del modo UDP del Milight-hub. Consulte [Sidoh] (https://github.com/sidoh/esp8266_milight_hub) o [en el foro] (https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron) para obtener más detalles.
+En este modo, todo lo que tiene que hacer es ingresar el parámetro Port con el puerto del modo UDP del Milight-hub. Consulte [Sidoh](https://github.com/sidoh/esp8266_milight_hub) o [en el foro](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron) para obtener más detalles.
 
 ### Modo ESP
 
-En este modo, la elección de los periféricos se realiza por el tipo de mando a distancia y no por el tipo de lámpara como en el modo histórico. Después de haber ingresado los parámetros habituales, ingrese el identificador del grupo de controles remotos, vea [Sidoh] (https://github.com/sidoh/esp8266_milight_hub) o [en el foro](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron) para obtener más detalles. Este modo ofrece información de estado parcial que se actualiza cada minuto.
+En este modo, la elección de los periféricos se realiza por el tipo de mando a distancia y no por el tipo de lámpara como en el modo histórico. Después de haber ingresado los parámetros habituales, ingrese el identificador del grupo de controles remotos, vea [Sidoh](https://github.com/sidoh/esp8266_milight_hub) o [en el foro](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron) para obtener más detalles. Este modo ofrece información de estado parcial que se actualiza cada minuto.
 
 Para emparejar una lámpara con el Milight-Hub, encienda la lámpara y haga clic en Sync ON. Utilice Sync OFF para desvincular. Para que aparezca un control remoto, seleccione ON del canal para sincronizar tan pronto como se encienda la alimentación y haga clic en Sync ON.
 
@@ -383,7 +383,7 @@ Basta respetar determinadas condiciones:
 
 No coloque las llaves de inicio y final, así como los caracteres de nueva línea, el complemento los agregará automáticamente
 Inspírate en los controles preconfigurados para crear estos modos de escena adicionales.
-Para la sintaxis de Yeelight, consulte [aquí] (https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf)
+Para la sintaxis de Yeelight, consulte [aquí](https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf)
 
 ## Estado
 En V2, al activar el complemento y tan pronto como se inicia el demonio, así como cada minuto, el complemento busca las bombillas encendidas y conectadas a Jeedom.
@@ -423,7 +423,7 @@ Por ahora, solo los enchufes se pueden usar en V2, comuníquese con el autor si 
 
 Es esencial recuperar un token que permita que el complemento se comunique con los dispositivos Xiaomi Philips.
 
-El procedimiento es complejo y requiere varias manipulaciones. Haga una búsqueda en la web con la palabra clave: Token Xiaomi o en el foro [aquí] (https://community.jeedom.com/t/xiaomi-philips-et-wifilightv2/48064).
+El procedimiento es complejo y requiere varias manipulaciones. Haga una búsqueda en la web con la palabra clave: Token Xiaomi o en el foro [aquí](https://community.jeedom.com/t/xiaomi-philips-et-wifilightv2/48064).
 
 No se brindará ayuda para recuperar la ficha.
 
@@ -470,20 +470,20 @@ Los periféricos compatibles son:
 
 ## Configuración
 
-Para firmware desde 3.3.0 y por debajo de 3.5.0 es decir Modo DIY 1.0, Sonoff proporciona todos los elementos [aquí] (https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) para configurar los módulos en modo DIY.
+Para firmware desde 3.3.0 y por debajo de 3.5.0 es decir Modo DIY 1.0, Sonoff proporciona todos los elementos [aquí](https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) para configurar los módulos en modo DIY.
 
 Se requiere un teléfono móvil y una PC con Windows con tarjeta WiFi.
 El software a ejecutar para encontrar el Sonoff da en la columna de la izquierda el identificador necesario para configurar el dispositivo.
 
 El dispositivo Sonoff debe tener el firmware 3.3.0 o superior, la aplicación de Windows anterior le permite actualizar el firmware.
 
-Para el firmware de 3.5.0, el procedimiento es más simple y se detalla [aquí en el foro] (https://community.jeedom.com/t/sonoff-diy-et-wifilightv2-en-firmware-3-5-0/48060).
+Para el firmware de 3.5.0, el procedimiento es más simple y se detalla [aquí en el foro](https://community.jeedom.com/t/sonoff-diy-et-wifilightv2-en-firmware-3-5-0/48060).
 
 # Sonoff / Ewelink LAN
 
 ## APiKey DeviceID
 
-Siga las instrucciones [aquí] (https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) o [en el foro de Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) para recuperar esta información o hacer una búsqueda en la web y en el foro de jeedom con las palabras clave: Ewelink o Sonoff Apikey. El deviceid se debe colocar en el identificador del complemento. El Apikey se debe poner en el token. No ponga espacios ni comillas.
+Siga las instrucciones [aquí](https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) o [en el foro de Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) para recuperar esta información o hacer una búsqueda en la web y en el foro de jeedom con las palabras clave: Ewelink o Sonoff Apikey. El deviceid se debe colocar en el identificador del complemento. El Apikey se debe poner en el token. No ponga espacios ni comillas.
 
 El dispositivo debe tener el firmware 3.0.1 o superior, la aplicación Ewelink le permite actualizar el firmware.
 
@@ -523,7 +523,7 @@ Para dispositivos no presentes en esta lista (Sonoff Ifan por ejemplo) o si la c
 
     Receive after decode :{...............}
 
-y dar en el [foro] (https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) el contenido de las llaves para permitir la integración del módulo en el complemento.
+y dar en el [foro](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) el contenido de las llaves para permitir la integración del módulo en el complemento.
 
 # Zigbee / Tuya
 
@@ -531,7 +531,7 @@ y dar en el [foro] (https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewe
 
 # Tuya
 
-[Ver documentación específica] (./tuya#tocAnchor-1-10)
+[Ver documentación específica](./tuya#tocAnchor-1-10)
 
 # Lidl
 Los productos Lidl Tuya / Zigbee nunca deben haberse emparejado con la aplicación Lidl. Solo necesitan emparejarse con la aplicación Tuya SmartLife.
@@ -551,4 +551,4 @@ Crea un efecto con la aplicación NanoLeaf y dale un nombre. Cree una acción / 
 
 # Ayudar ?
 
-Vaya al foro de Jeedom [aquí] (https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439) 
+Vaya al foro de Jeedom [aquí](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439) 

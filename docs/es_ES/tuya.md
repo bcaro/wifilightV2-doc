@@ -1,4 +1,4 @@
-[Regresar a la documentación general] (./index.md)
+[Regresar a la documentación general](./index.md)
 
 # Pasarelas Zigbee Tuya
 
@@ -44,7 +44,7 @@ La opción "Consulta de estado" le permite recuperar el estado cada 20 segundos 
 
 Es esencial recuperar la clave local (localKey) y el devId de la puerta de enlace, lo que permite que el complemento se comunique con los dispositivos.
 
-Para recuperar la clave y el devId, el procedimiento es complejo y requiere varias operaciones. Haga una búsqueda en la web con la palabra clave: Tuya localKey, en Github en particular o en el [foro de Jeedom] (https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047).
+Para recuperar la clave y el devId, el procedimiento es complejo y requiere varias operaciones. Haga una búsqueda en la web con la palabra clave: Tuya localKey, en Github en particular o en el [foro de Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047).
 
 Si la puerta de enlace se desinstala y luego se vuelve a instalar en la aplicación móvil, se cambiará su clave. Deberá encontrar la clave con el procedimiento anterior.
 
@@ -148,7 +148,7 @@ Los sensores de presencia y apertura no son compatibles porque no se comunican l
 
 Es esencial recuperar una clave local (localKey) y un identificador devId que permita que el complemento se comunique con los dispositivos.
 
-El procedimiento es complejo y requiere varias manipulaciones. Haga una búsqueda en la web con la palabra clave: Tuya localKey, en Github en particular o en el [foro de Jeedom] (https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047).
+El procedimiento es complejo y requiere varias manipulaciones. Haga una búsqueda en la web con la palabra clave: Tuya localKey, en Github en particular o en el [foro de Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047).
 
 El dispositivo no debe estar conectado a una aplicación en un teléfono móvil, de lo contrario no responderá a los comandos de Jeedom. Por lo tanto, debe cerrar cualquier aplicación posiblemente conectada al dispositivo.
 
@@ -358,7 +358,7 @@ Para configurar manualmente:
 
 Esta parte es compleja y requiere una lectura muy cuidadosa.
 
-La codificación de colores en Tuya tiene varios formatos que son diferentes a los utilizados por Jeedom. Jeedom usa el formato RGB (Reg Green Blue) mientras que Tuya usa diferentes formatos HSV (Hue Saturation Value) o combina HSV y RGB. El RGB codifica cada color de 0 a 255 o en hexadecimal de 0 a FF. Por lo tanto, el rojo se codifica como FF0000, azul: 0000FF, blanco: FFFFFF y negro: 000000. Los valores de HSV son los siguientes: Matiz de 0 a 360 ° (color), S de 0 a 100% (Saturación) y V de 0 a 100% (intensidad). Consulte [aquí] (https://www.rapidtables.com/convert/color/) para ir más allá.
+La codificación de colores en Tuya tiene varios formatos que son diferentes a los utilizados por Jeedom. Jeedom usa el formato RGB (Reg Green Blue) mientras que Tuya usa diferentes formatos HSV (Hue Saturation Value) o combina HSV y RGB. El RGB codifica cada color de 0 a 255 o en hexadecimal de 0 a FF. Por lo tanto, el rojo se codifica como FF0000, azul: 0000FF, blanco: FFFFFF y negro: 000000. Los valores de HSV son los siguientes: Matiz de 0 a 360 ° (color), S de 0 a 100% (Saturación) y V de 0 a 100% (intensidad). Consulte [aquí](https://www.rapidtables.com/convert/color/) para ir más allá.
 
 Para que el plugin funcione correctamente para los colores, es necesario identificar los formatos utilizados por Tuya durante un cambio de color con la aplicación Smartlife y observando en este momento en los registros el número de dps que se ha modificado.
 
