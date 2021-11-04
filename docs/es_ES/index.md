@@ -9,29 +9,27 @@ No se puede garantizar el funcionamiento permanente del plugin: incompatibilidad
 
 Este complemento le permite administrar muchas tiras de LED, bombillas LED, enchufes eléctricos, termostatos, sensor de temperatura, sensor de puerta, etc. controlado por wifi directamente o mediante una caja wifi que se vende con el producto. El principio del complemento es nunca usar la nube y, por lo tanto, una conexión a Internet entre el complemento y el dispositivo a través de un servidor remoto, por lo tanto, todas las acciones son locales a la red doméstica.
 
-<img src = "../ images / wifilightV2_screenshot01.png" alt = "image" style = "height: 100px;" />
-<img src = "../ images / wifilightV2_screenshot02.png" alt = "image" style = "height: 100px;" />
-<img src = "../ images / wifilightV2_screenshot03.png" alt = "image" style = "height: 100px;" />
-<img src = "../ images / wifilightV2_screenshot04.png" alt = "image" style = "height: 100px;" />
-<img src = "../ images / wifilightV2_screenshot05.png" alt = "image" style = "height: 100px;" />
-<img src = "../ images / wifilightV2_screenshot06.png" alt = "image" style = "height: 100px;" />
-<img src = "../ images / wifilightV2_screenshot07.png" alt = "image" style = "height: 100px;" />
-<img src = "../ images / wifilightV2_screenshot08.png" alt = "image" style = "height: 100px;" />
-<img src = "../ images / wifilightV2_screenshot09.png" alt = "image" style = "altura: 100px;" />
-<img src = "../ images / wifilightV2_screenshot10.png" alt = "image" style = "altura: 100px;" />
-<img src = "../ images / wifilightV2_screenshot11.png" alt = "image" style = "height: 100px;" />
-<img src = "../ images / wifilightV2_screenshot12.png" alt = "image" style = "height: 100px;" />
-<img src = "../ images / wifilightV2_screenshot13.png" alt = "image" style = "height: 100px;" />
-<img src = "../ images / wifilightV2_screenshot14.png" alt = "image" style = "height: 100px;" />
-<img src = "../ images / wifilightV2_screenshot15.png" alt = "image" style = "height: 100px;" />
-<img src = "../ images / wifilightV2_screenshot16.png" alt = "image" style = "height: 100px;" />
-<img src = "../ images / wifilightV2_screenshot17.png" alt = "image" style = "altura: 100px;" />
-<img src = "../ images / wifilightV2_screenshot18.png" alt = "image" style = "height: 100px;" />
-<img src = "../ images / wifilightV2_screenshot19.png" alt = "image" style = "height: 100px;" />
-<img src = "../ images / wifilightV2_screenshot20.png" alt = "image" style = "height: 100px;" />
-<img src = "../ images / wifilightV2_screenshot21.png" alt = "image" style = "height: 100px;" />
-
-
+<img src="../images/wifilightV2_screenshot01.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot02.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot03.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot04.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot05.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot06.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot07.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot08.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot09.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot10.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot11.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot12.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot13.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot14.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot15.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot16.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot17.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot18.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot19.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot20.png" alt="image" style="height:100px;"/>
+<img src="../images/wifilightV2_screenshot21.png" alt="image" style="height:100px;"/>
 # Compatibilidades y limitaciones
 
 ## Productos compatibles
