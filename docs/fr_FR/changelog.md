@@ -13,8 +13,8 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 1.81b - 2021-11-03
 - Ajout PAC Tuya
 - traduction en anglais : doc et interface
-- traduction en espagnol : interface
-- correstion disparition de la localKey pour les périphériques Tuya
+- traduction en espagnol : doc et interface
+- correction disparition de la localKey pour les périphériques Tuya
 
 1.81 - 2021-10-26 (Jeedom V4)
 - Ajout des Meross en firmware 2.2.2 -> Meross V2. Compatible anciens firmware : passez à cette version
@@ -28,7 +28,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Par défaut l'état ON/OFF n'est plus inversé lors de la création d'un périphérique
 - Refonte de la création des listes de commandes (couleurs, ambiance, disco, custom)
 - Corrections mineures de bogues
-- Amélioration interface et aides pour les devid, key, mac (mais les tooltips n'apparaissent pas)
+- Amélioration interface et aides pour les devid, key, mac, localkey, token, etc. (mais les tooltips n'apparaissent pas) : le nom du champ dans l'interface correspond à la doc et aux usages
 - Compatibilité avec la présentation tableau des périphériques sous Jeedom 4.2
 
 
