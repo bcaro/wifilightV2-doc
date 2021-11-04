@@ -437,26 +437,26 @@ Le permite cambiar la lámpara al modo de color y especificar el color. El compl
 
 ## Dispositivos a batería
 
-Para que el% de capacidad se muestre en Análisis/Equipo, el nombre lógico del comando de información correspondiente debe contener battery y get.
+Para que el % de capacidad se muestre en Análisis/Equipo, el nombre lógico del comando de información correspondiente debe contener battery y get.
 
 
 # Depuración
 
 ## Prueba preliminar y configuración
 
-1.El dispositivo que se va a probar se ha incluido en la aplicación Smartlife,
+1. El dispositivo que se va a probar se ha incluido en la aplicación Smartlife,
 2. en el caso de un dispositivo Tuya/Zigbee, su puerta de enlace se ha incluido en la aplicación Smartlife y el dispositivo también debe haber sido incluido
-3.localKey y devId o cid han sido recuperados (la depuración puede permitir que se encuentren cid y devId)
-4.El dispositivo y su posible puerta de enlace no se han eliminado de la aplicación Smartlife y la aplicación Smartlife no se ha eliminado
-5.La aplicación Smartlife se detiene en todos los terminales que pueden ejecutarla
+3. localKey y devId o cid han sido recuperados (la depuración puede permitir que se encuentren cid y devId)
+4. El dispositivo y su posible puerta de enlace no se han eliminado de la aplicación Smartlife y la aplicación Smartlife no se ha eliminado
+5. La aplicación Smartlife se detiene en todos los terminales que pueden ejecutarla
 6. la dirección IP del dispositivo (puerta de enlace Tuya o Tuya/Zigbee) se fija y se conoce
-7.configure los registros de wifilightV2 en modo de depuración, reinicie el demonio
+7. configure los registros de wifilightV2 en modo de depuración, reinicie el demonio
 
 ## Verifique que el dispositivo esté encontrado y conectado
 
-1.desactivar en wifilightV2 todos los dispositivos excepto el que se va a probar (mantener solo un canal en el caso de un dispositivo multicanal) (en el caso de un dispositivo conectado a una puerta de enlace, la puerta de enlace debe permanecer habilitada), el objetivo no es mezclar todos los dispositivos
-2.registros claros
-3.guardar el dispositivo en el complemento: esto tiene el efecto de iniciar el demonio que prueba cada minuto los dispositivos wifilightV2
+1. desactivar en wifilightV2 todos los dispositivos excepto el que se va a probar (mantener solo un canal en el caso de un dispositivo multicanal) (en el caso de un dispositivo conectado a una puerta de enlace, la puerta de enlace debe permanecer habilitada), el objetivo no es mezclar todos los dispositivos
+2. registros claros
+3. guardar el dispositivo en el complemento: esto tiene el efecto de iniciar el demonio que prueba cada minuto los dispositivos wifilightV2
 
 Ejemplo de un registro correcto en el que el complemento encontró el dispositivo, por lo tanto, con la dirección IP correcta:
 
@@ -496,7 +496,7 @@ En el caso de una puerta de enlace Tuya / Zigbee, las pruebas deben realizarse e
 
 1. Complete la clave local sin espacios y sin comillas en el campo Token del dispositivo (y de la puerta de enlace si existe). Verifique varias veces: la clave local debe ser la misma para todos los dispositivos con la misma dirección IP (dispositivos Tuya / Zigbee conectados a una puerta de enlace o dispositivos multicanal). El complemento usa una de estas claves para comunicarse con el dispositivo, así que verifique que sean correctas e idénticas.
 2. desactivar en wifilightV2 todos los periféricos excepto el que se va a probar (mantener solo un canal en caso de periférico multicanal), el objetivo no es mezclar todos los periféricos.
-3.registros claros
+3. registros claros
 4. Utilice los botones del dispositivo físico o la aplicación Smartlife para cambiar el estado del dispositivo.
 
 Notas:
