@@ -10,11 +10,11 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.81b - 2021-11-03
+1.81b - 2021-11-03 (Jeedom V4)
 - Ajout PAC Tuya
 - traduction en anglais : doc et interface
 - traduction en espagnol : doc et interface
-- correction disparition de la localKey pour les périphériques Tuya
+- correction disparition de la valeur de la localKey pour certains périphériques Tuya
 
 1.81 - 2021-10-26 (Jeedom V4)
 - Ajout des Meross en firmware 2.2.2 -> Meross V2. Compatible anciens firmware : passez à cette version
