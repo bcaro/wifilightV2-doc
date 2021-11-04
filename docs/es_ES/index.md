@@ -143,7 +143,7 @@ Meross:
 - control de persiana enrollable: funcionamiento parcial
 - control de la puerta del garaje: funcionamiento parcial
 
-Aurora de nanohojas:
+Nanoleaf Aurora:
 - Ritmo no implantado
 
 Pasarela Tuya Wifi y dispositivos Zigbee:
@@ -237,13 +237,13 @@ Por ejemplo, si se acciona un interruptor, Jeedom lo sabrá de inmediato.
 
 Para periféricos:
  - LW12 / Lagute
- - Ovni mágico / Hogar
+ - Magic UFO / Hogar
  - Arilux
  - Wifi 3x0 (parcialmente)
  - TP-Link
  - Xiaomi Philips
  - Extel Meli
- - Aurora de nanohojas
+ - Nanoleaf Aurora
  - Meross
  - Mi.Light conectado al puente Milight-hub
  - Wiz
