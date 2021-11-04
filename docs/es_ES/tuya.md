@@ -524,13 +524,13 @@ En el caso de una puerta de enlace Tuya / Zigbee, las pruebas deben realizarse e
 1. el cid (para dispositivos Tuya / Zigbee) o el devId para otros se encontraron al mismo tiempo que la clave local. Es específico para cada dispositivo y nunca se modifica, esto le permite identificar sus dispositivos.
 2. Localice los mensajes "Mess" provenientes del periférico.
 
-** Para un dispositivo que no es Zigbee que devuelve su devId, encontraremos: **
+**Para un dispositivo que no es Zigbee que devuelve su devId, encontraremos:**
 
     [2020-12-10 08:14:34][DEBUG] :     Mess :{"dps":{"1":"pir"},"cid":"bc33xxxxxxxxxxxx45","t":1607584474} - Read Json OK
 
 devId se indica en texto plano, basta con copiarlo en el identificador de la configuración del dispositivo. Advertencia: no todos los dispositivos devuelven su devId.
 
-** Para un dispositivo Zigbee que devuelve su cid, encontraremos: **
+**Para un dispositivo Zigbee que devuelve su cid, encontraremos:**
 
     [2020-12-10 08:14:34] [DEBUG]: Mess: {"dps": {"1": "pir"}, "cid": "bc33xxxxxxxxxxxx45", "t": 1607584474} - Leer Json OK
 
@@ -540,7 +540,7 @@ Luego puede verificar la concordancia con el procedimiento para encontrar la cla
 
 Si el cid o devId no es correcto, el dispositivo no ejecutará los comandos de acción.
 
-** Ejemplo de envío de un comando correcto a un dispositivo que no es Zigbee Tuya: **
+**Ejemplo de envío de un comando correcto a un dispositivo que no es Zigbee Tuya:**
 
     [2021-03-05 07:23:28][DEBUG] :     Cmd to 127.0.0.1: {"devId":"588e8xxxxxxxx21a","dps":{"1":true},"t":"1614925408"} - canal:12 - Try:127.0.0.1  6900 - Connect OK!
     [2021-03-05 07:23:28][DEBUG] :     Receive from Jeedom to Send cmd to device @192.168.1.129 canal:12
