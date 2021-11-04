@@ -1,6 +1,6 @@
 # Changelog
 
-[ver aquí] (https://bcaro.github.io/wifilightV2-doc/fr_FR/changelog)
+[ver aquí](https://bcaro.github.io/wifilightV2-doc/fr_FR/changelog)
 
 # Presentación
 
@@ -317,7 +317,7 @@ La lista mostrará Power off y Power on y los comandos que se ejecutarán serán
 
 Si el comando Scene01 se elimina posteriormente, deberá modificar manualmente el parámetro CMD_LIST_CUSTOM:
 
-   Scene02|Ignición;Scene03|Flash
+    Scene02|Ignición;Scene03|Flash
 
 # Mi.Light
 
