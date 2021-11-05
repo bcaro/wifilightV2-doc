@@ -5,9 +5,9 @@
 # Presentación
 
 Atención :
-No se puede garantizar el funcionamiento permanente del plugin: incompatibilidad o compatibilidad parcial del producto, protocolo mal gestionado, mala calidad de conexión, por ejemplo. No utilices el plugin para controlar dispositivos sensibles que puedan generar algún tipo de desorden. El complemento se proporciona con fines de prueba y no para una instalación que requiera un funcionamiento óptimo en todas las circunstancias.
+No se puede garantizar el funcionamiento permanente del plugin: incompatibilidad o compatibilidad parcial del producto, protocolo mal gestionado, mala calidad de conexión, por ejemplo. No utilices el plugin para controlar dispositivos sensibles que puedan generar algún tipo de desorden. El plugin se proporciona con fines de prueba y no para una instalación que requiera un funcionamiento óptimo en todas las circunstancias.
 
-Este complemento le permite administrar muchas tiras de LED, bombillas LED, enchufes eléctricos, termostatos, sensor de temperatura, sensor de puerta, etc. controlado por wifi directamente o mediante una caja wifi que se vende con el producto. El principio del complemento es nunca usar la nube y, por lo tanto, una conexión a Internet entre el complemento y el dispositivo a través de un servidor remoto, por lo tanto, todas las acciones son locales a la red doméstica.
+Este plugin le permite administrar muchas tiras de LED, bombillas LED, enchufes eléctricos, termostatos, sensor de temperatura, sensor de puerta, etc. controlado por wifi directamente o mediante una caja wifi que se vende con el producto. El principio del plugin es nunca usar la nube y, por lo tanto, una conexión a Internet entre el plugin y el dispositivo a través de un servidor remoto, por lo tanto, todas las acciones son locales a la red doméstica.
 
 <img src="../images/wifilightV2_screenshot01.png" alt="image" style="height:100px;"/>
 <img src="../images/wifilightV2_screenshot02.png" alt="image" style="height:100px;"/>
@@ -34,7 +34,7 @@ Este complemento le permite administrar muchas tiras de LED, bombillas LED, ench
 
 ## Productos compatibles
  
-Hay muchos productos que son compatibles con el complemento pero de marcas muy diferentes o sin marca.
+Hay muchos productos que son compatibles con el plugin pero de marcas muy diferentes o sin marca.
  
 Productos compatibles:
 - Bombillas Mi.Light/EasyBulb/LimitlessLED conectadas a los controladores a continuación: sin retroalimentación de estado !
@@ -70,7 +70,7 @@ Productos que pueden ser compatibles y no garantizados:
 - Productos Wiz !!
 
 
-Para estos últimos controladores o periféricos wifi, el protocolo de intercambio no proviene directamente del fabricante, que por lo tanto puede modificarlo en cualquier momento. Existen varias versiones en el mercado que no son todas compatibles con el complemento. Es posible que algunos productos en particular no sean compatibles.
+Para estos últimos controladores o periféricos wifi, el protocolo de intercambio no proviene directamente del fabricante, que por lo tanto puede modificarlo en cualquier momento. Existen varias versiones en el mercado que no son todas compatibles con el plugin. Es posible que algunos productos en particular no sean compatibles.
 
 Atención :
 - ! : fácil integración para una persona que lee la documentación antes de actuar
@@ -80,7 +80,7 @@ Atención :
 
 Es recomendable consultar sobre el foro para conocer la compatibilidad de un producto que no se distribuye ampliamente.
 
-Nunca modifique el firmware de los productos, lo que puede hacerlos incompatibles con el complemento.
+Nunca modifique el firmware de los productos, lo que puede hacerlos incompatibles con el plugin.
 
 Vaya al foro de Jeedom [aquí](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
 
@@ -93,12 +93,12 @@ Mi.Light/EasyBulb/LimitlessLED:
 - Controladores Led Milight (tipo YL etc.) sin puente.
 
 LW12/Lagute:
-- La programación de modos personalizados no es posible, debe utilizar la aplicación suministrada con el controlador (Magic Home). Por otro lado, los modos personalizados se pueden activar con el complemento.
-- Hay varias versiones de LW12 que pueden no ser compatibles con el complemento.
+- La programación de modos personalizados no es posible, debe utilizar la aplicación suministrada con el controlador (Magic Home). Por otro lado, los modos personalizados se pueden activar con el plugin.
+- Hay varias versiones de LW12 que pueden no ser compatibles con el plugin.
 
 Magic UFO, MagicHome y Arilux AL-C01/02/03/04/06/10:
-- No se gestiona la programación de modos personalizados, modo radio y temporizadores. Debe utilizar la aplicación suministrada con el controlador (Magic Home). Por otro lado, los modos personalizados se pueden activar con el complemento.
-- Hay diferentes modelos que pueden no ser compatibles con el complemento.
+- No se gestiona la programación de modos personalizados, modo radio y temporizadores. Debe utilizar la aplicación suministrada con el controlador (Magic Home). Por otro lado, los modos personalizados se pueden activar con el plugin.
+- Hay diferentes modelos que pueden no ser compatibles con el plugin.
 - Algunos dispositivos compatibles con Magic Home son incompatibles porque solo funcionan con la nube
 
 Xiaomi Yeelight:
@@ -108,11 +108,11 @@ Xiaomi Yeelight:
 
 Wifi 320/370:
 - La retroalimentación del estado del modo de escena no se gestiona, solo se gestiona ON / OFF.
-- Hay diferentes modelos que pueden no ser compatibles con el complemento.
+- Hay diferentes modelos que pueden no ser compatibles con el plugin.
 
 H810:
 - Los juegos de escenario no son compatibles.
-- Hay diferentes modelos que pueden no ser compatibles con el complemento.
+- Hay diferentes modelos que pueden no ser compatibles con el plugin.
 
 TP-Link:
 - Los temporizadores no se gestionan.
@@ -161,7 +161,7 @@ myStrom:
 
 Descarga la aplicación móvil del fabricante y sigue las instrucciones para controlar el dispositivo con el móvil. Para cada dispositivo wifilightV2, se proporciona ayuda detallada en la página de configuración.
 
-Mientras el dispositivo no esté controlado con la aplicación móvil, el complemento no podrá funcionar.
+Mientras el dispositivo no esté controlado con la aplicación móvil, el plugin no podrá funcionar.
 
 Consulte la ayuda y los foros del fabricante del dispositivo. 
 
@@ -174,11 +174,11 @@ Consulte los foros de su caja para aprender a configurar su DHCP.
 
 Después de este cambio, verifique que la aplicación móvil aún controle el dispositivo.
 
-Luego puede ir a la configuración del complemento wifilightV2.
+Luego puede ir a la configuración del plugin wifilightV2.
 
-## Configuración del complemento
+## Configuración del plugin
 
-wifilightV2 no crea ningún dispositivo automáticamente (a excepción de los dispositivos Tuya / Zigbee en modo de inclusión), deben crearse en el complemento antes de configurarlos.
+wifilightV2 no crea ningún dispositivo automáticamente (a excepción de los dispositivos Tuya / Zigbee en modo de inclusión), deben crearse en el plugin antes de configurarlos.
 
 Ayuda :
 - Utilice el icono del signo de interrogación para obtener ayuda sobre cada elemento de configuración.
@@ -192,7 +192,7 @@ Ajustes :
 - Activar y hacer visible (predeterminado)
 - Ingrese la dirección IP del módulo de la toma o bombilla WiFi (consulte las preguntas frecuentes para obtener más explicaciones)
 - Para la caja milight-hub, se debe configurar un identificador y un puerto
-- Puede cargar imágenes en la carpeta / data del complemento utilizando el complemento Jeexplorer. Estas imágenes pueden reemplazar las imágenes asociadas con los dispositivos en la página de visualización de todos los dispositivos wifilightV2. Útil para dispositivos personalizados que no están asociados con una imagen.
+- Puede cargar imágenes en la carpeta / data del plugin utilizando el plugin Jeexplorer. Estas imágenes pueden reemplazar las imágenes asociadas con los dispositivos en la página de visualización de todos los dispositivos wifilightV2. Útil para dispositivos personalizados que no están asociados con una imagen.
 - Para algunos periféricos, se le pide que ingrese el canal utilizado, cree un dispositivo wifilightV2 por canal
 - Para algunos dispositivos, se le pide que ingrese un token o (y) un identificador, consulte la ayuda en la página de configuración del dispositivo
 - Para periféricos Tuya, es posible forzar la interrogación del estado cada minuto, útil para enchufes con consumo.
@@ -249,7 +249,7 @@ Para periféricos:
  - Wiz
  - myStrom
 
-El complemento sondea periódicamente el dispositivo para conocer su estado. El retraso para que Jeedom conozca el estado puede exceder 1 minuto.
+El plugin sondea periódicamente el dispositivo para conocer su estado. El retraso para que Jeedom conozca el estado puede exceder 1 minuto.
 
 Para otros periféricos, no hay retroalimentación de estado.
 
@@ -294,7 +294,7 @@ Todo lo que tiene que hacer es poner un número distinto de cero en el campo de 
 # Kelvin de lámparas
 
 Hay 2 cursores para la temperatura en Kelvin. Kelvin expresado en% de 0 (caliente) a 100 (frío) y KelvinVal expresado en Kelvin de mínimo a máximo.
-Los valores predeterminados corresponden principalmente a los datos del fabricante. Para algunas lámparas que no dan los valores mínimo y máximo, el complemento usa 2700 a 6500 por defecto.
+Los valores predeterminados corresponden principalmente a los datos del fabricante. Para algunas lámparas que no dan los valores mínimo y máximo, el plugin usa 2700 a 6500 por defecto.
 Para algunas lámparas, los valores mínimo y máximo pueden ser incorrectos y los valores extremos no son comprendidos por la lámpara. Estos valores deben ajustarse para que estén dentro de los límites aceptados por la lámpara.
 Puede notificar al desarrollador que cambie la configuración predeterminada para evitar estos ajustes.
 
@@ -321,13 +321,13 @@ Si el comando Scene01 se elimina posteriormente, deberá modificar manualmente e
 
 # Mi.Light
 
-Tienes que crear un dispositivo por canal en el complemento.
+Tienes que crear un dispositivo por canal en el plugin.
 
 ## Ibox 1/2 y Mi.Light Box
 
 ### Fin de venta
 
-Mi.Light ya no transmite el ibox1 y 2 que los reemplazó con el Miboxer que está puramente basado en la nube y no es compatible con el complemento.
+Mi.Light ya no transmite el ibox1 y 2 que los reemplazó con el Miboxer que está puramente basado en la nube y no es compatible con el plugin.
 
 ### Configuración
 
@@ -367,13 +367,13 @@ Es fundamental activar el control de la red local a través de la aplicación Xi
 
 ## Elección de la versión
 
-El complemento permite elegir entre 2 versiones:
+El plugin permite elegir entre 2 versiones:
 
-- V1: la conexión entre el complemento y el dispositivo no es permanente, el tiempo de reacción es un poco más largo y la retroalimentación del estado no es inmediata.
-- V2: la conexión es permanente, por lo que el complemento responde mejor y la información de estado es inmediata. Por otro lado, esto conlleva una mayor sensibilidad a las malas conexiones wifi, provocando desconexiones con la imposibilidad durante unos minutos de acceder al dispositivo.
+- V1: la conexión entre el plugin y el dispositivo no es permanente, el tiempo de reacción es un poco más largo y la retroalimentación del estado no es inmediata.
+- V2: la conexión es permanente, por lo que el plugin responde mejor y la información de estado es inmediata. Por otro lado, esto conlleva una mayor sensibilidad a las malas conexiones wifi, provocando desconexiones con la imposibilidad durante unos minutos de acceder al dispositivo.
 
 ## Modo escena
-Se pueden configurar los modos de escena. Varios modos de escena están preprogramados en el complemento, pero es posible agregar otros modos de escena.
+Se pueden configurar los modos de escena. Varios modos de escena están preprogramados en el plugin, pero es posible agregar otros modos de escena.
 
 Basta respetar determinadas condiciones:
 - Agregue un comando predeterminado del tipo de acción wifilightV2
@@ -381,16 +381,16 @@ Basta respetar determinadas condiciones:
 - En los parámetros, ponga el comando de escena Yeelight, por ejemplo:
     "id": 1, "método": "set_scene", "params": ["cf", 0,0, "500,1,255,100,1000,1,16776960,70"]
 
-No coloque las llaves de inicio y final, así como los caracteres de nueva línea, el complemento los agregará automáticamente
+No coloque las llaves de inicio y final, así como los caracteres de nueva línea, el plugin los agregará automáticamente
 Inspírate en los controles preconfigurados para crear estos modos de escena adicionales.
 Para la sintaxis de Yeelight, consulte [aquí](https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf)
 
 ## Estado
-En V2, al activar el complemento y tan pronto como se inicia el demonio, así como cada minuto, el complemento busca las bombillas encendidas y conectadas a Jeedom.
+En V2, al activar el plugin y tan pronto como se inicia el demonio, así como cada minuto, el plugin busca las bombillas encendidas y conectadas a Jeedom.
 
-Tan pronto como se encuentra la bombilla, el estado de la bombilla se devuelve al complemento inmediatamente.
+Tan pronto como se encuentra la bombilla, el estado de la bombilla se devuelve al plugin inmediatamente.
 
-Tenga en cuenta que el complemento puede tardar hasta 1 minuto en encontrar una bombilla y 4 minutos en encontrar que un dispositivo está desconectado.
+Tenga en cuenta que el plugin puede tardar hasta 1 minuto en encontrar una bombilla y 4 minutos en encontrar que un dispositivo está desconectado.
 
 En V1, el estado puede tardar hasta un minuto en volver. 
 
@@ -403,11 +403,11 @@ Los periféricos compatibles son:
 ## Configuración
 
 Nota: algunos dispositivos de la versión 2 no necesitan recuperar un token: deje el campo en blanco en la configuración del dispositivo.
-Desde mediados de 2019, se lanzaron nuevos dispositivos en el protocolo de la versión 2. El protocolo V2 requiere que recupere un token que permita que el complemento se comunique con los dispositivos TP-Link.
+Desde mediados de 2019, se lanzaron nuevos dispositivos en el protocolo de la versión 2. El protocolo V2 requiere que recupere un token que permita que el plugin se comunique con los dispositivos TP-Link.
 
-Para obtener este token, debe capturar los fotogramas intercambiados entre la aplicación Kasa en el teléfono y el dispositivo para agregar el complemento. En Android debes usar Packet Capture.
+Para obtener este token, debe capturar los fotogramas intercambiados entre la aplicación Kasa en el teléfono y el dispositivo para agregar el plugin. En Android debes usar Packet Capture.
 
-El complemento luego le permite extraer el token. Debe copiar el marco recuperado en el campo Parámetros del comando getKey y luego ejecutar este comando. Si el marco es decodificable, el token se mostrará en los registros y en el centro de mensajes (nota: borre el mensaje cada vez que lo lea).
+El plugin luego le permite extraer el token. Debe copiar el marco recuperado en el campo Parámetros del comando getKey y luego ejecutar este comando. Si el marco es decodificable, el token se mostrará en los registros y en el centro de mensajes (nota: borre el mensaje cada vez que lo lea).
 
 El marco para poner en "Parámetros" debe tener la siguiente apariencia (el ... reemplaza otros valores):
 
@@ -421,7 +421,7 @@ Por ahora, solo los enchufes se pueden usar en V2, comuníquese con el autor si 
 
 # Xiaomi Philips
 
-Es esencial recuperar un token que permita que el complemento se comunique con los dispositivos Xiaomi Philips.
+Es esencial recuperar un token que permita que el plugin se comunique con los dispositivos Xiaomi Philips.
 
 El procedimiento es complejo y requiere varias manipulaciones. Haga una búsqueda en la web con la palabra clave: Token Xiaomi o en el foro [aquí](https://community.jeedom.com/t/xiaomi-philips-et-wifilightv2/48064).
 
@@ -439,7 +439,7 @@ Los periféricos compatibles son:
 - MSG100 (garaje): se ofrece en versión beta sin probar e incompleta
 - los sensores de temperatura conectados al concentrador podrían ser compatibles (no probados)
 
-Debe crear un dispositivo en el complemento para cada salida controlada y asignarle un canal de 1 an correspondiente a las n salidas. El canal 0 se utiliza para operar todas las salidas al mismo tiempo.
+Debe crear un dispositivo en el plugin para cada salida controlada y asignarle un canal de 1 an correspondiente a las n salidas. El canal 0 se utiliza para operar todas las salidas al mismo tiempo.
 Advertencia: algunos sockets antiguos tienen un comportamiento diferente, use la versión V1 en el subtipo.
 
 ## tipo "Meross" para firmware <2.2.2
@@ -451,7 +451,7 @@ Para obtener una clave, debe ingresar el nombre de usuario y la contraseña de l
 Advertencia: el uso repetido de getgey puede bloquear el acceso a los servidores de Meross, lo que puede durar varias horas. Haga una copia de la clave en todos sus dispositivos Meross, depende de la cuenta del usuario y no del dispositivo.
 
 ## Hub Meross
-Para los equipos conectados al concentrador Meross, debe crear un dispositivo en el complemento para cada dispositivo conectado al concentrador. También es necesario recuperar un identificador local. Utilice una herramienta que le permita recuperar el encabezado http de la aplicación Meross cuando se comunique con la válvula. La información buscada tiene este aspecto:
+Para los equipos conectados al concentrador Meross, debe crear un dispositivo en el plugin para cada dispositivo conectado al concentrador. También es necesario recuperar un identificador local. Utilice una herramienta que le permita recuperar el encabezado http de la aplicación Meross cuando se comunique con la válvula. La información buscada tiene este aspecto:
 
     "id": "01008D5B"
 
@@ -483,13 +483,13 @@ Para el firmware de 3.5.0, el procedimiento es más simple y se detalla [aquí e
 
 ## APiKey DeviceID
 
-Siga las instrucciones [aquí](https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) o [en el foro de Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) para recuperar esta información o hacer una búsqueda en la web y en el foro de jeedom con las palabras clave: Ewelink o Sonoff Apikey. El deviceid se debe colocar en el identificador del complemento. El Apikey se debe poner en el token. No ponga espacios ni comillas.
+Siga las instrucciones [aquí](https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) o [en el foro de Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) para recuperar esta información o hacer una búsqueda en la web y en el foro de jeedom con las palabras clave: Ewelink o Sonoff Apikey. El deviceid se debe colocar en el identificador del plugin. El Apikey se debe poner en el token. No ponga espacios ni comillas.
 
 El dispositivo debe tener el firmware 3.0.1 o superior, la aplicación Ewelink le permite actualizar el firmware.
 
 ## Acceso
 
-Cuando un dispositivo se conecta a wifi, el complemento se notificará de inmediato. Por otro lado, cuando se desconecta un dispositivo, el complemento solo podrá reconocerlo si el complemento le envía un comando.
+Cuando un dispositivo se conecta a wifi, el plugin se notificará de inmediato. Por otro lado, cuando se desconecta un dispositivo, el plugin solo podrá reconocerlo si el plugin le envía un comando.
 
 ## Compatibilidad
 
@@ -523,7 +523,7 @@ Para dispositivos no presentes en esta lista (Sonoff Ifan por ejemplo) o si la c
 
     Receive after decode :{...............}
 
-y dar en el [foro](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) el contenido de las llaves para permitir la integración del módulo en el complemento.
+y dar en el [foro](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) el contenido de las llaves para permitir la integración del módulo en el plugin.
 
 # Zigbee / Tuya
 
@@ -542,12 +542,12 @@ Los productos Lidl Tuya / Zigbee nunca deben haberse emparejado con la aplicaci�
 
 ## Llave
 
-Presione el botón de encendido de Nanoleaf durante 5-7 sy presione el comando getKey del complemento. Compruebe que Apikey se haya colocado en el campo "token" de la configuración del complemento.
+Presione el botón de encendido de Nanoleaf durante 5-7 sy presione el comando getKey del plugin. Compruebe que Apikey se haya colocado en el campo "token" de la configuración del plugin.
 
 
 ## Efectos personalizados
 
-Crea un efecto con la aplicación NanoLeaf y dale un nombre. Cree una acción / comando predeterminado en la lista de comandos de dispositivo en el complemento. Pon el nombre en los parámetros. Luego dé un identificador único y un nombre, pueden ser idénticos al nombre del comando.
+Crea un efecto con la aplicación NanoLeaf y dale un nombre. Cree una acción / comando predeterminado en la lista de comandos de dispositivo en el plugin. Pon el nombre en los parámetros. Luego dé un identificador único y un nombre, pueden ser idénticos al nombre del comando.
 
 # Ayudar ?
 

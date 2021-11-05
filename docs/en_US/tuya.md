@@ -44,7 +44,7 @@ The "Status query" option allows you to retrieve the status every 20s even if th
 
 It is essential to retrieve the local key (localKey) and the devId of the gateway allowing the plugin to communicate with the devices.
 
-To retrieve the key and the devId, the procedure is complex and requires several operations. Do a search on the web with the keyword: Tuya localKey, on Github in particular or on  [forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
+To retrieve the localKey and the devId, the procedure is complex and requires several operations. Do a search on the web with the keyword: Tuya localKey, on Github in particular or on  [forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
 
 
 If the gateway is uninstalled and then reinstalled in the mobile application, then its key will be changed. You will have to find the key with the above procedure.
@@ -56,12 +56,12 @@ The key and IP address of devices connected to the gateway is the same as that o
 
 ## Device key and identifier
 
-Configure the device and enter the key found above as well as the IP address which is the same as that of the gateway. You must then modify the state of the device with the application provided by the manufacturer of the gateway and consult the logs.
-You will find information like this:
+Configure the device and enter the localKey found above as well as the IP address which is the same as that of the gateway. You must then modify the state of the device with the application provided by the manufacturer of the gateway and consult the logs.
+In the logs, when the device returns its status, you will find information like this: 
     
     Mess: {"dps": {"161": "Esc"}, "cid": "ec1bxxxxxxxx28", "t": 1589301302}
  
-The cid is to be copied in the device identifier field of the plugin (without the ""). It is this which makes it possible to distinguish 2 devices connected to the gateway.
+The cid is to be copied in the device devId field of the plugin (without the " "). It is this which makes it possible to distinguish 2 devices connected to the gateway.
 
 Note: if the device does not return its status, the cid cannot be found in the logs. Experts will be able to find the dps and the cid as they are displayed next to the localKey during the find procedure, they are right next to it. The cid is named nodeId in the packages of the Smartlife app.
 
@@ -147,7 +147,7 @@ The presence and opening sensors are not compatible because they do not communic
 
 ## Initial configuration of a device
 
-It is essential to retrieve a local key (localKey) and a devId identifier allowing the plugin to communicate with the devices.
+It is essential to retrieve a local key (localKey) and a devId allowing the plugin to communicate with the devices.
 
 The procedure is complex and requires several manipulations. Do a search on the web with the keyword: Tuya localKey, on Github in particular or on the [forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
 
@@ -155,7 +155,7 @@ The device must not be connected to an application on a mobile phone, otherwise 
 
 If the device is uninstalled and then reinstalled in the mobile app, then its key will be changed. You will have to find the key with the above procedure.
 
-No help will be given to retrieve the key or the identifier.
+No help will be given to retrieve the key or the devId.
 
 ## Tuya Smartlife compatible V1
 The V1 type corresponds to devices with firmware 1.0. Devices with this firmware are no longer sold and their firmware can be updated with the Smartlife app. There will be no new device additions. You have to switch to V3.
@@ -531,13 +531,13 @@ In the case of a Tuya / Zigbee gateway, the tests must be done on a device conne
 
     [2020-12-10 08:01:58] [DEBUG]: Mess: {"devId": "308001xxxxxxxxxb4c", "dps": {"1": true}, "t": 1607583717, "s": 3 } - Read Json OK
 
-the devId is indicated in plain text, it suffices to copy it into the identifier of the device configuration. Warning: not all devices return their devId.
+the devId is indicated in plain text, it suffices to copy it into the devId of the device configuration. Warning: not all devices return their devId.
 
 ** For a Zigbee device which returns its cid, we will find: **
 
     [2020-12-10 08:14:34] [DEBUG]: Mess: {"dps": {"1": "pir"}, "cid": "bc33xxxxxxxxxxxx45", "t": 1607584474} - Read Json OK
 
-the cid is indicated in clear, just copy it in the identifier of the configuration of the device. Warning: not all devices return their cid.
+the cid is indicated in clear, just copy it in the devId of the configuration of the device. Warning: not all devices return their cid.
 
 You can then check the concordance with the procedure for finding the localKey and the devId or the cid.
 

@@ -44,7 +44,7 @@ L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s
 
 Il est indispensable de récupérer la clé locale (localKey) et le devId de la passerelle permettant au plugin de dialoguer avec les périphériques.
 
-Pour récupérer la clé et le devId, la procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localKey, sur Github en particulier ou sur le [forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
+Pour récupérer la localKey et le devId, la procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localKey, sur Github en particulier ou sur le [forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
 
 Si la passerelle est désinstallée puis réinstallée dans l'application mobile, alors sa clé sera modifiée. Il faudra retrouver la clé avec la procédure ci-dessus. 
 
@@ -55,12 +55,12 @@ La clé et l'adresse IP des périphériques connectés à la passerelle est la m
 
 ## Clé et identifiant du périphérique
 
-Configurer le périphérique et renseigner la clé trouvée ci-dessus ainsi que l'adresse IP qui est la même que celle de la passerelle. Il faut ensuite modifier l'état du périphérique avec l'application fournie par le constructeur de la passerelle et consulter les logs.
-Vous trouverez une information comme celle-ci :
+Configurer le périphérique et renseigner la localKey trouvée ci-dessus ainsi que l'adresse IP qui est la même que celle de la passerelle. Il faut ensuite modifier l'état du périphérique avec l'application fournie par le constructeur de la passerelle et consulter les logs.
+Dans les logs, lorsque le périphérique renvoie son état, vous trouverez une information comme celle-ci :
     
     Mess :{"dps":{"161":"Esc"},"cid":"ec1bxxxxxxxx28","t":1589301302}
  
-Le cid est à copier dans le champ identifiant du périphérique du plugin (sans les " "). C'est lui qui permet de distinguer 2 équipements connectés à la passerelle.
+Le cid est à copier dans le champ devId du périphérique du plugin (sans les " "). C'est lui qui permet de distinguer 2 équipements connectés à la passerelle.
 
 Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être trouvé dans les logs. Les experts pourront retrouver les dps et le cid car ils sont affichés à côté de la localKey lors de la procédure pour trouver la trouver, ils sont juste à côté de celle-ci. Le cid porte le nom de nodeId dans les paquets de l'appli Smartlife.
 
@@ -146,7 +146,7 @@ Les capteurs de présence et d'ouverture ne sont pas compatibles car ils ne dial
 
 ## Configuration initiale d'un périphérique
 
-Il est indispensable de récupérer une clé locale (localKey) et un identifiant devId permettant au plugin de dialoguer avec les périphériques.
+Il est indispensable de récupérer une clé locale (localKey) et un devId permettant au plugin de dialoguer avec les périphériques.
 
 La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localKey, sur Github en particulier ou sur le [forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
 
@@ -154,7 +154,7 @@ Le périphérique ne doit pas être connecté à une application sur téléphone
 
 Si le périphérique est désinstallé puis réinstallé dans l'application mobile, alors sa clé sera modifiée. Il faudra retrouver la clé avec la procédure ci-dessus. 
 
-Aucune aide ne sera donnée pour récupérer la clé ou l'identifiant.
+Aucune aide ne sera donnée pour récupérer la clé locale ou le devId.
 
 ## Tuya Smartlife compatible V1
 Le type V1 correspond aux périphériques en firmware 1.0 . Les périphériques avec ce firmware ne sont plus vendus et leur firmware peut être mis à jour avec l'application Smartlife. Il n'y aura pas de nouveaux ajouts de périphériques. Il faut passer en V3.
@@ -531,13 +531,13 @@ Dans le cas d'un passerelle Tuya/Zigbee, les tests doivent se faire sur un péri
 
     [2020-12-10 08:01:58][DEBUG] :     Mess :{"devId":"308001xxxxxxxxxb4c","dps":{"1":true},"t":1607583717,"s":3} - Read Json OK
 
-le devId est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Attention : tous les périphériques ne renvoient pas leur devId.
+le devId est indiqué en clair, il suffit de le recopier dans le devId de la configuration du périphérique. Attention : tous les périphériques ne renvoient pas leur devId.
 
 **Pour un périphérique Zigbee qui renvoie son cid, on trouvera :**
 
     [2020-12-10 08:14:34][DEBUG] :     Mess :{"dps":{"1":"pir"},"cid":"bc33xxxxxxxxxxxx45","t":1607584474} - Read Json OK
 
-le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Attention : tous les périphériques ne renvoient pas leur cid. 
+le cid est indiqué en clair, il suffit de le recopier dans le devId de la configuration du périphérique. Attention : tous les périphériques ne renvoient pas leur cid. 
 
 Vous pouvez alors vérifier la concordance avec la procédure permettant de trouver la localKey et le devId ou le cid.
 
