@@ -51,7 +51,7 @@ Les produits compatibles :
 -   Lampe de bureau WiFi Xiaomi Mijia avec retour d'état !
 - 	Sonoff Basic R3 en mode DIY avec retour d'état !!
 -   Nanoleaf Aurora avec retour d'état !
--	Produits myStrom avec retour d'état
+-	Produits myStrom avec retour d'état !!
 
 
 Produits pouvant être compatibles et non garantis :
@@ -385,7 +385,7 @@ Il suffit de respecter certaines conditions :
 -   Ajouter une commande wifilightV2 action de type Défaut
 -   Lui donner un nom (par exemple Scene Clignote)
 -   Dans paramètres, mettre la commande scène Yeelight, par exemple : 
-   "id":1, "method":"set_scene","params":["cf",0,0,"500,1,255,100,1000,1,16776960,70"]
+    "id":1, "method":"set_scene","params":["cf",0,0,"500,1,255,100,1000,1,16776960,70"]
 
 Ne pas mettre les accolades de début et de fin ainsi que les caractères de retour à la ligne, le plugin les ajoutera automatiquement
 S'inspirer des commandes préconfigurées pour créer ces modes scène supplémentaires.
@@ -436,7 +436,7 @@ Aucune aide ne sera donnée pour récupérer le jeton.
 # Meross
 
 Les périphériques compatibles sont :
--   prises MSS210HK MSS210 MSS425EHK MSS425FHK
+-   prises MSS210HK MSS210 MSS425EHK MSS425FHK MSS620
 -   switch MSS71
 -   commande volets roulants MRS100 (retour d'état et positionnement non fonctionnels)
 -   prise avec conso MSS310 : la conso ne remonte que toutes les minutes

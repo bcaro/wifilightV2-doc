@@ -430,7 +430,7 @@ No se brindará ayuda para recuperar la ficha.
 # Meross
 
 Los periféricos compatibles son:
-- enchufes MSS210HK MSS210 MSS425EHK MSS425FHK
+- enchufes MSS210HK MSS210 MSS425EHK MSS425FHK MSS620
 - conmutador MSS71
 - Control de persiana enrollable MRS100 (retroalimentación de estado y posicionamiento no funcional)
 - tomado con consumo MSS310: el consumo solo aumenta cada minuto

@@ -436,7 +436,7 @@ The procedure is complex and requires several manipulations. Do a search on the 
 # Meross
 
 Compatible peripherals are:
-- sockets MSS210HK MSS210 MSS425EHK MSS425FHK
+- sockets MSS210HK MSS210 MSS425EHK MSS425FHK MSS620
 - switch MSS71
 - MRS100 roller shutter control (non-functional status feedback and positioning)
 - taken with MSS310 consumption: the consumption only goes up every minute
