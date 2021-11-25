@@ -9,6 +9,8 @@ Le fonctionnement permanent du plugin ne peut être garanti : incompatibilité o
 
 Ce plugin permet de gérer de nombreux bandeaux de leds, ampoules leds, prises électriques, thermostats, capteur de température, capteur de porte, etc.  pilotés en wifi directement ou via une box wifi vendue avec le produit. Le principe du plugin est de ne jamais utiliser le cloud et donc une connexion internet entre le plugin et le périphérique via un serveur lointain, toutes les actions sont donc locales au réseau domestique.
 
+Une exception : les produits Govee.
+
 <img src="../images/wifilightV2_screenshot01.png" alt="image" style="height:100px;"/>
 <img src="../images/wifilightV2_screenshot02.png" alt="image" style="height:100px;"/>
 <img src="../images/wifilightV2_screenshot03.png" alt="image" style="height:100px;"/>
@@ -52,6 +54,7 @@ Les produits compatibles :
 - 	Sonoff Basic R3 en mode DIY avec retour d'état !!
 -   Nanoleaf Aurora avec retour d'état !
 -	Produits myStrom avec retour d'état !!
+-   Produits Govee avec retour d'état !
 
 
 Produits pouvant être compatibles et non garantis :
@@ -157,6 +160,9 @@ Wiz :
 
 myStrom :
 - seule la prise commandée a été testée, en attente de retousr des utilisateurs pour les autres péripéhriques
+
+Govee :
+- la connexion avec les produits se fait via le nuage et nécessite internet.
 
 # Configuration du module wifi
 
@@ -554,6 +560,31 @@ Appuyer pendant 5-7 s sur le bouton power du Nanoleaf et appuyer sur la commande
 ## Effets custom
 
 Créer un effet avec l'appli du NanoLeaf et lui donner un nom. Créer une commande action/défaut dans la liste des commandes du périphérique dans le plugin. Mettre le nom dans paramètres. Donner ensuite un identifiant unique et un nom, ils peuvent être identiques au nom de la commande.
+
+# Govee
+
+Les périphériques wifi compatibles sont :
+-   ampoules : 
+    H6002 H6003 H6008 H6049 H6050 H6051 H6052 H6054 H6059 H605B H6061 H6062 H6071 H6072 H6073 H6075 H6076 H6083 H6085 H6086 H6087 H6089 H6104 H6109 H610A H611A H611B H611C H611Z H6110 H614A H614B H614C H614D H614E H6117 H6121 H6135 H6137 H6141 H6142 H6143 H6144 H6148 H615A H615B H615C H615D H6154 H6159 H6160 H6163 H6172 H6182 H6188 H618A H618C H618E H6195 H6198 H6199 H619A H619B H619C H619D H619E H619Z H61A0 H7005 H7021 H7022 H7028 H7050 H7060 MSS210HK MSS210 MSS425EHK MSS425FHK MSS620
+-   prises : H5001 H5080 H5081 H7014
+
+La prise double n'est pas supportée mais pourrait l'être si un utilisateur en a une et veut participer à l'amélioration du plugin.
+
+
+## Installation
+L'installation, la création et la configuration des périphériques est entièrement automatique :
+- récupérer l'API key à partir de l'application fournie par Govee
+- dans la configuration, mettre cette API key dans le champ Govee.
+- cliquer sur inclusion Govee : les périphériques sont créés automatiquement.
+
+## Remarques
+Il faut faire attention au points suivants
+- lorsqu'un périphérique avec la même adresse MAC est déjà présent dans le plugin il ne sera pas recréé ni modifié
+- si un périhérique est supprimé sur le compte Govee il ne sera pas supprimé du plugin, il faudra le faire manuellement
+- si un modèle de périphérique n'est pas connu, le type Bulb sera utilisé
+- si la connexion internet ou les serveurs Govee ne sont pas fonctionneles le plugin ne pourra pas accéder au périphérique
+- dans la configuration, mettre cette API key dans le champ Govee.
+- cliquer sur inclusion Govee : les périphériques sont créés automatiquement.
 
 # A l'aide ?
 
