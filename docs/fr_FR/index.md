@@ -163,6 +163,7 @@ myStrom :
 
 Govee :
 - la connexion avec les produits se fait via le nuage et nécessite internet.
+- la commande d'intensité ne fonctionne pas sur tous les modules Govee
 
 # Configuration du module wifi
 
@@ -258,6 +259,7 @@ Pour les périphériques :
  - Mi.Light connectés au pont Milight-hub
  - Wiz
  - myStrom
+ - Govee
 
 Le plugin interroge régulièrement le périphérique pour connaitre son état. Le délai pour que Jeedom connaisse l'état peut dépasser 1 minute.
 
@@ -574,17 +576,17 @@ La prise double n'est pas supportée mais pourrait l'être si un utilisateur en 
 ## Installation
 L'installation, la création et la configuration des périphériques est entièrement automatique :
 - récupérer l'API key à partir de l'application fournie par Govee
-- dans la configuration, mettre cette API key dans le champ Govee.
+- dans la configuration du plugin, mettre cette API key dans le champ Govee et sauvegarder.
 - cliquer sur inclusion Govee : les périphériques sont créés automatiquement.
 
 ## Remarques
-Il faut faire attention au points suivants
-- lorsqu'un périphérique avec la même adresse MAC est déjà présent dans le plugin il ne sera pas recréé ni modifié
+Il faut faire attention au points suivants :
+- lorsqu'un périphérique avec la même adresse MAC est déjà présent dans le plugin il ne sera ni recréé ni modifié
 - si un périhérique est supprimé sur le compte Govee il ne sera pas supprimé du plugin, il faudra le faire manuellement
 - si un modèle de périphérique n'est pas connu, le type Bulb sera utilisé
-- si la connexion internet ou les serveurs Govee ne sont pas fonctionneles le plugin ne pourra pas accéder au périphérique
-- dans la configuration, mettre cette API key dans le champ Govee.
-- cliquer sur inclusion Govee : les périphériques sont créés automatiquement.
+- si la connexion internet ou les serveurs Govee ne sont pas fonctionnels le plugin ne pourra pas accéder au périphérique
+- le plugin ne peut que changer la couleur, l'intensité, la température de couleur et faire ON/OFF sur le périphérique.
+- pour certains modèles, la variation d'intensité ne fonctionne pas, de même que la température de couleur.
 
 # A l'aide ?
 
