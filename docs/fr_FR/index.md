@@ -580,11 +580,11 @@ L'installation, la création et la configuration des périphériques est entièr
 - cliquer sur inclusion Govee : les périphériques sont créés automatiquement.
 
 ## Remarques
-Il faut faire attention au points suivants :
+Il faut faire attention aux points suivants :
 - lorsqu'un périphérique avec la même adresse MAC est déjà présent dans le plugin il ne sera ni recréé ni modifié
 - si un périhérique est supprimé sur le compte Govee il ne sera pas supprimé du plugin, il faudra le faire manuellement
 - si un modèle de périphérique n'est pas connu, le type Bulb sera utilisé
-- si la connexion internet ou les serveurs Govee ne sont pas fonctionnels le plugin ne pourra pas accéder au périphérique
+- si la connexion internet ou les serveurs Govee ne sont pas fonctionnels, le plugin ne pourra pas accéder au périphérique
 - le plugin ne peut que changer la couleur, l'intensité, la température de couleur et faire ON/OFF sur le périphérique.
 - pour certains modèles, la variation d'intensité ne fonctionne pas, de même que la température de couleur.
 
