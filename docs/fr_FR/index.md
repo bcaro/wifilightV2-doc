@@ -587,7 +587,7 @@ Il faut faire attention aux points suivants :
 - si un modèle de périphérique n'est pas connu, le type Bulb sera utilisé
 - si la connexion internet ou les serveurs Govee ne sont pas fonctionnels, le plugin ne pourra pas accéder au périphérique
 - le plugin ne peut que changer la couleur, l'intensité, la température de couleur et faire ON/OFF sur le périphérique.
-- pour certains modèles, la variation d'intensité ne fonctionne pas, de même que la température de couleur.
+- pour certains modèles, la variation d'intensité ne fonctionne pas, de même que la température de couleur ou la couleur.
 
 # A l'aide ?
 

@@ -9,6 +9,8 @@ No se puede garantizar el funcionamiento permanente del plugin: incompatibilidad
 
 Este plugin le permite administrar muchas tiras de LED, bombillas LED, enchufes eléctricos, termostatos, sensor de temperatura, sensor de puerta, etc. controlado por wifi directamente o mediante una caja wifi que se vende con el producto. El principio del plugin es nunca usar la nube y, por lo tanto, una conexión a Internet entre el plugin y el dispositivo a través de un servidor remoto, por lo tanto, todas las acciones son locales a la red doméstica.
 
+Una excepción: los productos Govee. 
+
 <img src="../images/wifilightV2_screenshot01.png" alt="image" style="height:100px;"/>
 <img src="../images/wifilightV2_screenshot02.png" alt="image" style="height:100px;"/>
 <img src="../images/wifilightV2_screenshot03.png" alt="image" style="height:100px;"/>
@@ -50,6 +52,7 @@ Productos compatibles:
 - Sonoff Basic R3 en modo DIY con retroalimentación de estado !!
 - Nanoleaf Aurora con comentarios de estado !
 - Productos myStrom con retroalimentación de estado !!
+- Productos Govee con retroalimentación de estado !!
 
 Productos que pueden ser compatibles y no garantizados:
 -   LW12/Lagute: controlador de tira RGB: retroalimentación de estado !
@@ -155,6 +158,10 @@ Fenómeno:
 myStrom:
 - solo se ha probado el enchufe solicitado, esperando que los usuarios regresen para otros dispositivos
 
+Govee:
+- la conexión con los productos es a través de la nube y requiere internet.
+- el control de intensidad no funciona en todos los módulos Govee 
+
 # Configuración del módulo wifi
 
 ## Instalar periféricos
@@ -248,6 +255,7 @@ Para periféricos:
  - Mi.Light conectado al puente Milight-hub
  - Wiz
  - myStrom
+ - Govee
 
 El plugin sondea periódicamente el dispositivo para conocer su estado. El retraso para que Jeedom conozca el estado puede exceder 1 minuto.
 
@@ -548,6 +556,31 @@ Presione el botón de encendido de Nanoleaf durante 5-7 sy presione el comando g
 ## Efectos personalizados
 
 Crea un efecto con la aplicación NanoLeaf y dale un nombre. Cree una acción / comando predeterminado en la lista de comandos de dispositivo en el plugin. Pon el nombre en los parámetros. Luego dé un identificador único y un nombre, pueden ser idénticos al nombre del comando.
+
+# Govee
+
+Los dispositivos wifi compatibles son:
+- bombillas:
+    H6002 H6003 H6008 H6049 H6050 H6051 H6052 H6054 H6059 H605B H6061 H6062 H6071 H6072 H6073 H6075 H6076 H6083 H6085 H6086 H6087 H6089 H6104 H6109 H610A H611A H611B H611C H611Z H6110 H614A H614B H614C H614D H614E H6117 H6121 H6135 H6137 H6141 H6142 H6143 H6144 H6148 H615A H615B H615C H615D H6154 H6159 H6160 H6163 H6172 H6182 H6188 H618A H618C H618E H6195 H6198 H6199 H619A H619B H619C H619D H619E H619Z H61A0 H7005 H7021 H7022 H7028 H7050 H7060S MSSFH420 MS
+- zócalos: H5001 H5080 H5081 H7014
+
+El zócalo dual no es compatible, pero podría serlo si un usuario tiene uno y quiere ayudar a mejorar el complemento.
+
+
+## Instalación
+La instalación, creación y configuración de dispositivos es completamente automática:
+- obtenga la clave API de la aplicación proporcionada por Govee
+- en la configuración del complemento, coloque esta clave API en el campo Govee y guarde.
+- haga clic en la inclusión de Govee: los dispositivos se crean automáticamente.
+
+## Comentarios
+Preste atención a los siguientes puntos:
+- cuando un dispositivo con la misma dirección MAC ya está presente en el complemento, no se volverá a crear ni modificar
+- si se elimina un dispositivo de la cuenta de Govee, no se eliminará del complemento, tendrá que hacerse manualmente
+- si no se conoce un modelo de dispositivo, se utilizará el tipo de bombilla
+- si la conexión a Internet o los servidores de Govee no funcionan, el complemento no podrá acceder al dispositivo
+- el complemento solo puede cambiar el color, la intensidad, la temperatura del color y el ENCENDIDO/APAGADO en el dispositivo.
+- para algunos modelos, la variación de intensidad no funciona, al igual que la temperatura de color o el color. 
 
 # Ayudar ?
 

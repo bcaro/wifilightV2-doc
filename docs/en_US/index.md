@@ -10,6 +10,7 @@ The permanent functioning of the plugin cannot be guaranteed: incompatibility or
 This plugin allows you to manage many LED strips, LED bulbs, electrical outlets, thermostats, temperature sensor, door sensor, etc. controlled by wifi directly or via a wifi box sold with the product. The principle of the plugin is never to use the cloud and therefore an internet connection between the plugin and the device via a remote server, all actions are therefore local to the home network. 
 
 
+
 <img src="../images/wifilightV2_screenshot01.png" alt="image" style="height:100px;"/>
 <img src="../images/wifilightV2_screenshot02.png" alt="image" style="height:100px;"/>
 <img src="../images/wifilightV2_screenshot03.png" alt="image" style="height:100px;"/>
@@ -52,7 +53,8 @@ Compatible products:
 - Xiaomi Mijia WiFi desk lamp with status feedback!
 - Sonoff Basic R3 in DIY mode with status feedback !!
 - Nanoleaf Aurora with status feedback!
-- myStrom products with status feedback 
+- myStrom products with status feedback
+- Govee products with status feedback !
 
 
 Products that may be compatible and not guaranteed:
@@ -159,6 +161,10 @@ Wiz:
 myStrom:
 - only the ordered socket has been tested, waiting for users to return for other devices
 
+Govee:
+- the connection with the products is via the cloud and requires internet.
+- the intensity control does not work on all Govee modules 
+
 # Configuration of the wifi module
 
 ## Install peripherals
@@ -253,6 +259,7 @@ For peripherals:
  - Mi.Light connected to the Milight-hub bridge
  - Wiz
  - myStrom
+ - Govee
 
 The plugin regularly polls the device to know its status. The delay for Jeedom to know the status can exceed 1 minute.
 
@@ -554,6 +561,31 @@ Press the Nanoleaf power button for 5-7 s and press the getKey command of the pl
 ## Custom effects
 
 Create an effect with the NanoLeaf app and give it a name. Create an action / default command in the list of device commands in the plugin. Put the name in parameters. Then give a unique identifier and a name, they can be identical to the name of the command.
+
+# Govee
+
+Compatible wifi devices are:
+- bulbs:
+    H6002 H6003 H6008 H6049 H6050 H6051 H6052 H6054 H6059 H605B H6061 H6062 H6071 H6072 H6073 H6075 H6076 H6083 H6085 H6086 H6087 H6089 H6104 H6109 H610A H611A H611B H611C H611Z H6110 H614A H614B H614C H614D H614E H6117 H6121 H6135 H6137 H6141 H6142 H6143 H6144 H6148 H615A H615B H615C H615D H6154 H6159 H6160 H6163 H6172 H6182 H6188 H618A H618C H618E H6195 H6198 H6199 H619A H619B H619C H619D H619E H619Z H61A0 H7005 H7021 H7022 H7028 H7050 H7060 MSSFH20 MSS4 MSS425K
+- sockets: H5001 H5080 H5081 H7014
+
+Dual socket is not supported but could be if a user has one and wants to help improve the plugin.
+
+
+## Installation
+The installation, creation and configuration of devices is fully automatic:
+- get the API key from the application provided by Govee
+- in the plugin configuration, put this API key in the Govee field and save.
+- click on Govee inclusion: the devices are created automatically.
+
+## Remarks
+Pay attention to the following points:
+- when a device with the same MAC address is already present in the plugin, it will not be recreated or modified
+- if a device is deleted from the Govee account it will not be deleted from the plugin, it will have to be done manually
+- if a device model is not known, the Bulb type will be used
+- if the internet connection or the Govee servers are not functional, the plugin will not be able to access the device
+- the plugin can only change the color, intensity, color temperature and ON / OFF on the device.
+- for some models, the intensity variation does not work, as does the color temperature or the color.
 
 # Help ?
 
