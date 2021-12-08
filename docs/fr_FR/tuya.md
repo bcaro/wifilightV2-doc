@@ -594,7 +594,7 @@ Cette procédure automatise la recherche dans le cloud des cid, localKey et devI
 
 ## configuration de la plateforme Tuya
 
-Suivre d'abord ce [tuto] (https://linkdhome.com/articles/local-tuya-device-control-in-homekit) aller dans l'onglet "overview" récupérer :
+Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) aller dans l'onglet "overview" récupérer :
 Access ID et Access Secret.
 Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya.
 Ensuite sélectionner : Tuya Passer en inclusion.
