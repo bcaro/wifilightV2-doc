@@ -572,7 +572,7 @@ Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son
 4. Attendre 10s après le message contenant >>>>>>>>>>> End <<<<<<<<<<<< (fin de l'interrogation des périphériques par le démon).
 5. Activer la commande du plugin qui dysfonctionne 2 fois avec 5s d'intervalle
 6. Stopper les logs et les sauvegarder.
-7. Envoyer les logs sur le forum (avec la config du périphérique et l'action qui a été faite))
+7. Envoyer les logs sur le forum (avec la config du périphérique et l'action qui a été faite)
 
 
 ## Trouver de l'aide sur le forum
@@ -587,6 +587,25 @@ Afin d'obtenir de l'aide rapide et de qualité, il est nécessaire de bien prép
 Si une étape est KO, ce n'est pas la peine de tester les suivantes. Si vous ne comprenez pas ce que vous faites, les aidants du forum ne pourront pas le savoir pour vous. Il est rappelé au tout début de la doc du plugin qu'utiliser des périphériques Tuya en local nécessite de savoir suivre à la lettre une procédure et d'avoir quelques notions en informatique.
 
 [Retour à la documentation générale](./index.md)
+
+# Inclusion depuis le cloud Tuya
+
+Cette procédure automatise la recherche dans le cloud des cid, localKey et devId et permet la création de la plupart des périphériques Tuya et Tuya/Zigbee.
+
+## configuration de la plateforme Tuya
+
+Suivre d'abord ce [tuto] (https://linkdhome.com/articles/local-tuya-device-control-in-homekit) aller dans l'onglet "overview" récupérer :
+Access ID et Access Secret.
+Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya.
+Ensuite sélectionner : Tuya Passer en inclusion.
+Les périphériques sont créés automatiquement.
+
+Limitations :
+- certains périphériques ne sont pas créés (le loud Tuya ne fournit pas les données)
+- l'adresse IP locale n'est pas renseignée. Faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP.
+
+
+
 
 
 
