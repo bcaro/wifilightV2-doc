@@ -554,7 +554,7 @@ Les produits Lidl Tuya/Zigbee ne doivent jamais avoir été appairés avec l'app
 # Cloud Tuya
 
 Bien que le plugin adresse localement les périphériques, il peut utiliser le cloud Tuya pour configurer les périphériques et récupérer automatiquement cid, localKey et devId.
-[Voir la documentation spécifique](./tuya#tocAnchor-1-1)
+[Voir la documentation spécifique](./tuya#tocAnchor-1-27)
 
 
 # Nanoleaf
