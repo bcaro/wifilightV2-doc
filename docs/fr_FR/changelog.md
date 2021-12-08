@@ -9,8 +9,11 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
+1.83 - 2021-11-08 (Jeedom V4)
+- Tuya : récupération dans le cloud de la plupart des périphériques et surtout de leur Id et Localkey. Nécessite de créer un compte sur les serveurs Tuya.
 
-1.82 - 2021-11-29 (Jeedom V4)
+
+1.82 - 2021-11-29 Beta (Jeedom V4)
 - Ajout des appareils Govee en wifi : usage du nuage Govee et création automatique des périphériques (voir les limitations dans la doc)
 - maintenance traductions en_US et es_ES
 
