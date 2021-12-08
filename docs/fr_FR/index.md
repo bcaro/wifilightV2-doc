@@ -4,7 +4,12 @@
 
 # Présentation
 
+Attention :
+Le fonctionnement permanent du plugin ne peut être garanti : incompatibilité ou compatibilité partielle du produit, protocole mal géré, connexion de mauvaise qualité par exemples. Ne pas utiliser le plugin pour commander des appareils sensibles pouvant générer des désordres de tout ordre. Le plugin est fourni pour des besoins de tests et non pour une installation nécessitant un fonctionnement optimal en toute circonstance.
+
 Ce plugin permet de gérer de nombreux bandeaux de leds, ampoules leds, prises électriques, thermostats, capteur de température, capteur de porte, etc.  pilotés en wifi directement ou via une box wifi vendue avec le produit. Le principe du plugin est de ne jamais utiliser le cloud et donc une connexion internet entre le plugin et le périphérique via un serveur lointain, toutes les actions sont donc locales au réseau domestique.
+
+Une exception : les produits Govee.
 
 <img src="../images/wifilightV2_screenshot01.png" alt="image" style="height:100px;"/>
 <img src="../images/wifilightV2_screenshot02.png" alt="image" style="height:100px;"/>
@@ -48,6 +53,9 @@ Les produits compatibles :
 -   Lampe de bureau WiFi Xiaomi Mijia avec retour d'état !
 - 	Sonoff Basic R3 en mode DIY avec retour d'état !!
 -   Nanoleaf Aurora avec retour d'état !
+-	Produits myStrom avec retour d'état !!
+-   Produits Govee avec retour d'état !
+
 
 Produits pouvant être compatibles et non garantis :
 -   LW12/Lagute : RGB strip-led contrôleur : retour d'état !
@@ -65,25 +73,20 @@ Produits pouvant être compatibles et non garantis :
 -	Périphériques contrôlés par l'appli Ewelink dont les Sonoff en mode LAN avec retour d'état !!!
 -	Passerelles wifi (dont Lidl) utilisant le protocole Tuya pour les périphériques Zigbee !!!
 -   Périphériques Meross !!!
+-	Produits Wiz!!
 
-Pour ces contrôleurs, ampoules ou prises, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin.
+
+Pour ces derniers contrôleurs ou péripéhriques wifi, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin. Certains produits particuliers peuvent ne pas être compatibles.
 
 Attention :
 - ! : intégration facile pour une personne qui lit la documentation avant d'agir
 - !! : en plus de !, nécessite de suivre une procédure particulière, adapté à une personne qui comprend qu'une procédure est faite pour être suivie scrupuleusement
 - !!! : en plus de !! nécessite des connaissances de base en informatique et être habitué à faire des recherches sur internet dans un but précis
 
-Produits incompatibles et qui ne le seront pas :
--   Le pont Mi.light MiBoxer (sauf ON/OFF de la box)
--	Les contrôleurs de Led Milight(du type YL etc.) sans pont.
--   Les ampoules, prises ou contrôleurs de bandeau led qui contiennent un récepteur bluetoooth au lieu d'un récepteur radiofréquence 2.4 Ghz ou WiFi.
--   Les contrôleurs de bandeau led ou d'ampoules et les ampoules ou prises qui utilisent une connexion WiFi point à point avec l'application mobile.
--   L'ancienne lampe de chevet Xiaomi Yeelight n'est pas compatible.
--	Certains périphériques compatibles Magic Home qui ne fonctionnent plus qu'avec le cloud.
-- 	Tous les capteurs WiFi sur pile (détecteur de présence, détecteur d'ouverture) compatibles Tuya qui ne fonctionnent plus qu'avec le cloud.
-
 
 Il est conseillé de se renseigner sur le forum pour connaitre la compatibilité d'un produit peu diffusé.
+
+Ne jamais modifier le firmware des produits, ce qui peut les rendre incompatibles avec le plugin.
 
 Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
 
@@ -93,6 +96,7 @@ Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilig
 Mi.Light/EasyBulb/LimitlessLED :
 -   Toutes les fonctionnalités sont prises en compte par le plugin (avec les ibox1 et 2 et avec le pont DIY Milight-hub)
 -   Le pont MiBoxer n'est pas compatible
+-	Les contrôleurs de Led Milight(du type YL etc.) sans pont.
 
 LW12/Lagute :
 -   La programmation des modes custom n'est pas possible, il faut utiliser l'application fournie avec le contrôleur (Magic Home). Par contre, les modes customs peuvent être déclenchés avec le plugin.
@@ -101,10 +105,11 @@ LW12/Lagute :
 Magic UFO, MagicHome et Arilux AL-C01/02/03/04/06/10 :
 -   La programmation des modes custom, le mode radio et les timers ne sont pas gérés. Il faut utiliser l'application fournie avec le contrôleur (Magic Home). Par contre, les modes customs peuvent être déclenchés avec le plugin.
 -   Il existe différents modèles qui peuvent ne pas être compatibles avec le plugin.
+-	Certains périphériques compatibles Magic Home sont incompatibles car ne fonctionnent plus qu'avec le cloud
 
 Xiaomi Yeelight :
 -   Les commandes HSV ne sont pas gérées. Flow et scène le sont en créant des commandes avec le code JSON correspondant à l'effet recherché (voir la documentation de l'API YeeLight).
--   La lampe de chevet Xiaomi n'est pas compatible.
+-   La lampe de chevet Xiaomi de première version n'est pas compatible.
 -   La lampe de bureau Xiaomi Mijia est partiellement compatible (pas de retour d'état complet).
 
 Wifi 320/370 :
@@ -130,18 +135,35 @@ Contrôleurs de pixel strip leds compatibles Magic Home :
 
 Périphériques compatibles Tuya Smart/Jinvoo/eFamilyCloud :
 -   toutes les commandes des périphériques validés (voir le forum) du firmware 1.0 et du firmware 2.0 sont compatibles (en particulier les prises Neo CoolCam).
+-   non compatibles avec les périphériques cloud, en particulier les capteurs d'ouverture
 
 Sonoff DIY :
 -   Basic R3 avec le firmware 3.3.0 périphériques avec un seul contact.
 
 Ewelink et Sonoff LAN :
 -   périphériques avec le firmware 3.0.1 (liste donnée ci-après dans le paragraphe eWelink)
+-   non compatible zigbee
+-   non compatibles avec les périphériques cloud, en particulier les capteurs d'ouverture et les lampes ou strip leds.
+
+Meross :
+-   commande de volets roulant : fonctionnement partiel
+-   commande de porte de garage : fonctionnement partiel
 
 Nanoleaf Aurora :
 -   Rythm non implantés
 
 Passerelle Wifi Tuya et périphériques Zigbee :
--   La configuration est manuelle ou semi-automatique sauf pour un nombre limité de périphériques. La gestion de la couleur des lampes est complexe à configurer.
+-   La configuration est manuelle ou semi-automatique sauf pour un nombre limité de périphériques.
+
+Wiz :
+- seule la lampe a été testée, en attente de retours des utilisateurs pour les autres péripéhriques
+
+myStrom :
+- seule la prise commandée a été testée, en attente de retousr des utilisateurs pour les autres péripéhriques
+
+Govee :
+- la connexion avec les produits se fait via le nuage et nécessite internet.
+- la commande d'intensité ne fonctionne pas sur tous les modules Govee
 
 # Configuration du module wifi
 
@@ -192,16 +214,17 @@ Paramétrage :
 -   Saisir le nombre d'envois de commandes : permet de répéter la commande pour un équipement éloigné en cas de mauvaise transmission. (1 par défaut). Certaines ampoules ou prises ne gèrent pas cette répétition car le plugin s'assure par retour d'état de la transmission. Certaines commandes relatives (incrémentations) ne sont pas répétées.
 -   Saisir le délai d'envoi en cas de répétition (0 ms par défaut, 100 ms max)
 -   Saisir le % d'incrémentation de l'intensité lors de l'appui sur les boutons d'incrémentation ou de décrémentation de l'intensité lumineuse
+-   Configurer le nombre de commandes créées, la création de toutes les commmandes (énergie couleurs effets) peut alourdir l'interface
 -   Saisir le n° de groupe pour la synchronisation, voir plus bas
 
 ## Ajout des commandes
-lors de la sauvegarde du module, les commandes sont automatiquement créées.
+Lors de la sauvegarde du module, les commandes sont automatiquement créées.
 
 Configurer le paramètre "Création des commandes" pour créer tout ou partie des commandes.
 
 le nom des commandes peut être modifié. Les commandes automatiquement créées et effacées sont recréées lors d'une sauvegarde.
 
-Lorsque toutes les commandes sont créées, elles peuvent alourdir l'interface, il est possible de ne pas les afficher en configurant la ftion des commandes.
+Lorsque toutes les commandes sont créées, elles peuvent alourdir l'interface, il est possible de ne pas les afficher en configurant la création des commandes.
 
 ## Modification du périphérique
 
@@ -234,6 +257,9 @@ Pour les périphériques :
  - Nanoleaf Aurora
  - Meross
  - Mi.Light connectés au pont Milight-hub
+ - Wiz
+ - myStrom
+ - Govee
 
 Le plugin interroge régulièrement le périphérique pour connaitre son état. Le délai pour que Jeedom connaisse l'état peut dépasser 1 minute.
 
@@ -254,6 +280,8 @@ La commande ConnectedGet permet de récupérer l'état de la connexion de chaque
 -  -4 : pas de réponse du périphérique
 -  -5 : mauvaise réponse du périphérique
 -  -6 : périphérique sans retour d'état
+
+Sur la page des périphériques, une émoticône indique si la connexion est OK ou KO.  L'émoticône indifférent est utilisée dans les cas où le plugin ne peut connaitre l'état de la connexion, soit les périphériques qui ne renvoient pas leur état. Noter que pour les périphérique avec passerelle (Tuya Zigbee, Meross), l'état de la connexion est celui de la passerelle et est appliqué à tous les périphériques connectés à la passerelle.
 
 # Synchronisation
 
@@ -280,25 +308,34 @@ Il suffit de mettre un nombre différent de zéro dans le champ groupe lors de l
 Il y a 2 curseurs pour la température en Kelvin. Kelvin exprimé en % de 0 (chaud) à 100 (froid) et KelvinVal exprimé en Kelvin de min à max. 
 Les valeurs par défaut correspondent la plupart du temps aux données du constructeur. Pour certaines lampes qui ne donnent pas les valeurs min et max, le plugin utilise par défaut 2700 à 6500.
 Pour certaines lampes, les valeurs min et max peuvent être erronées et les valeurs extrêmes non comprises par la lampe. Il faut ajuster ces valeurs pour qu'elles soient dans les limites acceptées par la lampe. 
-Vous pouvez prévenir le développeur pour qu'il modifie la configuration par défaut pour éviter ces ajustements.      
+Vous pouvez prévenir le développeur pour qu'il modifie la configuration par défaut pour éviter ces ajustements.   
+
+# liste des couleurs
+
+Pour les ampoules couleurs, il faut avoir créé le périphérique en mode étendu + couleurs + disco. Une liste à choix est alors associée à chaque couleur. Si les commandes couleurs sont supprimées, la liste à choix créée automatiquement ne sera pas modifiée mais la liste déroulante ne pourra plus avoir accès à cette couleur. Pour ne pas être gèné dans l'interface, il faut supprimer l'affichage des commandes couleurs.   
 
 
 # liste des modes Disco et Custom
 
-Certaines lampes possèdent des modes disco et custom. Une liste à choix est associée à chaque option de ces modes. SI les commandes disco ou custom sont supprimées, la liste à choix créée automatiquement ne sera pas modifiée. Pour les commandes custom, vous pouvez ajouter de nouvelles commandes mais il faudra modifier manuellement cette nouvelle commande dans la liste.
+Certaines lampes possèdent des modes disco et custom. Une liste à choix est associée à chaque option de ces modes. Si les commandes disco ou custom sont supprimées, la liste à choix créée automatiquement ne sera pas modifiée. Pour les commandes custom, vous pouvez ajouter de nouvelles commandes mais il faudra modifier manuellement cette nouvelle commande dans la liste. Il faut avoir créé le périphérique en mode étendu + couleurs + disco. Si les modes Disco et Custom individuels sont supprimés, la liste déroulante ne pourra plus avoir accès à ce mode. Pour ne pas être gèné dans l'interface, il faut supprimer l'affichage des commandes disco et custom.
 
-Par exemple, la commande action/liste pour les customs a comme nom interne : CMD_LIST_CUSTOM. Son paramètre correspond à la construction de cette liste, par exemple : Scene01|Extinction;Scene02|Allumage
+Par exemple, la commande action/liste pour les customs a comme nom interne : CMD_LIST_CUSTOM. Son paramètre correspond à la construction de cette liste :
 
-La liste affichera Extinction et Allumage et les commandes qui seront exécutées seront celles de nom interne Scene01 ou Scene02. Si vous ajoutez une nouvelle commande custom, par exemple Scene03 dont le nom est Flash, il faudra modifier le paramètre de cette façon : Scene01|Extinction;Scene02|Allumage;Scene03|Flash .
+   Scene01|Extinction;Scene02|Allumage
 
-Si par la suite, la commande Scene01 est supprimée, il faudra manuellement modifier le paramètre de CMD_LIST_CUSTOM : Scene02|Allumage;Scene03|Flash .
+La liste affichera Extinction et Allumage et les commandes qui seront exécutées seront celles de nom interne Scene01 ou Scene02. Si vous ajoutez une nouvelle commande custom, par exemple Scene03 dont le nom est Flash, il faudra modifier le paramètre de cette façon : 
 
-Pour les commandes Disco, si vous supprimez une telle commande, il faudra supprimer cette commande dans la liste.
+   Scene01|Extinction;Scene02|Allumage;Scene03|Flash
+
+Si par la suite, la commande Scene01 est supprimée, il faudra manuellement modifier le paramètre de CMD_LIST_CUSTOM : 
+
+   Scene02|Allumage;Scene03|Flash
+   
 
 
 # Mi.Light
 
-Il faut créer un périphérique dans le plugin par canal.
+Il faut créer un périphérique par canal dans le plugin.
 
 ## Ibox 1 / 2 et Mi.Light Box
 
@@ -355,7 +392,8 @@ Il est possible de configurer les modes scène. Plusieurs modes scène sont pré
 Il suffit de respecter certaines conditions :
 -   Ajouter une commande wifilightV2 action de type Défaut
 -   Lui donner un nom (par exemple Scene Clignote)
--   Dans paramètres, mettre la commande scène Yeelight, par exemple : "id":1, "method":"set_scene","params":["cf",0,0,"500,1,255,100,1000,1,16776960,70"]
+-   Dans paramètres, mettre la commande scène Yeelight, par exemple : 
+    "id":1, "method":"set_scene","params":["cf",0,0,"500,1,255,100,1000,1,16776960,70"]
 
 Ne pas mettre les accolades de début et de fin ainsi que les caractères de retour à la ligne, le plugin les ajoutera automatiquement
 S'inspirer des commandes préconfigurées pour créer ces modes scène supplémentaires.
@@ -399,28 +437,41 @@ Pour l'instant seules les prises sont utilisables en V2, contacter l'auteur si v
 
 Il est indispensable de récupérer un jeton (token) permettant au plugin de dialoguer avec les périphériques Xiaomi Philips.
 
-La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Xiaomi token.
+La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Xiaomi token ou sur le forum [ici](https://community.jeedom.com/t/xiaomi-philips-et-wifilightv2/48064) .
 
 Aucune aide ne sera donnée pour récupérer le jeton.
 
 # Meross
 
 Les périphériques compatibles sont :
--   prises MSS210HK MSS210 MSS425EHK MSS425FHK
+-   prises MSS210HK MSS210 MSS425EHK MSS425FHK MSS620
 -   switch MSS71
 -   commande volets roulants MRS100 (retour d'état et positionnement non fonctionnels)
--   prise avec conso MSS310 : la conso ne remonte que toutes les minutes ou toutes les 20s (à tester)
+-   prise avec conso MSS310 : la conso ne remonte que toutes les minutes
 -   Hub Meross MSH300
 -   MTS100/100H : têtes thermostatiques reliées au hub
 -   MSG100 (garage) : proposé en beta non testé et incomplet
 -   les capteurs de températures connectés au hub pourraient être compatibles (non testé)
 
+Il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondant aux n prises. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
+Attention : certaines prises anciennes ont un comportement différent, utiliser la version V1 dans le sous type.
 
-Il est indispensable de récupérer un Jeton correspond à sign dans le plugin, un Identifiant qui correspond à messageId dans le plugin et un timestamp. Pour les équipements reliés au hub Meross, il faut en plus un identifiant local. Pour trouver ces 3 ou 4 paramètres, voir sur le web : Meross Credentials ou [sur le forum](https://community.jeedom.com/t/meross-credential-et-plugin-wifilightv2/48063?u=bernardfr.caron) .
+## type "Meross" pour firmware <2.2.2
+Ne pas créer de nouveaux périphériques avec cette option, utiliser de préférence Meross V2, ce type est présent pour assurer la compatibilité avec les périphériques configurés avant l'arrivée de la V2. Aucune aide ne sera donnée pour trouver les paramètres nécessaires à ce type.
 
-Dans le cas d'un hub Meross, il faut créer un périphérique dans le plugin pour chaque périphérique connecté au hub. Pour les prises multiples, il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondant aux n prises. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
+## type "Meross V2" pour tout firmware y compris 2.2.2
+Afin d'obtenir une clé, il faut renseigner les login et mot de passe du compte Meross, sauvegarder et cliquer sur getKey. Elle est récupérée des serveurs Meross et sauvegardée dans le champ Clé. Vous pouvez recopier cette clé dans tous vos périphériques Meross et effacer les login et mot de passe, mais alors il ne faut plus cliquer sur getKey.
 
-Aucune aide ne sera donnée pour récupérer les 3 ou 4 informations nécessaires.
+Attention : des utilisations répétées du getgey peuvent produire un blocage d'accès aux serveurs Meross qui peut durer plusieurs heures. Faire une copie de la Clé sur tous vos périphériques Meross, elle dépend du compte utilisateur et pas du périphérique.
+
+## Hub Meross 
+Pour les équipements reliés au hub Meross,il faut créer un périphérique dans le plugin pour chaque périphérique connecté au hub. Il faut aussi récupérer un identifiant local. Utiliser un outil permettant de récupérer l'entête http partant de l'appli Meross lors du dialogue avec la vanne. L'information recherchée a l'allure suivante :
+
+    "id" : "01008D5B"
+
+## Récupération plus précise de la consommation.
+
+Créer un scénario déclenché une seule fois au démarrage de Jeedom : mettre une boucle sur 1 000 000. Mettre à l'intérieur une autre boucle sur 1 000 000 ces 2 boucles imbriquées munies d'une pause vont empêcher la sortie du scénario pendant des centaines d'années. Dans la boucle interne mettre une pause de 10s et un appel à stateGet du périphérique. Récupérer alors la puissance, la diviser par 360 et l'ajouter à une variable qui s'appellera consommation. La pause peut être diminuée jusque 1s selon la puissance et la complexité de l'installation.
 
 # Sonoff en mode DIY
 
@@ -433,14 +484,14 @@ Les périphériques compatibles sont :
 
 ## Configuration
 
-Pour les firmware en dessous de à partir de 3.3.0 et en dessous de 3.5.0 c.-à-d. le mode DIY 1.0, Sonoff donne tous les éléments [ici]( https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) pour configurer les modules en mode DIY.
+Pour les firmware à partir de 3.3.0 et en dessous de 3.5.0 c.-à-d. le mode DIY 1.0, Sonoff donne tous les éléments [ici]( https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) pour configurer les modules en mode DIY.
 
 Un téléphone portable et un PC sous windows avec carte Wifi sont nécessaires.
 Le logiciel à faire tourner pour trouver le Sonoff donne dans la colonne de gauche l'identifiant nécessaire à la configuration du périphérique.
 
 Le périphérique Sonoff doit être en firmware 3.3.0 ou plus, l'appli Windows ci-dessus permet de mettre à jour le firmware.
 
-Pour les firmwares à partir de 3.5.0, la procédure est plus simple et est détaillée [ici sur le forum](https://community.jeedom.com/t/sonoff-diy-et-wifilightv2-en-firmware-3-5-0/48060?u=bernardfr.caron) .
+Pour les firmwares à partir de 3.5.0, la procédure est plus simple et est détaillée [ici sur le forum](https://community.jeedom.com/t/sonoff-diy-et-wifilightv2-en-firmware-3-5-0/48060) .
 
 # Sonoff/Ewelink LAN
 
@@ -456,13 +507,12 @@ Quand un périphérique se connecte au wifi, le plugin sera immédiatement prév
 
 ## Compatibilité
 
-De nombreuses marques sont compatibles dont les Sonoff. 
+De nombreuses marques sont compatibles dont les Sonoff. Les produits testés sont les suivants :
 -  Interrupteurs, prises murales, switch : simples de toutes marques
 -  Interrupteurs, prises murales, switch : multiples de toutes marques
 -  Interrupteurs, prises murales, switch : simples avec variateur de toutes marques
 -  Sonoff D1 smart Dimmer
--  2 types de lampes (tester les 2 types)
--  Sonoff TH10/1H16 capteur de température. ON/OFF non fonctionnel depuis le firmware 3.4 
+-  Sonoff TH10/1H16 capteur de température. Nouvelle config pour firmware >=3.4 avec ON/OFF OK
 -  Sonoff basic, RF, POW, Mini
 -  Sonoff Dual
 -  Sonoff 4CH/4CH PRO
@@ -474,6 +524,10 @@ De nombreuses marques sont compatibles dont les Sonoff.
 -  Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur de présence, télécommande)
 
 Le sonoff DW2 n'est pas compatible car purement cloud et ne se met pas en Acces Point permettant de trouver apiKey et DeviceID. Il est probable qu'il en soit de même pour tous les capteurs de porte compatibles ewelink.
+
+Le Hub Zigbee n'est pas compatible (et purement cloud).
+
+Aucune ampoule ou strip led n'est compatible.
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
@@ -491,11 +545,17 @@ et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sono
 
 # Tuya 
 
-[Voir la documentation spécifique](./tuya#tocAnchor-1-9)
+[Voir la documentation spécifique](./tuya#tocAnchor-1-10)
 
 # Lidl 
 Les produits Lidl Tuya/Zigbee ne doivent jamais avoir été appairés avec l'application Lidl. Il faut les appairer uniquement avec l'application Tuya SmartLife.
 [Voir la documentation spécifique](./tuya#tocAnchor-1-1)
+
+# Cloud Tuya
+
+Bien que le plugin adresse localement les périphériques, il peut utiliser le cloud Tuya pour configurer les périphériques et récupérer automatiquement cid, localKey et devId.
+[Voir la documentation spécifique](./tuya#tocAnchor-1-1)
+
 
 # Nanoleaf
 
@@ -509,6 +569,32 @@ Appuyer pendant 5-7 s sur le bouton power du Nanoleaf et appuyer sur la commande
 
 Créer un effet avec l'appli du NanoLeaf et lui donner un nom. Créer une commande action/défaut dans la liste des commandes du périphérique dans le plugin. Mettre le nom dans paramètres. Donner ensuite un identifiant unique et un nom, ils peuvent être identiques au nom de la commande.
 
+# Govee
+
+Les périphériques wifi compatibles sont :
+-   ampoules : 
+    H6002 H6003 H6008 H6049 H6050 H6051 H6052 H6054 H6059 H605B H6061 H6062 H6071 H6072 H6073 H6075 H6076 H6083 H6085 H6086 H6087 H6089 H6104 H6109 H610A H611A H611B H611C H611Z H6110 H614A H614B H614C H614D H614E H6117 H6121 H6135 H6137 H6141 H6142 H6143 H6144 H6148 H615A H615B H615C H615D H6154 H6159 H6160 H6163 H6172 H6182 H6188 H618A H618C H618E H6195 H6198 H6199 H619A H619B H619C H619D H619E H619Z H61A0 H7005 H7021 H7022 H7028 H7050 H7060 MSS210HK MSS210 MSS425EHK MSS425FHK MSS620
+-   prises :
+	H5001 H5080 H5081 H7014
+
+La prise double n'est pas supportée mais pourrait l'être si un utilisateur en a une et veut participer à l'amélioration du plugin.
+
+
+## Installation
+L'installation, la création et la configuration des périphériques est entièrement automatique :
+- récupérer l'API key à partir de l'application fournie par Govee
+- dans la configuration du plugin, mettre cette API key dans le champ Govee et sauvegarder.
+- cliquer sur inclusion Govee : les périphériques sont créés automatiquement.
+
+## Remarques
+Il faut faire attention aux points suivants :
+- lorsqu'un périphérique avec la même adresse MAC est déjà présent dans le plugin il ne sera ni recréé ni modifié
+- si un périhérique est supprimé sur le compte Govee il ne sera pas supprimé du plugin, il faudra le faire manuellement
+- si un modèle de périphérique n'est pas connu, le type Bulb sera utilisé
+- si la connexion internet ou les serveurs Govee ne sont pas fonctionnels, le plugin ne pourra pas accéder au périphérique
+- le plugin ne peut que changer la couleur, l'intensité, la température de couleur et faire ON/OFF sur le périphérique.
+- pour certains modèles, la variation d'intensité ne fonctionne pas, de même que la température de couleur ou la couleur.
+
 # A l'aide ?
 
-Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632)
+Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)

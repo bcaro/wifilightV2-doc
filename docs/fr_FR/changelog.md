@@ -7,17 +7,85 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 - suppression/ajout de logs
 - corrections mineures de la configuration de périphériques
 
-Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.74 - 2021-03-09 (Beta V4 uniquement)
+Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
+1.83 - 2021-11-08 (Jeedom V4)
+- Tuya : récupération dans le cloud de la plupart des périphériques et surtout de leur Id et Localkey. Nécessite de créer un compte sur les serveurs Tuya.
+
+
+1.82 - 2021-11-29 Beta (Jeedom V4)
+- Ajout des appareils Govee en wifi : usage du nuage Govee et création automatique des périphériques (voir les limitations dans la doc)
+- maintenance traductions en_US et es_ES
+
+1.81b - 2021-11-03 (Jeedom V4)
+- Ajout PAC Tuya
+- traduction en anglais : doc et interface
+- traduction en espagnol : doc et interface
+- correction disparition de la valeur de la localKey pour certains périphériques Tuya
+
+1.81 - 2021-10-26 (Jeedom V4)
+- Ajout des Meross en firmware 2.2.2 -> Meross V2. Compatible anciens firmware : passez à cette version
+- Correction des prises Meross sans conso qui ne renvoyaient pas leur état
+- Plus besoin de credentials pour Meross en Meross V2 -> connexion aux serveurs Meross. Passez à cette version.
+- Suppression de toutes les explication pour les Meross non V2 : ne plus utiliser ce type.
+- Ajout du switch myStrom
+- Ajout du bouton myStorm (Beta à tester)
+- Ajout du PIR myStrom (Beta à tester)
+- Ajout de l'ampoule RGBW myStrom en Beta et non testé, en attente de retour des utilisateurs
+- Par défaut l'état ON/OFF n'est plus inversé lors de la création d'un périphérique
+- Refonte de la création des listes de commandes (couleurs, ambiance, disco, custom)
+- Corrections mineures de bogues
+- Amélioration interface et aides pour les devid, key, mac, localkey, token, etc. (mais les tooltips n'apparaissent pas) : le nom du champ dans l'interface correspond à la doc et aux usages
+- Compatibilité avec la présentation tableau des périphériques sous Jeedom 4.2
+
+
+1.80 - 2021-09-17 (Jeedom V4)
+- Ajout des ampoules blanches et couleur Wiz
+- Ajout du plug Wiz : à tester probablement non fonctionnel
+- Ajout des plugs Meross en firmware plus ancien (V1)
+- Correction bogue retour d'état multiprises Meross
+- Suppression de l'option d'interrogatgion des Meross toutes les 20s car non fonctionnel.
+
+1.79 - 2021-08-21 (Jeedom V4)
+- Tuya : ajout télérupteur pour tableau électrique et ajout capteur CO2 PM2.5
+- Tuya Zigbee : ajout capteur CO2
+- Sonoff TH10/16 : retour du on/off pour version >=3.4.0
+
+1.78 - 2021-06-28 (Jeedom V4)
+- Commande binaire : possibilité d'inverser 0->1 1->0
+- Tuya : correction des information binaires vides, remplacées par 0
+- Tuya : ajout double relai
+
+1.77 - 2021-06-15 (Jeedom V4)
+- Yeelight, Ewelink, Sonoff DIY, Xiaomi Philips : un id non numérique est maintenant accepté (certains périphériques ont un id contenant des lettres)
+- Yeelight Bed : ajout de la couleur
+- Tuya : ajout de l'unité pour les valeurs numériques
+- Tuya : ajout d'une commande de volet roulant
+- Tuya : ajout d'un module volet roulant
+- Tuya : ajout de l'export de l'unité
+- Milight : ajout d'une nouvelle télécommande pour strip led CCT
+- Sonoff/eWelink : ajout des propriétés currentTemperature et currentHumidity pour le TH10/16
+
+1.76 - 2021-05-26 (Jeedom V4)
+- Modification de l'intervalle de temps entre 2 interrogations des périphériques Tuya : permet de ne pas perdre la connexion 
+- ajout des ampoules blanches Innr
+- ajout spot avec détecteur Action LSC
+- ajout d'une alarme Tuya
+- correction bogue détection périphérique Zigbee/Tuya
+
+1.75 - 2021-03-31 (Jeedom V4)
+- ajout de l'information de connexion dans la page d'affichage des périphériques wifilightV2
+- correction bogue sur l'interrogation non systématique des périphériques Tuya toutes les minutes (et toutes les 20s)
+
+1.74 - 2021-03-19 (Jeedom V4)
 - correction bogue prises Tuya/Lidl avec true/false
 - correction bogue de la MAJ widget binaire
 - nettoyage logs 
 
-1.73 - 2021-03-07 (V4 uniquement)
+1.73 - 2021-03-07 (Jeedom V4)
 - correction bogue dans certain cas lors de l'affichage de la liste des périphériques
 
-1.72 - 2021-03-07 (V4 uniquement)
+1.72 - 2021-03-07 (Jeedom V4)
 - Tuya : ajout lampe couleur Lidl
 - Tuya : ajout télécommande Lidl
 - Tuya : ajout prises simple et triple Lidl
@@ -25,7 +93,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - correction bogue lors de l'affichage des périphériques
 - correction bogue gestion couleurs Tuya
 
-1.71 - 2021-02-26 (V4 uniquement)
+1.71 - 2021-02-26 (Jeedom V4)
 - Tuya : correction bogue création des sliders en mode inclusion
 - Tuya : Ajout d'une config pour les lampes blanches Lidl
 
@@ -41,6 +109,8 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 -   Meross : ajout de la commande de volets roulants MRS100 (incomplet : le positionnement et le retour d'état sont KO)
 -	ajout de l'upload et de la sélection dans le dossier data du plugin des images alternatives
 -	ajout (retour) d'une option pour les périphériques Tuya permettant d'empêcher le plugin d'interroger l'état lors du démarrage du deamon et régulièrement. 
+
+Dernière version pour Jeedom V3 : passez en V4 pour bénéficier des nouveautés.
 
 
 1.69 - 2021-01-30

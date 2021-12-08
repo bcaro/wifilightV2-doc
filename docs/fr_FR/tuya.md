@@ -1,12 +1,14 @@
 [Retour à la documentation générale](./index.md)
 
-# Passerelles Zigbee Tuya 
+# Passerelles Zigbee Tuya
+
+Pour utiliser une telle passerelle, choisir le type : "Gateway Hub Tuya Zigbee"
 
 ## Compatibilité
 
 Le dialogue entre le plugin et la passerelle se fait en Wifi. Ensuite, le dialogue entre les capteurs et actionneurs et la passerelle se fait via Zigbee. Ils doivent être compatibles Tuya et avoir été inclus d'abord dans l'application Tuya.
 
-Le plugin peut récupérer l'état des périphériques dès que ceux-ci envoient une information de changement d'état ou quand le plugin les interroge au lancement du demon. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
+Le plugin peut récupérer l'état des périphériques dès que ceux-ci envoient une information de changement d'état ou quand le plugin les interroge au lancement du démon. Si un interrupteur mural est utilisé, Jeedom le saura immédiatement.
 
 Les équipements suivants sont compatibles mais la liste n'est pas exclusive et sera complétée en fonction du retour des utilisateurs.
 - passerelles MoesHouse, BENEXMART 
@@ -42,7 +44,7 @@ L'option "Interrogation de l'état" permet de récupérer l'état toutes les 20s
 
 Il est indispensable de récupérer la clé locale (localKey) et le devId de la passerelle permettant au plugin de dialoguer avec les périphériques.
 
-Pour récupérer la clé et le devId, la procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localKey, sur Github en particulier ou sur le [forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
+Pour récupérer la localKey et le devId, la procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localKey, sur Github en particulier ou sur le [forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
 
 Si la passerelle est désinstallée puis réinstallée dans l'application mobile, alors sa clé sera modifiée. Il faudra retrouver la clé avec la procédure ci-dessus. 
 
@@ -53,14 +55,14 @@ La clé et l'adresse IP des périphériques connectés à la passerelle est la m
 
 ## Clé et identifiant du périphérique
 
-Configurer le périphérique et renseigner la clé trouvée ci-dessus ainsi que l'adresse IP qui est la même que celle de la passerelle. Il faut ensuite modifier l'état du périphérique avec l'application fournie par le constructeur de la passerelle et consulter les logs.
-Vous trouverez une information comme celle-ci :
+Configurer le périphérique et renseigner la localKey trouvée ci-dessus ainsi que l'adresse IP qui est la même que celle de la passerelle. Il faut ensuite modifier l'état du périphérique avec l'application fournie par le constructeur de la passerelle et consulter les logs.
+Dans les logs, lorsque le périphérique renvoie son état, vous trouverez une information comme celle-ci :
     
     Mess :{"dps":{"161":"Esc"},"cid":"ec1bxxxxxxxx28","t":1589301302}
  
-Le cid est à copier dans le champ identifiant du périphérique du plugin (sans les " "). C'est lui qui permet de distinguer 2 équipements connectés à la passerelle.
+Le cid est à copier dans le champ devId du périphérique du plugin (sans les " "). C'est lui qui permet de distinguer 2 équipements connectés à la passerelle.
 
-Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être trouvé dans les logs. Les experts pourront retrouver les dps et le cid car ils sont affichés à côté de la localKey lors de la procédure pour trouver la trouver, ils sont juste à côté de celle-ci. Le cid porte le nom de nodeId.
+Nota : si le périphérique ne renvoie pas son état, le cid ne pourra pas être trouvé dans les logs. Les experts pourront retrouver les dps et le cid car ils sont affichés à côté de la localKey lors de la procédure pour trouver la trouver, ils sont juste à côté de celle-ci. Le cid porte le nom de nodeId dans les paquets de l'appli Smartlife.
 
 
 ## Choix du périphérique standard connecté à la passerelle
@@ -112,6 +114,8 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 
 # Tuya 
 
+Pour utiliser ces périphériques sans passerelle Tuya/Zigbee, choisir le type : "Tuya SmartLife compatible V3"
+
 ## Compatibilité
 
 De nombreuses marques sont compatibles avec le plugin. Consulter le forum pour plus d'informations. Le plugin permet de contrôler de nombreux actionneurs.
@@ -142,7 +146,7 @@ Les capteurs de présence et d'ouverture ne sont pas compatibles car ils ne dial
 
 ## Configuration initiale d'un périphérique
 
-Il est indispensable de récupérer une clé locale (localKey) et un identifiant devId permettant au plugin de dialoguer avec les périphériques.
+Il est indispensable de récupérer une clé locale (localKey) et un devId permettant au plugin de dialoguer avec les périphériques.
 
 La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Tuya localKey, sur Github en particulier ou sur le [forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
 
@@ -150,10 +154,10 @@ Le périphérique ne doit pas être connecté à une application sur téléphone
 
 Si le périphérique est désinstallé puis réinstallé dans l'application mobile, alors sa clé sera modifiée. Il faudra retrouver la clé avec la procédure ci-dessus. 
 
-Aucune aide ne sera donnée pour récupérer la clé ou l'identifiant.
+Aucune aide ne sera donnée pour récupérer la clé locale ou le devId.
 
 ## Tuya Smartlife compatible V1
-Le type V1 correspond aux périphériques en firmware 1.0 . Les périphériques avec ce firmware ne sont plus vendus et leur firmware peut être mis à jour avec l'application Smartlife. Il n'y aura pas de nouveaux ajouts de périphériques.
+Le type V1 correspond aux périphériques en firmware 1.0 . Les périphériques avec ce firmware ne sont plus vendus et leur firmware peut être mis à jour avec l'application Smartlife. Il n'y aura pas de nouveaux ajouts de périphériques. Il faut passer en V3.
 
 Le plugin teste les périphériques (mais ils doivent être ajoutés manuellement) et affiche un message dans le centre de messages lorsqu'un périphérique a été configuré avec le mauvais firmware.
 
@@ -165,7 +169,7 @@ Les paramètres de configuration de l'énergie, pour les prises qui la gèrent, 
 
 
 ## Tuya Smartlife compatible V2
-Le type V2 correspond aux périphériques en firmware 2.0 . En plus de cette compatibilité, il y a la possibilité d'ajouter des commandes personnalisées. Il n'y aura pas de nouveaux ajouts de périphériques. Le type V2 ne doit plus être utilisé pour de nouveaux périphériques et est présent pour assurer la compatibilité avec les anciennes versions du plugin.
+Le type V2 correspond aux périphériques en firmware 2.0 . En plus de cette compatibilité, il y a la possibilité d'ajouter des commandes personnalisées. Il n'y aura pas de nouveaux ajouts de périphériques. Le type V2 ne doit plus être utilisé pour de nouveaux périphériques et est présent pour assurer la compatibilité avec les anciennes versions du plugin, il faut passer en V3
 
 Pour les périphériques multicanaux, comme les prises, il faut créer un wifilightV2 par canal. 
 
@@ -227,8 +231,8 @@ Le plugin est équipé de boutons permettant de créer automatiquement les comma
 ### Configuration
 -   désactiver tous les périphériques wifilightV2 sauf celui à tester
 -   bien configurer le périphérique (adresse IP statique, localKey, devId)
--   vérifier que le demon tourne, sinon le démarrer
--   configurer les logs wifilightV2 en mode debug, redémarrer le demon
+-   vérifier que le démon tourne, sinon le démarrer
+-   configurer les logs wifilightV2 en mode debug, redémarrer le démon
 -   effacer les logs
 
 ### Récupération des informations
@@ -450,19 +454,22 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 4. le périphérique et son éventuelle passerelle n'ont pas été supprimés de l'appli Smartlife et l'appli Smartlife n'a pas été supprimée
 5. l'appli Smartlife est arrêtée sur tous les terminaux pouvant la faire tourner
 6. l'adresse IP du périphérique (Tuya ou passerelle Tuya/Zigbee) est rendue fixe et est connue
-7. configurer les logs wifilightV2 en mode debug, redémarrer le demon
+7. configurer les logs wifilightV2 en mode debug, redémarrer le démon
 
 ## Vérifier que le périphérique est trouvé et connecté
 
 1. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canaux) (dans la cas d'un périphérique connecté à une passerelle, la passerelle doit rester activée), le but est de ne pas mélanger tous les périphériques
 2. effacer les logs
-3. sauvegarder le périphérique dans le plugin : cela a pour effet de lancer le demon qui teste toutes les minutes les périphériques wifilightV2
+3. sauvegarder le périphérique dans le plugin : cela a pour effet de lancer le démon qui teste toutes les minutes les périphériques wifilightV2
 
-Exemple de log OK où le plugin a trouvé le périphérique donc bonne adresse IP :
+Exemple de log OK où le plugin a trouvé le périphérique donc avec la bonne adresse IP :
 
-    [2021-03-05 07:13:54][DEBUG] : ** Zig plug - TuyaCustom2_V2 @192.168.1.106 - c:12 **
-    [2021-03-05 07:13:54][DEBUG] :     Key:0 Diff:0  Socket already created @192.168.1.106 ADD New device @192.168.1.106 channel:12key:0 @192.168.1.106 c:12 d:0
+    [2021-03-29 06:36:42][DEBUG] : ** Prise Zigbee - TuyaCustom2_V2 @192.168.1.106 - c:12 **
+    [2021-03-29 06:36:42][DEBUG] :     Key not set New device: created  @192.168.1.106 ADD New device @192.168.1.106 channel:12 key:1 @192.168.1.106 c:12 d:0
 
+-Par la suite les logs seront du type :	
+	 [2021-03-29 06:31:21][DEBUG] : ** Prise Zigbee - TuyaCustom2_V2 @192.168.1.106 - c:12 **
+    [2021-03-29 06:31:21][DEBUG] :      key:1 @192.168.1.106 c:12 d:1
 	
 Exemple de log KO où le plugin n'a pas trouvé le périphérique donc mauvaise adresse IP
 
@@ -497,12 +504,12 @@ Dans le cas d'un passerelle Tuya/Zigbee, les tests doivent se faire sur un péri
 
 Notas :
 - l'appli Smartlife peut empêcher le dialogue entre le plugin et le périphérique. Il est préférable de lancer l'appli Smartlife après la connexion ci-dessus au périphérique. A l'inverse il se peut que l'appli Smartlife réponde très mal.
-- si le périphérique ne renvoie pas son état, les informations sur les dps et le devId ou le cid sont à rechercher dans le fichier ayant permis de récupérer la localKey, ils sont juste à côté de celle-ci. Le cid porte le nom de nodeId.
+- si le périphérique ne renvoie pas son état, les informations sur les dps et le devId ou le cid sont à rechercher dans le fichier ayant permis de récupérer la localKey, ils sont juste à côté de celle-ci. Le cid porte le nom de nodeId  dans les paquets de l'appli SmartLife.
 
 Exemple de log KO où la localKey n'est pas bonne car la trame reçue par le plugin n'est pas décodée :
 
     [2021-03-05 07:16:53][DEBUG] : Receive from:192.168.1.106
-    [2021-03-05 07:16:53][DEBUG] :   Mess: Empty
+    [2021-03-05 07:16:53][DEBUG] :   Mess: Bad response
 
 
 Dans le cas où le décodage de la trame est correct, on trouve un message tel que celui-ci :
@@ -510,7 +517,7 @@ Dans le cas où le décodage de la trame est correct, on trouve un message tel q
     [2021-03-05 07:16:53][DEBUG] : Receive from:192.168.1.106
     [2021-03-05 07:16:53][DEBUG] :   Mess: {"dps":{"1":true,"9":0,"17":8370,"18":44,"19":50,"20":2320,"27":"on","28":"relay"},"cid":"588xxxxxxxxxa"} - Read Json OK
 
-Les caractères de la fin du message seront filtrés par le plugin et ne doivent pas inquiéter. C'est ce message qui va permettre de configurer le périphérique dans le plugin en identifiant à quoi servent les n° de dps et quelles valeurs ils prennent, voir plus haut.
+C'est ce message qui va permettre de configurer le périphérique dans le plugin en identifiant à quoi servent les n° de dps et quelles valeurs ils prennent, voir plus haut.
 Certains messages ne sont jamais décodés, il suffit qu'un seul message soit correctement décodé pour être sûr que la localKey est correcte.
 
 ## Vérifier que le devId ou le cid sont corrects
@@ -524,13 +531,13 @@ Dans le cas d'un passerelle Tuya/Zigbee, les tests doivent se faire sur un péri
 
     [2020-12-10 08:01:58][DEBUG] :     Mess :{"devId":"308001xxxxxxxxxb4c","dps":{"1":true},"t":1607583717,"s":3} - Read Json OK
 
-le devId est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Attention : tous les périphériques ne renvoient pas leur devId.
+le devId est indiqué en clair, il suffit de le recopier dans le devId de la configuration du périphérique. Attention : tous les périphériques ne renvoient pas leur devId.
 
 **Pour un périphérique Zigbee qui renvoie son cid, on trouvera :**
 
     [2020-12-10 08:14:34][DEBUG] :     Mess :{"dps":{"1":"pir"},"cid":"bc33xxxxxxxxxxxx45","t":1607584474} - Read Json OK
 
-le cid est indiqué en clair, il suffit de le recopier dans l'identifiant de la configuration du périphérique. Attention : tous les périphériques ne renvoient pas leur cid. 
+le cid est indiqué en clair, il suffit de le recopier dans le devId de la configuration du périphérique. Attention : tous les périphériques ne renvoient pas leur cid. 
 
 Vous pouvez alors vérifier la concordance avec la procédure permettant de trouver la localKey et le devId ou le cid.
 
@@ -551,8 +558,8 @@ Si le cid ou le devId ne sont pas corrects, les commandes actions ne seront pas 
     [2021-03-05 07:23:28][DEBUG] :      Dps18|SwOnOffGet_Det_Fen:0 Dps19|ModeForcedGetZ:0 Dps20|SwOnOffGet_Test:2367 Dps21|VanneGetZ formula:#value# #value#:1 After:1
     [2021-03-05 07:23:28][DEBUG] :      No other states to update
 
-Le plugin envoie la commande au demon à l'adresse 127.0.0.1 (Cmd to 127.0.0.1).
-Puis le demon envoie la commande au périphérique à l'adresse 192.168.1.129 ( Receive from Jeedom to Send cmd).
+Le plugin envoie la commande au démon à l'adresse 127.0.0.1 (Cmd to 127.0.0.1).
+Puis le démon envoie la commande au périphérique à l'adresse 192.168.1.129 ( Receive from Jeedom to Send cmd). Si ce message n'apparait pas, alors le démon du plugin ne tourne pas -> voir les vérifications préalables.
 Enfin, le périphérique renvoie son état (Receive from). Le premier message n'est pas décodé et le deuxième l'est. Noter que ce périphérique ne renvoie pas son devId.
 Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son état ou renvoie un message vide ou une erreur et n'exécute pas la commande.
 
@@ -561,8 +568,8 @@ Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son
 
 1. Vérifier les 4 points ci-dessus
 2. Désactiver tous les périphériques wifilightV2 sauf celui à tester (ne garder qu'un canal pour les multicanaux) (laisser la passerelle Tuya/Zigbee active pour un périphérique Zigbee) et effacer les logs pour plus de clarté.
-3. Attendre que le demon passe (il interroge les périphériques toutes les minutes le message commence par : >>>>>>>> Search for) 
-4. Attendre 10s après le message contenant >>>>>>>>>>> End <<<<<<<<<<<< (fin de l'interrogation des périphériques par le demon).
+3. Attendre que le démon passe (il interroge les périphériques toutes les minutes le message commence par : >>>>>>>> Search for) 
+4. Attendre 10s après le message contenant >>>>>>>>>>> End <<<<<<<<<<<< (fin de l'interrogation des périphériques par le démon).
 5. Activer la commande du plugin qui dysfonctionne 2 fois avec 5s d'intervalle
 6. Stopper les logs et les sauvegarder.
 7. Envoyer les logs sur le forum (avec la config du périphérique et l'action qui a été faite))
@@ -580,6 +587,25 @@ Afin d'obtenir de l'aide rapide et de qualité, il est nécessaire de bien prép
 Si une étape est KO, ce n'est pas la peine de tester les suivantes. Si vous ne comprenez pas ce que vous faites, les aidants du forum ne pourront pas le savoir pour vous. Il est rappelé au tout début de la doc du plugin qu'utiliser des périphériques Tuya en local nécessite de savoir suivre à la lettre une procédure et d'avoir quelques notions en informatique.
 
 [Retour à la documentation générale](./index.md)
+
+# Inclusion depuis le cloud Tuya
+
+Cette procédure automatise la recherche dans le cloud des cid, localKey et devId et permet la création de la plupart des périphériques Tuya et Tuya/Zigbee.
+
+## configuration de la plateforme Tuya
+
+Suivre d'abord ce [tuto] (https://linkdhome.com/articles/local-tuya-device-control-in-homekit) aller dans l'onglet "overview" récupérer :
+Access ID et Access Secret.
+Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya.
+Ensuite sélectionner : Tuya Passer en inclusion.
+Les périphériques sont créés automatiquement.
+
+Limitations :
+- certains périphériques ne sont pas créés
+- l'adresse IP locale n'est pas renseignée. Faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP.
+- Pour les périphériques zigbee reliés à une passerelle zigbee, il faut renseigner manuellement la localKey à partir de celle de la paserelle.
+
+
 
 
 
