@@ -586,7 +586,6 @@ Afin d'obtenir de l'aide rapide et de qualité, il est nécessaire de bien prép
 
 Si une étape est KO, ce n'est pas la peine de tester les suivantes. Si vous ne comprenez pas ce que vous faites, les aidants du forum ne pourront pas le savoir pour vous. Il est rappelé au tout début de la doc du plugin qu'utiliser des périphériques Tuya en local nécessite de savoir suivre à la lettre une procédure et d'avoir quelques notions en informatique.
 
-[Retour à la documentation générale](./index.md)
 
 # Inclusion depuis le cloud Tuya
 
@@ -609,7 +608,7 @@ Limitations :
 - les périphériques ayant des informations non standard (en général peut être résolu avec un bloc code dans un scénario)
 - l'adresse IP locale n'est pas renseignée. Faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP.
 
-
+[Retour à la documentation générale](./index.md)
 
 
 
