@@ -601,7 +601,10 @@ Ensuite sélectionner : Tuya Passer en inclusion.
 Les périphériques sont créés automatiquement.
 
 Limitations :
-- certains périphériques ne sont pas créés (le loud Tuya ne fournit pas les données)
+- certains périphériques ne sont pas créés (le cloud Tuya ne fournit pas les données)
+- les ampoules de couleur ne sont pas (encore) gérées
+- les périphériques avc des informations codées (partie actionneur des alarmes en général)
+- les périphériques ayant des informations non standard (en général peut être résolu avec un bloc code dans un scénario)
 - l'adresse IP locale n'est pas renseignée. Faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP.
 
 
