@@ -598,7 +598,8 @@ Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-contro
 Access ID et Access Secret.
 Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya.
 Ensuite sélectionner : Tuya Passer en inclusion.
-Les périphériques sont créés automatiquement.
+Les périphériques sont créés automatiquement. 
+Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 
 Limitations :
 - certains périphériques ne sont pas créés (le cloud Tuya ne fournit pas les données)
