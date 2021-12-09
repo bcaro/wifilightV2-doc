@@ -603,6 +603,7 @@ Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 
 Limitations :
 - certains périphériques ne sont pas créés (le cloud Tuya ne fournit pas les données)
+- les périphériques purement cloud seront intégrés mais le plugin ne pourra pas y accéder
 - la couleur des ampoules de couleur ne sont pas (encore) gérées
 - les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
 - les périphériques ayant des informations non standard (en général peut être résolu avec un bloc code dans un scénario)
