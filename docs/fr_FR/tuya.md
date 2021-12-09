@@ -590,7 +590,7 @@ Si une étape est KO, ce n'est pas la peine de tester les suivantes. Si vous ne 
 
 # Inclusion depuis le cloud Tuya
 
-Cette procédure automatise la recherche dans le cloud des cid, localKey et devId et permet la création de la plupart des périphériques Tuya et Tuya/Zigbee.
+Cette procédure automatise la recherche via le cloud des cid, localKey et devId et permet la création de la plupart des périphériques Tuya et Tuya/Zigbee.
 
 ## configuration de la plateforme Tuya
 
