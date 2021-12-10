@@ -607,6 +607,13 @@ Limitations :
 - les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
 - les périphériques ayant des informations non standard (en général peut être résolu avec un bloc code dans un scénario)
 - l'adresse IP locale n'est pas renseignée. Faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP.
+- la suppression d'une commande créé par le plugin via le cloud Tuya ne peut plus être recréé
+
+Astuces :
+- pour configurer correctement les commandes couleurs, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-10-7)
+- de manière générale, les commandes peuvent être créés manuellement ou en mode apprentissage
+
+
 
 [Retour à la documentation générale](./index.md)
 
