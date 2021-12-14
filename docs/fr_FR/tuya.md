@@ -603,14 +603,15 @@ Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 Limitations :
 - certains périphériques ne sont pas créés (le cloud Tuya ne fournit pas les données)
 - les périphériques purement cloud seront intégrés mais le plugin ne pourra pas y accéder
-- la couleur des ampoules de couleur n'est pas (encore) gérée
+- la commande couleur des ampoules de couleur n'est pas transmise par le cloud Tuya
 - les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
 - les périphériques ayant des informations non standard (en général peut être résolu avec un bloc code dans un scénario)
 - l'adresse IP locale n'est pas renseignée. Faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP.
 - la suppression d'une commande créé par le plugin via le cloud Tuya ne peut plus être recréé
 
 Astuces :
-- pour configurer correctement les commandes couleurs, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-10-7)
+- pour ajouter les commandes couleurs, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-10-7) et agir uniquement sur les boutons couleurs de l'appli Tuya SmatLife. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
+- si d'autres commandes ne sont pas créées, faire de même : manipuler les boutons de l'appli Tuya SmartLife en mode apprentissage.
 - de manière générale, les commandes peuvent être créés manuellement ou en mode apprentissage
 
 
