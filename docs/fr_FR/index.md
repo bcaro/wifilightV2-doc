@@ -539,23 +539,22 @@ Pour les périphériques non présents dans cette liste (Sonoff Ifan par exemple
 	
 et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) le contenu des accolades afin de permettre l'intégration du module dans le plugin.
 
-# Zigbee/Tuya
-
- [Voir la documentation spécifique](./tuya#tocAnchor-1-1)
-
-# Tuya 
-
-[Voir la documentation spécifique](./tuya#tocAnchor-1-10)
-
-# Lidl 
-Les produits Lidl Tuya/Zigbee ne doivent jamais avoir été appairés avec l'application Lidl. Il faut les appairer uniquement avec l'application Tuya SmartLife.
-[Voir la documentation spécifique](./tuya#tocAnchor-1-1)
-
 # Cloud Tuya
 
 Bien que le plugin adresse localement les périphériques, il peut utiliser le cloud Tuya pour configurer les périphériques et récupérer automatiquement cid, localKey et devId.
-[Voir la documentation spécifique](./tuya#tocAnchor-1-27)
+[Voir la documentation spécifique](./tuya#tocAnchor-1-1)
 
+# Passerelles Zigbee/Tuya
+
+ [Voir la documentation spécifique](./tuya#tocAnchor-1-3)
+
+# Tuya 
+
+[Voir la documentation spécifique](./tuya#tocAnchor-1-12)
+
+# Lidl 
+Les produits Lidl Tuya/Zigbee ne doivent jamais avoir été appairés avec l'application Lidl. Il faut les appairer uniquement avec l'application Tuya SmartLife.
+[Voir la documentation spécifique](./tuya#tocAnchor-1-3)
 
 # Nanoleaf
 
