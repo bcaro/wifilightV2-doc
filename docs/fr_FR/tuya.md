@@ -2,7 +2,7 @@
 
 # Inclusion depuis le cloud Tuya
 
-Cette procédure automatisela création de la plupart des périphériques Tuya et Tuya/Zigbee. La lecture des deux paragraphes suivants (Passerelles Zigbee Tuya et Tuya) permet de comprendre plus finement le fonctionnement du plugin.
+Cette procédure automatise la création de la plupart des périphériques Tuya et Tuya/Zigbee. La lecture des deux paragraphes suivants (Passerelles Zigbee Tuya et Tuya) permet de comprendre plus finement le fonctionnement du plugin.
 
 ## configuration de la plateforme Tuya
 
