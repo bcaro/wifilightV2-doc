@@ -1,5 +1,34 @@
 [Retour à la documentation générale](./index.md)
 
+# Inclusion depuis le cloud Tuya
+
+Cette procédure automatisela création de la plupart des périphériques Tuya et Tuya/Zigbee. La lecture des deux paragraphes suivants (Passerelles Zigbee Tuya et Tuya) permet de comprendre plus finement le fonctionnement du plugin.
+
+## configuration de la plateforme Tuya
+
+Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "Overview" pour récupérer :
+Access ID et Access Secret.
+Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya.
+Ensuite sélectionner : Tuya Passer en inclusion.
+Les périphériques sont créés automatiquement. 
+Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
+
+Limitations :
+- certains périphériques ne sont pas créés (le cloud Tuya ne fournit pas les données)
+- les périphériques purement cloud seront intégrés mais le plugin ne pourra pas y accéder
+- la commande couleur des ampoules de couleur n'est pas transmise par le cloud Tuya
+- les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
+- les périphériques ayant des informations non standard (en général peut être résolu avec un bloc code dans un scénario) ne sont pas gérés
+- l'adresse IP locale n'est pas renseignée. Faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP.
+- la suppression d'une commande créé par le plugin via le cloud Tuya ne peut plus être recréée
+
+Astuces :
+- pour ajouter les commandes couleurs, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-10-7) et agir uniquement sur les boutons couleurs de l'appli Tuya SmatLife. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
+- si d'autres commandes ne sont pas créées, faire de même : manipuler les boutons de l'appli Tuya SmartLife en mode apprentissage.
+- de manière générale, les commandes peuvent être créés manuellement ou en mode apprentissage
+- le min et le max d'une valeur numérique sont remontés depuis le cloud. Selon les besoins, modifier #slider et #value# avec #slider#/100*max ou #value#*100/max. Le plugin n'automatise donc pas la calibration des commandes info et action.
+
+
 # Passerelles Zigbee Tuya
 
 Pour utiliser une telle passerelle, choisir le type : "Gateway Hub Tuya Zigbee"
@@ -586,33 +615,6 @@ Afin d'obtenir de l'aide rapide et de qualité, il est nécessaire de bien prép
 
 Si une étape est KO, ce n'est pas la peine de tester les suivantes. Si vous ne comprenez pas ce que vous faites, les aidants du forum ne pourront pas le savoir pour vous. Il est rappelé au tout début de la doc du plugin qu'utiliser des périphériques Tuya en local nécessite de savoir suivre à la lettre une procédure et d'avoir quelques notions en informatique.
 
-
-# Inclusion depuis le cloud Tuya
-
-Cette procédure automatise la recherche via le cloud des cid, localKey et devId et permet la création de la plupart des périphériques Tuya et Tuya/Zigbee.
-
-## configuration de la plateforme Tuya
-
-Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "overview" pour récupérer :
-Access ID et Access Secret.
-Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya.
-Ensuite sélectionner : Tuya Passer en inclusion.
-Les périphériques sont créés automatiquement. 
-Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
-
-Limitations :
-- certains périphériques ne sont pas créés (le cloud Tuya ne fournit pas les données)
-- les périphériques purement cloud seront intégrés mais le plugin ne pourra pas y accéder
-- la commande couleur des ampoules de couleur n'est pas transmise par le cloud Tuya
-- les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
-- les périphériques ayant des informations non standard (en général peut être résolu avec un bloc code dans un scénario)
-- l'adresse IP locale n'est pas renseignée. Faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP.
-- la suppression d'une commande créé par le plugin via le cloud Tuya ne peut plus être recréé
-
-Astuces :
-- pour ajouter les commandes couleurs, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-10-7) et agir uniquement sur les boutons couleurs de l'appli Tuya SmatLife. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
-- si d'autres commandes ne sont pas créées, faire de même : manipuler les boutons de l'appli Tuya SmartLife en mode apprentissage.
-- de manière générale, les commandes peuvent être créés manuellement ou en mode apprentissage
 
 
 
