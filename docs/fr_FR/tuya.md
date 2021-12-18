@@ -23,10 +23,10 @@ Limitations :
 - la suppression d'une commande créé par le plugin via le cloud Tuya ne peut plus être recréée
 
 Astuces :
-- pour ajouter les commandes couleurs, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-10-7) et agir uniquement sur les boutons couleurs de l'appli Tuya SmatLife. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
+- pour ajouter les commandes couleurs, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-12-7) et agir uniquement sur les boutons couleurs de l'appli Tuya SmatLife. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
 - si d'autres commandes ne sont pas créées, faire de même : manipuler les boutons de l'appli Tuya SmartLife en mode apprentissage.
 - de manière générale, les commandes peuvent être créés manuellement ou en mode apprentissage
-- le min et le max d'une valeur numérique sont remontés depuis le cloud. Selon les besoins, modifier #slider et #value# avec #slider#/100*max ou #value#*100/max. Le plugin n'automatise donc pas la calibration des commandes info et action.
+- le min et le max d'une valeur numérique sont remontés depuis le cloud. Selon les besoins, modifier #slider# et #value# par #slider#/100*max et #value#*100/max. Le plugin n'automatise donc pas la calibration des commandes info et action.
 
 
 # Passerelles Zigbee Tuya
