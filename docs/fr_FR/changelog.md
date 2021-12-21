@@ -12,6 +12,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 
 1.83 - 2021-12-18 Beta (Jeedom V4)
 - Tuya : récupération dans le cloud de la plupart des périphériques et surtout de leur Id et Localkey. Nécessite de créer un compte sur les serveurs Tuya.
+- Meross V2 :  MSG100 récupération de l'information d'ouverture en mode scrutation
 
 1.82 - 2021-11-29 (Jeedom V4)
 - Ajout des appareils Govee en wifi : usage du nuage Govee et création automatique des périphériques (voir les limitations dans la doc)

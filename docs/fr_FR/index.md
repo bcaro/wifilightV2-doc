@@ -450,7 +450,7 @@ Les périphériques compatibles sont :
 -   prise avec conso MSS310 : la conso ne remonte que toutes les minutes
 -   Hub Meross MSH300
 -   MTS100/100H : têtes thermostatiques reliées au hub
--   MSG100 (garage) : proposé en beta non testé et incomplet
+-   MSG100 (garage) : fonctionne correctement en V2
 -   les capteurs de températures connectés au hub pourraient être compatibles (non testé)
 
 Il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondant aux n prises. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
@@ -469,9 +469,12 @@ Pour les équipements reliés au hub Meross,il faut créer un périphérique dan
 
     "id" : "01008D5B"
 
-## Récupération plus précise de la consommation.
+## Scrutation précise d'un évènement.
 
-Créer un scénario déclenché une seule fois au démarrage de Jeedom : mettre une boucle sur 1 000 000. Mettre à l'intérieur une autre boucle sur 1 000 000 ces 2 boucles imbriquées munies d'une pause vont empêcher la sortie du scénario pendant des centaines d'années. Dans la boucle interne mettre une pause de 10s et un appel à stateGet du périphérique. Récupérer alors la puissance, la diviser par 360 et l'ajouter à une variable qui s'appellera consommation. La pause peut être diminuée jusque 1s selon la puissance et la complexité de l'installation.
+Créer un scénario déclenché une seule fois au démarrage de Jeedom : mettre une boucle sur 1 000 000. Mettre à l'intérieur une autre boucle sur 1 000 000 ces 2 boucles imbriquées munies d'une pause vont empêcher la sortie du scénario pendant des centaines d'années. Dans la boucle interne mettre une pause de 10s et un appel à stateGet du périphérique pour mettre à jour les informations du périphérique. La pause peut être diminuée jusque 1s selon la puissance et la complexité de l'installation.
+
+- Permet de récupérer l'information d'ouverture du module garage
+- Permet un calcul plus précis de la consommation : récupérer alors la puissance, la diviser par 360 (pour une période de scrutation de 10s) et l’ajouter à une variable qui s’appellera consommation. Le 360 permet d'obtenir la consommation en kWh.
 
 # Sonoff en mode DIY
 
