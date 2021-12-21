@@ -16,12 +16,12 @@ Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 ### Remarques :
 - certains périphériques ne sont pas créés (le cloud Tuya ne fournit pas les données)
 - les périphériques purement cloud seront intégrés mais le plugin ne pourra pas y accéder
-- les couleurs suivant 3 formats connus sont créés ainsi que les commandes saturation et intensitées liées
+- les couleurs suivant 3 formats connus sont créés ainsi que les commandes saturation et intensitée liées
 - les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
 - les périphériques ayant des informations non standard (en général peut être résolu avec un bloc code dans un scénario) ne sont pas gérés
 - le plugin ne décode pas les commandes complexes et met alors dans paramètres le Json provenant du cloud Tuya
 - l'adresse IP locale n'est pas renseignée. Faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP.
-- la suppression d'une commande créé par le plugin via le cloud Tuya ne peut plus être recréée
+- la suppression d'une commande créée par le plugin via le cloud Tuya ne peut plus être recréée
 
 ### Astuces :
 - si la procédure automatique dysfonctionne, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-12-7) et agir uniquement sur les boutons de l'appli Tuya SmartLife en sorrespondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
