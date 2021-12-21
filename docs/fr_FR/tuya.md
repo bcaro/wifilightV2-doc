@@ -2,7 +2,7 @@
 
 # Inclusion depuis le cloud Tuya
 
-Cette procédure automatise la création de la plupart des périphériques Tuya et Tuya/Zigbee. La lecture des deux paragraphes suivants (Passerelles Zigbee Tuya et Tuya) permet de comprendre plus finement le fonctionnement du plugin.
+Cette procédure doit être privilégiée car elle automatise la création de la plupart des périphériques Tuya et Tuya/Zigbee. La lecture des deux paragraphes suivants (Passerelles Zigbee Tuya et Tuya) permet de comprendre plus finement le fonctionnement du plugin s'il y a besoin de modifier les paramètres créés automatiquement par la procédure.
 
 ## configuration de la plateforme Tuya
 
@@ -13,20 +13,24 @@ Ensuite sélectionner : Tuya Passer en inclusion.
 Les périphériques sont créés automatiquement. 
 Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 
-Limitations :
+### Remarques :
 - certains périphériques ne sont pas créés (le cloud Tuya ne fournit pas les données)
 - les périphériques purement cloud seront intégrés mais le plugin ne pourra pas y accéder
-- la commande couleur des ampoules de couleur n'est pas transmise par le cloud Tuya
+- les couleurs suivant 3 formats connus sont créés ainsi que les commandes saturation et intensitées liées
 - les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
 - les périphériques ayant des informations non standard (en général peut être résolu avec un bloc code dans un scénario) ne sont pas gérés
+- le plugin ne décode pas les commandes complexes et met alors dans paramètres le Json provenant du cloud Tuya
 - l'adresse IP locale n'est pas renseignée. Faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP.
 - la suppression d'une commande créé par le plugin via le cloud Tuya ne peut plus être recréée
 
-Astuces :
-- pour ajouter les commandes couleurs, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-12-7) et agir uniquement sur les boutons couleurs de l'appli Tuya SmatLife. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
-- si d'autres commandes ne sont pas créées, faire de même : manipuler les boutons de l'appli Tuya SmartLife en mode apprentissage.
+###Astuces :
+- si la procédure automatique dysfonctionne, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-12-7) et agir uniquement sur les boutons de l'appli Tuya SmartLife en sorrespondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
 - de manière générale, les commandes peuvent être créés manuellement ou en mode apprentissage
-- le min et le max d'une valeur numérique sont remontés depuis le cloud. Selon les besoins, modifier #slider# et #value# par #slider#/100*max et #value#*100/max. Le plugin n'automatise donc pas la calibration des commandes info et action.
+- le min et le max d'une valeur numérique sont remontés depuis le cloud. Le plugin calibre les commandes infos et numériques de 0 à 100, selon les besoins, modifier  les paramètres #slider# et #value# .
+
+### Participation à l'amélioration de cette partie :
+Vous pouvez contribuer à l'amélioration de la création automatique en donnant le maximum de renseignements : le Json du cloud Tuya, les modifications apportées ou les remarques permettant de créer automatiquement la commande.
+
 
 
 # Passerelles Zigbee Tuya
