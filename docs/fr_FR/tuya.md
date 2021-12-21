@@ -23,7 +23,7 @@ Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 - l'adresse IP locale n'est pas renseignée. Faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP.
 - la suppression d'une commande créé par le plugin via le cloud Tuya ne peut plus être recréée
 
-###Astuces :
+### Astuces :
 - si la procédure automatique dysfonctionne, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-12-7) et agir uniquement sur les boutons de l'appli Tuya SmartLife en sorrespondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
 - de manière générale, les commandes peuvent être créés manuellement ou en mode apprentissage
 - le min et le max d'une valeur numérique sont remontés depuis le cloud. Le plugin calibre les commandes infos et numériques de 0 à 100, selon les besoins, modifier  les paramètres #slider# et #value# .
