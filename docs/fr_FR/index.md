@@ -542,22 +542,52 @@ Pour les périphériques non présents dans cette liste (Sonoff Ifan par exemple
 	
 et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) le contenu des accolades afin de permettre l'intégration du module dans le plugin.
 
-# Cloud Tuya
+# Tuya Smarlife et Cloud Tuya
 
+Cette procédure automatise la création de la plupart des périphériques Tuya et Tuya/Zigbee. 
+## Configuration de la plateforme Tuya
+
+Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "Overview" pour récupérer :
+Access ID et Access Secret. Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya et sauvegarder, ensuite sélectionner : Tuya Passer en inclusion. Les périphériques sont créés automatiquement. 
+
+L'adresse IP locale n'est pas renseignée. Faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP.
+
+Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
+
+### Remarques :
+- certains périphériques ne sont pas créés (le cloud Tuya ne fournit pas les données)
+- les périphériques purement cloud seront intégrés mais le plugin ne pourra pas y accéder
+- les couleurs suivant les 3 formats connus sont créés ainsi que les commandes saturation et intensitée liées
+- les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
+- les périphériques ayant des informations non standard (en général peut être résolu avec un bloc code dans un scénario) ne sont pas gérés
+- le plugin ne décode pas les commandes complexes et met alors dans paramètres le Json provenant du cloud Tuya
+- la suppression d'une commande créée par le plugin via le cloud Tuya ne peut plus être recréée
+
+### Astuces :
+- si la procédure automatique dysfonctionne, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-12-7) et agir uniquement sur les boutons de l'appli Tuya SmartLife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
+- de manière générale, les commandes peuvent être créés manuellement ou en mode apprentissage
+- le min et le max d'une valeur numérique sont remontés depuis le cloud. Le plugin calibre les commandes infos et numériques de 0 à 100. Selon les besoins, modifier les paramètres #slider# et #value# ainsi que le min et max Jeedom.
+
+### Participation à l'amélioration de cette partie :
+Vous pouvez contribuer à l'amélioration de la création automatique en donnant le maximum de renseignements : le Json du cloud Tuya, les modifications apportées, les logs  ou toute remarque pertinente. 
+
+Pour obtenir le Json du cloud Tuya :
+- dans Tuya IOT Platform : Cloud > Development > choisir le projet > Devices > Copier le device ID du périphérique
+- Cloud > Api Explorer > (dans la nouvelle fenêtre) Smart Home Management System > Device Control > Get Device Specification Attribute (le 2ème de la liste sans s à Attribute)
+- coller le device ID > Submit Request > Copy (lien fenêtre droite)
 Bien que le plugin adresse localement les périphériques, il peut utiliser le cloud Tuya pour configurer les périphériques et récupérer automatiquement cid, localKey et devId.
 [Voir la documentation spécifique](./tuya#tocAnchor-1-1)
 
-# Passerelles Zigbee/Tuya
+## Création manuelle ou semi manuelle des périphériques Tuya et Tuya/Zigbee
 
- [Voir la documentation spécifique](./tuya#tocAnchor-1-3)
+Cette procédure nécesite de recopier manuellement la localkey depuis le cloud Tuya. 
 
-# Tuya 
+ [Voir la documentation spécifique pour la passerelle Tuya/Zigbee](./tuya#tocAnchor-1-3)
+ [Voir la documentation spécifique pour les produits Tuya Wifi](./tuya#tocAnchor-1-12)
 
-[Voir la documentation spécifique](./tuya#tocAnchor-1-12)
 
-# Lidl 
-Les produits Lidl Tuya/Zigbee ne doivent jamais avoir été appairés avec l'application Lidl. Il faut les appairer uniquement avec l'application Tuya SmartLife.
-[Voir la documentation spécifique](./tuya#tocAnchor-1-3)
+## Cas particulier de la paserelle Lidl 
+Les produits Lidl Tuya/Zigbee ne doivent jamais avoir été appairés avec l'application Lidl. Il faut les appairer uniquement avec l'application Tuya SmartLife, sinon ils ne pourront plus être utilisés par le plugin.
 
 # Nanoleaf
 
