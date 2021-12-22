@@ -582,11 +582,13 @@ Bien que le plugin adresse localement les périphériques, il peut utiliser le c
 
 Cette procédure nécesite de recopier manuellement la localkey depuis le cloud Tuya. 
 
- [Voir la documentation spécifique pour la passerelle Tuya/Zigbee](./tuya#tocAnchor-1-3)
- [Voir la documentation spécifique pour les produits Tuya Wifi](./tuya#tocAnchor-1-12)
+ [Voir la documentation spécifique pour les passerelles Tuya/Zigbee](./tuya#tocAnchor-1-1)
+ 
+ [Voir la documentation spécifique pour les produits Tuya Wifi](./tuya#tocAnchor-1-10)
 
 
-## Cas particulier de la paserelle Lidl 
+Attention :
+
 Les produits Lidl Tuya/Zigbee ne doivent jamais avoir été appairés avec l'application Lidl. Il faut les appairer uniquement avec l'application Tuya SmartLife, sinon ils ne pourront plus être utilisés par le plugin.
 
 # Nanoleaf
