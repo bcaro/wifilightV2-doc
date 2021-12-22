@@ -31,7 +31,7 @@ Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 Vous pouvez contribuer à l'amélioration de la création automatique en donnant le maximum de renseignements : le Json du cloud Tuya, les modifications apportées, les logs  ou toute remarque pertinente. 
 
 Pour obtenir le Json du cloud Tuya :
-- Copier le device ID du périphérique
+- dans Tuya IOT Platform : Cloud > Development > choisir le projet > Devices > Copier le device ID du périphérique
 - Cloud > Api Explorer > (dans la nouvelle fenêtre) Smart Home Management System > Device Control > Get Device Specification Attribute (le 2ème de la liste sans s à Attribute)
 - coller le device ID > Submit Request > Copy (lien fenêtre droite)
 
