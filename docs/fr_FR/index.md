@@ -496,14 +496,28 @@ Le périphérique Sonoff doit être en firmware 3.3.0 ou plus, l'appli Windows c
 
 Pour les firmwares à partir de 3.5.0, la procédure est plus simple et est détaillée [ici sur le forum](https://community.jeedom.com/t/sonoff-diy-et-wifilightv2-en-firmware-3-5-0/48060) .
 
-# Sonoff/Ewelink LAN
+# SonOff Ewelink et Cloud
+
+Cette procédure automatise la création de la plupart des périphériques Ewelink et Sonoff. Cependant, l'accès aux périphériques reste en local. Le périphérique doit être en firmware 3.0.1 ou plus, l'appli Ewelink permet de mettre à jour le firmware.
+## Configuration du plugin
+
+Dans la configuration du plugin, renseigner ces le login (adresse mail uniquement) et le mot de passe de connexion à l'appli Ewelink et sauvegarder, ensuite sélectionner : Ewelink Passer en inclusion. Les périphériques sont créés automatiquement. 
+
+L'adresse IP locale n'est pas renseignée. Faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP.
+
+Par défaut le sonoff basic est choisi par le plugin, vous pouvez changer le sous-type sans perdre la l'ApiKey et le DeviceID.
+
+Si un périphérique de même devieID existe déjà, l'inclusion ne se fera pas.
+
+### Remarques :
+- certains périphériques ne sont pas créés (le cloud Ewelink ne fournit pas les données)
+- les périphériques purement cloud seront intégrés mais le plugin ne pourra pas y accéder
+
 
 ## APiKey DeviceID
 
-Suivre les indications [ici]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) ou [sur le forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 ) pour récupérer ces 2 informations ou faire une recherche sur le web et le forum jeedom avec comme mots clé : Ewelink ou Sonoff Apikey. Le deviceid est à mettre dans l'identifiant du plugin. L'Apikey est à mettre dans le jeton. Il ne faut mettre ni espace ni guillemets.
-
-Le périphérique doit être en firmware 3.0.1 ou plus, l'appli Ewelink permet de mettre à jour le firmware.
-
+Pour récupérer manuellement ces 2 informations, vous pouvez aller [ici]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) ou [sur le forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 )  ou faire une recherche sur le web et le forum jeedom avec comme mots clé : Ewelink ou Sonoff Apikey. Il ne faut mettre ni espace ni guillemets.
+e
 ## Connexion
 
 Quand un périphérique se connecte au wifi, le plugin sera immédiatement prévenu. Par contre, lorsqu'un périphérique est déconnecté, le plugin ne pourra le savoir que si une commande lui est envoyée par le plugin.
@@ -542,9 +556,9 @@ Pour les périphériques non présents dans cette liste (Sonoff Ifan par exemple
 	
 et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) le contenu des accolades afin de permettre l'intégration du module dans le plugin.
 
-# Tuya Smarlife et Cloud Tuya
+# Tuya Smartlife et Cloud Tuya
 
-Cette procédure automatise la création de la plupart des périphériques Tuya et Tuya/Zigbee. 
+Cette procédure automatise la création de la plupart des périphériques Tuya et Tuya/Zigbee. Cependant, l'accès aux périphériques reste en local.
 ## Configuration de la plateforme Tuya
 
 Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "Overview" pour récupérer :
