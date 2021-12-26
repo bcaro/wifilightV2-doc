@@ -499,11 +499,14 @@ Pour les firmwares à partir de 3.5.0, la procédure est plus simple et est dét
 # SonOff Ewelink et Cloud
 
 Cette procédure automatise la création de la plupart des périphériques Ewelink et Sonoff. Cependant, l'accès aux périphériques reste en local. Le périphérique doit être en firmware 3.0.1 ou plus, l'appli Ewelink permet de mettre à jour le firmware.
+
 ## Configuration du plugin
 
 Dans la configuration du plugin, renseigner ces le login (adresse mail uniquement) et le mot de passe de connexion à l'appli Ewelink et sauvegarder, ensuite sélectionner : Ewelink Passer en inclusion. Les périphériques sont créés automatiquement. 
 
-L'adresse IP locale n'est pas renseignée. Faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP.
+Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, si elle ne peut être chargée ou si le système n'est pas linux l'adresse IP ne pourra pas être trouvée automatiquement.
+
+Cette partie du plugin nécessite le lancement des dépendances.
 
 Par défaut le sonoff basic est choisi par le plugin, vous pouvez changer le sous-type sans perdre la l'ApiKey et le DeviceID.
 
@@ -512,6 +515,7 @@ Si un périphérique de même devieID existe déjà, l'inclusion ne se fera pas.
 ### Remarques :
 - certains périphériques ne sont pas créés (le cloud Ewelink ne fournit pas les données)
 - les périphériques purement cloud seront intégrés mais le plugin ne pourra pas y accéder
+- si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
 
 
 ## APiKey DeviceID
@@ -564,7 +568,9 @@ Cette procédure automatise la création de la plupart des périphériques Tuya 
 Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "Overview" pour récupérer :
 Access ID et Access Secret. Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya et sauvegarder, ensuite sélectionner : Tuya Passer en inclusion. Les périphériques sont créés automatiquement. 
 
-L'adresse IP locale n'est pas renseignée. Faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP.
+Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, si elle ne peut être chargée ou si le système n'est pas linux l'adresse IP ne pourra pas être trouvée automatiquement.
+
+Cette partie du plugin nécessite le lancement des dépendances.
 
 Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 
@@ -576,6 +582,7 @@ Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 - les périphériques ayant des informations non standard (en général peut être résolu avec un bloc code dans un scénario) ne sont pas gérés
 - le plugin ne décode pas les commandes complexes et met alors dans paramètres le Json provenant du cloud Tuya
 - la suppression d'une commande créée par le plugin via le cloud Tuya ne peut plus être recréée
+- si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
 
 ### Astuces :
 - si la procédure automatique dysfonctionne, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-12-7) et agir uniquement sur les boutons de l'appli Tuya SmartLife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
