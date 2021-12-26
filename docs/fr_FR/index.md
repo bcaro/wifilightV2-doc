@@ -510,7 +510,7 @@ Cette partie du plugin nécessite le lancement des dépendances.
 
 Par défaut le sonoff basic est choisi par le plugin, vous pouvez changer le sous-type sans perdre la l'ApiKey et le DeviceID.
 
-Si un périphérique de même devieID existe déjà, l'inclusion ne se fera pas.
+Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas.
 
 ### Remarques :
 - certains périphériques ne sont pas créés (le cloud Ewelink ne fournit pas les données)
