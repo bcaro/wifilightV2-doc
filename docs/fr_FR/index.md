@@ -502,7 +502,7 @@ Cette procédure automatise la création de la plupart des périphériques Eweli
 
 ## Configuration du plugin
 
-Dans la configuration du plugin, renseigner ces le login (adresse mail uniquement) et le mot de passe de connexion à l'appli Ewelink et sauvegarder, ensuite sélectionner : Ewelink Passer en inclusion. Les périphériques sont créés automatiquement. 
+Dans la configuration du plugin, renseigner le login (adresse mail uniquement) et le mot de passe de connexion à l'appli Ewelink et sauvegarder, ensuite sélectionner : Ewelink Passer en inclusion. Les périphériques sont créés automatiquement. 
 
 Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, si elle ne peut être chargée ou si le système n'est pas linux l'adresse IP ne pourra pas être trouvée automatiquement.
 
