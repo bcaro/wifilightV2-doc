@@ -508,7 +508,7 @@ Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement 
 
 Cette partie du plugin nécessite le lancement des dépendances.
 
-Par défaut le sonoff basic est choisi par le plugin, vous pouvez changer le sous-type sans perdre la l'ApiKey et le DeviceID.
+Par défaut le sonoff basic est choisi par le plugin, vous pouvez changer le sous-type sans perdre l'ApiKey et le DeviceID.
 
 Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas.
 
@@ -518,7 +518,7 @@ Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas
 - si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
 
 
-## APiKey DeviceID
+## ApiKey DeviceID
 
 Pour récupérer manuellement ces 2 informations, vous pouvez aller [ici]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) ou [sur le forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 )  ou faire une recherche sur le web et le forum jeedom avec comme mots clé : Ewelink ou Sonoff Apikey. Il ne faut mettre ni espace ni guillemets.
 e
