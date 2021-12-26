@@ -508,7 +508,7 @@ Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement 
 
 Cette partie du plugin nécessite le lancement des dépendances.
 
-Par défaut le sonoff basic est choisi par le plugin, vous pouvez changer le sous-type sans perdre l'ApiKey et le DeviceID.
+Par défaut le sonoff basic est choisi par le plugin, vous pouvez changer le sous-type sans perdre l'ApiKey et le deviceID.
 
 Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas.
 
