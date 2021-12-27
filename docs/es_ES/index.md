@@ -603,9 +603,9 @@ Aunque el complemento se dirige localmente a los dispositivos, puede usar la nub
 
 Este procedimiento requiere que copie manualmente la clave local de la nube Tuya.
 
-  [Ver documentación específica para las puertas de enlace Tuya / Zigbee] (./tuya#tocAnchor-1-1)
+  [Ver documentación específica para las puertas de enlace Tuya / Zigbee](./tuya#tocAnchor-1-1)
  
-  [Ver documentación específica de los productos Tuya Wifi] (./tuya#tocAnchor-1-10)
+  [Ver documentación específica de los productos Tuya Wifi](./tuya#tocAnchor-1-10)
 
 
 Atención :

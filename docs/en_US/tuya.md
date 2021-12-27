@@ -107,7 +107,7 @@ This mode is useful for commands that need to be adjusted (dps, parameter), to s
 
 The procedure requires that the device returns its status in the logs. If the device does not return its status, the cid and dps cannot be found in the logs. Experts will be able to find the list of device dps and its cid because they are displayed next to the localKey during the procedure to find them.
 
-The plugin is equipped with buttons allowing you to automatically create the commands for the most common cases, it will suffice to modify the number of dps or the automatically created parameter. See [here] (./ tuya # tocAnchor-1-10-8) for understanding logs and manual creation of commands.
+The plugin is equipped with buttons allowing you to automatically create the commands for the most common cases, it will suffice to modify the number of dps or the automatically created parameter. See [here](./ tuya # tocAnchor-1-10-8) for understanding logs and manual creation of commands.
 
 ## Battery powered devices
 
@@ -361,7 +361,7 @@ To configure manually:
 
 This part is complex and requires very careful reading.
 
-The color coding at Tuya has several formats which are different from that used by Jeedom. Jeedom uses the RGB (Reg Green Blue) format while Tuya uses different HSV (Hue Saturation Value) formats or combining HSV and RGB. The RGB codes each color from 0 to 255 or in hexadecimal from 0 to FF. Red is therefore coded FF0000, blue: 0000FF, white: FFFFFF and black: 000000. The values ​​for HSV are as follows: Hue from 0 to 360 ° (color), S from 0 to 100% (Saturation) and V from 0 to 100% (Intensity). See [here] (https://www.rapidtables.com/convert/color/) to go further.
+The color coding at Tuya has several formats which are different from that used by Jeedom. Jeedom uses the RGB (Reg Green Blue) format while Tuya uses different HSV (Hue Saturation Value) formats or combining HSV and RGB. The RGB codes each color from 0 to 255 or in hexadecimal from 0 to FF. Red is therefore coded FF0000, blue: 0000FF, white: FFFFFF and black: 000000. The values ​​for HSV are as follows: Hue from 0 to 360 ° (color), S from 0 to 100% (Saturation) and V from 0 to 100% (Intensity). See [here](https://www.rapidtables.com/convert/color/) to go further.
 
 In order to allow the plugin to function correctly for the colors, it is necessary to identify the formats used by Tuya when changing colors with the Smartlife app and by observing at this moment in the logs the number of dps which has been modified. .
 

@@ -106,7 +106,7 @@ Este modo es útil para comandos que necesitan ser ajustados (dps, parámetro), 
 
 El procedimiento requiere que el dispositivo devuelva su estado en los registros. Si el dispositivo no devuelve su estado, el cid y el dps no se pueden encontrar en los registros. Los expertos podrán encontrar la lista de dispositivos dps y su cid porque se muestran junto a la clave local durante el procedimiento para encontrarlos.
 
-El plugin está equipado con botones que le permiten crear automáticamente los comandos para los casos más comunes, bastará con modificar el número de dps o el parámetro creado automáticamente. Consulte [aquí] (./tuya#tocAnchor-1-10-8) para comprender los registros y la creación manual de comandos.
+El plugin está equipado con botones que le permiten crear automáticamente los comandos para los casos más comunes, bastará con modificar el número de dps o el parámetro creado automáticamente. Consulte [aquí](./tuya#tocAnchor-1-10-8) para comprender los registros y la creación manual de comandos.
 
 ## Dispositivos a batería
 

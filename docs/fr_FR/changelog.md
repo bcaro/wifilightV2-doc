@@ -14,6 +14,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Ewelink : récupération dans le cloud de la plupart des périphériques fonctionnant en mode LAN et surtout de leur deviceId, apikey et adresse IP, ce qui rend leur configuration bien plus facile.
 - Tuya : récupération de l'adresse IP locale
 - Nanoleaf : création dynamique des modes scène
+- traduction de_DE
 
 1.83 - 2021-12-21 (Jeedom V4)
 - Tuya : récupération dans le cloud de la plupart des périphériques et surtout de leur Id et Localkey. Nécessite de créer un compte sur les serveurs Tuya.

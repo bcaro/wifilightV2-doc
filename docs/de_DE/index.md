@@ -5,7 +5,7 @@ Texte source
 Résultats de traduction
 # Änderungsprotokoll
 
-[siehe hier] (https://bcaro.github.io/wifilightV2-doc/fr_FR/changelog)
+[siehe hier](https://bcaro.github.io/wifilightV2-doc/fr_FR/changelog)
 
 # Präsentation
 
@@ -92,7 +92,7 @@ Es ist ratsam, sich im Forum zu erkundigen, um die Kompatibilität eines Produkt
 
 Ändern Sie niemals die Firmware der Produkte, die sie mit dem Plugin inkompatibel machen können.
 
-Gehen Sie zum Jeedom-Forum [hier] (https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
+Gehen Sie zum Jeedom-Forum [hier](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
 
 ## Einschränkungen
 
@@ -364,19 +364,19 @@ Sie müssen das Port-Feld leer lassen (nicht einmal ein Leerzeichen).
 
 ### Ein alternativer Hub
 
-Mehrere Projekte führten zu Hubs, die mit Mi.Light-Lampen und Fernbedienungen kompatibel sind, um die Einschränkungen der Hubs der Hersteller zu umgehen und die heute mit dem Verschwinden von iBox1 und 2 noch interessanter werden. Das Plugin ist kompatibel mit dem Projekt von [Sidoh ] (https://github.com/sidoh/esp8266_milight_hub) und bietet 2 Modi zum Antrieb der Glühbirnen. Der erste Modus ist der historische Modus von iBox1 und 2, mit dem Sie Ihre Peripheriegeräte wie gewohnt verwenden können. Es müssen 2 Konfigurationsparameter hinzugefügt werden. Der 2. Modus ist komplett neu und hat die Vorteile einer sehr hohen Reaktionsfähigkeit und einer partiellen Statusrückmeldung im Minutentakt.
+Mehrere Projekte führten zu Hubs, die mit Mi.Light-Lampen und Fernbedienungen kompatibel sind, um die Einschränkungen der Hubs der Hersteller zu umgehen und die heute mit dem Verschwinden von iBox1 und 2 noch interessanter werden. Das Plugin ist kompatibel mit dem Projekt von [Sidoh ](https://github.com/sidoh/esp8266_milight_hub) und bietet 2 Modi zum Antrieb der Glühbirnen. Der erste Modus ist der historische Modus von iBox1 und 2, mit dem Sie Ihre Peripheriegeräte wie gewohnt verwenden können. Es müssen 2 Konfigurationsparameter hinzugefügt werden. Der 2. Modus ist komplett neu und hat die Vorteile einer sehr hohen Reaktionsfähigkeit und einer partiellen Statusrückmeldung im Minutentakt.
 
 ### Montage der Milight-Nabe
 
-Der Hub ist also DIY, er muss also mit den Angaben von [Sidoh] (https://github.com/sidoh/esp8266_milight_hub) montiert und programmiert werden. Ein Tutorial ist [im Forum] verfügbar (https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-racement-des-ibox1-et-ibox2/47836?u=bernardfr. weil wir).
+Der Hub ist also DIY, er muss also mit den Angaben von [Sidoh](https://github.com/sidoh/esp8266_milight_hub) montiert und programmiert werden. Ein Tutorial ist [im Forum] verfügbar (https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-racement-des-ibox1-et-ibox2/47836?u=bernardfr. weil wir).
 
 ### Historischer Mi.Light-Modus
 
-In diesem Modus müssen Sie lediglich den Port-Parameter mit dem UDP-Modus-Port des Milight-Hubs eingeben. Siehe [Sidoh] (https://github.com/sidoh/esp8266_milight_hub) oder [im Forum] (https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-rangement- des-ibox1-et-ibox2/47836?u = bernardfr.caron) für weitere Details.
+In diesem Modus müssen Sie lediglich den Port-Parameter mit dem UDP-Modus-Port des Milight-Hubs eingeben. Siehe [Sidoh](https://github.com/sidoh/esp8266_milight_hub) oder [im Forum](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-rangement- des-ibox1-et-ibox2/47836?u = bernardfr.caron) für weitere Details.
 
 ### ESP-Modus
 
-In diesem Modus erfolgt die Auswahl der Peripheriegeräte nach dem Typ der Fernbedienung und nicht nach dem Lampentyp wie im historischen Modus. Nachdem Sie die üblichen Parameter eingegeben haben, müssen Sie die Kennung der Gruppe der Fernbedienungen eingeben, siehe [Sidoh] (https://github.com/sidoh/esp8266_milight_hub) oder [im Forum] (https://community.jeedom .com/t/tutorial-making-a-hub-milight-replacecing-the-ibox1-and-ibox2/47836?u = bernardfr.caron) für weitere Details. Dieser Modus bietet jede Minute aktualisierte partielle Statusrückmeldungen.
+In diesem Modus erfolgt die Auswahl der Peripheriegeräte nach dem Typ der Fernbedienung und nicht nach dem Lampentyp wie im historischen Modus. Nachdem Sie die üblichen Parameter eingegeben haben, müssen Sie die Kennung der Gruppe der Fernbedienungen eingeben, siehe [Sidoh](https://github.com/sidoh/esp8266_milight_hub) oder [im Forum](https://community.jeedom .com/t/tutorial-making-a-hub-milight-replacecing-the-ibox1-and-ibox2/47836?u = bernardfr.caron) für weitere Details. Dieser Modus bietet jede Minute aktualisierte partielle Statusrückmeldungen.
 
 Um eine Lampe mit dem Milight-Hub zu koppeln, schalten Sie die Lampe ein und klicken Sie auf Sync ON. Verwenden Sie Sync OFF zum Entkoppeln. Um eine Fernbedienung zu koppeln, wählen Sie ON des zu synchronisierenden Kanals, sobald die Stromversorgung eingeschaltet wird, und klicken Sie auf Sync ON.
 
@@ -405,7 +405,7 @@ Es genügt, bestimmte Bedingungen zu beachten:
 
 Setzen Sie nicht die Start- und Endklammern sowie die Newline-Zeichen, das Plugin fügt sie automatisch hinzu
 Lassen Sie sich von den vorkonfigurierten Bedienelementen inspirieren, um diese zusätzlichen Szenenmodi zu erstellen.
-Informationen zur Yeelight-Syntax finden Sie [hier] (https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf)
+Informationen zur Yeelight-Syntax finden Sie [hier](https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf)
 
 ## Zustand
 In V2 sucht das Plugin beim Aktivieren des Plugins und sobald der Daemon gestartet wird sowie jede Minute nach den mit Jeedom versorgten und mit Jeedom verbundenen Glühbirnen.
@@ -445,7 +445,7 @@ Derzeit können nur die Fassungen in V2 verwendet werden, wenden Sie sich an den
 
 Es ist wichtig, einen Token wiederherzustellen, der es dem Plugin ermöglicht, mit Xiaomi Philips-Geräten zu kommunizieren.
 
-Das Verfahren ist komplex und erfordert mehrere Manipulationen. Suchen Sie im Web mit dem Stichwort: Xiaomi-Token oder im Forum [hier] (https://community.jeedom.com/t/xiaomi-philips-et-wifilightv2/48064).
+Das Verfahren ist komplex und erfordert mehrere Manipulationen. Suchen Sie im Web mit dem Stichwort: Xiaomi-Token oder im Forum [hier](https://community.jeedom.com/t/xiaomi-philips-et-wifilightv2/48064).
 
 Es wird keine Hilfe beim Wiederherstellen des Tokens gegeben.
 
@@ -495,7 +495,7 @@ Kompatible Peripheriegeräte sind:
 
 ## Aufbau
 
-Für Firmware ab 3.3.0 und darunter 3.5.0 d.h. DIY-Modus 1.0, Sonoff bietet [hier] (https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) alle Elemente, um die Module im DIY-Modus zu konfigurieren.
+Für Firmware ab 3.3.0 und darunter 3.5.0 d.h. DIY-Modus 1.0, Sonoff bietet [hier](https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) alle Elemente, um die Module im DIY-Modus zu konfigurieren.
 
 Ein Mobiltelefon und ein Windows-PC mit WLAN-Karte sind erforderlich.
 Die zum Auffinden des Sonoffs auszuführende Software gibt in der linken Spalte die zur Konfiguration des Geräts erforderliche Kennung an.
@@ -528,7 +528,7 @@ Wenn bereits ein Gerät mit derselben Geräte-ID vorhanden ist, wird die Aufnahm
 
 ## ApiKey-Geräte-ID
 
-Um diese 2 Informationen manuell abzurufen, können Sie [hier] (https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) oder [im Jeedom-Forum] (https: //community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) oder suchen Sie im Web und im Jeedom-Forum nach den Schlüsselwörtern: Ewelink oder Sonoff Apikey. Verwenden Sie keine Leerzeichen oder Anführungszeichen.
+Um diese 2 Informationen manuell abzurufen, können Sie [hier](https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) oder [im Jeedom-Forum](https: //community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) oder suchen Sie im Web und im Jeedom-Forum nach den Schlüsselwörtern: Ewelink oder Sonoff Apikey. Verwenden Sie keine Leerzeichen oder Anführungszeichen.
 e
 ## Anmeldung
 
@@ -566,7 +566,7 @@ Bei Geräten, die nicht in dieser Liste enthalten sind (z. B. Sonoff Ifan) oder 
 
 Empfangen nach Dekodierung: {.................}
 
-und geben Sie im [Forum] (https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) den Inhalt der geschweiften Klammern an, um die Einbindung des Moduls in das Plugin zu ermöglichen.
+und geben Sie im [Forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) den Inhalt der geschweiften Klammern an, um die Einbindung des Moduls in das Plugin zu ermöglichen.
 
 # Tuya Smartlife und Cloud Tuya
 
@@ -575,7 +575,7 @@ Dieses Verfahren automatisiert die Erstellung der meisten Tuya- und Tuya/Zigbee-
 ## Konfiguration der Tuya-Plattform
 
 Folgen Sie zunächst diesem und rufen Sie den Reiter "Übersicht" auf, um Folgendes abzurufen:
-Zugriffs-ID und Zugriffsgeheimnis. Füllen Sie in der Plugin-Konfiguration diese [Tutorial] (https://linkdhome.com/articles/local-tuya-device-control-in-homekit) 2 Parameter im Tuya-Teil aus und speichern Sie, dann wählen Sie: Tuya Gehe zur Aufnahme . Die Geräte werden automatisch angelegt.
+Zugriffs-ID und Zugriffsgeheimnis. Füllen Sie in der Plugin-Konfiguration diese [Tutorial](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) 2 Parameter im Tuya-Teil aus und speichern Sie, dann wählen Sie: Tuya Gehe zur Aufnahme . Die Geräte werden automatisch angelegt.
 
 Wenn die lokale IP-Adresse vom Plugin nicht gefunden wird, stellen Sie die Verbindung zwischen der Mac-Adresse und der IP-Adresse her, die in den Geräteeinstellungen der Tuya-Anwendung und Ihres Routers angegeben ist, und ändern Sie die IP-Adresse. Das Verfahren zum Ermitteln der IP-Adresse verwendet einen Befehl vom Linux-System, wenn es nicht geladen werden kann oder das System nicht kompatibel ist, kann die IP-Adresse nicht automatisch gefunden werden.
 
@@ -594,7 +594,7 @@ Wenn bereits ein Gerät mit derselben devId vorhanden ist, wird die Aufnahme nic
 - Wenn die IP-Adresse nicht gefunden wurde, weil das Gerät nicht verbunden ist, geben Sie ihm die Adresse: 0.0.0.0, verbinden Sie es und starten Sie den Aufnahmevorgang erneut.
 
 ###Tipps:
-- Wenn der automatische Vorgang nicht funktioniert, wechseln Sie in den [Geräte-Lernmodus] (./tuya#tocAnchor-1-12-7) und verwenden Sie nur die entsprechenden Schaltflächen der Tuya Smartlife App. Wenn andere Schaltflächen verwendet werden, erstellt das Plugin Duplikate der über die Tuya-Cloud erstellten Bestellungen.
+- Wenn der automatische Vorgang nicht funktioniert, wechseln Sie in den [Geräte-Lernmodus](./tuya#tocAnchor-1-12-7) und verwenden Sie nur die entsprechenden Schaltflächen der Tuya Smartlife App. Wenn andere Schaltflächen verwendet werden, erstellt das Plugin Duplikate der über die Tuya-Cloud erstellten Bestellungen.
 - Bestellungen können grundsätzlich manuell oder im Lernmodus erstellt werden
 - Min und Max eines Zahlenwertes werden aus der Cloud gemeldet. Das Plugin kalibriert die Info- und numerischen Befehle von 0 bis 100. Ändern Sie nach Bedarf die Parameter # slider # und # value # sowie die Jeedom min und max.
 
@@ -606,15 +606,15 @@ So erhalten Sie den Json aus der Tuya-Cloud:
 - Cloud> Api Explorer> (im neuen Fenster) Smart Home Management System> Gerätesteuerung> Gerätespezifikationsattribut abrufen (das 2. in der Liste ohne s zum Attribut)
 - fügen Sie die Geräte-ID ein> Anfrage senden> Kopieren (Link im rechten Fenster)
 Obwohl das Plugin Geräte lokal adressiert, kann es die Tuya-Cloud verwenden, um Geräte zu konfigurieren und automatisch cid, localKey und devId abzurufen.
-[Siehe die spezifische Dokumentation] (./tuya#tocAnchor-1-1)
+[Siehe die spezifische Dokumentation](./tuya#tocAnchor-1-1)
 
 ## Manuelle oder halbmanuelle Erstellung von Tuya- und Tuya/Zigbee-Geräten
 
 Dieses Verfahren erfordert, dass Sie den Localkey manuell aus der Tuya-Cloud kopieren.
 
- [Siehe spezifische Dokumentation für Tuya/Zigbee-Gateways] (./tuya#tocAnchor-1-1)
+ [Siehe spezifische Dokumentation für Tuya/Zigbee-Gateways](./tuya#tocAnchor-1-1)
  
- [Siehe spezifische Dokumentation für Tuya Wifi-Produkte] (./tuya#tocAnchor-1-10)
+ [Siehe spezifische Dokumentation für Tuya Wifi-Produkte](./tuya#tocAnchor-1-10)
 
 
 Warnung :
@@ -660,4 +660,4 @@ Achten Sie auf folgende Punkte:
 
 # Hilfe ?
 
-Gehen Sie zum Jeedom-Forum [hier] (https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
+Gehen Sie zum Jeedom-Forum [hier](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)

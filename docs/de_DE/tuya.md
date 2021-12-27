@@ -1,4 +1,4 @@
-[Zurück zur allgemeinen Dokumentation] (./index.md)
+[Zurück zur allgemeinen Dokumentation](./index.md)
 
 
 # Zigbee Tuya-Gateways
@@ -45,7 +45,7 @@ Mit der Option "Statusabfrage" können Sie den Status alle 20s abfragen, auch we
 
 Es ist wichtig, den lokalen Schlüssel (localKey) und die devId des Gateways abzurufen, damit das Plugin mit den Geräten kommunizieren kann.
 
-Um den localKey und die devId abzurufen, ist die Prozedur komplex und erfordert mehrere Operationen. Suchen Sie im Web mit dem Stichwort: Tuya localKey, insbesondere auf Github oder im [Jeedom-Forum] (https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047).
+Um den localKey und die devId abzurufen, ist die Prozedur komplex und erfordert mehrere Operationen. Suchen Sie im Web mit dem Stichwort: Tuya localKey, insbesondere auf Github oder im [Jeedom-Forum](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047).
 
 Wenn das Gateway deinstalliert und dann in der mobilen Anwendung neu installiert wird, wird sein Schlüssel geändert. Sie müssen den Schlüssel wie oben beschrieben finden.
 
@@ -67,7 +67,7 @@ Hinweis: Wenn das Gerät seinen Status nicht zurückgibt, kann die cid in den Pr
 
 ## Auswahl von Standard-Peripheriegeräten, die mit dem Gateway verbunden sind
 
-Wenn Ihr Gerät in der Vorschlagsliste enthalten ist, sollte es sofort funktionieren. Wenn Ihr Gerät etwas anders ist, können die DPS-Zahlen oder -Parameter andere Werte als die Standardkonfigurationen haben. Es ist möglich, die erstellten Aufträge durch Ändern der dps-Zahl und des Parameters mit einer möglichen Berechnungsformel zu ändern, um den gewünschten Wert zu finden. Siehe [Manueller Erstellungsmodus von Befehlen in V3] (./tuya#tocAnchor-1-10-8) des Tuya-Teils, um die Plugin-Logs zu interpretieren und die Befehle der Standardkonfiguration zu verstehen.
+Wenn Ihr Gerät in der Vorschlagsliste enthalten ist, sollte es sofort funktionieren. Wenn Ihr Gerät etwas anders ist, können die DPS-Zahlen oder -Parameter andere Werte als die Standardkonfigurationen haben. Es ist möglich, die erstellten Aufträge durch Ändern der dps-Zahl und des Parameters mit einer möglichen Berechnungsformel zu ändern, um den gewünschten Wert zu finden. Siehe [Manueller Erstellungsmodus von Befehlen in V3](./tuya#tocAnchor-1-10-8) des Tuya-Teils, um die Plugin-Logs zu interpretieren und die Befehle der Standardkonfiguration zu verstehen.
 
 
 ## Automatische Erstellung des Geräts im Aufnahmemodus
@@ -106,7 +106,7 @@ Dieser Modus ist nützlich für die Befehle, die angepasst werden müssen (dps, 
 
 Das Verfahren erfordert, dass das Gerät seinen Status in den Protokollen zurückgibt. Wenn das Gerät seinen Status nicht zurückgibt, können cid und dps nicht in den Protokollen gefunden werden. Experten können die Liste der Geräte-DPS und deren Cid finden, da sie während des Suchvorgangs neben dem localKey angezeigt werden.
 
-Das Plugin ist mit Schaltflächen ausgestattet, mit denen Sie die Befehle für die gängigsten Fälle automatisch erstellen können. Es reicht aus, die Anzahl der dps oder den automatisch erstellten Parameter zu ändern. Siehe [hier] (./tuya#tocAnchor-1-10-8) zum Verständnis von Protokollen und der manuellen Erstellung von Befehlen.
+Das Plugin ist mit Schaltflächen ausgestattet, mit denen Sie die Befehle für die gängigsten Fälle automatisch erstellen können. Es reicht aus, die Anzahl der dps oder den automatisch erstellten Parameter zu ändern. Siehe [hier](./tuya#tocAnchor-1-10-8) zum Verständnis von Protokollen und der manuellen Erstellung von Befehlen.
 
 ## Batteriebetriebene Geräte
 
@@ -148,7 +148,7 @@ Die Präsenz- und Öffnungssensoren sind nicht kompatibel, da sie nicht lokal ko
 
 Es ist wichtig, einen lokalen Schlüssel (localKey) und eine devId zu erhalten, die es dem Plugin ermöglichen, mit den Geräten zu kommunizieren.
 
-Das Verfahren ist komplex und erfordert mehrere Manipulationen. Suchen Sie im Web mit dem Stichwort: Tuya localKey, insbesondere auf Github oder im [Jeedom-Forum] (https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047).
+Das Verfahren ist komplex und erfordert mehrere Manipulationen. Suchen Sie im Web mit dem Stichwort: Tuya localKey, insbesondere auf Github oder im [Jeedom-Forum](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047).
 
 Das Gerät darf nicht mit einer Anwendung auf einem Mobiltelefon verbunden sein, da es sonst nicht auf Befehle von Jeedom reagiert. Schließen Sie daher eventuell mit dem Gerät verbundene Anwendungen.
 
@@ -358,7 +358,7 @@ So konfigurieren Sie manuell:
 
 Dieser Teil ist komplex und erfordert eine sehr sorgfältige Lektüre.
 
-Die Farbcodierung bei Tuya hat mehrere Formate, die sich von denen von Jeedom unterscheiden. Jeedom verwendet das RGB-Format (Reg Green Blue), während Tuya verschiedene HSV-Formate (Hue Saturation Value) verwendet oder HSV und RGB kombiniert. Das RGB kodiert jede Farbe von 0 bis 255 oder hexadezimal von 0 bis FF. Rot wird daher mit FF0000 codiert, Blau: 0000FF, Weiß: FFFFFF und Schwarz: 000000. Die Werte für HSV sind wie folgt: Farbton von 0 bis 360° (Farbe), S von 0 bis 100% (Sättigung) und V ab 0 bis 100 % (Intensität). Siehe [hier] (https://www.rapidtables.com/convert/color/), um weiter zu gehen.
+Die Farbcodierung bei Tuya hat mehrere Formate, die sich von denen von Jeedom unterscheiden. Jeedom verwendet das RGB-Format (Reg Green Blue), während Tuya verschiedene HSV-Formate (Hue Saturation Value) verwendet oder HSV und RGB kombiniert. Das RGB kodiert jede Farbe von 0 bis 255 oder hexadezimal von 0 bis FF. Rot wird daher mit FF0000 codiert, Blau: 0000FF, Weiß: FFFFFF und Schwarz: 000000. Die Werte für HSV sind wie folgt: Farbton von 0 bis 360° (Farbe), S von 0 bis 100% (Sättigung) und V ab 0 bis 100 % (Intensität). Siehe [hier](https://www.rapidtables.com/convert/color/), um weiter zu gehen.
 
 Damit das Plugin für die Farben korrekt funktioniert, ist es notwendig, die von Tuya verwendeten Formate bei einem Farbwechsel mit der Smartlife-App zu identifizieren und in diesem Moment in den Protokollen die Anzahl der geänderten dps zu beobachten. .
 
@@ -579,7 +579,7 @@ Wenn ein Schritt ausgefallen ist, müssen Sie die folgenden nicht testen. Wenn S
 
 
 
-[Zurück zur allgemeinen Dokumentation] (./index.md)
+[Zurück zur allgemeinen Dokumentation](./index.md)
 
 
 

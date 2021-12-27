@@ -365,7 +365,7 @@ It is necessary to leave the Port field empty (not even a space).
 
 ### An alternative hub
 
-Several projects have resulted in hubs compatible with Mi.Light bulbs and remote controls in order to circumvent the limitations of the manufacturer's hubs and which become even more interesting today with the disappearance of iBox1 and 2. The plugin is compatible with the project of [Sidoh] (https://github.com/sidoh/esp8266_milight_hub) and offers 2 modes to drive the bulbs. The first mode is the historical mode of iBox1 and 2, which allows you to use your peripherals as usual, there will be 2 configuration parameters to add. The 2nd mode is completely new and has the advantages of very high reactivity and partial status feedback every minute. 
+Several projects have resulted in hubs compatible with Mi.Light bulbs and remote controls in order to circumvent the limitations of the manufacturer's hubs and which become even more interesting today with the disappearance of iBox1 and 2. The plugin is compatible with the project of [Sidoh](https://github.com/sidoh/esp8266_milight_hub) and offers 2 modes to drive the bulbs. The first mode is the historical mode of iBox1 and 2, which allows you to use your peripherals as usual, there will be 2 configuration parameters to add. The 2nd mode is completely new and has the advantages of very high reactivity and partial status feedback every minute. 
 
 ### Assembling the Milight-hub
 
@@ -615,7 +615,7 @@ This procedure requires you to manually copy the localkey from the Tuya cloud.
 
   [See specific documentation for Tuya / Zigbee gateways](./tuya#tocAnchor-1-1)
  
-  [See specific documentation for Tuya Wifi products] (./tuya#tocAnchor-1-10)
+  [See specific documentation for Tuya Wifi products](./tuya#tocAnchor-1-10)
 
 
 Warning :
