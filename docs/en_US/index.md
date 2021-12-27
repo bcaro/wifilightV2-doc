@@ -67,7 +67,7 @@ Products that may be compatible and not guaranteed:
 - TP-Link LB100 / 110/120/130: bulbs with status feedback!
 - Extel Meli lamp with status feedback!
 - Xiaomi Philips: Desk lamp, bulb and ceiling light with status feedback !!!
-- Bulbs, sockets, switch, shutter switches, humidifier, thermostat compatible with Tuya Smart live or Jinvoo smart or eFamilyCloud apps with status feedback !!!
+- Bulbs, sockets, switch, shutter switches, humidifier, thermostat compatible with Tuya Smartlife with status feedback !!!
 - TP-link HS100 HS110 electrical outlets with status feedback !!
 - Magic home compatible pixel strip led controllers with status feedback!
 - Peripherals controlled by the Ewelink app including Sonoffs in LAN mode with status feedback !!!
@@ -133,7 +133,7 @@ Xiaomi Philips:
 Magic Home compatible pixel strip led controllers:
 - custom scenes are not supported.
 
-Compatible devices Tuya Smart / Jinvoo / eFamilyCloud:
+Compatible devices Tuya Smartlife:
 - all the commands of validated peripherals (see the forum) of firmware 1.0 and firmware 2.0 are compatible (in particular the Neo CoolCam sockets).
 - not compatible with cloud devices, especially opening sensors
 
@@ -161,6 +161,11 @@ Wiz:
 myStrom:
 - only the ordered socket has been tested, waiting for users to return for other devices
 
+- the connection with the products is via the cloud and requires internet.
+- only the color intensity and color temperature On/Off controls work
+- these commands do not work on all Govee modules
+
+Govee:
 - the connection with the products is via the cloud and requires internet.
 - only the color intensity and color temperature On/Off controls work
 - these commands do not work on all Govee modules 
@@ -191,7 +196,7 @@ You can then go to the configuration of the wifilightV2 plugin.
 
 wifilightV2 does not create devices automatically except:
 
-- Tuya Smart Life
+- Tuya Smartlife
 - Ewelink
 - Govee 
 
@@ -587,7 +592,7 @@ If a device with the same devId already exists, the inclusion will not happen.
 - if the IP address was not found because the device is not connected, give it the address: 0.0.0.0, connect it and restart the inclusion procedure.
 
 ### Tips:
-- if the automatic procedure does not work, go to [device learning mode ](./tuya#tocAnchor-1-12-7) and act only on the corresponding buttons of the Tuya SmartLife app. If other buttons are used, the plugin will create duplicates of the orders created via the Tuya cloud.
+- if the automatic procedure does not work, go to [device learning mode ](./tuya#tocAnchor-1-12-7) and act only on the corresponding buttons of the Tuya Smartlife app. If other buttons are used, the plugin will create duplicates of the orders created via the Tuya cloud.
 - in general, orders can be created manually or in learning mode
 - the min and the max of a numerical value are reported from the cloud. The plugin calibrates the info and numeric commands from 0 to 100. As needed, modify the #slider# and #value# parameters as well as the Jeedom min and max.
 
@@ -615,7 +620,7 @@ This procedure requires you to manually copy the localkey from the Tuya cloud.
 
 Warning :
 
-Lidl Tuya / Zigbee products must never have been paired with the Lidl app. They must be paired only with the Tuya SmartLife application, otherwise they can no longer be used by the plugin. 
+Lidl Tuya / Zigbee products must never have been paired with the Lidl app. They must be paired only with the Tuya Smartlife application, otherwise they can no longer be used by the plugin. 
 
 # Nanoleaf
 

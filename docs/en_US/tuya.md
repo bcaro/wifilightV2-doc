@@ -1,34 +1,5 @@
 [Back to main documentation ](./index.md)
 
-# Inclusion from the Tuya cloud
-
-This procedure automates the creation of most Tuya and Tuya/Zigbee devices. Reading the following two paragraphs (Zigbee Tuya and Tuya gateways) allows you to understand more precisely how the plugin works.
-
-## configuration of the Tuya platform
-
-First follow this [tutorial] (https://linkdhome.com/articles/local-tuya-device-control-in-homekit) and go to the "Overview" tab to retrieve:
-Access ID and Access Secret.
-In the plugin configuration, enter these 2 parameters in the Tuya part.
-Then select: Tuya Go to inclusion.
-The devices are created automatically.
-If a device with the same devId already exists, the inclusion will not occur.
-
-Limitations:
-- some devices are not created (Tuya cloud does not provide data)
-- purely cloud devices will be integrated but the plugin will not be able to access them
-- the color order of the colored bulbs is not transmitted by the Tuya cloud
-- peripherals with coded information (actuator part of alarms in general) are not managed
-- devices with non-standard information (in general can be solved with a code block in a scenario) are not managed
-- the local IP address is not entered. Reconcile the mac address and the IP address given in the device settings of the Tuya application and your router and modify the IP address.
-- deleting an order created by the plugin via the Tuya cloud can no longer be recreated
-
-Tips:
-- to add the color commands, switch to [device learning mode] (./ tuya # tocAnchor-1-12-7) and use only the color buttons of the Tuya SmatLife app. If other buttons are used, the plugin will create duplicates of the orders created via the Tuya cloud.
-- if other commands are not created, do the same: use the buttons of the Tuya SmartLife app in learning mode.
-- in general, orders can be created manually or in learning mode
-- the min and the max of a numerical value are reported from the cloud. As needed, modify #slider# and #value# with #slider#/100*max and #value#*100/max. The plugin therefore does not automate the calibration of the info and action commands. 
-
-
 # Zigbee Tuya gateways
 
 To use such a gateway, choose the type: "Gateway Hub Tuya Zigbee"

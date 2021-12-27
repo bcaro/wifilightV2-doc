@@ -67,7 +67,7 @@ Produits pouvant être compatibles et non garantis :
 -   TP-Link LB100/110/120/130 : ampoules avec retour d’état !
 -   Lampe Extel Meli avec retour d'état !
 -   Xiaomi Philips : Lampe bureau, ampoule et plafonnier avec retour d'état !!!
--   Ampoules, prises, interrupteur, interrupteurs volets, humidificateur, thermostat compatibles Tuya Smart life app avec retour d'état !!!
+-   Ampoules, prises, interrupteur, interrupteurs volets, humidificateur, thermostat compatibles Tuya Smartlife app avec retour d'état !!!
 -   Prises électriques TP-link HS100 HS110 avec retour d'état !!
 -   Contrôleurs de pixel strip leds compatible Magic home avec retour d'état !
 -	Périphériques contrôlés par l'appli Ewelink dont les Sonoff en mode LAN avec retour d'état !!!
@@ -133,7 +133,7 @@ Xiaomi Philips :
 Contrôleurs de pixel strip leds compatibles Magic Home :
 -   les scènes custom ne sont pas gérées.
 
-Périphériques compatibles Tuya Smart Life :
+Périphériques compatibles Tuya Smartlife :
 -   toutes les commandes des périphériques validés (voir le forum) du firmware 1.0 et du firmware 2.0 sont compatibles (en particulier les prises Neo CoolCam).
 -   non compatibles avec les périphériques cloud, en particulier les capteurs d'ouverture
 
@@ -192,7 +192,7 @@ Vous pouvez alors passer à la configuration du plugin wifilightV2.
 
 wifilightV2 ne crée pas les périphériques automatiquement sauf :
 
--   Tuya Smart Life
+-   Tuya Smartlife
 -   Ewelink
 -   Govee
 
@@ -590,7 +590,7 @@ Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 - si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
 
 ### Astuces :
-- si la procédure automatique dysfonctionne, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-12-7) et agir uniquement sur les boutons de l'appli Tuya SmartLife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
+- si la procédure automatique dysfonctionne, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-12-7) et agir uniquement sur les boutons de l'appli Tuya Smartlife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
 - de manière générale, les commandes peuvent être créés manuellement ou en mode apprentissage
 - le min et le max d'une valeur numérique sont remontés depuis le cloud. Le plugin calibre les commandes infos et numériques de 0 à 100. Selon les besoins, modifier les paramètres #slider# et #value# ainsi que le min et max Jeedom.
 
@@ -615,7 +615,7 @@ Cette procédure nécesite de recopier manuellement la localkey depuis le cloud 
 
 Attention :
 
-Les produits Lidl Tuya/Zigbee ne doivent jamais avoir été appairés avec l'application Lidl. Il faut les appairer uniquement avec l'application Tuya SmartLife, sinon ils ne pourront plus être utilisés par le plugin.
+Les produits Lidl Tuya/Zigbee ne doivent jamais avoir été appairés avec l'application Lidl. Il faut les appairer uniquement avec l'application Tuya Smartlife, sinon ils ne pourront plus être utilisés par le plugin.
 
 # Nanoleaf
 

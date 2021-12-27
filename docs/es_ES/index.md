@@ -64,7 +64,7 @@ Productos que pueden ser compatibles y no garantizados:
 -   TP-Link LB100/110/120/130: bombillas con retroalimentación de estado !
 -   Lámpara Extel Meli con retroalimentación de estado !
 -   Xiaomi Philips: lámpara de escritorio, bombilla y lámpara de techo con retroalimentación de estado !!!
--   Bombillas, enchufes, interruptores, interruptores de obturación, humidificador, termostato compatible con aplicaciones Tuya Smart live o Jinvoo smart o eFamilyCloud con comentarios de estado !!!
+-   Bombillas, enchufes, interruptores, interruptores de obturación, humidificador, termostato compatible con aplicacion Tuya Smartlife con comentarios de estado !!!
 -   TP-link HS100 HS110 enchufes eléctricos con retroalimentación de estado !!
 -   Controladores de tira de píxeles compatibles con Magic Home con retroalimentación de estado !
 -   Periféricos controlados por la aplicación Ewelink, incluidos Sonoffs en modo LAN con comentarios de estado !!!
@@ -130,7 +130,7 @@ Xiaomi Philips:
 Controladores LED de tira de píxeles compatibles con Magic Home:
 - No se admiten escenas personalizadas.
 
-Dispositivos compatibles Tuya Smart/Jinvoo/eFamilyCloud:
+Dispositivos compatibles Tuya Smartlife:
 - Todos los comandos de los periféricos validados (ver el foro) de firmware 1.0 y firmware 2.0 son compatibles (en particular los sockets Neo CoolCam).
 - no compatible con dispositivos en la nube, especialmente sensores de apertura
 
@@ -188,7 +188,7 @@ Luego puede ir a la configuración del plugin wifilightV2.
 
 wifilightV2 no crea dispositivos automáticamente excepto:
 
-- Tuya Smart Life
+- Tuya Smartlife
 - Ewelink
 - Govee 
 
@@ -584,7 +584,7 @@ Si ya existe un dispositivo con el mismo devId, la inclusión no ocurrirá.
 
 ### Consejos:
 - si el procedimiento automático no funciona, vaya a [modo de aprendizaje del dispositivo](./tuya#tocAnchor-1-12-7)
-y actuar solo en los botones correspondientes de la aplicación Tuya SmartLife. Si se utilizan otros botones, el complemento creará duplicados de los pedidos creados a través de la nube Tuya.
+y actuar solo en los botones correspondientes de la aplicación Tuya Smartlife. Si se utilizan otros botones, el complemento creará duplicados de los pedidos creados a través de la nube Tuya.
 - en general, los pedidos se pueden crear manualmente o en modo de aprendizaje
 - el mínimo y el máximo de un valor numérico se informan desde la nube. El complemento calibra la información y los comandos numéricos de 0 a 100. Según sea necesario, modifique los parámetros # slider # y # value #, así como los valores mínimo y máximo de Jeedom.
 
@@ -610,7 +610,7 @@ Este procedimiento requiere que copie manualmente la clave local de la nube Tuya
 
 Atención :
 
-Los productos Lidl Tuya / Zigbee nunca deben haberse emparejado con la aplicación Lidl. Deben emparejarse solo con la aplicación Tuya SmartLife; de ​​lo contrario, el complemento ya no podrá utilizarlos. 
+Los productos Lidl Tuya / Zigbee nunca deben haberse emparejado con la aplicación Lidl. Deben emparejarse solo con la aplicación Tuya Smartlife; de ​​lo contrario, el complemento ya no podrá utilizarlos. 
 
 # NanoLeaf
 

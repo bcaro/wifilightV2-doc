@@ -1,224 +1,299 @@
+Types de traductions
+Traduction de texte
+Texte source
+2 812/5 000
+Résultats de traduction
+# Änderungsprotokoll
+
+[siehe hier] (https://bcaro.github.io/wifilightV2-doc/fr_FR/changelog)
+
 # Präsentation
 
-Dieses Plugin kann viele LED-Streifen oder LED-Lampen oder elektrische Stecker verwalten, die über eine mit dem Produkt gelieferte WLAN-Box mit einer Funkfrequenz von 2,4 GHz gesteuert werden.
+Warnung :
+Die dauerhafte Funktion des Plugins kann nicht garantiert werden: Inkompatibilität oder teilweise Kompatibilität des Produkts, schlecht verwaltetes Protokoll, schlechte Verbindungsqualität zum Beispiel. Verwenden Sie das Plugin nicht, um empfindliche Geräte zu steuern, die irgendeine Art von Störung verursachen können. Das Plugin wird zu Testzwecken bereitgestellt und nicht für eine Installation, die unter allen Umständen einen optimalen Betrieb erfordert.
 
+Mit diesem Plugin können Sie viele LED-Streifen, LED-Lampen, Steckdosen, Thermostate, Temperatursensoren, Türsensoren usw. verwalten. über WLAN direkt oder über eine mit dem Produkt verkaufte WLAN-Box gesteuert werden. Das Prinzip des Plugins besteht darin, niemals die Cloud und damit eine Internetverbindung zwischen dem Plugin und dem Gerät über einen Remote-Server zu nutzen, alle Aktionen sind daher lokal im Heimnetzwerk.
 
-![Milight](../images/wifilightV2_screenshot01.png) ![Tuya](../images/wifilightV2_screenshot03.png) ![Plafonnier](../images/wifilightV2_screenshot05.png) ![Prise](../images/wifilightV2_screenshot07.png) 
+Eine Ausnahme: Govee-Produkte.
 
-![Sonoff](../images/wifilightV2_screenshot02.png) ![MagicHome](../images/wifilightV2_screenshot04.png)
+<img src = "../images/wifilightV2_screenshot01.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot02.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot03.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot04.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot05.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot06.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot07.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot08.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot09.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot10.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot11.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot12.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot13.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot14.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot15.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot16.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot17.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot18.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot19.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot20.png" alt = "image" style = "height: 100px;" />
+<img src = "../images/wifilightV2_screenshot21.png" alt = "image" style = "height: 100px;" /> 
 
-# Kompatibilität und Einschränkungen
+# Kompatibilitäten und Einschränkungen
 
 ## Kompatible Produkte
-
-Es gibt viele Produkte, die mit dem Plugin kompatibel sind, aber sehr unterschiedliche Marken oder Marken.
-
+ 
+Es gibt viele Produkte, die mit dem Plugin kompatibel sind, jedoch von sehr unterschiedlichen Marken oder markenlos.
+ 
 Kompatible Produkte:
--   Mi.Light / EasyBulb / LimitlessLED-Lampen, die an die unten aufgeführten Steuerungen angeschlossen sind: keine Rückmeldung!
--   LED-Leiste Mi.Light / EasyBulb / LimitlessLED an die unten stehenden Steuerungen angeschlossen: keine Rückmeldung!
--   LED-Controller Mi.Light / EasyBulb / LimitlessLED V3.0 bis V5.0 (der Miboxer ist nicht kompatibel): keine Rückmeldung!
--   Mi.Light / EasyBulb / LimitlessLED LED-Controller V6.0 / iBox1 / iBox2: Kein Feedback!
--   Weiß und Farbe Xiaomi Yeelight WiFi-Lampen mit Status-Feedback!
--   Strip-LED WiFi Xiaomi Yeelight Farbe mit Status-Feedback!
--   Xiaomi Yeelight WiFi Deckenleuchte mit Statusrückmeldung!
--   WiFi Desktop-Lampe Xiaomi Mijia mit Status-Feedback!
--   Sonoff Basic R3 im DIY-Modus mit Statusrückmeldung !!
--   Nanoleaf Aurora mit Status-Feedback!
+- Mi.Light/EasyBulb/LimitlessLED-Lampen an den Controllern unten angeschlossen: keine Statusrückmeldung!
+- Mi.Light/EasyBulb/LimitlessLED Strip-LED an den Controllern unten angeschlossen: keine Statusrückmeldung!
+- Mi.Light/EasyBulb/LimitlessLED V3.0 bis V5.0 LED-Controller (der Miboxer ist nicht kompatibel): keine Statusrückmeldung!
+- Mi.Light/EasyBulb/LimitlessLED V6.0/iBox1/iBox2 LED-Controller: keine Statusrückmeldung!
+- MiLight-Hub DIY LED-Controller: mit Statusrückmeldung !!
+- Weiße und farbige Xiaomi Yeelight WiFi-Lampen mit Status-Feedback!
+- Xiaomi Yeelight Farb-WLAN-Strip-LED mit Status-Feedback!
+- Xiaomi Yeelight WiFi-Deckenleuchte mit Status-Feedback!
+- Xiaomi Yeelight V2 WiFi Nachttischlampe mit Status-Feedback!
+- Xiaomi Mijia WiFi-Schreibtischlampe mit Status-Feedback!
+- Sonoff Basic R3 im DIY-Modus mit Status-Feedback !!
+- Nanoleaf Aurora mit Status-Feedback!
+- myStrom Produkte mit Statusrückmeldung !!
+- Govee-Produkte mit Status-Feedback!
+
 
 Produkte, die möglicherweise kompatibel und nicht garantiert sind:
--   LW12 / Lagute: RGB-Streifen-LED-Controller: Statusrückmeldung!
--   Wifi 320/370 RGB / RGBW Streifen-LED-Controller: Teilstatus-Rückmeldung!
--   Magic UFO: RGBW-Controller mit LED-Streifen, verwaltet Weiß!
--   MagicHome: RGBW / RGBWW-LED-Controller und RGBW-Lampen / Spots, die mit der MagicHome-App kompatibel sind!
--   H801: RGBW-Streifen-LED-Controller, keine Statusrückmeldung !!
--   Arilux AL-C01 / 02/03/04/06/10: RGB / RGBW / RGBWW-Streifen-LED-Controller, Statusrückmeldung!
--   TP-Link LB100 / 110/120/130: Leuchtmittel mit Statusrückmeldung!
--   Extel Meli Lampe mit Statusrückmeldung!
--   Xiaomi Philips: Schreibtischlampe, Birne und Deckenlampe mit Statusrückmeldung !!!
--   Lampen, Steckdosen, Schalter, Verschlussschalter, Luftbefeuchter, Thermostat kompatibel mit Tuya Smart Live oder Jinvoo Smart oder eFamilyCloud Apps mit Status-Feedback !!!
--   TP-Link HS100 HS110 Steckdosen mit Statusrückmeldung !!
--   Magic Home kompatible Pixel Strip Controller mit Statusrückmeldung!
--   Von der Ewelink-App gesteuerte Peripheriegeräte, einschließlich Sonoffs im LAN-Modus mit Statusrückmeldung !!!
+- LW12/Lagute: RGB-Strip-LED-Controller: Statusrückmeldung!
+- Wifi 320/370 RGB/RGBW-Strip-LED-Controller: teilweise Rückkehr!
+- Magic UFO: RGBW-Strip-LED-Controller, verwaltet Weiß!
+- MagicHome: RGBW/RGBWW-Strip-LED-Controller und RGBW-Lampen/-Spots, die mit der MagicHome-App kompatibel sind!
+- H801: RGBW-Strip-LED-Controller, keine Statusrückmeldung !!
+- Arilux AL-C01/02.03.04.06.10: RGB/RGBW/RGBWW Strip-LED-Controller, Statusrückmeldung!
+- TP-Link LB100/110/120/130: Leuchtmittel mit Statusrückmeldung!
+- Extel Meli Lampe mit Statusrückmeldung!
+- Xiaomi Philips: Schreibtischlampe, Glühbirne und Deckenleuchte mit Statusrückmeldung !!!
+- Glühbirnen, Steckdosen, Schalter, Jalousieschalter, Luftbefeuchter, Thermostat kompatibel mit Tuya Smartlife App mit Statusrückmeldung !!!
+- TP-link HS100 HS110 Steckdosen mit Statusrückmeldung !!
+- Magic Home-kompatible Pixel-Strip-LED-Controller mit Statusrückmeldung!
+- Per Ewelink-App gesteuerte Peripherie einschließlich Sonoffs im LAN-Modus mit Statusrückmeldung !!!
+- Wifi-Gateways (einschließlich Lidl) mit dem Tuya-Protokoll für Zigbee-Geräte !!!
+- Meross-Peripheriegeräte !!!
+- Wiz-Produkte !!
 
-Für diese Steuerungen, Lampen oder Fassungen kommt das Austauschprotokoll nicht direkt vom Hersteller, der es daher jederzeit ändern kann. Auf dem Markt gibt es mehrere Versionen, die nicht alle mit dem Plugin kompatibel sind.
 
-Bitte beachten Sie:
-- ! : Einfache Integration für eine Person, die die Dokumentation liest, bevor sie handelt
-- !! : zusätzlich zu !, muss ein bestimmtes Verfahren befolgt werden, das an eine Person angepasst ist, die versteht, dass ein Verfahren gewissenhaft befolgt werden muss
-- !!! : zusätzlich zu !! erfordert grundlegende Computerkenntnisse und ist an die Recherche im Internet für einen bestimmten Zweck gewöhnt
+Bei letzteren Controllern oder WLAN-Geräten kommt das Austauschprotokoll nicht direkt vom Hersteller, der es daher jederzeit ändern kann. Es gibt mehrere Versionen auf dem Markt, die nicht alle mit dem Plugin kompatibel sind. Einige bestimmte Produkte sind möglicherweise nicht kompatibel.
 
-Inkompatible und nicht kompatible Produkte:
--   Die Mi.light MiBoxer Bridge (außer ON / OFF der Box)
--   LED Milight Controller (Typ YL etc.) ohne Brücke.
--   Lampen, Sockel oder LED-Streifen-Controller, die anstelle eines 2,4-GHz- oder WiFi-Funkempfängers einen Bluetooth-Empfänger enthalten.
--   Die LED-Streifen- oder Lampen-Controller und die Lampen oder Fassungen, die eine Punkt-zu-Punkt-WiFi-Verbindung mit der mobilen Anwendung verwenden.
--   Die Xiaomi Nachttischlampe ist nicht kompatibel (von der Konstruktion her).
+Warnung :
+-! : einfache Integration für eine Person, die die Dokumentation liest, bevor sie handelt
+- !! : erfordert zusätzlich zu ! die Einhaltung eines bestimmten Verfahrens, das für eine Person geeignet ist, die versteht, dass ein Verfahren gewissenhaft befolgt werden muss
+- !!! : zusätzlich zu !! erfordert grundlegende EDV-Kenntnisse und ist es gewohnt, zweckgebunden im Internet zu recherchieren
 
-## Kompatibilitätstest
 
-Auf Anfrage kann ein Test-Plugin für nicht validierte Produkte bereitgestellt werden.
+Es ist ratsam, sich im Forum zu erkundigen, um die Kompatibilität eines Produkts zu erfahren, das nicht weit verbreitet ist.
 
-Es ist ratsam, im Forum nachzufragen, ob ein nicht weit verbreitetes Produkt kompatibel ist.
+Ändern Sie niemals die Firmware der Produkte, die sie mit dem Plugin inkompatibel machen können.
 
 Gehen Sie zum Jeedom-Forum [hier] (https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
 
+## Einschränkungen
 
-# Begrenztheit
+Mi.Light/EasyBulb/LimitlessLED:
+- Alle Features werden vom Plugin berücksichtigt (bei ibox1 und 2 und bei der DIY Milight-Hub Bridge)
+- Die MiBoxer Bridge ist nicht kompatibel
+- Led Milight Controller (Typ YL etc.) ohne Bridge.
 
-Mi.Light / EasyBulb / LimitlessLED:
--   Alle Funktionalitäten werden vom Plugin berücksichtigt.
--   MiBoxer Bridge ist nicht kompatibel
+LW12/Lagute:
+- Die Programmierung von benutzerdefinierten Modi ist nicht möglich, Sie müssen die mit dem Controller gelieferte Anwendung (Magic Home) verwenden. Andererseits können die benutzerdefinierten Modi mit dem Plugin ausgelöst werden.
+- Es gibt mehrere Versionen von LW12, die möglicherweise nicht mit dem Plugin kompatibel sind.
 
-LW12 / Lagute:
--   Das Programmieren von benutzerdefinierten Modi ist nicht möglich, Sie müssen die mit dem Controller gelieferte Anwendung (Magic Home) verwenden. Andererseits können benutzerdefinierte Modi mit dem Plugin ausgelöst werden.
--   Es gibt verschiedene Versionen von LW12, die möglicherweise nicht mit dem Plugin kompatibel sind.
-
-Magic UFO, MagicHome und Arilux AL-C01 / 02/03/04/06/10:
--   Das Programmieren von benutzerdefinierten Modi, Radiomodus und Timern wird nicht unterstützt. Sie müssen die mit dem Controller gelieferte Anwendung (Magic Home) verwenden. Andererseits können benutzerdefinierte Modi mit dem Plugin ausgelöst werden.
--   Es gibt verschiedene Modelle, die möglicherweise nicht mit dem Plugin kompatibel sind.
+Magic UFO, MagicHome und Arilux AL-C01/02.03.04.06.10:
+- Die Programmierung von benutzerdefinierten Modi, Radiomodus und Timern wird nicht verwaltet. Sie müssen die mit dem Controller gelieferte Anwendung (Magic Home) verwenden. Andererseits können die benutzerdefinierten Modi mit dem Plugin ausgelöst werden.
+- Es gibt verschiedene Modelle, die möglicherweise nicht mit dem Plugin kompatibel sind.
+- Einige mit Magic Home kompatible Geräte sind nicht kompatibel, da sie nur mit der Cloud funktionieren
 
 Xiaomi Yeelight:
--   HSV-Befehle werden nicht verwaltet. Flow und Szene werden erstellt, indem Befehle mit dem JSON-Code erstellt werden, der dem gewünschten Effekt entspricht (siehe die YeeLight-API-Dokumentation).
--   Die Xiaomi Nachttischlampe ist nicht kompatibel.
--   Die Xiaomi Mijia Schreibtischlampe ist teilweise kompatibel (keine vollständige Statusrückmeldung).
+- HSV-Aufträge werden nicht verwaltet. Flow und Szene werden erstellt, indem Befehle mit dem JSON-Code erstellt werden, der dem gewünschten Effekt entspricht (siehe die YeeLight API-Dokumentation).
+- Xiaomi Nachttischlampe der ersten Version ist nicht kompatibel.
+- Die Xiaomi Mijia Schreibtischlampe ist teilweise kompatibel (keine vollständige Statusrückmeldung).
 
-Wifi 320/370:
--   Die Statusrückmeldung für den Szenenmodus wird nicht verwaltet, sondern nur EIN / AUS.
--   Es gibt verschiedene Modelle, die möglicherweise nicht mit dem Plugin kompatibel sind.
+WLAN 320/370:
+- Die Statusrückmeldung des Szenenmodus wird nicht verwaltet, nur EIN/AUS wird verwaltet.
+- Es gibt verschiedene Modelle, die möglicherweise nicht mit dem Plugin kompatibel sind.
 
 H810:
--   Bühnenspiele werden nicht gemanagt.
--   Es gibt verschiedene Modelle, die möglicherweise nicht mit dem Plugin kompatibel sind.
+- Bühnenspiele werden nicht unterstützt.
+- Es gibt verschiedene Modelle, die möglicherweise nicht mit dem Plugin kompatibel sind.
 
 TP-Link:
--   Die Timer werden nicht verwaltet.
--   Die Informationen zum Stromverbrauch werden für die Lampen nicht verwaltet.
+- Die Timer werden nicht verwaltet.
+- Die Informationen zum Stromverbrauch werden für Glühbirnen nicht verwaltet.
 
 Extel Meli:
--   Der Tonanteil der Lampe wird nicht berücksichtigt
+- Der Tonanteil der Lampe wird nicht berücksichtigt
 
 Xiaomi Philips:
--   Alle Eigenschaften werden berücksichtigt
+- Alle Funktionen werden berücksichtigt
 
-Magic Home kompatible Pixel Strip Controller:
--   benutzerdefinierte Szenen werden nicht verwaltet.
+Magic Home-kompatible Pixel-Strip-LED-Controller:
+- Benutzerdefinierte Szenen werden nicht unterstützt.
 
-Kompatible Geräte Tuya Smart / Jinvoo / eFamilyCloud:
--   Alle Befehle von validierten Geräten (siehe Forum) der Firmware 1.0 und der Firmware 2.0 sind kompatibel (insbesondere die Neo CoolCam-Sockets).
+Tuya Smartlife kompatible Peripheriegeräte:
+- alle Befehle validierter Peripheriegeräte (siehe Forum) der Firmware 1.0 und Firmware 2.0 sind kompatibel (insbesondere die Neo CoolCam-Buchsen).
+- nicht kompatibel mit Cloud-Geräten, insbesondere Öffnungssensoren
 
-Sonoff DIY:
--   Basic R3 mit Firmware 3.3.0-Peripheriegeräten mit einem einzigen Kontakt.
+Sonoff-DIY:
+- Basic R3 mit Firmware 3.3.0 Peripherie mit einem Kontakt.
 
-Ewelink und Sonoff LAN:
--   Geräte mit Firmware 3.0.1 (Liste unten im eWelink-Absatz)
+Ewelink- und Sonoff-LAN:
+- Peripheriegeräte mit Firmware 3.0.1 (Liste unten im eWelink-Absatz)
+- nicht zigbee kompatibel
+- nicht kompatibel mit Cloud-Geräten, insbesondere Öffnungssensoren und Lampen oder Streifen-LEDs.
 
-Nanoleaf AUrora:
--   Rhythmus nicht implementiert
+Meross:
+- Rollladensteuerung: Teilbetrieb
+- Garagentorsteuerung: Teilbetrieb
 
-# WiFi Modul Konfiguration
+Nanoblatt Aurora:
+- Rhythmus nicht implantiert
 
-## Installieren Sie Peripheriegeräte
+Tuya Wifi-Gateway und Zigbee-Geräte:
+- Die Konfiguration erfolgt manuell oder halbautomatisch, mit Ausnahme einer begrenzten Anzahl von Peripheriegeräten.
 
-Laden Sie die mobile Anwendung des Herstellers herunter und befolgen Sie die Anweisungen, um das Gerät mit Ihrem Handy zu steuern. Für jedes wifilightV2-Gerät finden Sie auf der Konfigurationsseite eine ausführliche Hilfe.
+Zauberer:
+- nur die Lampe wurde getestet und wartet auf Benutzerfeedback für andere Geräte
 
-Solange das Gerät nicht mit der mobilen Anwendung gesteuert wird, funktioniert das Plugin nicht.
+myStrom:
+- Nur die bestellte Steckdose wurde getestet und wartet auf Benutzerfeedback für andere Geräte
+
+Govee:
+- Die Verbindung mit den Produkten erfolgt über die Cloud und erfordert Internet.
+- nur die Ein/Aus-Regler für Farbintensität und Farbtemperatur funktionieren
+- diese Befehle funktionieren nicht auf allen Govee-Modulen
+
+# Konfiguration des WLAN-Moduls
+
+## Peripheriegeräte installieren
+
+Laden Sie die Handy-App des Herstellers herunter und befolgen Sie die Anweisungen, um das Gerät mit dem Handy zu steuern. Für jedes wifilightV2-Gerät wird auf der Konfigurationsseite detaillierte Hilfe bereitgestellt.
+
+Solange das Gerät nicht mit der mobilen App gesteuert wird, kann das Plugin nicht funktionieren.
 
 Konsultieren Sie die Hilfe und Foren des Geräteherstellers.
 
 
-## Konfigurieren Sie den Router
-Sie müssen das DHCP Ihres Routers (in der Regel von Ihrem Zugangsanbieter bereitgestellt) so konfigurieren, dass die Zuordnung der IP-Adresse des WLAN-Moduls oder der Glühbirne oder der Fassung statisch ist. Notieren Sie diese Adresse. Im Allgemeinen hat es die Form: 192.168.1.xxx wobei xxx der Adresse des WLAN-Moduls entspricht (2 bis 254)
+## Router konfigurieren
+Um die Vergabe der IP-Adresse des WLAN-Moduls oder der Glühbirne oder Fassung statisch zu ändern, müssen Sie das DHCP Ihres Routers (in der Regel von Ihrem Access-Provider bereitgestellt) konfigurieren. Merken Sie sich diese Adresse. Im Allgemeinen hat es die Form:
+192.168.1.xxx
+wobei xxx der Adresse des WLAN-Moduls entspricht (2 bis 254)
 
-Konsultieren Sie die Foren Ihrer Box, um zu erfahren, wie Sie DHCP konfigurieren.
+Konsultieren Sie die Foren Ihrer Box, um zu erfahren, wie Sie Ihr DHCP konfigurieren.
 
-Überprüfen Sie nach dieser Änderung, ob die mobile Anwendung das Gerät noch steuert.
+Stellen Sie nach dieser Änderung sicher, dass die mobile Anwendung das Gerät weiterhin steuert.
 
-Sie können dann mit der Konfiguration des wifilightV2-Plugins fortfahren.
+Sie können dann zur Konfiguration des wifilightV2-Plugins gehen.
 
-## Plugin Installation und Konfiguration
+## Plugin-Konfiguration
 
-wifilightV2 erstellt kein Gerät automatisch, Sie müssen es im Plugin erstellen, bevor Sie es konfigurieren können.
+wifilightV2 erstellt keine Geräte automatisch, außer:
 
-Hilfe:
--   Verwenden Sie das Fragezeichensymbol, um Hilfe zu den einzelnen Konfigurationselementen zu erhalten.
+- Tuya Smartlife
+- Ewelink
+- Govee
 
-Konfiguration:
--   Um ein Gerät zu konfigurieren, wählen Sie das Menü Plugins / Kommunikationsobjekte / wifilightV2.
--   Klicken Sie dann oben links auf die Schaltfläche WLAN-Modul hinzufügen
--   Geben Sie den Namen des WLAN-Moduls ein
--   Übergeordnetes Objekt eingeben
--   Wählen Sie die Kategorie Licht (Standard)
--   Aktivieren und sichtbar machen (Standard)
--   Geben Sie die IP-Adresse des WLAN-Steckers oder des Lampenmoduls ein (weitere Erläuterungen finden Sie in den häufig gestellten Fragen).
--   Für einige Peripheriegeräte ist es erforderlich, den verwendeten Kanal einzugeben und ein wifilightV2-Gerät pro Kanal zu erstellen
--   Bei einigen Geräten werden Sie aufgefordert, ein Token oder (und) eine Kennung einzugeben. Weitere Informationen finden Sie in der Hilfe auf der Gerätekonfigurationsseite
--   Bei einigen Geräten ist es möglich, die Statusrückmeldung zu unterdrücken, wenn es zu Mikroschnitten kommt
--   Bei einigen Controllern muss die Anzahl der LEDs der Pixelstreifen-LEDs angegeben werden
--   Bei einigen Controllern muss die Reihenfolge der Farben angegeben werden, wenn die Standardfarben nicht übereinstimmen
--   Geben Sie die Marke oder den Gerätetyp ein
--   Geben Sie den genauen Untertyp des Controllers, der Glühlampe, der Fassung oder der LED-Leiste ein. Dies ist wichtig, um die Befehle für die Steuerung des Geräts zu erstellen
--   Geben Sie die Anzahl der gesendeten Bestellungen ein: Damit können Sie die Bestellung für entfernte Geräte im Falle einer schlechten Übertragung wiederholen. (1 standardmäßig). Einige Lampen oder Fassungen schaffen diese Wiederholung nicht, da das Plugin durch Rückgabe den Sendestatus sicherstellt. Einige relative Befehle (Inkremente) werden nicht wiederholt.
--   Geben Sie die Sendeverzögerung im Wiederholungsfall ein (standardmäßig 0 ms, max. 100 ms)
--   Geben Sie den prozentualen Intensitätsanstieg ein, wenn Sie die Tasten zum Erhöhen oder Verringern der Lichtintensität drücken
--   Geben Sie die Gruppennummer für die Synchronisation ein, siehe unten
+Hilfe :
+- Verwenden Sie das Fragezeichen-Symbol, um Hilfe zu jedem Konfigurationselement zu erhalten.
+
+Einstellungen :
+- Um ein Gerät zu konfigurieren, wählen Sie das Menü Plugins/Kommunizierende Objekte/wifilightV2
+- Klicken Sie dann oben links auf die Schaltfläche WLAN-Modul hinzufügen
+- Geben Sie den Namen des WLAN-Moduls ein
+- Geben Sie das übergeordnete Objekt ein
+- Wählen Sie die Kategorie Licht (standardmäßig)
+- Aktivieren und sichtbar machen (Standard)
+- Geben Sie die IP-Adresse der WLAN-Steckdose oder des Lampenmoduls ein (siehe FAQ für weitere Erklärungen)
+- Für die milight-hub Box muss eine Kennung und ein Port konfiguriert werden
+- Sie können mit dem Jeexplorer-Plugin Bilder in den /data-Ordner des Plugins laden.Diese Bilder können die mit Geräten verknüpften Bilder auf der Anzeigeseite aller wifilightV2-Geräte ersetzen. Nützlich für benutzerdefinierte Geräte, die keinem Bild zugeordnet sind.
+- Bei einigen Geräten werden Sie aufgefordert, den verwendeten Kanal einzugeben, erstellen Sie ein wifilightV2-Gerät pro Kanal
+- Bei einigen Geräten werden Sie aufgefordert, einen Token oder (und) eine Kennung einzugeben, konsultieren Sie die Hilfe auf der Gerätekonfigurationsseite
+- Für Tuya-Peripheriegeräte ist es möglich, die Abfrage des Status jede Minute zu erzwingen, was für Steckdosen mit Verbrauch nützlich ist.
+- Bei einigen Controllern ist es notwendig, die Anzahl der LEDs der Pixelstreifen-LEDs anzugeben
+- Bei einigen Controllern ist es notwendig, die Reihenfolge der Farben anzugeben, wenn die Standardfarben nicht übereinstimmen
+- Geben Sie die Marke oder den Gerätetyp ein
+- Geben Sie den genauen Untertyp des Controllers, der Glühbirne, der Fassung oder der LED-Leiste ein, dies ist wichtig, um die Befehle zum Ansteuern des Geräts zu erstellen
+- Geben Sie die Anzahl der gesendeten Befehle ein: Ermöglicht Ihnen, den Befehl für ein entferntes Gerät bei schlechter Übertragung zu wiederholen. (1 standardmäßig). Manche Glühbirnen oder Fassungen schaffen diese Wiederholung nicht, da das Plugin durch Rückmeldung den Zustand der Übertragung sicherstellt. Bestimmte relative Befehle (Inkremente) werden nicht wiederholt.
+- Geben Sie die Sendeverzögerung bei Wiederholung ein (0 ms standardmäßig, 100 ms max.)
+- Geben Sie das Intensitätsinkrement in % ein, wenn Sie die Lichtintensitäts-Inkrement- oder -Dekrement-Tasten drücken
+- Konfigurieren Sie die Anzahl der erstellten Befehle, die Erstellung aller Befehle (Energiefarbeneffekte) kann die Benutzeroberfläche belasten
+- Geben Sie die Gruppennummer für die Synchronisation ein, siehe unten
 
 ## Befehle hinzufügen
-Beim Speichern des Moduls werden Aufträge automatisch angelegt.
+Beim Speichern des Moduls werden die Aufträge automatisch angelegt.
 
-Der Name der Befehle kann geändert werden. Die automatisch erstellten und gelöschten Aufträge werden während eines Backups neu erstellt.
+Konfigurieren Sie den Parameter "Erstellung von Aufträgen", um alle oder einen Teil der Aufträge zu erstellen.
 
-Wenn alle Befehle erstellt wurden, können sie die Benutzeroberfläche belasten. Sie können nicht angezeigt werden, indem Sie die Erstellung der Befehle konfigurieren.
+Der Name der Befehle kann geändert werden. Automatisch erstellte und gelöschte Aufträge werden beim Speichern neu erstellt.
 
-## Ändern des Gerätetyps oder Untertyps
+Wenn alle Aufträge angelegt sind, können sie die Oberfläche belasten, es ist möglich, sie nicht anzuzeigen, indem Sie die Auftragserstellung konfigurieren.
 
--   Alle Bestellungen löschen
--   Gerätetyp oder Untertyp ändern
--   2 mal sparen
+## Gerätemodifikation
 
-# Statusrückmeldung und Verbindungsstatusbetrieb
+- eine Änderung des Typs oder Untertyps löscht alle Befehle
+- nach Änderung zweimal speichern
 
-## Kompatibilität der Statusrückmeldung
+# Statusrückmeldung
+
+## Kompatibilität
 
 Die Statusrückmeldung erfolgt sofort für die folgenden Geräte:
 - Yeelight
-- kompatibel mit ewelink
-- Kompatibel mit der Tuya Smart Live App
+- kompatibel mit Ewelink
+- kompatibel mit der Tuya Smart Live App
 - Sonoff im LAN-Modus
+- Tuya/Zigbee-kompatibel
+- Sonoff im DIY-Modus (erfordert aktuelle Firmware, sonst minütliche Abfrage)
 
-Wenn zum Beispiel ein Schalter gedrückt wird, weiß Jeedom es sofort.
+
+Wenn beispielsweise ein Schalter umgelegt wird, erkennt Jeedom dies sofort.
 
 Für Peripheriegeräte:
- - LW12 / Lagute
- - Magisches UFO / Zuhause
+ - LW12/Lagute
+ - Magisches UFO/Zuhause
  - Arilux
  - Wifi 3x0 (teilweise)
  - TP-Link
  - Xiaomi Philips
  - Extel Meli
- - Sonoff im DIY-Modus
- - Nanoleaf Aurora
+ - Nanoblatt Aurora
+ - Meross
+ - Mi.Light mit der Milight-Hub-Brücke verbunden
+ - Zauberer
+ - myStrom
+ - Govee
 
-Das Plugin fragt das Gerät regelmäßig nach seinem Status ab. Die Verzögerung, mit der Jeedom den Status erkennt, kann 1 Minute überschreiten.
+Das Plugin fragt das Gerät regelmäßig ab, um seinen Status zu erfahren. Die Verzögerung, bis Jeedom den Status erkennt, kann 1 Minute überschreiten.
 
-Für andere Geräte gibt es keine Statusrückmeldung.
+Für andere Peripheriegeräte gibt es keine Statusrückmeldung.
 
-## Update nach Szenario
+Der Befehl stateGet ermöglicht es Geräten, die ihren Zustand zurückgeben, die Aktualisierung des Zustands durch Abfragen des Geräts zu erzwingen.
 
-Die Befehle xxxxGet und State können in einem Jeedom-Szenario verwendet werden.
+## Nach Szenario aktualisieren
+
+Die Befehle xxxxGet und Etat können in einem Jeedom-Szenario verwendet werden.
 
 ## Verbindungsinformationen
 
-Mit dem Befehl ConnectedGet können Sie den Verbindungsstatus jedes Geräts abrufen. Es wird jede Minute aktualisiert.
--  -1: Gerät mit Status Return OK
--  -2: Die Verbindung zum Gerät kann nicht hergestellt werden
--  -3: Gerät nicht angeschlossen
--  -4: Keine Antwort vom Gerät
--  -5: falsche Antwort vom Gerät
--  -6: Gerät ohne Statusrückmeldung
+Der Befehl ConnectedGet ruft den Verbindungsstatus jedes Geräts ab. Es wird jede Minute aktualisiert.
+- -1: Peripheriegerät mit OK-Statusrückmeldung
+- -2: Verbindung zum Gerät kann nicht vorbereitet werden
+- -3: Gerät nicht verbunden
+- -4: keine Antwort vom Gerät
+- -5: schlechte Antwort vom Gerät
+- -6: Peripheriegerät ohne Statusrückmeldung
 
-# Wie funktioniert die Synchronisation?
+Auf der Geräteseite zeigt ein Emoticon an, ob die Verbindung OK oder KO ist. Das indifferente Emoticon wird in Fällen verwendet, in denen das Plugin den Zustand der Verbindung nicht kennen kann, dh die Geräte, die ihren Zustand nicht zurückgeben. Beachten Sie, dass bei Geräten mit Gateway (Tuya Zigbee, Meross) der Verbindungsstatus der des Gateways ist und auf alle mit dem Gateway verbundenen Geräte angewendet wird.
 
-## Prinzip der Synchronisation
+# Synchronisation
+
+## Prinzip
 
 Es ist möglich, mehrere Geräte verschiedener Marken zu synchronisieren:
 
@@ -226,371 +301,363 @@ Alle Geräte mit derselben Gruppennummer werden synchronisiert
 
 Gruppe 0 ist nicht synchronisiert (Standardgruppe)
 
-Wenn Sie einen Befehl von einem Gerät in der Gruppe verwenden, wird derselbe Befehl auf alle Geräte in derselben Gruppe angewendet
+Wenn ein Befehl von einem Gerät in der Gruppe verwendet wird, wird derselbe Befehl auf alle Geräte in derselben Gruppe angewendet
 
-Wenn der Befehl für das synchronisierte Gerät nicht vorhanden ist, wird er einfach ignoriert.
+Existiert der Befehl für das synchronisierte Gerät nicht, wird er einfach ignoriert.
 
-Achtung, die Peripheriegeräte werden aufgrund der Latenzzeiten beim Versand der nacheinander ausgeführten Bestellungen nicht exakt zur gleichen Zeit bestellt.
+Beachten Sie, dass die Peripheriegeräte aufgrund von Latenzverzögerungen beim Senden von Bestellungen, die nacheinander erfolgen, nicht exakt gleichzeitig bestellt werden.
 
-## Synchronisierungskonfiguration
+## Aufbau
 
-Geben Sie bei der Konfiguration des Geräts einfach eine andere Zahl als Null in das Gruppenfeld ein. Alle Geräte mit den gleichen Nummern werden synchronisiert.
+Sie müssen lediglich bei der Konfiguration des Gerätes eine Zahl ungleich Null in das Gruppenfeld eingeben. Alle Geräte mit den gleichen Nummern werden synchronisiert.
 
-# Sonderfall von Mi.Light-Boxen
+# Kelvin der Lampen
 
-## Konfiguration von iBox 1 oder 2
+Es gibt 2 Cursor für die Temperatur in Kelvin. Kelvin ausgedrückt in % von 0 (heiß) bis 100 (kalt) und KelvinVal ausgedrückt in Kelvin von min bis max.
+Die Defaultwerte entsprechen größtenteils den Herstellerangaben. Für einige Lampen, die keine Min- und Max-Werte angeben, verwendet das Plugin standardmäßig 2700 bis 6500.
+Bei einigen Lampen können die Min- und Max-Werte falsch sein und die Extremwerte von der Lampe nicht verstanden werden. Diese Werte müssen so angepasst werden, dass sie innerhalb der von der Lampe akzeptierten Grenzen liegen.
+Sie können den Entwickler benachrichtigen, die Standardkonfiguration zu ändern, um diese Anpassungen zu vermeiden.
 
-Seit Version 1.0.58 von iBox 1 und 2 muss die Konfiguration möglicherweise geändert werden, damit sie mit Jeedom kommunizieren können.
+# Farbliste
 
-Stellen Sie über http (mit einem Webbrowser) eine Verbindung zur IP-Adresse Ihrer iBox her. Die Standardanmeldeinformationen sind admin / admin. Gehen Sie zur Registerkarte &quot;Other Setting&quot; und wählen Sie unter &quot;Network Parameters setting / Protocol&quot; UDP und speichern Sie.
+Für Farbbirnen müssen Sie das Gerät im erweiterten + Farben + Disco-Modus erstellt haben. Jeder Farbe wird dann eine Auswahlliste zugeordnet. Wenn die Farbbefehle gelöscht werden, wird die automatisch erstellte Auswahlliste nicht geändert, aber die Dropdown-Liste kann nicht mehr auf diese Farbe zugreifen. Um nicht in der Oberfläche belästigt zu werden, ist es notwendig, die Anzeige der Farbsteuerelemente zu unterdrücken.
 
-# Sonderfall von Xiaomi Yeelight
 
-## Glühlampenkonfiguration
-Die lokale Netzwerksteuerung muss unbedingt über die Xiaomi Yeelight-App aktiviert werden.
+# Liste der Disco- und Custom-Modi
 
-## Xiaomi Yeelight Szenenmodus
-Szenenmodi können konfiguriert werden. Im Plugin sind mehrere Szenenmodi vorprogrammiert, es können jedoch auch andere Szenenmodi hinzugefügt werden.
+Einige Lampen haben Disco- und Custom-Modi. Jeder Option dieser Modi ist eine Auswahlliste zugeordnet. Beim Löschen der Disco- oder Custom-Orders wird die automatisch erstellte Auswahlliste nicht verändert. Bei benutzerdefinierten Bestellungen können Sie neue Bestellungen hinzufügen, müssen diese neue Bestellung jedoch manuell in der Liste ändern. Sie müssen das Gerät im erweiterten + Farben + Disco-Modus erstellt haben. Wenn die einzelnen Modi Disco und Custom gelöscht werden, kann die Dropdown-Liste nicht mehr auf diesen Modus zugreifen. Um in der Oberfläche nicht gestört zu werden, ist es notwendig, die Anzeige der Disco- und Custom-Befehle zu unterdrücken.
 
-Es reicht aus, bestimmte Bedingungen zu beachten:
--   Fügen Sie eine wifilightV2-Aktion vom Typ Standard hinzu
--   Gib ihm einen Namen (zum Beispiel Scene Flashes)
--   Geben Sie als Parameter den Yeelight-Szenenbefehl ein, zum Beispiel: &quot;id&quot;: 1, &quot;method&quot;: &quot;set_scene&quot;, &quot;params&quot;: [&quot;cf&quot;, 0,0, &quot;500,1,255,100,1000,1,16776960, 70 „]
+Der Befehl action/list für den Zoll hat beispielsweise den internen Namen: CMD_LIST_CUSTOM. Sein Parameter entspricht dem Aufbau dieser Liste:
 
-Platzieren Sie nicht die Anfangs- und Endklammern sowie die Zeilenumbrüche, das Plugin fügt sie automatisch hinzu. Lassen Sie sich von den vorkonfigurierten Befehlen inspirieren, um diese zusätzlichen Szenenmodi zu erstellen. Informationen zur Yeelight-Syntax finden Sie [hier] (https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf).
+   Szene01 | Aussterben; Szene02 | Zündung
 
-## Statusaktualisierung in Jeedom
-Beim Aktivieren des Plugins und sobald der Daemon sowie jede Minute gestartet wird, sucht das Plugin nach Glühbirnen, die mit Strom versorgt und mit Jeedom verbunden sind.
+Die Liste zeigt Power off und Power on an und die ausgeführten Befehle sind die mit dem internen Namen Scene01 oder Scene02. Wenn Sie einen neuen benutzerdefinierten Befehl hinzufügen, beispielsweise Scene03 mit dem Namen Flash, müssen Sie den Parameter wie folgt ändern:
 
-Sobald die Glühbirne gefunden wurde, wird der Zustand der Glühbirne sofort an das Plugin zurückgegeben.
+   Szene01 | Aussterben; Szene02 | Zündung; Szene03 | Blitz
 
-Beachten Sie, dass das Plug-in bis zu 1 Minute benötigt, um eine Glühbirne zu finden, und 4 Minuten, um festzustellen, dass ein Gerät nicht angeschlossen ist.
+Wenn der Befehl Scene01 anschließend gelöscht wird, müssen Sie den Parameter CMD_LIST_CUSTOM manuell ändern:
 
-# Sonderfall von TP-Link Geräten
+   Szene02 | Zündung; Szene03 | Blitz
+   
 
-## Glühlampenkonfiguration
 
-Seit Mitte 2019 gibt es neue Geräte mit dem Protokoll Version 2. Für das V2-Protokoll muss ein Token wiederhergestellt werden, mit dem das Plugin mit TP-Link-Geräten kommunizieren kann.
+# Mi.Licht
 
-Um dieses Token zu erhalten, müssen Sie die Frames erfassen, die zwischen der Kasa-App auf dem Telefon und dem Gerät ausgetauscht werden, das im Plugin hinzugefügt werden soll. Auf Android muss Packet Capture verwendet werden.
+Sie müssen im Plugin ein Gerät pro Kanal erstellen.
 
-Das Plugin ermöglicht es Ihnen dann, den Token zu extrahieren. Sie müssen den abgerufenen Frame in das Feld Parameter des Befehls getKey kopieren und diesen Befehl ausführen. Wenn der Frame decodierbar ist, wird der Token in den Protokollen und in der Mitteilungszentrale angezeigt (Achtung: Löschen Sie die Mitteilung jedes Mal nach dem Lesen).
+## Ibox 1/2 und Mi.Light Box
 
-Der Rahmen, der in &quot;Parameter&quot; eingefügt werden soll, muss das folgende Aussehen haben (die ... ersetzen andere Werte):
+###Verkaufsende
 
-00 00 00 5f d0 f2 91 fe 90 e4 81 f9 8d af 95 ... 99 bb 81 fa 87 fa 87
+Mi.Light überträgt die ibox1 und 2 nicht mehr, die sie durch den Miboxer ersetzt haben, der eine reine Cloud ist und nicht mit dem Plugin kompatibel ist.
 
-Die Daten sind durch Leerzeichen getrennt und stellen Hexadezimalzahlen dar, die direkt aus Packet Capture stammen. Im Allgemeinen beginnt der Frame mit 3 Nullen, hier gibt 5f die Größe des Frames in hexadezimaler oder 95 in dezimaler Form an.
+### Aufbau
 
-Es wird keine Hilfe zur Wiederherstellung des Frames von Packet Capure gegeben.
+Seit Version 1.0.58 von iBox 1 und 2 kann es notwendig sein, ihre Konfiguration zu ändern, damit sie mit Jeedom kommunizieren können.
 
-Im Moment können nur die Fassungen in V2 verwendet werden. Wenden Sie sich an den Autor, wenn Sie Lampen in V2 haben.
+Verbinden Sie sich in http (mit einem Webbrowser) mit der IP-Adresse Ihrer iBox. Die Standard-Anmeldeinformationen sind admin/admin. Gehen Sie auf die Registerkarte "Andere Einstellungen" und wählen Sie in "Netzwerkparametereinstellung/Protokoll" UDP und speichern Sie.
 
-# Sonderfall von Xiaomi Philips
+Sie müssen das Port-Feld leer lassen (nicht einmal ein Leerzeichen).
 
-## Glühlampenkonfiguration
 
-Es ist wichtig, ein Token abzurufen, mit dem das Plugin mit Xiaomi Philips-Geräten kommunizieren kann.
+## MiLight-Hub
 
-Das Verfahren ist komplex und erfordert mehrere Manipulationen. Führen Sie eine Websuche mit dem Schlüsselwort: Xiaomi Token durch.
+### Ein alternativer Hub
 
-Es wird keine Hilfe zum Abrufen des Tokens gegeben.
+Mehrere Projekte führten zu Hubs, die mit Mi.Light-Lampen und Fernbedienungen kompatibel sind, um die Einschränkungen der Hubs der Hersteller zu umgehen und die heute mit dem Verschwinden von iBox1 und 2 noch interessanter werden. Das Plugin ist kompatibel mit dem Projekt von [Sidoh ] (https://github.com/sidoh/esp8266_milight_hub) und bietet 2 Modi zum Antrieb der Glühbirnen. Der erste Modus ist der historische Modus von iBox1 und 2, mit dem Sie Ihre Peripheriegeräte wie gewohnt verwenden können. Es müssen 2 Konfigurationsparameter hinzugefügt werden. Der 2. Modus ist komplett neu und hat die Vorteile einer sehr hohen Reaktionsfähigkeit und einer partiellen Statusrückmeldung im Minutentakt.
 
-# Sonderfall von Sonoff im DIY-Modus
+### Montage der Milight-Nabe
 
-## DIY Modus Konfiguration
+Der Hub ist also DIY, er muss also mit den Angaben von [Sidoh] (https://github.com/sidoh/esp8266_milight_hub) montiert und programmiert werden. Ein Tutorial ist [im Forum] verfügbar (https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-racement-des-ibox1-et-ibox2/47836?u=bernardfr. weil wir).
 
-Sonoff bietet alle Elemente [hier] (https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool), um die Module im DIY-Modus zu konfigurieren.
+### Historischer Mi.Light-Modus
 
-Ein Mobiltelefon und ein Windows-PC mit WLAN-Karte sind erforderlich. Die Software, die ausgeführt werden muss, um den Sonoff zu finden, gibt in der linken Spalte die Kennung an, die für die Konfiguration des Geräts erforderlich ist.
+In diesem Modus müssen Sie lediglich den Port-Parameter mit dem UDP-Modus-Port des Milight-Hubs eingeben. Siehe [Sidoh] (https://github.com/sidoh/esp8266_milight_hub) oder [im Forum] (https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-rangement- des-ibox1-et-ibox2/47836?u = bernardfr.caron) für weitere Details.
 
-Das Sonoff-Gerät muss über Firmware 3.3.0 oder höher verfügen. Mit der obigen Windows-App können Sie die Firmware aktualisieren.
+### ESP-Modus
 
-# Sonderfall von Geräten, die mit der Ewelink-Anwendung im LAN-Modus kompatibel sind
+In diesem Modus erfolgt die Auswahl der Peripheriegeräte nach dem Typ der Fernbedienung und nicht nach dem Lampentyp wie im historischen Modus. Nachdem Sie die üblichen Parameter eingegeben haben, müssen Sie die Kennung der Gruppe der Fernbedienungen eingeben, siehe [Sidoh] (https://github.com/sidoh/esp8266_milight_hub) oder [im Forum] (https://community.jeedom .com/t/tutorial-making-a-hub-milight-replacecing-the-ibox1-and-ibox2/47836?u = bernardfr.caron) für weitere Details. Dieser Modus bietet jede Minute aktualisierte partielle Statusrückmeldungen.
 
-## APiKey und DeviceID abrufen
+Um eine Lampe mit dem Milight-Hub zu koppeln, schalten Sie die Lampe ein und klicken Sie auf Sync ON. Verwenden Sie Sync OFF zum Entkoppeln. Um eine Fernbedienung zu koppeln, wählen Sie ON des zu synchronisierenden Kanals, sobald die Stromversorgung eingeschaltet wird, und klicken Sie auf Sync ON.
 
-Befolgen Sie die Anweisungen [hier] (https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01), um diese beiden Informationen abzurufen. Die Geräte-ID ist in die Plugin-Kennung einzutragen. Der Apikey ist in den Spielstein zu legen. Setzen Sie keine Leerzeichen oder Anführungszeichen.
+Um die Eigenschaften des Hubs zu erfahren, klicken Sie auf getKey, das Ergebnis wird in getKetget durch Klicken auf Test erhalten.
 
-Das Gerät muss sich in Firmware 3.0.1 oder höher befinden. Die Ewelink-App wird zum Aktualisieren der Firmware verwendet.
+# Xiaomi Yeelight
 
-## Verbindungsinformationen
+## Aufbau
+Die lokale Netzwerksteuerung muss unbedingt über die Xiaomi Yeelight App aktiviert werden.
 
-Wenn ein Gerät eine Verbindung zum WLAN herstellt, wird das Plugin sofort benachrichtigt. Wenn andererseits ein Gerät getrennt wird, weiß das Plugin nur, ob das Plugin einen Befehl an es sendet.
+##Auswahl der Version
+
+Das Plugin ermöglicht die Wahl zwischen 2 Versionen:
+
+- V1: Die Verbindung zwischen dem Plugin und dem Gerät ist nicht permanent, die Reaktionszeit ist etwas länger und die Statusrückmeldung erfolgt nicht sofort.
+- V2: Die Verbindung ist permanent, sodass das Plugin schneller reagiert und die Statusrückmeldung sofort erfolgt. Auf der anderen Seite führt dies zu einer größeren Empfindlichkeit gegenüber schlechten WLAN-Verbindungen, was zu Verbindungsabbrüchen mit der Unmöglichkeit des Zugriffs auf das Gerät für einige Minuten führt.
+
+## Szenenmodus
+Szenenmodi können konfiguriert werden. Im Plugin sind mehrere Szenenmodi vorprogrammiert, es ist jedoch möglich, weitere Szenenmodi hinzuzufügen.
+
+Es genügt, bestimmte Bedingungen zu beachten:
+- Fügen Sie einen Standardbefehl für den WifilightV2-Aktionstyp hinzu
+- Geben Sie ihm einen Namen (zum Beispiel Scene Flashing)
+- Geben Sie in den Parametern den Yeelight-Szenenbefehl ein, zum Beispiel:
+    "id": 1, "method": "set_scene", "params": ["cf", 0,0, "500,1,255,100,1000,1,16776960,70"]
+
+Setzen Sie nicht die Start- und Endklammern sowie die Newline-Zeichen, das Plugin fügt sie automatisch hinzu
+Lassen Sie sich von den vorkonfigurierten Bedienelementen inspirieren, um diese zusätzlichen Szenenmodi zu erstellen.
+Informationen zur Yeelight-Syntax finden Sie [hier] (https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf)
+
+## Zustand
+In V2 sucht das Plugin beim Aktivieren des Plugins und sobald der Daemon gestartet wird sowie jede Minute nach den mit Jeedom versorgten und mit Jeedom verbundenen Glühbirnen.
+
+Sobald die Glühbirne gefunden wird, wird der Zustand der Glühbirne sofort an das Plugin zurückgegeben.
+
+Beachten Sie, dass es bis zu 1 Minute dauern kann, bis das Plugin eine Glühbirne findet und bis zu 4 Minuten, um festzustellen, dass ein Gerät nicht angeschlossen ist.
+
+In V1 kann die Statusrückgabe bis zu einer Minute dauern.
+
+# TP-Link
+
+Kompatible Peripheriegeräte sind:
+- LB 100/110/120/130 Glühbirnen
+- HS110 V1/V2 Buchsen
+
+## Aufbau
+
+Hinweis: Einige Geräte der Version 2 müssen kein Token abrufen: Lassen Sie das Feld in der Gerätekonfiguration leer.
+Seit Mitte 2019 gibt es neue Geräte im Protokoll der Version 2. Das V2-Protokoll erfordert, dass Sie einen Token abrufen, der es dem Plugin ermöglicht, mit TP-Link-Geräten zu kommunizieren.
+
+Um dieses Token zu erhalten, müssen Sie die Frames erfassen, die zwischen der Kasa-App auf dem Telefon und dem Gerät ausgetauscht werden, um das Plugin hinzuzufügen. Auf Android müssen Sie Packet Capture verwenden.
+
+Das Plugin ermöglicht es Ihnen dann, das Token zu extrahieren. Sie müssen den abgerufenen Frame in das Parameterfeld des getKey-Befehls kopieren und dann diesen Befehl ausführen. Wenn der Rahmen dekodierbar ist, wird der Token in den Protokollen und im Nachrichtencenter angezeigt (Hinweis: Nachricht jedes Mal nach dem Lesen löschen).
+
+Der in "Parameter" einzugebende Rahmen muss folgendes Aussehen haben (die ... ersetzen andere Werte):
+
+    00 00 00 5f d0 f2 91 fe 90 e4 81 f9 8d af 95 ... 99 bb 81 fa 87 fa 87
+
+Die Daten sind durch Leerzeichen getrennt und stellen hexadezimale Zahlen dar, die direkt von Packet Capture stammen. Im Allgemeinen beginnt der Rahmen mit 3 Nullen, hier gibt 5f die Größe des Rahmens in hexadezimaler Form an, dh 95 in dezimaler Form.
+
+Beim Abrufen des Frames von Packet Capure wird keine Hilfe geleistet.
+
+Derzeit können nur die Fassungen in V2 verwendet werden, wenden Sie sich an den Autor, wenn Sie V2-Lampen haben.
+
+# Xiaomi Philips
+
+Es ist wichtig, einen Token wiederherzustellen, der es dem Plugin ermöglicht, mit Xiaomi Philips-Geräten zu kommunizieren.
+
+Das Verfahren ist komplex und erfordert mehrere Manipulationen. Suchen Sie im Web mit dem Stichwort: Xiaomi-Token oder im Forum [hier] (https://community.jeedom.com/t/xiaomi-philips-et-wifilightv2/48064).
+
+Es wird keine Hilfe beim Wiederherstellen des Tokens gegeben.
+
+# Meross
+
+Kompatible Peripheriegeräte sind:
+- Steckdosen MSS210HK MSS210 MSS425EHK MSS425FHK MSS620
+- Schalter MSS71
+- Rollladensteuerung MRS100 (nicht funktionsfähige Statusrückmeldung und Positionierung)
+- genommen mit MSS310 Verbrauch: der Verbrauch steigt nur jede Minute
+- Meross MSH300-Hub
+- MTS100/100H: Thermostatköpfe mit der Nabe verbunden
+- MSG100 (Garage): funktioniert korrekt in V2
+- die am Hub angeschlossenen Temperatursensoren könnten kompatibel sein (nicht getestet)
+
+Sie müssen für jeden gesteuerten Ausgang ein Gerät im Plugin erstellen und diesem einen Kanal von 1 bis n entsprechend den n Ausgängen zuweisen. Kanal 0 wird verwendet, um alle Ausgänge gleichzeitig zu betreiben.
+Achtung: Einige alte Sockets haben ein anderes Verhalten, verwenden Sie Version V1 im Subtyp.
+
+## geben Sie "Meross" für Firmware <2.2.2 . ein
+Erstellen Sie mit dieser Option keine neuen Peripheriegeräte, verwenden Sie vorzugsweise Meross V2. Dieser Typ ist vorhanden, um die Kompatibilität mit den vor der Einführung von V2 konfigurierten Peripheriegeräten sicherzustellen. Es wird keine Hilfestellung gegeben, um die erforderlichen Parameter für diesen Typ zu finden.
+
+## geben Sie "Meross V2" für alle Firmware ein, einschließlich 2.2.2
+Um einen Schlüssel zu erhalten, müssen Sie Login und Passwort des Meross-Kontos eingeben, speichern und auf getKey klicken. Sie wird von den Meross-Servern abgerufen und im Feld Schlüssel gespeichert. Sie können diesen Schlüssel auf alle Ihre Meross-Geräte kopieren und Login und Passwort löschen, müssen dann aber nicht mehr auf getKey klicken.
+
+Warnung: Die wiederholte Verwendung von getgey kann den Zugriff auf Meross-Server blockieren, was mehrere Stunden dauern kann. Erstellen Sie eine Kopie des Schlüssels auf allen Ihren Meross-Geräten, dies hängt vom Benutzerkonto und nicht vom Gerät ab.
+
+## Hub Meross
+Bei Geräten, die an den Meross-Hub angeschlossen sind, müssen Sie für jedes mit dem Hub verbundene Gerät ein Gerät im Plugin erstellen. Es ist auch erforderlich, eine lokale Kennung wiederherzustellen. Verwenden Sie ein Tool, mit dem Sie den http-Header aus der Meross-App abrufen können, wenn Sie mit dem Ventil kommunizieren. Die gesuchten Informationen sehen wie folgt aus:
+
+    "id": "01008D5B"
+
+## Präzise Prüfung eines Ereignisses.
+
+Erstellen Sie ein Szenario, das nur einmal ausgelöst wird, wenn Jeedom gestartet wird: Setzen Sie eine Schleife auf 1.000.000. Setzen Sie eine weitere Schleife in 1.000.000. Diese 2 verschachtelten Schleifen mit einer Pause verhindern das Verlassen des Szenarios für Hunderte von Jahren. Setzen Sie in die innere Schleife eine Pause von 10 Sekunden und einen Aufruf von device stateGet, um die Geräteinformationen zu aktualisieren. Die Pause kann je nach Leistung und Komplexität der Installation um bis zu 1s verkürzt werden.
+
+- Ermöglicht das Abrufen der Öffnungsinformationen des Garagenmoduls
+- Ermöglicht eine genauere Verbrauchsberechnung: dann die Leistung zurückgewinnen, durch 360 dividieren (für eine Abtastperiode von 10 s) und zu einer Variablen addieren, die als Verbrauch bezeichnet wird. Der 360 liefert den Verbrauch in kWh.
+
+# Sonoff im DIY-Modus
 
 ## Kompatibilität
 
-Viele Marken sind kompatibel, einschließlich Sonoff.
--  Schalter, Steckdosen, Schalter: Einfach aller Marken
--  Schalter, Steckdosen, Schalter: Vielfache aller Marken
--  2 Arten von Lampen (testen Sie die 2 Arten)
--  Sonoff TH10 / 1H16 Temperatursensor
--  Sonoff Basic, RF, POW, Mini
--  Sonoff Dual
--  Sonoff 4CH / 4CH PRO
--  Sonoff Touch
--  Sonoff S20 / S26
--  Sonoff T1 / TX
--  Sonoff SLAMPHER
--  Sonoff T4EUC1
--  Sonoff RF Bridge 433 nur für Sensoren (Tür, Präsenzmelder, Fernbedienung)
+Kompatible Peripheriegeräte sind:
+- Sonoff D1 Smart Dimmer
+- Sonoff BASICR3 und RFR3
+- Sonoff MINI
 
-Für Mehrkanal-Peripheriegeräte (wie das Sonoff 4CH) müssen Sie so viele wifilightV2-Geräte erstellen, wie Kanäle vorhanden sind. Eine Kopie der ersten, einfach zu erkennenden Geräte. Anschließend müssen Sie die Kanalnummer ändern.
+## Aufbau
 
-Für die in dieser Liste nicht vorhandenen Geräte (z. B. Sonoff Ifan, Dimmer) oder wenn die Konfiguration nicht funktioniert und nach der Integration des Geräts in Jeedom (z. B. mit der Sonoff-Basiskonfiguration) in den Protokollen suchen:
+Für Firmware ab 3.3.0 und darunter 3.5.0 d.h. DIY-Modus 1.0, Sonoff bietet [hier] (https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) alle Elemente, um die Module im DIY-Modus zu konfigurieren.
 
-Empfangen nach Decodierung: {...............}
+Ein Mobiltelefon und ein Windows-PC mit WLAN-Karte sind erforderlich.
+Die zum Auffinden des Sonoffs auszuführende Software gibt in der linken Spalte die zur Konfiguration des Geräts erforderliche Kennung an.
 
-und geben Sie im [forum] (https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) den Inhalt der geschweiften Klammern an, um die Integration des Moduls in das Plugin zu ermöglichen.
+Das Sonoff-Gerät muss die Firmware 3.3.0 oder höher haben, die obige Windows-App ermöglicht Ihnen das Aktualisieren der Firmware.
 
-# Sonderfall für mit Tuya Smart / Jinvoo / eFamilyCloud-Apps kompatible Geräte
+Für Firmware ab 3.5.0 ist die Vorgehensweise einfacher und wird [hier im Forum] ausführlich beschrieben (https://community.jeedom.com/t/sonoff-diy-et-wifilightv2-en-firmware-3 -5-0/48060).
+
+# SonOff Ewelink und Cloud
+
+Dieses Verfahren automatisiert die Erstellung der meisten Ewelink- und Sonoff-Geräte. Der Zugriff auf Peripheriegeräte bleibt jedoch lokal. Das Gerät muss in der Firmware 3.0.1 oder höher sein, die Ewelink-App ermöglicht es Ihnen, die Firmware zu aktualisieren.
+
+## Plugin-Konfiguration
+
+Geben Sie in der Plugin-Konfiguration den Login (nur E-Mail-Adresse) und das Passwort für die Verbindung mit der Ewelink-App ein und speichern Sie. Wählen Sie dann: Ewelink Gehe zur Aufnahme. Die Geräte werden automatisch angelegt.
+
+Wenn die lokale IP-Adresse vom Plugin nicht gefunden wird, stellen Sie die Verbindung zwischen der Mac-Adresse und der IP-Adresse her, die in den Geräteeinstellungen der Tuya-Anwendung und Ihres Routers angegeben ist, und ändern Sie die IP-Adresse. Das Verfahren zum Ermitteln der IP-Adresse verwendet einen Befehl vom Linux-System, wenn es nicht geladen werden kann oder das System nicht kompatibel ist, kann die IP-Adresse nicht automatisch gefunden werden.
+
+Dieser Teil des Plugins erfordert das Starten von Abhängigkeiten.
+
+Standardmäßig wird der Sonoff Basic vom Plugin ausgewählt, Sie können den Subtyp ändern, ohne den ApiKey und die Geräte-ID zu verlieren.
+
+Wenn bereits ein Gerät mit derselben Geräte-ID vorhanden ist, wird die Aufnahme nicht durchgeführt.
+
+### Bemerkungen :
+- einige Geräte werden nicht erstellt (die Ewelink Cloud stellt die Daten nicht bereit)
+- reine Cloud-Geräte werden integriert, aber das Plugin kann nicht darauf zugreifen
+- Wenn die IP-Adresse nicht gefunden wurde, weil das Gerät nicht verbunden ist, geben Sie ihm die Adresse: 0.0.0.0, verbinden Sie es und starten Sie den Aufnahmevorgang erneut.
+
+
+## ApiKey-Geräte-ID
+
+Um diese 2 Informationen manuell abzurufen, können Sie [hier] (https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) oder [im Jeedom-Forum] (https: //community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) oder suchen Sie im Web und im Jeedom-Forum nach den Schlüsselwörtern: Ewelink oder Sonoff Apikey. Verwenden Sie keine Leerzeichen oder Anführungszeichen.
+e
+## Anmeldung
+
+Wenn sich ein Gerät mit dem WLAN verbindet, wird das Plugin sofort benachrichtigt. Auf der anderen Seite kann das Plugin, wenn ein Gerät getrennt wird, es nur erkennen, wenn ein Befehl vom Plugin an es gesendet wird.
 
 ## Kompatibilität
 
-Viele Marken sind mit dem Plugin kompatibel. Konsultieren Sie das Forum für weitere Informationen. Das Plugin ermöglicht die Steuerung vieler Aktoren. Es kann den Status der Peripheriegeräte abrufen, sobald es Statusänderungsinformationen sendet oder wenn es sie jede Minute abfragt. Wenn ein Wandschalter verwendet wird, weiß Jeedom sofort Bescheid.
+Viele Marken sind kompatibel, einschließlich Sonoff. Die getesteten Produkte sind wie folgt:
+- Schalter, Steckdosen, Schalter: einfach aller Marken
+- Schalter, Steckdosen, Schalter: Vielfaches aller Marken
+- Schalter, Steckdosen, Schalter: einfach mit Variator aller Marken
+- Sonoff D1 Smart Dimmer
+- Sonoff TH10/1H16 Temperatursensor. Neue Konfig für Firmware > = 3.4 mit ON/OFF OK
+- Sonoff Basic, RF, POW, Mini
+- Sonoff Dual
+- Sonoff 4CH/4CH PRO
+- Sonoff-Touch
+- Sonoff S20/S26
+- Sonoff T1/TX
+- Sonoff SLAMPHER
+- Sonoff T4EUC1
+- Sonoff RF Bridge 433 nur für die Sensoren (Tür, Präsenzmelder, Fernbedienung)
 
-Das folgende Gerät ist mit Firmware 1.0 kompatibel. und in Firmware 2.0.
+Der sonoff DW2 ist nicht kompatibel, da er eine reine Cloud ist und nicht in den Access Point eingeht, um apiKey und DeviceID zu finden. Gleiches dürfte für alle ewelink kompatiblen Türsensoren gelten.
 
--  einfache steckdosen mit und ohne rücknahme bei verbrauch, insbesondere die neo coolcam wifi steckdosen
--  Mehrfachsteckdosen mit und ohne Verbrauch mit und ohne USB
--  Rollladensteuerung
--  wandschalter: 1, 2 oder 3 kreuzungen
--  Wandschalter mit Dimmer
--  NEWKBO Luftbefeuchter 300 ml und nur dieser
--  Thermostat BHT-6000GCLW / BHT 6000 und nur diese Modelle
--  RGBW-Glühlampen und ähnliche Modelle in Betrieb
+Der Zigbee Hub ist nicht kompatibel (und rein Cloud).
 
-Die Kompatibilität dieser Geräte kann jedoch nicht garantiert werden, da das Protokoll vom Hersteller geändert werden kann.
+Keine Glühbirne oder LED-Streifen sind kompatibel.
 
-Bei mehrkanaligen Geräten (z. B. Mehrfachsteckdosen) müssen Sie so viele wifilightV2-Geräte erstellen, wie Kanäle vorhanden sind. Dabei handelt es sich um eine Kopie der ersten, einfach zu erkennenden Geräte. Anschließend müssen Sie die Kanalnummer ändern.
+Die Kompatibilität dieser Geräte ist jedoch nicht gewährleistet, da das Protokoll von den Herstellern modifiziert werden kann. Ändern Sie die Firmware des Geräts nicht, ohne überprüft zu haben, ob es mit dem Plugin kompatibel ist.
 
-Präsenz- und Öffnungssensoren sind nicht kompatibel, da sie lokal nicht interagieren.
+Bei Mehrkanalgeräten (wie dem Sonoff 4CH) müssen Sie so viele wifilightV2-Geräte erstellen, wie Kanäle vorhanden sind, eine Kopie des ersten ist einfach, dann müssen Sie die Kanalnummer ändern.
 
-Das Plugin testet die Geräte (diese müssen jedoch manuell hinzugefügt werden) und zeigt eine Meldung im Message Center an, wenn ein Gerät mit der falschen Firmware konfiguriert wurde.
+Bei Geräten, die nicht in dieser Liste enthalten sind (z. B. Sonoff Ifan) oder wenn die Konfiguration nicht funktioniert und nach der Integration des Geräts in Jeedom (z. B. mit der Sonoff Basic-Konfiguration) in den Protokollen suchen:
 
+Empfangen nach Dekodierung: {.................}
 
-## Gerätekonfiguration
+und geben Sie im [Forum] (https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) den Inhalt der geschweiften Klammern an, um die Einbindung des Moduls in das Plugin zu ermöglichen.
 
-Es ist wichtig, einen lokalen Schlüssel (LocalKey) und eine Kennung abzurufen, damit das Plugin mit den Geräten kommunizieren kann.
+# Tuya Smartlife und Cloud Tuya
 
-Das Verfahren ist komplex und erfordert mehrere Manipulationen. Führen Sie eine Suche im Web mit dem Schlüsselwort: Tuya localkey, insbesondere in Github oder im Jeedom-Forum durch.
+Dieses Verfahren automatisiert die Erstellung der meisten Tuya- und Tuya/Zigbee-Geräte. Der Zugriff auf Peripheriegeräte bleibt jedoch lokal.
 
-Das Gerät darf nicht mit einer Mobiltelefonanwendung verbunden sein, da es sonst nicht auf Bestellungen von Jeedom reagiert. Es ist daher erforderlich, alle Anwendungen zu schließen, die möglicherweise mit dem Gerät verbunden sind.
+## Konfiguration der Tuya-Plattform
 
-Wenn das Gerät deinstalliert und anschließend in der mobilen App erneut installiert wird, wird der Schlüssel geändert. Sie müssen den Schlüssel mit dem obigen Verfahren finden.
+Folgen Sie zunächst diesem und rufen Sie den Reiter "Übersicht" auf, um Folgendes abzurufen:
+Zugriffs-ID und Zugriffsgeheimnis. Füllen Sie in der Plugin-Konfiguration diese [Tutorial] (https://linkdhome.com/articles/local-tuya-device-control-in-homekit) 2 Parameter im Tuya-Teil aus und speichern Sie, dann wählen Sie: Tuya Gehe zur Aufnahme . Die Geräte werden automatisch angelegt.
 
-Es wird keine Hilfe zur Wiederherstellung des Schlüssels oder der Kennung gegeben.
+Wenn die lokale IP-Adresse vom Plugin nicht gefunden wird, stellen Sie die Verbindung zwischen der Mac-Adresse und der IP-Adresse her, die in den Geräteeinstellungen der Tuya-Anwendung und Ihres Routers angegeben ist, und ändern Sie die IP-Adresse. Das Verfahren zum Ermitteln der IP-Adresse verwendet einen Befehl vom Linux-System, wenn es nicht geladen werden kann oder das System nicht kompatibel ist, kann die IP-Adresse nicht automatisch gefunden werden.
 
-Jede Konfigurationsänderung erfordert einen Neustart des Daemons.
+Dieser Teil des Plugins erfordert das Starten von Abhängigkeiten.
 
-## Konfiguration der Verwertung des Fangverbrauchs
+Wenn bereits ein Gerät mit derselben devId vorhanden ist, wird die Aufnahme nicht durchgeführt.
 
-Laut den Marken wird der Verbrauch vom Stecker nicht auf einzigartige Weise gesendet. Um diese Konfiguration wiederherzustellen, installieren Sie das Plugin in Jeedom und behalten Sie die Statusrückmeldung in der Konfiguration bei. Gehen Sie dann zu den Protokollen von wifilightV2. Der Socket wird jede Minute abgefragt. Suchen Sie die Nachricht, die wie folgt aussieht:
+### Bemerkungen :
+- einige Geräte werden nicht erstellt (Tuya Cloud liefert keine Daten)
+- reine Cloud-Geräte werden integriert, aber das Plugin kann nicht darauf zugreifen
+- es werden die Farben nach den 3 bekannten Formaten erstellt sowie die dazugehörigen Sättigungs- und Intensitätsregler
+- Peripheriegeräte mit codierten Informationen (Betätigungsteil von Alarmen im Allgemeinen) werden nicht verwaltet
+- Geräte mit nicht standardmäßigen Informationen (im Allgemeinen mit einem Codeblock in einem Szenario lösbar) werden nicht verwaltet
+- das Plugin dekodiert keine komplexen Befehle und fügt dann in den Parametern den Json aus der Tuya-Cloud ein
+- Das Löschen einer vom Plugin erstellten Bestellung über die Tuya-Cloud kann nicht mehr neu erstellt werden
+- Wenn die IP-Adresse nicht gefunden wurde, weil das Gerät nicht verbunden ist, geben Sie ihm die Adresse: 0.0.0.0, verbinden Sie es und starten Sie den Aufnahmevorgang erneut.
 
-return decodiert: {&quot;devId&quot;: &quot;xxxxxxxxx&quot;, &quot;dps&quot;: {&quot;1&quot;: false, &quot;2&quot;: false, &quot;9&quot;: 0, &quot;10&quot;: 0, &quot;18&quot;: 0, &quot;19&quot; : 0, &quot;20&quot;: 2281, &quot;21&quot;: 1 &quot;22&quot;: 726 &quot;23&quot;: 28971, &quot;24&quot;: 19417, &quot;25&quot;: 1070}}
+###Tipps:
+- Wenn der automatische Vorgang nicht funktioniert, wechseln Sie in den [Geräte-Lernmodus] (./tuya#tocAnchor-1-12-7) und verwenden Sie nur die entsprechenden Schaltflächen der Tuya Smartlife App. Wenn andere Schaltflächen verwendet werden, erstellt das Plugin Duplikate der über die Tuya-Cloud erstellten Bestellungen.
+- Bestellungen können grundsätzlich manuell oder im Lernmodus erstellt werden
+- Min und Max eines Zahlenwertes werden aus der Cloud gemeldet. Das Plugin kalibriert die Info- und numerischen Befehle von 0 bis 100. Ändern Sie nach Bedarf die Parameter # slider # und # value # sowie die Jeedom min und max.
 
-Der Index &quot;20&quot; entspricht hier der Versorgungsspannung in Hunderten von mV, dh: 228,1 V sollten sich geringfügig bewegen. Die Indizes &quot;18&quot; und &quot;19&quot; entsprechen dem Strom (mA) und der Leistung in W, hier ist kein Gerät angeschlossen und daher ist die Information Null. Es ist eine gute Möglichkeit, die Spannung zu ermitteln, indem Sie ein Gerät anschließen. Diese beiden Werte müssen geändert werden, und die Spannung ist gleich danach.
+### Teilnahme an der Verbesserung dieses Teils:
+Sie können dazu beitragen, die automatische Erstellung zu verbessern, indem Sie so viele Informationen wie möglich bereitstellen: den Json aus der Tuya-Cloud, die vorgenommenen Änderungen, die Protokolle oder alle relevanten Bemerkungen.
 
-Die Syntax lautet dann: 20; 18; 19 und muss im Feld &#39;Energieeinstellung&#39; eingegeben werden.
+So erhalten Sie den Json aus der Tuya-Cloud:
+- in Tuya IOT Platform: Cloud> Entwicklung> Projekt auswählen> Geräte> Geräte-ID des Geräts kopieren
+- Cloud> Api Explorer> (im neuen Fenster) Smart Home Management System> Gerätesteuerung> Gerätespezifikationsattribut abrufen (das 2. in der Liste ohne s zum Attribut)
+- fügen Sie die Geräte-ID ein> Anfrage senden> Kopieren (Link im rechten Fenster)
+Obwohl das Plugin Geräte lokal adressiert, kann es die Tuya-Cloud verwenden, um Geräte zu konfigurieren und automatisch cid, localKey und devId abzurufen.
+[Siehe die spezifische Dokumentation] (./tuya#tocAnchor-1-1)
 
-Für Stecker 1 ist im Allgemeinen Folgendes erforderlich: 6; 4; 5 (standardmäßig vom Plugin festgelegt).
+## Manuelle oder halbmanuelle Erstellung von Tuya- und Tuya/Zigbee-Geräten
 
-Für Stecker mit 2 Buchsen benötigen Sie im Allgemeinen: 9; 7; 8 (standardmäßig vom Plugin festgelegt).
+Dieses Verfahren erfordert, dass Sie den Localkey manuell aus der Tuya-Cloud kopieren.
 
-Für die anderen Buchsen ist standardmäßig der Wert 20; 18; 19 eingestellt.
+ [Siehe spezifische Dokumentation für Tuya/Zigbee-Gateways] (./tuya#tocAnchor-1-1)
+ 
+ [Siehe spezifische Dokumentation für Tuya Wifi-Produkte] (./tuya#tocAnchor-1-10)
 
-## Auftragsanpassung
 
-Angesichts der Vielzahl von Tuya-kompatiblen Geräten müssen möglicherweise benutzerdefinierte Befehle erstellt werden.
+Warnung :
 
-Erstellen Sie einen neuen Aktions- / Standardbefehl. Geben Sie einen identischen Namen und eine identische ID ein und geben Sie den Befehl Tuya in die Parameter ein. Lass dps leer. Tuya-Befehle sind im JSON-Format und enthalten dps: {xxxxxx}. Dies ist das xxxxxx, das Sie in Parameter eingeben müssen.
+Lidl Tuya/Zigbee Produkte dürfen noch nie mit der Lidl App gekoppelt worden sein. Sie müssen nur mit der Tuya Smartlife-Anwendung gekoppelt werden, sonst können sie vom Plugin nicht mehr verwendet werden.
 
-Beispiele:
+# Nanoblatt
 
-Um bestimmte Rollläden anzuheben: xxxxxx hat den Wert &quot;1&quot;: &quot;1&quot;, der in den Parametern eingegeben werden soll (verwenden Sie die doppelten Anführungszeichen von Taste 3).
 
-Um den Stecker Nr. 2 bestimmter Stecker einzuschalten: xxxxxx hat den Wert &quot;2&quot;: true, der in den Parametern eingestellt werden soll (verwenden Sie die doppelten Anführungszeichen von Taste 3).
+## Taste
 
-Zum Ausschalten von Stecker Nr. 1 und Stecker Nr. 2 bestimmter Stecker: xxxxxx hat den Wert &quot;1&quot;: false, &quot;2&quot;: false, der in den Parametern eingestellt werden soll (verwenden Sie die doppelten Anführungszeichen von Taste 3).
+Drücken Sie den Nanoleaf-Power-Button für 5-7 s und drücken Sie den getKey-Befehl des Plugins. Überprüfen Sie, ob der Apikey im "Token"-Feld der Plugin-Konfiguration platziert wurde.
 
-Der folgende Absatz enthält Elemente zur Interpretation der wifilightV2-Protokolle.
--   Beachten Sie, dass das Gerät seinen Status zurückgeben muss.
--   In vielen Fällen wird kein Status zurückgegeben, wenn die standardmäßig hinzugefügten Befehle die dps nicht wiederherstellen. In diesem Fall können Sie die Statusrückmeldung abrufen, indem Sie einen benutzerdefinierten Befehl hinzufügen, indem Sie die dps wie im folgenden Absatz angegeben angeben.
--   Es ist daher möglich, benutzerdefinierte Befehle durch Angabe der dps (nächster Absatz) oder ohne Angabe der dps zu mischen.
+## Benutzerdefinierte Effekte
 
-## Benutzerdefiniertes Gerät
+Erstellen Sie einen Effekt mit der NanoLeaf-App und geben Sie ihm einen Namen. Erstellen Sie eine Aktion/einen Standardbefehl in der Liste der Gerätebefehle im Plugin. Geben Sie den Namen in Parameter ein. Geben Sie dann eine eindeutige Kennung und einen Namen ein, diese können mit dem Namen des Befehls identisch sein.
 
-Es ist möglich, ein vollständig benutzerdefiniertes Gerät zu erstellen. Im Gegensatz zu benutzerdefinierten Befehlen verfügt ein benutzerdefiniertes Gerät über keine vordefinierten Befehle, und für jeden Befehl muss alles konfiguriert werden. Das Verfahren erfordert, dass das Gerät seinen Status in die Protokolle zurückgibt, da sonst keine Erleichterung eintritt.
+# Govee
 
-### Konfiguration
--   Deaktivieren Sie alle wifilightV2-Geräte mit Ausnahme des zu testenden
--   das Gerät richtig konfigurieren (statische IP-Adresse, LocalKey, Id)
--   Überprüfen Sie, ob der Dämon ausgeführt wird, wenn er nicht gestartet wird
--   Konfigurieren Sie die wifilightV2-Protokolle im Debug-Modus
--   Protokolle löschen
-
-### Informationsbeschaffung
--   Drücken Sie eine Taste am Gerät (Ein, Aus, Auf, Ab usw.) oder warten Sie, bis das Gerät seinen Status zurückgibt, oder drücken Sie eine Taste in der Smart Live-App (in letzterer kann es jedoch Statusrückmeldungen verhindern) )
--   Suchen Sie in den Protokollen die Passage, die so aussieht:
-
-        Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"off","101":true}}
-        [2019-10-13 09:15:30][DEBUG] :       >>> : devId | 50701244cc50e37e9aff : 50701244cc50e37e9aff
-        [2019-10-13 09:15:30][DEBUG] :       >>> : dps | Array : Array
-        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 1 | stop : stop
-        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 101 | 1 : 1
-
-    Hier wurde der Aus-Schalter am Gerät ausgewählt und wir stellen fest, dass sich der dps 1 geändert hat.
-
-        Receive after decode :{devId:50701244cc50e37e9aff,dps:{"1":"on","101":true}}
-        [2019-10-13 09:15:30][DEBUG] :       >>> : devId | 50701244cc50e37e9aff : 50701244cc50e37e9aff
-        [2019-10-13 09:15:30][DEBUG] :       >>> : dps | Array : Array
-        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 1 | stop : stop
-        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 101 | 1 : 1
-
-    Hier wurde die Einschalttaste am Gerät ausgewählt und wir stellen fest, dass sich der dps 1 geändert hat.
-
--   Erstellen Sie einen neuen Aktions- / Standardbefehl in den Gerätebefehlen:
-    *    In der Interface-Spalte setzen Sie als Name des Buttons ON
-    *    Geben Sie in der Spalte interner Name und Bestellnummer als eindeutige ID: ON, als dps: 1 (ohne doppelte Anführungszeichen) und als Parameter: &quot;on&quot; (wenn die nicht von Anführungszeichen umgeben ist, müssen sie angegeben werden off).
--   Erstellen Sie einen neuen Aktions- / Standardbefehl in den Gerätebefehlen:
-    *    In der Interface-Spalte als Name der Schaltfläche OFF setzen
-    *    Geben Sie im internen Namen und in der Best. Nr. Spalte als eindeutige ID: OFF, als dps: 1 (ohne doppelte Anführungszeichen) und als Parameter: &quot;off&quot; (wenn das off nicht von Anführungszeichen umgeben ist, müssen diese angegeben werden off).
--   Erstellen Sie einen neuen info / other-Befehl in den Gerätebefehlen:
-    *    Tragen Sie in der Interface-Spalte STATUS als Namen der Info ein
-    *    Geben Sie in die Spalte mit dem internen Namen und der Bestellnummer die eindeutige ID STATUS als dps: 1 (ohne Anführungszeichen) und nichts in den Parametern ein.
-
-    Bei digitalen Informationen:
-
-        Receive after decode :{devId:50701244cc50e37e9aff,dps:{"3":850,"101":true}}
-        [2019-10-13 09:15:30][DEBUG] :       >>> : devId | 50701244cc50e37e9aff : 50701244cc50e37e9aff
-        [2019-10-13 09:15:30][DEBUG] :       >>> : dps | Array : Array
-        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 3 | 850 : 850
-        [2019-10-13 09:15:30][DEBUG] :       >>>>>>>>>>> : 101 | 1 : 1
-
-    Hier wurde ein Intensitätsregler für die Anwendung des Geräts ausgewählt und wir stellen fest, dass sich der dps 3 geändert hat.
-
--   Erstellen Sie einen neuen Aktions- / Cursorbefehl in den Gerätebefehlen:
-    *    In der Interface-Spalte geben Sie Intensität als Cursornamen ein
-    *    Geben Sie in der Spalte Interner Name und Bestellnummer als eindeutige ID: Intensität, als dps: 3 (ohne doppelte Anführungszeichen) und als Parameter: # Schieberegler # (hier ist der numerische Wert nicht in Anführungszeichen eingeschlossen, nicht in Anführungszeichen) ein also nicht setzen).
--   Erstellen Sie einen neuen info / other-Befehl in den Gerätebefehlen:
-    *    In der Interface-Spalte geben Sie IntensiteGet als Namen der Info ein
-    *    Geben Sie in die Spalte Interner Name und Bestellnummer als eindeutige ID: IntensiteGet, als dps: 3 (ohne doppelte Anführungszeichen) und nichts in den Parametern ein.
-
-Anmerkungen:
--   nichts in den Protokollen: falsche IP-Adresse oder Gerät, das seinen Status nicht zurückgibt
--   Rückgabe mit Fehler: ID falsch
--   return nicht decodiert: falscher localkey
--   Der Befehl funktioniert nicht: Überprüfen Sie den Befehl
--   Um die Farbe einer Lampe zu ändern, ist die Schiebertechnik nicht möglich. Es müssen mehrere Tasten mit vordefinierten Farben programmiert werden
-
-## Statusaktualisierung in Jeedom
-Wenn Sie das Plugin aktivieren und sobald der Daemon gestartet wird, sowie jede Minute, sucht das Plugin nach Geräten, die mit Strom versorgt werden und mit Jeedom verbunden sind.
-
-Sobald das Gerät gefunden wurde, wird der Gerätestatus sofort an das Plugin zurückgegeben.
-
-Beachten Sie, dass das Plug-in bis zu 1 Minute dauern kann, bis festgestellt wird, dass ein Gerät verbunden oder getrennt ist.
-
-# Sonderfall von Nanoleaf
-
-
-## Schlüsselwiederherstellung
-
-Drücken Sie den Ein- / Ausschalter am Nanoleaf für 5-7 s und drücken Sie den Befehl getKey am Plugin. Überprüfen Sie, ob der Apikey im Feld &quot;Token&quot; der Plugin-Konfiguration platziert wurde.
-
-
-## Verwenden benutzerdefinierter Effekte
-
-Erstellen Sie einen Effekt mit der NanoLeaf-App und geben Sie ihm einen Namen. Erstellen Sie einen Aktions- / Standardbefehl in der Liste der Gerätebefehle im Plugin. Geben Sie den Namen in die Parameter ein. Geben Sie dann eine eindeutige Kennung und einen Namen an, die mit dem Namen der Bestellung identisch sein können.
-
-
-# FAQ
-
-
-## Welche Geräte können verwendet werden?
-
-Lesen Sie die Dokumentation
-
-## Es passiert nichts
-
-Bedienen Sie das Gerät zunächst mit der vom Hersteller bereitgestellten mobilen Anwendung.
-
-Verwenden Sie die Taste <tester> im Menü Plugin / Verbundene Objekte / wifilightV2 / Befehle.
-
-Es wird keine Hilfe gegeben, ohne dass die Peripheriegeräte mit der Anwendung des Herstellers auf einem Mobiltelefon betriebsbereit sind. Es ist erforderlich, dem Gerät eine feste IP-Adresse zuzuweisen.
-
-
-## Ich kann meine Internetbox nicht konfigurieren
-
-Es wird keine Hilfe zu der Box und den Konzepten gegeben, die zur Konfiguration des Routers für die Zuweisung einer festen IP-Adresse erforderlich sind. Konsultieren Sie die Box-Foren.
-
-## Beim Ändern des Gerätemodells werden nicht alle Befehle erstellt
-
-2 mal speichern.
-
-## Es ist nicht praktisch, die Intensität von weißen Mi.Light / EasyBulb / LimitlessLED-Lampen zu steuern
-
-Der Hersteller der LEDs hat nicht vorgehabt, die Intensität der Glühlampe direkt beeinflussen zu können. Wir können nur im Vergleich zum vorherigen Wert inkrementieren oder dekrementieren. Das Plugin reproduziert nur diesen Vorgang. Der vorgeschlagene Cursor ist folglich launisch.
-
-## Das Farbintensitätsmanagement weist manchmal unerwartetes Verhalten auf
-
-Kein Protokoll verwaltet die Intensität der Farbe, obwohl dies in der Regel bei mobilen Anwendungen der Fall ist. Solange Jeedom Farbe und Intensität verwaltet, ist alles in Ordnung. Wenn die Intensität jedoch durch eine mobile Anwendung geändert wird, stimmen die Ergebnisse nicht immer mit den erwarteten Ergebnissen überein. Das Plugin versucht, das Problem zu beheben, wenn die Lampe oder der Controller eine Statusrückmeldung erhalten.
-
-## Gibt es eine Statusrückmeldung?
-
-Lesen Sie die Dokumentation
-
-## Xiaomi Yeelight-Lampen können nicht betrieben werden
-
-Es ist wichtig, den Steuermodus über das lokale Netzwerk über die Xiaomi Yeelight-Anwendung zu aktivieren.
-
-## Ich kann den Klang von Extel Meli-Glühbirnen nicht steuern
-
-Der Sound wird nicht vom Plugin verwaltet
-
-## Xiaomi Philips-Lampen können nicht betrieben werden
-
-Für die Kommunikation mit Xiaomi Philips-Lampen ist es erforderlich, ein Token oder einen Token in englischer Sprache zu senden. Ohne diesen Token berücksichtigt die Glühbirne die an sie gesendeten Bestellungen nicht. Dieses Token befindet sich in der Mi-Home-App. Abhängig von Ihrem Telefon gibt es verschiedene Methoden, um das Token abzurufen. Das Verfahren ist an mehreren Stellen beschrieben, wird hier jedoch aus zwei Hauptgründen nicht wiedergegeben:
-
--   Xiaomi hat bereits sein Protokoll geändert, wodurch das Verfahren zur Wiederherstellung des Tokens geändert werden musste. Dies ist jedoch weiterhin möglich.
--   Internetnutzern können neue und einfachere Verfahren zur Verfügung gestellt werden.
--   Diese Dokumentation wird nicht so schnell gepflegt wie eine einfache Websuche mit den Schlüsselwörtern: xiaomi token.
-
-## Mit Tuya / Smart Live / Jinvoo / eFamilyCloud-Apps kompatible Geräte können nicht bedient werden
-
-Um mit diesen Lampen, Fassungen und anderen Peripheriegeräten zu kommunizieren, ist es erforderlich, einen lokalen oder lokalen Schlüssel oder einen Token-Schlüssel in Englisch und eine Kennung zu senden. Ohne diese Parameter berücksichtigt die Lampe die an sie gesendeten Bestellungen nicht. Es gibt verschiedene Methoden, um diese Informationen abzurufen. Das Verfahren ist an mehreren Stellen beschrieben, wird hier jedoch aus zwei Hauptgründen nicht wiedergegeben:
-
--   Die Anwendungen wurden aktualisiert, was uns dazu zwang, das Verfahren zum Abrufen der Informationen zu ändern.
--   Internetnutzern können neue und einfachere Verfahren zur Verfügung gestellt werden.
--   Diese Dokumentation wird nicht so schnell wie eine einfache Websuche mit den Schlüsselwörtern: Tuya LocalKey und insbesondere auf Github gepflegt.
-
-## Fehler beim Senden des Befehls / Zahnrad ohne Stopp / Senden ohne Stopp
--   wifilightV2-Geräte müssen aktualisiert werden
--   Gehe zu jedem Gerät und spare 2 mal
--   Testen Sie mit einem neuen Gerät, ob es bestehen bleibt
-
-## Mi.Light IBox1, iBox2, V6 Bridge: Befehl wird zufällig berücksichtigt
--   Bestellungen werden zu schnell versendet
--   Legen Sie in den Szenarien ausreichend lange Pausen ein
-
-## Mi.Light IBox1, iBox2, V6 Bridge: Befehl nicht berücksichtigt
--   Wählen Sie beim Koppeln mit der Mi.Light-Anwendung auf Mobilgeräten und beim Konfigurieren von wifilightV2 dieselbe Fernbedienung.
-
-## LW12 Magic UFO Arilux Wifi3x0 H801 Kompatible Steuerungen Magic Home Tuya / Jinvoo / eFamilyCloud
--   Es gibt viele Versionen und einige sind möglicherweise nicht mit dem Plugin kompatibel. Kontaktieren Sie den Autor für ein mögliches Update.
-
-## Befehle fehlen beim Erstellen oder Ändern des Lampentyps
--   Rette die Ausrüstung (2 Mal)
-
-
-# Wie bekomme ich Hilfe?
-
-
-Gehen Sie zum Jeedom-Forum [hier] (https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632)
-
-# Bekannte Fehler
-
-Der Speicher nimmt drastisch ab
--   Fehler behoben.
-
-Bei Tuya-kompatiblen Buchsen treten regelmäßig Mikroschnitte auf
--   Fehler behoben.
+Kompatible WLAN-Geräte sind:
+- Glühbirnen:
+    H6002 H6003 H6008 H6049 H6050 H6051 H6052 H6054 H6059 H605B H6061 H6062 H6071 H6072 H6073 H6075 H6076 H6083 H6085 H6086 H6087 H6089 H6104 H6109 H610A H611A H611B H611C H611Z H6110 H614A H614B H614C H614D H614E H6117 H6121 H6135 H6137 H6141 H6142 H6143 H6144 H6148 H615A H615B H615C H615D H6154 H6159 H6160 H6163 H6172 H6182 H6188 H618A H618C H618E H6195 H6198 H6199 H619A H619B H619C H619D H619E H619Z H61A0 H7005 H7021 H7022 H7028 H7050 H7060 MSSFH20 MSS4 MSS425K
+-   vergriffen :
+H5001 H5080 H5081 H7014
+
+Dual Socket wird nicht unterstützt, könnte aber sein, wenn ein Benutzer einen hat und helfen möchte, das Plugin zu verbessern.
+
+
+##Installation
+Die Installation, Erstellung und Konfiguration von Geräten erfolgt vollautomatisch:
+- Holen Sie sich den API-Schlüssel von der von Govee bereitgestellten Anwendung
+- Geben Sie in der Plugin-Konfiguration diesen API-Schlüssel in das Feld Govee ein und speichern Sie.
+- Klicken Sie auf Govee-Aufnahme: Die Geräte werden automatisch erstellt.
+
+## Bemerkungen
+Achten Sie auf folgende Punkte:
+- Wenn ein Gerät mit derselben MAC-Adresse bereits im Plugin vorhanden ist, wird es nicht neu erstellt oder geändert
+- Wenn ein Gerät aus dem Govee-Konto gelöscht wird, wird es nicht aus dem Plugin gelöscht, es muss manuell durchgeführt werden
+- Wenn ein Gerätemodell nicht bekannt ist, wird der Lampentyp verwendet
+- Wenn die Internetverbindung oder die Govee-Server nicht funktionieren, kann das Plugin nicht auf das Gerät zugreifen
+- das Plugin kann nur die Farbe, Intensität, Farbtemperatur und ON/OFF am Gerät ändern.
+- Bei einigen Modellen funktioniert die Intensitätsvariation nicht, ebenso wie die Farbtemperatur oder die Farbe.
+
+# Hilfe ?
+
+Gehen Sie zum Jeedom-Forum [hier] (https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)

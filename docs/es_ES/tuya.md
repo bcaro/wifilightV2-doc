@@ -1,33 +1,5 @@
 [Regresar a la documentación general](./index.md)
 
-# Inclusión desde la nube Tuya
-
-Este procedimiento automatiza la creación de la mayoría de los dispositivos Tuya y Tuya / Zigbee. La lectura de los dos párrafos siguientes (pasarelas Zigbee Tuya y Tuya) le permite comprender con mayor precisión cómo funciona el complemento.
-
-## configuración de la plataforma Tuya
-
-Primero siga este [tutorial] (https://linkdhome.com/articles/local-tuya-device-control-in-homekit) y vaya a la pestaña "Descripción general" para recuperar:
-ID de acceso y secreto de acceso.
-En la configuración del complemento, ingrese estos 2 parámetros en la parte Tuya.
-Luego seleccione: Tuya Ir a inclusión.
-Los dispositivos se crean automáticamente.
-Si ya existe un dispositivo con el mismo devId, la inclusión no ocurrirá.
-
-Limitaciones:
-- algunos dispositivos no se crean (la nube Tuya no proporciona datos)
-- Se integrarán dispositivos puramente en la nube, pero el complemento no podrá acceder a ellos
-- la nube de Tuya no transmite el orden de los colores de las bombillas de colores
-- los periféricos con información codificada (parte del actuador de las alarmas en general) no se gestionan
-- los dispositivos con información no estándar (en general, se pueden resolver con un bloque de código en un escenario) no se gestionan
-- No se ingresa la dirección IP local. Concilie la dirección mac y la dirección IP proporcionada en la configuración del dispositivo de la aplicación Tuya y su enrutador y modifique la dirección IP.
-- la eliminación de un pedido creado por el complemento a través de la nube Tuya ya no se puede volver a crear
-
-Consejos:
-- para agregar los comandos de color, cambie al [modo de aprendizaje del dispositivo] (./ tuya # tocAnchor-1-12-7) y use solo los botones de color de la aplicación Tuya SmatLife. Si se utilizan otros botones, el complemento creará duplicados de los pedidos creados a través de la nube Tuya.
-- Si no se crean otros comandos, haga lo mismo: use los botones de la aplicación Tuya SmartLife en modo de aprendizaje.
-- en general, los pedidos se pueden crear manualmente o en modo de aprendizaje
-- el mínimo y el máximo de un valor numérico se informan desde la nube. Según sea necesario, cambie #info# y #valor# a #info#/100*max y #valor#*100/max. Por lo tanto, el complemento no automatiza la calibración de la información y los comandos de acción. 
-
 # Pasarelas Zigbee Tuya
 
 Para utilizar una puerta de enlace de este tipo, elija el tipo: "Gateway Hub Tuya Zigbee"
