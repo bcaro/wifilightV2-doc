@@ -160,7 +160,8 @@ myStrom:
 
 Govee:
 - la conexión con los productos es a través de la nube y requiere internet.
-- el control de intensidad no funciona en todos los módulos Govee 
+- solo funcionan los controles de encendido / apagado de la intensidad del color y la temperatura del color
+- estos comandos no funcionan en todos los módulos de Govee 
 
 # Configuración del módulo wifi
 
@@ -185,7 +186,11 @@ Luego puede ir a la configuración del plugin wifilightV2.
 
 ## Configuración del plugin
 
-wifilightV2 no crea ningún dispositivo automáticamente (a excepción de los dispositivos Tuya / Zigbee en modo de inclusión), deben crearse en el plugin antes de configurarlos.
+wifilightV2 no crea dispositivos automáticamente excepto:
+
+- Tuya Smart Life
+- Ewelink
+- Govee 
 
 Ayuda :
 - Utilice el icono del signo de interrogación para obtener ayuda sobre cada elemento de configuración.
@@ -465,7 +470,10 @@ Para los equipos conectados al concentrador Meross, debe crear un dispositivo en
 
 ## Recuperación de consumos más precisa.
 
-Cree un escenario que se active solo una vez cuando Jeedom comience: coloque un bucle en 1,000,000 Ponga otro bucle dentro de 1,000,000 Estos 2 bucles anidados provistos de una pausa evitarán la salida del escenario durante cientos de años. En el bucle interno, coloque una pausa de 10 segundos y una llamada a stateGet del dispositivo. Luego recupera la potencia, divídela por 360 y agrégala a una variable llamada consumo. La pausa se puede reducir hasta 1s dependiendo de la potencia y complejidad de la instalación.
+Cree un escenario que se active solo una vez cuando se inicia Jeedom: coloque un bucle en 1,000,000. Coloque otro bucle dentro de 1,000,000. Estos 2 bucles anidados provistos de una pausa evitarán la salida del escenario durante cientos de años. En el bucle interno, ponga una pausa de 10 segundos y una llamada al estado del dispositivo Obtener para actualizar la información del dispositivo. La pausa se puede reducir hasta 1s dependiendo de la potencia y complejidad de la instalación.
+
+- Le permite recuperar la información de apertura del módulo de garaje
+- Permite un cálculo más preciso del consumo: luego recupera la potencia, divídela por 360 (para un período de escaneo de 10s) y agrégala a una variable que se llamará consumo. El 360 proporciona el consumo en kWh. 
 
 # Sonoff en modo DIY
 
@@ -487,13 +495,30 @@ El dispositivo Sonoff debe tener el firmware 3.3.0 o superior, la aplicación de
 
 Para el firmware de 3.5.0, el procedimiento es más simple y se detalla [aquí en el foro](https://community.jeedom.com/t/sonoff-diy-et-wifilightv2-en-firmware-3-5-0/48060).
 
-# Sonoff / Ewelink LAN
+# SonOff Ewelink y Cloud
+
+Este procedimiento automatiza la creación de la mayoría de los dispositivos Ewelink y Sonoff. Sin embargo, el acceso a los periféricos sigue siendo local. El dispositivo debe tener el firmware 3.0.1 o superior, la aplicación Ewelink le permite actualizar el firmware.
+
+## Configuración del complemento
+
+En la configuración del complemento, ingrese el inicio de sesión (solo dirección de correo electrónico) y la contraseña para conectarse a la aplicación Ewelink y guarde. Luego seleccione: Ewelink Ir a inclusión. Los dispositivos se crean automáticamente.
+
+Si el complemento no encuentra la dirección IP local, realice la conexión entre la dirección mac y la dirección IP proporcionada en la configuración del dispositivo de la aplicación Tuya y su enrutador y modifique la dirección IP. El procedimiento para encontrar la dirección IP utiliza un comando del sistema Linux, si no se puede cargar o el sistema no es compatible, la dirección IP no se puede encontrar automáticamente.
+
+Esta parte del complemento requiere el lanzamiento de dependencias.
+
+De forma predeterminada, el complemento elige sonoff basic, puede cambiar el subtipo sin perder la ApiKey y el deviceID.
+
+Si ya existe un dispositivo con el mismo ID de dispositivo, no se realizará la inclusión.
+
+### Observaciones:
+- algunos dispositivos no se crean (la nube Ewelink no proporciona los datos)
+- Se integrarán dispositivos puramente en la nube, pero el complemento no podrá acceder a ellos
+- Si no se encontró la dirección IP porque el dispositivo no está conectado, déle la dirección: 0.0.0.0, conéctelo y reinicie el procedimiento de inclusión.
 
 ## APiKey DeviceID
 
 Siga las instrucciones [aquí](https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) o [en el foro de Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) para recuperar esta información o hacer una búsqueda en la web y en el foro de jeedom con las palabras clave: Ewelink o Sonoff Apikey. El deviceid se debe colocar en el identificador del plugin. El Apikey se debe poner en el token. No ponga espacios ni comillas.
-
-El dispositivo debe tener el firmware 3.0.1 o superior, la aplicación Ewelink le permite actualizar el firmware.
 
 ## Acceso
 
@@ -533,17 +558,59 @@ Para dispositivos no presentes en esta lista (Sonoff Ifan por ejemplo) o si la c
 
 y dar en el [foro](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) el contenido de las llaves para permitir la integración del módulo en el plugin.
 
-# Zigbee / Tuya
+# Tuya Smartlife y Cloud Tuya
 
- [Ver la documentación específica](./tuya#tocAnchor-1-1)
+Este procedimiento automatiza la creación de la mayoría de los dispositivos Tuya y Tuya / Zigbee. Sin embargo, el acceso a los periféricos sigue siendo local.
+## Configuración de la plataforma Tuya
 
-# Tuya
+Siga esto primero y [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) vaya a la pestaña "Descripción general" para recuperar:
+ID de acceso y secreto de acceso. En la configuración del complemento, ingrese estos 2 parámetros en la parte Tuya y guarde, luego seleccione: Tuya Ir a inclusión. Los dispositivos se crean automáticamente.
 
-[Ver documentación específica](./tuya#tocAnchor-1-10)
+Si el complemento no encuentra la dirección IP local, realice la conexión entre la dirección mac y la dirección IP proporcionada en la configuración del dispositivo de la aplicación Tuya y su enrutador y modifique la dirección IP. El procedimiento para encontrar la dirección IP utiliza un comando del sistema Linux, si no se puede cargar o el sistema no es compatible, la dirección IP no se puede encontrar automáticamente.
 
-# Lidl
-Los productos Lidl Tuya / Zigbee nunca deben haberse emparejado con la aplicación Lidl. Solo necesitan emparejarse con la aplicación Tuya SmartLife.
-[Ver la documentación específica](./tuya#tocAnchor-1-1)
+Esta parte del complemento requiere el lanzamiento de dependencias.
+
+Si ya existe un dispositivo con el mismo devId, la inclusión no ocurrirá.
+
+### Observaciones:
+- algunos dispositivos no se crean (la nube Tuya no proporciona datos)
+- Se integrarán dispositivos puramente en la nube, pero el complemento no podrá acceder a ellos
+- se crean los colores de acuerdo con los 3 formatos conocidos, así como los controles de saturación e intensidad relacionados
+- los periféricos con información codificada (parte del actuador de las alarmas en general) no se gestionan
+- los dispositivos con información no estándar (en general, se pueden resolver con un bloque de código en un escenario) no se gestionan
+- el complemento no decodifica comandos complejos y luego coloca en parámetros el Json de la nube Tuya
+- la eliminación de un pedido creado por el complemento a través de la nube Tuya ya no se puede volver a crear
+- Si no se encontró la dirección IP porque el dispositivo no está conectado, déle la dirección: 0.0.0.0, conéctelo y reinicie el procedimiento de inclusión.
+
+### Consejos:
+- si el procedimiento automático no funciona, vaya a [modo de aprendizaje del dispositivo](./tuya#tocAnchor-1-12-7)
+y actuar solo en los botones correspondientes de la aplicación Tuya SmartLife. Si se utilizan otros botones, el complemento creará duplicados de los pedidos creados a través de la nube Tuya.
+- en general, los pedidos se pueden crear manualmente o en modo de aprendizaje
+- el mínimo y el máximo de un valor numérico se informan desde la nube. El complemento calibra la información y los comandos numéricos de 0 a 100. Según sea necesario, modifique los parámetros # slider # y # value #, así como los valores mínimo y máximo de Jeedom.
+
+### Participación en la mejora de esta parte:
+Puedes ayudar a mejorar la creación automática proporcionando la mayor cantidad de información posible: el Json de la nube Tuya, los cambios realizados, los registros o cualquier comentario relevante.
+
+Para obtener el Json de la nube Tuya:
+- en Tuya IOT Platform: Cloud> Development> elija el proyecto> Dispositivos> Copie el ID del dispositivo del dispositivo
+- Nube> Api Explorer> (en la nueva ventana) Smart Home Management System> Control de dispositivos> Obtener atributo de especificación de dispositivo (el segundo en la lista sin s para atributo)
+- pegue el ID del dispositivo> Enviar solicitud> Copiar (enlace de la ventana derecha)
+Aunque el complemento se dirige localmente a los dispositivos, puede usar la nube Tuya para configurar dispositivos y recuperar automáticamente cid, localKey y devId.
+
+[Ver documentación específica](./tuya#tocAnchor-1-1)
+
+## Creación manual o semimanual de dispositivos Tuya y Tuya/Zigbee
+
+Este procedimiento requiere que copie manualmente la clave local de la nube Tuya.
+
+  [Ver documentación específica para las puertas de enlace Tuya / Zigbee] (./tuya#tocAnchor-1-1)
+ 
+  [Ver documentación específica de los productos Tuya Wifi] (./tuya#tocAnchor-1-10)
+
+
+Atención :
+
+Los productos Lidl Tuya / Zigbee nunca deben haberse emparejado con la aplicación Lidl. Deben emparejarse solo con la aplicación Tuya SmartLife; de ​​lo contrario, el complemento ya no podrá utilizarlos. 
 
 # NanoLeaf
 

@@ -9,7 +9,7 @@ The permanent functioning of the plugin cannot be guaranteed: incompatibility or
 
 This plugin allows you to manage many LED strips, LED bulbs, electrical outlets, thermostats, temperature sensor, door sensor, etc. controlled by wifi directly or via a wifi box sold with the product. The principle of the plugin is never to use the cloud and therefore an internet connection between the plugin and the device via a remote server, all actions are therefore local to the home network. 
 
-
+One exception: Govee products.
 
 <img src="../images/wifilightV2_screenshot01.png" alt="image" style="height:100px;"/>
 <img src="../images/wifilightV2_screenshot02.png" alt="image" style="height:100px;"/>
@@ -161,9 +161,9 @@ Wiz:
 myStrom:
 - only the ordered socket has been tested, waiting for users to return for other devices
 
-Govee:
 - the connection with the products is via the cloud and requires internet.
-- the intensity control does not work on all Govee modules 
+- only the color intensity and color temperature On/Off controls work
+- these commands do not work on all Govee modules 
 
 # Configuration of the wifi module
 
@@ -189,7 +189,11 @@ You can then go to the configuration of the wifilightV2 plugin.
 
 ## Plugin configuration
 
-wifilightV2 does not create any device automatically (except for Tuya / Zigbee devices in inclusion mode), they must be created in the plugin before configuring them.
+wifilightV2 does not create devices automatically except:
+
+- Tuya Smart Life
+- Ewelink
+- Govee 
 
 Need help ? :
 - Use the question mark icon to get help on each configuration item.
@@ -470,7 +474,10 @@ For equipment connected to the Meross hub, you must create a device in the plugi
 
 ## More precise recovery of consumption.
 
-Create a scenario triggered only once when starting Jeedom: put a loop on 1,000,000. Put another loop inside 1,000,000 these 2 nested loops provided with a pause will prevent the exit of the scenario for hundreds years. In the inner loop put a pause of 10s and a call to stateGet of the device. Then recover the power, divide it by 360 and add it to a variable called consumption. The pause can be reduced up to 1s depending on the power and complexity of the installation.
+Create a scenario triggered only once when Jeedom starts: put a loop on 1,000,000. Put another loop inside 1,000,000 these 2 nested loops provided with a pause will prevent the exit of the scenario for hundreds years. In the inner loop put a 10s pause and a call to device stateGet to update device information. The pause can be reduced up to 1s depending on the power and complexity of the installation.
+
+- Allows you to retrieve the opening information of the garage module
+- Allows a more precise calculation of consumption: then recover the power, divide it by 360 (for a scanning period of 10s) and add it to a variable which will be called consumption. The 360 provides the consumption in kWh. 
 
 # Sonoff in DIY mode
 
@@ -492,13 +499,30 @@ The Sonoff device must be in firmware 3.3.0 or higher, the above Windows app all
 
 For firmware from 3.5.0, the procedure is simpler and is detailed  [here](https://community.jeedom.com/t/sonoff-diy-et-wifilightv2-en-firmware-3-5-0/48060) .
 
-# Sonoff / Ewelink LAN
+# SonOff Ewelink and Cloud
+
+This procedure automates the creation of most Ewelink and Sonoff devices. However, access to peripherals remains local. The device must be in firmware 3.0.1 or higher, the Ewelink app allows you to update the firmware.
+
+## Plugin configuration
+
+In the plugin configuration, enter the login (email address only) and the password for connecting to the Ewelink app and save. Then select: Ewelink Go to inclusion. The devices are created automatically.
+
+If the local IP address is not found by the plugin, make the connection between the mac address and the IP address given in the device settings of the Tuya application and your router and modify the IP address. The procedure for finding the IP address uses a command from the Linux system, if it cannot be loaded or the system is not compatible, the IP address cannot be found automatically.
+
+This part of the plugin requires the launch of dependencies.
+
+By default the sonoff basic is chosen by the plugin, you can change the subtype without losing the ApiKey and the deviceID.
+
+If a device with the same deviceID already exists, the inclusion will not be done.
+
+### Remarks :
+- some devices are not created (the Ewelink cloud does not provide the data)
+- purely cloud devices will be integrated but the plugin will not be able to access them
+- if the IP address was not found because the device is not connected, give it the address: 0.0.0.0, connect it and restart the inclusion procedure.
 
 ## APiKey DeviceID
 
 Follow the signs [here]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) or [on the forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 ) to retrieve these 2 pieces of information or do a search on the web and the jeedom forum with the key words: Ewelink or Sonoff Apikey. The deviceid is to be put in the plugin identifier. The Apikey is to be put in the token. Do not put spaces or quotes.
-
-The device must be in firmware 3.0.1 or higher, the Ewelink app allows you to update the firmware.
 
 ## Login
 
@@ -538,18 +562,60 @@ For devices not present in this list (Sonoff Ifan for example) or if the configu
 
 and give pn the [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) the content of the braces to allow the integration of the module into the plugin.
 
-# Zigbee / Tuya 
+## Tuya Smartlife and Cloud Tuya
 
- [See specific documentation ](./tuya#tocAnchor-1-1)
+This procedure automates the creation of most Tuya and Tuya / Zigbee devices. However, access to peripherals remains local.
+## Configuration of the Tuya platform
 
-# Tuya 
+Follow this first [tutorial ](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) and go to the "Overview" tab to retrieve:
+Access ID and Access Secret. In the plugin configuration, enter these 2 parameters in the Tuya part and save, then select: Tuya Go to inclusion. The devices are created automatically.
 
-[See specific documentation ](./tuya#tocAnchor-1-10)
+If the local IP address is not found by the plugin, make the connection between the mac address and the IP address given in the device settings of the Tuya application and your router and modify the IP address. The procedure for finding the IP address uses a command from the Linux system, if it cannot be loaded or the system is not compatible, the IP address cannot be found automatically.
 
-# Lidl 
-Lidl Tuya / Zigbee products must never have been paired with the Lidl app. They only need to be paired with the Tuya SmartLife app. 
+This part of the plugin requires the launch of dependencies.
+
+If a device with the same devId already exists, the inclusion will not happen.
+
+### Remarks :
+- some devices are not created (Tuya cloud does not provide data)
+- purely cloud devices will be integrated but the plugin will not be able to access them
+- the colors according to the 3 known formats are created as well as the related saturation and intensity controls
+- peripherals with coded information (actuator part of alarms in general) are not managed
+- devices with non-standard information (in general can be solved with a code block in a scenario) are not managed
+- the plugin does not decode complex commands and then puts in parameters the Json from the Tuya cloud
+- deleting an order created by the plugin via the Tuya cloud can no longer be recreated
+- if the IP address was not found because the device is not connected, give it the address: 0.0.0.0, connect it and restart the inclusion procedure.
+
+### Tips:
+- if the automatic procedure does not work, go to [device learning mode ](./tuya#tocAnchor-1-12-7) and act only on the corresponding buttons of the Tuya SmartLife app. If other buttons are used, the plugin will create duplicates of the orders created via the Tuya cloud.
+- in general, orders can be created manually or in learning mode
+- the min and the max of a numerical value are reported from the cloud. The plugin calibrates the info and numeric commands from 0 to 100. As needed, modify the #slider# and #value# parameters as well as the Jeedom min and max.
+
+### Participation in the improvement of this part:
+
+You can help improve automatic creation by providing as much information as possible: the Json from the Tuya cloud, the changes made, the logs or any relevant remark.
+
+To get the Json from the Tuya cloud:
+- in Tuya IOT Platform: Cloud> Development> choose the project > Devices > Copy the device ID of the device
+- Cloud > Api Explorer > (in the new window) Smart Home Management System > Device Control > Get Device Specification Attribute (the 2nd in the list without s to Attribute)
+- paste the device ID > Submit Request> Copy (right window link)
+Although the plugin locally addresses devices, it can use the Tuya cloud to configure devices and automatically retrieve cid, localKey, and devId. 
+
 
 [See specific documentation ](./tuya#tocAnchor-1-1)
+
+## Manual or semi-manual creation of Tuya and Tuya/Zigbee devices
+
+This procedure requires you to manually copy the localkey from the Tuya cloud.
+
+  [See specific documentation for Tuya / Zigbee gateways](./tuya#tocAnchor-1-1)
+ 
+  [See specific documentation for Tuya Wifi products] (./tuya#tocAnchor-1-10)
+
+
+Warning :
+
+Lidl Tuya / Zigbee products must never have been paired with the Lidl app. They must be paired only with the Tuya SmartLife application, otherwise they can no longer be used by the plugin. 
 
 # Nanoleaf
 

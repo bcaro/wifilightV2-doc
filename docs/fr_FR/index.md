@@ -7,7 +7,7 @@
 Attention :
 Le fonctionnement permanent du plugin ne peut être garanti : incompatibilité ou compatibilité partielle du produit, protocole mal géré, connexion de mauvaise qualité par exemples. Ne pas utiliser le plugin pour commander des appareils sensibles pouvant générer des désordres de tout ordre. Le plugin est fourni pour des besoins de tests et non pour une installation nécessitant un fonctionnement optimal en toute circonstance.
 
-Ce plugin permet de gérer de nombreux bandeaux de leds, ampoules leds, prises électriques, thermostats, capteur de température, capteur de porte, etc.  pilotés en wifi directement ou via une box wifi vendue avec le produit. Le principe du plugin est de ne jamais utiliser le cloud et donc une connexion internet entre le plugin et le périphérique via un serveur lointain, toutes les actions sont donc locales au réseau domestique.
+Ce plugin permet de gérer de nombreux bandeaux de leds, ampoules leds, prises électriques, thermostats, capteur de température, capteur de porte, etc. pilotés en wifi directement ou via une box wifi vendue avec le produit. Le principe du plugin est de ne jamais utiliser le cloud et donc une connexion internet entre le plugin et le périphérique via un serveur lointain, toutes les actions sont donc locales au réseau domestique.
 
 Une exception : les produits Govee.
 
@@ -67,7 +67,7 @@ Produits pouvant être compatibles et non garantis :
 -   TP-Link LB100/110/120/130 : ampoules avec retour d’état !
 -   Lampe Extel Meli avec retour d'état !
 -   Xiaomi Philips : Lampe bureau, ampoule et plafonnier avec retour d'état !!!
--   Ampoules, prises, interrupteur, interrupteurs volets, humidificateur, thermostat compatibles Tuya Smart live ou Jinvoo smart ou eFamilyCloud apps avec retour d'état !!!
+-   Ampoules, prises, interrupteur, interrupteurs volets, humidificateur, thermostat compatibles Tuya Smart life app avec retour d'état !!!
 -   Prises électriques TP-link HS100 HS110 avec retour d'état !!
 -   Contrôleurs de pixel strip leds compatible Magic home avec retour d'état !
 -	Périphériques contrôlés par l'appli Ewelink dont les Sonoff en mode LAN avec retour d'état !!!
@@ -76,7 +76,7 @@ Produits pouvant être compatibles et non garantis :
 -	Produits Wiz!!
 
 
-Pour ces derniers contrôleurs ou péripéhriques wifi, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin. Certains produits particuliers peuvent ne pas être compatibles.
+Pour ces derniers contrôleurs ou périphériques wifi, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin. Certains produits particuliers peuvent ne pas être compatibles.
 
 Attention :
 - ! : intégration facile pour une personne qui lit la documentation avant d'agir
@@ -133,7 +133,7 @@ Xiaomi Philips :
 Contrôleurs de pixel strip leds compatibles Magic Home :
 -   les scènes custom ne sont pas gérées.
 
-Périphériques compatibles Tuya Smart/Jinvoo/eFamilyCloud :
+Périphériques compatibles Tuya Smart Life :
 -   toutes les commandes des périphériques validés (voir le forum) du firmware 1.0 et du firmware 2.0 sont compatibles (en particulier les prises Neo CoolCam).
 -   non compatibles avec les périphériques cloud, en particulier les capteurs d'ouverture
 
@@ -156,14 +156,15 @@ Passerelle Wifi Tuya et périphériques Zigbee :
 -   La configuration est manuelle ou semi-automatique sauf pour un nombre limité de périphériques.
 
 Wiz :
-- seule la lampe a été testée, en attente de retours des utilisateurs pour les autres péripéhriques
+- seule la lampe a été testée, en attente de retours des utilisateurs pour les autres périphériques
 
 myStrom :
-- seule la prise commandée a été testée, en attente de retousr des utilisateurs pour les autres péripéhriques
+- seule la prise commandée a été testée, en attente de retours des utilisateurs pour les autres périphériques
 
 Govee :
 - la connexion avec les produits se fait via le nuage et nécessite internet.
-- la commande d'intensité ne fonctionne pas sur tous les modules Govee
+- seules les commandes On/Off intensité couleur et température de couleur fonctionnent
+- ces commandes ne fonctionnent pas sur tous les modules Govee
 
 # Configuration du module wifi
 
@@ -189,7 +190,11 @@ Vous pouvez alors passer à la configuration du plugin wifilightV2.
 
 ## Configuration du plugin
 
-wifilightV2 ne crée aucun périphérique automatiquement (sauf pour les périphériques Tuya/Zigbee en mode inclusion), il faut les créer dans le plugin avant de les paramétrer.
+wifilightV2 ne crée pas les périphériques automatiquement sauf :
+
+-   Tuya Smart Life
+-   Ewelink
+-   Govee
 
 Aide : 
 -   Utiliser l'icône sous forme de point d'interrogation pour obtenir une aide sur chaque élément de configuration.
@@ -214,7 +219,7 @@ Paramétrage :
 -   Saisir le nombre d'envois de commandes : permet de répéter la commande pour un équipement éloigné en cas de mauvaise transmission. (1 par défaut). Certaines ampoules ou prises ne gèrent pas cette répétition car le plugin s'assure par retour d'état de la transmission. Certaines commandes relatives (incrémentations) ne sont pas répétées.
 -   Saisir le délai d'envoi en cas de répétition (0 ms par défaut, 100 ms max)
 -   Saisir le % d'incrémentation de l'intensité lors de l'appui sur les boutons d'incrémentation ou de décrémentation de l'intensité lumineuse
--   Configurer le nombre de commandes créées, la création de toutes les commmandes (énergie couleurs effets) peut alourdir l'interface
+-   Configurer le nombre de commandes créées, la création de toutes les commandes (énergie couleurs effets) peut alourdir l'interface
 -   Saisir le n° de groupe pour la synchronisation, voir plus bas
 
 ## Ajout des commandes
@@ -281,7 +286,7 @@ La commande ConnectedGet permet de récupérer l'état de la connexion de chaque
 -  -5 : mauvaise réponse du périphérique
 -  -6 : périphérique sans retour d'état
 
-Sur la page des périphériques, une émoticône indique si la connexion est OK ou KO.  L'émoticône indifférent est utilisée dans les cas où le plugin ne peut connaitre l'état de la connexion, soit les périphériques qui ne renvoient pas leur état. Noter que pour les périphérique avec passerelle (Tuya Zigbee, Meross), l'état de la connexion est celui de la passerelle et est appliqué à tous les périphériques connectés à la passerelle.
+Sur la page des périphériques, un émoticône indique si la connexion est OK ou KO.  L'émoticône indifférent est utilisé dans les cas où le plugin ne peut connaitre l'état de la connexion, soit les périphériques qui ne renvoient pas leur état. Noter que pour les périphériques avec passerelle (Tuya Zigbee, Meross), l'état de la connexion est celui de la passerelle et est appliqué à tous les périphériques connectés à la passerelle.
 
 # Synchronisation
 
@@ -312,7 +317,7 @@ Vous pouvez prévenir le développeur pour qu'il modifie la configuration par d�
 
 # liste des couleurs
 
-Pour les ampoules couleurs, il faut avoir créé le périphérique en mode étendu + couleurs + disco. Une liste à choix est alors associée à chaque couleur. Si les commandes couleurs sont supprimées, la liste à choix créée automatiquement ne sera pas modifiée mais la liste déroulante ne pourra plus avoir accès à cette couleur. Pour ne pas être gèné dans l'interface, il faut supprimer l'affichage des commandes couleurs.   
+Pour les ampoules couleurs, il faut avoir créé le périphérique en mode étendu + couleurs + disco. Une liste à choix est alors associée à chaque couleur. Si les commandes couleurs sont supprimées, la liste à choix créée automatiquement ne sera pas modifiée mais la liste déroulante ne pourra plus avoir accès à cette couleur. Pour ne pas être gêné dans l'interface, il faut supprimer l'affichage des commandes couleurs.   
 
 
 # liste des modes Disco et Custom
@@ -370,9 +375,9 @@ Dans ce mode, il suffit de renseigner le paramètre Port avec le port du mode UD
 
 Dans ce mode, le choix des périphériques se fait par le type de télécommande et non par le type de lampe comme dans le mode historique. Il faut, après avoir renseigné les paramètres habituels, renseigner l'identifiant du groupe de télécommandes, voir [Sidoh](https://github.com/sidoh/esp8266_milight_hub) ou [sur le forum](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron) pour plus de détails. Ce mode propose un retour d'état partiel mis à jour toutes les minutes.
 
-Pour appairer une lampe avec le Milight-Hub, mettre la lampe sous tension et cliquer sur Sync ON. Utiliser Sync OFF pour désappairer. Pour apparirer une télécommande, sélectionner le ON du canal à synchroniser dès la mise sous tension et cliquer sur Sync ON.
+Pour appairer une lampe avec le Milight-Hub, mettre la lampe sous tension et cliquer sur Sync ON. Utiliser Sync OFF pour désappairer. Pour appairrer une télécommande, sélectionner le ON du canal à synchroniser dès la mise sous tension et cliquer sur Sync ON.
 
-Pour connaitre les caratéristiques du hub, cliquer sur getKey, le résultat est obtenu dans getKetget en cliquant sur Tester.
+Pour connaitre les caractéristiques du hub, cliquer sur getKey, le résultat est obtenu dans getKetget en cliquant sur Tester.
 
 # Xiaomi Yeelight
 
@@ -502,7 +507,7 @@ Cette procédure automatise la création de la plupart des périphériques Eweli
 
 ## Configuration du plugin
 
-Dans la configuration du plugin, renseigner le login (adresse mail uniquement) et le mot de passe de connexion à l'appli Ewelink et sauvegarder, ensuite sélectionner : Ewelink Passer en inclusion. Les périphériques sont créés automatiquement. 
+Dans la configuration du plugin, renseigner le login (adresse mail uniquement) et le mot de passe de connexion à l'appli Ewelink et sauvegarder. Ensuite, sélectionner : Ewelink Passer en inclusion. Les périphériques sont créés automatiquement. 
 
 Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, si elle ne peut être chargée ou si le système n'est pas compatible, l'adresse IP ne pourra pas être trouvée automatiquement.
 
@@ -520,7 +525,7 @@ Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas
 
 ## ApiKey DeviceID
 
-Pour récupérer manuellement ces 2 informations, vous pouvez aller [ici]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) ou [sur le forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 )  ou faire une recherche sur le web et le forum jeedom avec comme mots clé : Ewelink ou Sonoff Apikey. Il ne faut mettre ni espace ni guillemets.
+Pour récupérer manuellement ces 2 informations, vous pouvez aller [ici]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) ou [sur le forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 )  ou faire une recherche sur le web et le forum Jeedom avec comme mots clé : Ewelink ou Sonoff Apikey. Il ne faut mettre ni espace ni guillemets.
 e
 ## Connexion
 
@@ -565,8 +570,8 @@ et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sono
 Cette procédure automatise la création de la plupart des périphériques Tuya et Tuya/Zigbee. Cependant, l'accès aux périphériques reste en local.
 ## Configuration de la plateforme Tuya
 
-Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "Overview" pour récupérer :
-Access ID et Access Secret. Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya et sauvegarder, ensuite sélectionner : Tuya Passer en inclusion. Les périphériques sont créés automatiquement. 
+Suivre d'abord ce  et aller dans l'onglet "Overview" pour récupérer :
+Access ID et Access Secret. Dans la configuration du plugin, renseigner ces[tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) 2 paramètres dans la partie Tuya et sauvegarder, ensuite sélectionner : Tuya Passer en inclusion. Les périphériques sont créés automatiquement. 
 
 Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, si elle ne peut être chargée ou si le système n'est pas compatible, l'adresse IP ne pourra pas être trouvée automatiquement.
 
@@ -590,7 +595,7 @@ Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 - le min et le max d'une valeur numérique sont remontés depuis le cloud. Le plugin calibre les commandes infos et numériques de 0 à 100. Selon les besoins, modifier les paramètres #slider# et #value# ainsi que le min et max Jeedom.
 
 ### Participation à l'amélioration de cette partie :
-Vous pouvez contribuer à l'amélioration de la création automatique en donnant le maximum de renseignements : le Json du cloud Tuya, les modifications apportées, les logs  ou toute remarque pertinente. 
+Vous pouvez contribuer à l'amélioration de la création automatique en donnant le maximum de renseignements : le Json du cloud Tuya, les modifications apportées, les logs ou toute remarque pertinente. 
 
 Pour obtenir le Json du cloud Tuya :
 - dans Tuya IOT Platform : Cloud > Development > choisir le projet > Devices > Copier le device ID du périphérique
@@ -644,7 +649,7 @@ L'installation, la création et la configuration des périphériques est entièr
 ## Remarques
 Il faut faire attention aux points suivants :
 - lorsqu'un périphérique avec la même adresse MAC est déjà présent dans le plugin il ne sera ni recréé ni modifié
-- si un périhérique est supprimé sur le compte Govee il ne sera pas supprimé du plugin, il faudra le faire manuellement
+- si un périphérique est supprimé sur le compte Govee il ne sera pas supprimé du plugin, il faudra le faire manuellement
 - si un modèle de périphérique n'est pas connu, le type Bulb sera utilisé
 - si la connexion internet ou les serveurs Govee ne sont pas fonctionnels, le plugin ne pourra pas accéder au périphérique
 - le plugin ne peut que changer la couleur, l'intensité, la température de couleur et faire ON/OFF sur le périphérique.
