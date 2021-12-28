@@ -10,7 +10,7 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.83 - 2021-12-24 beta (Jeedom V4)
+1.84 - 2021-12-24 beta (Jeedom V4)
 - Ewelink : récupération dans le cloud de la plupart des périphériques fonctionnant en mode LAN et surtout de leur deviceId, apikey et adresse IP, ce qui rend leur configuration bien plus facile.
 - Tuya : récupération de l'adresse IP locale
 - Nanoleaf : création dynamique des modes scène

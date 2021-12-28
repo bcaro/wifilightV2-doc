@@ -381,7 +381,7 @@ In this mode, the choice of peripherals is made by the type of remote control an
 
 To pair a lamp with the Milight-Hub, turn on the lamp and click on Sync ON. Use Sync OFF to unpair. To appear a remote control, select the ON of the channel to synchronize as soon as the power is turned on and click on Sync ON.
 
-To know the characteristics of the hub, click on getKey, the result is obtained in getKetget by clicking on Test.
+To know the characteristics of the hub, click on getKey, the result is obtained in getKeyget by clicking on Test.
 
 # Xiaomi Yeelight
 
