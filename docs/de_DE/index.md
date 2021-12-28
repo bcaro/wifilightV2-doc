@@ -380,7 +380,7 @@ Um die Eigenschaften des Hubs zu erfahren, klicken Sie auf getKey, das Ergebnis 
 ## Aufbau
 Die lokale Netzwerksteuerung muss unbedingt über die Xiaomi Yeelight App aktiviert werden.
 
-##Auswahl der Version
+## Auswahl der Version
 
 Das Plugin ermöglicht die Wahl zwischen 2 Versionen:
 
