@@ -15,12 +15,12 @@ The following equipment is compatible but the list is not exclusive and will be 
 - Lidl SilverCrest Smart Home gateway
 - all Tuya/Zigbee gateways are normally compatible, there has not yet been a return from an incompatible gateway.
 - Vima lock (but not MiHome)
-the plugin cannot open/close because the lock is not intended to do so, but it can know the last key used
+    the plugin cannot open/close because the lock is not intended to do so, but it can know the last key used
 - TYZS2 temperature and humidity sensor
-full operation
+    full operation
 - Hessway thermostatic head
-Does not manage the programming of the time slots of the different modes but can start any mode.
-Use the "extended mode" option for creating commands to create all the thermostat commands.
+    Does not manage the programming of the time slots of the different modes but can start any mode.
+    Use the "extended mode" option for creating commands to create all the thermostat commands.
 - the double dimmer switch QS-Zigbee-D02-TRIAC-LN
 - Moes presence sensor
 - BENEXMART presence sensor
@@ -28,7 +28,7 @@ Use the "extended mode" option for creating commands to create all the thermosta
 - BENEXMART door sensor
 - Lonsoho plug with consumption
 - loratap 3-button remote control
-- single / double / triple wall switches
+- single/double/triple wall switches
 - remote control, white and colored bulbs, single and triple Lidl sockets
 
 All other devices, or similar devices of another brand or model, must be fully configured in custom mode. However the configuration generated for these models may help for another.
@@ -59,7 +59,7 @@ The key and IP address of devices connected to the gateway is the same as that o
 Configure the device and enter the localKey found above as well as the IP address which is the same as that of the gateway. You must then modify the state of the device with the application provided by the manufacturer of the gateway and consult the logs.
 In the logs, when the device returns its status, you will find information like this: 
     
-    Mess: {"dps": {"161": "Esc"}, "cid": "ec1bxxxxxxxx28", "t": 1589301302}
+    Mess:{"dps":{"161":"Esc"},"cid":"ec1bxxxxxxxx28","t":1589301302}
  
 The cid is to be copied in the device devId field of the plugin (without the " "). It is this which makes it possible to distinguish 2 devices connected to the gateway.
 
@@ -73,7 +73,7 @@ If your device is in the suggested list, it should work immediately. If your dev
 
 ## Automatic creation of the device in inclusion mode
 
-To be able to use the inclusion mode of devices connected to the gateway, you must first have connected and correctly configured a gateway using the Gateway Hub Tuya / Zigbee subtype with its IP address and localKey. The device to be included in the gateway must return its state, if this is not the case, the procedure will not be able to work. If several gateways are connected and configured in the plugin, it is necessary to activate only the gateway on which the device must be included.
+To be able to use the inclusion mode of devices connected to the gateway, you must first have connected and correctly configured a gateway using the Gateway Hub Tuya/Zigbee subtype with its IP address and localKey. The device to be included in the gateway must return its state, if this is not the case, the procedure will not be able to work. If several gateways are connected and configured in the plugin, it is necessary to activate only the gateway on which the device must be included.
 If no gateway or multiple gateways are configured and active, the inclusion process will be aborted. The device to include must not already be in the plugin, otherwise it must either be removed or use learning mode.
 
 - click on inclusion mode, wait a few moments
@@ -87,8 +87,8 @@ This mode is only there to help the custom configuration of a new device which i
 
 Examples of modifications:
 - If the dps only corresponds to an info in the peripheral (for example 3 possible values ​​of the same button), you will have to delete the 3 action commands created automatically. However, the actions commands have as parameter all the values ​​retrieved by the plugin and allow to know the values ​​taken by the dps info.
-- For digital dps, an info command and a digital action command are created automatically, if only the info is useful (in the case of the temperature of a sensor) the action command must be deleted. If the numerical values ​​take the values ​​0 or 1 during learning, the plugin will also create 3 STATE / ON / OFF commands, they will have to be deleted.
-- For dps containing a 0/1 info for an all or nothing actuator, such as an electrical outlet, the plugin will create an info and 2 ON / OFF actions.
+- For digital dps, an info command and a digital action command are created automatically, if only the info is useful (in the case of the temperature of a sensor) the action command must be deleted. If the numerical values ​​take the values ​​0 or 1 during learning, the plugin will also create 3 STATE/ON/OFF commands, they will have to be deleted.
+- For dps containing a 0/1 info for an all or nothing actuator, such as an electrical outlet, the plugin will create an info and 2 ON/OFF actions.
 - In the case of a dps containing true or false, an info command and two action commands (ON and OFF) are created automatically, if only the info is useful (in the case of a presence sensor) the commands must be deleted actions.
 - For dps containing color info, the plugin will identify the color coding and create 3 action commands and 3 info commands that correspond to Hue Saturation Intensity
 - In general, the subtype created by the plugin may not correspond to the data, it will then be necessary to carry out tests by modifying it.
@@ -176,17 +176,17 @@ For multichannel devices, such as outlets, you need to create one wifilightV2 pe
 
 The energy configuration parameters, for the outlets that manage it, allow you to assign the right dps to voltage, amperage and power. To retrieve this setting, install the plug in Jeedom then go to the wifilightV2 logs. The outlet is polled every minute. Look for the message that looks like:
 
-    Mess: {"devId": "xxxxxxxxxghekqd", "dps": {"1": false, "2": false, "9": 0, "10": 0, "18": 0, "19": 0, "20": 2281, "21": 1, "22": 726, "23": 28971, "24": 19417, "25": 1070}}
+    Mess:{"devId":"xxxxxxxxxghekqd","dps":{"1":false,"2":false,"9":0,"10":0,"18":0,"19":0,"20":2281,"21":1,"22":726,"23":28971,"24":19417,"25":1070}}
 
 The index "20" corresponds here to the supply voltage in hundreds of mV, ie: 228.1 V, it should move slightly. The indexes "18" and "19" correspond to the current (mA) and to the power in W, here no device is connected and therefore the information is at zero. This is a good way to find the voltage, by plugging in a device, these 2 values ​​must be changed and the voltage is right after.
 
 The syntax is then: 20; 18; 19 which must be put in the field 'Energy settings' in V1 and V2.
 
-For 1 socket plugs, in general you need: 6; 4; 5 (set by default by the plugin).
+For 1 socket plugs, in general you need: 6;4;5 (set by default by the plugin).
 
-For 2-way plugs, in general you need: 9; 7; 8 (set by default by the plugin).
+For 2-way plugs, in general you need: 9;7;8 (set by default by the plugin).
 
-For the other outlets, the value 20; 18; 19 is set by default.
+For the other outlets, the value 20;18;19 is set by default.
 
 
 ## Tuya Smartlife compatible V3
@@ -247,11 +247,11 @@ Use all the possibilities of the Tuya application and clearly identify in the lo
 
 In the logs, when using the Smartlife app, we find for example:
 
-    Mess: {"devId": "xxxxxxxxxghekqd", dps: {"2": true, "8": true}}
+    Mess:{"devId":"xxxxxxxxxghekqd",dps:{"2":true,"8":true}}
 
 Here the off button has been selected on the device and we observe that the dps of # 2 has changed.
 
-    Mess: {"devId": "xxxxxxxxxghekqd", dps: {"2": false, "8": true}}
+    Mess:{"devId":"xxxxxxxxxghekqd",dps:{"2":false,"8":true}}
 
 Here, the on button has been selected on the device and we observe that the dps of n ° 2 has changed.
 
@@ -273,15 +273,15 @@ To configure manually:
 
 In the logs, when using the Smartlife app, we find for example:
 
-    Mess: {"devId": "xxxxxxxxxghekqd", dps: {"1": "off", "101": true}}
+    Mess:{"devId":"xxxxxxxxxghekqd",dps:{"1":"off","101":true}}
 
 Here the off button has been selected on the device and we observe that the dps of # 1 has changed.
 
-    Mess: {"devId": "xxxxxxxxxghekqd", dps: {"1": "on", "101": true}}
+    Mess:{"devId":"xxxxxxxxxghekqd",dps:{"1":"on","101":true}}
 
 Here, the on button has been selected on the device and we observe that the dps of n ° 1 has changed.
 
-    Mess: {"devId": "xxxxxxxxxghekqd" ,, dps: {"1": "stop", "101": true}}
+    Mess:{"devId":"xxxxxxxxxghekqd",,dps:{"1":"stop","101":true}}
 
 Here, the stop button has been selected on the device and we observe that the dps of n ° 1 has changed.
 
@@ -306,11 +306,11 @@ To configure manually:
 
 In the logs, when using the Smartlife app, we find:
 
-    Mess: {"devId": "xxxxxxxxxghekqd", dps: {"3": 850, "101": true}}
+    Mess:{"devId":"xxxxxxxxxghekqd",dps:{"3":850,"101":true}}
 
 Here, an intensity slider has been selected on the device app and it is observed that the dps of # 3 has changed.
 
-Click on the Cursor button on the interface to automatically create the 2 commands to manage the cursor. To adapt them as needed, all you have to do is modify the dps numbers and put 3 (without quotes). For the parameter of the action command: either leave nothing, or put # slider # or put a formula for example: # slider # / 10. For the info parameter, it's the same except that you have to use # value #. Do not put quotes because there are none after the dps number.
+Click on the Cursor button on the interface to automatically create the 2 commands to manage the cursor. To adapt them as needed, all you have to do is modify the dps numbers and put 3 (without quotes). For the parameter of the action command: either leave nothing, or put #slider# or put a formula for example: #slider#/10. For the info parameter, it's the same except that you have to use #value#. Do not put quotes because there are none after the dps number.
 
 To configure manually:
 
@@ -326,7 +326,7 @@ To configure manually:
 
 In the logs, when using the Smartlife app, we find:
 
-    Mess: {"devId": "xxxxxxxxxghekqd", dps: {"8": 23, "101": true}}
+    Mess:{"devId":"xxxxxxxxxghekqd",dps:{"8":23,"101":true}}
 
 Here, it is a temperature which is sent regularly and we observe that the dps of n ° 8 has changed.
 
@@ -343,9 +343,9 @@ To configure manually:
 
 In the logs, when using the Smartlife app, we find:
 
-    Mess: {"devId": "xxxxxxxxxghekqd", dps: {"12": 1}}
+    Mess:{"devId":"xxxxxxxxxghekqd",dps:{"12":1}}
 
-    Mess: {"devId": "xxxxxxxxxghekqd", dps: {"12": 0}}
+    Mess:{"devId":"xxxxxxxxxghekqd",dps:{"12":0}}
 
 Here, it is the opening then closing information which is sent and we observe that the dps of n ° 12 has changed.
 
@@ -373,7 +373,7 @@ In order to allow the plugin to function correctly for the colors, it is necessa
 
 In the logs, when using the modification of the color of the lamp, we find:
 
-    Mess: {"devId": "633225xxxxx", "dps": {"1": true, "27": true, "28": "white", "29": 254, "31": "08ff0000766464", "32": "cf38000168ffff", "33": "ffff500100ff00"}
+    Mess:{"devId":"633225xxxxx","dps":{"1":true,"27":true,"28":"white","29":254,"31":"08ff0000766464","32":"cf38000168ffff","33":"ffff500100ff00"}
 
 It is necessary to locate the number of dps which changes, here it is the 31 is 08ff0000766464. The last 2 64 in hexadecimal make 100 in decimal. 08 = R FF = G 00 = B 076 = hue, this is format 3. Click on the Color 3 button and modify the numbers of dps to put 31. Do not modify the parameters.
 
@@ -404,21 +404,21 @@ Note: it is essential to put the same dps number for these 6 commands and not to
 
 To send several numbers of dps at the same time, put \* in the n° of dps and put the complete command without the braces in the field parameters. One and only one of the dps numbers can be a cursor or (exclusively) a color.
 
-Create an action / other command and put in parameters:
+Create an action/other command and put in parameters:
 
-    "1": true, "3": "color"
+    "1":true,"3":"color"
    
 Allows you to turn on the lamp and switch to color.
 
-Create an action / cursor command and put in parameters:
+Create an action/cursor command and put in parameters:
 
-    "1": true, "3": #slider#/10
+    "1":true,"3":#slider#/10
    
-Allows you to turn on the lamp and modify the intensity. A formula on the # slider # can be applied.
+Allows you to turn on the lamp and modify the intensity. A formula on the #slider# can be applied.
  
-Create an action / color command and put in parameters:
+Create an action/color command and put in parameters:
 
-    "2": "color", "3": "#colorR2G2B200H2S2V2_255#"
+    "2":"color","3":"#colorR2G2B200H2S2V2_255#"
    
 Allows you to switch the lamp to color mode and specify the color. The plugin will use the color, intensity and saturation of the color widget.
 
@@ -495,9 +495,9 @@ At this point, the only point tested and OK is that the IP address is correct an
 
 ## Check that the localKey is correct
 
-In the case of a Tuya / Zigbee gateway, the tests must be done on a device connected to the gateway. The gateway alone does not return any message.
+In the case of a Tuya/Zigbee gateway, the tests must be done on a device connected to the gateway. The gateway alone does not return any message.
 
-1. fill in the localKey without space and without quotes in the Token field of the device (and of the gateway if there is one). Check several times: the localKey must be the same for all devices with the same IP address (Tuya / Zigbee devices connected to a gateway or multi-channel devices). The plugin uses one of these keys to communicate with the device, so check that they are correct and identical.
+1. fill in the localKey without space and without quotes in the Token field of the device (and of the gateway if there is one). Check several times: the localKey must be the same for all devices with the same IP address (Tuya/Zigbee devices connected to a gateway or multi-channel devices). The plugin uses one of these keys to communicate with the device, so check that they are correct and identical.
 2. deactivate in wifilightV2 all the peripherals except the one to be tested (keep only one channel in case of multi-channel peripheral), the goal is not to mix all the peripherals.
 3.clear logs
 4.Use either the buttons on the physical device or the Smartlife app to change the status of the device.
@@ -522,9 +522,9 @@ Some messages are never decoded, it only takes one message to be correctly decod
 
 ## Check that the devId or the cid are correct
 
-In the case of a Tuya / Zigbee gateway, the tests must be done on a device connected to the gateway. The gateway alone does not return any message.
+In the case of a Tuya/Zigbee gateway, the tests must be done on a device connected to the gateway. The gateway alone does not return any message.
 
-1. the cid (for Tuya / Zigbee devices) or the devId for others was found at the same time as the LocaKey. It is specific to each device and is never modified, this allows you to identify your devices.
+1. the cid (for Tuya/Zigbee devices) or the devId for others was found at the same time as the LocaKey. It is specific to each device and is never modified, this allows you to identify your devices.
 2. locate the "Mess" messages coming from the peripheral. 
 
 ** For a non-Zigbee device which returns its devId, we will find: **
@@ -567,7 +567,7 @@ If the devId or cid is not correct, the device does not return its status or ret
 ## A problem with an action command (the others work)
 
 1. Check the 4 points above
-2. Deactivate all wifilightV2 devices except the one to be tested (keep only one channel for multichannels) (leave the Tuya / Zigbee gateway active for a Zigbee device) and delete the logs for greater clarity.
+2. Deactivate all wifilightV2 devices except the one to be tested (keep only one channel for multichannels) (leave the Tuya/Zigbee gateway active for a Zigbee device) and delete the logs for greater clarity.
 3. Wait for the daemon to pass (it polls the devices every minute the message begins with: >>>>>>>> Search for)
 4. Wait 10s after the message containing >>>>>>>>>>> End <<<<<<<<<<<< (end of the interrogation of peripherals by the daemon).
 5. Activate the command of the plugin which malfunctions 2 times with 5s intervals

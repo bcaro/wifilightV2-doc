@@ -15,12 +15,12 @@ El siguiente equipo es compatible, pero la lista no es exclusiva y se completar�
 - Puerta de enlace para el hogar inteligente Lidl SilverCrest
 - todas las puertas de enlace Tuya/Zigbee son normalmente compatibles, todavía no ha habido un retorno de una puerta de enlace incompatible.
 - Cerradura Vima (pero no MiHome)
-el plugin no se puede abrir/cerrar porque el candado no está diseñado para hacerlo, pero puede saber la última clave utilizada
+    el plugin no se puede abrir/cerrar porque el candado no está diseñado para hacerlo, pero puede saber la última clave utilizada
 - Sensor de temperatura y humedad TYZS2
-funcionamiento completo
+    funcionamiento completo
 - Cabezal termostático Hessway
-No gestiona la programación de las franjas horarias de los diferentes modos pero puede iniciar cualquier modo.
-Utilice la opción "modo extendido" para crear comandos para crear todos los comandos del termostato.
+    No gestiona la programación de las franjas horarias de los diferentes modos pero puede iniciar cualquier modo.
+    Utilice la opción "modo extendido" para crear comandos para crear todos los comandos del termostato.
 - el doble regulador QS-Zigbee-D02-TRIAC-LN
 - Sensor de presencia de Moes
 - Sensor de presencia BENEXMART
@@ -58,7 +58,7 @@ La clave y la dirección IP de los dispositivos conectados a la puerta de enlace
 Configure el dispositivo e ingrese la localKey que se encuentra arriba, así como la dirección IP que es la misma que la de la puerta de enlace. A continuación, debe modificar el estado del dispositivo con la aplicación proporcionada por el fabricante de la puerta de enlace y consultar los registros.
 En los registros, cuando el dispositivo devuelva su estado, encontrará información como esta: 
     
-    Mess: {"dps": {"161": "Esc"}, "cid": "ec1bxxxxxxxx28", "t": 1589301302}
+    Mess:{"dps":{"161":"Esc"},"cid":"ec1bxxxxxxxx28","t":1589301302}
  
 El cid se copiará en el campo de devId de dispositivo del plugin (sin el " "). Es esto lo que permite distinguir 2 dispositivos conectados a la puerta de enlace.
 
@@ -72,7 +72,7 @@ Si su dispositivo está en la lista ofrecida, debería funcionar de inmediato. S
 
 ## Creación automática del dispositivo en modo de inclusión
 
-Para poder utilizar el modo de inclusión de dispositivos conectados a la puerta de enlace, primero debe haber conectado y configurado correctamente una puerta de enlace utilizando el subtipo Gateway Hub Tuya / Zigbee con su dirección IP y clave local. El dispositivo que se incluirá en la pasarela debe devolver su estado, si este no es el caso, el procedimiento no podrá funcionar. Si hay varias puertas de enlace conectadas y configuradas en el plugin, es necesario activar solo la puerta de enlace en la que se debe incluir el dispositivo.
+Para poder utilizar el modo de inclusión de dispositivos conectados a la puerta de enlace, primero debe haber conectado y configurado correctamente una puerta de enlace utilizando el subtipo Gateway Hub Tuya/Zigbee con su dirección IP y clave local. El dispositivo que se incluirá en la pasarela debe devolver su estado, si este no es el caso, el procedimiento no podrá funcionar. Si hay varias puertas de enlace conectadas y configuradas en el plugin, es necesario activar solo la puerta de enlace en la que se debe incluir el dispositivo.
 Si no hay ninguna puerta de enlace o varias puertas de enlace configuradas y activas, el proceso de inclusión se cancelará. El dispositivo a incluir no debe estar ya en el plugin; de lo contrario, debe eliminarse o usar el modo de aprendizaje.
 
 - haga clic en el modo de inclusión, espere unos momentos
@@ -86,9 +86,9 @@ Este modo solo está ahí para ayudar a la configuración personalizada de un nu
 
 Ejemplos de modificaciones:
 - Si el dps solo corresponde a una info en el periférico (por ejemplo 3 posibles valores del mismo botón), tendrás que borrar los 3 comandos de acción creados automáticamente. Sin embargo, los comandos de acciones tienen como parámetro todos los valores recuperados por el plugin y permiten conocer los valores tomados por el dps info.
-- Para dps digitales, un comando de información y un comando de acción digital se crean automáticamente, si solo la información es útil (en el caso de la temperatura de un sensor) se debe borrar el comando de acción. Si los valores numéricos toman los valores 0 o 1 durante el aprendizaje, el plugin también creará 3 comandos de ESTADO / ENCENDIDO / APAGADO, que deberán ser eliminados.
-- Para dps que contienen una información 0/1 para un actuador de todo o nada, como una toma de corriente, el plugin creará una información y 2 acciones ON / OFF.
-- En el caso de un dps que contenga verdadero o falso, se crea automáticamente un comando info y dos comandos de acción (ON y OFF), si solo la info es útil (en el caso de un sensor de presencia) los comandos deben ser acciones de borrado.
+- Para dps digitales, un comando de información y un comando de acción digital se crean automáticamente, si solo la información es útil (en el caso de la temperatura de un sensor) se debe borrar el comando de acción. Si los valores numéricos toman los valores 0 o 1 durante el aprendizaje, el plugin también creará 3 comandos de ESTADO/ENCENDIDO/APAGADO, que deberán ser eliminados.
+- Para dps que contienen una información 0/1 para un actuador de todo o nada, como una toma de corriente, el plugin creará una información y 2 acciones ON/OFF.
+- En el caso de un dps que contenga verdadero o falso, se crea automáticamente un comando info y dos comandos de acción (ENCENDID y APAGADO), si solo la info es útil (en el caso de un sensor de presencia) los comandos deben ser acciones de borrado.
 - Para dps que contienen información de color, el plugin identificará la codificación de color y creará 3 comandos de acción y 3 comandos de información que se correspondan con la intensidad de saturación de tono.
 - En general, el subtipo creado por el plugin puede no corresponder con los datos, entonces será necesario realizar pruebas modificándolo.
 
@@ -110,7 +110,7 @@ El plugin está equipado con botones que le permiten crear automáticamente los 
 
 ## Dispositivos a batería
 
-Para que el% de capacidad se muestre en Análisis/Equipo, el nombre lógico del comando de información correspondiente debe contener batería y obtener.
+Para que el% de capacidad se muestre en Análisis/Equipo, el nombre lógico del comando de información correspondiente debe contener battery y get.
 
 # Tuya
 
@@ -175,7 +175,7 @@ Para dispositivos multicanal, como enchufes, debe crear un wifilightV2 por canal
 
 Los parámetros de configuración de energía, para los tomacorrientes que la administran, permiten asignar los dps correctos a voltaje, amperaje y potencia. Para recuperar esta configuración, instale el plugin en Jeedom y luego vaya a los registros de wifilightV2. La salida se encuesta cada minuto. Busque el mensaje que se parece a:
 
-    Mess: {"devId": "xxxxxxxxxghekqd", "dps": {"1": falso, "2": falso, "9": 0, "10": 0, "18": 0, "19": 0, "20": 2281, "21": 1, "22": 726, "23": 28971, "24": 19417, "25": 1070}}
+    Mess:{"devId":"xxxxxxxxxghekqd","dps":{"1":falso,"2":falso,"9":0,"10":0,"18":0,"19":0,"20":2281,"21":1,"22":726,"23":28971,"24":19417,"25":1070}}
 
 El índice "20" corresponde aquí a la tensión de alimentación en cientos de mV, es decir: 228,1 V, debería moverse ligeramente. Los índices "18" y "19" corresponden a la corriente (mA) ya la potencia en W, aquí no hay ningún dispositivo conectado y por lo tanto la información está en cero. Esta es una buena manera de encontrar el voltaje, al enchufar un dispositivo, estos 2 valores deben cambiarse y el voltaje está justo después.
 
@@ -235,7 +235,7 @@ El plugin está equipado con botones que le permiten crear automáticamente los 
 - eliminar registros
 
 ### Recuperación de información
-- presione un botón en el dispositivo físico (encendido, apagado, arriba, abajo, etc.) o espere a que el dispositivo regrese a su estado o presione un botón en la aplicación Smart Live (pero en el último caso, esto puede prevenir el estado realimentación).
+- presione un botón en el dispositivo físico (encendido, apagado, arriba, abajo, etc.) o espere a que el dispositivo regrese a su estado o presione un botón en la aplicación SmartLive (pero en el último caso, esto puede prevenir el estado realimentación).
 - ubicar los comentarios de estado en los registros
 
 Utilice todas las posibilidades de la aplicación Tuya e identifique claramente en los registros el número de dps y su valor que se envían al plugin. 
@@ -244,11 +244,11 @@ Utilice todas las posibilidades de la aplicación Tuya e identifique claramente 
 
 En los registros, al utilizar la aplicación Smartlife, encontramos por ejemplo:
 
-    Mess: {"devId": "xxxxxxxxxghekqd", dps: {"2": true, "8": true}}
+    Mess:{"devId":"xxxxxxxxxghekqd",dps:{"2":true,"8":true}}
 
 Aquí se ha seleccionado el botón de apagado en el dispositivo y observamos que ha cambiado el dps del # 2.
 
-    Mess: {"devId": "xxxxxxxxxghekqd", dps: {"2": false, "8": true}}
+    Mess:{"devId":"xxxxxxxxxghekqd",dps:{"2":false,"8":true}}
 
 Aquí, se ha seleccionado el botón de encendido en el dispositivo y observamos que ha cambiado el dps del n ° 2.
 
@@ -270,15 +270,15 @@ Para configurar manualmente:
 
 En los registros, al utilizar la aplicación Smartlife, encontramos por ejemplo:
 
-    Mess: {"devId": "xxxxxxxxxghekqd", dps: {"1": "off", "101": true}}
+    Mess:{"devId":"xxxxxxxxxghekqd",dps:{"1":"off","101":true}}
 
 Aquí se ha seleccionado el botón de apagado en el dispositivo y observamos que ha cambiado el dps del # 1.
 
-    Mess: {"devId": "xxxxxxxxxghekqd", dps: {"1": "on", "101": true}}
+    Mess:{"devId":"xxxxxxxxxghekqd",dps:{"1":"on","101":true}}
 
 Aquí, se ha seleccionado el botón de encendido en el dispositivo y observamos que ha cambiado el dps del n ° 1.
 
-    Mess: {"devId": "xxxxxxxxxghekqd" ,, dps: {"1": "stop", "101": true}}
+    Mess:{"devId":"xxxxxxxxxghekqd",,dps:{"1":"stop","101":true}}
 
 Aquí se ha seleccionado el botón de parada en el dispositivo y observamos que ha cambiado el dps del n ° 1.
 
@@ -303,9 +303,9 @@ Para configurar manualmente:
 
 En los registros, al utilizar la aplicación Smartlife, encontramos:
 
-    Mess: {"devId": "xxxxxxxxxghekqd", dps: {"3": 850, "101": true}}
+    Mess:{"devId":"xxxxxxxxxghekqd",dps:{"3":850,"101":true}}
 
-Aquí, se ha seleccionado un control deslizante de intensidad en la aplicación del dispositivo y se observa que el dps del n. ° 3 ha cambiado.
+Aquí, se ha seleccionado un control deslizante de intensidad en la aplicación del dispositivo y se observa que el dps del n. 3 ha cambiado.
 
 Haga clic en el botón Cursor en la interfaz para crear automáticamente los 2 comandos para administrar el cursor. Para adaptarlos según sea necesario, todo lo que tiene que hacer es modificar los números dps y poner 3 (sin comillas). Para el parámetro del comando de acción: o no dejar nada, o poner #slider# o poner una fórmula por ejemplo: #slider#/10. Para el parámetro de información, es lo mismo, excepto que debe usar #value#. No ponga comillas porque no hay ninguna después del número dps.
 
@@ -323,7 +323,7 @@ andes de la carretera de circunvalación:
 
 En los registros, al utilizar la aplicación Smartlife, encontramos:
 
-    Mess: {"devId": "xxxxxxxxxghekqd", dps: {"8": 23, "101": true}}
+    Mess:{"devId":"xxxxxxxxxghekqd",dps:{"8":23,"101":true}}
 
 Aquí es una temperatura que se envía regularmente y observamos que ha cambiado el dps del n ° 8.
 
@@ -340,9 +340,9 @@ Para configurar manualmente:
 
 En los registros, al utilizar la aplicación Smartlife, encontramos:
 
-    Mess: {"devId": "xxxxxxxxxghekqd", dps: {"12": 1}}
+    Mess:{"devId":"xxxxxxxxxghekqd",dps:{"12":1}}
 
-    Mess: {"devId": "xxxxxxxxxghekqd", dps: {"12": 0}}
+    Mess:{"devId":"xxxxxxxxxghekqd",dps:{"12":0}}
 
 Aquí, es la información de apertura y luego de cierre la que se envía y observamos que el dps del n ° 12 ha cambiado.
 
@@ -401,7 +401,7 @@ Nota: es esencial poner el mismo número de dps para estos 6 comandos y no agreg
 
 Para enviar varios números de dps al mismo tiempo, ponga \* en el n ° de dps y ponga el comando completo sin las llaves en los parámetros del campo. Uno y solo uno de los números dps puede ser un cursor o (exclusivamente) un color.
 
-Cree una acción / otro comando y coloque los parámetros:
+Cree una acción/otro comando y coloque los parámetros:
 
     "1":true,"3":"color""
    
@@ -464,7 +464,7 @@ Ejemplo de un registro correcto en el que el plugin encontró el dispositivo, po
     [2021-03-29 06:36:42][DEBUG] :     Key not set New device: created  @192.168.1.106 ADD New device @192.168.1.106 channel:12 key:1 @192.168.1.106 c:12 d:0
 
 -Entonces los registros serán del tipo:
-    [2021-03-29 06:31:21][DEBUG] : ** Prise Zigbee - TuyaCustom2_V2 @192.168.1.106 - c:12 **
+    [2021-03-29 06:31:21][DEBUG] : ** Prueba de válvula - TuyaCustom2_V2 @192.168.1.106 - c:12 **
     [2021-03-29 06:31:21][DEBUG] :      key:1 @192.168.1.106 c:12 d:1
 
 Ejemplo de un registro de KO donde el plugin no encontró la dirección IP del dispositivo tan mala
@@ -480,7 +480,7 @@ Posteriormente los mensajes serán del tipo:
 
 Entonces puede haber desconexiones o que la aplicación Smartlife también esté conectada al dispositivo, en este caso el mensaje en los registros es:
 
-    [2020-12-10 07:36:40][DEBUG] : << Ping of: Vanne @192.168.1.122  diff:24
+    [2020-12-10 07:36:40][DEBUG] : << Ping of: válvula @192.168.1.122  diff:24
     [2020-12-10 07:36:40][DEBUG] :     Cmd to 192.168.1.122 - Try:192.168.1.122  6668 - Connect OK!
     [2020-12-10 07:36:40][DEBUG] :     Error on:192.168.1.122 is :Connection reset by peer n:104  diff:16
 
@@ -492,9 +492,9 @@ En este punto, el único punto probado y correcto es que la dirección IP sea co
 
 ## Compruebe que la clave local sea correcta
 
-En el caso de una puerta de enlace Tuya / Zigbee, las pruebas deben realizarse en un dispositivo conectado a la puerta de enlace. La puerta de enlace por sí sola no devuelve ningún mensaje.
+En el caso de una puerta de enlace Tuya/Zigbee, las pruebas deben realizarse en un dispositivo conectado a la puerta de enlace. La puerta de enlace por sí sola no devuelve ningún mensaje.
 
-1. Complete la clave local sin espacios y sin comillas en el campo Token del dispositivo (y de la puerta de enlace si existe). Verifique varias veces: la clave local debe ser la misma para todos los dispositivos con la misma dirección IP (dispositivos Tuya / Zigbee conectados a una puerta de enlace o dispositivos multicanal). El plugin usa una de estas claves para comunicarse con el dispositivo, así que verifique que sean correctas e idénticas.
+1. Complete la clave local sin espacios y sin comillas en el campo Token del dispositivo (y de la puerta de enlace si existe). Verifique varias veces: la clave local debe ser la misma para todos los dispositivos con la misma dirección IP (dispositivos Tuya/Zigbee conectados a una puerta de enlace o dispositivos multicanal). El plugin usa una de estas claves para comunicarse con el dispositivo, así que verifique que sean correctas e idénticas.
 2. desactivar en wifilightV2 todos los periféricos excepto el que se va a probar (mantener solo un canal en caso de periférico multicanal), el objetivo no es mezclar todos los periféricos.
 3. registros claros
 4. Utilice los botones del dispositivo físico o la aplicación Smartlife para cambiar el estado del dispositivo.
@@ -519,9 +519,9 @@ Algunos mensajes nunca se decodifican, solo se necesita un mensaje para decodifi
 
 ## Verifica que el devId o el cid sean correctos
 
-En el caso de una puerta de enlace Tuya / Zigbee, las pruebas deben realizarse en un dispositivo conectado a la puerta de enlace. La puerta de enlace por sí sola no devuelve ningún mensaje.
+En el caso de una puerta de enlace Tuya/Zigbee, las pruebas deben realizarse en un dispositivo conectado a la puerta de enlace. La puerta de enlace por sí sola no devuelve ningún mensaje.
 
-1. el cid (para dispositivos Tuya / Zigbee) o el devId para otros se encontraron al mismo tiempo que la clave local. Es específico para cada dispositivo y nunca se modifica, esto le permite identificar sus dispositivos.
+1. el cid (para dispositivos Tuya/Zigbee) o el devId para otros se encontraron al mismo tiempo que la clave local. Es específico para cada dispositivo y nunca se modifica, esto le permite identificar sus dispositivos.
 2. Localice los mensajes "Mess" provenientes del periférico.
 
 **Para un dispositivo que no es Zigbee que devuelve su devId, encontraremos:**
@@ -560,11 +560,10 @@ Luego, el demonio envía el comando al dispositivo en la dirección 192.168.1.12
 Finalmente, el dispositivo devuelve su estado (Recibir de). El primer mensaje no se decodifica y el segundo sí. Tenga en cuenta que este dispositivo no devuelve su devId.
 Si devId o cid no es correcto, el dispositivo no devuelve su estado ni devuelve un mensaje vacío o un error y no ejecuta el comando.
 
-
 ## Un problema con un comando de acción (los demás funcionan)
 
 1. Compruebe los 4 puntos anteriores
-2. Desactive todos los dispositivos wifilightV2 excepto el que se va a probar (mantenga solo un canal para multicanal) (deje la puerta de enlace Tuya / Zigbee activa para un dispositivo Zigbee) y elimine los registros para mayor claridad.
+2. Desactive todos los dispositivos wifilightV2 excepto el que se va a probar (mantenga solo un canal para multicanal) (deje la puerta de enlace Tuya/Zigbee activa para un dispositivo Zigbee) y elimine los registros para mayor claridad.
 3. Espere a que pase el demonio (sondea los dispositivos cada minuto que el mensaje comienza con: >>>>>>>> Buscar)
 4. Espere 10 segundos después del mensaje que contiene >>>>>>>>>>> End <<<<<<<<<<<< (fin de la interrogación de los periféricos por el demonio).
 5. Active el comando del plugin que disfunciona 2 veces con intervalos de 5 s

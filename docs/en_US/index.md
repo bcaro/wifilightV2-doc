@@ -211,8 +211,8 @@ Settings :
 - Choose the Light category (by default)
 - Activate and make visible (default)
 - Enter the IP address of the module of the WiFi socket or bulb (see the FAQ for more explanations)
-- For the milight-hub box, an identifier and a port must be configured
-- You can load images into the / data folder of the plugin using the Jeexplorer plugin. These images can replace the images associated with devices in the display page of all wifilightV2 devices. Useful for custom devices that are not associated with an image.
+- For the Milight-hub, an identifier and a port must be configured
+- You can load images into the /data folder of the plugin using the Jeexplorer plugin. These images can replace the images associated with devices in the display page of all wifilightV2 devices. Useful for custom devices that are not associated with an image.
 - For some peripherals, you are asked to enter the channel used, create a wifilightV2 device per channel
 - For some devices, you are asked to enter a token or (and) an identifier, consult the help on the device configuration page
 - For Tuya peripherals, it is possible to force the interrogation of the status every minute, useful for outlets with consumption.
@@ -572,8 +572,7 @@ and give pn the [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff
 This procedure automates the creation of most Tuya and Tuya / Zigbee devices. However, access to peripherals remains local.
 ## Configuration of the Tuya platform
 
-Follow this first [tutorial ](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) and go to the "Overview" tab to retrieve:
-Access ID and Access Secret. In the plugin configuration, enter these 2 parameters in the Tuya part and save, then select: Tuya Go to inclusion. The devices are created automatically.
+Follow this first [tutorial ](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) and go to the "Overview" tab to retrieve: Access ID and Access Secret. In the plugin configuration, enter these 2 parameters in the Tuya part and save, then select: Tuya Go to inclusion. The devices are created automatically.
 
 If the local IP address is not found by the plugin, make the connection between the mac address and the IP address given in the device settings of the Tuya application and your router and modify the IP address. The procedure for finding the IP address uses a command from the Linux system, if it cannot be loaded or the system is not compatible, the IP address cannot be found automatically.
 

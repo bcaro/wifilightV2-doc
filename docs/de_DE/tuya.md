@@ -14,14 +14,14 @@ Das Plugin kann den Zustand der Geräte abrufen, sobald sie eine Zustandsänderu
 Die folgenden Geräte sind kompatibel, aber die Liste ist nicht exklusiv und wird basierend auf Benutzerfeedback vervollständigt.
 - MoesHouse-Gateways, BENEXMART
 - Lidl SilverCrest Smart Home-Gateway
-- alle Tuya / Zigbee-Gateways sind normalerweise kompatibel, es gab noch keine Rückkehr von einem inkompatiblen Gateway.
+- alle Tuya/Zigbee-Gateways sind normalerweise kompatibel, es gab noch keine Rückkehr von einem inkompatiblen Gateway.
 - Vima-Schloss (aber nicht MiHome)
-das Plugin kann nicht öffnen / schließen, da das Schloss nicht dafür vorgesehen ist, aber es kann den zuletzt verwendeten Schlüssel kennen
+    das Plugin kann nicht öffnen/schließen, da das Schloss nicht dafür vorgesehen ist, aber es kann den zuletzt verwendeten Schlüssel kennen
 - TYZS2 Temperatur- und Feuchtigkeitssensor
-Vollbetrieb
+    Vollbetrieb
 - Hessway Thermostatkopf
-Verwaltet nicht die Programmierung der Zeitschlitze der verschiedenen Modi, kann aber jeden Modus starten.
-Verwenden Sie die Option "Erweiterter Modus" zum Erstellen von Befehlen, um alle Thermostatbefehle zu erstellen.
+    Verwaltet nicht die Programmierung der Zeitschlitze der verschiedenen Modi, kann aber jeden Modus starten.
+    Verwenden Sie die Option "Erweiterter Modus" zum Erstellen von Befehlen, um alle Thermostatbefehle zu erstellen.
 - der Doppeldimmer QS-Zigbee-D02-TRIAC-LN
 - Moes Präsenzsensor
 - BENEXMART Präsenzmelder
@@ -29,8 +29,8 @@ Verwenden Sie die Option "Erweiterter Modus" zum Erstellen von Befehlen, um alle
 - BENEXMART Türsensor
 - Lonsoho Stecker mit Verbrauch
 - Loratap 3-Tasten-Fernbedienung
-- Einzel- / Doppel- / Dreifach-Wandschalter
-- Fernbedienung, weiße und farbige Glühbirnen, Einzel- und Dreifach-Lidl-Steckdosen
+- Einzel/ Doppel/Dreifach-Wandschalter
+- Fernbedienung, weiße und farbige Glühbirnen, Einzel und Dreifach-Lidl-Steckdosen
 
 Alle anderen Geräte oder ähnliche Geräte einer anderen Marke oder eines anderen Modells müssen vollständig im benutzerdefinierten Modus konfiguriert werden. Die für diese Modelle generierte Konfiguration kann jedoch für andere hilfreich sein.
 
@@ -45,7 +45,7 @@ Mit der Option "Statusabfrage" können Sie den Status alle 20s abfragen, auch we
 
 Es ist wichtig, den lokalen Schlüssel (localKey) und die devId des Gateways abzurufen, damit das Plugin mit den Geräten kommunizieren kann.
 
-Um den localKey und die devId abzurufen, ist die Prozedur komplex und erfordert mehrere Operationen. Suchen Sie im Web mit dem Stichwort: Tuya localKey, insbesondere auf Github oder im [Jeedom-Forum](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047).
+Um den localKey und die devId abzurufen, ist die Prozedur komplex und erfordert mehrere Operationen. Suchen Sie im Web mit dem Stichwort: Tuya localKey, insbesondere auf Github oder im [Jeedom-Forum](https://community.jeedom.com/t/plugin-wifilightv2-recuperer-id-et-localkey-pour-tuya-smartlife/13047) .
 
 Wenn das Gateway deinstalliert und dann in der mobilen Anwendung neu installiert wird, wird sein Schlüssel geändert. Sie müssen den Schlüssel wie oben beschrieben finden.
 
@@ -72,7 +72,7 @@ Wenn Ihr Gerät in der Vorschlagsliste enthalten ist, sollte es sofort funktioni
 
 ## Automatische Erstellung des Geräts im Aufnahmemodus
 
-Um den Inklusionsmodus der am Gateway angeschlossenen Geräte nutzen zu können, müssen Sie zunächst ein Gateway mit dem Untertyp Gateway Hub Tuya / Zigbee mit seiner IP-Adresse und dem localKey verbunden und korrekt konfiguriert haben. Das in das Gateway einzubindende Gerät muss seinen Zustand zurückgeben, ist dies nicht der Fall, kann das Verfahren nicht funktionieren. Wenn mehrere Gateways angeschlossen und im Plugin konfiguriert sind, muss nur das Gateway aktiviert werden, auf dem das Gerät eingebunden werden muss.
+Um den Inklusionsmodus der am Gateway angeschlossenen Geräte nutzen zu können, müssen Sie zunächst ein Gateway mit dem Untertyp Gateway Hub Tuya/Zigbee mit seiner IP-Adresse und dem localKey verbunden und korrekt konfiguriert haben. Das in das Gateway einzubindende Gerät muss seinen Zustand zurückgeben, ist dies nicht der Fall, kann das Verfahren nicht funktionieren. Wenn mehrere Gateways angeschlossen und im Plugin konfiguriert sind, muss nur das Gateway aktiviert werden, auf dem das Gerät eingebunden werden muss.
 Wenn kein Gateway oder mehrere Gateways konfiguriert und aktiv sind, wird der Aufnahmeprozess abgebrochen. Das einzubindende Gerät darf sich noch nicht im Plugin befinden, ansonsten muss es entweder entfernt werden oder den Lernmodus verwenden.
 
 - Klicken Sie auf den Aufnahmemodus, warten Sie einen Moment
@@ -86,9 +86,9 @@ Dieser Modus ist nur dazu da, die personalisierte Konfiguration eines neuen Ger�
 
 Beispiele für Modifikationen:
 - Wenn der dps nur einer Info im Peripheriegerät entspricht (zum Beispiel 3 mögliche Werte der gleichen Schaltfläche), müssen Sie die 3 automatisch erstellten Aktionsbefehle löschen. Die Aktionsbefehle haben jedoch als Parameter alle vom Plugin abgerufenen Werte und ermöglichen es, die von der dps-Info übernommenen Werte zu kennen.
-- Bei digitalen dps werden automatisch ein Info-Befehl und ein digitaler Aktionsbefehl erstellt, wenn nur die Info sinnvoll ist (bei der Temperatur eines Sensors), muss der Aktionsbefehl gelöscht werden. Wenn die Zahlenwerte beim Lernen die Werte 0 oder 1 annehmen, erzeugt das Plugin auch 3 STATE / ON / OFF-Befehle, diese müssen gelöscht werden.
-- Für dps, die eine 0/1-Info für einen Alles-oder-Nichts-Aktor enthalten, wie z. B. eine Steckdose, erstellt das Plugin eine Info und 2 EIN / AUS-Aktionen.
-- Bei einem dps mit true oder false werden automatisch ein Info-Befehl und zwei Aktionsbefehle (ON und OFF) erzeugt, wenn nur die Info sinnvoll ist (bei einem Präsenzsensor) müssen die Aktionsbefehle gelöscht werden.
+- Bei digitalen dps werden automatisch ein Info-Befehl und ein digitaler Aktionsbefehl erstellt, wenn nur die Info sinnvoll ist (bei der Temperatur eines Sensors), muss der Aktionsbefehl gelöscht werden. Wenn die Zahlenwerte beim Lernen die Werte 0 oder 1 annehmen, erzeugt das Plugin auch 3 STATE/ON/OFF-Befehle, diese müssen gelöscht werden.
+- Für dps, die eine 0/1-Info für einen Alles-oder-Nichts-Aktor enthalten, wie z. B. eine Steckdose, erstellt das Plugin eine Info und 2 EIN/AUS-Aktionen.
+- Bei einem dps mit true oder false werden automatisch ein Info-Befehl und zwei Aktionsbefehle (EIN und AUS) erzeugt, wenn nur die Info sinnvoll ist (bei einem Präsenzsensor) müssen die Aktionsbefehle gelöscht werden.
 - Bei dps mit Farbinformationen identifiziert das Plugin die Farbcodierung und erstellt 3 Aktionsbefehle und 3 Infobefehle, die der Farbtonsättigungsintensität entsprechen
 - Im Allgemeinen kann es vorkommen, dass der vom Plugin erstellte Subtyp nicht mit den Daten übereinstimmt, dann müssen Tests durch Modifikation durchgeführt werden.
 
@@ -110,11 +110,11 @@ Das Plugin ist mit Schaltflächen ausgestattet, mit denen Sie die Befehle für d
 
 ## Batteriebetriebene Geräte
 
-Damit der Kapazitätsprozentsatz in Analysis / Equipment angezeigt wird, muss der logische Name des entsprechenden Info-Befehls Batterie und Get enthalten.
+Damit der Kapazitätsprozentsatz in Analysis/Equipment angezeigt wird, muss der logische Name des entsprechenden Info-Befehls batterie und get enthalten.
 
 # Tuya
 
-Um diese Peripheriegeräte ohne Tuya / Zigbee-Gateway zu verwenden, wählen Sie den Typ: "Tuya SmartLife kompatibel V3"
+Um diese Peripheriegeräte ohne Tuya/Zigbee-Gateway zu verwenden, wählen Sie den Typ: "Tuya SmartLife kompatibel V3"
 
 ## Kompatibilität
 
@@ -183,7 +183,7 @@ Die Syntax lautet dann: 20;18;19 was in V1 und V2 in das Feld 'Energieeinstellun
 
 Für 1-Buchsen-Stecker benötigen Sie im Allgemeinen: 6;4;5 (standardmäßig vom Plugin eingestellt).
 
-Für 2-Wege-Stecker benötigen Sie im Allgemeinen:9;7;8 (standardmäßig vom Plugin eingestellt).
+Für 2-Wege-Stecker benötigen Sie im Allgemeinen: 9;7;8 (standardmäßig vom Plugin eingestellt).
 
 Für die anderen Ausgänge ist standardmäßig der Wert 20;18;19 eingestellt.
 
@@ -235,7 +235,7 @@ Das Plugin ist mit Schaltflächen ausgestattet, mit denen Sie die Befehle für d
 - Protokolle löschen
 
 ### Informationsrückgewinnung
-- Drücken Sie eine Taste auf dem physischen Gerät (ein, aus, oben, unten usw.) oder warten Sie, bis das Gerät seinen Status zurückgibt, oder drücken Sie eine Taste in der Smart Live-App (aber im letzteren Fall kann dies den Status verhindern Rückmeldung).
+- Drücken Sie eine Taste auf dem physischen Gerät (ein, aus, oben, unten usw.) oder warten Sie, bis das Gerät seinen Status zurückgibt, oder drücken Sie eine Taste in der SmartLife-App (aber im letzteren Fall kann dies den Status verhindern Rückmeldung).
 - Suchen Sie die Statusrückmeldung in den Protokollen
 
 Nutzen Sie alle Möglichkeiten der Tuya-Anwendung und identifizieren Sie in den Protokollen eindeutig die Anzahl der dps und deren Wert, die an das Plugin gesendet werden.
@@ -259,13 +259,13 @@ So konfigurieren Sie manuell:
 
 - Anlegen einer neuen Aktion/Standardbefehl in den Gerätebefehlen:
     * Geben Sie in der Schnittstellenspalte als Namen der Schaltfläche ON ein
-* Geben Sie in der Spalte für den internen Namen und die Auftragsnummer als eindeutige Id: _ON, als dps-Nummer: 2 (ohne Anführungszeichen) und als Parameter: true ein.
+    * Geben Sie in der Spalte für den internen Namen und die Auftragsnummer als eindeutige Id: _ON, als dps-Nummer: 2 (ohne Anführungszeichen) und als Parameter: true ein.
 - Erstellen Sie eine neue Aktion / einen neuen Standardbefehl in den Gerätebefehlen:
     * Geben Sie in der Schnittstellenspalte als Namen der Schaltfläche OFF ein
-* Tragen Sie in der Spalte interner Name und Auftragsnummer als eindeutige Id: _OFF, als dps-Nummer: 2 (ohne Anführungszeichen) und als Parameter: false ein.
+    * Tragen Sie in der Spalte interner Name und Auftragsnummer als eindeutige Id: _OFF, als dps-Nummer: 2 (ohne Anführungszeichen) und als Parameter: false ein.
 - Erstellen Sie einen neuen Info-/Binärbefehl in den Gerätebefehlen:
     * Geben Sie in der Spalte Schnittstelle STATE als Namen der Info ein
-* Geben Sie in der Spalte interner Name und Auftragsnummer als eindeutige Id: _STATE, als Anzahl der dps: 2 (ohne Anführungszeichen) und nichts in Parametern ein.
+    * Geben Sie in der Spalte interner Name und Auftragsnummer als eindeutige Id: _STATE, als Anzahl der dps: 2 (ohne Anführungszeichen) und nichts in Parametern ein.
 
 ### Fall eines Aktors mit mehreren Modi
 
@@ -293,10 +293,10 @@ So konfigurieren Sie manuell:
 - Erstellen Sie eine neue Aktion / einen neuen Standardbefehl in den Gerätebefehlen:
     * Geben Sie in der Schnittstellenspalte als Namen der Schaltfläche OFF ein
     * Tragen Sie in der Spalte interner Name und Auftragsnummer als eindeutige Id: _OFF, als dps-Nummer: 1 (ohne Anführungszeichen) und als Parameter: "off" ein (wenn das off nicht in Anführungszeichen steht, müssen sie entfernt werden).
-- Erstellen Sie eine neue Aktion / einen neuen Standardbefehl in den Gerätebefehlen:
+- Erstellen Sie eine neue Aktion/einen neuen Standardbefehl in den Gerätebefehlen:
     * Geben Sie in der Schnittstellenspalte STOP als Namen der Schaltfläche ein
     * Tragen Sie in die Spalte interner Name und Auftragsnummer als eindeutige Id: _STOP, als dps-Nummer: 1 (ohne Anführungszeichen) und als Parameter: "stop" ein (wenn der Stop nicht in Anführungszeichen steht, müssen sie entfernt werden).
-- Erstellen Sie in den Gerätebefehlen einen neuen Info / anderen Befehl:
+- Erstellen Sie in den Gerätebefehlen einen neuen Info/anderen Befehl:
     * Geben Sie in der Spalte Schnittstelle STATE als Namen der Info ein
     * Tragen Sie in der Spalte interner Name und Auftragsnummer als eindeutige Id: _STATE, als dps-Nummer: 1 (ohne Anführungszeichen) und nichts in Parametern ein.
 
@@ -314,8 +314,8 @@ So konfigurieren Sie manuell:
 
 - Erstellen Sie einen neuen Aktions-/Cursorbefehl in den Gerätebefehlen:
     * Geben Sie in der Schnittstellenspalte Intensität als Name des Cursors ein
-    * Tragen Sie in der Spalte interner Name und Auftragsnummer als eindeutige Id: _Intensite, als dps-Nummer: 3 (ohne Anführungszeichen) und als Parameter: # slider # (hier wird der Zahlenwert nicht in Anführungszeichen gesetzt, also nicht setzen) ).
-- Erstellen Sie in den Gerätebefehlen einen neuen Info / anderen Befehl:
+    * Tragen Sie in der Spalte interner Name und Auftragsnummer als eindeutige Id: _Intensite, als dps-Nummer: 3 (ohne Anführungszeichen) und als Parameter: #slider# (hier wird der Zahlenwert nicht in Anführungszeichen gesetzt, also nicht setzen) ).
+- Erstellen Sie in den Gerätebefehlen einen neuen Info/anderen Befehl:
     * Geben Sie in der Schnittstellenspalte IntensiteGet als Namen der Info ein
     * Tragen Sie in der Spalte interner Name und Auftragsnummer als eindeutige Id: _IntensiteGet, als dps-Nummer: 3 (ohne Anführungszeichen) und nichts in Parametern ein.
 
@@ -351,8 +351,8 @@ Klicken Sie in der Benutzeroberfläche auf die Schaltfläche Info Bin, um automa
 So konfigurieren Sie manuell:
 
 - Erstellen Sie einen neuen Info-/Binärbefehl in den Gerätebefehlen:
-* Geben Sie in der Spalte Schnittstelle PorteGet als Namen der Info ein
-* Tragen Sie in der Spalte interner Name und Auftragsnummer als eindeutige Id: _PorteGet, als Anzahl der dps: 12 (ohne Anführungszeichen) und nichts in Parametern ein.
+    * Geben Sie in der Spalte Schnittstelle PorteGet als Namen der Info ein
+    * Tragen Sie in der Spalte interner Name und Auftragsnummer als eindeutige Id: _PorteGet, als Anzahl der dps: 12 (ohne Anführungszeichen) und nichts in Parametern ein.
 
 ### Bei der Farbe einer Lampe:
 
@@ -416,23 +416,22 @@ Ermöglicht Ihnen, die Lampe in den Farbmodus zu schalten und die Farbe festzule
 
 Um mehrere dps-Nummern gleichzeitig mit Statusrückmeldung zu senden, geben Sie in das Feld n ° of dps den Wert der dps-Nummer ein, die aktualisiert werden muss, gefolgt von dem Zeichen \*. Geben Sie den vollständigen Befehl ohne die geschweiften Klammern in das Parameterfeld ein. Eine und nur eine der dps-Zahlen kann ein Cursor oder (ausschließlich) eine Farbe sein.
 
-Erstellen Sie einen Aktions/Cursorbefehl, geben Sie 3 \* in das Feld n ° of dps ein und geben Sie die Parameter ein:
+Erstellen Sie einen Aktions/Cursorbefehl, geben Sie 3\* in das Feld n ° of dps ein und geben Sie die Parameter ein:
 
     "1":true,"3":#slider#/10
    
 Ermöglicht das Einschalten der Lampe und das Ändern der Intensität, die Befehlsinformationen von dps n ° 3 werden aktualisiert.
  
-Erstellen Sie einen Aktions/Farbbefehl, geben Sie 3 \* in das Feld n ° of dps ein und geben Sie die Parameter ein:
+Erstellen Sie einen Aktions/Farbbefehl, geben Sie 3\* in das Feld n ° of dps ein und geben Sie die Parameter ein:
 
-    "2": "color", "3": "#colorR2G2B200H2S2V2_255#"
+    "2":"color","3":"#colorR2G2B200H2S2V2_255#"
    
 Ermöglicht Ihnen, die Lampe in den Farbmodus zu schalten und die Farbe festzulegen. Das Plugin verwendet die Intensität und Sättigung der Intensitäts- und Sättigungsregler von dps 3.
 
 
 ## Batteriebetriebene Geräte
 
-Damit der Kapazitätsprozentsatz in Analysis/Equipment angezeigt wird, muss der logische Name des entsprechenden Info-Befehls Batterie und Get enthalten.
-
+Damit der Kapazitätsprozentsatz in Analysis/Equipment angezeigt wird, muss der logische Name des entsprechenden Info-Befehls battery und get enthalten.
 
 
 # Debugging
@@ -455,16 +454,16 @@ Damit der Kapazitätsprozentsatz in Analysis/Equipment angezeigt wird, muss der 
 
 Beispiel für ein OK-Log, bei dem das Plugin das Gerät also mit der richtigen IP-Adresse gefunden hat:
 
-    [2021-03-29 06:36:42][DEBUG] : ** Prise Zigbee - TuyaCustom2_V2 @192.168.1.106 - c:12 **
+    [2021-03-29 06:36:42][DEBUG] : ** Zigbee plug - TuyaCustom2_V2 @192.168.1.106 - c:12 **
     [2021-03-29 06:36:42][DEBUG] :     Key not set New device: created  @192.168.1.106 ADD New device @192.168.1.106 channel:12 key:1 @192.168.1.106 c:12 d:0
 
 -Dann sind die Protokolle vom Typ:
-    [2021-03-29 06:31:21][DEBUG] : ** Prise Zigbee - TuyaCustom2_V2 @192.168.1.106 - c:12 **
+    [2021-03-29 06:31:21][DEBUG] : ** Zigbee plug - TuyaCustom2_V2 @192.168.1.106 - c:12 **
     [2021-03-29 06:31:21][DEBUG] :      key:1 @192.168.1.106 c:12 d:1
 
 Beispiel für ein KO-Log, bei dem das Plugin das Gerät nicht gefunden hat, also schlechte IP-Adresse
 
-    [2021-03-05 07:13:55][DEBUG] : ** Test vanne - TuyaCustom2_V2 @192.168.1.199 - c:11 **
+    [2021-03-05 07:13:55][DEBUG] : ** Zigbee plug - TuyaCustom2_V2 @192.168.1.199 - c:11 **
     [2021-03-05 07:13:55][DEBUG] :     Key not set New device: created  @192.168.1.199 close Connection impossible. Err=115 : Operation now in progress ADD New device @192.168.1.199 channel:11
 
 Anschließend werden die Nachrichten vom Typ sein:
@@ -474,7 +473,7 @@ Anschließend werden die Nachrichten vom Typ sein:
 
 Es kann dann zu Verbindungsabbrüchen kommen oder dass die Smartlife App auch mit dem Gerät verbunden ist, in diesem Fall lautet die Meldung in den Protokollen:
 
-    [2020-12-10 07:36:40][DEBUG] : << Ping of: Vanne @192.168.1.122  diff:24
+    [2020-12-10 07:36:40][DEBUG] : << Ping of: Zigbee plug @192.168.1.122  diff:24
     [2020-12-10 07:36:40][DEBUG] :     Cmd to 192.168.1.122 - Try:192.168.1.122  6668 - Connect OK!
     [2020-12-10 07:36:40][DEBUG] :     Error on:192.168.1.122 is :Connection reset by peer n:104  diff:16
 
@@ -486,15 +485,15 @@ Zu diesem Zeitpunkt wird nur geprüft und in Ordnung, dass die IP-Adresse korrek
 
 ## Überprüfen Sie, ob der localKey korrekt ist
 
-Bei einem Tuya / Zigbee-Gateway müssen die Tests auf einem mit dem Gateway verbundenen Gerät durchgeführt werden. Das Gateway allein gibt keine Nachricht zurück.
+Bei einem Tuya/Zigbee-Gateway müssen die Tests auf einem mit dem Gateway verbundenen Gerät durchgeführt werden. Das Gateway allein gibt keine Nachricht zurück.
 
-1.Geben Sie den localKey ohne Leerzeichen und ohne Anführungszeichen in das Token-Feld des Geräts (und des Gateways, falls vorhanden) ein. Mehrmals prüfen: Der localKey muss bei allen Geräten mit derselben IP-Adresse (Tuya / Zigbee-Geräte, die an einem Gateway angeschlossen sind oder Mehrkanalgeräte) gleich sein. Das Plugin verwendet einen dieser Schlüssel, um mit dem Gerät zu kommunizieren, also überprüfen Sie, ob sie korrekt und identisch sind.
+1.Geben Sie den localKey ohne Leerzeichen und ohne Anführungszeichen in das Token-Feld des Geräts (und des Gateways, falls vorhanden) ein. Mehrmals prüfen: Der localKey muss bei allen Geräten mit derselben IP-Adresse (Tuya/Zigbee-Geräte, die an einem Gateway angeschlossen sind oder Mehrkanalgeräte) gleich sein. Das Plugin verwendet einen dieser Schlüssel, um mit dem Gerät zu kommunizieren, also überprüfen Sie, ob sie korrekt und identisch sind.
 2. Deaktivieren Sie in wifilightV2 alle Peripheriegeräte außer dem zu testenden (behalten Sie nur einen Kanal bei Mehrkanal-Peripheriegeräten), das Ziel ist nicht, alle Peripheriegeräte zu mischen.
 3.Protokolle löschen
 4.Verwenden Sie entweder die Tasten auf dem physischen Gerät oder die Smartlife-App, um den Status des Geräts zu ändern.
 
 Anmerkungen:
-- die Smartlife-App kann den Dialog zwischen dem Plugin und dem Gerät verhindern. Am besten starten Sie die Smartlife App nach obiger Verbindung mit dem Gerät. Umgekehrt reagiert die Smartlife-App möglicherweise sehr schlecht.
+- die Smartlife-App kann den Dialog zwischen dem Plugin und dem Gerät verhindern. Am besten starten Sie die Smartlife-App nach obiger Verbindung mit dem Gerät. Umgekehrt reagiert die Smartlife-App möglicherweise sehr schlecht.
 - Wenn das Gerät seinen Status nicht zurückgibt, müssen die Informationen über die dps und die devId oder die cid in der Datei gefunden werden, die es ermöglicht hat, den localKey abzurufen, sie befinden sich direkt daneben. Die cid wird in den SmartLife-App-Paketen als nodeId bezeichnet.
 
 Beispiel für log KO, bei dem der localKey nicht gut ist, weil der vom Plugin empfangene Frame nicht dekodiert ist:
@@ -513,7 +512,7 @@ Einige Nachrichten werden nie decodiert, es braucht nur eine Nachricht, um richt
 
 ## Überprüfen Sie, ob die devId oder die cid korrekt sind
 
-Bei einem Tuya / Zigbee-Gateway müssen die Tests auf einem mit dem Gateway verbundenen Gerät durchgeführt werden. Das Gateway allein gibt keine Nachricht zurück.
+Bei einem Tuya/Zigbee-Gateway müssen die Tests auf einem mit dem Gateway verbundenen Gerät durchgeführt werden. Das Gateway allein gibt keine Nachricht zurück.
 
 1. die cid (für Tuya/Zigbee-Geräte) oder die devId für andere wurde gleichzeitig mit dem LocaKey gefunden. Es ist für jedes Gerät spezifisch und wird nie geändert, sodass Sie Ihre Geräte identifizieren können.
 2. Suchen Sie die vom Peripheriegerät kommenden "Mess"-Meldungen.
@@ -554,11 +553,10 @@ Dann sendet der Daemon den Befehl an das Gerät unter der Adresse 192.168.1.129 
 Schließlich gibt das Gerät seinen Status zurück (Empfangen von). Die erste Nachricht wird nicht dekodiert und die zweite. Beachten Sie, dass dieses Gerät seine devId nicht zurückgibt.
 Wenn die devId oder die cid nicht korrekt sind, gibt das Gerät seinen Status nicht zurück oder gibt eine leere Nachricht oder einen Fehler zurück und führt den Befehl nicht aus.
 
-
 ## Ein Problem mit einem Aktionsbefehl (die anderen funktionieren)
 
 1. Überprüfen Sie die 4 Punkte oben
-2. Deaktivieren Sie alle wifilightV2-Geräte außer dem zu testenden (behalten Sie nur einen Kanal für Multichannel) (lassen Sie das Tuya / Zigbee-Gateway für ein Zigbee-Gerät aktiv) und löschen Sie die Protokolle für mehr Übersichtlichkeit.
+2. Deaktivieren Sie alle wifilightV2-Geräte außer dem zu testenden (behalten Sie nur einen Kanal für Multichannel) (lassen Sie das Tuya/Zigbee-Gateway für ein Zigbee-Gerät aktiv) und löschen Sie die Protokolle für mehr Übersichtlichkeit.
 3. Warten Sie, bis der Daemon vorbei ist (er fragt die Geräte jede Minute ab, die die Nachricht beginnt mit: >>>>>>>> Suchen nach)
 4. Warten Sie 10s nach der Meldung mit >>>>>>>>>>> End <<<<<<<<<<<< (Ende der Abfrage der Peripheriegeräte durch den Dämon).
 5. Aktivieren Sie den Befehl des Plugins, das 2 Mal in 5s-Intervallen ausfällt
@@ -575,9 +573,6 @@ Um schnelle und qualitativ hochwertige Hilfe zu erhalten, ist es notwendig, Ihre
 5.Überprüfen Sie, ob die devId oder die cid korrekt sind, geben Sie die Protokolle an, wenn KO (siehe Absatz oben)
 
 Wenn ein Schritt ausgefallen ist, müssen Sie die folgenden nicht testen. Wenn Sie nicht verstehen, was Sie tun, können die Forumshelfer es nicht für Sie herausfinden. Ganz am Anfang der Plugin-Dokumentation wird daran erinnert, dass die lokale Verwendung von Tuya-Peripheriegeräten erfordert, dass Sie wissen, wie man eine Prozedur buchstabengetreu befolgt, und einige Computerkenntnisse haben.
-
-
-
 
 [Zurück zur allgemeinen Dokumentation](./index.md)
 

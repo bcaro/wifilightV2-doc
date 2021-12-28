@@ -203,8 +203,8 @@ Ajustes :
 - Elija la categoría Luz (por defecto)
 - Activar y hacer visible (predeterminado)
 - Ingrese la dirección IP del módulo de la toma o bombilla WiFi (consulte las preguntas frecuentes para obtener más explicaciones)
-- Para la caja milight-hub, se debe configurar un identificador y un puerto
-- Puede cargar imágenes en la carpeta / data del plugin utilizando el plugin Jeexplorer. Estas imágenes pueden reemplazar las imágenes asociadas con los dispositivos en la página de visualización de todos los dispositivos wifilightV2. Útil para dispositivos personalizados que no están asociados con una imagen.
+- Para la caja Milight-hub, se debe configurar un identificador y un puerto
+- Puede cargar imágenes en la carpeta /data del plugin utilizando el plugin Jeexplorer. Estas imágenes pueden reemplazar las imágenes asociadas con los dispositivos en la página de visualización de todos los dispositivos wifilightV2. Útil para dispositivos personalizados que no están asociados con una imagen.
 - Para algunos periféricos, se le pide que ingrese el canal utilizado, cree un dispositivo wifilightV2 por canal
 - Para algunos dispositivos, se le pide que ingrese un token o (y) un identificador, consulte la ayuda en la página de configuración del dispositivo
 - Para periféricos Tuya, es posible forzar la interrogación del estado cada minuto, útil para enchufes con consumo.
@@ -563,8 +563,7 @@ y dar en el [foro](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewel
 Este procedimiento automatiza la creación de la mayoría de los dispositivos Tuya y Tuya / Zigbee. Sin embargo, el acceso a los periféricos sigue siendo local.
 ## Configuración de la plataforma Tuya
 
-Siga esto primero y [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) vaya a la pestaña "Descripción general" para recuperar:
-ID de acceso y secreto de acceso. En la configuración del complemento, ingrese estos 2 parámetros en la parte Tuya y guarde, luego seleccione: Tuya Ir a inclusión. Los dispositivos se crean automáticamente.
+Siga esto primero y [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) vaya a la pestaña "Overview" para recuperar: Access ID et Access Secret. En la configuración del complemento, ingrese estos 2 parámetros en la parte Tuya y guarde, luego seleccione: Tuya Ir a inclusión. Los dispositivos se crean automáticamente.
 
 Si el complemento no encuentra la dirección IP local, realice la conexión entre la dirección mac y la dirección IP proporcionada en la configuración del dispositivo de la aplicación Tuya y su enrutador y modifique la dirección IP. El procedimiento para encontrar la dirección IP utiliza un comando del sistema Linux, si no se puede cargar o el sistema no es compatible, la dirección IP no se puede encontrar automáticamente.
 
@@ -586,15 +585,15 @@ Si ya existe un dispositivo con el mismo devId, la inclusión no ocurrirá.
 - si el procedimiento automático no funciona, vaya a [modo de aprendizaje del dispositivo](./tuya#tocAnchor-1-12-7)
 y actuar solo en los botones correspondientes de la aplicación Tuya Smartlife. Si se utilizan otros botones, el complemento creará duplicados de los pedidos creados a través de la nube Tuya.
 - en general, los pedidos se pueden crear manualmente o en modo de aprendizaje
-- el mínimo y el máximo de un valor numérico se informan desde la nube. El complemento calibra la información y los comandos numéricos de 0 a 100. Según sea necesario, modifique los parámetros # slider # y # value #, así como los valores mínimo y máximo de Jeedom.
+- el mínimo y el máximo de un valor numérico se informan desde la nube. El complemento calibra la información y los comandos numéricos de 0 a 100. Según sea necesario, modifique los parámetros #slider# y #value#, así como los valores mínimo y máximo de Jeedom.
 
 ### Participación en la mejora de esta parte:
 Puedes ayudar a mejorar la creación automática proporcionando la mayor cantidad de información posible: el Json de la nube Tuya, los cambios realizados, los registros o cualquier comentario relevante.
 
 Para obtener el Json de la nube Tuya:
-- en Tuya IOT Platform: Cloud> Development> elija el proyecto> Dispositivos> Copie el ID del dispositivo del dispositivo
-- Nube> Api Explorer> (en la nueva ventana) Smart Home Management System> Control de dispositivos> Obtener atributo de especificación de dispositivo (el segundo en la lista sin s para atributo)
-- pegue el ID del dispositivo> Enviar solicitud> Copiar (enlace de la ventana derecha)
+- en Tuya IOT Platform: Cloud > Development > elija el proyecto > Devices > Copie el ID del dispositivo del dispositivo
+- Cloud > Development > (en la nueva ventana) Smart Home Management System > Device Control > Get Device Specification Attribute (el segundo en la lista sin s para atributo)
+- pegue el device ID > Submit Request > Copy (enlace de la ventana derecha)
 Aunque el complemento se dirige localmente a los dispositivos, puede usar la nube Tuya para configurar dispositivos y recuperar automáticamente cid, localKey y devId.
 
 [Ver documentación específica](./tuya#tocAnchor-1-1)

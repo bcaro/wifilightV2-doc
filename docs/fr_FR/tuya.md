@@ -237,7 +237,7 @@ Le plugin est équipé de boutons permettant de créer automatiquement les comma
 -   effacer les logs
 
 ### Récupération des informations
--   appuyer sur un bouton du périphérique physique (on, off, haut, bas, etc.) ou attendre que le périphérique renvoie son état ou appuyer sur un bouton de l'appli Smart Live (mais dans ce dernier cas, cela peut empêcher le retour d'état).
+-   appuyer sur un bouton du périphérique physique (on, off, haut, bas, etc.) ou attendre que le périphérique renvoie son état ou appuyer sur un bouton de l'appli Smart Life (mais dans ce dernier cas, cela peut empêcher le retour d'état).
 -   repérer dans les logs le retour d'état
 
 Utiliser toutes les possibilités de l'application Tuya et bien repérer dans les logs le n° de dps et sa valeur qui sont envoyés au plugin. 
@@ -564,7 +564,6 @@ Puis le démon envoie la commande au périphérique à l'adresse 192.168.1.129 (
 Enfin, le périphérique renvoie son état (Receive from). Le premier message n'est pas décodé et le deuxième l'est. Noter que ce périphérique ne renvoie pas son devId.
 Si le devId ou le cid ne sont pas corrects, le périphérique ne renvoie pas son état ou renvoie un message vide ou une erreur et n'exécute pas la commande.
 
-
 ## Un souci avec une commande action (les autres fonctionnent)
 
 1. Vérifier les 4 points ci-dessus
@@ -586,9 +585,6 @@ Afin d'obtenir de l'aide rapide et de qualité, il est nécessaire de bien prép
 5. vérifier que le devId ou le cid sont corrects, donner les logs si KO (voir paragraphe ci-dessus)
 
 Si une étape est KO, ce n'est pas la peine de tester les suivantes. Si vous ne comprenez pas ce que vous faites, les aidants du forum ne pourront pas le savoir pour vous. Il est rappelé au tout début de la doc du plugin qu'utiliser des périphériques Tuya en local nécessite de savoir suivre à la lettre une procédure et d'avoir quelques notions en informatique.
-
-
-
 
 [Retour à la documentation générale](./index.md)
 
