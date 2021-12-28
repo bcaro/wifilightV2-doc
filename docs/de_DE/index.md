@@ -585,7 +585,7 @@ Wenn bereits ein Gerät mit derselben devId vorhanden ist, wird die Aufnahme nic
 - Das Löschen einer vom Plugin erstellten Bestellung über die Tuya-Cloud kann nicht mehr neu erstellt werden
 - Wenn die IP-Adresse nicht gefunden wurde, weil das Gerät nicht verbunden ist, geben Sie ihm die Adresse: 0.0.0.0, verbinden Sie es und starten Sie den Aufnahmevorgang erneut.
 
-###Tipps:
+### Tipps:
 - Wenn der automatische Vorgang nicht funktioniert, wechseln Sie in den [Geräte-Lernmodus](./tuya#tocAnchor-1-12-7) und verwenden Sie nur die entsprechenden Schaltflächen der Tuya Smartlife App. Wenn andere Schaltflächen verwendet werden, erstellt das Plugin Duplikate der über die Tuya-Cloud erstellten Bestellungen.
 - Bestellungen können grundsätzlich manuell oder im Lernmodus erstellt werden
 - Min und Max eines Zahlenwertes werden aus der Cloud gemeldet. Das Plugin kalibriert die Info- und numerischen Befehle von 0 bis 100. Ändern Sie nach Bedarf die Parameter #slider# und #value# sowie die Jeedom min und max.
