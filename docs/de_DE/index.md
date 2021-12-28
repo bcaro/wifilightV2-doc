@@ -257,7 +257,7 @@ Für Peripheriegeräte:
  - TP-Link
  - Xiaomi Philips
  - Extel Meli
- - Nanoblatt Aurora
+ - Nanoleaf Aurora
  - Meross
  - Mi.Light mit der Milight-Hub-Brücke verbunden
  - Zauberer
@@ -324,15 +324,15 @@ Einige Lampen haben Disco und Custom-Modi. Jeder Option dieser Modi ist eine Aus
 
 Der Befehl action/list für den Zoll hat beispielsweise den internen Namen: CMD_LIST_CUSTOM. Sein Parameter entspricht dem Aufbau dieser Liste:
 
-   Szene01| Aussterben;Szene02|Zündung
+    Scene01|Extinction;Scene02|Ignition
 
 Die Liste zeigt Power off und Power on an und die ausgeführten Befehle sind die mit dem internen Namen Scene01 oder Scene02. Wenn Sie einen neuen benutzerdefinierten Befehl hinzufügen, beispielsweise Scene03 mit dem Namen Flash, müssen Sie den Parameter wie folgt ändern:
 
-   Szene01|Aussterben;Szene02|Zündung;Szene03|Blitz
+    Scene01|Extinction;Scene02|Ignition;Scene03|Flash
 
 Wenn der Befehl Scene01 anschließend gelöscht wird, müssen Sie den Parameter CMD_LIST_CUSTOM manuell ändern:
 
-   Szene02|Zündung;Szene03|Blitz
+    Scene02|Ignition;Scene03|Flash
    
 # Mi.Light
 
@@ -613,7 +613,7 @@ Warnung :
 
 Lidl Tuya/Zigbee Produkte dürfen noch nie mit der Lidl App gekoppelt worden sein. Sie müssen nur mit der Tuya Smartlife-Anwendung gekoppelt werden, sonst können sie vom Plugin nicht mehr verwendet werden.
 
-# Nanoblatt
+# Nanoleaf
 
 
 ## Taste

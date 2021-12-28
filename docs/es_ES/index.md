@@ -322,15 +322,15 @@ Algunas lámparas tienen modos disco y personalizados. Una lista de opciones est
 
 Por ejemplo, el comando acción/lista para aduanas tiene el nombre interno: CMD_LIST_CUSTOM. Su parámetro corresponde a la construcción de esta lista:
 
-    Scene01|Extinción;Scene02|Ignición
+    Scene01|Extinction;Scene02|Ignition
 
 La lista mostrará Power off y Power on y los comandos que se ejecutarán serán aquellos con nombre interno Scene01 o Scene02. Si agrega un nuevo comando personalizado, por ejemplo Scene03 cuyo nombre es Flash, deberá modificar el parámetro de la siguiente manera:
 
-    Scene01|Extinción;Scene02|Ignición;Scene03|Flash
+    Scene01|Extinction;Scene02|Ignition;Scene03|Flash
 
 Si el comando Scene01 se elimina posteriormente, deberá modificar manualmente el parámetro CMD_LIST_CUSTOM:
 
-    Scene02|Ignición;Scene03|Flash
+    Scene02|Ignition;Scene03|Flash
 
 # Mi.Light
 
