@@ -373,7 +373,7 @@ In diesem Modus erfolgt die Auswahl der Peripheriegeräte nach dem Typ der Fernb
 
 Um eine Lampe mit dem Milight-Hub zu koppeln, schalten Sie die Lampe ein und klicken Sie auf Sync ON. Verwenden Sie Sync OFF zum Entkoppeln. Um eine Fernbedienung zu koppeln, wählen Sie ON des zu synchronisierenden Kanals, sobald die Stromversorgung eingeschaltet wird, und klicken Sie auf Sync ON.
 
-Um die Eigenschaften des Hubs zu erfahren, klicken Sie auf getKey, das Ergebnis wird in getKetget durch Klicken auf Test erhalten.
+Um die Eigenschaften des Hubs zu erfahren, klicken Sie auf getKey, das Ergebnis wird in getKeyget durch Klicken auf Test erhalten.
 
 # Xiaomi Yeelight
 

@@ -371,7 +371,7 @@ En este modo, la elección de los periféricos se realiza por el tipo de mando a
 
 Para emparejar una lámpara con el Milight-Hub, encienda la lámpara y haga clic en Sync ON. Utilice Sync OFF para desvincular. Para que aparezca un control remoto, seleccione ON del canal para sincronizar tan pronto como se encienda la alimentación y haga clic en Sync ON.
 
-Para conocer las características del hub, haga clic en getKey, el resultado se obtiene en getKetget haciendo clic en Test.
+Para conocer las características del hub, haga clic en getKey, el resultado se obtiene en getKeyget haciendo clic en Test.
 
 # Xiaomi Yeelight
 
