@@ -600,10 +600,9 @@ If a device with the same devId already exists, the inclusion will not happen.
 You can help improve automatic creation by providing as much information as possible: the Json from the Tuya cloud, the changes made, the logs or any relevant remark.
 
 To get the Json from the Tuya cloud:
-- in Tuya IOT Platform: Cloud> Development> choose the project > Devices > Copy the device ID of the device
+- in Tuya IOT Platform: Cloud > Development > choose the project > Devices > Copy the device ID of the device
 - Cloud > Api Explorer > (in the new window) Smart Home Management System > Device Control > Get Device Specification Attribute (the 2nd in the list without s to Attribute)
 - paste the device ID > Submit Request> Copy (right window link)
-Although the plugin locally addresses devices, it can use the Tuya cloud to configure devices and automatically retrieve cid, localKey, and devId. 
 
 
 [See specific documentation ](./tuya#tocAnchor-1-1)

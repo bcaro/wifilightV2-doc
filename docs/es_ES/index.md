@@ -594,7 +594,6 @@ Para obtener el Json de la nube Tuya:
 - en Tuya IOT Platform: Cloud > Development > elija el proyecto > Devices > Copie el ID del dispositivo del dispositivo
 - Cloud > Development > (en la nueva ventana) Smart Home Management System > Device Control > Get Device Specification Attribute (el segundo en la lista sin s para atributo)
 - pegue el device ID > Submit Request > Copy (enlace de la ventana derecha)
-Aunque el complemento se dirige localmente a los dispositivos, puede usar la nube Tuya para configurar dispositivos y recuperar automáticamente cid, localKey y devId.
 
 [Ver documentación específica](./tuya#tocAnchor-1-1)
 
