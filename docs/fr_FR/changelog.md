@@ -13,7 +13,8 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 1.84 - 2021-12-24 beta (Jeedom V4)
 - Ewelink : récupération dans le cloud de la plupart des périphériques fonctionnant en mode LAN et surtout de leur deviceId, apikey et adresse IP, ce qui rend leur configuration bien plus facile.
 - Tuya : récupération de l'adresse IP locale
-- Nanoleaf : création dynamique des modes scène
+- Nanoleaf : création dynamique des modes scène et correction bogue
+- Meross : les paramètres d'authentification sont reportés dans la configuration du plugin
 - traduction de_DE
 
 1.83 - 2021-12-21 (Jeedom V4)
