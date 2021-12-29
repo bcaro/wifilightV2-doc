@@ -39,12 +39,12 @@ Una excepción: los productos Govee.
 Hay muchos productos que son compatibles con el plugin pero de marcas muy diferentes o sin marca.
  
 Productos compatibles:
-- Bombillas Mi.Light/EasyBulb/LimitlessLED conectadas a los controladores a continuación: sin retroalimentación de estado !
+- lamparas Mi.Light/EasyBulb/LimitlessLED conectadas a los controladores a continuación: sin retroalimentación de estado !
 - Tira de led Mi.Light/EasyBulb/LimitlessLED conectada a los controladores siguientes: sin retroalimentación de estado !
 - Controlador led Mi.Light/EasyBulb/LimitlessLED V3.0 a V5.0 (el miboxer no es compatible): sin retroalimentación de estado !
 - Controlador led Mi.Light/EasyBulb/LimitlessLED V6.0/iBox1/iBox2: sin retroalimentación de estado !
 - Controlador LED MiLight-hub DIY: con retroalimentación de estado !
-- Bombillas blancas y en color Xiaomi Yeelight WiFi con retroalimentación de estado !
+- Lamparas blancas y en color Xiaomi Yeelight WiFi con retroalimentación de estado !
 - Tira de WiFi en color Xiaomi Yeelight con retroalimentación de estado !
 - Luz de techo WiFi Xiaomi Yeelight con retroalimentación de estado !
 - Lámpara de cabecera WiFi Xiaomi Yeelight V2 con retroalimentación de estado !
@@ -61,10 +61,10 @@ Productos que pueden ser compatibles y no garantizados:
 -   MagicHome: controlador de tira RGBW/RGBWW y focos  RGBW compatibles con la aplicación MagicHome !
 -   H801: Controlador de tira de RGBW, sin comentarios de estado !!
 -   Arilux AL-C01/02/03/04/06/10: controlador de tira RGB/RGBW/RGBWW, retroalimentación de estado !
--   TP-Link LB100/110/120/130: bombillas con retroalimentación de estado !
+-   TP-Link LB100/110/120/130: lamparas con retroalimentación de estado !
 -   Lámpara Extel Meli con retroalimentación de estado !
--   Xiaomi Philips: lámpara de escritorio, bombilla y lámpara de techo con retroalimentación de estado !!!
--   Bombillas, enchufes, interruptores, interruptores de obturación, humidificador, termostato compatible con aplicacion Tuya Smartlife con comentarios de estado !!!
+-   Xiaomi Philips: lámpara de escritorio, lámpara y lámpara de techo con retroalimentación de estado !!!
+-   Lamparas, enchufes, interruptores, interruptores de obturación, humidificador, termostato compatible con aplicacion Tuya Smartlife con comentarios de estado !!!
 -   TP-link HS100 HS110 enchufes eléctricos con retroalimentación de estado !!
 -   Controladores de tira de píxeles compatibles con Magic Home con retroalimentación de estado !
 -   Periféricos controlados por la aplicación Ewelink, incluidos Sonoffs en modo LAN con comentarios de estado !!!
@@ -399,18 +399,18 @@ Inspírate en los controles preconfigurados para crear estos modos de escena adi
 Para la sintaxis de Yeelight, consulte [aquí](https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf)
 
 ## Estado
-En V2, al activar el plugin y tan pronto como se inicia el demonio, así como cada minuto, el plugin busca las bombillas encendidas y conectadas a Jeedom.
+En V2, al activar el plugin y tan pronto como se inicia el demonio, así como cada minuto, el plugin busca las lamparas encendidas y conectadas a Jeedom.
 
-Tan pronto como se encuentra la bombilla, el estado de la bombilla se devuelve al plugin inmediatamente.
+Tan pronto como se encuentra la lámpara, el estado de la lámpara se devuelve al plugin inmediatamente.
 
-Tenga en cuenta que el plugin puede tardar hasta 1 minuto en encontrar una bombilla y 4 minutos en encontrar que un dispositivo está desconectado.
+Tenga en cuenta que el plugin puede tardar hasta 1 minuto en encontrar una lámpara y 4 minutos en encontrar que un dispositivo está desconectado.
 
 En V1, el estado puede tardar hasta un minuto en volver. 
 
 # TP-Link
 
 Los periféricos compatibles son:
-- Bombillas LB 100/110/120/130
+- Lamparas LB 100/110/120/130
 - Zócalos HS110 V1/V2
 
 ## Configuración

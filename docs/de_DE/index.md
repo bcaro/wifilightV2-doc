@@ -65,8 +65,8 @@ Produkte, die möglicherweise kompatibel und nicht garantiert sind:
 - Arilux AL-C01/02.03.04.06.10: RGB/RGBW/RGBWW Strip-LED-Controller, Statusrückmeldung!
 - TP-Link LB100/110/120/130: Leuchtmittel mit Statusrückmeldung!
 - Extel Meli Lampe mit Statusrückmeldung!
-- Xiaomi Philips: Schreibtischlampe, Glühbirne und Deckenleuchte mit Statusrückmeldung !!!
-- Glühbirnen, Steckdosen, Schalter, Jalousieschalter, Luftbefeuchter, Thermostat kompatibel mit Tuya Smartlife App mit Statusrückmeldung !!!
+- Xiaomi Philips: Schreibtischlampe, Lampeb und Deckenleuchte mit Statusrückmeldung !!!
+- Lampen, Steckdosen, Schalter, Jalousieschalter, Luftbefeuchter, Thermostat kompatibel mit Tuya Smartlife App mit Statusrückmeldung !!!
 - TP-link HS100 HS110 Steckdosen mit Statusrückmeldung !!
 - Magic Home-kompatible Pixel-Strip-LED-Controller mit Statusrückmeldung!
 - Per Ewelink-App gesteuerte Peripherie einschließlich Sonoffs im LAN-Modus mit Statusrückmeldung !!!
@@ -120,7 +120,7 @@ H810:
 
 TP-Link:
 - Die Timer werden nicht verwaltet.
-- Die Informationen zum Stromverbrauch werden für Glühbirnen nicht verwaltet.
+- Die Informationen zum Stromverbrauch werden für Lampen nicht verwaltet.
 
 Extel Meli:
 - Der Tonanteil der Lampe wird nicht berücksichtigt
@@ -176,7 +176,7 @@ Konsultieren Sie die Hilfe und Foren des Geräteherstellers.
 
 
 ## Router konfigurieren
-Um die Vergabe der IP-Adresse des Wifi-Moduls oder der Glühbirne oder Fassung statisch zu ändern, müssen Sie das DHCP Ihres Routers (in der Regel von Ihrem Access-Provider bereitgestellt) konfigurieren. Merken Sie sich diese Adresse. Im Allgemeinen hat es die Form:
+Um die Vergabe der IP-Adresse des Wifi-Moduls oder die Lampe oder Fassung statisch zu ändern, müssen Sie das DHCP Ihres Routers (in der Regel von Ihrem Access-Provider bereitgestellt) konfigurieren. Merken Sie sich diese Adresse. Im Allgemeinen hat es die Form:
 192.168.1.xxx
 wobei xxx der Adresse des Wifi-Moduls entspricht (2 bis 254)
 
@@ -213,8 +213,8 @@ Einstellungen :
 - Bei einigen Controllern ist es notwendig, die Anzahl der LEDs der Pixelstreifen-LEDs anzugeben
 - Bei einigen Controllern ist es notwendig, die Reihenfolge der Farben anzugeben, wenn die Standardfarben nicht übereinstimmen
 - Geben Sie die Marke oder den Gerätetyp ein
-- Geben Sie den genauen Untertyp des Controllers, der Glühbirne, der Fassung oder der LED-Leiste ein, dies ist wichtig, um die Befehle zum Ansteuern des Geräts zu erstellen
-- Geben Sie die Anzahl der gesendeten Befehle ein: Ermöglicht Ihnen, den Befehl für ein entferntes Gerät bei schlechter Übertragung zu wiederholen. (1 standardmäßig). Manche Glühbirnen oder Fassungen schaffen diese Wiederholung nicht, da das Plugin durch Rückmeldung den Zustand der Übertragung sicherstellt. Bestimmte relative Befehle (Inkremente) werden nicht wiederholt.
+- Geben Sie den genauen Untertyp des Controllers, die Lampe, der Fassung oder der LED-Leiste ein, dies ist wichtig, um die Befehle zum Ansteuern des Geräts zu erstellen
+- Geben Sie die Anzahl der gesendeten Befehle ein: Ermöglicht Ihnen, den Befehl für ein entferntes Gerät bei schlechter Übertragung zu wiederholen. (1 standardmäßig). Manche Lampen oder Fassungen schaffen diese Wiederholung nicht, da das Plugin durch Rückmeldung den Zustand der Übertragung sicherstellt. Bestimmte relative Befehle (Inkremente) werden nicht wiederholt.
 - Geben Sie die Sendeverzögerung bei Wiederholung ein (0 ms standardmäßig, 100 ms max.)
 - Geben Sie das Intensitätsinkrement in % ein, wenn Sie die Lichtintensitäts-Inkrement- oder -Dekrement-Tasten drücken
 - Konfigurieren Sie die Anzahl der erstellten Befehle, die Erstellung aller Befehle (Energiefarbeneffekte) kann die Benutzeroberfläche belasten
@@ -357,7 +357,7 @@ Sie müssen das Port-Feld leer lassen (nicht einmal ein Leerzeichen).
 
 ### Ein alternativer Hub
 
-Mehrere Projekte führten zu Hubs, die mit Mi.Light-Lampen und Fernbedienungen kompatibel sind, um die Einschränkungen der Hubs der Hersteller zu umgehen und die heute mit dem Verschwinden von iBox1 und 2 noch interessanter werden. Das Plugin ist kompatibel mit dem Projekt von [Sidoh](https://github.com/sidoh/esp8266_milight_hub) und bietet 2 Modi zum Antrieb der Glühbirnen. Der erste Modus ist der historische Modus von iBox1 und 2, mit dem Sie Ihre Peripheriegeräte wie gewohnt verwenden können. Es müssen 2 Konfigurationsparameter hinzugefügt werden. Der 2. Modus ist komplett neu und hat die Vorteile einer sehr hohen Reaktionsfähigkeit und einer partiellen Statusrückmeldung im Minutentakt.
+Mehrere Projekte führten zu Hubs, die mit Mi.Light-Lampen und Fernbedienungen kompatibel sind, um die Einschränkungen der Hubs der Hersteller zu umgehen und die heute mit dem Verschwinden von iBox1 und 2 noch interessanter werden. Das Plugin ist kompatibel mit dem Projekt von [Sidoh](https://github.com/sidoh/esp8266_milight_hub) und bietet 2 Modi zum Antrieb die Lampe. Der erste Modus ist der historische Modus von iBox1 und 2, mit dem Sie Ihre Peripheriegeräte wie gewohnt verwenden können. Es müssen 2 Konfigurationsparameter hinzugefügt werden. Der 2. Modus ist komplett neu und hat die Vorteile einer sehr hohen Reaktionsfähigkeit und einer partiellen Statusrückmeldung im Minutentakt.
 
 ### Montage der Milight-Nabe
 
@@ -401,18 +401,18 @@ Lassen Sie sich von den vorkonfigurierten Bedienelementen inspirieren, um diese 
 Informationen zur Yeelight-Syntax finden Sie [hier](https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf)
 
 ## Zustand
-In V2 sucht das Plugin beim Aktivieren des Plugins und sobald der Daemon gestartet wird sowie jede Minute nach den mit Jeedom versorgten und mit Jeedom verbundenen Glühbirnen.
+In V2 sucht das Plugin beim Aktivieren des Plugins und sobald der Daemon gestartet wird sowie jede Minute nach den mit Jeedom versorgten und mit Jeedom verbundenen Lampen.
 
-Sobald die Glühbirne gefunden wird, wird der Zustand der Glühbirne sofort an das Plugin zurückgegeben.
+Sobald die Lampe gefunden wird, wird der Zustand die Lampe sofort an das Plugin zurückgegeben.
 
-Beachten Sie, dass es bis zu 1 Minute dauern kann, bis das Plugin eine Glühbirne findet und bis zu 4 Minuten, um festzustellen, dass ein Gerät nicht angeschlossen ist.
+Beachten Sie, dass es bis zu 1 Minute dauern kann, bis das Plugin eine Lampe findet und bis zu 4 Minuten, um festzustellen, dass ein Gerät nicht angeschlossen ist.
 
 In V1 kann die Statusrückgabe bis zu einer Minute dauern.
 
 # TP-Link
 
 Kompatible Peripheriegeräte sind:
-- LB 100/110/120/130 Glühbirnen
+- LB 100/110/120/130 Lampen
 - HS110 V1/V2 Buchsen
 
 ## Aufbau
@@ -549,7 +549,7 @@ Der sonoff DW2 ist nicht kompatibel, da er eine reine Cloud ist und nicht in den
 
 Der Zigbee Hub ist nicht kompatibel (und rein Cloud).
 
-Keine Glühbirne oder LED-Streifen sind kompatibel.
+Keine Lampe oder LED-Streifen sind kompatibel.
 
 Die Kompatibilität dieser Geräte ist jedoch nicht gewährleistet, da das Protokoll von den Herstellern modifiziert werden kann. Ändern Sie die Firmware des Geräts nicht, ohne überprüft zu haben, ob es mit dem Plugin kompatibel ist.
 
@@ -627,7 +627,7 @@ Erstellen Sie einen Effekt mit der NanoLeaf-App und geben Sie ihm einen Namen. E
 # Govee
 
 Kompatible Wifi-Geräte sind:
-- Glühbirnen:
+- Lampen:
     H6002 H6003 H6008 H6049 H6050 H6051 H6052 H6054 H6059 H605B H6061 H6062 H6071 H6072 H6073 H6075 H6076 H6083 H6085 H6086 H6087 H6089 H6104 H6109 H610A H611A H611B H611C H611Z H6110 H614A H614B H614C H614D H614E H6117 H6121 H6135 H6137 H6141 H6142 H6143 H6144 H6148 H615A H615B H615C H615D H6154 H6159 H6160 H6163 H6172 H6182 H6188 H618A H618C H618E H6195 H6198 H6199 H619A H619B H619C H619D H619E H619Z H61A0 H7005 H7021 H7022 H7028 H7050 H7060 MSSFH20 MSS4 MSS425K
 -   vergriffen :
 H5001 H5080 H5081 H7014
