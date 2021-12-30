@@ -8,14 +8,16 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 - corrections mineures de la configuration de périphériques
 
 
-Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert aux échanges avec les utilisateurs pour tester de nouvelles configurations ou de nouvelles marques. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
+Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.84 - 2021-12-24 beta (Jeedom V4)
-- Ewelink : récupération dans le cloud de la plupart des périphériques fonctionnant en mode LAN et surtout de leur deviceId, apikey et adresse IP, ce qui rend leur configuration bien plus facile.
-- Tuya : récupération de l'adresse IP locale
+1.84 - 2021-12-30 beta (Jeedom V4)
+- Ewelink : récupération dans le cloud de la plupart des périphériques fonctionnant en mode LAN et surtout de leur deviceId, apikey et adresse IP, ce qui rend leur configuration bien plus facile. La création d'un périphérique est maintenant automatique pour une majorité de péripéhriques, il faut néanmoins choisir le sous-type (limitations indiquées dans la doc). Le fonctionnement est ensuite local.
+- Tuya : récupération de l'adresse IP locale : la création d'un périphérique est maintenant automatique pour une majorité de péripéhriques et de commandes dps (limitations indiquées dans la doc). Le fonctionnement reste ensuite en local.
 - Nanoleaf : création dynamique des modes scène et correction bogue
-- Meross : les paramètres d'authentification sont reportés dans la configuration du plugin
+- Meross V2 : les paramètres d'authentification sont reportés dans la configuration du plugin. Sans incidence sur les périphériques créés mais pour les nouveaux il faut renseigner la configuration du plugin. La copie de la clé Meross est toujours possible car identique pour tous.
+- images : les images du plugin sont accessibles pour personnaliser celle d'un périphérique (utile en Tuya pour remplacer l'image récupérée chez Tuya)
 - traduction de_DE
+- maintenance traduction
 
 1.83 - 2021-12-21 (Jeedom V4)
 - Tuya : récupération dans le cloud de la plupart des périphériques et surtout de leur Id et Localkey. Nécessite de créer un compte sur les serveurs Tuya.
