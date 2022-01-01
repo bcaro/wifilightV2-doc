@@ -204,7 +204,7 @@ Ajustes :
 - Activar y hacer visible (predeterminado)
 - Ingrese la dirección IP del módulo de la toma o bombilla WiFi (consulte las preguntas frecuentes para obtener más explicaciones)
 - Para la caja Milight-hub, se debe configurar un identificador y un puerto
-- Puede cargar imágenes en la carpeta /data del plugin utilizando el plugin Jeexplorer. Estas imágenes pueden reemplazar las imágenes asociadas con los dispositivos en la página de visualización de todos los dispositivos wifilightV2. Útil para dispositivos personalizados que no están asociados con una imagen.
+- Puede cargar imágenes en la carpeta /data/myImages del plugin utilizando el plugin Jeexplorer. Estas imágenes pueden reemplazar las imágenes asociadas con los dispositivos en la página de visualización de todos los dispositivos wifilightV2. Útil para dispositivos personalizados que no están asociados con una imagen.
 - Para algunos periféricos, se le pide que ingrese el canal utilizado, cree un dispositivo wifilightV2 por canal
 - Para algunos dispositivos, se le pide que ingrese un token o (y) un identificador, consulte la ayuda en la página de configuración del dispositivo
 - Para periféricos Tuya, es posible forzar la interrogación del estado cada minuto, útil para enchufes con consumo.

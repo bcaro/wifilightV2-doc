@@ -208,7 +208,7 @@ Paramétrage :
 -   Activer et rendre visible (par défaut)
 -   Saisir l'adresse IP du module de la prise ou de l'ampoule WiFi (voir la FAQ pour plus d'explications)
 -   Pour la box Milight-hub, un identifiant et un port doivent être configurés
--   Vous pouvez charger dans le dossier /data du plugin des images à l'aide du plugin Jeexplorer Ces images peuvent remplacer les images associées aux périphériques dans la page d'affichage de tous les périphériques wifilightV2. Utile pour les périphériques personnalisés qui ne sont pas associés à une image.
+-   Vous pouvez charger dans le dossier /data/myImages du plugin des images . Ces images peuvent remplacer les images associées aux périphériques dans la page d'affichage de tous les périphériques wifilightV2. Utile pour les périphériques personnalisés qui ne sont pas associés à une image.
 -   Pour certains périphériques il est demandé de saisir le canal utilisé, créer un équipement wifilightV2 par canal
 -   Pour certains périphériques il est demandé de saisir un jeton ou (et) un identifiant, consulter l'aide sur la page de configuration du périphérique
 -   Pour les périphériques Tuya, il est possible de forcer l'interrogation de l'état toutes les minutes, utile pour les prises avec consommation.
@@ -398,7 +398,8 @@ Il suffit de respecter certaines conditions :
 -   Ajouter une commande wifilightV2 action de type Défaut
 -   Lui donner un nom (par exemple Scene Clignote)
 -   Dans paramètres, mettre la commande scène Yeelight, par exemple : 
-    "id":1, "method":"set_scene","params":["cf",0,0,"500,1,255,100,1000,1,16776960,70"]
+
+    "id":1,"method":"set_scene","params":["cf",0,0,"500,1,255,100,1000,1,16776960,70"]
 
 Ne pas mettre les accolades de début et de fin ainsi que les caractères de retour à la ligne, le plugin les ajoutera automatiquement
 S'inspirer des commandes préconfigurées pour créer ces modes scène supplémentaires.
@@ -470,7 +471,7 @@ Afin d'obtenir une clé, il faut renseigner les login et mot de passe du compte 
 Attention : des utilisations répétées du getgey peuvent produire un blocage d'accès aux serveurs Meross qui peut durer plusieurs heures. Faire une copie de la Clé sur tous vos périphériques Meross, elle dépend du compte utilisateur et pas du périphérique.
 
 ## Hub Meross 
-Pour les équipements reliés au hub Meross,il faut créer un périphérique dans le plugin pour chaque périphérique connecté au hub. Il faut aussi récupérer un identifiant local. Utiliser un outil permettant de récupérer l'entête http partant de l'appli Meross lors du dialogue avec la vanne. L'information recherchée a l'allure suivante :
+Pour les équipements reliés au hub Meross, il faut créer un périphérique dans le plugin pour chaque périphérique connecté au hub. Il faut aussi récupérer un identifiant local. Utiliser un outil permettant de récupérer l'entête http partant de l'appli Meross lors du dialogue avec la vanne. L'information recherchée a l'allure suivante :
 
     "id" : "01008D5B"
 
@@ -643,7 +644,7 @@ La prise double n'est pas supportée mais pourrait l'être si un utilisateur en 
 L'installation, la création et la configuration des périphériques est entièrement automatique :
 - récupérer l'API key à partir de l'application fournie par Govee
 - dans la configuration du plugin, mettre cette API key dans le champ Govee et sauvegarder.
-- cliquer sur inclusion Govee : les périphériques sont créés automatiquement.
+- cliquer sur Govee passer en inclusion. Les périphériques sont créés automatiquement.
 
 ## Remarques
 Il faut faire attention aux points suivants :

@@ -206,7 +206,7 @@ Einstellungen :
 - Aktivieren und sichtbar machen (Standard)
 - Geben Sie die IP-Adresse der Wifi-Steckdose oder des Lampenmoduls ein (siehe FAQ für weitere Erklärungen)
 - Für die Milight-hub Box muss eine Kennung und ein Port konfiguriert werden
-- Sie können mit dem Jeexplorer-Plugin Bilder in den /data des Plugins laden. Diese Bilder können die mit Geräten verknüpften Bilder auf der Anzeigeseite aller wifilightV2-Geräte ersetzen. Nützlich für benutzerdefinierte Geräte, die keinem Bild zugeordnet sind.
+- Sie können mit dem Jeexplorer-Plugin Bilder in den /data/myImages des Plugins laden. Diese Bilder können die mit Geräten verknüpften Bilder auf der Anzeigeseite aller wifilightV2-Geräte ersetzen. Nützlich für benutzerdefinierte Geräte, die keinem Bild zugeordnet sind.
 - Bei einigen Geräten werden Sie aufgefordert, den verwendeten Kanal einzugeben, erstellen Sie ein wifilightV2-Gerät pro Kanal
 - Bei einigen Geräten werden Sie aufgefordert, einen Token oder (und) eine Kennung einzugeben, konsultieren Sie die Hilfe auf der Gerätekonfigurationsseite
 - Für Tuya-Peripheriegeräte ist es möglich, die Abfrage des Status jede Minute zu erzwingen, was für Steckdosen mit Verbrauch nützlich ist.

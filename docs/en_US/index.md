@@ -212,7 +212,7 @@ Settings :
 - Activate and make visible (default)
 - Enter the IP address of the module of the WiFi socket or bulb (see the FAQ for more explanations)
 - For the Milight-hub, an identifier and a port must be configured
-- You can load images into the /data folder of the plugin using the Jeexplorer plugin. These images can replace the images associated with devices in the display page of all wifilightV2 devices. Useful for custom devices that are not associated with an image.
+- You can load images into the /data/myImages folder of the plugin using the Jeexplorer plugin. These images can replace the images associated with devices in the display page of all wifilightV2 devices. Useful for custom devices that are not associated with an image.
 - For some peripherals, you are asked to enter the channel used, create a wifilightV2 device per channel
 - For some devices, you are asked to enter a token or (and) an identifier, consult the help on the device configuration page
 - For Tuya peripherals, it is possible to force the interrogation of the status every minute, useful for outlets with consumption.
