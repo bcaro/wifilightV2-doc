@@ -2,6 +2,10 @@
 
 [ver aquí](https://bcaro.github.io/wifilightV2-doc/fr_FR/changelog)
 
+# Instalación
+
+El complemento requiere la instalación de dependencias. Si las dependencias no están instaladas, muchos dispositivos no funcionarán correctamente. Sin embargo, si la instalación falla, solo no funcionará encontrar la dirección IP de los dispositivos Tuya y Ewelink. 
+
 # Presentación
 
 Atención :

@@ -2,6 +2,10 @@
 
 [siehe hier](https://bcaro.github.io/wifilightV2-doc/fr_FR/changelog)
 
+# Installation
+
+Das Plugin erfordert die Installation von Abhängigkeiten. Wenn die Abhängigkeiten nicht installiert sind, funktionieren viele Geräte nicht richtig. Wenn die Installation jedoch fehlschlägt, funktioniert nur das Finden der IP-Adresse von Tuya und Ewelink-Geräten nicht. 
+
 # Präsentation
 
 Warnung :
