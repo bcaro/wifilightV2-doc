@@ -4,7 +4,7 @@
 
 # Installation
 
-Le plugin nécessite d'installer des dépendances. Si les dépendances ne sont pas installées de nombreux périphériques ne pourrnt pas fonctionner correctement. Néanmoins, si l'installation échoue, seule la recherche de l'adresse IP des périphériques Tuya et Ewelink ne fonctionnera pas.
+Le plugin nécessite d'installer des dépendances. Si les dépendances ne sont pas installées de nombreux périphériques ne pourront pas fonctionner correctement. Néanmoins, si l'installation échoue, seule la recherche de l'adresse IP des périphériques Tuya et Ewelink ne fonctionnera pas.
 
 # Présentation
 
