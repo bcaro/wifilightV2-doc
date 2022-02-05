@@ -547,6 +547,7 @@ Viele Marken sind kompatibel, einschließlich Sonoff. Die getesteten Produkte si
 - Sonoff T1/TX
 - Sonoff SLAMPHER
 - Sonoff T4EUC1
+- Sonoff Ifan R2/R3/R4 zu Testzwecken 
 - Sonoff RF Bridge 433 nur für die Sensoren (Tür, Präsenzmelder, Fernbedienung)
 
 Der sonoff DW2 ist nicht kompatibel, da er eine reine Cloud ist und nicht in den Access Point eingeht, um apiKey und DeviceID zu finden. Gleiches dürfte für alle ewelink kompatiblen Türsensoren gelten.

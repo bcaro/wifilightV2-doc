@@ -545,6 +545,7 @@ Muchas marcas son compatibles, incluido Sonoff. Los productos probados son los s
 - Sonoff T1/TX
 - Sonoff SLAMPHER
 - Sonoff T4EUC1
+- Sonoff Ifan R2/R3/R4 con fines de prueba
 - Sonoff RF bridge 433 solo para los sensores (puerta, detector de presencia, control remoto)
 
 El sonoff DW2 no es compatible porque es puramente en la nube y no entra en el punto de acceso, lo que permite encontrar apiKey y DeviceID. Es probable que ocurra lo mismo con todos los sensores de puerta compatibles con ewelink.

@@ -553,6 +553,7 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 -  Sonoff T1/TX
 -  Sonoff SLAMPHER
 -  Sonoff T4EUC1
+-  Ifan 2/3/4 à tester 
 -  Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur de présence, télécommande)
 
 Le sonoff DW2 n'est pas compatible car purement cloud et ne se met pas en Acces Point permettant de trouver apiKey et DeviceID. Il est probable qu'il en soit de même pour tous les capteurs de porte compatibles ewelink.
