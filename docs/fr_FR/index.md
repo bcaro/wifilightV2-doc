@@ -470,7 +470,7 @@ Attention : certaines prises anciennes ont un comportement différent, utiliser 
 Ne pas créer de nouveaux périphériques avec cette option, utiliser de préférence Meross V2, ce type est présent pour assurer la compatibilité avec les périphériques configurés avant l'arrivée de la V2. Aucune aide ne sera donnée pour trouver les paramètres nécessaires à ce type.
 
 ## type "Meross V2" pour tout firmware y compris 2.2.2
-Afin d'obtenir une clé, il faut renseigner les login et mot de passe du compte Meross, sauvegarder et cliquer sur getKey. Elle est récupérée des serveurs Meross et sauvegardée dans le champ Clé. Vous pouvez recopier cette clé dans tous vos périphériques Meross et effacer les login et mot de passe, mais alors il ne faut plus cliquer sur getKey.
+Afin d'obtenir une clé, il faut renseigner les login et mot de passe du compte Meross, sauvegarder et cliquer sur getKey dans l'nglet des commandes. Elle est récupérée des serveurs Meross et sauvegardée dans le champ Clé. Vous pouvez recopier cette clé dans tous vos périphériques Meross et effacer les login et mot de passe, mais alors il ne faut plus cliquer sur getKey.
 
 Attention : des utilisations répétées du getgey peuvent produire un blocage d'accès aux serveurs Meross qui peut durer plusieurs heures. Faire une copie de la Clé sur tous vos périphériques Meross, elle dépend du compte utilisateur et pas du périphérique.
 
@@ -518,7 +518,7 @@ Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement 
 
 Cette partie du plugin nécessite le lancement des dépendances.
 
-Par défaut le sonoff basic est choisi par le plugin, vous pouvez changer le sous-type sans perdre l'ApiKey et le deviceID.
+Pour la plupart des périphériques sonoff, le sous-type est trouvé, dans les autres cas le sonoff basic est choisi par le plugin, vous pouvez changer le sous-type sans perdre l'ApiKey et le deviceID.
 
 Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas.
 
@@ -531,7 +531,7 @@ Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas
 ## ApiKey DeviceID
 
 Pour récupérer manuellement ces 2 informations, vous pouvez aller [ici]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) ou [sur le forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 )  ou faire une recherche sur le web et le forum Jeedom avec comme mots clé : Ewelink ou Sonoff Apikey. Il ne faut mettre ni espace ni guillemets.
-e
+
 ## Connexion
 
 Quand un périphérique se connecte au wifi, le plugin sera immédiatement prévenu. Par contre, lorsqu'un périphérique est déconnecté, le plugin ne pourra le savoir que si une commande lui est envoyée par le plugin.
@@ -544,8 +544,9 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 -  Interrupteurs, prises murales, switch : simples avec variateur de toutes marques
 -  Sonoff D1 smart Dimmer
 -  Sonoff TH10/1H16 capteur de température. Nouvelle config pour firmware >=3.4 avec ON/OFF OK
--  Sonoff basic, RF, POW, Mini
--  Sonoff Dual
+-  Sonoff basic R2, RF, POW, Mini
+-  Sonoff Dual R2
+-  Sonoff Dual R3 (la récupération de la consommation et la configuration du moteur sont à tester, la configuration moteur n'est pas complètement implantée)
 -  Sonoff 4CH/4CH PRO
 -  Sonoff Touch
 -  Sonoff S20/S26
@@ -573,6 +574,7 @@ et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sono
 # Tuya Smartlife et Cloud Tuya
 
 Cette procédure automatise la création de la plupart des périphériques Tuya et Tuya/Zigbee. Cependant, l'accès aux périphériques reste en local.
+
 ## Configuration de la plateforme Tuya
 
 Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "Overview" pour récupérer : Access ID et Access Secret. Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya et sauvegarder, ensuite sélectionner : Tuya Passer en inclusion. Les périphériques sont créés automatiquement. 
@@ -595,8 +597,8 @@ Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 
 ### Astuces :
 - si la procédure automatique dysfonctionne, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-12-7) et agir uniquement sur les boutons de l'appli Tuya Smartlife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
-- de manière générale, les commandes peuvent être créés manuellement ou en mode apprentissage
-- le min et le max d'une valeur numérique sont remontés depuis le cloud. Le plugin calibre les commandes infos et numériques de 0 à 100. Selon les besoins, modifier les paramètres #slider# et #value# ainsi que le min et max Jeedom.
+- de manière générale, les commandes peuvent être créées manuellement ou en mode apprentissage
+- le min et le max d'une valeur numérique sont remontés depuis le cloud. Selon les besoins, modifier les paramètres #slider# et #value# ainsi que le min et max Jeedom.
 
 ### Participation à l'amélioration de cette partie :
 Vous pouvez contribuer à l'amélioration de la création automatique en donnant le maximum de renseignements : le Json du cloud Tuya, les modifications apportées, les logs ou toute remarque pertinente. 

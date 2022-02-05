@@ -10,6 +10,18 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.85 - 2022-01-29 (Jeedom V4.2)
+
+- Tuya inclusion : les valeurs numériques ne sont plus calibrées sur 0-100 lors de l'inclusion. Seule l'amplification est prise en compte. Les min/max sont reportés dans la configuration de la commande.
+- Sonoff : lors de l'inclusion, les périphériques sont créés avec le bon modèle (à tester) (ne fonctionne pas pour les autres marques compatibles ewelink : un sonoff basic est alors créé)
+- Sonoff : ajout DUAL R3 (à tester) (la configuration complète du DUAL R3 n'est pas implantée, seules les consos des 2 canaux et la configuration moteur le sont)
+- Sonoff : refonte des sous-type
+- Les images personnalisées apparaissent dans la configuration du plugin
+- modification de noms de classes
+- correction commande configGet Tuya
+- corrrection de bogues
+- adaptation du plugin à l'évolution du core en 4.2
+
 1.84 - 2022-01-10 (Jeedom V4)
  
 - il est indispensable d'installer des dépendances dans la configuration du plugin

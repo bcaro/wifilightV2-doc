@@ -510,24 +510,24 @@ For firmware from 3.5.0, the procedure is simpler and is detailed  [here](https:
 
 # SonOff Ewelink and Cloud
 
-This procedure automates the creation of most Ewelink and Sonoff devices. However, access to peripherals remains local. The device must be in firmware 3.0.1 or higher, the Ewelink app allows you to update the firmware.
+This procedure automates the creation of most Ewelink and Sonoff devices. However, access to devices remains local. The device must be in firmware 3.0.1 or above, the Ewelink APP can update the firmware.
 
-## Plugin configuration
+## Plugin Setup
 
-In the plugin configuration, enter the login (email address only) and the password for connecting to the Ewelink app and save. Then select: Ewelink Go to inclusion. The devices are created automatically.
+In the configuration of the plugin, enter the login (email address only) and the password for connecting to the Ewelink app and save. Then select: Ewelink Switch to inclusion. Devices are created automatically.
 
-If the local IP address is not found by the plugin, make the connection between the mac address and the IP address given in the device settings of the Tuya application and your router and modify the IP address. The procedure for finding the IP address uses a command from the Linux system, if it cannot be loaded or the system is not compatible, the IP address cannot be found automatically.
+If the local IP address is not found by the plugin, make the connection between the mac address and the IP address given in the device settings of the Tuya application and your router and modify the IP address. The procedure to find the IP address uses a Linux system command, if it cannot be loaded or if the system is not compatible, the IP address cannot be found automatically.
 
-This part of the plugin requires the launch of dependencies.
+This part of the plugin requires the dependencies to be launched.
 
-By default the sonoff basic is chosen by the plugin, you can change the subtype without losing the ApiKey and the deviceID.
+For most sonoff devices the subtype is found, in other cases sonoff basic is chosen by the plugin, you can change the subtype without losing the ApiKey and deviceID.
 
-If a device with the same deviceID already exists, the inclusion will not be done.
+If a device with the same deviceID already exists, the inclusion will not occur.
 
 ### Remarks :
-- some devices are not created (the Ewelink cloud does not provide the data)
-- purely cloud devices will be integrated but the plugin will not be able to access them
-- if the IP address was not found because the device is not connected, give it the address: 0.0.0.0, connect it and restart the inclusion procedure.
+- some devices are not created (Ewelink cloud does not provide the data)
+- pure cloud devices will be integrated but the plugin will not be able to access them
+- if the IP address was not found because the peripheral is not connected, give it the address: 0.0.0.0 , connect it and restart the inclusion procedure.
 
 ## APiKey DeviceID
 
@@ -546,7 +546,8 @@ Many brands are compatible including Sonoff. The products tested are as follows:
 - Sonoff D1 smart Dimmer
 - Sonoff TH10 / 1H16 temperature sensor. New config for firmware> = 3.4 with ON / OFF OK
 - Sonoff basic, RF, POW, Mini
-- Sonoff Dual
+- Sonoff Dual R2
+- Sonoff Dual R3 (consumption recovery and engine configuration are to be tested, the engine configuration is not fully implemented)
 - Sonoff 4CH / 4CH PRO
 - Sonoff Touch
 - Sonoff S20 / S26
@@ -574,6 +575,7 @@ and give pn the [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff
 ## Tuya Smartlife and Cloud Tuya
 
 This procedure automates the creation of most Tuya and Tuya / Zigbee devices. However, access to peripherals remains local.
+
 ## Configuration of the Tuya platform
 
 Follow this first [tutorial ](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) and go to the "Overview" tab to retrieve: Access ID and Access Secret. In the plugin configuration, enter these 2 parameters in the Tuya part and save, then select: Tuya Go to inclusion. The devices are created automatically.
@@ -597,7 +599,7 @@ If a device with the same devId already exists, the inclusion will not happen.
 ### Tips:
 - if the automatic procedure does not work, go to [device learning mode ](./tuya#tocAnchor-1-12-7) and act only on the corresponding buttons of the Tuya Smartlife app. If other buttons are used, the plugin will create duplicates of the orders created via the Tuya cloud.
 - in general, orders can be created manually or in learning mode
-- the min and the max of a numerical value are reported from the cloud. The plugin calibrates the info and numeric commands from 0 to 100. As needed, modify the #slider# and #value# parameters as well as the Jeedom min and max.
+- the min and max of a numerical value are uploaded from the cloud. As needed, modify the #slider# and #value# parameters as well as the Jeedom min and max. 
 
 ### Participation in the improvement of this part:
 

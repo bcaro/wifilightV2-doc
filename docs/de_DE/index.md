@@ -503,25 +503,24 @@ Für Firmware ab 3.5.0 ist die Vorgehensweise einfacher und wird [hier im Forum]
 
 # SonOff Ewelink und Cloud
 
-Dieses Verfahren automatisiert die Erstellung der meisten Ewelink- und Sonoff-Geräte. Der Zugriff auf Peripheriegeräte bleibt jedoch lokal. Das Gerät muss in der Firmware 3.0.1 oder höher sein, die Ewelink-App ermöglicht es Ihnen, die Firmware zu aktualisieren.
+Dieses Verfahren automatisiert die Erstellung der meisten Ewelink- und Sonoff-Geräte. Der Zugriff auf Geräte bleibt jedoch lokal. Das Gerät muss in Firmware 3.0.1 oder höher sein, die Ewelink APP kann die Firmware aktualisieren.
 
-## Plugin-Konfiguration
+## Plugin-Setup
 
-Geben Sie in der Plugin-Konfiguration den Login (nur E-Mail-Adresse) und das Passwort für die Verbindung mit der Ewelink-App ein und speichern Sie. Wählen Sie dann: Ewelink Gehe zur Aufnahme. Die Geräte werden automatisch angelegt.
+Geben Sie in der Konfiguration des Plugins den Login (nur E-Mail-Adresse) und das Passwort für die Verbindung zur Ewelink-App ein und speichern Sie. Wählen Sie dann: Ewelink Wechseln Sie zu Inklusion. Geräte werden automatisch erstellt.
 
-Wenn die lokale IP-Adresse vom Plugin nicht gefunden wird, stellen Sie die Verbindung zwischen der Mac-Adresse und der IP-Adresse her, die in den Geräteeinstellungen der Tuya-Anwendung und Ihres Routers angegeben ist, und ändern Sie die IP-Adresse. Das Verfahren zum Ermitteln der IP-Adresse verwendet einen Befehl vom Linux-System, wenn es nicht geladen werden kann oder das System nicht kompatibel ist, kann die IP-Adresse nicht automatisch gefunden werden.
+Wenn die lokale IP-Adresse vom Plugin nicht gefunden wird, gleichen Sie die MAC-Adresse mit der IP-Adresse ab, die in den Geräteeinstellungen der Tuya-Anwendung und Ihres Routers angegeben ist, und ändern Sie die IP-Adresse. Das Verfahren zum Ermitteln der IP-Adresse verwendet einen Linux-Systembefehl, kann dieser nicht geladen werden oder ist das System nicht kompatibel, kann die IP-Adresse nicht automatisch ermittelt werden.
 
-Dieser Teil des Plugins erfordert das Starten von Abhängigkeiten.
+Dieser Teil des Plugins erfordert, dass die Abhängigkeiten gestartet werden.
 
-Standardmäßig wird der Sonoff Basic vom Plugin ausgewählt, Sie können den Subtyp ändern, ohne den ApiKey und die Geräte-ID zu verlieren.
+Für die meisten Sonoff-Geräte wird der Subtyp gefunden, in anderen Fällen wird Sonoff Basic vom Plugin ausgewählt, Sie können den Subtyp ändern, ohne den ApiKey und die Geräte-ID zu verlieren.
 
-Wenn bereits ein Gerät mit derselben Geräte-ID vorhanden ist, wird die Aufnahme nicht durchgeführt.
+Wenn bereits ein Gerät mit derselben Geräte-ID vorhanden ist, erfolgt die Aufnahme nicht.
 
 ### Bemerkungen :
-- einige Geräte werden nicht erstellt (die Ewelink Cloud stellt die Daten nicht bereit)
-- reine Cloud-Geräte werden integriert, aber das Plugin kann nicht darauf zugreifen
-- Wenn die IP-Adresse nicht gefunden wurde, weil das Gerät nicht verbunden ist, geben Sie ihm die Adresse: 0.0.0.0, verbinden Sie es und starten Sie den Aufnahmevorgang erneut.
-
+- Einige Geräte werden nicht erstellt (Ewelink Cloud liefert die Daten nicht)
+- Reine Cloud-Geräte werden eingebunden, aber das Plugin kann nicht darauf zugreifen
+- Wenn die IP-Adresse nicht gefunden wurde, weil das Peripheriegerät nicht verbunden ist, geben Sie ihm die Adresse: 0.0.0.0 , verbinden Sie es und starten Sie den Aufnahmevorgang neu.
 
 ## ApiKey deviceID
 
@@ -540,7 +539,8 @@ Viele Marken sind kompatibel, einschließlich Sonoff. Die getesteten Produkte si
 - Sonoff D1 Smart Dimmer
 - Sonoff TH10/1H16 Temperatursensor. Neue Konfig für Firmware > = 3.4 mit ON/OFF OK
 - Sonoff Basic, RF, POW, Mini
-- Sonoff Dual
+- Sonoff Dual R2
+- Sonoff Dual R3 (Verbrauchsrückgewinnung und Motorkonfiguration sollen getestet werden, die Motorkonfiguration ist noch nicht vollständig implementiert)
 - Sonoff 4CH/4CH PRO
 - Sonoff-Touch
 - Sonoff S20/S26
@@ -591,8 +591,8 @@ Wenn bereits ein Gerät mit derselben devId vorhanden ist, wird die Aufnahme nic
 
 ### Tipps:
 - Wenn der automatische Vorgang nicht funktioniert, wechseln Sie in den [Geräte-Lernmodus](./tuya#tocAnchor-1-12-7) und verwenden Sie nur die entsprechenden Schaltflächen der Tuya Smartlife App. Wenn andere Schaltflächen verwendet werden, erstellt das Plugin Duplikate der über die Tuya-Cloud erstellten Bestellungen.
-- Bestellungen können grundsätzlich manuell oder im Lernmodus erstellt werden
-- Min und Max eines Zahlenwertes werden aus der Cloud gemeldet. Das Plugin kalibriert die Info- und numerischen Befehle von 0 bis 100. Ändern Sie nach Bedarf die Parameter #slider# und #value# sowie die Jeedom min und max.
+- Generell können Aufträge manuell oder im Lernmodus erstellt werden
+- Min. und Max. eines numerischen Werts werden aus der Cloud hochgeladen. Ändern Sie nach Bedarf die Parameter #slider# und #value# sowie Jeedom min und max. 
 
 ### Teilnahme an der Verbesserung dieses Teils:
 Sie können dazu beitragen, die automatische Erstellung zu verbessern, indem Sie so viele Informationen wie möglich bereitstellen: den Json aus der Tuya-Cloud, die vorgenommenen Änderungen, die Protokolle oder alle relevanten Bemerkungen.

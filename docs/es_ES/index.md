@@ -499,26 +499,26 @@ El dispositivo Sonoff debe tener el firmware 3.3.0 o superior, la aplicación de
 
 Para el firmware de 3.5.0, el procedimiento es más simple y se detalla [aquí en el foro](https://community.jeedom.com/t/sonoff-diy-et-wifilightv2-en-firmware-3-5-0/48060).
 
-# SonOff Ewelink y Cloud
+# SonOff Ewelink y Nube
 
-Este procedimiento automatiza la creación de la mayoría de los dispositivos Ewelink y Sonoff. Sin embargo, el acceso a los periféricos sigue siendo local. El dispositivo debe tener el firmware 3.0.1 o superior, la aplicación Ewelink le permite actualizar el firmware.
+Este procedimiento automatiza la creación de la mayoría de los dispositivos Ewelink y Sonoff. Sin embargo, el acceso a los dispositivos sigue siendo local. El dispositivo debe tener el firmware 3.0.1 o superior, la aplicación Ewelink puede actualizar el firmware.
 
 ## Configuración del complemento
 
-En la configuración del complemento, ingrese el inicio de sesión (solo dirección de correo electrónico) y la contraseña para conectarse a la aplicación Ewelink y guarde. Luego seleccione: Ewelink Ir a inclusión. Los dispositivos se crean automáticamente.
+En la configuración del complemento, ingrese el inicio de sesión (solo la dirección de correo electrónico) y la contraseña para conectarse a la aplicación Ewelink y guardar. Luego seleccione: Ewelink Cambiar a inclusión. Los dispositivos se crean automáticamente.
 
-Si el complemento no encuentra la dirección IP local, realice la conexión entre la dirección mac y la dirección IP proporcionada en la configuración del dispositivo de la aplicación Tuya y su enrutador y modifique la dirección IP. El procedimiento para encontrar la dirección IP utiliza un comando del sistema Linux, si no se puede cargar o el sistema no es compatible, la dirección IP no se puede encontrar automáticamente.
+Si el complemento no encuentra la dirección IP local, haga coincidir la dirección mac con la dirección IP proporcionada en la configuración del dispositivo de la aplicación Tuya y su enrutador y modifique la dirección IP. El procedimiento para encontrar la dirección IP utiliza un comando del sistema Linux, si no se puede cargar o si el sistema no es compatible, la dirección IP no se puede encontrar automáticamente.
 
-Esta parte del complemento requiere el lanzamiento de dependencias.
+Esta parte del complemento requiere que se inicien las dependencias.
 
-De forma predeterminada, el complemento elige sonoff basic, puede cambiar el subtipo sin perder la ApiKey y el deviceID.
+Para la mayoría de los dispositivos sonoff, se encuentra el subtipo, en otros casos, el complemento elige sonoff basic, puede cambiar el subtipo sin perder la ApiKey y el ID del dispositivo.
 
 Si ya existe un dispositivo con el mismo ID de dispositivo, no se realizará la inclusión.
 
 ### Observaciones:
-- algunos dispositivos no se crean (la nube Ewelink no proporciona los datos)
-- Se integrarán dispositivos puramente en la nube, pero el complemento no podrá acceder a ellos
-- Si no se encontró la dirección IP porque el dispositivo no está conectado, déle la dirección: 0.0.0.0, conéctelo y reinicie el procedimiento de inclusión.
+- algunos dispositivos no se crean (la nube de Ewelink no proporciona los datos)
+- los dispositivos de nube pura se integrarán pero el complemento no podrá acceder a ellos
+- si no se encontró la dirección IP porque el periférico no está conectado, dale la dirección: 0.0.0.0, conéctalo y reinicia el procedimiento de inclusión.
 
 ## APiKey DeviceID
 
@@ -537,7 +537,8 @@ Muchas marcas son compatibles, incluido Sonoff. Los productos probados son los s
 - Atenuador inteligente Sonoff D1
 - Sensor de temperatura Sonoff TH10/1H16. Nueva configuración para firmware> = 3.4 con ON/OFF OK
 - Sonoff básico,RF,POW,Mini
-- Sonoff Dual
+- Sonoff Dual R2
+- Sonoff Dual R3 (la recuperación del consumo y la configuración del motor deben probarse, la configuración del motor no está completamente implementada)
 - Sonoff 4CH/4CH PRO
 - Sonoff Touch
 - Sonoff S20/S26
@@ -565,6 +566,7 @@ y dar en el [foro](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewel
 # Tuya Smartlife y Cloud Tuya
 
 Este procedimiento automatiza la creación de la mayoría de los dispositivos Tuya y Tuya / Zigbee. Sin embargo, el acceso a los periféricos sigue siendo local.
+
 ## Configuración de la plataforma Tuya
 
 Siga esto primero y [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) vaya a la pestaña "Overview" para recuperar: Access ID et Access Secret. En la configuración del complemento, ingrese estos 2 parámetros en la parte Tuya y guarde, luego seleccione: Tuya Ir a inclusión. Los dispositivos se crean automáticamente.
@@ -589,7 +591,7 @@ Si ya existe un dispositivo con el mismo devId, la inclusión no ocurrirá.
 - si el procedimiento automático no funciona, vaya a [modo de aprendizaje del dispositivo](./tuya#tocAnchor-1-12-7)
 y actuar solo en los botones correspondientes de la aplicación Tuya Smartlife. Si se utilizan otros botones, el complemento creará duplicados de los pedidos creados a través de la nube Tuya.
 - en general, los pedidos se pueden crear manualmente o en modo de aprendizaje
-- el mínimo y el máximo de un valor numérico se informan desde la nube. El complemento calibra la información y los comandos numéricos de 0 a 100. Según sea necesario, modifique los parámetros #slider# y #value#, así como los valores mínimo y máximo de Jeedom.
+- el mínimo y el máximo de un valor numérico se cargan desde la nube. Según sea necesario, modifique los parámetros #slider# y #value#, así como el mínimo y el máximo de Jeedom. 
 
 ### Participación en la mejora de esta parte:
 Puedes ayudar a mejorar la creación automática proporcionando la mayor cantidad de información posible: el Json de la nube Tuya, los cambios realizados, los registros o cualquier comentario relevante.
