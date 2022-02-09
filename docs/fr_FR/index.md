@@ -71,13 +71,14 @@ Produits pouvant être compatibles et non garantis :
 -   TP-Link LB100/110/120/130 : ampoules avec retour d’état !
 -   Lampe Extel Meli avec retour d'état !
 -   Xiaomi Philips : Lampe bureau, ampoule et plafonnier avec retour d'état !!!
--   Ampoules, prises, interrupteur, interrupteurs volets, humidificateur, thermostat compatibles Tuya Smartlife app avec retour d'état !!!
+-   Ampoules, prises, interrupteur, interrupteurs volets, humidificateur, thermostat compatibles Tuya Smartlife app avec retour d'état !!
 -   Prises électriques TP-link HS100 HS110 avec retour d'état !!
 -   Contrôleurs de pixel strip leds compatible Magic home avec retour d'état !
--	Périphériques contrôlés par l'appli Ewelink dont les Sonoff en mode LAN avec retour d'état !!!
--	Passerelles wifi (dont Lidl) utilisant le protocole Tuya pour les périphériques Zigbee !!!
--   Périphériques Meross !!!
+-	Périphériques contrôlés par l'appli Ewelink dont les Sonoff en mode LAN avec retour d'état !!
+-	Passerelles wifi (dont Lidl) utilisant le protocole Tuya pour les périphériques Zigbee !!
+-   Périphériques Meross !!
 -	Produits Wiz!!
+-   Tapo !!
 
 
 Pour ces derniers contrôleurs ou périphériques wifi, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin. Certains produits particuliers peuvent ne pas être compatibles.
@@ -269,6 +270,7 @@ Pour les périphériques :
  - Wiz
  - myStrom
  - Govee
+ - Tapo
 
 Le plugin interroge régulièrement le périphérique pour connaitre son état. Le délai pour que Jeedom connaisse l'état peut dépasser 1 minute.
 
