@@ -75,6 +75,7 @@ Productos que pueden ser compatibles y no garantizados:
 - Pasarelas Wifi (incluido Lidl) usando el protocolo Tuya para dispositivos Zigbee !!!
 - Periféricos Meross !!!
 - Productos Wiz !!
+- Tapo !!
 
 
 Para estos últimos controladores o periféricos wifi, el protocolo de intercambio no proviene directamente del fabricante, que por lo tanto puede modificarlo en cualquier momento. Existen varias versiones en el mercado que no son todas compatibles con el plugin. Es posible que algunos productos en particular no sean compatibles.
@@ -265,6 +266,7 @@ Para periféricos:
  - Wiz
  - myStrom
  - Govee
+ - Tapo
 
 El plugin sondea periódicamente el dispositivo para conocer su estado. El retraso para que Jeedom conozca el estado puede exceder 1 minuto.
 

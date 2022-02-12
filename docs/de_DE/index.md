@@ -77,6 +77,7 @@ Produkte, die möglicherweise kompatibel und nicht garantiert sind:
 - Wifi-Gateways (einschließlich Lidl) mit dem Tuya-Protokoll für Zigbee-Geräte !!!
 - Meross-Peripheriegeräte !!!
 - Wiz-Produkte !!
+- Tapo !!
 
 
 Bei letzteren Controllern oder Wifi-Geräten kommt das Austauschprotokoll nicht direkt vom Hersteller, der es daher jederzeit ändern kann. Es gibt mehrere Versionen auf dem Markt, die nicht alle mit dem Plugin kompatibel sind. Einige bestimmte Produkte sind möglicherweise nicht kompatibel.
@@ -267,6 +268,7 @@ Für Peripheriegeräte:
  - Zauberer
  - myStrom
  - Govee
+ - Tapo
 
 Das Plugin fragt das Gerät regelmäßig ab, um seinen Status zu erfahren. Die Verzögerung, bis Jeedom den Status erkennt, kann 1 Minute überschreiten.
 

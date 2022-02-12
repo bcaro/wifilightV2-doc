@@ -77,7 +77,8 @@ Products that may be compatible and not guaranteed:
 - Peripherals controlled by the Ewelink app including Sonoffs in LAN mode with status feedback !!!
 - Wifi gateways (including Lidl) using the Tuya protocol for Zigbee devices !!!
 - Meross peripherals !!!
-- Wiz Products !! 
+- Wiz Products !!
+- Tapo !!
 
 
 For these latter wifi controllers or peripherals, the exchange protocol does not come directly from the manufacturer who can therefore modify it at any time. Several versions exist on the market which are not all compatible with the plugin. Some particular products may not be compatible.
@@ -273,6 +274,7 @@ For peripherals:
  - Wiz
  - myStrom
  - Govee
+ - Tapo
 
 The plugin regularly polls the device to know its status. The delay for Jeedom to know the status can exceed 1 minute.
 
