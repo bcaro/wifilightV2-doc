@@ -455,7 +455,8 @@ Los periféricos compatibles son:
 - tomado con consumo MSS310: el consumo solo aumenta cada minuto
 - Buje Meross MSH300
 - MTS100 / 100H: cabezales termostáticos conectados al buje
-- MSG100 (garaje): se ofrece en versión beta sin probar e incompleta
+- MSG100 (garaje): solamente V2
+- MSL100, MSL120, MSL320
 - los sensores de temperatura conectados al concentrador podrían ser compatibles (no probados)
 
 Debe crear un dispositivo en el plugin para cada salida controlada y asignarle un canal de 1 an correspondiente a las n salidas. El canal 0 se utiliza para operar todas las salidas al mismo tiempo.

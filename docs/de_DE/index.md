@@ -458,6 +458,7 @@ Kompatible Peripheriegeräte sind:
 - Meross MSH300-Hub
 - MTS100/100H: Thermostatköpfe mit der Nabe verbunden
 - MSG100 (Garage): funktioniert korrekt in V2
+- MSL100, MSL120, MSL320
 - die am Hub angeschlossenen Temperatursensoren könnten kompatibel sein (nicht getestet)
 
 Sie müssen für jeden gesteuerten Ausgang ein Gerät im Plugin erstellen und diesem einen Kanal von 1 bis n entsprechend den n Ausgängen zuweisen. Kanal 0 wird verwendet, um alle Ausgänge gleichzeitig zu betreiben.

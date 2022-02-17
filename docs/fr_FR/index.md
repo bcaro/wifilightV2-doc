@@ -463,6 +463,7 @@ Les périphériques compatibles sont :
 -   Hub Meross MSH300
 -   MTS100/100H : têtes thermostatiques reliées au hub
 -   MSG100 (garage) : fonctionne correctement en V2
+-   MSL100, MSL120, MSL320
 -   les capteurs de températures connectés au hub pourraient être compatibles (non testé)
 
 Il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondant aux n prises. Le canal 0 est utilisé pour actionner toutes les prises en même temps.

@@ -464,7 +464,8 @@ Compatible peripherals are:
 - taken with MSS310 consumption: the consumption only goes up every minute
 - Meross MSH300 Hub
 - MTS100 / 100H: thermostatic heads connected to the hub
-- MSG100 (garage): offered in untested and incomplete beta
+- MSG100 (garage): V2 only
+- MSL100, MSL120, MSL320
 - the temperature sensors connected to the hub could be compatible (not tested)
 
 You must create a device in the plugin for each controlled outlet and assign it a channel from 1 to n corresponding to the n outlets. Channel 0 is used to operate all outlets at the same time.
