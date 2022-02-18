@@ -643,7 +643,7 @@ Créer un effet avec l'appli du NanoLeaf et lui donner un nom. Créer une comman
 
 # Tapo
 
-Compatible L510,L530,P100,P110 (le retour de la conso n'est pas implanté, en attente de retours des utilsiateurs)
+Compatible L510,L530,P100,P110 (le retour de la conso n'est pas implanté, en attente de retours des utilisateurs)
 
 
 
