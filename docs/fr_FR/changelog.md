@@ -16,7 +16,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 
 1.86 - 2022-02-10 (Jeedom V4.2)
 
-- Tapo : intégration des prises et lampes de TP-Link
+- Tapo : intégration des prises et lampes de TP-Link (110 en beta)
 - adaptation aux changements de Jeedom V4.2.
 
 1.85 - 2022-01-29 (Jeedom V4.2)
