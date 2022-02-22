@@ -12,7 +12,9 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 
 1.87 - 2022-02-17 beta (Jeedom V4.2)
 - Meross : intégration des lampes blanches et couleur (testé avec MSL100, MSL120, MSL320 devrait fonctionner avec les autres lampes)
-- Ajout du Mode des lampes couleurs RGBW : couleur ou blanc
+- Meross : correctif module MRS100 volets roulants
+- Ajout du Mode pour les lampes couleurs RGBW : couleur ou blanc
+- sortie du mode beta du contrôleur SPI LED Shop SP108
 
 1.86 - 2022-02-10 (Jeedom V4.2)
 
