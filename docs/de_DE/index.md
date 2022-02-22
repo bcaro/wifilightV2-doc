@@ -632,6 +632,10 @@ Drücken Sie den Nanoleaf-Power-Button für 5-7 s und drücken Sie den getKey-Be
 
 Erstellen Sie einen Effekt mit der NanoLeaf-App und geben Sie ihm einen Namen. Erstellen Sie eine Aktion/einen Standardbefehl in der Liste der Gerätebefehle im Plugin. Geben Sie den Namen in Parameter ein. Geben Sie dann eine eindeutige Kennung und einen Namen ein, diese können mit dem Namen des Befehls identisch sein.
 
+# Tapo
+
+Kompatible L510,L530,P100,P110
+
 # Govee
 
 Kompatible Wifi-Geräte sind:

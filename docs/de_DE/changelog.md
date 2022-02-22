@@ -10,9 +10,17 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.87 - 2022-02-22 beta (Jeedom V4.2)
+- Meross : intégration des lampes blanches et couleur (testé avec MSL100, MSL120, MSL320 devrait fonctionner avec les autres lampes)
+- Meross : correctif des modules qui ne fonctionnaient plus après changement de firmware : MRS100 volets roulants, Plug conso V1 et Hub thermostat. Nécessite de sauvegarder l'équipement, sinon le refaire.
+- Tapo : identifiants au compte Tapo reportés dans la config du plugin : il faut les renseigner
+- Tapo P110 : ajout de l'énergie et temps d'usage
+- Ajout du Mode pour les lampes couleurs RGBW : couleur ou blanc
+- Sortie du mode beta du contrôleur SPI LED Shop SP108
+
 1.86 - 2022-02-10 (Jeedom V4.2)
 
-- Tapo : intégration des prises et lampes de TP-Link
+- Tapo : intégration des prises et lampes de TP-Link (110 en beta à tester)
 - adaptation aux changements de Jeedom V4.2.
 
 1.85 - 2022-01-29 (Jeedom V4.2)

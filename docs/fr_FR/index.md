@@ -78,7 +78,7 @@ Produits pouvant être compatibles et non garantis :
 -	Passerelles wifi (dont Lidl) utilisant le protocole Tuya pour les périphériques Zigbee !!
 -   Périphériques Meross !!
 -	Produits Wiz !!
--   Tapo !!
+-   Tapo !
 
 
 Pour ces derniers contrôleurs ou périphériques wifi, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin. Certains produits particuliers peuvent ne pas être compatibles.
@@ -643,7 +643,7 @@ Créer un effet avec l'appli du NanoLeaf et lui donner un nom. Créer une comman
 
 # Tapo
 
-Compatible L510,L530,P100,P110 (le retour de la conso n'est pas implanté, en attente de retours des utilisateurs)
+Compatible L510,L530,P100,P110
 
 
 

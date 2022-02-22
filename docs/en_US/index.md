@@ -640,6 +640,9 @@ Press the Nanoleaf power button for 5-7 s and press the getKey command of the pl
 ## Custom effects
 
 Create an effect with the NanoLeaf app and give it a name. Create an action / default command in the list of device commands in the plugin. Put the name in parameters. Then give a unique identifier and a name, they can be identical to the name of the command.
+# Tapo
+
+Compatible L510,L530,P100,P110
 
 # Govee
 

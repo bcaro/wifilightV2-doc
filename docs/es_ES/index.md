@@ -632,6 +632,11 @@ Presione el botón de encendido de Nanoleaf durante 5-7 sy presione el comando g
 
 Crea un efecto con la aplicación NanoLeaf y dale un nombre. Cree una acción / comando predeterminado en la lista de comandos de dispositivo en el plugin. Pon el nombre en los parámetros. Luego dé un identificador único y un nombre, pueden ser idénticos al nombre del comando.
 
+# Tapo
+
+Compatible L510,L530,P100,P110
+
+
 # Govee
 
 Los dispositivos wifi compatibles son:
