@@ -469,7 +469,6 @@ Les périphériques compatibles sont :
 Il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondant aux n prises. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
 Attention : certaines prises anciennes ont un comportement différent, utiliser la version V1 dans le sous type.
 
-**Attention ! les MRS100 en firmware  2.1.4 ne fonctionnent plus avec le plugin.**
 
 ## type "Meross" pour firmware <2.2.2
 Ne pas créer de nouveaux périphériques avec cette option, utiliser de préférence Meross V2, ce type est présent pour assurer la compatibilité avec les périphériques configurés avant l'arrivée de la V2. Aucune aide ne sera donnée pour trouver les paramètres nécessaires à ce type.
