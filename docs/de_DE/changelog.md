@@ -13,9 +13,13 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 1.87 - 2022-02-22 beta (Jeedom V4.2)
 - Meross : intégration des lampes blanches et couleur (testé avec MSL100, MSL120, MSL320 devrait fonctionner avec les autres lampes)
 - Meross : correctif des modules qui ne fonctionnaient plus après changement de firmware : MRS100 volets roulants, Plug conso V1 et Hub thermostat. Nécessite de sauvegarder l'équipement, sinon le refaire.
-- Tapo : identifiants au compte Tapo reportés dans la config du plugin : il faut les renseigner
-- Tapo P110 : ajout de l'énergie et temps d'usage
-- Produits TP-link (Tapo et Kasa) : création automatique via le cloud
+- Cloud TP-link (Tapo et Kasa) : création automatique des périphériques à partir du compte TP-link. Le plugin utlise les mêmes identifiants pour ces deux applis. Les périphériques sont ensuite contrôlés localement.
+- TP-link : rebaptisé Kasa lorsque cette appli est utilisée
+- Kasa (ex TP-link) : refonte complète, plus besoin en V2 de mettre un jeton.
+- Tapo : identifiants au compte TP-link reportés dans la config du plugin : il faut les renseigner
+- Kasa : identifiants au compte TP-link à renseigner dans la config du plugin pour la création automatique
+- Tapo compatible : ampoules L510 L530 L900 L920 et prises P100 P110
+- Kasa compatible : ampoules KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130 et prises HS100 HS110 KP105 KP110
 - Ajout du Mode pour les lampes couleurs RGBW : couleur ou blanc
 - Sortie du mode beta du contrôleur SPI LED Shop SP108
 
