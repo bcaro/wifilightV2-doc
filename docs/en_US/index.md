@@ -436,8 +436,6 @@ Kasa:
 - bulbs KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130
 - HS100 HS110 KP105 KP110 sockets
 
-## Setup
-
 ## TP-Link Cloud Setup
 
 This part of the plugin requires the dependencies to be launched.

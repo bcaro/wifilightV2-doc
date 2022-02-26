@@ -427,7 +427,6 @@ Kasa:
 - Glühlampen KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130
 - HS100 HS110 KP105 KP110 Steckdosen
 
-## Aufstellen
 
 ## TP-Link Cloud-Setup
 

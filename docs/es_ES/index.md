@@ -425,8 +425,6 @@ Kasa:
 - bombillas KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130
 - Tomas HS100 HS110 KP105 KP110
 
-## Configuración
-
 ## Configuración de la nube de TP-Link
 
 Esta parte del complemento requiere que se inicien las dependencias.
