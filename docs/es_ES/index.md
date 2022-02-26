@@ -65,11 +65,11 @@ Productos que pueden ser compatibles y no garantizados:
 -   MagicHome: controlador de tira RGBW/RGBWW y focos  RGBW compatibles con la aplicación MagicHome !
 -   H801: Controlador de tira de RGBW, sin comentarios de estado !!
 -   Arilux AL-C01/02/03/04/06/10: controlador de tira RGB/RGBW/RGBWW, retroalimentación de estado !
--   TP-Link LB100/110/120/130: lamparas con retroalimentación de estado !
+-   Tapo LB100/110/120/130: lamparas con retroalimentación de estado !
 -   Lámpara Extel Meli con retroalimentación de estado !
 -   Xiaomi Philips: lámpara de escritorio, lámpara y lámpara de techo con retroalimentación de estado !!!
 -   Lamparas, enchufes, interruptores, interruptores de obturación, humidificador, termostato compatible con aplicacion Tuya Smartlife con comentarios de estado !!!
--   TP-link HS100 HS110 enchufes eléctricos con retroalimentación de estado !!
+-   Tapo HS100 HS110 enchufes eléctricos con retroalimentación de estado !!
 -   Controladores de tira de píxeles compatibles con Magic Home con retroalimentación de estado !
 -   Periféricos controlados por la aplicación Ewelink, incluidos Sonoffs en modo LAN con comentarios de estado !!!
 - Pasarelas Wifi (incluido Lidl) usando el protocolo Tuya para dispositivos Zigbee !!!
@@ -122,7 +122,7 @@ H810:
 - Los juegos de escenario no son compatibles.
 - Hay diferentes modelos que pueden no ser compatibles con el plugin.
 
-TP-Link:
+Tapo:
 - Los temporizadores no se gestionan.
 - La información de consumo eléctrico no se gestiona para bombillas.
 
@@ -257,7 +257,7 @@ Para periféricos:
  - Magic UFO / Hogar
  - Arilux
  - Wifi 3x0 (parcialmente)
- - TP-Link
+ - Tapo
  - Xiaomi Philips
  - Extel Meli
  - Nanoleaf Aurora
@@ -413,30 +413,37 @@ Tenga en cuenta que el plugin puede tardar hasta 1 minuto en encontrar una lámp
 
 En V1, el estado puede tardar hasta un minuto en volver. 
 
-# TP-Link
+#Tapo & Kasa TP-Link
 
-Los periféricos compatibles son:
-- Lamparas LB 100/110/120/130
-- Zócalos HS110 V1/V2
+Los dispositivos compatibles son:
+
+Tapo:
+- bombillas L510 L530 L900 L920
+- Tomas P100 P110
+
+Kasa:
+- bombillas KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130
+- Tomas HS100 HS110 KP105 KP110
 
 ## Configuración
 
-Nota: algunos dispositivos de la versión 2 no necesitan recuperar un token: deje el campo en blanco en la configuración del dispositivo.
-Desde mediados de 2019, se lanzaron nuevos dispositivos en el protocolo de la versión 2. El protocolo V2 requiere que recupere un token que permita que el plugin se comunique con los dispositivos TP-Link.
+## Configuración de la nube de TP-Link
 
-Para obtener este token, debe capturar los fotogramas intercambiados entre la aplicación Kasa en el teléfono y el dispositivo para agregar el plugin. En Android debes usar Packet Capture.
+Esta parte del complemento requiere que se inicien las dependencias.
 
-El plugin luego le permite extraer el token. Debe copiar el marco recuperado en el campo Parámetros del comando getKey y luego ejecutar este comando. Si el marco es decodificable, el token se mostrará en los registros y en el centro de mensajes (nota: borre el mensaje cada vez que lo lea).
+En la configuración del complemento, ingrese la dirección de correo electrónico y la contraseña para conectarse a la aplicación Kasa o Tapo y guarde. Luego seleccione: Tapo-Kasa Cambiar a inclusión. Los dispositivos se crean automáticamente. Las credenciales son las mismas para Tapo y Kasa.
 
-El marco para poner en "Parámetros" debe tener la siguiente apariencia (el ... reemplaza otros valores):
+Si el complemento no encuentra la dirección IP local, haga coincidir la dirección mac con la dirección IP proporcionada en la configuración del dispositivo de la aplicación Tuya y su enrutador y modifique la dirección IP. El procedimiento para encontrar la dirección IP utiliza un comando del sistema Linux, si no se puede cargar o si el sistema no es compatible, la dirección IP no se puede encontrar automáticamente.
 
-    00 00 00 5f d0 f2 91 fe 90 e4 81 f9 8d af 95 ... 99 bb 81 fa 87 fa 87
+Para los dispositivos en la lista a continuación, se encuentra el subtipo, en otros casos, el complemento elige el Tapo P100, puede cambiar el subtipo sin perder el ID del dispositivo.
 
-Los datos están separados por espacios y representan números hexadecimales que se toman directamente de Packet Capture. En general, la trama comienza con 3 ceros y, aquí, 5f da el tamaño de la trama en hexadecimal, es decir, 95 en decimal.
+Si no se encontró la dirección IP porque el periférico no está conectado, dale la dirección: 0.0.0.0, conéctalo y reinicia el procedimiento de inclusión.
 
-No se brindará ayuda para recuperar la trama de Packet Capure.
+Si ya existe un dispositivo con el mismo ID de dispositivo, no se realizará la inclusión.
 
-Por ahora, solo los enchufes se pueden usar en V2, comuníquese con el autor si tiene bombillas V2.
+A partir de entonces, el control del dispositivo es local.
+
+Nota: Es posible que los enchufes HS100 HS110 KP105 KP110 necesiten usar el protocolo V2, haga la modificación manualmente.
 
 # Xiaomi Philips
 
@@ -631,10 +638,6 @@ Presione el botón de encendido de Nanoleaf durante 5-7 sy presione el comando g
 ## Efectos personalizados
 
 Crea un efecto con la aplicación NanoLeaf y dale un nombre. Cree una acción / comando predeterminado en la lista de comandos de dispositivo en el plugin. Pon el nombre en los parámetros. Luego dé un identificador único y un nombre, pueden ser idénticos al nombre del comando.
-
-# Tapo
-
-Compatible L510,L530,P100,P110
 
 
 # Govee

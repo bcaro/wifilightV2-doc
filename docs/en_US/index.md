@@ -68,11 +68,11 @@ Products that may be compatible and not guaranteed:
 - MagicHome: RGBW / RGBWW strip-led controller and RGBW bulbs / spots compatible with the MagicHome app!
 - H801: RGBW strip-led controller, no status feedback !!
 - Arilux AL-C01 / 02/03/04/06/10: RGB / RGBW / RGBWW strip-led controller, status feedback!
-- TP-Link LB100 / 110/120/130: bulbs with status feedback!
+- Tapo LB100 / 110/120/130: bulbs with status feedback!
 - Extel Meli lamp with status feedback!
 - Xiaomi Philips: Desk lamp, bulb and ceiling light with status feedback !!!
 - Bulbs, sockets, switch, shutter switches, humidifier, thermostat compatible with Tuya Smartlife with status feedback !!!
-- TP-link HS100 HS110 electrical outlets with status feedback !!
+- Tapo HS100 HS110 electrical outlets with status feedback !!
 - Magic home compatible pixel strip led controllers with status feedback!
 - Peripherals controlled by the Ewelink app including Sonoffs in LAN mode with status feedback !!!
 - Wifi gateways (including Lidl) using the Tuya protocol for Zigbee devices !!!
@@ -125,7 +125,7 @@ H810:
 - stage games are not supported.
 - There are different models which may not be compatible with the plugin.
 
-TP-Link:
+Tapo:
 - The timers are not managed.
 - Electricity consumption information is not managed for bulbs.
 
@@ -424,31 +424,37 @@ Note that the plugin can take up to 1 minute to find a light bulb and 4 minutes 
 
 In V1, it can take up to a minute for the status to return.
 
-# TP-Link
+# Tapo & Kasa TP-Link
 
-Compatible peripherals are:
-- LB 100/110/120/130 bulbs
-- HS110 V1/V2 sockets
+Compatible devices are:
 
-## Configuration
+Tapo:
+- bulbs L510 L530 L900 L920
+- P100 P110 sockets
 
-Note: some version 2 devices do not need to retrieve a token: leave the field blank in the device configuration.
-Since mid 2019, new devices have been released in version 2 protocol. The V2 protocol requires you to retrieve a token allowing the plugin to communicate with TP-Link devices.
+Kasa:
+- bulbs KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130
+- HS100 HS110 KP105 KP110 sockets
 
-To obtain this token, you must capture the frames exchanged between the Kasa app on the phone and the device to add in the plugin. On Android you must use Packet Capture.
+## Setup
 
-The plugin then allows you to extract the token. You must copy the retrieved frame into the Parameters field of the getKey command and then execute this command. If the frame is decodable, the token will be displayed in the logs and in the message center (note: delete the message each time after reading).
+## TP-Link Cloud Setup
 
-The frame to put in "Parameters" must have the following appearance (the ... replace other values):
+This part of the plugin requires the dependencies to be launched.
 
-    00 00 00 5f d0 f2 91 fe 90 e4 81 f9 8d af 95 ... 99 bb 81 fa 87 fa 87
+In the plugin configuration, fill in the email address and password for connecting to the Kasa or Tapo app and save. Then select: Tapo-Kasa Switch to inclusion. Devices are created automatically. The credentials are the same for Tapo and Kasa.
 
-The data is separated by spaces and represents hexadecimal numbers that are taken directly from Packet Capture. In general, the frame starts with 3 zeros then, here, 5f gives the size of the frame in hexadecimal, ie 95 in decimal.
+If the local IP address is not found by the plugin, match the mac address with the IP address given in the device settings of the Tuya application and your router and modify the IP address. The procedure to find the IP address uses a Linux system command, if it cannot be loaded or if the system is not compatible, the IP address cannot be found automatically.
 
-No help will be given to retrieve the frame from Packet Capure.
+For the devices in the list below, the subtype is found, in other cases the Tapo P100 is chosen by the plugin, you can change the subtype without losing the deviceId.
 
-For now only the sockets can be used in V2, contact the author if you have V2 bulbs.
+If the IP address was not found because the peripheral is not connected, give it the address: 0.0.0.0 , connect it and restart the inclusion procedure.
 
+If a device with the same deviceID already exists, the inclusion will not occur.
+
+Thereafter, device control is local.
+
+Note: HS100 HS110 KP105 KP110 sockets may need to use the V2 protocol, make the modification manually.
 # Xiaomi Philips
 
 It is essential to recover a token allowing the plugin to communicate with Xiaomi Philips devices.
@@ -640,9 +646,6 @@ Press the Nanoleaf power button for 5-7 s and press the getKey command of the pl
 ## Custom effects
 
 Create an effect with the NanoLeaf app and give it a name. Create an action / default command in the list of device commands in the plugin. Put the name in parameters. Then give a unique identifier and a name, they can be identical to the name of the command.
-# Tapo
-
-Compatible L510,L530,P100,P110
 
 # Govee
 

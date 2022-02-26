@@ -67,11 +67,11 @@ Produkte, die möglicherweise kompatibel und nicht garantiert sind:
 - MagicHome: RGBW/RGBWW-Strip-LED-Controller und RGBW-Lampen/-Spots, die mit der MagicHome-App kompatibel sind!
 - H801: RGBW-Strip-LED-Controller, keine Statusrückmeldung !!
 - Arilux AL-C01/02.03.04.06.10: RGB/RGBW/RGBWW Strip-LED-Controller, Statusrückmeldung!
-- TP-Link LB100/110/120/130: Leuchtmittel mit Statusrückmeldung!
+- Kasa LB100/110/120/130: Leuchtmittel mit Statusrückmeldung!
 - Extel Meli Lampe mit Statusrückmeldung!
 - Xiaomi Philips: Schreibtischlampe, Lampeb und Deckenleuchte mit Statusrückmeldung !!!
 - Lampen, Steckdosen, Schalter, Jalousieschalter, Luftbefeuchter, Thermostat kompatibel mit Tuya Smartlife App mit Statusrückmeldung !!!
-- TP-link HS100 HS110 Steckdosen mit Statusrückmeldung !!
+- Kasa HS100 HS110 Steckdosen mit Statusrückmeldung !!
 - Magic Home-kompatible Pixel-Strip-LED-Controller mit Statusrückmeldung!
 - Per Ewelink-App gesteuerte Peripherie einschließlich Sonoffs im LAN-Modus mit Statusrückmeldung !!!
 - Wifi-Gateways (einschließlich Lidl) mit dem Tuya-Protokoll für Zigbee-Geräte !!!
@@ -123,7 +123,7 @@ H810:
 - Bühnenspiele werden nicht unterstützt.
 - Es gibt verschiedene Modelle, die möglicherweise nicht mit dem Plugin kompatibel sind.
 
-TP-Link:
+Kasa:
 - Die Timer werden nicht verwaltet.
 - Die Informationen zum Stromverbrauch werden für Lampen nicht verwaltet.
 
@@ -259,7 +259,7 @@ Für Peripheriegeräte:
  - Magisches UFO/Zuhause
  - Arilux
  - Wifi 3x0 (teilweise)
- - TP-Link
+ - Kasa
  - Xiaomi Philips
  - Extel Meli
  - Nanoleaf Aurora
@@ -415,30 +415,37 @@ Beachten Sie, dass es bis zu 1 Minute dauern kann, bis das Plugin eine Lampe fin
 
 In V1 kann die Statusrückgabe bis zu einer Minute dauern.
 
-# TP-Link
+# Tapo & Kasa TP-Link
 
-Kompatible Peripheriegeräte sind:
-- LB 100/110/120/130 Lampen
-- HS110 V1/V2 Buchsen
+Kompatible Geräte sind:
 
-## Aufbau
+Tapo:
+- Birnen L510 L530 L900 L920
+- P100 P110 Steckdosen
 
-Hinweis: Einige Geräte der Version 2 müssen kein Token abrufen: Lassen Sie das Feld in der Gerätekonfiguration leer.
-Seit Mitte 2019 gibt es neue Geräte im Protokoll der Version 2. Das V2-Protokoll erfordert, dass Sie einen Token abrufen, der es dem Plugin ermöglicht, mit TP-Link-Geräten zu kommunizieren.
+Kasa:
+- Glühlampen KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130
+- HS100 HS110 KP105 KP110 Steckdosen
 
-Um dieses Token zu erhalten, müssen Sie die Frames erfassen, die zwischen der Kasa-App auf dem Telefon und dem Gerät ausgetauscht werden, um das Plugin hinzuzufügen. Auf Android müssen Sie Packet Capture verwenden.
+## Aufstellen
 
-Das Plugin ermöglicht es Ihnen dann, das Token zu extrahieren. Sie müssen den abgerufenen Frame in das Parameterfeld des getKey-Befehls kopieren und dann diesen Befehl ausführen. Wenn der Rahmen dekodierbar ist, wird der Token in den Protokollen und im Nachrichtencenter angezeigt (Hinweis: Nachricht jedes Mal nach dem Lesen löschen).
+## TP-Link Cloud-Setup
 
-Der in "Parameter" einzugebende Rahmen muss folgendes Aussehen haben (die ... ersetzen andere Werte):
+Dieser Teil des Plugins erfordert, dass die Abhängigkeiten gestartet werden.
 
-    00 00 00 5f d0 f2 91 fe 90 e4 81 f9 8d af 95 ... 99 bb 81 fa 87 fa 87
+Geben Sie in der Konfiguration des Plugins die E-Mail-Adresse und das Passwort für die Verbindung zur Kasa- oder Tapo-App ein und speichern Sie. Wählen Sie dann: Tapo-Kasa Wechseln Sie zu Inklusion. Geräte werden automatisch erstellt. Die Anmeldeinformationen sind für Tapo und Kasa gleich.
 
-Die Daten sind durch Leerzeichen getrennt und stellen hexadezimale Zahlen dar, die direkt von Packet Capture stammen. Im Allgemeinen beginnt der Rahmen mit 3 Nullen, hier gibt 5f die Größe des Rahmens in hexadezimaler Form an, 95 in dezimaler Form.
+Wenn die lokale IP-Adresse vom Plugin nicht gefunden wird, gleichen Sie die MAC-Adresse mit der IP-Adresse ab, die in den Geräteeinstellungen der Tuya-Anwendung und Ihres Routers angegeben ist, und ändern Sie die IP-Adresse. Das Verfahren zum Ermitteln der IP-Adresse verwendet einen Linux-Systembefehl, kann dieser nicht geladen werden oder ist das System nicht kompatibel, kann die IP-Adresse nicht automatisch ermittelt werden.
 
-Beim Abrufen des Frames von Packet Capure wird keine Hilfe geleistet.
+Für die Geräte in der Liste unten wird der Subtyp gefunden, in anderen Fällen wird der Tapo P100 vom Plugin ausgewählt, Sie können den Subtyp ändern, ohne die Geräte-ID zu verlieren.
 
-Derzeit können nur die Fassungen in V2 verwendet werden, wenden Sie sich an den Autor, wenn Sie V2-Lampen haben.
+Wenn die IP-Adresse nicht gefunden wurde, weil das Peripheriegerät nicht verbunden ist, geben Sie ihm die Adresse: 0.0.0.0 , verbinden Sie es und starten Sie den Aufnahmevorgang erneut.
+
+Wenn bereits ein Gerät mit derselben Geräte-ID vorhanden ist, erfolgt die Aufnahme nicht.
+
+Danach ist die Gerätesteuerung lokal.
+
+Hinweis: HS100 HS110 KP105 KP110 Sockets müssen möglicherweise das V2-Protokoll verwenden, nehmen Sie die Änderung manuell vor.
 
 # Xiaomi Philips
 
@@ -632,9 +639,6 @@ Drücken Sie den Nanoleaf-Power-Button für 5-7 s und drücken Sie den getKey-Be
 
 Erstellen Sie einen Effekt mit der NanoLeaf-App und geben Sie ihm einen Namen. Erstellen Sie eine Aktion/einen Standardbefehl in der Liste der Gerätebefehle im Plugin. Geben Sie den Namen in Parameter ein. Geben Sie dann eine eindeutige Kennung und einen Namen ein, diese können mit dem Namen des Befehls identisch sein.
 
-# Tapo
-
-Kompatible L510,L530,P100,P110
 
 # Govee
 
