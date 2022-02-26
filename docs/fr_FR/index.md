@@ -68,11 +68,11 @@ Produits pouvant être compatibles et non garantis :
 -   MagicHome : RGBW/RGBWW strip-led contrôleur et ampoules/spots RGBW compatibles avec l'appli MagicHome !
 -   H801 : RGBW strip-led contrôleur, pas de retour d’état !!
 -   Arilux AL-C01/02/03/04/06/10 : RGB/RGBW/RGBWW strip-led contrôleur, retour d’état !
--   TP-Link LB100/110/120/130 : ampoules avec retour d’état !
+-   Kasa LB100/110/120/130 : ampoules avec retour d’état !
 -   Lampe Extel Meli avec retour d'état !
 -   Xiaomi Philips : Lampe bureau, ampoule et plafonnier avec retour d'état !!!
 -   Ampoules, prises, interrupteur, interrupteurs volets, humidificateur, thermostat compatibles Tuya Smartlife app avec retour d'état !!
--   Prises électriques TP-link HS100 HS110 avec retour d'état !!
+-   Prises électriques Kasa HS100 HS110 avec retour d'état !!
 -   Contrôleurs de pixel strip leds compatible Magic home avec retour d'état !
 -	Périphériques contrôlés par l'appli Ewelink dont les Sonoff en mode LAN avec retour d'état !!
 -	Passerelles wifi (dont Lidl) utilisant le protocole Tuya pour les périphériques Zigbee !!
@@ -125,7 +125,7 @@ H810 :
 -   les jeux de scène ne sont pas gérés.
 -   Il existe différents modèles qui peuvent ne pas être compatibles avec le plugin.
 
-TP-Link :
+Kasa :
 -   Les timers ne sont pas gérés.
 -   Les informations de consommation électrique ne sont pas gérées pour les ampoules.
 
@@ -420,30 +420,38 @@ Noter que le plugin peut mettre jusqu'à 1 minute pour trouver une ampoule et 4 
 
 En V1, le retour d'état peut prendre jusqu'à une minute.
 
-# TP-Link
+# Tapo & Kasa TP-Link 
 
 Les périphériques compatibles sont :
--   ampoules LB 100/110/120/130
--   prises HS110 V1/V2
+
+Tapo :
+- ampoules L510 L530 L900 L920
+- P100 P110
+
+Kasa :
+-   ampoules KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130
+-   prises HS100 HS110 KP105 KP110
 
 ## Configuration
 
-Note : certains périphériques en version 2 ne nécessitent pas de récupérer un jeton : laisser le champ vide dans la configuration du périphérique.
-Depuis mi 2019, de nouveaux périphériques sortent en protocole version 2. Le protocole V2 nécessite de récupérer un jeton (token) permettant au plugin de dialoguer avec les périphériques TP-Link.
+## Configuration du cloud TP-Link
 
-Pour obtenir ce jeton, il faut capturer les trames échangées entre l'appli Kasa sur le téléphone et le périphérique à ajouter dans le plugin. Sous Android il faut utiliser Packet Capture.
+Cette partie du plugin nécessite le lancement des dépendances.
 
-Le plugin permet ensuite d'extraire le jeton. Il faut copier la trame récupérée dans le champ Paramètres de la commande getKey puis exécuter cette commande. Si la trame est décodable, le jeton sera affiché dans les logs et dans le centre de messages (attention : effacer à chaque fois le message après lecture).
+Dans la configuration du plugin, renseigner l'adresse mail et le mot de passe de connexion à l'appli Kasa ou Tapo et sauvegarder. Ensuite, sélectionner : Tapo-Kasa Passer en inclusion. Les périphériques sont créés automatiquement. Les identifiants sont les mêmes pour Tapo et Kasa.
 
-La trame à mettre dans "Paramètres" doit avoir l'allure suivante (les ... remplacent d'autres valeurs) :
+Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, si elle ne peut être chargée ou si le système n'est pas compatible, l'adresse IP ne pourra pas être trouvée automatiquement.
 
-    00 00 00 5f d0 f2 91 fe 90 e4 81 f9 8d af 95 ... 99 bb 81 fa 87 fa 87
+Pour les périphériques de la liste ci-dessous, le sous-type est trouvé, dans les autres cas le Tapo P100 est choisi par le plugin, vous pouvez changer le sous-type sans perdre le deviceId.
 
-Les données sont séparées par des espaces et représentent des nombres hexadécimaux qui sont issus directement de Packet Capture. En général, la trame commence par 3 zéros puis, ici, 5f donne la taille de la trame en hexadécimal soit 95 en décimal.
+Si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
 
-Aucune aide ne sera donnée pour récupérer la trame à partir de Packet Capure.
+Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas.
 
-Pour l'instant seules les prises sont utilisables en V2, contacter l'auteur si vous avez des ampoules en V2.
+Par la suite, le contrôle des périphériques est local.
+
+Note : Les prises HS100 HS110 KP105 KP110 peuvent nécessiter d'utilier le protocole V2, faire la modification manuellement.
+
 
 # Xiaomi Philips
 
@@ -639,12 +647,6 @@ Appuyer pendant 5-7 s sur le bouton power du Nanoleaf et appuyer sur la commande
 ## Effets custom
 
 Créer un effet avec l'appli du NanoLeaf et lui donner un nom. Créer une commande action/défaut dans la liste des commandes du périphérique dans le plugin. Mettre le nom dans paramètres. Donner ensuite un identifiant unique et un nom, ils peuvent être identiques au nom de la commande.
-
-# Tapo
-
-Compatible L510,L530,P100,P110
-
-
 
 # Govee
 
