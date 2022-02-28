@@ -459,34 +459,41 @@ It is essential to recover a token allowing the plugin to communicate with Xiaom
 
 The procedure is complex and requires several manipulations. Do a search on the web with the keyword: Xiaomi token or on the forum [here](https://community.jeedom.com/t/xiaomi-philips-et-wifilightv2/48064) .
 
-# Meross
+#Meross
 
-Compatible peripherals are:
-- sockets MSS210HK MSS210 MSS425EHK MSS425FHK MSS620
-- switch MSS71
-- MRS100 roller shutter control (non-functional status feedback and positioning)
-- taken with MSS310 consumption: the consumption only goes up every minute
-- Meross MSH300 Hub
-- MTS100 / 100H: thermostatic heads connected to the hub
-- MSG100 (garage): V2 only
-- MSL100, MSL120, MSL320
-- the temperature sensors connected to the hub could be compatible (not tested)
+Compatible devices are:
+- single sockets: MSS110 MSS210
+- single sockets + consumption: MSS310 (consumption only goes up every minute)
+- MSS120 MSS620 double sockets
+- MSS420 quad sockets
+- MSS425 quintuple sockets
+- color lamps: MSL120 BR30
+- MSL420 MSL430 MSL450 lamps
+- dimmer lamps: MSL100
+- strip led: MSL320 MSL320 pro
+- hub: MSH300
+- thermostatic heads: MTS100 MTS150
+- MRS100 rolling shutters (status feedback and positioning not functional)
+- MSG100 garage
+- MSS710 switch
 
-You must create a device in the plugin for each controlled outlet and assign it a channel from 1 to n corresponding to the n outlets. Channel 0 is used to operate all outlets at the same time.
-Warning: some old sockets have a different behavior, use version V1 in the subtype.
+
+Other peripherals can be made compatible: contact the developer.
+
+You must create a device in the plugin for each socket ordered and assign it a channel from 1 to n corresponding to the n sockets. Channel 0 is used to operate all sockets at the same time.
+Caution: some old sockets behave differently, use version V1 in the subtype.
+
 
 ## type "Meross" for firmware <2.2.2
-Do not create new peripherals with this option, preferably use Meross V2, this type is present to ensure compatibility with the peripherals configured before the arrival of V2. No help will be given to find the necessary parameters for this type.
+Do not create new devices with this option, preferably use Meross V2, this type is present to ensure compatibility with devices configured before the arrival of V2. No help will be given to find the necessary parameters for this type.
 
-## type "Meross V2" for all firmware including 2.2.2
-In order to obtain a key, you must enter the login and password of the Meross account, save and click on getKey. It is retrieved from the Meross servers and saved in the Key field. You can copy this key to all your Meross devices and delete the login and password, but then you should no longer click on getKey.
+## type "Meross V2" for any firmware including 2.2.2
+In order to obtain a key, you must enter the login and password of the Meross account, save and click on getKey in the commands tab. It is retrieved from the Meross servers and saved in the Key field. You can copy this key into all your Meross devices and erase the login and password, but then you no longer have to click on getKey.
 
-Warning: repeated use of getgey can block access to Meross servers which can last several hours. Make a copy of the Key on all your Meross devices, it depends on the user account and not the device.
+Warning: repeated uses of getgey can block access to Meross servers which can last several hours. Make a copy of the Key on all your Meross devices, it depends on the user account and not on the device.
 
 ## Hub Meross
-For equipment connected to the Meross hub, you must create a device in the plugin for each device connected to the hub. It is also necessary to recover a local identifier. Use a tool allowing you to retrieve the http header from the Meross app when communicating with the valve. The information sought looks like this:
-
-    "id": "01008D5B"
+For equipment connected to the Meross MSH300 hub and after indicating its ip address and saving it, press getKey which retrieves the key and all the peripherals connected to the Hub. When adding a new peripheral to the hub, simply do getKey to create it in the plugin.
 
 ## More precise recovery of consumption.
 

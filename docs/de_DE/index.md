@@ -454,34 +454,41 @@ Das Verfahren ist komplex und erfordert mehrere Manipulationen. Suchen Sie im We
 
 Es wird keine Hilfe beim Wiederherstellen des Tokens gegeben.
 
-# Meross
+#Meross
 
-Kompatible Peripheriegeräte sind:
-- Steckdosen MSS210HK MSS210 MSS425EHK MSS425FHK MSS620
-- Schalter MSS71
-- Rollladensteuerung MRS100 (nicht funktionsfähige Statusrückmeldung und Positionierung)
-- genommen mit MSS310 Verbrauch: der Verbrauch steigt nur jede Minute
-- Meross MSH300-Hub
-- MTS100/100H: Thermostatköpfe mit der Nabe verbunden
-- MSG100 (Garage): funktioniert korrekt in V2
-- MSL100, MSL120, MSL320
-- die am Hub angeschlossenen Temperatursensoren könnten kompatibel sein (nicht getestet)
+Kompatible Geräte sind:
+- Einzelsteckdosen: MSS110 MSS210
+- Einzelsteckdosen + Verbrauch: MSS310 (Verbrauch steigt nur minütlich)
+- MSS120 MSS620 Doppelsteckdosen
+- MSS420 Quad-Steckdosen
+- MSS425-Fünffachsteckdosen
+- Farblampen: MSL120 BR30
+- MSL420 MSL430 MSL450 Lampen
+- Dimmerlampen: MSL100
+- LED-Streifen: MSL320 MSL320 pro
+- Nabe: MSH300
+- Thermostatköpfe: MTS100 MTS150
+- Rollladen MRS100 (Statusrückmeldung und Positionierung nicht funktionsfähig)
+- MSG100-Garage
+- MSS710-Schalter
 
-Sie müssen für jeden gesteuerten Ausgang ein Gerät im Plugin erstellen und diesem einen Kanal von 1 bis n entsprechend den n Ausgängen zuweisen. Kanal 0 wird verwendet, um alle Ausgänge gleichzeitig zu betreiben.
-Achtung: Einige alte Sockets haben ein anderes Verhalten, verwenden Sie Version V1 im Subtyp.
 
-## geben Sie "Meross" für Firmware <2.2.2 ein
-Erstellen Sie mit dieser Option keine neuen Peripheriegeräte, verwenden Sie vorzugsweise Meross V2. Dieser Typ ist vorhanden, um die Kompatibilität mit den vor der Einführung von V2 konfigurierten Peripheriegeräten sicherzustellen. Es wird keine Hilfestellung gegeben, um die erforderlichen Parameter für diesen Typ zu finden.
+Andere Peripheriegeräte können kompatibel gemacht werden: wenden Sie sich an den Entwickler.
 
-## geben Sie "Meross V2" für alle Firmware ein, einschließlich 2.2.2
-Um einen Schlüssel zu erhalten, müssen Sie Login und Passwort des Meross-Kontos eingeben, speichern und auf getKey klicken. Sie wird von den Meross-Servern abgerufen und im Feld Schlüssel gespeichert. Sie können diesen Schlüssel auf alle Ihre Meross-Geräte kopieren und Login und Passwort löschen, müssen dann aber nicht mehr auf getKey klicken.
+Für jede bestellte Steckdose müssen Sie im Plugin ein Gerät anlegen und diesem einen Kanal von 1 bis n entsprechend den n Steckdosen zuweisen. Kanal 0 wird verwendet, um alle Steckdosen gleichzeitig zu betreiben.
+Achtung: Einige alte Steckdosen verhalten sich anders, verwenden Sie die Version V1 im Untertyp.
 
-Warnung: Die wiederholte Verwendung von getgey kann den Zugriff auf Meross-Server blockieren, was mehrere Stunden dauern kann. Erstellen Sie eine Kopie des Schlüssels auf allen Ihren Meross-Geräten, dies hängt vom Benutzerkonto und nicht vom Gerät ab.
 
-## Hub Meross
-Bei Geräten, die an den Meross-Hub angeschlossen sind, müssen Sie für jedes mit dem Hub verbundene Gerät ein Gerät im Plugin erstellen. Es ist auch erforderlich, eine lokale Kennung wiederherzustellen. Verwenden Sie ein Tool, mit dem Sie den http-Header aus der Meross-App abrufen können, wenn Sie mit dem Ventil kommunizieren. Die gesuchten Informationen sehen wie folgt aus:
+## Geben Sie "Meross" für Firmware <2.2.2 ein
+Erstellen Sie keine neuen Geräte mit dieser Option, verwenden Sie vorzugsweise Meross V2, dieser Typ ist vorhanden, um die Kompatibilität mit Geräten zu gewährleisten, die vor der Ankunft von V2 konfiguriert wurden. Es wird keine Hilfe gegeben, um die notwendigen Parameter für diesen Typ zu finden.
 
-    "id": "01008D5B"
+## Geben Sie "Meross V2" für jede Firmware ein, einschließlich 2.2.2
+Um einen Schlüssel zu erhalten, müssen Sie den Benutzernamen und das Passwort des Meross-Kontos eingeben, speichern und auf der Registerkarte Befehle auf getKey klicken. Es wird von den Meross-Servern abgerufen und im Schlüsselfeld gespeichert. Sie können diesen Schlüssel in alle Ihre Meross-Geräte kopieren und das Login und Passwort löschen, müssen dann aber nicht mehr auf getKey klicken.
+
+Warnung: Die wiederholte Verwendung von getgey kann den Zugriff auf Meross-Server blockieren, was mehrere Stunden dauern kann. Erstellen Sie eine Kopie des Schlüssels auf all Ihren Meross-Geräten, es hängt vom Benutzerkonto ab und nicht vom Gerät.
+
+##Hub Meross
+Für Geräte, die mit dem Meross MSH300-Hub verbunden sind und nachdem Sie ihre IP-Adresse angegeben und gespeichert haben, drücken Sie getKey, wodurch der Schlüssel und alle mit dem Hub verbundenen Peripheriegeräte abgerufen werden. Wenn Sie dem Hub ein neues Peripheriegerät hinzufügen, führen Sie einfach getKey aus, um es im Plugin zu erstellen.
 
 ## Präzise Prüfung eines Ereignisses.
 

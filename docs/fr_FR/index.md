@@ -463,15 +463,23 @@ Aucune aide ne sera donnée pour récupérer le jeton.
 # Meross
 
 Les périphériques compatibles sont :
--   prises MSS210HK MSS210 MSS425EHK MSS425FHK MSS620
--   switch MSS71
--   commande volets roulants MRS100 (retour d'état et positionnement non fonctionnels)
--   prise avec conso MSS310 : la conso ne remonte que toutes les minutes
--   Hub Meross MSH300
--   MTS100/100H : têtes thermostatiques reliées au hub
--   MSG100 (garage) : fonctionne correctement en V2
--   MSL100, MSL120, MSL320
--   les capteurs de température connectés au hub pourraient être compatibles (non testé)
+-   prises simple : MSS110 MSS210
+-   prises simple + consommation : MSS310 (la consommation ne remonte que toutes les minutes)
+-   prises doubles MSS120 MSS620
+-   prises quadruples MSS420
+-   prises quintuples MSS425
+-   lampes couleur : MSL120 BR30
+-   lampes MSL420 MSL430 MSL450
+-   lampes variateur : MSL100
+-   strip led : MSL320 MSL320 pro
+-   hub : MSH300
+-   têtes thermostatiques : MTS100 MTS150
+-   volets roulants MRS100 (retour d'état et positionnement non fonctionnels)
+-   garage MSG100
+-   commutateur MSS710
+
+
+D'autres périphériques peuvent être rendus compatibles : contacter le développeur.
 
 Il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondant aux n prises. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
 Attention : certaines prises anciennes ont un comportement différent, utiliser la version V1 dans le sous type.
@@ -486,9 +494,8 @@ Afin d'obtenir une clé, il faut renseigner les login et mot de passe du compte 
 Attention : des utilisations répétées du getgey peuvent produire un blocage d'accès aux serveurs Meross qui peut durer plusieurs heures. Faire une copie de la Clé sur tous vos périphériques Meross, elle dépend du compte utilisateur et pas du périphérique.
 
 ## Hub Meross 
-Pour les équipements reliés au hub Meross, il faut créer un périphérique dans le plugin pour chaque périphérique connecté au hub. Il faut aussi récupérer un identifiant local. Utiliser un outil permettant de récupérer l'entête http partant de l'appli Meross lors du dialogue avec la vanne. L'information recherchée a l'allure suivante :
+Pour les équipements reliés au hub Meross MSH300 et après avoir indiqué son adresse ip et l'avoir sauvegardé, faire un appui sur getKey qui récupère la clé et tous les périphériques reliés au Hub. Lors de l'ajout d'un nouveau périohérique au hub, faire simplement getKey pour le créer dans le plugin.
 
-    "id" : "01008D5B"
 
 ## Scrutation précise d'un évènement.
 

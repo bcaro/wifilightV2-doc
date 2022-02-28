@@ -451,37 +451,43 @@ El procedimiento es complejo y requiere varias manipulaciones. Haga una búsqued
 
 No se brindará ayuda para recuperar la ficha.
 
-# Meross
+#Meross
 
-Los periféricos compatibles son:
-- enchufes MSS210HK MSS210 MSS425EHK MSS425FHK MSS620
-- conmutador MSS71
-- Control de persiana enrollable MRS100 (retroalimentación de estado y posicionamiento no funcional)
-- tomado con consumo MSS310: el consumo solo aumenta cada minuto
-- Buje Meross MSH300
-- MTS100 / 100H: cabezales termostáticos conectados al buje
-- MSG100 (garaje): solamente V2
-- MSL100, MSL120, MSL320
-- los sensores de temperatura conectados al concentrador podrían ser compatibles (no probados)
+Los dispositivos compatibles son:
+- enchufes individuales: MSS110 MSS210
+- enchufes individuales + consumo: MSS310 (el consumo solo sube cada minuto)
+- MSS120 MSS620 enchufes dobles
+- Zócalos cuádruples MSS420
+- Zócalos quíntuples MSS425
+- lámparas de color: MSL120 BR30
+- Lámparas MSL420 MSL430 MSL450
+- lámparas de atenuación: MSL100
+- tira led: MSL320 MSL320 pro
+- cubo: MSH300
+- cabezas termostáticas: MTS100 MTS150
+- Persianas enrollables MRS100 (retroalimentación de estado y posicionamiento no funcional)
+- garaje MSG100
+- Interruptor MSS710
 
-Debe crear un dispositivo en el plugin para cada salida controlada y asignarle un canal de 1 an correspondiente a las n salidas. El canal 0 se utiliza para operar todas las salidas al mismo tiempo.
-Advertencia: algunos sockets antiguos tienen un comportamiento diferente, use la versión V1 en el subtipo.
 
-## tipo "Meross" para firmware <2.2.2
-No cree nuevos periféricos con esta opción, preferiblemente use Meross V2, este tipo está presente para asegurar la compatibilidad con los periféricos configurados antes de la llegada de V2. No se brindará ayuda para encontrar los parámetros necesarios para este tipo.
+Se pueden hacer compatibles otros periféricos: póngase en contacto con el desarrollador.
 
-## escriba "Meross V2" para todo el firmware, incluido el 2.2.2
-Para obtener una clave, debe ingresar el nombre de usuario y la contraseña de la cuenta Meross, guardar y hacer clic en getKey. Se recupera de los servidores de Meross y se guarda en el campo Clave. Puede copiar esta clave en todos sus dispositivos Meross y borrar el nombre de usuario y la contraseña, pero luego ya no debe hacer clic en getKey.
+Debe crear un dispositivo en el complemento para cada toma ordenada y asignarle un canal del 1 al n correspondiente a las n tomas. El canal 0 se usa para operar todos los enchufes al mismo tiempo.
+Precaución: algunos sockets antiguos se comportan de manera diferente, use la versión V1 en el subtipo.
 
-Advertencia: el uso repetido de getgey puede bloquear el acceso a los servidores de Meross, lo que puede durar varias horas. Haga una copia de la clave en todos sus dispositivos Meross, depende de la cuenta del usuario y no del dispositivo.
 
-## Hub Meross
-Para los equipos conectados al concentrador Meross, debe crear un dispositivo en el plugin para cada dispositivo conectado al concentrador. También es necesario recuperar un identificador local. Utilice una herramienta que le permita recuperar el encabezado http de la aplicación Meross cuando se comunique con la válvula. La información buscada tiene este aspecto:
+## escriba "Meross" para el firmware <2.2.2
+No cree nuevos dispositivos con esta opción, preferiblemente use Meross V2, este tipo está presente para garantizar la compatibilidad con los dispositivos configurados antes de la llegada de V2. No se brindará ayuda para encontrar los parámetros necesarios para este tipo.
 
-    "id": "01008D5B"
+## escriba "Meross V2" para cualquier firmware, incluido 2.2.2
+Para obtener una clave, debe ingresar el nombre de usuario y la contraseña de la cuenta de Meross, guardar y hacer clic en getKey en la pestaña de comandos. Se recupera de los servidores de Meross y se guarda en el campo Clave. Puede copiar esta clave en todos sus dispositivos Meross y borrar el nombre de usuario y la contraseña, pero ya no tendrá que hacer clic en getKey.
+
+Advertencia: los usos repetidos de getgey pueden bloquear el acceso a los servidores de Meross, lo que puede durar varias horas. Haz una copia de la Clave en todos tus dispositivos Meross, depende de la cuenta de usuario y no del dispositivo.
+
+## Centro Meross
+Para equipos conectados al hub Meross MSH300 y luego de indicar su dirección ip y guardarla, presione getKey que recupera la clave y todos los periféricos conectados al Hub. Al agregar un nuevo periférico al concentrador, simplemente haga getKey para crearlo en el complemento.
 
 ## Recuperación de consumos más precisa.
-
 Cree un escenario que se active solo una vez cuando se inicia Jeedom: coloque un bucle en 1,000,000. Coloque otro bucle dentro de 1,000,000. Estos 2 bucles anidados provistos de una pausa evitarán la salida del escenario durante cientos de años. En el bucle interno, ponga una pausa de 10 segundos y una llamada al estado del dispositivo Obtener para actualizar la información del dispositivo. La pausa se puede reducir hasta 1s dependiendo de la potencia y complejidad de la instalación.
 
 - Le permite recuperar la información de apertura del módulo de garaje
