@@ -213,7 +213,7 @@ Paramétrage :
 -   Activer et rendre visible (par défaut)
 -   Saisir l'adresse IP du module de la prise ou de l'ampoule WiFi (voir la FAQ pour plus d'explications)
 -   Pour la box Milight-hub, un identifiant et un port doivent être configurés
--   Vous pouvez charger dans le dossier /data/myImages du plugin des images . Ces images peuvent remplacer les images associées aux périphériques dans la page d'affichage de tous les périphériques wifilightV2. Utile pour les périphériques personnalisés qui ne sont pas associés à une image.
+-   Vous pouvez charger des images dans le dossier /data/myImages du plugin. Ces images peuvent remplacer les images associées aux périphériques dans la page d'affichage de tous les périphériques wifilightV2. Utile pour les périphériques personnalisés qui ne sont pas associés à une image.
 -   Pour certains périphériques il est demandé de saisir le canal utilisé, créer un équipement wifilightV2 par canal
 -   Pour certains périphériques il est demandé de saisir un jeton ou (et) un identifiant, consulter l'aide sur la page de configuration du périphérique
 -   Pour les périphériques Tuya, il est possible de forcer l'interrogation de l'état toutes les minutes, utile pour les prises avec consommation.
@@ -381,7 +381,7 @@ Dans ce mode, il suffit de renseigner le paramètre Port avec le port du mode UD
 
 Dans ce mode, le choix des périphériques se fait par le type de télécommande et non par le type de lampe comme dans le mode historique. Il faut, après avoir renseigné les paramètres habituels, renseigner l'identifiant du groupe de télécommandes, voir [Sidoh](https://github.com/sidoh/esp8266_milight_hub) ou [sur le forum](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron) pour plus de détails. Ce mode propose un retour d'état partiel mis à jour toutes les minutes.
 
-Pour appairer une lampe avec le Milight-Hub, mettre la lampe sous tension et cliquer sur Sync ON. Utiliser Sync OFF pour désappairer. Pour appairrer une télécommande, sélectionner le ON du canal à synchroniser dès la mise sous tension et cliquer sur Sync ON.
+Pour appairer une lampe avec le Milight-Hub, mettre la lampe sous tension et cliquer sur Sync ON. Utiliser Sync OFF pour désappairer. Pour appairer une télécommande, sélectionner le ON du canal à synchroniser dès la mise sous tension et cliquer sur Sync ON.
 
 Pour connaitre les caractéristiques du hub, cliquer sur getKey, le résultat est obtenu dans getKetget en cliquant sur Tester.
 
@@ -449,7 +449,7 @@ Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas
 
 Par la suite, le contrôle des périphériques est local.
 
-Note : Les prises HS100 HS110 KP105 KP110 peuvent nécessiter d'utilier le protocole V2, faire la modification manuellement.
+Note : Les prises HS100 HS110 KP105 KP110 peuvent nécessiter d'utiliser le protocole V2, faire la modification manuellement.
 
 
 # Xiaomi Philips
@@ -494,7 +494,7 @@ Afin d'obtenir une clé, il faut renseigner les login et mot de passe du compte 
 Attention : des utilisations répétées du getgey peuvent produire un blocage d'accès aux serveurs Meross qui peut durer plusieurs heures. Faire une copie de la Clé sur tous vos périphériques Meross, elle dépend du compte utilisateur et pas du périphérique.
 
 ## Hub Meross 
-Pour les équipements reliés au hub Meross MSH300 et après avoir indiqué son adresse ip et l'avoir sauvegardé, faire un appui sur getKey qui récupère la clé et tous les périphériques reliés au Hub. Lors de l'ajout d'un nouveau périohérique au hub, faire simplement getKey pour le créer dans le plugin.
+Pour les équipements reliés au hub Meross MSH300 et après avoir indiqué son adresse ip et l'avoir sauvegardé, faire un appui sur getKey qui récupère la clé et tous les périphériques reliés au Hub. Lors de l'ajout d'un nouveau périphérique au hub, faire simplement getKey pour le créer dans le plugin.
 
 
 ## Scrutation précise d'un évènement.
@@ -631,7 +631,7 @@ Pour obtenir le Json du cloud Tuya :
 
 ## Création manuelle ou semi manuelle des périphériques Tuya et Tuya/Zigbee
 
-Cette procédure nécesite de recopier manuellement la localkey depuis le cloud Tuya. 
+Cette procédure nécessite de recopier manuellement la localkey depuis le cloud Tuya. 
 
  [Voir la documentation spécifique pour les passerelles Tuya/Zigbee](./tuya#tocAnchor-1-1)
  
