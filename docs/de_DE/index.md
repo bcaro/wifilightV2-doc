@@ -195,9 +195,10 @@ Sie können dann zur Konfiguration des wifilightV2-Plugins gehen.
 
 wifilightV2 erstellt keine Geräte automatisch, außer:
 
-- Tuya Smartlife
-- Ewelink
-- Govee
+-   Tuya Smartlife
+-   Ewelink Sonoff
+-   Govee
+-   Tapo Kasa
 
 Hilfe :
 - Verwenden Sie das Fragezeichen-Symbol, um Hilfe zu jedem Konfigurationselement zu erhalten.

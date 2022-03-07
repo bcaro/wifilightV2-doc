@@ -193,9 +193,10 @@ Luego puede ir a la configuración del plugin wifilightV2.
 
 wifilightV2 no crea dispositivos automáticamente excepto:
 
-- Tuya Smartlife
-- Ewelink
-- Govee 
+-   Tuya Smartlife
+-   Ewelink Sonoff
+-   Govee
+-   Tapo Kasa 
 
 Ayuda :
 - Utilice el icono del signo de interrogación para obtener ayuda sobre cada elemento de configuración.

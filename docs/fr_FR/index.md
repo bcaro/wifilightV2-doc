@@ -198,8 +198,9 @@ Vous pouvez alors passer à la configuration du plugin wifilightV2.
 wifilightV2 ne crée pas les périphériques automatiquement sauf :
 
 -   Tuya Smartlife
--   Ewelink
+-   Ewelink Sonoff
 -   Govee
+-   Tapo Kasa
 
 Aide : 
 -   Utiliser l'icône sous forme de point d'interrogation pour obtenir une aide sur chaque élément de configuration.
