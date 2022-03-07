@@ -452,7 +452,10 @@ If a device with the same deviceID already exists, the inclusion will not occur.
 
 Thereafter, device control is local.
 
-Note: HS100 HS110 KP105 KP110 sockets may need to use the V2 protocol, make the modification manually.
+Notes:
+- HS100 HS110 KP105 KP110 sockets may need to use V2 protocol, make the modification manually.
+- All TP-link devices present in the cloud are created, especially TP-link wifi routers or hotspots. As the plugin does not recognize them, a TAPO P100 socket is created, just remove unnecessary devices.
+
 # Xiaomi Philips
 
 It is essential to recover a token allowing the plugin to communicate with Xiaomi Philips devices.

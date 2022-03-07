@@ -444,7 +444,9 @@ Wenn bereits ein Gerät mit derselben Geräte-ID vorhanden ist, erfolgt die Aufn
 
 Danach ist die Gerätesteuerung lokal.
 
-Hinweis: HS100 HS110 KP105 KP110 Sockets müssen möglicherweise das V2-Protokoll verwenden, nehmen Sie die Änderung manuell vor.
+Anmerkungen:
+- HS100 HS110 KP105 KP110-Buchsen müssen möglicherweise das V2-Protokoll verwenden, nehmen Sie die Änderung manuell vor.
+- Alle in der Cloud vorhandenen TP-Link-Geräte werden erstellt, insbesondere TP-Link-WLAN-Router oder Hotspots. Da das Plugin sie nicht erkennt, wird ein TAPO P100-Socket erstellt, entfernen Sie einfach unnötige Geräte. 
 
 # Xiaomi Philips
 

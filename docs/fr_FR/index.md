@@ -449,7 +449,9 @@ Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas
 
 Par la suite, le contrôle des périphériques est local.
 
-Note : Les prises HS100 HS110 KP105 KP110 peuvent nécessiter d'utiliser le protocole V2, faire la modification manuellement.
+Notes : 
+- Les prises HS100 HS110 KP105 KP110 peuvent nécessiter d'utiliser le protocole V2, faire la modification manuellement.
+- Tous les périphériques TP-link présents dans le cloud sont créés, en particulier les routeurs ou bornes wifi TP-link. Comme le plugin ne les reconnais pas, une prise TAPO P100 est créée, il suffit de supprimer les périphériques inutiles.
 
 
 # Xiaomi Philips

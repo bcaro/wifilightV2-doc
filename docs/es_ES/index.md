@@ -441,7 +441,9 @@ Si ya existe un dispositivo con el mismo ID de dispositivo, no se realizará la 
 
 A partir de entonces, el control del dispositivo es local.
 
-Nota: Es posible que los enchufes HS100 HS110 KP105 KP110 necesiten usar el protocolo V2, haga la modificación manualmente.
+Notas:
+- Es posible que los enchufes HS100 HS110 KP105 KP110 necesiten usar el protocolo V2, haga la modificación manualmente.
+- Se crean todos los dispositivos TP-link presentes en la nube, especialmente los routers o hotspots wifi TP-link. Como el complemento no los reconoce, se crea un zócalo TAPO P100, simplemente elimine los dispositivos innecesarios.
 
 # Xiaomi Philips
 

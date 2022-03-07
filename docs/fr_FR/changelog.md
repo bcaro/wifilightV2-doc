@@ -10,7 +10,7 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.87 - 2022-02-26 beta (Jeedom V4.2)
+1.87 - 2022-03-07 (Jeedom V4.2)
 - Meross : intégration des lampes blanches et couleur (testé avec MSL100, MSL120, MSL320 devrait fonctionner avec les autres lampes)
 - Meross : ajout vanne thermostatique MTS150
 - Meross : correctif des modules qui ne fonctionnaient plus après changement de firmware : MRS100 volets roulants, Plug conso V1 et Hub thermostat. Nécessite de sauvegarder l'équipement, sinon le refaire.
