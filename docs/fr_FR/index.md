@@ -198,9 +198,8 @@ Vous pouvez alors passer à la configuration du plugin wifilightV2.
 wifilightV2 ne crée pas les périphériques automatiquement sauf :
 
 -   Tuya Smartlife
--   Ewelink Sonoff
+-   Ewelink
 -   Govee
--   Tapo Kasa
 
 Aide : 
 -   Utiliser l'icône sous forme de point d'interrogation pour obtenir une aide sur chaque élément de configuration.
@@ -466,20 +465,24 @@ Aucune aide ne sera donnée pour récupérer le jeton.
 # Meross
 
 Les périphériques compatibles sont :
--   prises simple : MSS110 MSS210
--   prises simple + consommation : MSS310 (la consommation ne remonte que toutes les minutes)
--   prises doubles MSS120 MSS620
--   prises quadruples MSS420
--   prises quintuples MSS425
--   lampes couleur : MSL120 BR30
--   lampes MSL420 MSL430 MSL450
--   lampes variateur : MSL100
--   strip led : MSL320 MSL320 pro
--   hub : MSH300
--   têtes thermostatiques : MTS100 MTS150
--   volets roulants MRS100 (retour d'état et positionnement non fonctionnels)
--   garage MSG100
--   commutateur MSS710
+- prises simple : MSS110 MSS210
+- prises simple + consommation : MSS310 (la consommation ne remonte que toutes les minutes)
+- prises doubles MSS120 MSS620
+- prises quadruples MSS420
+- prises quintuples MSS425
+- lampes couleur : MSL120 BR30
+- lampes MSL420 MSL430 MSL450
+- lampes variateur : MSL100
+- strip led : MSL320 MSL320 pro
+- hub : MSH300
+- têtes thermostatiques : MTS100 MTS150
+- volets roulants MRS100 (retour d'état et positionnement non fonctionnels)
+- garage MSG100
+- commutateur MSS710
+- interrupteurs  MSS510 MSS550
+- purificateur MAP100 beta
+- diffuseur MOD100 beta
+- humidifieur MSXH0 beta
 
 
 D'autres périphériques peuvent être rendus compatibles : contacter le développeur.
@@ -512,9 +515,9 @@ Créer un scénario déclenché une seule fois au démarrage de Jeedom : mettre 
 ## Compatibilité
 
 Les périphériques compatibles sont : 
--  Sonoff D1 smart Dimmer
--  Sonoff BASICR3 et RFR3
--  Sonoff MINI
+- Sonoff D1 smart Dimmer
+- Sonoff BASICR3 et RFR3
+- Sonoff MINI
 
 ## Configuration
 
@@ -551,7 +554,7 @@ Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas
 
 ## ApiKey DeviceID
 
-Pour récupérer manuellement ces 2 informations, vous pouvez aller [ici]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) ou [sur le forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 )  ou faire une recherche sur le web et le forum Jeedom avec comme mots clé : Ewelink ou Sonoff Apikey. Il ne faut mettre ni espace ni guillemets.
+Pour récupérer manuellement ces 2 informations, vous pouvez aller [ici]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) ou [sur le forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 ) ou faire une recherche sur le web et le forum Jeedom avec comme mots clé : Ewelink ou Sonoff Apikey. Il ne faut mettre ni espace ni guillemets.
 
 ## Connexion
 
@@ -560,22 +563,22 @@ Quand un périphérique se connecte au wifi, le plugin sera immédiatement prév
 ## Compatibilité
 
 De nombreuses marques sont compatibles dont les Sonoff. Les produits testés sont les suivants :
--  Interrupteurs, prises murales, switch : simples de toutes marques
--  Interrupteurs, prises murales, switch : multiples de toutes marques
--  Interrupteurs, prises murales, switch : simples avec variateur de toutes marques
--  Sonoff D1 smart Dimmer
--  Sonoff TH10/1H16 capteur de température. Nouvelle config pour firmware >=3.4 avec ON/OFF OK
--  Sonoff basic R2, RF, POW, Mini
--  Sonoff Dual R2
--  Sonoff Dual R3 (la récupération de la consommation et la configuration du moteur sont à tester, la configuration moteur n'est pas complètement implantée)
--  Sonoff 4CH/4CH PRO
--  Sonoff Touch
--  Sonoff S20/S26
--  Sonoff T1/TX
--  Sonoff SLAMPHER
--  Sonoff T4EUC1
--  Ifan 2/3/4 à tester 
--  Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur de présence, télécommande)
+- Interrupteurs, prises murales, switch : simples de toutes marques
+- Interrupteurs, prises murales, switch : multiples de toutes marques
+- Interrupteurs, prises murales, switch : simples avec variateur de toutes marques
+- Sonoff D1 smart Dimmer
+- Sonoff TH10/1H16 capteur de température. Nouvelle config pour firmware >=3.4 avec ON/OFF OK
+- Sonoff basic R2, RF, POW, Mini
+- Sonoff Dual R2
+- Sonoff Dual R3 (la récupération de la consommation et la configuration du moteur sont à tester, la configuration moteur n'est pas complètement implantée)
+- Sonoff 4CH/4CH PRO
+- Sonoff Touch
+- Sonoff S20/S26
+- Sonoff T1/TX
+- Sonoff SLAMPHER
+- Sonoff T4EUC1
+- Ifan 2/3/4 à tester 
+- Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur de présence, télécommande)
 
 Le sonoff DW2 n'est pas compatible car purement cloud et ne se met pas en Acces Point permettant de trouver apiKey et DeviceID. Il est probable qu'il en soit de même pour tous les capteurs de porte compatibles ewelink.
 
@@ -656,6 +659,15 @@ Appuyer pendant 5-7 s sur le bouton power du Nanoleaf et appuyer sur la commande
 ## Effets custom
 
 Créer un effet avec l'appli du NanoLeaf et lui donner un nom. Créer une commande action/défaut dans la liste des commandes du périphérique dans le plugin. Mettre le nom dans paramètres. Donner ensuite un identifiant unique et un nom, ils peuvent être identiques au nom de la commande.
+
+## Envoi d'une commnande personnalisée
+
+Créer une commande action/defaut, dans nom interne mettre un nom et dans paramètres, mettre le json  de la commande personnalisée sauf les accolades externes mais avec la commande write, par exemple :
+
+    "write" : {"command" : "request", "animName" : "Northern Lights"}
+	
+Voir la documentation Nanoleaf pour créer ces effets.
+
 
 # Govee
 

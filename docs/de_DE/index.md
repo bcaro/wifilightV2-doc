@@ -195,10 +195,9 @@ Sie können dann zur Konfiguration des wifilightV2-Plugins gehen.
 
 wifilightV2 erstellt keine Geräte automatisch, außer:
 
--   Tuya Smartlife
--   Ewelink Sonoff
--   Govee
--   Tapo Kasa
+- Tuya Smartlife
+- Ewelink
+- Govee
 
 Hilfe :
 - Verwenden Sie das Fragezeichen-Symbol, um Hilfe zu jedem Konfigurationselement zu erhalten.
@@ -474,6 +473,10 @@ Kompatible Geräte sind:
 - Rollladen MRS100 (Statusrückmeldung und Positionierung nicht funktionsfähig)
 - MSG100-Garage
 - MSS710-Schalter
+- Schalter MSS510 MSS550
+- Reiniger-MAP100 Beta
+- Diffusor-MOD100 Beta
+- Luftbefeuchter-MSXH0 Beta
 
 
 Andere Peripheriegeräte können kompatibel gemacht werden: wenden Sie sich an den Entwickler.
@@ -648,6 +651,13 @@ Drücken Sie den Nanoleaf-Power-Button für 5-7 s und drücken Sie den getKey-Be
 
 Erstellen Sie einen Effekt mit der NanoLeaf-App und geben Sie ihm einen Namen. Erstellen Sie eine Aktion/einen Standardbefehl in der Liste der Gerätebefehle im Plugin. Geben Sie den Namen in Parameter ein. Geben Sie dann eine eindeutige Kennung und einen Namen ein, diese können mit dem Namen des Befehls identisch sein.
 
+## Senden eines benutzerdefinierten Befehls
+
+Erstellen Sie einen Aktions-/Standardbefehl, geben Sie im internen Namen einen Namen ein und geben Sie in den Parametern den json des benutzerdefinierten Befehls mit Ausnahme der externen geschweiften Klammern, aber mit dem Schreibbefehl ein, zum Beispiel:
+
+     "write" : {"command" : "request", "animName" : "Northern Lights"}
+
+Informationen zum Erstellen dieser Effekte finden Sie in der Nanoleaf-Dokumentation. 
 
 # Govee
 

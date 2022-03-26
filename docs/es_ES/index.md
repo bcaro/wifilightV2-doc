@@ -193,10 +193,9 @@ Luego puede ir a la configuración del plugin wifilightV2.
 
 wifilightV2 no crea dispositivos automáticamente excepto:
 
--   Tuya Smartlife
--   Ewelink Sonoff
--   Govee
--   Tapo Kasa 
+- Tuya Smartlife
+- Ewelink
+- Govee 
 
 Ayuda :
 - Utilice el icono del signo de interrogación para obtener ayuda sobre cada elemento de configuración.
@@ -471,6 +470,10 @@ Los dispositivos compatibles son:
 - Persianas enrollables MRS100 (retroalimentación de estado y posicionamiento no funcional)
 - garaje MSG100
 - Interruptor MSS710
+- Conmutadores MSS510 MSS550
+- purificador MAP100 beta
+- Difusor MOD100 beta
+- Humidificador MSXH0 beta
 
 
 Se pueden hacer compatibles otros periféricos: póngase en contacto con el desarrollador.
@@ -645,6 +648,14 @@ Presione el botón de encendido de Nanoleaf durante 5-7 sy presione el comando g
 ## Efectos personalizados
 
 Crea un efecto con la aplicación NanoLeaf y dale un nombre. Cree una acción / comando predeterminado en la lista de comandos de dispositivo en el plugin. Pon el nombre en los parámetros. Luego dé un identificador único y un nombre, pueden ser idénticos al nombre del comando.
+
+## Enviar un comando personalizado
+
+Cree un comando action/default, en nombre interno ponga un nombre y en parámetros ponga el json del comando personalizado excepto las llaves externas pero con el comando escribir, por ejemplo:
+
+     "write" : {"command" : "request", "animName" : "Northern Lights"}
+
+Consulte la documentación de Nanoleaf para crear estos efectos. 
 
 
 # Govee
