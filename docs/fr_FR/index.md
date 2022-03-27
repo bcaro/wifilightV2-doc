@@ -626,10 +626,13 @@ Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 - le min et le max d'une valeur numérique sont remontés depuis le cloud. Selon les besoins, modifier les paramètres #slider# et #value# ainsi que le min et max Jeedom.
 
 ### Participation à l'amélioration de cette partie :
-Vous pouvez contribuer à l'amélioration de la création automatique en donnant le maximum de renseignements : le Json du cloud Tuya, les modifications apportées, les logs ou toute remarque pertinente. 
+Vous pouvez contribuer à l'amélioration dela création automatique en donnant le maximum de renseignements : le Json du cloud Tuya, les modifications apportées, les logs ou toute remarque pertinente. 
 
 Pour obtenir le Json du cloud Tuya :
-- dans Tuya IOT Platform : Cloud > Development > choisir le projet > Devices > Copier le device ID du périphérique
+- dans Tuya developper : Cloud develop> Development > subscribe to cloud project 
+Dans la nouvelle fenêtre :
+
+- Cloud > Development > choisir le projet  > devices > copier le device ID du périphérique à déboguer
 - Cloud > Api Explorer > (dans la nouvelle fenêtre) Smart Home Management System > Device Control > Get Device Specification Attribute (le 2ème de la liste sans s à Attribute)
 - coller le device ID > Submit Request > Copy (lien fenêtre droite)
 
