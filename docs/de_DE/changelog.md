@@ -10,10 +10,11 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.88 - 2022-03-25 (Jeedom V4.2)
+1.88 - 2022-03-28 (Jeedom V4.2)
 - Revogi : ajout des prises Revogi Smart plug (1 à 6) V3
 - Meross : ajout purificateur MAP100, diffuseur MOD100, humidifieur MSXH0 le tout en beta à tester en profondeur
-- Nanoleaf : envoi de commandes RAW permettant de créer un effet 
+- Nanoleaf : envoi de commandes RAW permettant de créer un effet (non complètement testé à valider)
+- Sonoff : ajout de l'USB Micro (fonctionne aussi avec des modèles non sonoff multicanaux)
 - Refonte des démons : nouveau démon spécifique pour Tuya/Yeelight afin que les autres périphériques ne créent pas des déconnexions
 - Refonte des logs, divisés en 4 parties pour éviter les mélanges via les démons
 

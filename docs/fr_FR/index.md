@@ -579,6 +579,7 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 - Sonoff T4EUC1
 - Ifan 2/3/4 à tester 
 - Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur de présence, télécommande)
+- Sonoff Micro USB : choisir le canal 1, prévu pour 4 canaux pour un modèle USB 4 canaux non sonoff
 
 Le sonoff DW2 n'est pas compatible car purement cloud et ne se met pas en Acces Point permettant de trouver apiKey et DeviceID. Il est probable qu'il en soit de même pour tous les capteurs de porte compatibles ewelink.
 
@@ -612,10 +613,10 @@ Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 
 ### Remarques :
 - certains périphériques ne sont pas créés (le cloud Tuya ne fournit pas les données)
-- les périphériques purement cloud seront intégrés mais le plugin ne pourra pas y accéder
+- les périphériques purement cloud (capteurs de fermeture ou de porte non Zigbee par exemple) seront intégrés mais le plugin ne pourra pas y accéder
 - les couleurs suivant les 3 formats connus sont créées ainsi que les commandes saturation et intensité liées
 - les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
-- les périphériques ayant des informations non standard (en général peut être résolu avec un bloc code dans un scénario) ne sont pas gérés
+- les périphériques ayant des informations non standard (peut éventuellement être résolu avec un bloc code dans un scénario) ne sont pas gérés
 - le plugin ne décode pas les commandes complexes et met alors dans paramètres le Json provenant du cloud Tuya
 - la suppression d'une commande créée par le plugin via le cloud Tuya ne peut plus être recréée
 - si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
@@ -623,7 +624,7 @@ Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 ### Astuces :
 - si la procédure automatique dysfonctionne, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-12-7) et agir uniquement sur les boutons de l'appli Tuya Smartlife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
 - de manière générale, les commandes peuvent être créées manuellement ou en mode apprentissage
-- le min et le max d'une valeur numérique sont remontés depuis le cloud. Selon les besoins, modifier les paramètres #slider# et #value# ainsi que le min et max Jeedom.
+- le min et le max d'une valeur numérique sont remontés depuis le cloud. Selon les besoins, modifier les paramètres #slider# et #value# ainsi que le min et max Jeedom. Cette partie est à améliorer avec les retours des utilisateurs.
 
 ### Participation à l'amélioration de cette partie :
 Vous pouvez contribuer à l'amélioration dela création automatique en donnant le maximum de renseignements : le Json du cloud Tuya, les modifications apportées, les logs ou toute remarque pertinente. 
