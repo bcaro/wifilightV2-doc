@@ -15,6 +15,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Meross : ajout purificateur MAP100, diffuseur MOD100, humidifieur MSXH0 le tout en beta à tester en profondeur
 - Nanoleaf : envoi de commandes RAW permettant de créer un effet (non complètement testé à valider)
 - Sonoff : ajout de l'USB Micro (fonctionne aussi avec des modèles non sonoff multicanaux)
+- Sonoff : détection de la région par brute force (bienvenue à nos amis de Martinique)
 - Refonte des démons : nouveau démon spécifique pour Tuya/Yeelight afin que les autres périphériques ne créent pas des déconnexions
 - Refonte des logs, divisés en 4 parties pour éviter les mélanges via les démons
 
