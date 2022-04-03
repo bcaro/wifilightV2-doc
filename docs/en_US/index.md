@@ -535,68 +535,59 @@ This procedure automates the creation of most Ewelink and Sonoff devices. Howeve
 
 ## Plugin Setup
 
-In the configuration of the plugin, enter the login (email address only) and the password for connecting to the Ewelink app and save. Then select: Ewelink Switch to inclusion. Devices are created automatically.
+In the configuration of the plugin, enter the login (email address only) and the password for connecting to the Ewelink app and save. Then select: Ewelink Switch to inclusion. The devices that are in the Ewelink application are created automatically. If the device is deleted from the Ewelink app, it will no longer work with the plugin.
 
-If the local IP address is not found by the plugin, make the connection between the mac address and the IP address given in the device settings of the Tuya application and your router and modify the IP address. The procedure to find the IP address uses a Linux system command, if it cannot be loaded or if the system is not compatible, the IP address cannot be found automatically.
-
-This part of the plugin requires the dependencies to be launched.
+If the local IP address is not found by the plugin, match the mac address with the IP address given in the device settings of the Tuya application and your router and modify the IP address. The procedure to find the IP address uses a Linux system command, which requires running the dependencies. If it cannot be loaded or if the system is not compatible, the IP address cannot be found automatically.
 
 For most sonoff devices the subtype is found, in other cases sonoff basic is chosen by the plugin, you can change the subtype without losing the ApiKey and deviceID.
 
-If a device with the same deviceID already exists, the inclusion will not occur.
+If a device with the same deviceID already exists, the inclusion will not occur. You can modify the deviceID to force the creation of a duplicate.
 
-### Remarks :
+Remarks :
+
 - some devices are not created (Ewelink cloud does not provide the data)
 - pure cloud devices will be integrated but the plugin will not be able to access them
 - if the IP address was not found because the peripheral is not connected, give it the address: 0.0.0.0 , connect it and restart the inclusion procedure.
+- when a device connects to wifi, the plugin will be notified immediately. On the other hand, when a peripheral is disconnected, the plugin will only be able to know it if a command is sent to it by the plugin.
+- ApiKey and DeviceID are retrieved automatically by inclusion. However, to manually retrieve these 2 pieces of information, you can go [here]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) or [on the Jeedom forum]( https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) or search the web and the Jeedom forum with the keywords: Ewelink or Sonoff Apikey. Do not put spaces or quotes.
 
-## APiKey DeviceID
-
-Follow the signs [here]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) or [on the forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 ) to retrieve these 2 pieces of information or do a search on the web and the jeedom forum with the key words: Ewelink or Sonoff Apikey. The deviceid is to be put in the plugin identifier. The Apikey is to be put in the token. Do not put spaces or quotes.
-
-## Login
-
-When a device connects to wifi, the plugin will be immediately notified. On the other hand, when a device is disconnected, the plugin will only be able to know it if a command is sent to it by the plugin.
 
 ## Compatibility
 
-Many brands are compatible including Sonoff. The products tested are as follows:
+Many brands are compatible including Sonoff. The products tested are:
 - Switches, wall sockets, switch: simple of all brands
 - Switches, wall sockets, switch: multiple of all brands
-- Switches, wall sockets, switch: simple with variator of all brands
+- Switches, wall sockets, switch: simple with dimmer of all brands
 - Sonoff D1 smart Dimmer
-- Sonoff TH10 / 1H16 temperature sensor. New config for firmware> = 3.4 with ON / OFF OK
-- Sonoff basic, RF, POW, Mini
+- Sonoff TH10/1H16 temperature sensor. New config for firmware >=3.4 with ON/OFF OK
+- Sonoff basic R2, RF, POW, Mini
 - Sonoff Dual R2
-- Sonoff Dual R3 (consumption recovery and engine configuration are to be tested, the engine configuration is not fully implemented)
-- Sonoff 4CH / 4CH PRO
+- Sonoff Dual R3 (consumption recovery and motor configuration are to be tested, motor configuration is not fully implemented)
+- Sonoff 4CH/4CH PRO
 - Sonoff Touch
-- Sonoff S20 / S26
-- Sonoff T1 / TX
+- Sonoff S20/S26
+- Sonoff T1/TX
 - Sonoff SLAMPHER
 - Sonoff T4EUC1
-- Ifan 2/3/4 for test purpose
-- Sonoff RF bridge 433 for the sensors only (door, presence detector, remote control)
+- Ifan 2/3/4 to test
+- Sonoff RF bridge 433 for sensors only (door, presence detector, remote control)
+- Sonoff Micro USB: choose channel 1, provided for 4 channels for a non-sonoff 4-channel USB model, non-functional status feedback
 
-The sonoff DW2 is not compatible because it is purely cloud and does not go into Access Point allowing to find apiKey and DeviceID. The same is likely to be true for all ewelink compatible door sensors.
+The sonoff DW2 is not compatible because it is purely cloud and does not go into Access Point to find apiKey and DeviceID. It is likely to be the same for all ewelink compatible door sensors.
 
 The Zigbee Hub is not compatible (and purely cloud).
 
 No bulb or led strip is compatible.
 
-However, the compatibility of these devices is not guaranteed because the protocol can be modified by the manufacturers. Do not modify the firmware of the device without having verified that it is compatible with the plugin.
+Nevertheless, the compatibility of these peripherals is not guaranteed because the protocol can be modified by the manufacturers. Do not modify the device firmware without verifying that it is compatible with the plugin.
 
-For multichannel devices (like the Sonoff 4CH) you have to create as many wifilightV2 devices as there are channels, a copy of the first one created easy, then you have to change the channel number.
+For multi-channel devices (like the Sonoff 4CH) you have to create as many wifilightV2 devices as there are channels, a copy of the first created makes it easy, then you have to change the channel number.
 
-For devices not present in this list (Sonoff Ifan for example) or if the configuration does not work and after integrating the device in Jeedom (with the Sonoff Basic configuration for example) locate in the logs:
-
-    Receive after decode: {...............}
-
-and give pn the [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) the content of the braces to allow the integration of the module into the plugin.
+For devices not present in this list or if the configuration does not work and after using the device integration procedure, give the content of the wifilightV2_inc logs and give in the [forum](https://community.jeedom.com /t/plugin-wifilightv2-sonoff-ewelink-lan/2632) in order to allow the integration of the module in the plugin.
 
 ## Tuya Smartlife and Cloud Tuya
 
-This procedure automates the creation of most Tuya and Tuya / Zigbee devices. However, access to peripherals remains local.
+This procedure automates the creation of most Tuya and Tuya/Zigbee devices. However, access to peripherals remains local.
 
 ## Configuration of the Tuya platform
 
@@ -694,4 +685,13 @@ Pay attention to the following points:
 
 # Help ?
 
-Go to Jeedom forum [here](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
+Go to the Jeedom forum [here](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439) and provide as much information as possible to get help:
+- plugin version
+- plugin configuration
+- device configuration
+
+The plugin logs are not compatible with syslog, put the standard configuration for the logs. They are divided into 4 categories:
+- wifilightV2_cmd: for commands sent to peripherals
+- wifilightV2_inc: when including devices
+- wifilight_Tuya: the daemon for Tuya and Yeelight devices. It tests for the presence of these devices every minute, maintains the persistent connection, and retrieves the status in real time.
+- wifilightV2: the 2nd daemon for all other devices. It tests for the presence of these devices every minute. 

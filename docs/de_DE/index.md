@@ -529,64 +529,56 @@ Dieses Verfahren automatisiert die Erstellung der meisten Ewelink- und Sonoff-Ge
 
 ## Plugin-Setup
 
-Geben Sie in der Konfiguration des Plugins den Login (nur E-Mail-Adresse) und das Passwort für die Verbindung zur Ewelink-App ein und speichern Sie. Wählen Sie dann: Ewelink Wechseln Sie zu Inklusion. Geräte werden automatisch erstellt.
+Geben Sie in der Konfiguration des Plugins den Login (nur E-Mail-Adresse) und das Passwort für die Verbindung zur Ewelink-App ein und speichern Sie. Wählen Sie dann: Ewelink Wechseln Sie zu Inklusion. Die Geräte, die sich in der Ewelink-Anwendung befinden, werden automatisch erstellt. Wenn das Gerät aus der Ewelink-App gelöscht wird, funktioniert es nicht mehr mit dem Plugin.
 
-Wenn die lokale IP-Adresse vom Plugin nicht gefunden wird, gleichen Sie die MAC-Adresse mit der IP-Adresse ab, die in den Geräteeinstellungen der Tuya-Anwendung und Ihres Routers angegeben ist, und ändern Sie die IP-Adresse. Das Verfahren zum Ermitteln der IP-Adresse verwendet einen Linux-Systembefehl, kann dieser nicht geladen werden oder ist das System nicht kompatibel, kann die IP-Adresse nicht automatisch ermittelt werden.
-
-Dieser Teil des Plugins erfordert, dass die Abhängigkeiten gestartet werden.
+Wenn die lokale IP-Adresse vom Plugin nicht gefunden wird, gleichen Sie die MAC-Adresse mit der IP-Adresse ab, die in den Geräteeinstellungen der Tuya-Anwendung und Ihres Routers angegeben ist, und ändern Sie die IP-Adresse. Das Verfahren zum Ermitteln der IP-Adresse verwendet einen Linux-Systembefehl, der das Ausführen der Abhängigkeiten erfordert. Wenn es nicht geladen werden kann oder das System nicht kompatibel ist, kann die IP-Adresse nicht automatisch gefunden werden.
 
 Für die meisten Sonoff-Geräte wird der Subtyp gefunden, in anderen Fällen wird Sonoff Basic vom Plugin ausgewählt, Sie können den Subtyp ändern, ohne den ApiKey und die Geräte-ID zu verlieren.
 
-Wenn bereits ein Gerät mit derselben Geräte-ID vorhanden ist, erfolgt die Aufnahme nicht.
+Wenn bereits ein Gerät mit derselben Geräte-ID vorhanden ist, erfolgt die Aufnahme nicht. Sie können die Geräte-ID ändern, um die Erstellung eines Duplikats zu erzwingen.
 
-### Bemerkungen :
-- Einige Geräte werden nicht erstellt (Ewelink Cloud liefert die Daten nicht)
+
+Bemerkungen :
+
+- einige Geräte werden nicht erstellt (Ewelink Cloud liefert die Daten nicht)
 - Reine Cloud-Geräte werden eingebunden, aber das Plugin kann nicht darauf zugreifen
 - Wenn die IP-Adresse nicht gefunden wurde, weil das Peripheriegerät nicht verbunden ist, geben Sie ihm die Adresse: 0.0.0.0 , verbinden Sie es und starten Sie den Aufnahmevorgang neu.
+- Wenn sich ein Gerät mit dem WLAN verbindet, wird das Plugin sofort benachrichtigt. Wenn andererseits ein Peripheriegerät getrennt wird, kann das Plugin es nur erkennen, wenn ihm vom Plugin ein Befehl gesendet wird.
+- ApiKey und DeviceID werden automatisch durch Einbeziehung abgerufen. Um diese beiden Informationen jedoch manuell abzurufen, können Sie [hier]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) oder [im Jeedom-Forum ]( https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 ) oder durchsuchen Sie das Internet und das Jeedom-Forum mit den Schlüsselwörtern: Ewelink oder Sonoff Apikey. Setzen Sie keine Leerzeichen oder Anführungszeichen.
 
-## ApiKey deviceID
-
-Um diese 2 Informationen manuell abzurufen, können Sie [hier](https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) oder [im Jeedom-Forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) oder suchen Sie im Web und im Jeedom-Forum nach den Schlüsselwörtern: Ewelink oder Sonoff Apikey. Verwenden Sie keine Leerzeichen oder Anführungszeichen.
-
-## Anmeldung
-
-Wenn sich ein Gerät mit dem Wifi verbindet, wird das Plugin sofort benachrichtigt. Auf der anderen Seite kann das Plugin, wenn ein Gerät getrennt wird, es nur erkennen, wenn ein Befehl vom Plugin an es gesendet wird.
 
 ## Kompatibilität
 
-Viele Marken sind kompatibel, einschließlich Sonoff. Die getesteten Produkte sind wie folgt:
+Viele Marken sind kompatibel, einschließlich Sonoff. Die getesteten Produkte sind:
 - Schalter, Steckdosen, Schalter: einfach aller Marken
-- Schalter, Steckdosen, Schalter: Vielfaches aller Marken
-- Schalter, Steckdosen, Schalter: einfach mit Variator aller Marken
-- Sonoff D1 Smart Dimmer
-- Sonoff TH10/1H16 Temperatursensor. Neue Konfig für Firmware > = 3.4 mit ON/OFF OK
-- Sonoff Basic, RF, POW, Mini
+- Schalter, Steckdosen, Schalter: mehrere aller Marken
+- Schalter, Steckdosen, Schalter: einfach mit Dimmer aller Marken
+- Sonoff D1 intelligenter Dimmer
+- Sonoff TH10/1H16 Temperatursensor. Neue Konfiguration für Firmware >=3.4 mit ON/OFF OK
+- Sonoff Basic R2, RF, POW, Mini
 - Sonoff Dual R2
-- Sonoff Dual R3 (Verbrauchsrückgewinnung und Motorkonfiguration sollen getestet werden, die Motorkonfiguration ist noch nicht vollständig implementiert)
+- Sonoff Dual R3 (Verbrauchsrückgewinnung und Motorkonfiguration sind zu testen, Motorkonfiguration ist nicht vollständig implementiert)
 - Sonoff 4CH/4CH PRO
 - Sonoff-Touch
 - Sonoff S20/S26
 - Sonoff T1/TX
 - Sonoff SLAMPHER
 - Sonoff T4EUC1
-- Sonoff Ifan R2/R3/R4 zu Testzwecken 
-- Sonoff RF Bridge 433 nur für die Sensoren (Tür, Präsenzmelder, Fernbedienung)
+- Ifan 2/3/4 zum Testen
+- Sonoff RF Bridge 433 nur für Sensoren (Tür, Präsenzmelder, Fernbedienung)
+- Sonoff Micro USB: Wählen Sie Kanal 1, vorgesehen für 4 Kanäle für ein Nicht-Sonoff-4-Kanal-USB-Modell, nicht funktionsfähiges Status-Feedback
 
-Der sonoff DW2 ist nicht kompatibel, da er eine reine Cloud ist und nicht in den Access Point eingeht, um apiKey und DeviceID zu finden. Gleiches dürfte für alle ewelink kompatiblen Türsensoren gelten.
+Das Sonoff DW2 ist nicht kompatibel, da es sich um eine reine Cloud handelt und nicht in den Access Point geht, um apiKey und DeviceID zu finden. Es ist wahrscheinlich für alle ewelink-kompatiblen Türsensoren gleich.
 
 Der Zigbee Hub ist nicht kompatibel (und rein Cloud).
 
-Keine Lampe oder LED-Streifen sind kompatibel.
+Keine Glühbirne oder LED-Streifen ist kompatibel.
 
-Die Kompatibilität dieser Geräte ist jedoch nicht gewährleistet, da das Protokoll von den Herstellern modifiziert werden kann. Ändern Sie die Firmware des Geräts nicht, ohne überprüft zu haben, ob es mit dem Plugin kompatibel ist.
+Dennoch ist die Kompatibilität dieser Peripheriegeräte nicht gewährleistet, da das Protokoll von den Herstellern modifiziert werden kann. Verändern Sie die Geräte-Firmware nicht, ohne zu überprüfen, ob sie mit dem Plugin kompatibel ist.
 
-Bei Mehrkanalgeräten (wie dem Sonoff 4CH) müssen Sie so viele wifilightV2-Geräte erstellen, wie Kanäle vorhanden sind, eine Kopie des ersten ist einfach, dann müssen Sie die Kanalnummer ändern.
+Bei Mehrkanalgeräten (wie dem Sonoff 4CH) müssen Sie so viele wifilightV2-Geräte erstellen, wie es Kanäle gibt, eine Kopie des zuerst erstellten macht es einfach, dann müssen Sie die Kanalnummer ändern.
 
-Bei Geräten, die nicht in dieser Liste enthalten sind (z. B. Sonoff Ifan) oder wenn die Konfiguration nicht funktioniert und nach der Integration des Geräts in Jeedom (z. B. mit der Sonoff Basic-Konfiguration) in den Protokollen suchen:
-
-Empfangen nach Dekodierung: {.................}
-
-und geben Sie im [Forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) den Inhalt der geschweiften Klammern an, um die Einbindung des Moduls in das Plugin zu ermöglichen.
+Geben Sie für Geräte, die nicht in dieser Liste enthalten sind, oder wenn die Konfiguration nicht funktioniert und nachdem Sie das Geräteintegrationsverfahren verwendet haben, den Inhalt der wifilightV2_inc-Protokolle an und geben Sie sie im [Forum](https://community.jeedom.com /t/plugin -wifilightv2-sonoff-ewelink-lan/2632), um die Integration des Moduls in das Plugin zu ermöglichen.
 
 # Tuya Smartlife und Cloud Tuya
 
@@ -687,4 +679,13 @@ Achten Sie auf folgende Punkte:
 
 # Hilfe ?
 
-Gehen Sie zum Jeedom-Forum [hier](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
+Gehen Sie zum Jeedom-Forum [hier](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439) und geben Sie so viele Informationen wie möglich an, um Hilfe zu erhalten:
+- Plugin-Version
+- Plugin-Konfiguration
+- Gerätekonfiguration
+
+Die Plugin-Protokolle sind nicht mit Syslog kompatibel, legen Sie die Standardkonfiguration für die Protokolle fest. Sie sind in 4 Kategorien unterteilt:
+- wifilightV2_cmd: für Befehle, die an Peripheriegeräte gesendet werden
+- wifilightV2_inc: beim Einbinden von Geräten
+- wifilight_Tuya: der Daemon für Tuya- und Yeelight-Geräte. Es testet jede Minute das Vorhandensein dieser Geräte, hält die dauerhafte Verbindung aufrecht und ruft den Status in Echtzeit ab.
+- wifilightV2: der 2. Daemon für alle anderen Geräte. Es testet jede Minute auf das Vorhandensein dieser Geräte. 

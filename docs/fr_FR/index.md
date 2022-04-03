@@ -536,29 +536,23 @@ Cette procédure automatise la création de la plupart des périphériques Eweli
 
 ## Configuration du plugin
 
-Dans la configuration du plugin, renseigner le login (adresse mail uniquement) et le mot de passe de connexion à l'appli Ewelink et sauvegarder. Ensuite, sélectionner : Ewelink Passer en inclusion. Les périphériques sont créés automatiquement. 
+Dans la configuration du plugin, renseigner le login (adresse mail uniquement) et le mot de passe de connexion à l'appli Ewelink et sauvegarder. Ensuite, sélectionner : Ewelink Passer en inclusion. Les périphériques qui se trouvent dans l'application Ewelink sont créés automatiquement. Si le périphérique est supprimé de l'applciation Ewelink, il ne focntionnera plus avec le plugin.
 
-Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, si elle ne peut être chargée ou si le système n'est pas compatible, l'adresse IP ne pourra pas être trouvée automatiquement.
-
-Cette partie du plugin nécessite le lancement des dépendances.
+Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, qui nécessite le lancement des dépendances. Si elle ne peut être chargée ou si le système n'est pas compatible, l'adresse IP ne pourra pas être trouvée automatiquement.
 
 Pour la plupart des périphériques sonoff, le sous-type est trouvé, dans les autres cas le sonoff basic est choisi par le plugin, vous pouvez changer le sous-type sans perdre l'ApiKey et le deviceID.
 
-Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas.
+Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas. Vous pouvez modifier le deviceID pour forcer la création d'un doublon.
 
-### Remarques :
+
+Remarques :
+
 - certains périphériques ne sont pas créés (le cloud Ewelink ne fournit pas les données)
 - les périphériques purement cloud seront intégrés mais le plugin ne pourra pas y accéder
 - si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
+- quand un périphérique se connecte au wifi, le plugin sera prévenu immédiatement. Par contre, lorsqu'un périphérique est déconnecté, le plugin ne pourra le savoir que si une commande lui est envoyée par le plugin.
+- L'ApiKey et le DeviceID sont récupérés automatiquement par l'inclusion. Néanmoins, pour récupérer manuellement ces 2 informations, vous pouvez aller [ici]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) ou [sur le forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 ) ou faire une recherche sur le web et le forum Jeedom avec comme mots clé : Ewelink ou Sonoff Apikey. Il ne faut mettre ni espace ni guillemets.
 
-
-## ApiKey DeviceID
-
-Pour récupérer manuellement ces 2 informations, vous pouvez aller [ici]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) ou [sur le forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 ) ou faire une recherche sur le web et le forum Jeedom avec comme mots clé : Ewelink ou Sonoff Apikey. Il ne faut mettre ni espace ni guillemets.
-
-## Connexion
-
-Quand un périphérique se connecte au wifi, le plugin sera immédiatement prévenu. Par contre, lorsqu'un périphérique est déconnecté, le plugin ne pourra le savoir que si une commande lui est envoyée par le plugin.
 
 ## Compatibilité
 
@@ -579,7 +573,7 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 - Sonoff T4EUC1
 - Ifan 2/3/4 à tester 
 - Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur de présence, télécommande)
-- Sonoff Micro USB : choisir le canal 1, prévu pour 4 canaux pour un modèle USB 4 canaux non sonoff
+- Sonoff Micro USB : choisir le canal 1, prévu pour 4 canaux pour un modèle USB 4 canaux non sonoff, retour d'état non fonctionnel
 
 Le sonoff DW2 n'est pas compatible car purement cloud et ne se met pas en Acces Point permettant de trouver apiKey et DeviceID. Il est probable qu'il en soit de même pour tous les capteurs de porte compatibles ewelink.
 
@@ -591,11 +585,7 @@ Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le p
 
 Pour les périphériques multicanaux (comme le Sonoff 4CH) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal.
 
-Pour les périphériques non présents dans cette liste (Sonoff Ifan par exemple) ou si la configuration ne fonctionne pas et après avoir intégré le périphérique dans Jeedom (avec la configuration Sonoff Basic par exemple) repérer dans les logs :
-
-	Receive after decode :{...............}
-	
-et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) le contenu des accolades afin de permettre l'intégration du module dans le plugin.
+Pour les périphériques non présents dans cette liste ou si la configuration ne fonctionne pas et après avoir utilisé la procédure d'intégration du périphérique, donner le contenu des logs wifilightV2_inc et donner dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) afin de permettre l'intégration du module dans le plugin.
 
 # Tuya Smartlife et Cloud Tuya
 
@@ -701,4 +691,13 @@ Il faut faire attention aux points suivants :
 
 # A l'aide ?
 
-Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439)
+Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439) et apporter le maximum d'informations pour obtenir de l'aide :
+- version du plugin
+- configuration du plugin
+- configuration du périphérique
+
+Les logs du plugin ne sont pas compatibles avec syslog, mettre la configuration standard pour les logs. Ils sont répartis en 4 catégories :
+- wifilightV2_cmd : pour les commandes envoyées vers les périphériques
+- wifilightV2_inc : lors de l'inclusion des périphériques
+- wifilight_Tuya : le daemon pour les périphériques Tuya et Yeelight. Il teste la présence de ces périphériques toutes les minutes, maintient la connexion permanente et récupère l'état en temps réel.
+- wifilightV2 : le 2ème daemon pour tous les autres périphériques. Il teste la présence de ces périphériques toutes les minutes.

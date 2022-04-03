@@ -525,64 +525,56 @@ Este procedimiento automatiza la creación de la mayoría de los dispositivos Ew
 
 ## Configuración del complemento
 
-En la configuración del complemento, ingrese el inicio de sesión (solo la dirección de correo electrónico) y la contraseña para conectarse a la aplicación Ewelink y guardar. Luego seleccione: Ewelink Cambiar a inclusión. Los dispositivos se crean automáticamente.
+En la configuración del complemento, ingrese el inicio de sesión (solo la dirección de correo electrónico) y la contraseña para conectarse a la aplicación Ewelink y guardar. Luego seleccione: Ewelink Cambiar a inclusión. Los dispositivos que están en la aplicación Ewelink se crean automáticamente. Si el dispositivo se elimina de la aplicación Ewelink, ya no funcionará con el complemento.
 
-Si el complemento no encuentra la dirección IP local, haga coincidir la dirección mac con la dirección IP proporcionada en la configuración del dispositivo de la aplicación Tuya y su enrutador y modifique la dirección IP. El procedimiento para encontrar la dirección IP utiliza un comando del sistema Linux, si no se puede cargar o si el sistema no es compatible, la dirección IP no se puede encontrar automáticamente.
-
-Esta parte del complemento requiere que se inicien las dependencias.
+Si el complemento no encuentra la dirección IP local, haga coincidir la dirección mac con la dirección IP proporcionada en la configuración del dispositivo de la aplicación Tuya y su enrutador y modifique la dirección IP. El procedimiento para encontrar la dirección IP utiliza un comando del sistema Linux, que requiere ejecutar las dependencias. Si no se puede cargar o si el sistema no es compatible, la dirección IP no se puede encontrar automáticamente.
 
 Para la mayoría de los dispositivos sonoff, se encuentra el subtipo, en otros casos, el complemento elige sonoff basic, puede cambiar el subtipo sin perder la ApiKey y el ID del dispositivo.
 
-Si ya existe un dispositivo con el mismo ID de dispositivo, no se realizará la inclusión.
+Si ya existe un dispositivo con el mismo ID de dispositivo, no se realizará la inclusión. Puede modificar el ID del dispositivo para forzar la creación de un duplicado.
 
-### Observaciones:
+
+Observaciones:
+
 - algunos dispositivos no se crean (la nube de Ewelink no proporciona los datos)
 - los dispositivos de nube pura se integrarán pero el complemento no podrá acceder a ellos
 - si no se encontró la dirección IP porque el periférico no está conectado, dale la dirección: 0.0.0.0, conéctalo y reinicia el procedimiento de inclusión.
+- cuando un dispositivo se conecta a wifi, el complemento será notificado de inmediato. Por otro lado, cuando se desconecta un periférico, el complemento solo podrá saberlo si el complemento le envía un comando.
+- ApiKey y DeviceID se recuperan automáticamente por inclusión. Sin embargo, para recuperar manualmente estas 2 piezas de información, puede ir [aquí] (https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) o [en el foro de Jeedom ]( https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 ) o busque en la web y en el foro de Jeedom con las palabras clave: Ewelink o Sonoff Apikey. No ponga espacios ni comillas.
 
-## APiKey DeviceID
-
-Siga las instrucciones [aquí](https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) o [en el foro de Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) para recuperar esta información o hacer una búsqueda en la web y en el foro de jeedom con las palabras clave: Ewelink o Sonoff Apikey. El deviceid se debe colocar en el identificador del plugin. El Apikey se debe poner en el token. No ponga espacios ni comillas.
-
-## Acceso
-
-Cuando un dispositivo se conecta a wifi, el plugin se notificará de inmediato. Por otro lado, cuando se desconecta un dispositivo, el plugin solo podrá reconocerlo si el plugin le envía un comando.
 
 ## Compatibilidad
 
-Muchas marcas son compatibles, incluido Sonoff. Los productos probados son los siguientes:
-- Interruptores, enchufes de pared, interruptor: simple de todas las marcas
-- Interruptores, enchufes de pared, interruptor: múltiples de todas las marcas
-- Interruptores, enchufes de pared, interruptor: simple con variador de todas las marcas
+Muchas marcas son compatibles, incluida Sonoff. Los productos probados son:
+- Interruptores, enchufes de pared, interruptor: simples de todas las marcas
+- Interruptores, enchufes de pared, interruptor: múltiplos de todas las marcas
+- Interruptores, enchufes de pared, interruptor: simple con dimmer de todas las marcas
 - Atenuador inteligente Sonoff D1
-- Sensor de temperatura Sonoff TH10/1H16. Nueva configuración para firmware> = 3.4 con ON/OFF OK
-- Sonoff básico,RF,POW,Mini
+- Sensor de temperatura Sonoff TH10/1H16. Nueva configuración para firmware >=3.4 con ON/OFF OK
+- Sonoff básico R2, RF, POW, Mini
 - Sonoff Dual R2
-- Sonoff Dual R3 (la recuperación del consumo y la configuración del motor deben probarse, la configuración del motor no está completamente implementada)
+- Sonoff Dual R3 (la recuperación de consumo y la configuración del motor deben probarse, la configuración del motor no está completamente implementada)
 - Sonoff 4CH/4CH PRO
 - Sonoff Touch
 - Sonoff S20/S26
 - Sonoff T1/TX
 - Sonoff SLAMPHER
 - Sonoff T4EUC1
-- Sonoff Ifan R2/R3/R4 con fines de prueba
-- Sonoff RF bridge 433 solo para los sensores (puerta, detector de presencia, control remoto)
+- Ifan 2/3/4 para probar
+- Sonoff RF bridge 433 solo para sensores (puerta, detector de presencia, mando a distancia)
+- Sonoff Micro USB: elija el canal 1, proporcionado para 4 canales para un modelo USB de 4 canales que no sea sonoff, retroalimentación de estado no funcional
 
-El sonoff DW2 no es compatible porque es puramente en la nube y no entra en el punto de acceso, lo que permite encontrar apiKey y DeviceID. Es probable que ocurra lo mismo con todos los sensores de puerta compatibles con ewelink.
+El sonoff DW2 no es compatible porque es puramente en la nube y no ingresa al punto de acceso para encontrar apiKey y DeviceID. Es probable que sea el mismo para todos los sensores de puerta compatibles con ewelink.
 
-El Zigbee Hub no es compatible (y es puramente en la nube).
+Zigbee Hub no es compatible (y puramente en la nube).
 
 Ninguna bombilla o tira de led es compatible.
 
-Sin embargo, la compatibilidad de estos dispositivos no está garantizada porque los fabricantes pueden modificar el protocolo. No modifiques el firmware del dispositivo sin haber verificado que es compatible con el plugin.
+No obstante, la compatibilidad de estos periféricos no está garantizada ya que el protocolo puede ser modificado por los fabricantes. No modifique el firmware del dispositivo sin comprobar que es compatible con el complemento.
 
-Para dispositivos multicanal (como el Sonoff 4CH) tienes que crear tantos dispositivos wifilightV2 como canales haya, una copia del primero creado fácilmente, luego tienes que cambiar el número de canal.
+Para dispositivos multicanal (como el Sonoff 4CH) tienes que crear tantos dispositivos wifilightV2 como canales haya, una copia del primero creado lo hace fácil, luego tienes que cambiar el número de canal.
 
-Para dispositivos no presentes en esta lista (Sonoff Ifan por ejemplo) o si la configuración no funciona y luego de integrar el dispositivo en Jeedom (con la configuración Sonoff Basic por ejemplo) ubique en los registros:
-
-    Receive after decode :{...............}
-
-y dar en el [foro](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) el contenido de las llaves para permitir la integración del módulo en el plugin.
+Para dispositivos no presentes en esta lista o si la configuración no funciona y después de usar el procedimiento de integración de dispositivos, proporcione el contenido de los registros de wifilightV2_inc y proporcione en el [foro] (https://community.jeedom.com /t/plugin -wifilightv2-sonoff-ewelink-lan/2632) para permitir la integración del módulo en el plugin.
 
 # Tuya Smartlife y Cloud Tuya
 
@@ -685,4 +677,13 @@ Preste atención a los siguientes puntos:
 
 # Ayudar ?
 
-Vaya al foro de Jeedom [aquí](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439) 
+Vaya al foro de Jeedom [aquí](https://community.jeedom.com/t/plugin-wifilightv2-discussion-generale/2439) y proporcione tanta información como sea posible para obtener ayuda:
+- versión del complemento
+- configuración de complementos
+- Configuración del dispositivo
+
+Los registros del complemento no son compatibles con syslog, coloque la configuración estándar para los registros. Se dividen en 4 categorías:
+- wifilightV2_cmd: para comandos enviados a periféricos
+- wifilightV2_inc: al incluir dispositivos
+- wifilight_Tuya: el daemon para dispositivos Tuya y Yeelight. Comprueba la presencia de estos dispositivos cada minuto, mantiene la conexión persistente y recupera el estado en tiempo real.
+- wifilightV2: el segundo daemon para todos los demás dispositivos. Prueba la presencia de estos dispositivos cada minuto. 

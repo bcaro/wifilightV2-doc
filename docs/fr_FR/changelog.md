@@ -10,6 +10,10 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.89 - 2022-04-02 (Jeedom V4.2)
+- ajout du sonoff Micro mais le retour d'état ne fonctionne pas
+- correction bogue stateget
+
 1.88 - 2022-03-28 (Jeedom V4.2)
 - Revogi : ajout des prises Revogi Smart plug (1 à 6) V3
 - Meross : ajout purificateur MAP100, diffuseur MOD100, humidifieur MSXH0 le tout en beta à tester en profondeur
