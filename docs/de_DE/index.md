@@ -489,7 +489,7 @@ Achtung: Einige alte Steckdosen verhalten sich anders, verwenden Sie die Version
 Erstellen Sie keine neuen Geräte mit dieser Option, verwenden Sie vorzugsweise Meross V2, dieser Typ ist vorhanden, um die Kompatibilität mit Geräten zu gewährleisten, die vor der Ankunft von V2 konfiguriert wurden. Es wird keine Hilfe gegeben, um die notwendigen Parameter für diesen Typ zu finden.
 
 ## Geben Sie "Meross V2" für jede Firmware ein, einschließlich 2.2.2
-Um einen Schlüssel zu erhalten, müssen Sie den Benutzernamen und das Passwort des Meross-Kontos eingeben, speichern und auf der Registerkarte Befehle auf getKey klicken. Es wird von den Meross-Servern abgerufen und im Schlüsselfeld gespeichert. Sie können diesen Schlüssel in alle Ihre Meross-Geräte kopieren und das Login und Passwort löschen, müssen dann aber nicht mehr auf getKey klicken.
+Um einen Schlüssel zu erhalten, müssen Sie die Kennungen (login) und das Passwort des Meross-Kontos in der Konfiguration des Plugins eingeben. Klicken Sie dann auf der Registerkarte Befehle jedes Geräts auf getKey. Der Schlüssel wird von den Meross-Servern abgerufen und im Schlüsselfeld gespeichert. Sie können diesen Schlüssel in alle Ihre Meross-Geräte kopieren und das Login und Passwort löschen, müssen dann aber nicht mehr auf getKey klicken.
 
 Warnung: Die wiederholte Verwendung von getgey kann den Zugriff auf Meross-Server blockieren, was mehrere Stunden dauern kann. Erstellen Sie eine Kopie des Schlüssels auf all Ihren Meross-Geräten, es hängt vom Benutzerkonto ab und nicht vom Gerät.
 

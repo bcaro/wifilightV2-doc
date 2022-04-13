@@ -495,7 +495,7 @@ Caution: some old sockets behave differently, use version V1 in the subtype.
 Do not create new devices with this option, preferably use Meross V2, this type is present to ensure compatibility with devices configured before the arrival of V2. No help will be given to find the necessary parameters for this type.
 
 ## type "Meross V2" for any firmware including 2.2.2
-In order to obtain a key, you must enter the login and password of the Meross account, save and click on getKey in the commands tab. It is retrieved from the Meross servers and saved in the Key field. You can copy this key into all your Meross devices and erase the login and password, but then you no longer have to click on getKey.
+In order to obtain a key, you must enter the identifier (login) and password of the Meross account in the configuration of the plugin. Then click on getKey in the commands tab of each device. The key is retrieved from the Meross servers and saved in the Key field. You can copy this key into all your Meross devices and erase the login and password, but then you no longer have to click on getKey.
 
 Warning: repeated uses of getgey can block access to Meross servers which can last several hours. Make a copy of the Key on all your Meross devices, it depends on the user account and not on the device.
 

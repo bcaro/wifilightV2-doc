@@ -486,7 +486,7 @@ Precaución: algunos sockets antiguos se comportan de manera diferente, use la v
 No cree nuevos dispositivos con esta opción, preferiblemente use Meross V2, este tipo está presente para garantizar la compatibilidad con los dispositivos configurados antes de la llegada de V2. No se brindará ayuda para encontrar los parámetros necesarios para este tipo.
 
 ## escriba "Meross V2" para cualquier firmware, incluido 2.2.2
-Para obtener una clave, debe ingresar el nombre de usuario y la contraseña de la cuenta de Meross, guardar y hacer clic en getKey en la pestaña de comandos. Se recupera de los servidores de Meross y se guarda en el campo Clave. Puede copiar esta clave en todos sus dispositivos Meross y borrar el nombre de usuario y la contraseña, pero ya no tendrá que hacer clic en getKey.
+Para obtener una clave, debe ingresar los identificadores (login) y la contraseña de la cuenta de Meross en la configuración del complemento. Luego haga clic en getKey en la pestaña de comandos de cada dispositivo. La clave se recupera de los servidores de Meross y se guarda en el campo Clave. Puede copiar esta clave en todos sus dispositivos Meross y borrar el nombre de usuario y la contraseña, pero ya no tendrá que hacer clic en getKey.
 
 Advertencia: los usos repetidos de getgey pueden bloquear el acceso a los servidores de Meross, lo que puede durar varias horas. Haz una copia de la Clave en todos tus dispositivos Meross, depende de la cuenta de usuario y no del dispositivo.
 
