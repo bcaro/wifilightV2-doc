@@ -12,6 +12,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 
 1.89b - 2022-04-19 stable (Jeedom V4.2)
 - correction bogue demon
+- correction thermostat Tuya ZMAI/EMAI
 
 1.89 - 2022-04-13 stable (Jeedom V4.2)
 - ajout du sonoff Micro mais le retour d'état ne fonctionne pas
