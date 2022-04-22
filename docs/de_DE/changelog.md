@@ -10,6 +10,9 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.90b - 2022-04-21 beta (Jeedom V4.2)
+- adaptation au passage en V2 du cloud ewelink
+
 1.89b - 2022-04-19 stable (Jeedom V4.2)
 - correction bogue demon
 - correction thermostat Tuya ZMAI/EMAI
