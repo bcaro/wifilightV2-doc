@@ -549,7 +549,7 @@ Remarques :
 
 - certains périphériques ne sont pas créés (le cloud Ewelink ne fournit pas les données)
 - les périphériques purement cloud seront intégrés mais le plugin ne pourra pas y accéder
-- tous les périphériques sonoff sont intégrés mais ne seront pas gérés, comme les caméras  
+- tous les périphériques sonoff sont intégrés mais ne seront pas forcément gérés, comme les caméras  
 - si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
 - quand un périphérique se connecte au wifi, le plugin sera prévenu immédiatement. Par contre, lorsqu'un périphérique est déconnecté, le plugin ne pourra le savoir que si une commande lui est envoyée par le plugin.
 - L'ApiKey et le DeviceID sont récupérés automatiquement par l'inclusion. Néanmoins, pour récupérer manuellement ces 2 informations, vous pouvez aller [ici]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) ou [sur le forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 ) ou faire une recherche sur le web et le forum Jeedom avec comme mots clé : Ewelink ou Sonoff Apikey. Il ne faut mettre ni espace ni guillemets.
