@@ -549,6 +549,7 @@ Remarques :
 
 - certains périphériques ne sont pas créés (le cloud Ewelink ne fournit pas les données)
 - les périphériques purement cloud seront intégrés mais le plugin ne pourra pas y accéder
+- tous les périphériques sonoff sont intégrés mais ne seront pas gérés, comme les caméras  
 - si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
 - quand un périphérique se connecte au wifi, le plugin sera prévenu immédiatement. Par contre, lorsqu'un périphérique est déconnecté, le plugin ne pourra le savoir que si une commande lui est envoyée par le plugin.
 - L'ApiKey et le DeviceID sont récupérés automatiquement par l'inclusion. Néanmoins, pour récupérer manuellement ces 2 informations, vous pouvez aller [ici]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) ou [sur le forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 ) ou faire une recherche sur le web et le forum Jeedom avec comme mots clé : Ewelink ou Sonoff Apikey. Il ne faut mettre ni espace ni guillemets.
@@ -573,15 +574,17 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 - Sonoff T4EUC1
 - Ifan 2/3/4 à tester 
 - Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur de présence, télécommande)
-- Sonoff Micro USB : choisir le canal 1, prévu pour 4 canaux pour un modèle USB 4 canaux non sonoff, retour d'état non fonctionnel
+- Sonoff Micro USB : choisir le canal 1, prévu pour 4 canaux pour un modèle USB 4 canaux non sonoff, retour d'état non fonctionnel en fw 3.7
+
+Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
 Le sonoff DW2 n'est pas compatible car purement cloud et ne se met pas en Acces Point permettant de trouver apiKey et DeviceID. Il est probable qu'il en soit de même pour tous les capteurs de porte compatibles ewelink.
 
-Le Hub Zigbee n'est pas compatible (et purement cloud)ainsi que tous les périphériques Zigbee.
+Le Hub Zigbee n'est pas compatible (et purement cloud) ainsi que tous les périphériques Zigbee.
 
 Aucune ampoule ou strip led n'est compatible.
 
-Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
+
 
 Pour les périphériques multicanaux (comme le Sonoff 4CH) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal.
 
