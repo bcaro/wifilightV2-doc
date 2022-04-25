@@ -562,19 +562,21 @@ Muchas marcas son compatibles, incluida Sonoff. Los productos probados son:
 - Sonoff T4EUC1
 - Ifan 2/3/4 para probar
 - Sonoff RF bridge 433 solo para sensores (puerta, detector de presencia, mando a distancia)
-- Sonoff Micro USB: elija el canal 1, proporcionado para 4 canales para un modelo USB de 4 canales que no sea sonoff, retroalimentación de estado no funcional
-
-El sonoff DW2 no es compatible porque es puramente en la nube y no ingresa al punto de acceso para encontrar apiKey y DeviceID. Es probable que sea el mismo para todos los sensores de puerta compatibles con ewelink.
-
-Zigbee Hub no es compatible (y puramente en la nube).
-
-Ninguna bombilla o tira de led es compatible.
+- Sonoff Micro USB: elija el canal 1, proporcionado para 4 canales para un modelo USB de 4 canales que no sea sonoff, retorno de estado no funcional en fw 3.7
 
 No obstante, la compatibilidad de estos periféricos no está garantizada ya que el protocolo puede ser modificado por los fabricantes. No modifique el firmware del dispositivo sin comprobar que es compatible con el complemento.
 
+El sonoff DW2 no es compatible porque es puramente en la nube y no ingresa al punto de acceso para encontrar apiKey y DeviceID. Es probable que sea el mismo para todos los sensores de puerta compatibles con ewelink.
+
+Zigbee Hub no es compatible (y puramente en la nube), así como todos los dispositivos Zigbee.
+
+Ninguna bombilla o tira de led es compatible.
+
+
+
 Para dispositivos multicanal (como el Sonoff 4CH) tienes que crear tantos dispositivos wifilightV2 como canales haya, una copia del primero creado lo hace fácil, luego tienes que cambiar el número de canal.
 
-Para dispositivos no presentes en esta lista o si la configuración no funciona y después de usar el procedimiento de integración de dispositivos, proporcione el contenido de los registros de wifilightV2_inc y proporcione en el [foro] (https://community.jeedom.com /t/plugin -wifilightv2-sonoff-ewelink-lan/2632) para permitir la integración del módulo en el plugin.
+Para dispositivos que no están presentes en esta lista o si la configuración no funciona o si un dispositivo no tiene el subtipo correcto y después de usar el procedimiento de integración de dispositivos, proporcione el contenido de los registros wifilightV2_inc en el [foro] (https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) para permitir la integración del módulo en el complemento.
 
 # Tuya Smartlife y Cloud Tuya
 

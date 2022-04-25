@@ -571,19 +571,21 @@ Many brands are compatible including Sonoff. The products tested are:
 - Sonoff T4EUC1
 - Ifan 2/3/4 to test
 - Sonoff RF bridge 433 for sensors only (door, presence detector, remote control)
-- Sonoff Micro USB: choose channel 1, provided for 4 channels for a non-sonoff 4-channel USB model, non-functional status feedback
+- Sonoff Micro USB: choose channel 1, provided for 4 channels for a non-sonoff 4-channel USB model, non-functional status return in fw 3.7
+
+Nevertheless, the compatibility of these peripherals is not guaranteed because the protocol can be modified by the manufacturers. Do not modify the device firmware without checking that it is compatible with the plugin.
 
 The sonoff DW2 is not compatible because it is purely cloud and does not go into Access Point to find apiKey and DeviceID. It is likely to be the same for all ewelink compatible door sensors.
 
-The Zigbee Hub is not compatible (and purely cloud).
+The Zigbee Hub is not compatible (and purely cloud) as well as all Zigbee devices.
 
 No bulb or led strip is compatible.
 
-Nevertheless, the compatibility of these peripherals is not guaranteed because the protocol can be modified by the manufacturers. Do not modify the device firmware without verifying that it is compatible with the plugin.
+
 
 For multi-channel devices (like the Sonoff 4CH) you have to create as many wifilightV2 devices as there are channels, a copy of the first created makes it easy, then you have to change the channel number.
 
-For devices not present in this list or if the configuration does not work and after using the device integration procedure, give the content of the wifilightV2_inc logs and give in the [forum](https://community.jeedom.com /t/plugin-wifilightv2-sonoff-ewelink-lan/2632) in order to allow the integration of the module in the plugin.
+For devices not present in this list or if the configuration does not work or if a device does not have the correct subtype and after using the device integration procedure, give the contents of the wifilightV2_inc logs in the [forum ](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) in order to allow the integration of the module in the plugin.
 
 ## Tuya Smartlife and Cloud Tuya
 
