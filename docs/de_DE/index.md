@@ -198,6 +198,8 @@ wifilightV2 erstellt keine Geräte automatisch, außer:
 - Tuya Smartlife
 - Ewelink
 - Govee
+- Tapo
+- Kasa (TP-Link)
 
 Hilfe :
 - Verwenden Sie das Fragezeichen-Symbol, um Hilfe zu jedem Konfigurationselement zu erhalten.

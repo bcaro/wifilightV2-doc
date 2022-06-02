@@ -203,7 +203,9 @@ wifilightV2 does not create devices automatically except:
 
 - Tuya Smartlife
 - Ewelink
-- Govee 
+- Govee
+- Tapo
+- Kasa (TP-Link) 
 
 Need help ? :
 - Use the question mark icon to get help on each configuration item.

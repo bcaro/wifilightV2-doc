@@ -200,6 +200,8 @@ wifilightV2 ne crée pas les périphériques automatiquement sauf :
 -   Tuya Smartlife
 -   Ewelink
 -   Govee
+-	Tapo
+-	Kasa (TP-Link)
 
 Aide : 
 -   Utiliser l'icône sous forme de point d'interrogation pour obtenir une aide sur chaque élément de configuration.

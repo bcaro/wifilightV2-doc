@@ -10,7 +10,12 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.90b - 2022-04-21 beta (Jeedom V4.2)
+1.91 - 2022-05-30 beta (Jeedom V4.2)
+- sortie du mode alpha du boutton Mystrom
+- Lhomma : correction bogues accès aux périphériques
+- correction bogues mineurs
+
+1.90 - 2022-04-21 stable (Jeedom V4.2)
 - adaptation au passage en V2 du cloud ewelink
 
 1.89b - 2022-04-19 stable (Jeedom V4.2)
