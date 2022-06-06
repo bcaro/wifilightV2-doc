@@ -13,6 +13,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 1.91 - 2022-05-30 beta (Jeedom V4.2)
 - sortie du mode alpha du boutton Mystrom
 - Lhomma : correction bogues accès aux périphériques
+- Sonoff TH10/16 : correction infos température et humidité à 0
 - correction bogues mineurs
 
 1.90 - 2022-04-21 stable (Jeedom V4.2)
