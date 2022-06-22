@@ -529,7 +529,7 @@ Este procedimiento automatiza la creación de la mayoría de los dispositivos Ew
 
 En la configuración del complemento, ingrese el inicio de sesión (solo la dirección de correo electrónico) y la contraseña para conectarse a la aplicación Ewelink y guardar. Luego seleccione: Ewelink Cambiar a inclusión. Los dispositivos que están en la aplicación Ewelink se crean automáticamente. Si el dispositivo se elimina de la aplicación Ewelink, ya no funcionará con el complemento.
 
-Si el complemento no encuentra la dirección IP local, haga coincidir la dirección mac con la dirección IP proporcionada en la configuración del dispositivo de la aplicación Tuya y su enrutador y modifique la dirección IP. El procedimiento para encontrar la dirección IP utiliza un comando del sistema Linux, que requiere ejecutar las dependencias. Si no se puede cargar o si el sistema no es compatible, la dirección IP no se puede encontrar automáticamente.
+Si el complemento no encuentra la dirección IP local, haga coincidir la dirección mac con la dirección IP proporcionada en la configuración del dispositivo de la aplicación Ewelink y su enrutador y modifique la dirección IP. El procedimiento para encontrar la dirección IP utiliza un comando del sistema Linux, que requiere ejecutar las dependencias. Si no se puede cargar o si el sistema no es compatible, la dirección IP no se puede encontrar automáticamente.
 
 Para la mayoría de los dispositivos sonoff, se encuentra el subtipo, en otros casos, el complemento elige sonoff basic, puede cambiar el subtipo sin perder la ApiKey y el ID del dispositivo.
 
@@ -539,7 +539,7 @@ Si ya existe un dispositivo con el mismo ID de dispositivo, no se realizará la 
 Observaciones:
 
 - algunos dispositivos no se crean (la nube de Ewelink no proporciona los datos)
-- los dispositivos de nube pura se integrarán pero el complemento no podrá acceder a ellos
+- Los dispositivos que no funcionan con zigbee y que funcionan con baterías son pura nube (cierre, puerta, sensores de temperatura, por ejemplo) se integrarán pero el complemento no podrá acceder a ellos
 - si no se encontró la dirección IP porque el periférico no está conectado, dale la dirección: 0.0.0.0, conéctalo y reinicia el procedimiento de inclusión.
 - cuando un dispositivo se conecta a wifi, el complemento será notificado de inmediato. Por otro lado, cuando se desconecta un periférico, el complemento solo podrá saberlo si el complemento le envía un comando.
 - ApiKey y DeviceID se recuperan automáticamente por inclusión. Sin embargo, para recuperar manualmente estas 2 piezas de información, puede ir [aquí] (https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01) o [en el foro de Jeedom ]( https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 ) o busque en la web y en el foro de Jeedom con las palabras clave: Ewelink o Sonoff Apikey. No ponga espacios ni comillas.

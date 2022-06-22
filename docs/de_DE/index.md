@@ -533,7 +533,7 @@ Dieses Verfahren automatisiert die Erstellung der meisten Ewelink- und Sonoff-Ge
 
 Geben Sie in der Konfiguration des Plugins den Login (nur E-Mail-Adresse) und das Passwort für die Verbindung zur Ewelink-App ein und speichern Sie. Wählen Sie dann: Ewelink Wechseln Sie zu Inklusion. Die Geräte, die sich in der Ewelink-Anwendung befinden, werden automatisch erstellt. Wenn das Gerät aus der Ewelink-App gelöscht wird, funktioniert es nicht mehr mit dem Plugin.
 
-Wenn die lokale IP-Adresse vom Plugin nicht gefunden wird, gleichen Sie die MAC-Adresse mit der IP-Adresse ab, die in den Geräteeinstellungen der Tuya-Anwendung und Ihres Routers angegeben ist, und ändern Sie die IP-Adresse. Das Verfahren zum Ermitteln der IP-Adresse verwendet einen Linux-Systembefehl, der das Ausführen der Abhängigkeiten erfordert. Wenn es nicht geladen werden kann oder das System nicht kompatibel ist, kann die IP-Adresse nicht automatisch gefunden werden.
+Wenn die lokale IP-Adresse vom Plugin nicht gefunden wird, gleichen Sie die MAC-Adresse mit der IP-Adresse ab, die in den Geräteeinstellungen der Ewelink-Anwendung und Ihres Routers angegeben ist, und ändern Sie die IP-Adresse. Das Verfahren zum Ermitteln der IP-Adresse verwendet einen Linux-Systembefehl, der das Ausführen der Abhängigkeiten erfordert. Wenn es nicht geladen werden kann oder das System nicht kompatibel ist, kann die IP-Adresse nicht automatisch gefunden werden.
 
 Für die meisten Sonoff-Geräte wird der Subtyp gefunden, in anderen Fällen wird Sonoff Basic vom Plugin ausgewählt, Sie können den Subtyp ändern, ohne den ApiKey und die Geräte-ID zu verlieren.
 
@@ -600,7 +600,7 @@ Wenn bereits ein Gerät mit derselben devId vorhanden ist, wird die Aufnahme nic
 
 ### Bemerkungen :
 - einige Geräte werden nicht erstellt (Tuya Cloud liefert keine Daten)
-- reine Cloud-Geräte werden integriert, aber das Plugin kann nicht darauf zugreifen
+- nicht-Zigbee- und batteriebetriebene Geräte sind reine Cloud (z. B. Schließ-, Tür-, Temperatursensoren) werden integriert, aber das Plugin kann nicht darauf zugreifen
 - es werden die Farben nach den 3 bekannten Formaten erstellt sowie die dazugehörigen Sättigungs- und Intensitätsregler
 - Peripheriegeräte mit codierten Informationen (Betätigungsteil von Alarmen im Allgemeinen) werden nicht verwaltet
 - Geräte mit nicht standardmäßigen Informationen (im Allgemeinen mit einem Codeblock in einem Szenario lösbar) werden nicht verwaltet

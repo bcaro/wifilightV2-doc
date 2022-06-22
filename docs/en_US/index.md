@@ -539,7 +539,7 @@ This procedure automates the creation of most Ewelink and Sonoff devices. Howeve
 
 In the configuration of the plugin, enter the login (email address only) and the password for connecting to the Ewelink app and save. Then select: Ewelink Switch to inclusion. The devices that are in the Ewelink application are created automatically. If the device is deleted from the Ewelink app, it will no longer work with the plugin.
 
-If the local IP address is not found by the plugin, match the mac address with the IP address given in the device settings of the Tuya application and your router and modify the IP address. The procedure to find the IP address uses a Linux system command, which requires running the dependencies. If it cannot be loaded or if the system is not compatible, the IP address cannot be found automatically.
+If the local IP address is not found by the plugin, match the mac address with the IP address given in the device settings of the Ewelink application and your router and modify the IP address. The procedure to find the IP address uses a Linux system command, which requires running the dependencies. If it cannot be loaded or if the system is not compatible, the IP address cannot be found automatically.
 
 For most sonoff devices the subtype is found, in other cases sonoff basic is chosen by the plugin, you can change the subtype without losing the ApiKey and deviceID.
 
@@ -605,7 +605,7 @@ If a device with the same devId already exists, the inclusion will not happen.
 
 ### Remarks :
 - some devices are not created (Tuya cloud does not provide data)
-- purely cloud devices will be integrated but the plugin will not be able to access them
+- non-zigbee and battery-powered devices are pure cloud (closure, door, temperature sensors for example) will be integrated but the plugin will not be able to access them
 - the colors according to the 3 known formats are created as well as the related saturation and intensity controls
 - peripherals with coded information (actuator part of alarms in general) are not managed
 - devices with non-standard information (in general can be solved with a code block in a scenario) are not managed
