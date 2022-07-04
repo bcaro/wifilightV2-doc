@@ -602,7 +602,7 @@ Esta parte del complemento requiere el lanzamiento de las dependencias: si el co
 - si no se encontró la dirección IP porque el periférico no está conectado, dale la dirección: 0.0.0.0, conéctalo y reinicia el procedimiento de inclusión.
 
 ### Puntas:
-- si la clave local de un periférico ha cambiado, modifique el devId del periférico, rehaga la inclusión y finalmente copie el devId y la nueva clave local al periférico antiguo.
+- si la localKey de un dispositivo ha cambiado, modifique el devId del dispositivo, rehaga la inclusión y copie el devId y la nueva localKey nuevamente en el dispositivo antiguo. Finalmente, elimine el dispositivo creado por inclusión..
 - si el procedimiento automático falla o si la nube Tuya no proporciona los comandos, cambie al [modo de aprendizaje del dispositivo] (./tuya#tocAnchor-1-1-6) y actúe solo en los botones de la aplicación Tuya Smartlife en correspondencia . Si se usan otros botones, el complemento creará duplicados de los comandos creados a través de la nube de Tuya.
 - en general, los pedidos se pueden crear manualmente o en modo de aprendizaje
 - el mínimo y el máximo de un valor numérico se cargan desde la nube. Según sea necesario, modifique los parámetros #slider# y #value#, así como el mínimo y el máximo de Jeedom. Esta parte se mejorará con los comentarios de los usuarios.

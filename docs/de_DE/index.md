@@ -606,7 +606,7 @@ Dieser Teil des Plugins erfordert den Start der Abhängigkeiten: Wenn die lokale
 - Wenn die IP-Adresse nicht gefunden wurde, weil das Peripheriegerät nicht verbunden ist, geben Sie ihm die Adresse: 0.0.0.0 , verbinden Sie es und starten Sie den Aufnahmevorgang erneut.
 
 ### Tipps:
-- Wenn sich der Localkey eines Peripheriegeräts geändert hat, ändern Sie die devId des Peripheriegeräts, wiederholen Sie die Aufnahme und kopieren Sie schließlich die devId und den neuen Localkey auf das alte Peripheriegerät.
+- Wenn sich der Localkey eines Geräts geändert hat, ändern Sie die devId des Geräts, wiederholen Sie die Aufnahme und kopieren Sie die devId und den neuen Localkey zurück auf das alte Gerät. Löschen Sie abschließend das durch die Aufnahme erstellte Gerät.
 - Wenn der automatische Vorgang nicht funktioniert oder Befehle nicht von der Tuya-Cloud bereitgestellt werden, wechseln Sie in den [Geräte-Lernmodus] (./tuya#tocAnchor-1-1-6) und handeln Sie nur auf die Schaltflächen der App Tuya Smartlife in Korrespondenz . Wenn andere Schaltflächen verwendet werden, erstellt das Plugin Duplikate von Befehlen, die über die Tuya-Cloud erstellt wurden.
 - Generell können Aufträge manuell oder im Lernmodus erstellt werden
 - Min. und Max. eines numerischen Werts werden aus der Cloud hochgeladen. Ändern Sie nach Bedarf die Parameter #slider# und #value# sowie Jeedom min und max. Dieser Teil soll mit Benutzerfeedback verbessert werden.
