@@ -602,24 +602,20 @@ Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-contro
 
 Cette partie du plugin nécessite le lancement des dépendances : si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, si elle ne peut être chargée ou si le système n'est pas compatible, l'adresse IP ne pourra pas être trouvée automatiquement.
 
-
-
-
-
 ### Remarques :
 - Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
-- si la localkey d'un périphérique a changé, modifier le devId du périphérique, refaire l'inclusion et enfin recopier le devId et la nouvelle localkey dnas l'ancien périphérique.
-- certains périphériques ne sont pas créés (le cloud Tuya ne fournit pas les données)
 - les périphériques non zigbee et sur pile sont purement cloud (capteurs de fermeture, de porte, de température par exemple) seront intégrés mais le plugin ne pourra pas y accéder
 - les couleurs suivant les 3 formats connus sont créées ainsi que les commandes saturation et intensité liées
 - les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
 - les périphériques ayant des informations non standard (peut éventuellement être résolu avec un bloc code dans un scénario) ne sont pas gérés
 - le plugin ne décode pas les commandes complexes et met alors dans paramètres le Json provenant du cloud Tuya
+- le cloud Tuya peut ne pas fournir toutes les commandes du périphérique.
 - la suppression d'une commande créée par le plugin via le cloud Tuya ne peut plus être recréée
 - si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
 
 ### Astuces :
-- si la procédure automatique dysfonctionne, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-12-7) et agir uniquement sur les boutons de l'appli Tuya Smartlife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
+- si la localkey d'un périphérique a changé, modifier le devId du périphérique, refaire l'inclusion et enfin recopier le devId et la nouvelle localkey dans l'ancien périphérique.
+- si la procédure automatique dysfonctionne ou si des commandes ne sont pas fournies par le cloud Tuya, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-12-7) et agir uniquement sur les boutons de l'appli Tuya Smartlife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
 - de manière générale, les commandes peuvent être créées manuellement ou en mode apprentissage
 - le min et le max d'une valeur numérique sont remontés depuis le cloud. Selon les besoins, modifier les paramètres #slider# et #value# ainsi que le min et max Jeedom. Cette partie est à améliorer avec les retours des utilisateurs.
 
