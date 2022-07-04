@@ -597,26 +597,24 @@ This procedure automates the creation of most Tuya and Tuya/Zigbee devices. Howe
 
 Follow this first [tutorial ](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) and go to the "Overview" tab to retrieve: Access ID and Access Secret. In the plugin configuration, enter these 2 parameters in the Tuya part and save, then select: Tuya Go to inclusion. The devices are created automatically.
 
-If the local IP address is not found by the plugin, make the connection between the mac address and the IP address given in the device settings of the Tuya application and your router and modify the IP address. The procedure for finding the IP address uses a command from the Linux system, if it cannot be loaded or the system is not compatible, the IP address cannot be found automatically.
-
-This part of the plugin requires the launch of dependencies.
-
-If a device with the same devId already exists, the inclusion will not happen.
+This part of the plugin requires the launch of the dependencies: if the local IP address is not found by the plugin, make the connection between the mac address and the IP address given in the device parameters of the Tuya application and your router and change the IP address. The procedure to find the IP address uses a Linux system command, if it cannot be loaded or if the system is not compatible, the IP address cannot be found automatically.
 
 ### Remarks :
-- some devices are not created (Tuya cloud does not provide data)
+- If a device with the same devId already exists, the inclusion will not be done.
 - non-zigbee and battery-powered devices are pure cloud (closure, door, temperature sensors for example) will be integrated but the plugin will not be able to access them
-- the colors according to the 3 known formats are created as well as the related saturation and intensity controls
+- the colors according to the 3 known formats are created as well as the related saturation and intensity commands
 - peripherals with coded information (actuator part of alarms in general) are not managed
-- devices with non-standard information (in general can be solved with a code block in a scenario) are not managed
-- the plugin does not decode complex commands and then puts in parameters the Json from the Tuya cloud
-- deleting an order created by the plugin via the Tuya cloud can no longer be recreated
-- if the IP address was not found because the device is not connected, give it the address: 0.0.0.0, connect it and restart the inclusion procedure.
+- devices with non-standard information (possibly can be resolved with a code block in a scenario) are not handled
+- the plugin does not decode complex commands and then puts the Json from the Tuya cloud in the parameters
+- Tuya cloud may not provide all device commands.
+- deletion of an order created by the plugin via the Tuya cloud can no longer be recreated
+- if the IP address was not found because the peripheral is not connected, give it the address: 0.0.0.0 , connect it and restart the inclusion procedure.
 
 ### Tips:
-- if the automatic procedure does not work, go to [device learning mode ](./tuya#tocAnchor-1-12-7) and act only on the corresponding buttons of the Tuya Smartlife app. If other buttons are used, the plugin will create duplicates of the orders created via the Tuya cloud.
+- if the localkey of a peripheral has changed, modify the devId of the peripheral, redo the inclusion and finally copy the devId and the new localkey to the old peripheral.
+- if the automatic procedure malfunctions or if commands are not provided by the Tuya cloud, switch to [device learning mode](./tuya#tocAnchor-1-12-7) and act only on the buttons of the app Tuya Smartlife in correspondence. If other buttons are used, the plugin will create duplicates of commands created through Tuya cloud.
 - in general, orders can be created manually or in learning mode
-- the min and max of a numerical value are uploaded from the cloud. As needed, modify the #slider# and #value# parameters as well as the Jeedom min and max. 
+- the min and max of a numerical value are uploaded from the cloud. As needed, modify the #slider# and #value# parameters as well as the Jeedom min and max. This part is to be improved with user feedback.
 
 ### Participation in the improvement of this part:
 

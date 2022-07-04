@@ -600,13 +600,15 @@ Cette procédure automatise la création de la plupart des périphériques Tuya 
 
 Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "Overview" pour récupérer : Access ID et Access Secret. Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya et sauvegarder, ensuite sélectionner : Tuya Passer en inclusion. Les périphériques sont créés automatiquement. 
 
-Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, si elle ne peut être chargée ou si le système n'est pas compatible, l'adresse IP ne pourra pas être trouvée automatiquement.
+Cette partie du plugin nécessite le lancement des dépendances : si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, si elle ne peut être chargée ou si le système n'est pas compatible, l'adresse IP ne pourra pas être trouvée automatiquement.
 
-Cette partie du plugin nécessite le lancement des dépendances.
 
-Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
+
+
 
 ### Remarques :
+- Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
+- si la localkey d'un périphérique a changé, modifier le devId du périphérique, refaire l'inclusion et enfin recopier le devId et la nouvelle localkey dnas l'ancien périphérique.
 - certains périphériques ne sont pas créés (le cloud Tuya ne fournit pas les données)
 - les périphériques non zigbee et sur pile sont purement cloud (capteurs de fermeture, de porte, de température par exemple) seront intégrés mais le plugin ne pourra pas y accéder
 - les couleurs suivant les 3 formats connus sont créées ainsi que les commandes saturation et intensité liées

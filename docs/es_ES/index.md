@@ -588,27 +588,24 @@ Este procedimiento automatiza la creación de la mayoría de los dispositivos Tu
 
 Siga esto primero y [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) vaya a la pestaña "Overview" para recuperar: Access ID et Access Secret. En la configuración del complemento, ingrese estos 2 parámetros en la parte Tuya y guarde, luego seleccione: Tuya Ir a inclusión. Los dispositivos se crean automáticamente.
 
-Si el complemento no encuentra la dirección IP local, realice la conexión entre la dirección mac y la dirección IP proporcionada en la configuración del dispositivo de la aplicación Tuya y su enrutador y modifique la dirección IP. El procedimiento para encontrar la dirección IP utiliza un comando del sistema Linux, si no se puede cargar o el sistema no es compatible, la dirección IP no se puede encontrar automáticamente.
-
-Esta parte del complemento requiere el lanzamiento de dependencias.
-
-Si ya existe un dispositivo con el mismo devId, la inclusión no ocurrirá.
+Esta parte del complemento requiere el lanzamiento de las dependencias: si el complemento no encuentra la dirección IP local, establezca la conexión entre la dirección mac y la dirección IP proporcionada en los parámetros del dispositivo de la aplicación Tuya y su enrutador y cambie el Dirección IP. El procedimiento para encontrar la dirección IP utiliza un comando del sistema Linux, si no se puede cargar o si el sistema no es compatible, la dirección IP no se puede encontrar automáticamente.
 
 ### Observaciones:
-- algunos dispositivos no se crean (la nube Tuya no proporciona datos)
-- Se integrarán dispositivos puramente en la nube, pero el complemento no podrá acceder a ellos
-- se crean los colores de acuerdo con los 3 formatos conocidos, así como los controles de saturación e intensidad relacionados
-- los periféricos con información codificada (parte del actuador de las alarmas en general) no se gestionan
-- los dispositivos con información no estándar (en general, se pueden resolver con un bloque de código en un escenario) no se gestionan
-- el complemento no decodifica comandos complejos y luego coloca en parámetros el Json de la nube Tuya
+- Si ya existe un dispositivo con el mismo devId, no se realizará la inclusión.
+- Los dispositivos que no son zigbee y que funcionan con baterías son pura nube (cierre, puerta, sensores de temperatura, por ejemplo) se integrarán pero el complemento no podrá acceder a ellos
+- se crean los colores según los 3 formatos conocidos, así como los comandos de saturación e intensidad relacionados
+- los periféricos con información codificada (parte actuadora de las alarmas en general) no son gestionados
+- los dispositivos con información no estándar (posiblemente se pueden resolver con un bloque de código en un escenario) no se manejan
+- el complemento no decodifica comandos complejos y luego pone en parámetros el Json de la nube Tuya
+- Es posible que la nube de Tuya no proporcione todos los comandos del dispositivo.
 - la eliminación de un pedido creado por el complemento a través de la nube Tuya ya no se puede volver a crear
-- Si no se encontró la dirección IP porque el dispositivo no está conectado, déle la dirección: 0.0.0.0, conéctelo y reinicie el procedimiento de inclusión.
+- si no se encontró la dirección IP porque el periférico no está conectado, dale la dirección: 0.0.0.0, conéctalo y reinicia el procedimiento de inclusión.
 
-### Consejos:
-- si el procedimiento automático no funciona, vaya a [modo de aprendizaje del dispositivo](./tuya#tocAnchor-1-12-7)
-y actuar solo en los botones correspondientes de la aplicación Tuya Smartlife. Si se utilizan otros botones, el complemento creará duplicados de los pedidos creados a través de la nube Tuya.
+### Puntas:
+- si la clave local de un periférico ha cambiado, modifique el devId del periférico, rehaga la inclusión y finalmente copie el devId y la nueva clave local al periférico antiguo.
+- si el procedimiento automático falla o si la nube Tuya no proporciona los comandos, cambie al [modo de aprendizaje del dispositivo] (./tuya#tocAnchor-1-12-7) y actúe solo en los botones de la aplicación Tuya Smartlife en correspondencia . Si se usan otros botones, el complemento creará duplicados de los comandos creados a través de la nube de Tuya.
 - en general, los pedidos se pueden crear manualmente o en modo de aprendizaje
-- el mínimo y el máximo de un valor numérico se cargan desde la nube. Según sea necesario, modifique los parámetros #slider# y #value#, así como el mínimo y el máximo de Jeedom. 
+- el mínimo y el máximo de un valor numérico se cargan desde la nube. Según sea necesario, modifique los parámetros #slider# y #value#, así como el mínimo y el máximo de Jeedom. Esta parte se mejorará con los comentarios de los usuarios.
 
 ### Participación en la mejora de esta parte:
 Puedes ayudar a mejorar la creación automática proporcionando la mayor cantidad de información posible: el Json de la nube Tuya, los cambios realizados, los registros o cualquier comentario relevante.

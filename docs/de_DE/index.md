@@ -592,26 +592,24 @@ Dieses Verfahren automatisiert die Erstellung der meisten Tuya- und Tuya/Zigbee-
 
 Folgen Sie zunächst diesem [Tutorial](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) und rufen Sie den Reiter "Overview" auf, um Folgendes abzurufen: Access ID et Access Secret. Füllen Sie in der Plugin-Konfiguration diese 2 Parameter im Tuya-Teil aus und speichern Sie, dann wählen Sie: Tuya Gehe zur Aufnahme. Die Geräte werden automatisch angelegt.
 
-Wenn die lokale IP-Adresse vom Plugin nicht gefunden wird, stellen Sie die Verbindung zwischen der Mac-Adresse und der IP-Adresse her, die in den Geräteeinstellungen der Tuya-Anwendung und Ihres Routers angegeben ist, und ändern Sie die IP-Adresse. Das Verfahren zum Ermitteln der IP-Adresse verwendet einen Befehl vom Linux-System, wenn es nicht geladen werden kann oder das System nicht kompatibel ist, kann die IP-Adresse nicht automatisch gefunden werden.
-
-Dieser Teil des Plugins erfordert das Starten von Abhängigkeiten.
-
-Wenn bereits ein Gerät mit derselben devId vorhanden ist, wird die Aufnahme nicht durchgeführt.
+Dieser Teil des Plugins erfordert den Start der Abhängigkeiten: Wenn die lokale IP-Adresse vom Plugin nicht gefunden wird, stellen Sie die Verbindung zwischen der Mac-Adresse und der in den Geräteparametern der Tuya-Anwendung angegebenen IP-Adresse und Ihrem Router her und ändern Sie die IP Adresse. Das Verfahren zum Ermitteln der IP-Adresse verwendet einen Linux-Systembefehl, kann dieser nicht geladen werden oder ist das System nicht kompatibel, kann die IP-Adresse nicht automatisch ermittelt werden.
 
 ### Bemerkungen :
-- einige Geräte werden nicht erstellt (Tuya Cloud liefert keine Daten)
-- nicht-Zigbee- und batteriebetriebene Geräte sind reine Cloud (z. B. Schließ-, Tür-, Temperatursensoren) werden integriert, aber das Plugin kann nicht darauf zugreifen
-- es werden die Farben nach den 3 bekannten Formaten erstellt sowie die dazugehörigen Sättigungs- und Intensitätsregler
-- Peripheriegeräte mit codierten Informationen (Betätigungsteil von Alarmen im Allgemeinen) werden nicht verwaltet
-- Geräte mit nicht standardmäßigen Informationen (im Allgemeinen mit einem Codeblock in einem Szenario lösbar) werden nicht verwaltet
-- das Plugin dekodiert keine komplexen Befehle und fügt dann in den Parametern den Json aus der Tuya-Cloud ein
+- Wenn bereits ein Gerät mit derselben devId vorhanden ist, wird die Aufnahme nicht durchgeführt.
+- Nicht-Zigbee- und batteriebetriebene Geräte sind reine Cloud (z. B. Schließ-, Tür-, Temperatursensoren) werden integriert, aber das Plugin kann nicht darauf zugreifen
+- Die Farben nach den 3 bekannten Formaten werden erstellt sowie die zugehörigen Sättigungs- und Intensitätsbefehle
+- Peripheriegeräte mit codierten Informationen (Aktuatorteil von Alarmen im Allgemeinen) werden nicht verwaltet
+- Geräte mit nicht standardmäßigen Informationen (können möglicherweise in einem Szenario mit einem Codeblock aufgelöst werden) werden nicht behandelt
+- Das Plugin dekodiert keine komplexen Befehle und fügt dann die Json-Parameter aus der Tuya-Cloud ein
+- Die Tuya-Cloud stellt möglicherweise nicht alle Gerätebefehle bereit.
 - Das Löschen einer vom Plugin erstellten Bestellung über die Tuya-Cloud kann nicht mehr neu erstellt werden
-- Wenn die IP-Adresse nicht gefunden wurde, weil das Gerät nicht verbunden ist, geben Sie ihm die Adresse: 0.0.0.0, verbinden Sie es und starten Sie den Aufnahmevorgang erneut.
+- Wenn die IP-Adresse nicht gefunden wurde, weil das Peripheriegerät nicht verbunden ist, geben Sie ihm die Adresse: 0.0.0.0 , verbinden Sie es und starten Sie den Aufnahmevorgang erneut.
 
 ### Tipps:
-- Wenn der automatische Vorgang nicht funktioniert, wechseln Sie in den [Geräte-Lernmodus](./tuya#tocAnchor-1-12-7) und verwenden Sie nur die entsprechenden Schaltflächen der Tuya Smartlife App. Wenn andere Schaltflächen verwendet werden, erstellt das Plugin Duplikate der über die Tuya-Cloud erstellten Bestellungen.
+- Wenn sich der Localkey eines Peripheriegeräts geändert hat, ändern Sie die devId des Peripheriegeräts, wiederholen Sie die Aufnahme und kopieren Sie schließlich die devId und den neuen Localkey auf das alte Peripheriegerät.
+- Wenn der automatische Vorgang nicht funktioniert oder Befehle nicht von der Tuya-Cloud bereitgestellt werden, wechseln Sie in den [Geräte-Lernmodus] (./tuya#tocAnchor-1-12-7) und handeln Sie nur auf die Schaltflächen der App Tuya Smartlife in Korrespondenz . Wenn andere Schaltflächen verwendet werden, erstellt das Plugin Duplikate von Befehlen, die über die Tuya-Cloud erstellt wurden.
 - Generell können Aufträge manuell oder im Lernmodus erstellt werden
-- Min. und Max. eines numerischen Werts werden aus der Cloud hochgeladen. Ändern Sie nach Bedarf die Parameter #slider# und #value# sowie Jeedom min und max. 
+- Min. und Max. eines numerischen Werts werden aus der Cloud hochgeladen. Ändern Sie nach Bedarf die Parameter #slider# und #value# sowie Jeedom min und max. Dieser Teil soll mit Benutzerfeedback verbessert werden.
 
 ### Teilnahme an der Verbesserung dieses Teils:
 Sie können dazu beitragen, die automatische Erstellung zu verbessern, indem Sie so viele Informationen wie möglich bereitstellen: den Json aus der Tuya-Cloud, die vorgenommenen Änderungen, die Protokolle oder alle relevanten Bemerkungen.
