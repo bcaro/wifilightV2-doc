@@ -614,7 +614,7 @@ Cette partie du plugin nécessite le lancement des dépendances : si l'adresse I
 - si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
 
 ### Astuces :
-- si la localkey d'un périphérique a changé, modifier le devId du périphérique, refaire l'inclusion et enfin recopier le devId et la nouvelle localkey dans l'ancien périphérique.
+- si la localkey d'un périphérique a changé, modifier le devId du périphérique, refaire l'inclusion et recopier le devId et la nouvelle localkey dans l'ancien périphérique. Enfin, supprimer le périphérique créé par inclusion.
 - si la procédure automatique dysfonctionne ou si des commandes ne sont pas fournies par le cloud Tuya, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-1-6) et agir uniquement sur les boutons de l'appli Tuya Smartlife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
 - de manière générale, les commandes peuvent être créées manuellement ou en mode apprentissage
 - le min et le max d'une valeur numérique sont remontés depuis le cloud. Selon les besoins, modifier les paramètres #slider# et #value# ainsi que le min et max Jeedom. Cette partie est à améliorer avec les retours des utilisateurs.
