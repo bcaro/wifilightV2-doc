@@ -612,7 +612,7 @@ This part of the plugin requires the launch of the dependencies: if the local IP
 
 ### Tips:
 - if the localkey of a peripheral has changed, modify the devId of the peripheral, redo the inclusion and finally copy the devId and the new localkey to the old peripheral.
-- if the automatic procedure malfunctions or if commands are not provided by the Tuya cloud, switch to [device learning mode](./tuya#tocAnchor-1-12-7) and act only on the buttons of the app Tuya Smartlife in correspondence. If other buttons are used, the plugin will create duplicates of commands created through Tuya cloud.
+- if the automatic procedure malfunctions or if commands are not provided by the Tuya cloud, switch to [device learning mode](./tuya#tocAnchor-1-1-6) and act only on the buttons of the app Tuya Smartlife in correspondence. If other buttons are used, the plugin will create duplicates of commands created through Tuya cloud.
 - in general, orders can be created manually or in learning mode
 - the min and max of a numerical value are uploaded from the cloud. As needed, modify the #slider# and #value# parameters as well as the Jeedom min and max. This part is to be improved with user feedback.
 
