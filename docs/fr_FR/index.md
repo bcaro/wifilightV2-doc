@@ -596,6 +596,8 @@ Pour les périphériques non présents dans cette liste ou si la configuration n
 
 Cette procédure automatise la création de la plupart des périphériques Tuya et Tuya/Zigbee. Cependant, l'accès aux périphériques reste en local.
 
+Attention : les périphériques en firmware 3.4 ne sont pas (encore) compatible.
+
 ## Configuration de la plateforme Tuya
 
 Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "Overview" pour récupérer : Access ID et Access Secret. Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya et sauvegarder, ensuite sélectionner : Tuya Passer en inclusion. Les périphériques sont créés automatiquement. 
