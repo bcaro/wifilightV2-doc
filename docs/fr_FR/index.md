@@ -596,8 +596,10 @@ La création de la plupart des périphériques Tuya et Tuya/Zigbee est donc auto
 
 Les périphériques Tuya utilisent des protocoles différents :
 
-<3.3 : ce protocole ancien n'est pas compatible avec l'inclusion. Le plugin va trouver le périphérique dans le cloud Tuya mais pas le plugin ne trouvera pas le bon protocole. Il faut manuellement créer un périphérique Tuya smartlife V1 et recopier les caractéristiques et trouver l'adresse IP. L'apprentissage (voir plus bas) peut aider à trouver les commandes. Si cela est possible il est avantageux de passer à un micrologiciel plus récent comme le 3.4.
+<3.3 : ce protocole ancien n'est pas compatible avec l'inclusion. Le plugin va trouver le périphérique dans le cloud Tuya mais le plugin ne trouvera pas le bon protocole. Il faut manuellement créer un périphérique Tuya smartlife V1 et recopier les caractéristiques et trouver l'adresse IP. L'apprentissage (voir plus bas) peut aider à trouver les commandes. Si cela est possible il est avantageux de passer à un micrologiciel plus récent comme le 3.4.
+
 3.3 : les périphériques avec ce protocole sont trouvés automatiquement pas l'inclusion Tuya que ce soit pour un périphérique ou  une passerelle Zigbee. Le type utilisé est Tuya smartlife V3 ou Passerellle Tuya Zigbee V1
+
 3.4 : les périphériques avec ce protocole sont trouvés automatiquement pas l'inclusion Tuya que ce soit pour un périphérique ou  une passerelle Zigbee. En 2022 ce protocole commence à se répendre. Le type utilisé est Tuya smartlife V4 ou Passerellle Tuya Zigbee V2
 
 ## Configuration de la plateforme Tuya
