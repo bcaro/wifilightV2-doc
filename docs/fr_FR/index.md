@@ -586,17 +586,19 @@ Le Hub Zigbee n'est pas compatible (et purement cloud) ainsi que tous les périp
 
 Aucune ampoule ou strip led n'est compatible.
 
-
-
 Pour les périphériques multicanaux (comme le Sonoff 4CH) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal.
 
 Pour les périphériques non présents dans cette liste ou si la configuration ne fonctionne pas ou si un périphérique n'a pas le sous-type correct et après avoir utilisé la procédure d'intégration du périphérique, donner le contenu des logs wifilightV2_inc dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) afin de permettre l'intégration du module dans le plugin.
 
 # Tuya Smartlife et Cloud Tuya
 
-Cette procédure automatise la création de la plupart des périphériques Tuya et Tuya/Zigbee. Cependant, l'accès aux périphériques reste en local.
+La création de la plupart des périphériques Tuya et Tuya/Zigbee est donc automatique. Cependant, l'accès aux périphériques reste en local.
 
-Attention : les périphériques en firmware 3.4 ne sont pas (encore) compatible.
+Les périphériques Tuya utilisent des protocoles différents :
+
+<3.3 : ce protocole ancien n'est pas compatible avec l'inclusion. Le plugin va trouver le périphérique dans le cloud Tuya mais pas le plugin ne trouvera pas le bon protocole. Il faut manuellement créer un périphérique Tuya smartlife V1 et recopier les caractéristiques et trouver l'adresse IP. L'apprentissage (voir plus bas) peut aider à trouver les commandes. Si cela est possible il est avantageux de passer à un micrologiciel plus récent comme le 3.4.
+3.3 : les périphériques avec ce protocole sont trouvés automatiquement pas l'inclusion Tuya que ce soit pour un périphérique ou  une passerelle Zigbee. Le type utilisé est Tuya smartlife V3 ou Passerellle Tuya Zigbee V1
+3.4 : les périphériques avec ce protocole sont trouvés automatiquement pas l'inclusion Tuya que ce soit pour un périphérique ou  une passerelle Zigbee. En 2022 ce protocole commence à se répendre. Le type utilisé est Tuya smartlife V4 ou Passerellle Tuya Zigbee V2
 
 ## Configuration de la plateforme Tuya
 
@@ -613,16 +615,18 @@ Cette partie du plugin nécessite le lancement des dépendances : si l'adresse I
 - le plugin ne décode pas les commandes complexes et met alors dans paramètres le Json provenant du cloud Tuya
 - le cloud Tuya peut ne pas fournir toutes les commandes du périphérique.
 - la suppression d'une commande créée par le plugin via le cloud Tuya ne peut plus être recréée
-- si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
+- le min et le max d'une valeur numérique sont remontés depuis le cloud. Selon les besoins, modifier les paramètres #slider# et #value# ainsi que le min et max Jeedom. Cette partie est à améliorer avec les retours des utilisateurs.
+
 
 ### Astuces :
+- si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
 - si la localkey d'un périphérique a changé, modifier le devId du périphérique, refaire l'inclusion et recopier le devId et la nouvelle localkey dans l'ancien périphérique. Enfin, supprimer le périphérique créé par inclusion.
 - si la procédure automatique dysfonctionne ou si des commandes ne sont pas fournies par le cloud Tuya, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-1-6) et agir uniquement sur les boutons de l'appli Tuya Smartlife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
 - de manière générale, les commandes peuvent être créées manuellement ou en mode apprentissage
-- le min et le max d'une valeur numérique sont remontés depuis le cloud. Selon les besoins, modifier les paramètres #slider# et #value# ainsi que le min et max Jeedom. Cette partie est à améliorer avec les retours des utilisateurs.
+
 
 ### Participation à l'amélioration de cette partie :
-Vous pouvez contribuer à l'amélioration dela création automatique en donnant le maximum de renseignements : le Json du cloud Tuya, les modifications apportées, les logs ou toute remarque pertinente. 
+Vous pouvez contribuer à l'amélioration de la création automatique en donnant le maximum de renseignements : le Json du cloud Tuya, les modifications apportées, les logs ou toute remarque pertinente. 
 
 Pour obtenir le Json du cloud Tuya :
 - dans Tuya developper : Cloud develop> Development > subscribe to cloud project 
@@ -645,7 +649,7 @@ Cette procédure nécessite de recopier manuellement la localkey depuis le cloud
 
 Attention :
 
-Les produits Lidl Tuya/Zigbee ne doivent jamais avoir été appairés avec l'application Lidl. Il faut les appairer uniquement avec l'application Tuya Smartlife, sinon ils ne pourront plus être utilisés par le plugin.
+Les produits Lidl Tuya/Zigbee appairés avec l'application Lidl passent en protocole 3.4. Normalement le plugin doit pouvoir dialoguer avec cette passer.
 
 # Nanoleaf
 

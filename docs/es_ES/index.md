@@ -582,7 +582,13 @@ Para dispositivos que no están presentes en esta lista o si la configuración n
 
 # Tuya Smartlife y Cloud Tuya
 
-Este procedimiento automatiza la creación de la mayoría de los dispositivos Tuya y Tuya / Zigbee. Sin embargo, el acceso a los periféricos sigue siendo local.
+La creación de la mayoría de los dispositivos Tuya y Tuya/Zigbee es automática. Sin embargo, el acceso a los dispositivos sigue siendo local.
+
+Los dispositivos Tuya utilizan diferentes protocolos:
+
+<3.3: este antiguo protocolo no es compatible con la inclusión. El complemento encontrará el dispositivo en la nube de Tuya, pero no el complemento no encontrará el protocolo correcto. Debe crear manualmente un dispositivo Tuya smartlife V1 y copiar las características y encontrar la dirección IP. El aprendizaje (ver más abajo) puede ayudar a encontrar los comandos. Si es posible, es conveniente actualizar a un firmware más nuevo, como 3.4.
+3.3: Los dispositivos con este protocolo se encuentran automáticamente mediante la inclusión de Tuya, ya sea para un dispositivo Zigbee o una puerta de enlace. El tipo utilizado es Tuya smartlife V3 o Tuya Zigbee V1 Gateway
+3.4: La inclusión de Tuya encuentra automáticamente los dispositivos con este protocolo, ya sea para un dispositivo Zigbee o una puerta de enlace. En 2022 este protocolo comienza a extenderse. El tipo utilizado es Tuya smartlife V4 o Tuya Zigbee V2 Gateway
 
 ## Configuración de la plataforma Tuya
 
@@ -596,16 +602,16 @@ Esta parte del complemento requiere el lanzamiento de las dependencias: si el co
 - se crean los colores según los 3 formatos conocidos, así como los comandos de saturación e intensidad relacionados
 - los periféricos con información codificada (parte actuadora de las alarmas en general) no son gestionados
 - los dispositivos con información no estándar (posiblemente se pueden resolver con un bloque de código en un escenario) no se manejan
-- el complemento no decodifica comandos complejos y luego pone en parámetros el Json de la nube Tuya
+- el complemento no decodifica comandos complejos y luego coloca el Json de la nube Tuya en los parámetros
 - Es posible que la nube de Tuya no proporcione todos los comandos del dispositivo.
 - la eliminación de un pedido creado por el complemento a través de la nube Tuya ya no se puede volver a crear
-- si no se encontró la dirección IP porque el periférico no está conectado, dale la dirección: 0.0.0.0, conéctalo y reinicia el procedimiento de inclusión.
+- el mínimo y el máximo de un valor numérico se cargan desde la nube. Según sea necesario, modifique los parámetros #slider# y #value#, así como el mínimo y el máximo de Jeedom. Esta parte se mejorará con los comentarios de los usuarios.
 
 ### Puntas:
-- si la localKey de un dispositivo ha cambiado, modifique el devId del dispositivo, rehaga la inclusión y copie el devId y la nueva localKey nuevamente en el dispositivo antiguo. Finalmente, elimine el dispositivo creado por inclusión..
+- si no se encontró la dirección IP porque el periférico no está conectado, dale la dirección: 0.0.0.0, conéctalo y reinicia el procedimiento de inclusión.
+- si la clave local de un periférico ha cambiado, modifique el devId del periférico, rehaga la inclusión y copie el devId y la nueva clave local en el periférico antiguo. Finalmente, elimine el dispositivo creado por inclusión.
 - si el procedimiento automático falla o si la nube Tuya no proporciona los comandos, cambie al [modo de aprendizaje del dispositivo] (./tuya#tocAnchor-1-1-6) y actúe solo en los botones de la aplicación Tuya Smartlife en correspondencia . Si se usan otros botones, el complemento creará duplicados de los comandos creados a través de la nube de Tuya.
 - en general, los pedidos se pueden crear manualmente o en modo de aprendizaje
-- el mínimo y el máximo de un valor numérico se cargan desde la nube. Según sea necesario, modifique los parámetros #slider# y #value#, así como el mínimo y el máximo de Jeedom. Esta parte se mejorará con los comentarios de los usuarios.
 
 ### Participación en la mejora de esta parte:
 Puedes ayudar a mejorar la creación automática proporcionando la mayor cantidad de información posible: el Json de la nube Tuya, los cambios realizados, los registros o cualquier comentario relevante.

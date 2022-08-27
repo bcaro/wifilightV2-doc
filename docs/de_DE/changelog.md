@@ -10,10 +10,14 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.91 - 2022-05-30 beta (Jeedom V4.2)
+1.91 - 2022-08-20 beta (Jeedom V4.2)
+- ajout du nouveau protocole 3.4 Tuya : la détection en inclusion est automatique et corrige le souci du hub Lidl Silvercrest
 - sortie du mode alpha du boutton Mystrom
 - Lhomma : correction bogues accès aux périphériques
+- Sonoff TH10/16 : correction infos température et humidité à 0
+- corrections diverses inclusion Tuya
 - correction bogues mineurs
+
 
 1.90 - 2022-04-21 stable (Jeedom V4.2)
 - adaptation au passage en V2 du cloud ewelink

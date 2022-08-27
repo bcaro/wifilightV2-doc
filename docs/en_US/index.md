@@ -591,8 +591,13 @@ For devices not present in this list or if the configuration does not work or if
 
 ## Tuya Smartlife and Cloud Tuya
 
-This procedure automates the creation of most Tuya and Tuya/Zigbee devices. However, access to peripherals remains local.
+The creation of most Tuya and Tuya/Zigbee devices is automatic. However, access to devices remains local.
 
+Tuya devices use different protocols:
+
+<3.3: this old protocol is not compatible with inclusion. The plugin will find the device in the Tuya cloud but not the plugin will not find the correct protocol. You have to manually create a Tuya smartlife V1 device and copy the characteristics and find the IP address. Learning (see below) can help find the commands. If possible it is beneficial to upgrade to a newer firmware such as 3.4.
+3.3: Devices with this protocol are found automatically by Tuya inclusion whether for a Zigbee device or gateway. The type used is Tuya smartlife V3 or Tuya Zigbee V1 Gateway
+3.4: Devices with this protocol are automatically found by Tuya inclusion whether for a Zigbee device or gateway. In 2022 this protocol begins to spread. The type used is Tuya smartlife V4 or Tuya Zigbee V2 Gateway
 ## Configuration of the Tuya platform
 
 Follow this first [tutorial ](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) and go to the "Overview" tab to retrieve: Access ID and Access Secret. In the plugin configuration, enter these 2 parameters in the Tuya part and save, then select: Tuya Go to inclusion. The devices are created automatically.
@@ -604,17 +609,18 @@ This part of the plugin requires the launch of the dependencies: if the local IP
 - non-zigbee and battery-powered devices are pure cloud (closure, door, temperature sensors for example) will be integrated but the plugin will not be able to access them
 - the colors according to the 3 known formats are created as well as the related saturation and intensity commands
 - peripherals with coded information (actuator part of alarms in general) are not managed
-- devices with non-standard information (possibly can be resolved with a code block in a scenario) are not handled
+- devices with non-standard information (possibly can be solved with a code block in a scenario) are not handled
 - the plugin does not decode complex commands and then puts the Json from the Tuya cloud in the parameters
 - Tuya cloud may not provide all device commands.
 - deletion of an order created by the plugin via the Tuya cloud can no longer be recreated
-- if the IP address was not found because the peripheral is not connected, give it the address: 0.0.0.0 , connect it and restart the inclusion procedure.
+- the min and max of a numerical value are uploaded from the cloud. As needed, modify the #slider# and #value# parameters as well as the Jeedom min and max. This part is to be improved with user feedback.
+
 
 ### Tips:
-- if the localkey of a device has changed, modify the devId of the device, redo the inclusion and copy the devId and the new localkey back to the old device. Finally, delete the device created by inclusion.
+- if the IP address was not found because the peripheral is not connected, give it the address: 0.0.0.0 , connect it and restart the inclusion procedure.
+- if the localkey of a peripheral has changed, modify the devId of the peripheral, redo the inclusion and copy the devId and the new localkey into the old peripheral. Finally, delete the device created by inclusion.
 - if the automatic procedure malfunctions or if commands are not provided by the Tuya cloud, switch to [device learning mode](./tuya#tocAnchor-1-1-6) and act only on the buttons of the app Tuya Smartlife in correspondence. If other buttons are used, the plugin will create duplicates of commands created through Tuya cloud.
 - in general, orders can be created manually or in learning mode
-- the min and max of a numerical value are uploaded from the cloud. As needed, modify the #slider# and #value# parameters as well as the Jeedom min and max. This part is to be improved with user feedback.
 
 ### Participation in the improvement of this part:
 
