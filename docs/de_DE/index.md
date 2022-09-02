@@ -590,9 +590,16 @@ Die Erstellung der meisten Tuya- und Tuya/Zigbee-Geräte erfolgt automatisch. De
 
 Tuya-Geräte verwenden unterschiedliche Protokolle:
 
-<3.3: Dieses alte Protokoll ist nicht mit Inklusion kompatibel. Das Plugin findet das Gerät in der Tuya-Cloud, aber das Plugin findet nicht das richtige Protokoll. Sie müssen ein Tuya Smartlife V1-Gerät manuell erstellen und die Eigenschaften kopieren und die IP-Adresse finden. Lernen (siehe unten) kann helfen, die Befehle zu finden. Wenn möglich, ist es vorteilhaft, auf eine neuere Firmware wie 3.4 zu aktualisieren.
-3.3: Geräte mit diesem Protokoll werden automatisch durch Tuya-Inklusion gefunden, egal ob es sich um ein Zigbee-Gerät oder ein Gateway handelt. Der verwendete Typ ist Tuya smartlife V3 oder Tuya Zigbee V1 Gateway
-3.4: Geräte mit diesem Protokoll werden automatisch durch Tuya-Inklusion gefunden, egal ob es sich um ein Zigbee-Gerät oder ein Gateway handelt. Im Jahr 2022 beginnt sich dieses Protokoll zu verbreiten. Der verwendete Typ ist Tuya smartlife V4 oder Tuya Zigbee V2 Gateway
+<3.3: Dieses alte Protokoll ist nicht mit Inklusion kompatibel. Das Plugin findet das Gerät in der Tuya-Cloud, aber das Plugin findet nicht das richtige Protokoll. Sie müssen es manuell mit Tuya smartLife V1 ändern. Bei diesem Protokoll gibt es kein Zigbee-Tuya-Gateway.
+
+
+3.3: Geräte mit diesem Protokoll werden normalerweise automatisch durch Tuya-Inklusion gefunden, egal ob es sich um ein Zigbee-Gerät oder ein Gateway handelt. Der verwendete Typ ist Tuya smartlife V3 oder Tuya Zigbee Gateway V1.
+
+
+3.4: Geräte mit diesem Protokoll werden normalerweise automatisch durch Tuya-Inklusion gefunden, egal ob es sich um ein Zigbee-Gerät oder ein Gateway handelt. Im Jahr 2022 beginnt sich dieses Protokoll zu verbreiten. Der verwendete Typ ist Tuya smartlife V4 oder Tuya Zigbee V2 Gateway.
+
+
+Wenn das Plugin nicht das richtige Protokoll findet, ist es möglich, es manuell zu ändern, ohne die von der Tuya-Cloud erstellten Befehle zu verlieren.
 
 ## Konfiguration der Tuya-Plattform
 

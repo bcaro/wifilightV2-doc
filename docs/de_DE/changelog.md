@@ -11,7 +11,8 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
 1.91 - 2022-08-20 beta (Jeedom V4.2)
-- ajout du nouveau protocole 3.4 Tuya : la détection en inclusion est automatique et corrige le souci du hub Lidl Silvercrest
+- ajout du nouveau protocole 3.4 Tuya : la détection en inclusion est automatique et corrigerait le souci du hub Lidl Silvercrest
+- les demons ont maintenant une période de 30s au lieu de 60s. Le plugin sera plus réactif aux déconnexions et aux changement d'état. Attention si vous avez des scénarios ou calculs basés sur cette période.
 - sortie du mode alpha du boutton Mystrom
 - Lhomma : correction bogues accès aux périphériques
 - Sonoff TH10/16 : correction infos température et humidité à 0
@@ -67,8 +68,8 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Tuya inclusion : les valeurs numériques ne sont plus calibrées sur 0-100 lors de l'inclusion. Seule l'amplification est prise en compte. Les min/max sont reportés dans la configuration de la commande.
 - Sonoff : lors de l'inclusion, les périphériques sont créés avec le bon modèle (à tester) (ne fonctionne pas pour les autres marques compatibles ewelink : un sonoff basic est alors créé)
 - Sonoff : ajout DUAL R3 (à tester) (la configuration complète du DUAL R3 n'est pas implantée, seules les consos des 2 canaux et la configuration moteur le sont)
-- Sonoff : ajout Ifan2/3/4 (à tester)
-- Sonoff : refonte des sous-type
+- Sonoff : ajout Ifan 2/3/4 (à tester)
+- Sonoff : refonte des sous-types
 - Les images personnalisées apparaissent dans la configuration du plugin
 - modification de noms de classes
 - correction commande configGet Tuya
@@ -106,7 +107,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Ajout des Meross en firmware 2.2.2 -> Meross V2. Compatible anciens firmware : passez à cette version
 - Correction des prises Meross sans conso qui ne renvoyaient pas leur état
 - Plus besoin de credentials pour Meross en Meross V2 -> connexion aux serveurs Meross. Passez à cette version.
-- Suppression de toutes les explication pour les Meross non V2 : ne plus utiliser ce type.
+- Suppression de toutes les explications pour les Meross non V2 : ne plus utiliser ce type.
 - Ajout du switch myStrom
 - Ajout du bouton myStorm (Beta à tester)
 - Ajout du PIR myStrom (Beta à tester)

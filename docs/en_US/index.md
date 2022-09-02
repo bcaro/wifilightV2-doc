@@ -589,15 +589,23 @@ For multi-channel devices (like the Sonoff 4CH) you have to create as many wifil
 
 For devices not present in this list or if the configuration does not work or if a device does not have the correct subtype and after using the device integration procedure, give the contents of the wifilightV2_inc logs in the [forum ](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) in order to allow the integration of the module in the plugin.
 
-## Tuya Smartlife and Cloud Tuya
+# Tuya Smartlife and Cloud Tuya
 
 The creation of most Tuya and Tuya/Zigbee devices is automatic. However, access to devices remains local.
 
 Tuya devices use different protocols:
 
-<3.3: this old protocol is not compatible with inclusion. The plugin will find the device in the Tuya cloud but not the plugin will not find the correct protocol. You have to manually create a Tuya smartlife V1 device and copy the characteristics and find the IP address. Learning (see below) can help find the commands. If possible it is beneficial to upgrade to a newer firmware such as 3.4.
-3.3: Devices with this protocol are found automatically by Tuya inclusion whether for a Zigbee device or gateway. The type used is Tuya smartlife V3 or Tuya Zigbee V1 Gateway
-3.4: Devices with this protocol are automatically found by Tuya inclusion whether for a Zigbee device or gateway. In 2022 this protocol begins to spread. The type used is Tuya smartlife V4 or Tuya Zigbee V2 Gateway
+<3.3: this old protocol is not compatible with inclusion. The plugin will find the device in the Tuya cloud but the plugin will not find the correct protocol. You have to manually change it using Tuya smartLife V1. There is no Zigbee Tuya gateway with this protocol.
+
+
+3.3: Devices with this protocol are normally found automatically by Tuya inclusion whether for a Zigbee device or gateway. The type used is Tuya smartlife V3 or Tuya Zigbee Gateway V1.
+
+
+3.4: Devices with this protocol are normally found automatically by Tuya inclusion whether for a Zigbee device or gateway. In 2022 this protocol begins to spread. The type used is Tuya smartlife V4 or Tuya Zigbee V2 gateway.
+
+
+If the plugin does not find the right protocol, it is possible to change it manually without losing the commands created by the Tuya cloud.
+
 ## Configuration of the Tuya platform
 
 Follow this first [tutorial ](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) and go to the "Overview" tab to retrieve: Access ID and Access Secret. In the plugin configuration, enter these 2 parameters in the Tuya part and save, then select: Tuya Go to inclusion. The devices are created automatically.
