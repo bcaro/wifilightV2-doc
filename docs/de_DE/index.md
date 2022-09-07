@@ -450,6 +450,7 @@ Anmerkungen:
 - HS100 HS110 KP105 KP110-Buchsen müssen möglicherweise das V2-Protokoll verwenden, nehmen Sie die Änderung manuell vor.
 - Alle in der Cloud vorhandenen TP-Link-Geräte werden erstellt, insbesondere TP-Link-WLAN-Router oder Hotspots. Da das Plugin sie nicht erkennt, wird ein TAPO P100-Socket erstellt, entfernen Sie einfach unnötige Geräte. 
 
+
 # Xiaomi Philips
 
 Es ist wichtig, einen Token wiederherzustellen, der es dem Plugin ermöglicht, mit Xiaomi Philips-Geräten zu kommunizieren.
@@ -457,6 +458,7 @@ Es ist wichtig, einen Token wiederherzustellen, der es dem Plugin ermöglicht, m
 Das Verfahren ist komplex und erfordert mehrere Manipulationen. Suchen Sie im Web mit dem Stichwort: Xiaomi-Token oder im Forum [hier](https://community.jeedom.com/t/xiaomi-philips-et-wifilightv2/48064).
 
 Es wird keine Hilfe beim Wiederherstellen des Tokens gegeben.
+
 
 #Meross
 
