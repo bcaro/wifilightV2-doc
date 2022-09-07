@@ -18,7 +18,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Lhomma : correction bogues accès aux périphériques
 - Sonoff TH10/16 : correction infos température et humidité à 0
 - Sonoff : amélioration de la détection des sous-types
-- ajout d'un time out pour l'affichage des images Tuya en ligne qui bloquait l'interface sasn internet
+- ajout d'un time out pour l'affichage des images Tuya en ligne qui bloquait l'interface sans internet
 - corrections diverses inclusion Tuya
 - correction bogues mineurs
 
