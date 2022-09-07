@@ -604,9 +604,6 @@ Tuya-Geräte verwenden unterschiedliche Protokolle:
 Wenn das Plugin nicht das richtige Protokoll findet, ist es möglich, es manuell zu ändern, ohne die von der Tuya-Cloud erstellten Befehle zu verlieren. Sie müssen vor dem Speichern den benutzerdefinierten Untertyp auswählen.
 
 
-3.4: Geräte mit diesem Protokoll werden normalerweise automatisch in Tuya-Einbindung gefunden, sei es für ein WLAN-Gerät oder ein Zigbee-Gateway. Im Jahr 2022 beginnt sich dieses Protokoll zu verbreiten. Der verwendete Typ ist: Tuya smartlife V4 oder Tuya Zigbee V2 Gateway.
-
-
 Wenn das Plugin nicht das richtige Protokoll findet, ist es möglich, es manuell zu ändern, ohne die von der Tuya-Cloud erstellten Befehle zu verlieren. Sie müssen vor dem Speichern den benutzerdefinierten Untertyp auswählen.
 
 ## Konfiguration der Tuya-Plattform
