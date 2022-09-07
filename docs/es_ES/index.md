@@ -416,7 +416,7 @@ Tenga en cuenta que el plugin puede tardar hasta 1 minuto en encontrar una lámp
 En V1, el estado puede tardar hasta un minuto en volver. 
 
 
-#Tapo Kasa TP-Link
+# Tapo Kasa & TP-Link
 
 Los dispositivos compatibles son:
 
@@ -457,7 +457,7 @@ El procedimiento es complejo y requiere varias manipulaciones. Haga una búsqued
 No se brindará ayuda para recuperar la ficha.
 
 
-#Meross
+# Meross
 
 Los dispositivos compatibles son:
 - enchufes individuales: MSS110 MSS210
