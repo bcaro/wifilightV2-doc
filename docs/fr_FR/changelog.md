@@ -10,12 +10,14 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.91 - 2022-08-20 beta (Jeedom V4.2)
-- ajout du nouveau protocole 3.4 Tuya : la détection en inclusion est automatique et corrigerait le souci du hub Lidl Silvercrest
+1.91 - 2022-09-07 beta (Jeedom V4.2)
+- ajout du nouveau protocole 3.4 Tuya : la détection en inclusion est automatique et corrigerait le souci du hub Lidl Silvercrest. Les passerelles Tuya Zigbee n'on pas été testées.
+- Tuya : la modification du type ne supprime pas les commandes pour palier la recherche automatique défaillante du type.
 - les demons ont maintenant une période de 30s au lieu de 60s. Le plugin sera plus réactif aux déconnexions et aux changement d'état. Attention si vous avez des scénarios ou calculs basés sur cette période.
 - sortie du mode alpha du boutton Mystrom
 - Lhomma : correction bogues accès aux périphériques
 - Sonoff TH10/16 : correction infos température et humidité à 0
+- ajout d'un time out pour l'affichage des images Tuya en ligne qui bloquait l'interface sasn internet
 - corrections diverses inclusion Tuya
 - correction bogues mineurs
 
