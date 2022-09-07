@@ -588,18 +588,20 @@ Für Geräte, die nicht in dieser Liste enthalten sind oder wenn die Konfigurati
 
 Die Erstellung der meisten Tuya- und Tuya/Zigbee-Geräte erfolgt automatisch. Der Zugriff auf Geräte bleibt jedoch lokal.
 
+
 Tuya-Geräte verwenden unterschiedliche Protokolle:
 
-<3.3: Dieses alte Protokoll ist nicht mit Inklusion kompatibel. Das Plugin findet das Gerät in der Tuya-Cloud, aber das Plugin findet nicht das richtige Protokoll. Sie müssen es manuell mit Tuya smartLife V1 ändern. Bei diesem Protokoll gibt es kein Zigbee-Tuya-Gateway.
+
+<3.3: Dieses alte Protokoll unterstützt keine Inklusion. Das Plugin findet das Gerät in der Tuya-Cloud, aber es findet nicht das richtige Protokoll. Sie müssen es manuell mit Tuya smartLife V1 ändern. Bei diesem Protokoll gibt es kein Tuya-Zigbee-Gateway.
 
 
-3.3: Geräte mit diesem Protokoll werden normalerweise automatisch durch Tuya-Inklusion gefunden, egal ob es sich um ein Zigbee-Gerät oder ein Gateway handelt. Der verwendete Typ ist Tuya smartlife V3 oder Tuya Zigbee Gateway V1.
+3.3: Geräte mit diesem Protokoll werden normalerweise automatisch in der Tuya-Einbindung gefunden, entweder für ein WLAN-Gerät oder ein Zigbee-Gateway. Der verwendete Typ ist Tuya smartlife V3 oder Tuya Zigbee Gateway V1.
 
 
-3.4: Geräte mit diesem Protokoll werden normalerweise automatisch durch Tuya-Inklusion gefunden, egal ob es sich um ein Zigbee-Gerät oder ein Gateway handelt. Im Jahr 2022 beginnt sich dieses Protokoll zu verbreiten. Der verwendete Typ ist Tuya smartlife V4 oder Tuya Zigbee V2 Gateway.
+3.4: Geräte mit diesem Protokoll werden normalerweise automatisch in Tuya-Einbindung gefunden, sei es für ein WLAN-Gerät oder ein Zigbee-Gateway. Im Jahr 2022 beginnt sich dieses Protokoll zu verbreiten. Der verwendete Typ ist: Tuya smartlife V4 oder Tuya Zigbee V2 Gateway.
 
 
-Wenn das Plugin nicht das richtige Protokoll findet, ist es möglich, es manuell zu ändern, ohne die von der Tuya-Cloud erstellten Befehle zu verlieren.
+Wenn das Plugin nicht das richtige Protokoll findet, ist es möglich, es manuell zu ändern, ohne die von der Tuya-Cloud erstellten Befehle zu verlieren. Sie müssen vor dem Speichern den benutzerdefinierten Untertyp auswählen.
 
 ## Konfiguration der Tuya-Plattform
 

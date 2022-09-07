@@ -593,18 +593,20 @@ For devices not present in this list or if the configuration does not work or if
 
 The creation of most Tuya and Tuya/Zigbee devices is automatic. However, access to devices remains local.
 
+
 Tuya devices use different protocols:
 
-<3.3: this old protocol is not compatible with inclusion. The plugin will find the device in the Tuya cloud but the plugin will not find the correct protocol. You have to manually change it using Tuya smartLife V1. There is no Zigbee Tuya gateway with this protocol.
+
+<3.3: This old protocol does not support inclusion. The plugin will find the device in the Tuya cloud, but it won't find the correct protocol. You need to change it manually using Tuya smartLife V1. There is no Tuya Zigbee gateway with this protocol.
 
 
-3.3: Devices with this protocol are normally found automatically by Tuya inclusion whether for a Zigbee device or gateway. The type used is Tuya smartlife V3 or Tuya Zigbee Gateway V1.
+3.3: Devices with this protocol are normally found automatically in Tuya inclusion, either for a wifi device or a Zigbee gateway. The type used is Tuya smartlife V3 or Tuya Zigbee Gateway V1.
 
 
-3.4: Devices with this protocol are normally found automatically by Tuya inclusion whether for a Zigbee device or gateway. In 2022 this protocol begins to spread. The type used is Tuya smartlife V4 or Tuya Zigbee V2 gateway.
+3.4: Devices with this protocol are normally found automatically in Tuya inclusion, whether for a wifi device or a Zigbee gateway. In 2022, this protocol begins to spread. The type used is: Tuya smartlife V4 or Tuya Zigbee V2 gateway.
 
 
-If the plugin does not find the right protocol, it is possible to change it manually without losing the commands created by the Tuya cloud.
+If the plugin does not find the right protocol, it is possible to change it manually without losing the commands created by the Tuya cloud, you must choose the custom subtype before saving.
 
 ## Configuration of the Tuya platform
 

@@ -415,7 +415,8 @@ Tenga en cuenta que el plugin puede tardar hasta 1 minuto en encontrar una lámp
 
 En V1, el estado puede tardar hasta un minuto en volver. 
 
-#Tapo & Kasa TP-Link
+
+#Tapo Kasa TP-Link
 
 Los dispositivos compatibles son:
 
@@ -454,6 +455,7 @@ Es esencial recuperar un token que permita que el plugin se comunique con los di
 El procedimiento es complejo y requiere varias manipulaciones. Haga una búsqueda en la web con la palabra clave: Token Xiaomi o en el foro [aquí](https://community.jeedom.com/t/xiaomi-philips-et-wifilightv2/48064).
 
 No se brindará ayuda para recuperar la ficha.
+
 
 #Meross
 
@@ -584,11 +586,21 @@ Para dispositivos que no están presentes en esta lista o si la configuración n
 
 La creación de la mayoría de los dispositivos Tuya y Tuya/Zigbee es automática. Sin embargo, el acceso a los dispositivos sigue siendo local.
 
+
+
 Los dispositivos Tuya utilizan diferentes protocolos:
 
-<3.3: este antiguo protocolo no es compatible con la inclusión. El complemento encontrará el dispositivo en la nube de Tuya, pero no el complemento no encontrará el protocolo correcto. Debe crear manualmente un dispositivo Tuya smartlife V1 y copiar las características y encontrar la dirección IP. El aprendizaje (ver más abajo) puede ayudar a encontrar los comandos. Si es posible, es conveniente actualizar a un firmware más nuevo, como 3.4.
-3.3: Los dispositivos con este protocolo se encuentran automáticamente mediante la inclusión de Tuya, ya sea para un dispositivo Zigbee o una puerta de enlace. El tipo utilizado es Tuya smartlife V3 o Tuya Zigbee V1 Gateway
-3.4: La inclusión de Tuya encuentra automáticamente los dispositivos con este protocolo, ya sea para un dispositivo Zigbee o una puerta de enlace. En 2022 este protocolo comienza a extenderse. El tipo utilizado es Tuya smartlife V4 o Tuya Zigbee V2 Gateway
+<3.3: este antiguo protocolo no admite la inclusión. El complemento encontrará el dispositivo en la nube de Tuya, pero no encontrará el protocolo correcto. Debe cambiarlo manualmente usando Tuya smartLife V1. No hay una puerta de enlace Tuya Zigbee con este protocolo.
+
+
+3.3: Los dispositivos con este protocolo normalmente se encuentran automáticamente en la inclusión de Tuya, ya sea para un dispositivo wifi o una puerta de enlace Zigbee. El tipo utilizado es Tuya smartlife V3 o Tuya Zigbee Gateway V1.
+
+
+3.4: Los dispositivos con este protocolo normalmente se encuentran automáticamente en la inclusión de Tuya, ya sea para un dispositivo wifi o una puerta de enlace Zigbee. En 2022, este protocolo comienza a extenderse. El tipo utilizado es: puerta de enlace Tuya smartlife V4 o Tuya Zigbee V2.
+
+
+Si el complemento no encuentra el protocolo correcto, es posible cambiarlo manualmente sin perder los comandos creados por la nube Tuya, debe elegir el subtipo personalizado antes de guardar.
+
 
 ## Configuración de la plataforma Tuya
 

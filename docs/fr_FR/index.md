@@ -590,22 +590,19 @@ Pour les périphériques multicanaux (comme le Sonoff 4CH) il faut créer autant
 
 Pour les périphériques non présents dans cette liste ou si la configuration ne fonctionne pas ou si un périphérique n'a pas le sous-type correct et après avoir utilisé la procédure d'intégration du périphérique, donner le contenu des logs wifilightV2_inc dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) afin de permettre l'intégration du module dans le plugin.
 
-# Tuya Smartlife y Nube Tuya
+# Tuya Smartlife et cloud Tuya
 
-La creación de la mayoría de los dispositivos Tuya y Tuya/Zigbee es automática. Sin embargo, el acceso a los dispositivos sigue siendo local.
+La création de la plupart des appareils Tuya et Tuya/Zigbee est automatique. Cependant, l'accès aux appareils reste local.
 
-Los dispositivos Tuya utilizan diferentes protocolos:
+Les appareils Tuya utilisent différents protocoles :
 
-<3.3: este antiguo protocolo no es compatible con la inclusión. El complemento encontrará el dispositivo en la nube de Tuya, pero no encontrará el protocolo correcto. Tienes que cambiarlo manualmente usando Tuya smartLife V1. No hay una puerta de enlace Zigbee Tuya con este protocolo.
+<3.3 : Cet ancien protocole ne prend pas en charge l'inclusion. Le plugin trouvera l'appareil dans le cloud Tuya, mais il ne trouvera pas le bon protocole. Vous devez le modifier manuellement à l'aide de Tuya smartLife V1. Il n'y a pas de passerelle Tuya Zigbee avec ce protocole.
 
+3.3 : Les appareils avec ce protocole sont normalement trouvés automatiquement en inclusion Tuya, que ce soit pour un appareil wifi ou une passerelle Zigbee. Le type utilisé est Tuya smartlife V3 ou Tuya Zigbee Gateway V1.
 
-3.3: Los dispositivos con este protocolo normalmente se encuentran automáticamente mediante la inclusión de Tuya, ya sea para un dispositivo Zigbee o una puerta de enlace. El tipo utilizado es Tuya smartlife V3 o Tuya Zigbee Gateway V1.
+3.4 : Les appareils avec ce protocole sont normalement trouvés automatiquement en inclusion Tuya, que ce soit pour un appareil wifi ou une passerelle Zigbee. En 2022, ce protocole commence à se répandre. Le type utilisé est : passerelle Tuya smartlife V4 ou Tuya Zigbee V2.
 
-
-3.4: Los dispositivos con este protocolo normalmente se encuentran automáticamente mediante la inclusión de Tuya, ya sea para un dispositivo Zigbee o una puerta de enlace. En 2022 este protocolo comienza a extenderse. El tipo utilizado es Tuya smartlife V4 o Tuya Zigbee V2 Gateway.
-
-
-Si el complemento no encuentra el protocolo correcto, es posible cambiarlo manualmente sin perder los comandos creados por la nube Tuya.
+Si le plugin ne trouve pas le bon protocole, il est possible de le changer manuellement sans perdre les commandes créées par le cloud Tuya, il faut choisir le sous-type personnalisé avant de sauvegarder.
 
 ## Configuration de la plateforme Tuya
 
