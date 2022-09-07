@@ -590,14 +590,18 @@ Für Geräte, die nicht in dieser Liste enthalten sind oder wenn die Konfigurati
 
 Die Erstellung der meisten Tuya- und Tuya/Zigbee-Geräte erfolgt automatisch. Der Zugriff auf Geräte bleibt jedoch lokal.
 
-
 Tuya-Geräte verwenden unterschiedliche Protokolle:
 
+<3.3 : Dieses alte Protokoll unterstützt keine Inklusion. Das Plugin findet das Gerät in der Tuya-Cloud, aber es findet nicht das richtige Protokoll. Sie müssen es manuell mit Tuya smartLife-kompatiblem Typ V1 ändern. Bei diesem Protokoll gibt es kein Tuya-Zigbee-Gateway.
 
-<3.3: Dieses alte Protokoll unterstützt keine Inklusion. Das Plugin findet das Gerät in der Tuya-Cloud, aber es findet nicht das richtige Protokoll. Sie müssen es manuell mit Tuya smartLife V1 ändern. Bei diesem Protokoll gibt es kein Tuya-Zigbee-Gateway.
+
+3.3 : Geräte mit diesem Protokoll werden normalerweise automatisch in der Tuya-Einbindung gefunden, entweder für ein WLAN-Gerät oder ein Zigbee-Gateway. Der verwendete Typ ist Tuya Smartlife-kompatibles V3- oder Tuya/Zigbee V1-Gateway.
 
 
-3.3: Geräte mit diesem Protokoll werden normalerweise automatisch in der Tuya-Einbindung gefunden, entweder für ein WLAN-Gerät oder ein Zigbee-Gateway. Der verwendete Typ ist Tuya smartlife V3 oder Tuya Zigbee Gateway V1.
+3.4 : Geräte mit diesem Protokoll werden normalerweise automatisch in Tuya-Einbindung gefunden, sei es für ein WLAN-Gerät oder ein Zigbee-Gateway. Im Jahr 2022 beginnt sich dieses Protokoll zu verbreiten. Der verwendete Typ ist: Der verwendete Typ ist Tuya Smartlife-kompatibles V4- oder Tuya/Zigbee V2-Gateway.
+
+
+Wenn das Plugin nicht das richtige Protokoll findet, ist es möglich, es manuell zu ändern, ohne die von der Tuya-Cloud erstellten Befehle zu verlieren. Sie müssen vor dem Speichern den benutzerdefinierten Untertyp auswählen.
 
 
 3.4: Geräte mit diesem Protokoll werden normalerweise automatisch in Tuya-Einbindung gefunden, sei es für ein WLAN-Gerät oder ein Zigbee-Gateway. Im Jahr 2022 beginnt sich dieses Protokoll zu verbreiten. Der verwendete Typ ist: Tuya smartlife V4 oder Tuya Zigbee V2 Gateway.
@@ -648,9 +652,9 @@ Dieses Verfahren erfordert, dass Sie den Localkey manuell aus der Tuya-Cloud kop
  [Siehe spezifische Dokumentation für Tuya Wifi-Produkte](./tuya#tocAnchor-1-10)
 
 
-Warnung :
+Aufmerksamkeit :
 
-Lidl Tuya/Zigbee Produkte dürfen noch nie mit der Lidl App gekoppelt worden sein. Sie müssen nur mit der Tuya Smartlife-Anwendung gekoppelt werden, sonst können sie vom Plugin nicht mehr verwendet werden.
+Lidl Tuya/Zigbee-Produkte, die mit der Lidl-Anwendung gekoppelt sind, wechseln zu Protokoll 3.4. Es gab keinen Test mit korrektem Betrieb mit dem Plugin seiner Gateways.
 
 # Nanoleaf
 

@@ -593,17 +593,19 @@ For devices not present in this list or if the configuration does not work or if
 
 The creation of most Tuya and Tuya/Zigbee devices is automatic. However, access to devices remains local.
 
-
 Tuya devices use different protocols:
 
 
-<3.3: This old protocol does not support inclusion. The plugin will find the device in the Tuya cloud, but it won't find the correct protocol. You need to change it manually using Tuya smartLife V1. There is no Tuya Zigbee gateway with this protocol.
+<3.3 : This old protocol does not support inclusion. The plugin will find the device in the Tuya cloud, but it won't find the correct protocol. You need to change it manually using Tuya smartLife compatible type V1. There is no Tuya Zigbee gateway with this protocol.
 
 
-3.3: Devices with this protocol are normally found automatically in Tuya inclusion, either for a wifi device or a Zigbee gateway. The type used is Tuya smartlife V3 or Tuya Zigbee Gateway V1.
+3.3 : Devices with this protocol are normally found automatically in Tuya inclusion, either for a wifi device or a Zigbee gateway. The type used is Tuya smartlife compatible V3 or Tuya/Zigbee V1 gateway.
 
 
-3.4: Devices with this protocol are normally found automatically in Tuya inclusion, whether for a wifi device or a Zigbee gateway. In 2022, this protocol begins to spread. The type used is: Tuya smartlife V4 or Tuya Zigbee V2 gateway.
+3.4 : Devices with this protocol are normally found automatically in Tuya inclusion, whether for a wifi device or a Zigbee gateway. In 2022, this protocol begins to spread. The type used is: The type used is Tuya smartlife compatible V4 or Tuya/Zigbee V2 gateway.
+
+
+If the plugin does not find the right protocol, it is possible to change it manually without losing the commands created by the Tuya cloud, you must choose the custom subtype before saving.
 
 
 If the plugin does not find the right protocol, it is possible to change it manually without losing the commands created by the Tuya cloud, you must choose the custom subtype before saving.
@@ -653,9 +655,9 @@ This procedure requires you to manually copy the localkey from the Tuya cloud.
   [See specific documentation for Tuya Wifi products](./tuya#tocAnchor-1-10)
 
 
-Warning :
+Attention :
 
-Lidl Tuya / Zigbee products must never have been paired with the Lidl app. They must be paired only with the Tuya Smartlife application, otherwise they can no longer be used by the plugin. 
+Lidl Tuya/Zigbee products paired with the Lidl application switch to protocol 3.4. There was no test with correct operation with the plugin of its gateways.
 
 # Nanoleaf
 

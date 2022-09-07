@@ -596,11 +596,11 @@ La création de la plupart des appareils Tuya et Tuya/Zigbee est automatique. Ce
 
 Les appareils Tuya utilisent différents protocoles :
 
-<3.3 : Cet ancien protocole ne prend pas en charge l'inclusion. Le plugin trouvera l'appareil dans le cloud Tuya, mais il ne trouvera pas le bon protocole. Vous devez le modifier manuellement à l'aide de Tuya smartLife V1. Il n'y a pas de passerelle Tuya Zigbee avec ce protocole.
+<3.3 : Cet ancien protocole ne prend pas en charge l'inclusion. Le plugin trouvera l'appareil dans le cloud Tuya, mais il ne trouvera pas le bon protocole. Vous devez le modifier manuellement un utilisant le type Tuya smartLife compatible V1. Il n'y a pas de passerelle Tuya Zigbee avec ce protocole.
 
-3.3 : Les appareils avec ce protocole sont normalement trouvés automatiquement en inclusion Tuya, que ce soit pour un appareil wifi ou une passerelle Zigbee. Le type utilisé est Tuya smartlife V3 ou Tuya Zigbee Gateway V1.
+3.3 : Les appareils avec ce protocole sont normalement trouvés automatiquement en inclusion Tuya, que ce soit pour un appareil wifi ou une passerelle Zigbee. Le type utilisé est Tuya smartlife compatible V3 ou passerelle Tuya/Zigbee V1.
 
-3.4 : Les appareils avec ce protocole sont normalement trouvés automatiquement en inclusion Tuya, que ce soit pour un appareil wifi ou une passerelle Zigbee. En 2022, ce protocole commence à se répandre. Le type utilisé est : passerelle Tuya smartlife V4 ou Tuya Zigbee V2.
+3.4 : Les appareils avec ce protocole sont normalement trouvés automatiquement en inclusion Tuya, que ce soit pour un appareil wifi ou une passerelle Zigbee. En 2022, ce protocole commence à se répandre. Le type utilisé est : Le type utilisé est Tuya smartlife compatible V4 ou passerelle Tuya/Zigbee V2.
 
 Si le plugin ne trouve pas le bon protocole, il est possible de le changer manuellement sans perdre les commandes créées par le cloud Tuya, il faut choisir le sous-type personnalisé avant de sauvegarder.
 
@@ -653,7 +653,7 @@ Cette procédure nécessite de recopier manuellement la localkey depuis le cloud
 
 Attention :
 
-Les produits Lidl Tuya/Zigbee appairés avec l'application Lidl passent en protocole 3.4. Normalement le plugin doit pouvoir dialoguer avec cette passer.
+Les produits Lidl Tuya/Zigbee appairés avec l'application Lidl passent en protocole 3.4. Il n'y a pas eu de test avec de fonctionnement correct avec le plugin de ses passerelles.
 
 # Nanoleaf
 

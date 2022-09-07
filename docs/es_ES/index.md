@@ -586,18 +586,19 @@ Para dispositivos que no están presentes en esta lista o si la configuración n
 
 La creación de la mayoría de los dispositivos Tuya y Tuya/Zigbee es automática. Sin embargo, el acceso a los dispositivos sigue siendo local.
 
-
-
 Los dispositivos Tuya utilizan diferentes protocolos:
 
-<3.3: este antiguo protocolo no admite la inclusión. El complemento encontrará el dispositivo en la nube de Tuya, pero no encontrará el protocolo correcto. Debe cambiarlo manualmente usando Tuya smartLife V1. No hay una puerta de enlace Tuya Zigbee con este protocolo.
+
+<3.3 : este antiguo protocolo no admite la inclusión. El complemento encontrará el dispositivo en la nube de Tuya, pero no encontrará el protocolo correcto. Debe cambiarlo manualmente utilizando el tipo V1 compatible con Tuya smartLife. No hay una puerta de enlace Tuya Zigbee con este protocolo.
 
 
-3.3: Los dispositivos con este protocolo normalmente se encuentran automáticamente en la inclusión de Tuya, ya sea para un dispositivo wifi o una puerta de enlace Zigbee. El tipo utilizado es Tuya smartlife V3 o Tuya Zigbee Gateway V1.
+3.3 : Los dispositivos con este protocolo normalmente se encuentran automáticamente en la inclusión de Tuya, ya sea para un dispositivo wifi o una puerta de enlace Zigbee. El tipo utilizado es Tuya smartlife compatible V3 o puerta de enlace Tuya/Zigbee V1.
 
 
-3.4: Los dispositivos con este protocolo normalmente se encuentran automáticamente en la inclusión de Tuya, ya sea para un dispositivo wifi o una puerta de enlace Zigbee. En 2022, este protocolo comienza a extenderse. El tipo utilizado es: puerta de enlace Tuya smartlife V4 o Tuya Zigbee V2.
+3.4 : Los dispositivos con este protocolo normalmente se encuentran automáticamente en la inclusión de Tuya, ya sea para un dispositivo wifi o una puerta de enlace Zigbee. En 2022, este protocolo comienza a extenderse. El tipo utilizado es Tuya smartlife compatible V4 o puerta de enlace Tuya/Zigbee V2.
 
+
+Si el complemento no encuentra el protocolo correcto, es posible cambiarlo manualmente sin perder los comandos creados por la nube Tuya, debe elegir el subtipo personalizado antes de guardar.
 
 Si el complemento no encuentra el protocolo correcto, es posible cambiarlo manualmente sin perder los comandos creados por la nube Tuya, debe elegir el subtipo personalizado antes de guardar.
 
@@ -646,7 +647,7 @@ Este procedimiento requiere que copie manualmente la clave local de la nube Tuya
 
 Atención :
 
-Los productos Lidl Tuya / Zigbee nunca deben haberse emparejado con la aplicación Lidl. Deben emparejarse solo con la aplicación Tuya Smartlife; de ​​lo contrario, el complemento ya no podrá utilizarlos. 
+Los productos Lidl Tuya/Zigbee combinados con la aplicación Lidl cambian al protocolo 3.4. No hubo prueba con correcto funcionamiento con el plugin de sus pasarelas. 
 
 # NanoLeaf
 
