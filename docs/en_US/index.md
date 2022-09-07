@@ -369,7 +369,7 @@ Connect in http (with a web browser) to the IP address of your iBox. The default
 It is necessary to leave the Port field empty (not even a space).
 
 
-# MiLight-Hub
+## MiLight-Hub
 
 ### An alternative hub
 
