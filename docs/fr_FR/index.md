@@ -544,6 +544,8 @@ Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement 
 
 Pour la plupart des périphériques sonoff et ewelink, le sous-type est trouvé. Dans les autres cas le sonoff basic est choisi par le plugin, vous pouvez changer le sous-type sans perdre l'ApiKey et le deviceID.
 
+Pour les périphériques multicanaux, mettre 1 pour le canal du périphérique trouvé, le dupliquer et lui donner comme n° de canal 2, etc.
+
 Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas. Vous pouvez modifier le deviceID pour forcer la création d'un doublon.
 
 
