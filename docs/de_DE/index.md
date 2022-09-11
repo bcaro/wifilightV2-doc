@@ -539,6 +539,8 @@ Wenn die lokale IP-Adresse vom Plugin nicht gefunden wird, gleichen Sie die MAC-
 
 Für die meisten Sonoff-Geräte wird der Subtyp gefunden, in anderen Fällen wird Sonoff Basic vom Plugin ausgewählt, Sie können den Subtyp ändern, ohne den ApiKey und die Geräte-ID zu verlieren.
 
+Bei mehrkanaligen Peripheriegeräten 1 für den Kanal des gefundenen Peripheriegeräts eingeben, duplizieren und als Kanalnummer 2 angeben usw. um so viele wifilightV2-Geräte zu erstellen, wie Kanäle vorhanden sind.
+
 Wenn bereits ein Gerät mit derselben Geräte-ID vorhanden ist, erfolgt die Aufnahme nicht. Sie können die Geräte-ID ändern, um die Erstellung eines Duplikats zu erzwingen.
 
 

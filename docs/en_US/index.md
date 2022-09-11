@@ -543,6 +543,8 @@ If the local IP address is not found by the plugin, match the mac address with t
 
 For most sonoff devices the subtype is found, in other cases sonoff basic is chosen by the plugin, you can change the subtype without losing the ApiKey and deviceID.
 
+For multi-channel peripherals, put 1 for the channel of the peripheral found, duplicate it and give it as channel number 2, etc. to create as many wifilightV2 devices as there are channels.
+
 If a device with the same deviceID already exists, the inclusion will not occur. You can modify the deviceID to force the creation of a duplicate.
 
 Remarks :

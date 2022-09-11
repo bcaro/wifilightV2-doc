@@ -535,6 +535,8 @@ Si el complemento no encuentra la dirección IP local, haga coincidir la direcci
 
 Para la mayoría de los dispositivos sonoff, se encuentra el subtipo, en otros casos, el complemento elige sonoff basic, puede cambiar el subtipo sin perder la ApiKey y el ID del dispositivo.
 
+Para periféricos multicanal, ponga 1 para el canal del periférico encontrado, duplíquelo y déle como número de canal 2, etc. para crear tantos dispositivos wifilightV2 como canales.
+
 Si ya existe un dispositivo con el mismo ID de dispositivo, no se realizará la inclusión. Puede modificar el ID del dispositivo para forzar la creación de un duplicado.
 
 
