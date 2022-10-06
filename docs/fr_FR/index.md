@@ -484,8 +484,8 @@ Les périphériques compatibles sont :
 - diffuseur MOD100 beta à tester
 - humidifieur MSXH0 beta à tester
 - hub : MSH300
--- capteur de température MS100
--- têtes thermostatiques : MTS100 MTS150 MTS200
+   - capteur de température MS100
+   - têtes thermostatiques : MTS100 MTS150 MTS200
 
 D'autres périphériques peuvent être rendus compatibles : contacter le développeur.
 
