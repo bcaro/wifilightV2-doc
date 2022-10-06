@@ -13,7 +13,9 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 1.92 - 2022-09-26 beta (Jeedom V4.2)
 - passerelles en protocole 3.4 Tuya : Les passerelles Tuya Zigbee sont validées dont Lidl Silvercrest.
 - Sonoff : ajout de l'inter température/humidité THR316D/THR320D
+- Dual R3 : tests approfondis : ne récupère la consommation que si l'appli ewelink est active
 - Ewelink : correction bogue détection automatique.
+- Corrections de bogues
 
 1.91 - 2022-09-07 stable (Jeedom V4.2)
 - ajout du nouveau protocole 3.4 Tuya : la détection en inclusion est automatique et corrigerait le souci du hub Lidl Silvercrest. Les passerelles Tuya Zigbee n'ont pas été testées.

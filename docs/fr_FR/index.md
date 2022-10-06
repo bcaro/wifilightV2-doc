@@ -476,16 +476,16 @@ Les périphériques compatibles sont :
 - lampes MSL420 MSL430 MSL450
 - lampes variateur : MSL100
 - strip led : MSL320 MSL320 pro
-- hub : MSH300
-- têtes thermostatiques : MTS100 MTS150
 - volets roulants MRS100 (retour d'état et positionnement non fonctionnels)
 - garage MSG100
 - commutateur MSS710
 - interrupteurs  MSS510 MSS550
-- purificateur MAP100 beta
-- diffuseur MOD100 beta
-- humidifieur MSXH0 beta
-
+- purificateur MAP100 beta à tester
+- diffuseur MOD100 beta à tester
+- humidifieur MSXH0 beta à tester
+- hub : MSH300
+-- capteur de température MS100
+-- têtes thermostatiques : MTS100 MTS150 MTS200
 
 D'autres périphériques peuvent être rendus compatibles : contacter le développeur.
 
@@ -569,7 +569,7 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 - Sonoff TH10/1H16 capteur de température. Nouvelle config pour firmware >=3.4 avec ON/OFF OK
 - Sonoff basic R2, RF, POW, Mini
 - Sonoff Dual R2
-- Sonoff Dual R3 (la récupération de la consommation et la configuration du moteur sont à tester, la configuration moteur n'est pas complètement implantée)
+- Sonoff Dual R3 (la récupération de la consommation ne remonte que si l'application ewelink est active, la configuration moteur n'est pas complètement implantée)
 - Sonoff 4CH/4CH PRO
 - Sonoff Touch
 - Sonoff S20/S26
