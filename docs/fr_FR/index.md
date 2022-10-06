@@ -218,7 +218,7 @@ Paramétrage :
 -   Vous pouvez charger des images dans le dossier /data/myImages du plugin. Ces images peuvent remplacer les images associées aux périphériques dans la page d'affichage de tous les périphériques wifilightV2. Utile pour les périphériques personnalisés qui ne sont pas associés à une image.
 -   Pour certains périphériques il est demandé de saisir le canal utilisé, créer un équipement wifilightV2 par canal
 -   Pour certains périphériques il est demandé de saisir un jeton ou (et) un identifiant, consulter l'aide sur la page de configuration du périphérique
--   Pour les périphériques Tuya, il est possible de forcer l'interrogation de l'état toutes les minutes, utile pour les prises avec consommation.
+-   Pour les périphériques Tuya, il est possible de forcer l'interrogation de l'état toutes les 30 secondes, utile pour les prises avec consommation.
 -   Pour certains contrôleurs il faut indiquer le nombre de leds des pixel strip leds
 -   Pour certains contrôleurs il faut indiquer l'ordre des couleurs si les couleurs par défaut ne correspondent pas
 -   Saisir la marque ou le type de périphérique
@@ -253,7 +253,7 @@ Le retour d'état est immédiat pour les périphériques suivants :
 - compatibles avec l'appli Tuya smart live
 - Sonoff en mode LAN
 - compatibles Tuya/Zigbee
-- Sonoff en mode DIY (nécessite un firmware récent, sinon interrogation toutes les minutes)
+- Sonoff en mode DIY (nécessite un firmware récent, sinon interrogation toutes les 30 secondes)
 
 
 Par exemple, si un interrupteur est actionné, Jeedom le saura immédiatement.
@@ -286,7 +286,7 @@ Les commandes xxxxGet et Etat peuvent être utilisées dans un scénario Jeedom.
 
 ## Information de connexion
 
-La commande ConnectedGet permet de récupérer l'état de la connexion de chaque périphérique. Elle est mise à jour toutes les minutes.
+La commande ConnectedGet permet de récupérer l'état de la connexion de chaque périphérique. Elle est mise à jour toutes les 30 secondes.
 -  -1 : périphérique avec retour d'état OK
 -  -2 : impossible de préparer la connexion au périphérique
 -  -3 : périphérique non connecté
@@ -369,7 +369,7 @@ Il faut laisser le champ Port vide (ni même un espace).
 
 ### Un hub alternatif
 
-Plusieurs projets ont abouti à des hubs compatibles avec les ampoules et télécommandes Mi.Light afin de contourner les limitations des hubs du constructeur et qui deviennent encore plus intéressants aujourd'hui avec la disparition des iBox1 et 2. Le plugin est compatible avec le projet de [Sidoh](https://github.com/sidoh/esp8266_milight_hub) et propose 2 modes pour piloter les ampoules. Le premier mode est celui historique des iBox1 et 2, ce qui permet d'utiliser vos périphériques comme habituellement, il y aura 2 paramètres de configuration à ajouter. Le 2ème mode est complètement nouveau et a comme avantages une très grande réactivité et un retour d'état partiel toutes les minutes.
+Plusieurs projets ont abouti à des hubs compatibles avec les ampoules et télécommandes Mi.Light afin de contourner les limitations des hubs du constructeur et qui deviennent encore plus intéressants aujourd'hui avec la disparition des iBox1 et 2. Le plugin est compatible avec le projet de [Sidoh](https://github.com/sidoh/esp8266_milight_hub) et propose 2 modes pour piloter les ampoules. Le premier mode est celui historique des iBox1 et 2, ce qui permet d'utiliser vos périphériques comme habituellement, il y aura 2 paramètres de configuration à ajouter. Le 2ème mode est complètement nouveau et a comme avantages une très grande réactivité et un retour d'état partiel toutes les 30 secondes.
 
 ### Montage du Milight-hub
 
@@ -381,7 +381,7 @@ Dans ce mode, il suffit de renseigner le paramètre Port avec le port du mode UD
 
 ### Mode ESP
 
-Dans ce mode, le choix des périphériques se fait par le type de télécommande et non par le type de lampe comme dans le mode historique. Il faut, après avoir renseigné les paramètres habituels, renseigner l'identifiant du groupe de télécommandes, voir [Sidoh](https://github.com/sidoh/esp8266_milight_hub) ou [sur le forum](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron) pour plus de détails. Ce mode propose un retour d'état partiel mis à jour toutes les minutes.
+Dans ce mode, le choix des périphériques se fait par le type de télécommande et non par le type de lampe comme dans le mode historique. Il faut, après avoir renseigné les paramètres habituels, renseigner l'identifiant du groupe de télécommandes, voir [Sidoh](https://github.com/sidoh/esp8266_milight_hub) ou [sur le forum](https://community.jeedom.com/t/tuto-realiser-un-hub-milight-en-remplacement-des-ibox1-et-ibox2/47836?u=bernardfr.caron) pour plus de détails. Ce mode propose un retour d'état partiel mis à jour toutes les 30 secondes.
 
 Pour appairer une lampe avec le Milight-Hub, mettre la lampe sous tension et cliquer sur Sync ON. Utiliser Sync OFF pour désappairer. Pour appairer une télécommande, sélectionner le ON du canal à synchroniser dès la mise sous tension et cliquer sur Sync ON.
 
@@ -414,13 +414,13 @@ S'inspirer des commandes préconfigurées pour créer ces modes scène suppléme
 Pour la syntaxe Yeelight, voir [ici](https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf)
 
 ## Etat
-En V2, lors de l'activation du plugin et dès que le démon est lancé ainsi que toutes les minutes, le plugin recherche les ampoules alimentées et connectées à Jeedom.
+En V2, lors de l'activation du plugin et dès que le démon est lancé ainsi que toutes les 30 secondes, le plugin recherche les ampoules alimentées et connectées à Jeedom.
 
 Dès que l'ampoule est trouvée, l'état de l'ampoule est remonté au plugin immédiatement.
 
 Noter que le plugin peut mettre jusqu'à 1 minute pour trouver une ampoule et 4 minutes pour trouver qu'un périphérique est déconnecté.
 
-En V1, le retour d'état peut prendre jusqu'à une minute.
+En V1, le retour d'état peut prendre jusqu'à 30 secondes.
 
 # Tapo & Kasa TP-Link 
 
@@ -468,7 +468,7 @@ Aucune aide ne sera donnée pour récupérer le jeton.
 
 Les périphériques compatibles sont :
 - prises simple : MSS110 MSS210
-- prises simple + consommation : MSS310 (la consommation ne remonte que toutes les minutes)
+- prises simple + consommation : MSS310 (la consommation ne remonte que toutes les 30 secondes)
 - prises doubles MSS120 MSS620
 - prises quadruples MSS420
 - prises quintuples MSS425
@@ -717,5 +717,5 @@ Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilig
 Les logs du plugin ne sont pas compatibles avec syslog, mettre la configuration standard pour les logs. Ils sont répartis en 4 catégories :
 - wifilightV2_cmd : pour les commandes envoyées vers les périphériques
 - wifilightV2_inc : lors de l'inclusion des périphériques
-- wifilight_Tuya : le daemon pour les périphériques Tuya et Yeelight. Il teste la présence de ces périphériques toutes les minutes, maintient la connexion permanente et récupère l'état en temps réel.
-- wifilightV2 : le 2ème daemon pour tous les autres périphériques. Il teste la présence de ces périphériques toutes les minutes.
+- wifilight_Tuya : le daemon pour les périphériques Tuya et Yeelight. Il teste la présence de ces périphériques toutes les 30 secondes, maintient la connexion permanente et récupère l'état en temps réel.
+- wifilightV2 : le 2ème daemon pour tous les autres périphériques. Il teste la présence de ces périphériques toutes les 30 secondes.
