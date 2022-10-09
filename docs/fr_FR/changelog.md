@@ -10,7 +10,7 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.92 - 2022-09-26 beta (Jeedom V4.2)
+1.92 - 2022-10-09 (Jeedom V4.2)
 - passerelles en protocole 3.4 Tuya : Les passerelles Tuya Zigbee sont validées dont Lidl Silvercrest.
 - Meross : ajout du GS559 capteur de fumées
 - Sonoff : ajout de l'inter température/humidité THR316D/THR320D
