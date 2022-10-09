@@ -389,6 +389,8 @@ Pour connaitre les caractéristiques du hub, cliquer sur getKey, le résultat es
 
 # Xiaomi Yeelight
 
+L'ampoule YLDP13YL se trouve dans le type Philips Xiaomi
+
 ## Configuration
 Il est indispensable d'activer le contrôle par réseau local via l'application Xiaomi Yeelight.
 
@@ -460,7 +462,7 @@ Notes :
 
 Il est indispensable de récupérer un jeton (token) permettant au plugin de dialoguer avec les périphériques Xiaomi Philips.
 
-La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Xiaomi token ou sur le forum [ici](https://community.jeedom.com/t/xiaomi-philips-et-wifilightv2/48064) .
+La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Xiaomi token ou sur le forum [ici](https://community.jeedom.com/t/xiaomi-philips-et-wifilightv2/48064).
 
 Aucune aide ne sera donnée pour récupérer le jeton.
 
@@ -486,6 +488,8 @@ Les périphériques compatibles sont :
 - hub : MSH300
    - capteur de température MS100
    - têtes thermostatiques : MTS100 MTS150 MTS200
+   - détecteur fumée : GS559A en beta tester les infos fumée et chaleur
+   
 
 D'autres périphériques peuvent être rendus compatibles : contacter le développeur.
 

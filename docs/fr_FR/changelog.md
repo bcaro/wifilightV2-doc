@@ -16,6 +16,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Sonoff : ajout de l'inter température/humidité THR316D/THR320D
 - Dual R3 : tests approfondis : ne récupère la consommation que si l'appli ewelink est active
 - Ewelink : correction bogue détection automatique.
+- Yeelight : ajout de YLDP13YL dans le type philips
 - Corrections de bogues
 
 1.91 - 2022-09-07 stable (Jeedom V4.2)
