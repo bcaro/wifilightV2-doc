@@ -393,6 +393,8 @@ To know the characteristics of the hub, click on getKey, the result is obtained 
 
 # Xiaomi Yeelight
 
+The YLDP13YL bulb is in the type Philips Xiaomi
+
 ## Configuration
 It is essential to activate the local network control via the Xiaomi Yeelight app.
 
@@ -438,6 +440,8 @@ Kasa:
 - bulbs KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130
 - HS100 HS110 KP105 KP110 sockets
 
+Do not use double authentication in the Tapo/Kasa application.
+
 ## TP-Link Cloud Setup
 
 This part of the plugin requires the dependencies to be launched.
@@ -468,7 +472,7 @@ The procedure is complex and requires several manipulations. Do a search on the 
 
 Compatible devices are:
 - single sockets: MSS110 MSS210
-- single sockets + consumption: MSS310 (consumption only goes up every minute)
+- single sockets + consumption: MSS310 (consumption only goes up every 30 seconds)
 - MSS120 MSS620 double sockets
 - MSS420 quad sockets
 - MSS425 quintuple sockets
@@ -476,15 +480,17 @@ Compatible devices are:
 - MSL420 MSL430 MSL450 lamps
 - dimmer lamps: MSL100
 - strip led: MSL320 MSL320 pro
-- hub: MSH300
-- thermostatic heads: MTS100 MTS150
 - MRS100 rolling shutters (status feedback and positioning not functional)
 - MSG100 garage
 - MSS710 switch
 - MSS510 MSS550 switches
-- MAP100 beta purifier
-- MOD100 beta diffuser
-- MSXH0 beta humidifier 
+- MAP100 beta purifier to be tested
+- MOD100 beta diffuser to test
+- MSXH0 beta humidifier to be tested
+- hub: MSH300
+    - MS100 temperature sensor
+    - thermostatic heads: MTS100 MTS150 MTS200
+    - smoke detector: GS559A in beta to test smoke and heat information
 
 
 Other peripherals can be made compatible: contact the developer.
@@ -564,12 +570,13 @@ Many brands are compatible including Sonoff. The products tested are:
 - Switches, wall sockets, switch: simple with dimmer of all brands
 - Sonoff D1 smart Dimmer
 - Sonoff TH10/1H16 temperature sensor. New config for firmware >=3.4 with ON/OFF OK
+- Sonoff THR316D temperature and humidity sensor + switch
 - Sonoff basic R2, RF, POW, Mini
 - Sonoff Dual R2
-- Sonoff Dual R3 (consumption recovery and motor configuration are to be tested, motor configuration is not fully implemented)
+- Sonoff Dual R3 (consumption recovery only goes up if the ewelink application is active, the engine configuration is not completely implemented)
 - Sonoff 4CH/4CH PRO
 - Sonoff Touch
-- Sonoff S20/S26
+-Sonoff S20/S26
 - Sonoff T1/TX
 - Sonoff SLAMPHER
 - Sonoff T4EUC1
@@ -579,15 +586,13 @@ Many brands are compatible including Sonoff. The products tested are:
 
 Nevertheless, the compatibility of these peripherals is not guaranteed because the protocol can be modified by the manufacturers. Do not modify the device firmware without checking that it is compatible with the plugin.
 
-The sonoff DW2 is not compatible because it is purely cloud and does not go into Access Point to find apiKey and DeviceID. It is likely to be the same for all ewelink compatible door sensors.
+The sonoff DW2 is not compatible because it is purely cloud and does not go into Access Point to find apiKey and DeviceID. It is likely to be the same for all ewelink wifi sensors.
 
 The Zigbee Hub is not compatible (and purely cloud) as well as all Zigbee devices.
 
 No bulb or led strip is compatible.
 
-
-
-For multi-channel devices (like the Sonoff 4CH) you have to create as many wifilightV2 devices as there are channels, a copy of the first created makes it easy, then you have to change the channel number.
+For multi-channel devices (like the Sonoff 4CH) you have to create as many wifilightV2 devices as there are channels, a copy of the first created makes it easy, then you have to change the channel number
 
 For devices not present in this list or if the configuration does not work or if a device does not have the correct subtype and after using the device integration procedure, give the contents of the wifilightV2_inc logs in the [forum ](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) in order to allow the integration of the module in the plugin.
 
@@ -604,7 +609,7 @@ Tuya devices use different protocols:
 3.3 : Devices with this protocol are normally found automatically in Tuya inclusion, either for a wifi device or a Zigbee gateway. The type used is Tuya smartlife compatible V3 or Tuya/Zigbee V1 gateway.
 
 
-3.4 : Devices with this protocol are normally found automatically in Tuya inclusion, whether for a wifi device or a Zigbee gateway. In 2022, this protocol begins to spread. The type used is: The type used is Tuya smartlife compatible V4 or Tuya/Zigbee V2 gateway.
+3.4 : Devices with this protocol are normally found automatically in Tuya inclusion, whether for a wifi device or a Zigbee gateway. In 2022, this protocol begins to spread. The type used is: The type used is Tuya smartlife compatible V or Tuya/Zigbee V2 gateway.
 
 
 If the plugin does not find the right protocol, it is possible to change it manually without losing the commands created by the Tuya cloud, you must choose the custom subtype before saving.
@@ -640,11 +645,14 @@ This part of the plugin requires the launch of the dependencies: if the local IP
 
 You can help improve automatic creation by providing as much information as possible: the Json from the Tuya cloud, the changes made, the logs or any relevant remark.
 
-To get the Json from the Tuya cloud:
-- in Tuya IOT Platform: Cloud > Development > choose the project > Devices > Copy the device ID of the device
-- Cloud > Api Explorer > (in the new window) Smart Home Management System > Device Control > Get Device Specification Attribute (the 2nd in the list without s to Attribute)
-- paste the device ID > Submit Request> Copy (right window link)
+To get the Tuya cloud Json:
+- in Tuya developer: Cloud develop> Development > subscribe to cloud project
 
+In the new window:
+
+- Cloud > Development > choose the project > devices > copy the device ID of the device to debug
+- Cloud > Api Explorer > (in the new window) Smart Home Management System > Device Control > Get Device Specification Attribute (the 2nd in the list without s to Attribute)
+- paste the device ID > Submit Request > Copy (right window link)
 
 [See specific documentation ](./tuya#tocAnchor-1-1)
 
@@ -659,7 +667,7 @@ This procedure requires you to manually copy the localkey from the Tuya cloud.
 
 Attention :
 
-Lidl Tuya/Zigbee products paired with the Lidl application switch to protocol 3.4. There was no test with correct operation with the plugin of its gateways.
+Lidl Tuya/Zigbee products paired with the Lidl application switch to protocol 3.4.
 
 # Nanoleaf
 

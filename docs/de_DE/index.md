@@ -385,6 +385,8 @@ Um die Eigenschaften des Hubs zu erfahren, klicken Sie auf getKey, das Ergebnis 
 
 # Xiaomi Yeelight
 
+Das Leuchtmittel YLDP13YL ist vom Typ Philips Xiaomi
+
 ## Aufbau
 Die lokale Netzwerksteuerung muss unbedingt über die Xiaomi Yeelight App aktiviert werden.
 
@@ -429,6 +431,7 @@ Kasa:
 - Glühlampen KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130
 - HS100 HS110 KP105 KP110 Steckdosen
 
+Verwenden Sie keine doppelte Authentifizierung in der Tapo/Kasa-Anwendung.
 
 ## TP-Link Cloud-Setup
 
@@ -464,7 +467,7 @@ Es wird keine Hilfe beim Wiederherstellen des Tokens gegeben.
 
 Kompatible Geräte sind:
 - Einzelsteckdosen: MSS110 MSS210
-- Einzelsteckdosen + Verbrauch: MSS310 (Verbrauch steigt nur minütlich)
+- Einzelsteckdosen + Verbrauch: MSS310 (Verbrauch steigt nur alle 30 Sekunden)
 - MSS120 MSS620 Doppelsteckdosen
 - MSS420 Quad-Steckdosen
 - MSS425-Fünffachsteckdosen
@@ -472,15 +475,17 @@ Kompatible Geräte sind:
 - MSL420 MSL430 MSL450 Lampen
 - Dimmerlampen: MSL100
 - LED-Streifen: MSL320 MSL320 pro
-- Nabe: MSH300
-- Thermostatköpfe: MTS100 MTS150
 - Rollladen MRS100 (Statusrückmeldung und Positionierung nicht funktionsfähig)
 - MSG100-Garage
 - MSS710-Schalter
 - Schalter MSS510 MSS550
-- Reiniger-MAP100 Beta
-- Diffusor-MOD100 Beta
-- Luftbefeuchter-MSXH0 Beta
+- MAP100-Beta-Reiniger soll getestet werden
+- MOD100 Beta-Diffusor zum Testen
+- MSXH0 Beta-Luftbefeuchter zum Testen
+- Nabe: MSH300
+    - Temperatursensor MS100
+    - Thermostatköpfe: MTS100 MTS150 MTS200
+    - Rauchmelder: GS559A in Beta zum Testen von Rauch- und Wärmeinformationen
 
 
 Andere Peripheriegeräte können kompatibel gemacht werden: wenden Sie sich an den Entwickler.
@@ -561,12 +566,13 @@ Viele Marken sind kompatibel, einschließlich Sonoff. Die getesteten Produkte si
 - Schalter, Steckdosen, Schalter: einfach mit Dimmer aller Marken
 - Sonoff D1 intelligenter Dimmer
 - Sonoff TH10/1H16 Temperatursensor. Neue Konfiguration für Firmware >=3.4 mit ON/OFF OK
+- Sonoff THR316D Temperatur- und Feuchtigkeitssensor + Schalter
 - Sonoff Basic R2, RF, POW, Mini
 - Sonoff Dual R2
-- Sonoff Dual R3 (Verbrauchsrückgewinnung und Motorkonfiguration sind zu testen, Motorkonfiguration ist nicht vollständig implementiert)
+- Sonoff Dual R3 (Verbrauchsrückgewinnung geht nur hoch, wenn die ewelink-Anwendung aktiv ist, die Motorkonfiguration ist nicht vollständig implementiert)
 - Sonoff 4CH/4CH PRO
 - Sonoff-Touch
-- Sonoff S20/S26
+-Sonoff S20/S26
 - Sonoff T1/TX
 - Sonoff SLAMPHER
 - Sonoff T4EUC1
@@ -576,15 +582,13 @@ Viele Marken sind kompatibel, einschließlich Sonoff. Die getesteten Produkte si
 
 Dennoch ist die Kompatibilität dieser Peripheriegeräte nicht gewährleistet, da das Protokoll von den Herstellern modifiziert werden kann. Verändern Sie die Geräte-Firmware nicht, ohne zu überprüfen, ob sie mit dem Plugin kompatibel ist.
 
-Das Sonoff DW2 ist nicht kompatibel, da es sich um eine reine Cloud handelt und nicht in den Access Point geht, um apiKey und DeviceID zu finden. Es ist wahrscheinlich für alle ewelink-kompatiblen Türsensoren gleich.
+Das sonoff DW2 ist nicht kompatibel, da es sich um eine reine Cloud handelt und nicht in den Access Point geht, um apiKey und DeviceID zu finden. Es ist wahrscheinlich für alle ewelink-kompatiblen wifi gleich.
 
 Der Zigbee-Hub ist nicht kompatibel (und rein Cloud) sowie alle Zigbee-Geräte.
 
 Keine Glühbirne oder LED-Streifen ist kompatibel.
 
-
-
-Bei Mehrkanalgeräten (wie dem Sonoff 4CH) müssen Sie so viele wifilightV2-Geräte erstellen, wie es Kanäle gibt, eine Kopie des zuerst erstellten macht es einfach, dann müssen Sie die Kanalnummer ändern.
+Bei Mehrkanalgeräten (wie dem Sonoff 4CH) müssen Sie so viele wifilightV2-Geräte erstellen, wie es Kanäle gibt, eine Kopie des zuerst erstellten macht es einfach, dann müssen Sie die Kanalnummer ändern
 
 Für Geräte, die nicht in dieser Liste enthalten sind oder wenn die Konfiguration nicht funktioniert oder wenn ein Gerät nicht den richtigen Subtyp hat und nachdem Sie das Geräteintegrationsverfahren verwendet haben, geben Sie den Inhalt der wifilightV2_inc-Protokolle im [Forum] (https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632), um die Integration des Moduls in das Plugin zu ermöglichen.
 
@@ -635,10 +639,14 @@ Dieser Teil des Plugins erfordert den Start der Abhängigkeiten: Wenn die lokale
 ### Teilnahme an der Verbesserung dieses Teils:
 Sie können dazu beitragen, die automatische Erstellung zu verbessern, indem Sie so viele Informationen wie möglich bereitstellen: den Json aus der Tuya-Cloud, die vorgenommenen Änderungen, die Protokolle oder alle relevanten Bemerkungen.
 
-So erhalten Sie den Json aus der Tuya-Cloud:
-- in Tuya IOT Platform: Cloud > Development >  Projekt auswähle > Devices > Geräte-ID des Geräts kopieren
-- Cloud > Api Explorer> (im neuen Fenster) Smart Home Management System > Device Control > Get Device Specification Attribute (das 2. in der Liste ohne s zum Attribut)
-- fügen Sie device ID > Submit Request > Copy  (Link im rechten Fenster)
+So erhalten Sie den Tuya-Cloud-Json:
+- in Tuya-Entwickler: Cloud-Entwicklung> Entwicklung> Cloud-Projekt abonnieren
+
+Im neuen Fenster:
+
+- Cloud > Entwicklung > Projekt auswählen > Geräte > Geräte-ID des zu debuggenden Geräts kopieren
+- Cloud > Api Explorer > (im neuen Fenster) Smart Home Management System > Device Control > Get Device Specification Attribute (das 2. in der Liste ohne s to Attribute)
+- Fügen Sie die Geräte-ID ein > Anfrage senden > Kopieren (Link im rechten Fenster)
 
 [Siehe die spezifische Dokumentation](./tuya#tocAnchor-1-1)
 
@@ -653,7 +661,7 @@ Dieses Verfahren erfordert, dass Sie den Localkey manuell aus der Tuya-Cloud kop
 
 Aufmerksamkeit :
 
-Lidl Tuya/Zigbee-Produkte, die mit der Lidl-Anwendung gekoppelt sind, wechseln zu Protokoll 3.4. Es gab keinen Test mit korrektem Betrieb mit dem Plugin seiner Gateways.
+Lidl Tuya/Zigbee-Produkte, die mit der Lidl-Anwendung gekoppelt sind, wechseln zu Protokoll 3.4.
 
 # Nanoleaf
 

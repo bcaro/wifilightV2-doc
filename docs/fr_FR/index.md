@@ -436,6 +436,8 @@ Kasa :
 -   ampoules KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130
 -   prises HS100 HS110 KP105 KP110
 
+Ne pas utiliser la double authentification.
+
 
 ## Configuration du cloud TP-Link
 
@@ -571,6 +573,7 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 - Interrupteurs, prises murales, switch : simples avec variateur de toutes marques
 - Sonoff D1 smart Dimmer
 - Sonoff TH10/1H16 capteur de température. Nouvelle config pour firmware >=3.4 avec ON/OFF OK
+- Sonoff THR316D capteur de température et humidité + interrupteur
 - Sonoff basic R2, RF, POW, Mini
 - Sonoff Dual R2
 - Sonoff Dual R3 (la récupération de la consommation ne remonte que si l'application ewelink est active, la configuration moteur n'est pas complètement implantée)
@@ -586,7 +589,7 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
-Le sonoff DW2 n'est pas compatible car purement cloud et ne se met pas en Acces Point permettant de trouver apiKey et DeviceID. Il est probable qu'il en soit de même pour tous les capteurs de porte compatibles ewelink.
+Le sonoff DW2 n'est pas compatible car purement cloud et ne se met pas en Acces Point permettant de trouver apiKey et DeviceID. Il est probable qu'il en soit de même pour tous les capteurs wifi compatibles ewelink.
 
 Le Hub Zigbee n'est pas compatible (et purement cloud) ainsi que tous les périphériques Zigbee.
 
@@ -643,6 +646,7 @@ Vous pouvez contribuer à l'amélioration de la création automatique en donnant
 
 Pour obtenir le Json du cloud Tuya :
 - dans Tuya developper : Cloud develop> Development > subscribe to cloud project 
+
 Dans la nouvelle fenêtre :
 
 - Cloud > Development > choisir le projet  > devices > copier le device ID du périphérique à déboguer
@@ -662,7 +666,7 @@ Cette procédure nécessite de recopier manuellement la localkey depuis le cloud
 
 Attention :
 
-Les produits Lidl Tuya/Zigbee appairés avec l'application Lidl passent en protocole 3.4. Il n'y a pas eu de test avec de fonctionnement correct avec le plugin de ses passerelles.
+Les produits Lidl Tuya/Zigbee appairés avec l'application Lidl passent en protocole 3.4.
 
 # Nanoleaf
 

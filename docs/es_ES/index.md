@@ -383,6 +383,8 @@ Para conocer las características del hub, haga clic en getKey, el resultado se 
 
 # Xiaomi Yeelight
 
+La bombilla YLDP13YL es del tipo Philips Xiaomi
+
 ## Configuración
 Es fundamental activar el control de la red local a través de la aplicación Xiaomi Yeelight.
 
@@ -428,6 +430,8 @@ Kasa:
 - bombillas KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130
 - Tomas HS100 HS110 KP105 KP110
 
+No utilice la doble autenticación en la aplicación Tapo/Kasa.
+
 ## Configuración de la nube de TP-Link
 
 Esta parte del complemento requiere que se inicien las dependencias.
@@ -461,7 +465,7 @@ No se brindará ayuda para recuperar la ficha.
 
 Los dispositivos compatibles son:
 - enchufes individuales: MSS110 MSS210
-- enchufes individuales + consumo: MSS310 (el consumo solo sube cada minuto)
+- enchufes individuales + consumo: MSS310 (el consumo solo sube cada 30 segundos)
 - MSS120 MSS620 enchufes dobles
 - Zócalos cuádruples MSS420
 - Zócalos quíntuples MSS425
@@ -469,15 +473,17 @@ Los dispositivos compatibles son:
 - Lámparas MSL420 MSL430 MSL450
 - lámparas de atenuación: MSL100
 - tira led: MSL320 MSL320 pro
-- cubo: MSH300
-- cabezas termostáticas: MTS100 MTS150
 - Persianas enrollables MRS100 (retroalimentación de estado y posicionamiento no funcional)
 - garaje MSG100
 - Interruptor MSS710
 - Conmutadores MSS510 MSS550
-- purificador MAP100 beta
-- Difusor MOD100 beta
-- Humidificador MSXH0 beta
+- Se probará el purificador MAP100 beta
+- Difusor beta MOD100 para probar
+- Se probará el humidificador beta MSXH0
+- cubo: MSH300
+    - Sensor de temperatura MS100
+    - cabezas termostáticas: MTS100 MTS150 MTS200
+    - detector de humo: GS559A en beta para probar información de humo y calor
 
 
 Se pueden hacer compatibles otros periféricos: póngase en contacto con el desarrollador.
@@ -557,30 +563,29 @@ Muchas marcas son compatibles, incluida Sonoff. Los productos probados son:
 - Interruptores, enchufes de pared, interruptor: simple con dimmer de todas las marcas
 - Atenuador inteligente Sonoff D1
 - Sensor de temperatura Sonoff TH10/1H16. Nueva configuración para firmware >=3.4 con ON/OFF OK
+- Sonoff THR316D sensor de temperatura y humedad + interruptor
 - Sonoff básico R2, RF, POW, Mini
-- Sonoff Dual R2
-- Sonoff Dual R3 (la recuperación de consumo y la configuración del motor deben probarse, la configuración del motor no está completamente implementada)
-- Sonoff 4CH/4CH PRO
-- Sonoff Touch
-- Sonoff S20/S26
-- Sonoff T1/TX
-- Sonoff SLAMPHER
-- Sonoff T4EUC1
+-Sonoff Dual R2
+- Sonoff Dual R3 (la recuperación de consumo solo sube si la aplicación ewelink está activa, la configuración del motor no está completamente implementada)
+-Sonoff 4CH/4CH PRO
+- Toque Sonoff
+-Sonoff S20/S26
+-Sonoff T1/TX
+-Sonoff SLAMPHER
+-Sonoff T4EUC1
 - Ifan 2/3/4 para probar
 - Sonoff RF bridge 433 solo para sensores (puerta, detector de presencia, mando a distancia)
 - Sonoff Micro USB: elija el canal 1, proporcionado para 4 canales para un modelo USB de 4 canales que no sea sonoff, retorno de estado no funcional en fw 3.7
 
 No obstante, la compatibilidad de estos periféricos no está garantizada ya que el protocolo puede ser modificado por los fabricantes. No modifique el firmware del dispositivo sin comprobar que es compatible con el complemento.
 
-El sonoff DW2 no es compatible porque es puramente en la nube y no ingresa al punto de acceso para encontrar apiKey y DeviceID. Es probable que sea el mismo para todos los sensores de puerta compatibles con ewelink.
+El sonoff DW2 no es compatible porque es puramente en la nube y no ingresa al punto de acceso para encontrar apiKey y DeviceID. Es probable que sea el mismo para todos los sensores wifi compatibles con ewelink.
 
 Zigbee Hub no es compatible (y puramente en la nube), así como todos los dispositivos Zigbee.
 
 Ninguna bombilla o tira de led es compatible.
 
-
-
-Para dispositivos multicanal (como el Sonoff 4CH) tienes que crear tantos dispositivos wifilightV2 como canales haya, una copia del primero creado lo hace fácil, luego tienes que cambiar el número de canal.
+Para dispositivos multicanal (como el Sonoff 4CH) tienes que crear tantos dispositivos wifilightV2 como canales haya, una copia del primero creado lo hace fácil, luego tienes que cambiar el número de canal
 
 Para dispositivos que no están presentes en esta lista o si la configuración no funciona o si un dispositivo no tiene el subtipo correcto y después de usar el procedimiento de integración de dispositivos, proporcione el contenido de los registros wifilightV2_inc en el [foro] (https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) para permitir la integración del módulo en el complemento.
 
@@ -631,10 +636,14 @@ Esta parte del complemento requiere el lanzamiento de las dependencias: si el co
 ### Participación en la mejora de esta parte:
 Puedes ayudar a mejorar la creación automática proporcionando la mayor cantidad de información posible: el Json de la nube Tuya, los cambios realizados, los registros o cualquier comentario relevante.
 
-Para obtener el Json de la nube Tuya:
-- en Tuya IOT Platform: Cloud > Development > elija el proyecto > Devices > Copie el ID del dispositivo del dispositivo
-- Cloud > Development > (en la nueva ventana) Smart Home Management System > Device Control > Get Device Specification Attribute (el segundo en la lista sin s para atributo)
-- pegue el device ID > Submit Request > Copy (enlace de la ventana derecha)
+Para obtener la nube Tuya Json:
+- en el desarrollador de Tuya: Desarrollo en la nube> Desarrollo> suscribirse al proyecto en la nube
+
+En la nueva ventana:
+
+- Nube > Desarrollo > elija el proyecto > dispositivos > copie el ID del dispositivo para depurar
+- Nube > Api Explorer > (en la nueva ventana) Sistema de administración de hogar inteligente > Control de dispositivos > Obtener atributo de especificación del dispositivo (el segundo en la lista sin atributos)
+- pegue el ID del dispositivo > Enviar solicitud > Copiar (enlace de la ventana derecha)
 
 [Ver documentación específica](./tuya#tocAnchor-1-1)
 
@@ -649,7 +658,7 @@ Este procedimiento requiere que copie manualmente la clave local de la nube Tuya
 
 Atención :
 
-Los productos Lidl Tuya/Zigbee combinados con la aplicación Lidl cambian al protocolo 3.4. No hubo prueba con correcto funcionamiento con el plugin de sus pasarelas. 
+Los productos Lidl Tuya/Zigbee combinados con la aplicación Lidl cambian al protocolo 3.4. 
 
 # NanoLeaf
 
