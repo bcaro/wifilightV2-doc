@@ -436,7 +436,7 @@ Kasa :
 -   ampoules KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130
 -   prises HS100 HS110 KP105 KP110
 
-Ne pas utiliser la double authentification.
+Ne pas utiliser ou supprimer la double authentification avec les applications Tapo/Kasa.
 
 
 ## Configuration du cloud TP-Link
