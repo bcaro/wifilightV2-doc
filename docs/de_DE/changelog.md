@@ -11,7 +11,7 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
 1.93 - 2022-10-19 (Jeedom V4.2)
-- Meross : correction MTS300 thermostat
+- Meross : correction MTS200 thermostat
 - corrections interface et traduction
 - adaptation à Jeedom 4.3
 - suppression de warnings php
