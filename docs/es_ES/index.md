@@ -630,8 +630,11 @@ Esta parte del complemento requiere el lanzamiento de las dependencias: si el co
 ### Puntas:
 - si no se encontró la dirección IP porque el periférico no está conectado, dale la dirección: 0.0.0.0, conéctalo y reinicia el procedimiento de inclusión.
 - si la clave local de un periférico ha cambiado, modifique el devId del periférico, rehaga la inclusión y copie el devId y la nueva clave local en el periférico antiguo. Finalmente, elimine el dispositivo creado por inclusión.
-- si el procedimiento automático falla o si la nube Tuya no proporciona los comandos, cambie al [modo de aprendizaje del dispositivo] (./tuya#tocAnchor-1-1-6) y actúe solo en los botones de la aplicación Tuya Smartlife en correspondencia . Si se usan otros botones, el complemento creará duplicados de los comandos creados a través de la nube de Tuya.
+- si el procedimiento automático falla o si la nube Tuya no proporciona los comandos, cambie al [modo de aprendizaje del dispositivo] (./tuya#tocAnchor-1-1-6) y actúe solo en los botones de la aplicación Tuya Smartlife en correspondencia . Si se usan otros botones, el complemento creará duplicados de los comandos creados a través de la nube de Tuya. Pero cuidado, esta documentación es muy técnica y está reservada para un público informado, no la use en modo de pánico cuando no tenga los conocimientos para comprender su contenido.
 - en general, los pedidos se pueden crear manualmente o en modo de aprendizaje
+
+### Sondeo preciso de un evento.
+Cuando se marca la opción "sondeo de estado", el complemento sondea el dispositivo cada 12 segundos. Esto permite, por ejemplo, recuperar el consumo de un periférico cuando este último no lo envía regularmente. Sin embargo, tenga cuidado, esto puede agotar la batería de los dispositivos con batería. Para muchos dispositivos que miden la energía consumida, es necesario abrir la aplicación móvil para que los datos se transmitan al complemento.
 
 ### Participación en la mejora de esta parte:
 Puedes ayudar a mejorar la creación automática proporcionando la mayor cantidad de información posible: el Json de la nube Tuya, los cambios realizados, los registros o cualquier comentario relevante.
@@ -645,7 +648,7 @@ En la nueva ventana:
 - Nube > Api Explorer > (en la nueva ventana) Sistema de administración de hogar inteligente > Control de dispositivos > Obtener atributo de especificación del dispositivo (el segundo en la lista sin atributos)
 - pegue el ID del dispositivo > Enviar solicitud > Copiar (enlace de la ventana derecha)
 
-[Ver documentación específica](./tuya#tocAnchor-1-1)
+[Ver documentación específica](./tuya#tocAnchor-1-1) ,pero cuidado, esta documentación es muy técnica y está reservada para un público informado, no la use en modo de pánico cuando no tenga los conocimientos para comprender su contenido.
 
 ## Creación manual o semimanual de dispositivos Tuya y Tuya/Zigbee
 

@@ -637,8 +637,11 @@ Cette partie du plugin nécessite le lancement des dépendances : si l'adresse I
 ### Astuces :
 - si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
 - si la localkey d'un périphérique a changé, modifier le devId du périphérique, refaire l'inclusion et recopier le devId et la nouvelle localkey dans l'ancien périphérique. Enfin, supprimer le périphérique créé par inclusion.
-- si la procédure automatique dysfonctionne ou si des commandes ne sont pas fournies par le cloud Tuya, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-1-6) et agir uniquement sur les boutons de l'appli Tuya Smartlife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya.
+- si la procédure automatique dysfonctionne ou si des commandes ne sont pas fournies par le cloud Tuya, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-1-6) et agir uniquement sur les boutons de l'appli Tuya Smartlife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya. Mais attention, cette documentation est très technique et réservée à un public averti, ne l'utilisez pas en mode panique alors que vous n'avez pas les connaissances pour comprendre son contenu.
 - de manière générale, les commandes peuvent être créées manuellement ou en mode apprentissage
+
+### Scrutation précise d'un évènement.
+Lorsque l'option "interrogation de l'état" est cochée, le plugin interroge le périphérique toutes les 12 secondes. Ceci permet, par exemple, de récupérer la consommation d'un périphérique lorsque celui-ci ne l'envoie pas régulièrement. Il faut néanmoins faire attention, ceci peut vider la batterie des périphériques sur batterie. Pour de nombreux périphériques qui mesurent la puissance consommée, l'ouverture de l'application mobile est nécessaire pour que les données soient transmises au plugin.
 
 
 ### Participation à l'amélioration de cette partie :
@@ -653,7 +656,7 @@ Dans la nouvelle fenêtre :
 - Cloud > Api Explorer > (dans la nouvelle fenêtre) Smart Home Management System > Device Control > Get Device Specification Attribute (le 2ème de la liste sans s à Attribute)
 - coller le device ID > Submit Request > Copy (lien fenêtre droite)
 
-[Voir la documentation spécifique](./tuya#tocAnchor-1-1)
+[Voir la documentation spécifique](./tuya#tocAnchor-1-1) ,mais attention cette documentation est très technique et réservée à un public averti, ne l'utilisez pas en mode panique alors que vous n'avez pas les connaissances pour comprendre son contenu.
 
 ## Création manuelle ou semi manuelle des périphériques Tuya et Tuya/Zigbee
 

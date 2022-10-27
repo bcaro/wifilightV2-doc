@@ -633,8 +633,12 @@ Dieser Teil des Plugins erfordert den Start der Abhängigkeiten: Wenn die lokale
 ### Tipps:
 - Wenn die IP-Adresse nicht gefunden wurde, weil das Peripheriegerät nicht verbunden ist, geben Sie ihm die Adresse: 0.0.0.0 , verbinden Sie es und starten Sie den Aufnahmevorgang neu.
 - Wenn sich der Localkey eines Peripheriegeräts geändert hat, ändern Sie die devId des Peripheriegeräts, wiederholen Sie die Aufnahme und kopieren Sie die devId und den neuen Localkey in das alte Peripheriegerät. Löschen Sie abschließend das durch die Aufnahme erstellte Gerät.
-- Wenn der automatische Vorgang nicht funktioniert oder Befehle nicht von der Tuya-Cloud bereitgestellt werden, wechseln Sie in den [Geräte-Lernmodus] (./tuya#tocAnchor-1-1-6) und handeln Sie nur auf die Schaltflächen der App Tuya Smartlife in Korrespondenz . Wenn andere Schaltflächen verwendet werden, erstellt das Plugin Duplikate von Befehlen, die über die Tuya-Cloud erstellt wurden.
+- Wenn der automatische Vorgang nicht funktioniert oder Befehle nicht von der Tuya-Cloud bereitgestellt werden, wechseln Sie in den [Geräte-Lernmodus] (./tuya#tocAnchor-1-1-6) und handeln Sie nur auf die Schaltflächen der App Tuya Smartlife in Korrespondenz . Wenn andere Schaltflächen verwendet werden, erstellt das Plugin Duplikate von Befehlen, die über die Tuya-Cloud erstellt wurden. Aber Vorsicht, diese Dokumentation ist sehr technisch und einer informierten Öffentlichkeit vorbehalten. Verwenden Sie sie nicht im Panikmodus, wenn Sie nicht das Wissen haben, ihren Inhalt zu verstehen.
+
 - Generell können Aufträge manuell oder im Lernmodus erstellt werden.
+
+### Genaue Abfrage eines Ereignisses.
+Wenn die Option "Statusabfrage" aktiviert ist, fragt das Plugin das Gerät alle 12 Sekunden ab. Dadurch ist es beispielsweise möglich, den Verbrauch eines Peripheriegeräts wiederherzustellen, wenn dieses es nicht regelmäßig sendet. Seien Sie jedoch vorsichtig, dies kann den Akku von Geräten im Akkubetrieb entladen. Bei vielen Geräten, die den Stromverbrauch messen, ist das Öffnen der mobilen Anwendung notwendig, damit die Daten an das Plugin übermittelt werden.
 
 ### Teilnahme an der Verbesserung dieses Teils:
 Sie können dazu beitragen, die automatische Erstellung zu verbessern, indem Sie so viele Informationen wie möglich bereitstellen: den Json aus der Tuya-Cloud, die vorgenommenen Änderungen, die Protokolle oder alle relevanten Bemerkungen.
@@ -648,7 +652,7 @@ Im neuen Fenster:
 - Cloud > Api Explorer > (im neuen Fenster) Smart Home Management System > Device Control > Get Device Specification Attribute (das 2. in der Liste ohne s to Attribute)
 - Fügen Sie die Geräte-ID ein > Anfrage senden > Kopieren (Link im rechten Fenster)
 
-[Siehe die spezifische Dokumentation](./tuya#tocAnchor-1-1)
+[Siehe die spezifische Dokumentation](./tuya#tocAnchor-1-1) ,aber Vorsicht, diese Dokumentation ist sehr technisch und einer informierten Öffentlichkeit vorbehalten. Verwenden Sie sie nicht im Panikmodus, wenn Sie nicht das Wissen haben, ihren Inhalt zu verstehen.
 
 ## Manuelle oder halbmanuelle Erstellung von Tuya- und Tuya/Zigbee-Geräten
 

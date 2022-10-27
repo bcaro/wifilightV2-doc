@@ -638,8 +638,12 @@ This part of the plugin requires the launch of the dependencies: if the local IP
 ### Tips:
 - if the IP address was not found because the peripheral is not connected, give it the address: 0.0.0.0 , connect it and restart the inclusion procedure.
 - if the localkey of a peripheral has changed, modify the devId of the peripheral, redo the inclusion and copy the devId and the new localkey into the old peripheral. Finally, delete the device created by inclusion.
-- if the automatic procedure malfunctions or if commands are not provided by the Tuya cloud, switch to [device learning mode](./tuya#tocAnchor-1-1-6) and act only on the buttons of the app Tuya Smartlife in correspondence. If other buttons are used, the plugin will create duplicates of commands created through Tuya cloud.
+- if the automatic procedure malfunctions or if commands are not provided by the Tuya cloud, switch to [device learning mode](./tuya#tocAnchor-1-1-6) and act only on the buttons of the app Tuya Smartlife in correspondence. If other buttons are used, the plugin will create duplicates of commands created through Tuya cloud. But beware this documentation is very technical and reserved for an informed public, do not use it in panic mode when you do not have the knowledge to understand its content.
 - in general, orders can be created manually or in learning mode
+
+
+### Precise polling of an event.
+When the "status polling" option is checked, the plugin polls the device every 12 seconds. This makes it possible, for example, to recover the consumption of a peripheral when the latter does not send it regularly. However, be careful, this can drain the battery of devices on battery. For many devices that measure the power consumed, opening the mobile application is necessary for the data to be transmitted to the plugin.
 
 ### Participation in the improvement of this part:
 
@@ -654,7 +658,7 @@ In the new window:
 - Cloud > Api Explorer > (in the new window) Smart Home Management System > Device Control > Get Device Specification Attribute (the 2nd in the list without s to Attribute)
 - paste the device ID > Submit Request > Copy (right window link)
 
-[See specific documentation ](./tuya#tocAnchor-1-1)
+[See specific documentation ](./tuya#tocAnchor-1-1) ,but beware this documentation is very technical and reserved for an informed public, do not use it in panic mode when you do not have the knowledge to understand its content.
 
 ## Manual or semi-manual creation of Tuya and Tuya/Zigbee devices
 
