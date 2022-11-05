@@ -477,14 +477,14 @@ Los dispositivos compatibles son:
 - garaje MSG100
 - Interruptor MSS710
 - Conmutadores MSS510 MSS550
-- Se probará el purificador MAP100 beta
-- Difusor beta MOD100 para probar
-- Se probará el humidificador beta MSXH0
+- Difusores MOD100 MOD150
+- Termostato MTS200
 - cubo: MSH300
     - Sensor de temperatura MS100
-    - cabezas termostáticas: MTS100 MTS150 MTS200
+    - cabezas termostáticas: MTS100 MTS150
     - detector de humo: GS559A en beta para probar información de humo y calor
-
+- Se probará el purificador MAP100 beta
+- Se probará el humidificador beta MSXH0
 
 Se pueden hacer compatibles otros periféricos: póngase en contacto con el desarrollador.
 

@@ -479,14 +479,14 @@ Kompatible Geräte sind:
 - MSG100-Garage
 - MSS710-Schalter
 - Schalter MSS510 MSS550
-- MAP100-Beta-Reiniger soll getestet werden
-- MOD100 Beta-Diffusor zum Testen
-- MSXH0 Beta-Luftbefeuchter zum Testen
+- Diffusoren MOD100 MOD150
+- Thermostat MTS200
 - Nabe: MSH300
     - Temperatursensor MS100
-    - Thermostatköpfe: MTS100 MTS150 MTS200
+    - Thermostatköpfe: MTS100 MTS150
     - Rauchmelder: GS559A in Beta zum Testen von Rauch- und Wärmeinformationen
-
+- MAP100-Beta-Reiniger soll getestet werden
+- MSXH0 Beta-Luftbefeuchter zum Testen
 
 Andere Peripheriegeräte können kompatibel gemacht werden: wenden Sie sich an den Entwickler.
 

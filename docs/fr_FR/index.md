@@ -484,14 +484,14 @@ Les périphériques compatibles sont :
 - garage MSG100
 - commutateur MSS710
 - interrupteurs  MSS510 MSS550
-- purificateur MAP100 beta à tester
-- diffuseur MOD100 beta à tester
-- humidifieur MSXH0 beta à tester
+- diffuseurs MOD100 MOD150
+- thermostat MTS200
 - hub : MSH300
    - capteur de température MS100
-   - têtes thermostatiques : MTS100 MTS150 MTS200
+   - têtes thermostatiques : MTS100 MTS150
    - détecteur fumée : GS559A en beta tester les infos fumée et chaleur
-   
+- purificateur MAP100 beta à tester
+- humidifieur MSXH0 beta à tester  
 
 D'autres périphériques peuvent être rendus compatibles : contacter le développeur.
 

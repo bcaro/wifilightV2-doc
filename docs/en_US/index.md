@@ -484,14 +484,14 @@ Compatible devices are:
 - MSG100 garage
 - MSS710 switch
 - MSS510 MSS550 switches
-- MAP100 beta purifier to be tested
-- MOD100 beta diffuser to test
-- MSXH0 beta humidifier to be tested
+- MOD100 MOD150 diffusers
+- MTS200 thermostat
 - hub: MSH300
     - MS100 temperature sensor
-    - thermostatic heads: MTS100 MTS150 MTS200
+    - thermostatic heads: MTS100 MTS150
     - smoke detector: GS559A in beta to test smoke and heat information
-
+- MAP100 beta purifier to be tested
+- MSXH0 beta humidifier to be tested
 
 Other peripherals can be made compatible: contact the developer.
 

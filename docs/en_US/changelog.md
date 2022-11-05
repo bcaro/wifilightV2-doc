@@ -10,6 +10,12 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.94 - 2022-11-05 (Jeedom V4.2)
+- Meross : sortie du mode beta du MOD100, le MOD150 est compatible
+- Sonoff : DualR3 mode volet roulant testé sauf le retour position
+- corrections interface et traduction
+- corrections bogues
+
 1.93 - 2022-10-19 (Jeedom V4.2)
 - Meross : correction MTS200 thermostat
 - corrections interface et traduction
