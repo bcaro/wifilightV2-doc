@@ -10,6 +10,16 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.95 2022-11-09 beta (Jeedom V4.2)
+- Meross MTS200 ajout de l'information d'ouverture de vanne
+	ATTENTION : pour la détection de l'ouverture de fenêtre la commandes info a changé :
+	* OpenGetZ -> PIRGetZ = info d'ouverture de fenêtre
+	* DetectionGetZ = info de permission de prise en compte de l'ouverture de la fenêtre
+	Remonté de l'ouverture de la vanne thermostatique :
+	* OpenGetZ
+	
+	Il est nécessaire de sauvegarder l'équipement configuré avant la 1.95 et de revoir l'utilisation des informations concernant l'ouverture fenêtre dans les scénarios
+
 1.94 - 2022-11-05 (Jeedom V4.2)
 - Meross : sortie du mode beta du MOD100, le MOD150 est compatible
 - Sonoff : DualR3 mode volet roulant testé sauf le retour position
