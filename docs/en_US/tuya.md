@@ -2,6 +2,8 @@
 
 # Zigbee Tuya gateways
 
+This part is to be used after including the device via Tuya cloud. If this is not the case, return to the main documentation and read why there is a need to use this very technical part of the documentation, when the Tuya cloud has not given complete satisfaction, and reserved for advanced users
+
 To use such a gateway, choose the type: "Gateway Hub Tuya Zigbee"
 
 ## Compatibility
@@ -114,6 +116,8 @@ The plugin is equipped with buttons allowing you to automatically create the com
 For the% of capacity to be displayed in Analysis / Equipment, the logical name of the corresponding info command must contain battery and get.
 
 # Tuya
+
+This part is to be used after including the device via Tuya cloud. If this is not the case, return to the main documentation and read why there is a need to use this very technical part of the documentation, when the Tuya cloud has not given complete satisfaction, and reserved for advanced users
 
 To use these peripherals without a Tuya / Zigbee gateway, choose the type: "Tuya SmartLife compatible V3"
 

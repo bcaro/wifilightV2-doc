@@ -3,6 +3,8 @@
 
 # Zigbee Tuya-Gateways
 
+Dieser Teil muss verwendet werden, nachdem das Gerät über die Tuya-Cloud eingebunden wurde. Wenn dies nicht der Fall ist, kehren Sie zur Hauptdokumentation zurück und lesen Sie, warum es notwendig ist, diesen sehr technischen Teil der Dokumentation zu verwenden, wenn die Tuya-Cloud nicht vollständig zufrieden gestellt hat und fortgeschrittenen Benutzern vorbehalten ist.
+
 Um ein solches Gateway zu verwenden, wählen Sie den Typ: "Gateway Hub Tuya Zigbee"
 
 ## Kompatibilität
@@ -113,6 +115,8 @@ Das Plugin ist mit Schaltflächen ausgestattet, mit denen Sie die Befehle für d
 Damit der Kapazitätsprozentsatz in Analysis/Equipment angezeigt wird, muss der logische Name des entsprechenden Info-Befehls batterie und get enthalten.
 
 # Tuya
+
+Dieser Teil muss verwendet werden, nachdem das Gerät über die Tuya-Cloud eingebunden wurde. Wenn dies nicht der Fall ist, kehren Sie zur Hauptdokumentation zurück und lesen Sie, warum es notwendig ist, diesen sehr technischen Teil der Dokumentation zu verwenden, wenn die Tuya-Cloud nicht vollständig zufrieden gestellt hat und fortgeschrittenen Benutzern vorbehalten ist.
 
 Um diese Peripheriegeräte ohne Tuya/Zigbee-Gateway zu verwenden, wählen Sie den Typ: "Tuya SmartLife kompatibel V3"
 

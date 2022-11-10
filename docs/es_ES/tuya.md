@@ -2,6 +2,8 @@
 
 # Pasarelas Zigbee Tuya
 
+Esta parte se utilizará después de incluir el dispositivo a través de la nube de Tuya. Si este no es el caso, regrese a la documentación principal y lea por qué es necesario utilizar esta parte tan técnica de la documentación, cuando la nube de Tuya no ha dado completa satisfacción y está reservada para usuarios avanzados.
+
 Para utilizar una puerta de enlace de este tipo, elija el tipo: "Gateway Hub Tuya Zigbee"
 
 ## Compatibilidad
@@ -113,6 +115,8 @@ El plugin está equipado con botones que le permiten crear automáticamente los 
 Para que el% de capacidad se muestre en Análisis/Equipo, el nombre lógico del comando de información correspondiente debe contener battery y get.
 
 # Tuya
+
+Esta parte se utilizará después de incluir el dispositivo a través de la nube de Tuya. Si este no es el caso, regrese a la documentación principal y lea por qué es necesario utilizar esta parte tan técnica de la documentación, cuando la nube de Tuya no ha dado completa satisfacción y está reservada para usuarios avanzados.
 
 Para utilizar estos periféricos sin una puerta de enlace Tuya / Zigbee, elija el tipo: "Tuya SmartLife compatible V3"
 
