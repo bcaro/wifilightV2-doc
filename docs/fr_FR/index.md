@@ -605,7 +605,7 @@ La création de la plupart des appareils Tuya et Tuya/Zigbee est automatique. Ce
 
 Les appareils Tuya utilisent différents protocoles :
 
-<3.3 : Cet ancien protocole ne prend pas en charge l'inclusion. Le plugin trouvera l'appareil dans le cloud Tuya, mais il ne trouvera pas le bon protocole. Vous devez le modifier manuellement un utilisant le type Tuya smartLife compatible V1. Il n'y a pas de passerelle Tuya Zigbee avec ce protocole.
+<3.3 : Cet ancien protocole ne prend pas en charge l'inclusion. Le plugin trouvera l'appareil dans le cloud Tuya, mais il ne trouvera pas le bon protocole. Vous devez le modifier manuellement en utilisant le type Tuya smartLife compatible V1. Il n'y a pas de passerelle Tuya Zigbee avec ce protocole.
 
 
 3.3 : Les appareils avec ce protocole sont normalement trouvés automatiquement en inclusion Tuya, que ce soit pour un appareil wifi ou une passerelle Zigbee. Le type utilisé est Tuya smartlife compatible V3 ou passerelle Tuya/Zigbee V1.
