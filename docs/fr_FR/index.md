@@ -216,7 +216,7 @@ Paramétrage :
 -   Saisir l'adresse IP du module de la prise ou de l'ampoule WiFi (voir la FAQ pour plus d'explications)
 -   Pour la box Milight-hub, un identifiant et un port doivent être configurés
 -   Vous pouvez charger des images dans le dossier /data/myImages du plugin. Ces images peuvent remplacer les images associées aux périphériques dans la page d'affichage de tous les périphériques wifilightV2. Utile pour les périphériques personnalisés qui ne sont pas associés à une image.
--   Pour certains périphériques il est demandé de saisir le canal utilisé, créer un équipement wifilightV2 par canal
+-   Pour certains périphériques il est demandé de saisir le canal utilisé, créer un équipement wifilightV2 par canal des multiprises ou des interrupteurs
 -   Pour certains périphériques il est demandé de saisir un jeton ou (et) un identifiant, consulter l'aide sur la page de configuration du périphérique
 -   Pour les périphériques Tuya, il est possible de forcer l'interrogation de l'état toutes les 30 secondes, utile pour les prises avec consommation.
 -   Pour certains contrôleurs il faut indiquer le nombre de leds des pixel strip leds
@@ -348,7 +348,7 @@ Si par la suite, la commande Scene01 est supprimée, il faudra manuellement modi
 
 # Mi.Light
 
-Il faut créer un périphérique par canal dans le plugin.
+Il faut créer un périphérique par canal de chaque prise ou interrupteur dans le plugin.
 
 ## Ibox 1 / 2 et Mi.Light Box
 
@@ -436,7 +436,7 @@ Kasa :
 -   ampoules KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130
 -   prises HS100 HS110 KP105 KP110
 
-Ne pas utiliser ou supprimer la double authentification avec les applications Tapo/Kasa.
+Ne pas utiliser ou supprimer la double authentification avec les applications Tapo/Kasa. Les effets ne fonctionennent pas, même si les commandes sont créées par le plugin.
 
 
 ## Configuration du cloud TP-Link
@@ -495,7 +495,7 @@ Les périphériques compatibles sont :
 
 D'autres périphériques peuvent être rendus compatibles : contacter le développeur.
 
-Il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondant aux n prises. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
+Il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondant aux n prises de la multiprise. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
 Attention : certaines prises anciennes ont un comportement différent, utiliser la version V1 dans le sous type.
 
 
@@ -550,7 +550,7 @@ Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement 
 
 Pour la plupart des périphériques sonoff et ewelink, le sous-type est trouvé. Dans les autres cas le sonoff basic est choisi par le plugin, vous pouvez changer le sous-type sans perdre l'ApiKey et le deviceID.
 
-Pour les périphériques multicanaux, mettre 1 pour le canal du périphérique trouvé, le dupliquer et lui donner comme n° de canal 2, etc. pour créer autant de périphériques wifilightV2 que de canaux.
+Pour les périphériques multicanaux comme les multiprises, mettre 1 pour le canal du périphérique trouvé, le dupliquer et lui donner comme n° de canal 2, etc. pour créer autant de périphériques wifilightV2 que de canaux.
 
 Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas. Vous pouvez modifier le deviceID pour forcer la création d'un doublon.
 
@@ -595,7 +595,7 @@ Le Hub Zigbee n'est pas compatible (et purement cloud) ainsi que tous les périp
 
 Aucune ampoule ou strip led n'est compatible.
 
-Pour les périphériques multicanaux (comme le Sonoff 4CH) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal.
+Pour les périphériques multicanaux (comme le Sonoff 4CH, les interrupteurs ou les multiprises) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal.
 
 Pour les périphériques non présents dans cette liste ou si la configuration ne fonctionne pas ou si un périphérique n'a pas le sous-type correct et après avoir utilisé la procédure d'intégration du périphérique, donner le contenu des logs wifilightV2_inc dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) afin de permettre l'intégration du module dans le plugin.
 
@@ -605,7 +605,7 @@ La création de la plupart des appareils Tuya et Tuya/Zigbee est automatique. Ce
 
 Les appareils Tuya utilisent différents protocoles :
 
-<3.3 : Cet ancien protocole ne prend pas en charge l'inclusion. Le plugin trouvera l'appareil dans le cloud Tuya, mais il ne trouvera pas le bon protocole. Vous devez le modifier manuellement en utilisant le type Tuya smartLife compatible V1. Il n'y a pas de passerelle Tuya Zigbee avec ce protocole.
+<3.3 : Cet ancien protocole n'est pas pris en charge par l'inclusion. Le plugin trouvera l'appareil dans le cloud Tuya, mais il ne trouvera pas le bon protocole. Vous devez le modifier manuellement en utilisant le type Tuya smartLife compatible V1 et affecter manuellement son adresse IP. Il n'y a pas de passerelle Tuya Zigbee avec ce protocole.
 
 
 3.3 : Les appareils avec ce protocole sont normalement trouvés automatiquement en inclusion Tuya, que ce soit pour un appareil wifi ou une passerelle Zigbee. Le type utilisé est Tuya smartlife compatible V3 ou passerelle Tuya/Zigbee V1.
@@ -623,6 +623,7 @@ Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-contro
 Cette partie du plugin nécessite le lancement des dépendances : si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, si elle ne peut être chargée ou si le système n'est pas compatible, l'adresse IP ne pourra pas être trouvée automatiquement.
 
 ### Remarques :
+- Les périphériques multicanaux (multiprises, interrupteurs multipes) inclus par le plugin via le cloud Tuya sont regroupés dans le même périphérique
 - Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 - les périphériques non zigbee et sur pile sont purement cloud (capteurs de fermeture, de porte, de température par exemple) seront intégrés mais le plugin ne pourra pas y accéder
 - les couleurs suivant les 3 formats connus sont créées ainsi que les commandes saturation et intensité liées
