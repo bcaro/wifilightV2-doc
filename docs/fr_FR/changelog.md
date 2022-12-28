@@ -10,6 +10,9 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.95b 2022-12-28 (Jeedom V4.2)
+- correction bogue passerelles Tuya/Zigbee V3 (protocole 3.4) : mélange des retour d'état des périphériques
+
 1.95 2022-12-18 (Jeedom V4.2)
 - Meross MTS200 ajout de l'information d'ouverture de vanne
 	ATTENTION : pour la détection de l'ouverture de fenêtre la commandes info a changé :
@@ -18,7 +21,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 	* OpenGetZ = Remonté de l'ouverture de la vanne thermostatique :
 	Il est nécessaire de sauvegarder l'équipement configuré avant la 1.95 et de revoir l'utilisation des informations concernant l'ouverture fenêtre dans les scénarios
 - traduction améliorée (merci à ktn pour le script traduitjdm)
-- insistance sur la lecture préalable de la doc
+- insistance sur la léecture préalable de la doc
 
 1.94 - 2022-11-05 (Jeedom V4.2)
 - Meross : sortie du mode beta du MOD100, le MOD150 est compatible
