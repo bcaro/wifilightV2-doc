@@ -10,6 +10,9 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.95c 2023-01-11 (Jeedom V4.2) beta
+- correction bogue Merosss MT200 : ajout du retour state
+
 1.95b 2022-12-28 (Jeedom V4.2)
 - correction bogue passerelles Tuya/Zigbee V3 (protocole 3.4) : mélange des retour d'état des périphériques
 
