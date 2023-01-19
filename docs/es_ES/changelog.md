@@ -10,6 +10,14 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.95d 2023-01-19 (Jeedom V4.2) beta
+- Tuya : amélioration de la recherche des périphérique
+- plus de dépendances
+- mise en cache des images des périphériques Tuya cloud
+
+1.95c 2023-01-11 (Jeedom V4.2) beta
+- Merosss MTS100 MTS150 MTS200 : ajout du retour state. Il est nécessaire de sauvegarder l'équipement pour ajouter state qui se trouve dans ModeOnGet
+
 1.95b 2022-12-28 (Jeedom V4.2)
 - correction bogue passerelles Tuya/Zigbee V3 (protocole 3.4) : mélange des retour d'état des périphériques
 
