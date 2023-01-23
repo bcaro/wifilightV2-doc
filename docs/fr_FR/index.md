@@ -215,7 +215,7 @@ Paramétrage :
 -   Activer et rendre visible (par défaut)
 -   Saisir l'adresse IP du module de la prise ou de l'ampoule WiFi (voir la FAQ pour plus d'explications)
 -   Pour la box Milight-hub, un identifiant et un port doivent être configurés
--   Vous pouvez charger des images dans le dossier /data/myImages du plugin. Ces images peuvent remplacer les images associées aux périphériques dans la page d'affichage de tous les périphériques wifilightV2. Utile pour les périphériques personnalisés qui ne sont pas associés à une image.
+-   Vous pouvez charger des images dans le dossier /data/myImages du plugin. Ces images peuvent remplacer les images associées aux périphériques dans la page d'affichage de tous les périphériques wifilightV2. Utile pour les périphériques personnalisés qui ne sont pas associés à une image. Ce dossier est aussi utilisé pour le cache des images en provenance du cloud Tuya. Si vous modifiez une image du cloud Tuya, vous pouvez la récupérer en vidant le champ de l'image alternative.
 -   Pour certains périphériques il est demandé de saisir le canal utilisé, créer un équipement wifilightV2 par canal des multiprises ou des interrupteurs
 -   Pour certains périphériques il est demandé de saisir un jeton ou (et) un identifiant, consulter l'aide sur la page de configuration du périphérique
 -   Pour les périphériques Tuya, il est possible de forcer l'interrogation de l'état toutes les 30 secondes, utile pour les prises avec consommation.
@@ -589,7 +589,7 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
-Le sonoff DW2 n'est pas compatible car purement cloud et ne se met pas en Acces Point permettant de trouver apiKey et DeviceID. Il est probable qu'il en soit de même pour tous les capteurs wifi compatibles ewelink.
+Le sonoff DW2 n'est pas compatible car purement cloud et ne se met pas en Acces Point permettant de trouver apiKey et DeviceID. Il en est de même pour tous les capteurs wifi à pile compatibles ewelink.
 
 Le Hub Zigbee n'est pas compatible (et purement cloud) ainsi que tous les périphériques Zigbee.
 
@@ -614,7 +614,7 @@ Les appareils Tuya utilisent différents protocoles :
 3.4 : Les appareils avec ce protocole sont normalement trouvés automatiquement en inclusion Tuya, que ce soit pour un appareil wifi ou une passerelle Zigbee. En 2022, ce protocole commence à se répandre. Le type utilisé est Tuya smartlife compatible V4 ou passerelle Tuya/Zigbee V2.
 
 
-Si le plugin ne trouve pas le bon protocole, il est possible de le changer manuellement sans perdre les commandes créées par le cloud Tuya, il faut choisir le sous-type personnalisé avant de sauvegarder.
+Si le plugin ne trouve pas le bon protocole, il est possible de le changer manuellement sans perdre les commandes créées par le cloud Tuya, il faut choisir le sous-type personnalisé avant de sauvegarder pour un périphérique et Passerelle pour une passerelle Tuya/zigbee.
 
 ## Configuration de la plateforme Tuya
 
@@ -622,9 +622,10 @@ Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-contro
 
 Cette partie du plugin nécessite le lancement des dépendances : si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, si elle ne peut être chargée ou si le système n'est pas compatible, l'adresse IP ne pourra pas être trouvée automatiquement.
 
-### Remarques :
-- Les périphériques multicanaux (multiprises, interrupteurs multipes) inclus par le plugin via le cloud Tuya sont regroupés dans le même périphérique
-- Si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
+### Remarques et limitations :
+- les périphériques multicanaux (multiprises, interrupteurs multipes) inclus par le plugin via le cloud Tuya sont regroupés dans le même périphérique
+- si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
+- certaines passerelles Tuya/Zigbee ne sont pas compatibles, c'est le cas de la nouvelle passerelle Silvercrest, se renseigner sur le forum Jeedom.
 - les périphériques non zigbee et sur pile sont purement cloud (capteurs de fermeture, de porte, de température par exemple) seront intégrés mais le plugin ne pourra pas y accéder
 - les couleurs suivant les 3 formats connus sont créées ainsi que les commandes saturation et intensité liées
 - les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
@@ -637,7 +638,7 @@ Cette partie du plugin nécessite le lancement des dépendances : si l'adresse I
 
 ### Astuces :
 - si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
-- si la localkey d'un périphérique a changé, modifier le devId du périphérique, refaire l'inclusion et recopier le devId et la nouvelle localkey dans l'ancien périphérique. Enfin, supprimer le périphérique créé par inclusion.
+- si la localkey d'un périphérique a changé, modifier le devId ou le nodeId du périphérique (en mettant par exemple @ à la fin), refaire l'inclusion et recopier le devId ou le nodeId et la nouvelle localkey dans l'ancien périphérique. Enfin, supprimer le périphérique créé par inclusion.
 - si la procédure automatique dysfonctionne ou si des commandes ne sont pas fournies par le cloud Tuya, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-1-6) et agir uniquement sur les boutons de l'appli Tuya Smartlife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya. Mais attention, cette documentation est très technique et réservée à un public averti, ne l'utilisez pas en mode panique alors que vous n'avez pas les connaissances pour comprendre son contenu.
 - de manière générale, les commandes peuvent être créées manuellement ou en mode apprentissage
 
