@@ -12,6 +12,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 
 1.95d 2023-01-19 (Jeedom V4.2) beta
 - Tuya : amélioration de la recherche des périphériques
+- La derbière passerelle Silvercrest n'est pascompatible
 - plus de dépendances
 - mise en cache des images des périphériques Tuya cloud
 - Meross MTS200 : correction remonté de la température courante (merci @t0urista)
