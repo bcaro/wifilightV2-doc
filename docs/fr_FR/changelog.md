@@ -12,7 +12,8 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 
 1.95d 2023-01-19 (Jeedom V4.2) beta
 - Tuya : amélioration de la recherche des périphériques
-- La derbière passerelle Silvercrest n'est pascompatible
+- Tuya : l'interrogation de la consommation des prises est maintenant bien mise à jour toutes les 20s
+- La derbière passerelle Silvercrest n'est pas compatible en attendant de coder le encore nouveau protocole 3.5
 - plus de dépendances
 - mise en cache des images des périphériques Tuya cloud
 - Meross MTS200 : correction remonté de la température courante (merci @t0urista)
