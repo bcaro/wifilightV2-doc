@@ -10,12 +10,13 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.95d 2023-01-19 (Jeedom V4.2) beta
+1.96 2023-02-08 (Jeedom V4.2) beta
+- Tuya : ajout du nouveau protocole 3.5 / refonte du 3.4
 - Tuya : amélioration de la recherche des périphériques
 - Tuya : l'interrogation de la consommation des prises est maintenant bien mise à jour toutes les 20s
-- La derbière passerelle Silvercrest n'est pas compatible en attendant de coder le encore nouveau protocole 3.5
 - plus de dépendances
 - mise en cache des images des périphériques Tuya cloud
+- Sonoff Dual R2 : ajout des consos jour et mois
 - Meross MTS200 : correction remonté de la température courante (merci @t0urista)
 
 1.95c 2023-01-11 (Jeedom V4.2) beta
