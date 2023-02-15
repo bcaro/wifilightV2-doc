@@ -2,10 +2,6 @@
 
 [voir ici](https://bcaro.github.io/wifilightV2-doc/fr_FR/changelog)
 
-# Installation
-
-Le plugin nécessite d'installer des dépendances. Si les dépendances ne sont pas installées de nombreux périphériques ne pourront pas fonctionner correctement. Néanmoins, si l'installation échoue, seule la recherche de l'adresse IP des périphériques Tuya et Ewelink ne fonctionnera pas.
-
 # Présentation
 
 Attention :
@@ -441,7 +437,6 @@ Ne pas utiliser ou supprimer la double authentification avec les applications Ta
 
 ## Configuration du cloud TP-Link
 
-Cette partie du plugin nécessite le lancement des dépendances.
 
 Dans la configuration du plugin, renseigner l'adresse mail et le mot de passe de connexion à l'appli Kasa ou Tapo et sauvegarder. Ensuite, sélectionner : Tapo-Kasa Passer en inclusion. Les périphériques sont créés automatiquement. Les identifiants sont les mêmes pour Tapo et Kasa.
 
@@ -546,7 +541,7 @@ Cette procédure automatise la création de la plupart des périphériques Eweli
 
 Dans la configuration du plugin, renseigner le login (adresse mail uniquement) et le mot de passe de connexion à l'appli Ewelink et sauvegarder. Ensuite, sélectionner : Ewelink Passer en inclusion. Les périphériques qui se trouvent dans l'application Ewelink sont créés automatiquement. Si le périphérique est supprimé de l'application Ewelink, il ne fonctionnera plus avec le plugin.
 
-Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Ewelink et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, qui nécessite le lancement des dépendances. Si elle ne peut être chargée ou si le système n'est pas compatible, l'adresse IP ne pourra pas être trouvée automatiquement.
+Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Ewelink et votre routeur et modifier l'adresse IP.
 
 Pour la plupart des périphériques sonoff et ewelink, le sous-type est trouvé. Dans les autres cas le sonoff basic est choisi par le plugin, vous pouvez changer le sous-type sans perdre l'ApiKey et le deviceID.
 
@@ -583,9 +578,10 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 - Sonoff T1/TX
 - Sonoff SLAMPHER
 - Sonoff T4EUC1
-- Ifan 2/3/4 à tester 
+- Sonoff Ifan 2/3/4 à tester 
+- Sonoff POW R316/320 à tester
 - Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur de présence, télécommande)
-- Sonoff Micro USB : choisir le canal 1, prévu pour 4 canaux pour un modèle USB 4 canaux non sonoff, retour d'état non fonctionnel en fw 3.7
+- Sonoff Micro USB : ne fonctionne pas avec certains firmware. Choisir le canal 1, retour d'état non fonctionnel en fw 3.7
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
@@ -595,23 +591,20 @@ Le Hub Zigbee n'est pas compatible (et purement cloud) ainsi que tous les périp
 
 Aucune ampoule ou strip led n'est compatible.
 
-Pour les périphériques multicanaux (comme le Sonoff 4CH, les interrupteurs ou les multiprises) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal.
+Pour les périphériques multicanaux (comme le Sonoff 4CH, les interrupteurs ou les multiprises) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal qui va de 1 à 4.
 
 Pour les périphériques non présents dans cette liste ou si la configuration ne fonctionne pas ou si un périphérique n'a pas le sous-type correct et après avoir utilisé la procédure d'intégration du périphérique, donner le contenu des logs wifilightV2_inc dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) afin de permettre l'intégration du module dans le plugin.
 
 # Tuya Smartlife et cloud Tuya
 
-La création de la plupart des appareils Tuya et Tuya/Zigbee est automatique. Cependant, l'accès aux appareils reste local.
+La création de la plupart des appareils Tuya et Tuya/Zigbee est automatique en récupérant dans le cloud Tuya leurs informations de configuration. Pour cela, les périphériques doivent fonctionner dans l'application Tuya Smartlife. Cependant, par la suite, l'accès aux appareils reste local.
 
 Les appareils Tuya utilisent différents protocoles :
 
-<3.3 : Cet ancien protocole n'est pas pris en charge par l'inclusion. Le plugin trouvera l'appareil dans le cloud Tuya, mais il ne trouvera pas le bon protocole. Vous devez le modifier manuellement en utilisant le type Tuya smartLife compatible V1 et affecter manuellement son adresse IP. Il n'y a pas de passerelle Tuya Zigbee avec ce protocole.
+<3.3 : Cet ancien protocole n'est pas pris en charge par l'inclusion. Le plugin trouvera l'appareil dans le cloud Tuya, mais il ne trouvera pas le bon protocole. Vous devez le modifier manuellement en utilisant fw 1.0 et affecter manuellement son adresse IP et choisir une configuration dans la liste.
 
 
-3.3 : Les appareils avec ce protocole sont normalement trouvés automatiquement en inclusion Tuya, que ce soit pour un appareil wifi ou une passerelle Zigbee. Le type utilisé est Tuya smartlife compatible V3 ou passerelle Tuya/Zigbee V1.
-
-
-3.4 : Les appareils avec ce protocole sont normalement trouvés automatiquement en inclusion Tuya, que ce soit pour un appareil wifi ou une passerelle Zigbee. En 2022, ce protocole commence à se répandre. Le type utilisé est Tuya smartlife compatible V4 ou passerelle Tuya/Zigbee V2.
+3.3/3.4/3.5 : Les appareils avec ces protocoles sont normalement trouvés automatiquement en inclusion Tuya, que ce soit pour un appareil wifi ou une passerelle Zigbee.
 
 
 Si le plugin ne trouve pas le bon protocole, il est possible de le changer manuellement sans perdre les commandes créées par le cloud Tuya, il faut choisir le sous-type personnalisé avant de sauvegarder pour un périphérique et Passerelle pour une passerelle Tuya/zigbee.
@@ -620,12 +613,10 @@ Si le plugin ne trouve pas le bon protocole, il est possible de le changer manue
 
 Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "Overview" pour récupérer : Access ID et Access Secret. Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya et sauvegarder, ensuite sélectionner : Tuya Passer en inclusion. Les périphériques sont créés automatiquement. 
 
-Cette partie du plugin nécessite le lancement des dépendances : si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, si elle ne peut être chargée ou si le système n'est pas compatible, l'adresse IP ne pourra pas être trouvée automatiquement.
-
 ### Remarques et limitations :
 - les périphériques multicanaux (multiprises, interrupteurs multipes) inclus par le plugin via le cloud Tuya sont regroupés dans le même périphérique
 - si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
-- certaines passerelles Tuya/Zigbee ne sont pas compatibles, c'est le cas de la nouvelle passerelle Silvercrest, se renseigner sur le forum Jeedom.
+- certaines passerelles Tuya/Zigbee ne sont pas compatibles, se renseigner sur le forum Jeedom.
 - les périphériques non zigbee et sur pile sont purement cloud (capteurs de fermeture, de porte, de température par exemple) seront intégrés mais le plugin ne pourra pas y accéder
 - les couleurs suivant les 3 formats connus sont créées ainsi que les commandes saturation et intensité liées
 - les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
@@ -668,10 +659,6 @@ Cette procédure nécessite de recopier manuellement la localkey depuis le cloud
  
  [Voir la documentation spécifique pour les produits Tuya Wifi](./tuya#tocAnchor-1-10)
 
-
-Attention :
-
-Les produits Lidl Tuya/Zigbee appairés avec l'application Lidl passent en protocole 3.4.
 
 # Nanoleaf
 
