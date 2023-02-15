@@ -10,17 +10,18 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.96 2023-02-08 (Jeedom V4.2) beta
-- Tuya : ajout du nouveau protocole 3.5 / refonte du 3.4
-- Tuya : amélioration de la recherche des périphériques
-- Tuya : l'interrogation de la consommation des prises est maintenant bien mise à jour toutes les 20s
-- plus de dépendances
-- mise en cache des images des périphériques Tuya cloud
-- Sonoff Dual R2 : ajout des consos jour et mois
+1.96 2023-02-14 (Jeedom V4.2) beta
+- Tuya : ajout du nouveau protocole fw 3.5 / refonte du fw 3.4, plus réactif
+ATTENTION : vérifier que toutes les passerelles ont le sous type passerelle et que toutes les périphériques reliés ont le sous type personnalisé
+- Tuya : amélioration de la recherche des périphériques dans le cloud
+- Tuya : l'interrogation de la consommation des prises est maintenant bien mise à jour toutes les 12s
+- Tuya : numérotation des différents types selon le firmware (sans conséquence sur les configurations existantes)
+- Tuya : mise en cache des images du cloud
+- Sonoff Pow R316/320 : ajouté pour test
+- Sonoff Pow R2 : ajout des consommations jour et mois
 - Meross MTS200 : correction remonté de la température courante (merci @t0urista)
-
-1.95c 2023-01-11 (Jeedom V4.2) beta
 - Merosss MTS100 MTS150 MTS200 : ajout du retour state. Il est nécessaire de sauvegarder l'équipement pour ajouter state qui se trouve dans ModeOnGet
+- plus de dépendances
 
 1.95b 2022-12-28 (Jeedom V4.2)
 - correction bogue passerelles Tuya/Zigbee V3 (protocole 3.4) : mélange des retour d'état des périphériques
