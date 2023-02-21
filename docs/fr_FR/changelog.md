@@ -9,13 +9,16 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
+1.96b 2023-02-21 (Jeedom V4.2)
+- correction bogue qui bloquait les démons (merci 3.14r)
+- Tuya : amélioration interrogation de l'état toutes versions
 
-1.96 2023-02-15 (Jeedom V4.2)
+1.96 2023-02-14 (Jeedom V4.2)
 - Tuya : ajout du nouveau protocole fw 3.5 / refonte du fw 3.4, plus réactif
 ATTENTION : vérifier que toutes les passerelles ont le sous type passerelle et que toutes les périphériques reliés ont le sous type personnalisé
 Il est nécessaire de faire une inclusion pour que la passerelle et ses périphériques soient appairés dans le plugin
 Le firmware suivants ont été vérifiés : <3.3  3.3 : 2 passerelles et 3 wifi 3.4 : une passerelle et 1 wifi 3.5 : une passerelle et un wifi.
-Malgré le temps passé à vérifier le fonctionnement, des bogues peuvent apparaitre, les signaler sur le forum.
+Malgré le temps passé à verifier le fonctionnement, des bogues peuvent apparaitre, les signaler sur le forum.
 
 - Tuya : amélioration de la recherche des périphériques dans le cloud
 - Tuya : l'interrogation de la consommation des prises est maintenant bien mise à jour toutes les 12s
