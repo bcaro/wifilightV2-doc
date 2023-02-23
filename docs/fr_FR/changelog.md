@@ -12,6 +12,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 
 1.96c 2023-02-23 (Jeedom V4.2)
 - Tuya : amélioration inclusion
+- Tuya : amélioration protocole 3.5 retour d'état
 
 1.96b 2023-02-21 (Jeedom V4.2)
 - correction bogue qui bloquait les démons (merci 3.14r)
