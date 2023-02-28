@@ -571,7 +571,7 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 - Sonoff THR316D capteur de température et humidité + interrupteur
 - Sonoff basic R2, RF, POW, Mini
 - Sonoff Dual R2
-- Sonoff Dual R3 (la récupération de la consommation ne remonte que si l'application ewelink est active, la configuration moteur n'est pas complètement implantée)
+- Sonoff Dual R3 :la récupération de la consommation ne remonte que si l'application ewelink est active, la configuration moteur n'est pas complètement implantée. Pour mettre à jour la conso, il faut demander une action qui n'a pas d'incidence dans un scénario toutes les minutes
 - Sonoff 4CH/4CH PRO
 - Sonoff Touch
 - Sonoff S20/S26
@@ -579,7 +579,7 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 - Sonoff SLAMPHER
 - Sonoff T4EUC1
 - Sonoff Ifan 2/3/4 à tester 
-- Sonoff POW R316/320 à tester
+- Sonoff POW R316/320 : pour mettre à jour la conso, il faut demander une action, par exemple allumer la led wifi dans un scénario toute les minutes
 - Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur de présence, télécommande)
 - Sonoff Micro USB : ne fonctionne pas avec certains firmware. Choisir le canal 1, retour d'état non fonctionnel en fw 3.7
 

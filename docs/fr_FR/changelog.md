@@ -9,6 +9,9 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
+1.96d 2023-02-28 (Jeedom V4.2) beta
+- Tuya : amélioration inclusion
+- Sonoff : Pow R316/320 : validé
 
 1.96c 2023-02-23 (Jeedom V4.2)
 - Tuya : amélioration inclusion
