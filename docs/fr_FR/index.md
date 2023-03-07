@@ -541,8 +541,6 @@ Cette procédure automatise la création de la plupart des périphériques Eweli
 
 Dans la configuration du plugin, renseigner le login (adresse mail uniquement) et le mot de passe de connexion à l'appli Ewelink et sauvegarder. Ensuite, sélectionner : Ewelink Passer en inclusion. Les périphériques qui se trouvent dans l'application Ewelink sont créés automatiquement. Si le périphérique est supprimé de l'application Ewelink, il ne fonctionnera plus avec le plugin.
 
-Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Ewelink et votre routeur et modifier l'adresse IP.
-
 Pour la plupart des périphériques sonoff et ewelink, le sous-type est trouvé. Dans les autres cas le sonoff basic est choisi par le plugin, vous pouvez changer le sous-type sans perdre l'ApiKey et le deviceID.
 
 Pour les périphériques multicanaux comme les multiprises, mettre 1 pour le canal du périphérique trouvé, le dupliquer et lui donner comme n° de canal 2, etc. pour créer autant de périphériques wifilightV2 que de canaux.
@@ -555,7 +553,7 @@ Remarques :
 - certains périphériques ne sont pas créés (le cloud Ewelink ne fournit pas les données)
 - les périphériques purement cloud seront intégrés mais le plugin ne pourra pas y accéder
 - tous les périphériques sonoff sont intégrés mais ne seront pas forcément gérés, comme les caméras  
-- si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
+- si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté ou parce que l'inclusion ne le permet pas, vérifier que son aresse IP est : 0.0.0.0 , utiliser l'applicaton ewelink afin de modifier l'état du périphérique, l'adresse IP sera automatiquement ajoutée..
 - quand un périphérique se connecte au wifi, le plugin sera prévenu immédiatement. Par contre, lorsqu'un périphérique est déconnecté, le plugin ne pourra le savoir que si une commande lui est envoyée par le plugin.
 - L'ApiKey et le DeviceID sont récupérés automatiquement par l'inclusion. Néanmoins, pour récupérer manuellement ces 2 informations, vous pouvez aller [ici]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) ou [sur le forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 ) ou faire une recherche sur le web et le forum Jeedom avec comme mots clé : Ewelink ou Sonoff Apikey. Il ne faut mettre ni espace ni guillemets.
 
@@ -571,7 +569,7 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 - Sonoff THR316D capteur de température et humidité + interrupteur
 - Sonoff basic R2, RF, POW, Mini
 - Sonoff Dual R2
-- Sonoff Dual R3 :la récupération de la consommation ne remonte que si l'application ewelink est active, la configuration moteur n'est pas complètement implantée. Pour mettre à jour la conso, il faut demander une action qui n'a pas d'incidence dans un scénario toutes les minutes
+- Sonoff Dual R3 :la récupération de la consommation ne remonte que si l'application ewelink est active, la configuration moteur n'est pas complètement implantée. Pour mettre à jour la conso, il faut demander une action qui n'a pas d'incidence dans un scénario toutes les minutes.
 - Sonoff 4CH/4CH PRO
 - Sonoff Touch
 - Sonoff S20/S26
@@ -579,9 +577,9 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 - Sonoff SLAMPHER
 - Sonoff T4EUC1
 - Sonoff Ifan 2/3/4 à tester 
-- Sonoff POW R316/320 : pour mettre à jour la conso, il faut demander une action, par exemple allumer la led wifi dans un scénario toute les minutes
+- Sonoff POW R316/320 : pour mettre à jour la conso, il faut demander une action, par exemple allumer la led wifi dans un scénario toutes les minutes
 - Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur de présence, télécommande)
-- Sonoff Micro USB : ne fonctionne pas avec certains firmware. Choisir le canal 1, retour d'état non fonctionnel en fw 3.7
+- Sonoff Micro USB
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
