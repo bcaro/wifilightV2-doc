@@ -603,14 +603,14 @@ Les appareils Tuya utilisent différents protocoles :
 
 3.3/3.4/3.5 : Les appareils avec ces protocoles sont normalement trouvés automatiquement en inclusion Tuya, que ce soit pour un appareil wifi ou une passerelle Zigbee.
 
-Si le plugin ne trouve pas le bon protocole, il est possible de le changer manuellement sans perdre les commandes créées par le cloud Tuya, il faut choisir le sous-type personnalisé avant de sauvegarder pour un périphérique et passerelle pour une passerelle Tuya/zigbee.
+Si le plugin ne trouve pas le bon protocole, il est possible de le changer manuellement sans perdre les commandes créées par le cloud Tuya, il faut choisir le sous-type personnalisé pour un périphérique et passerelle pour une passerelle Tuya/zigbee, avant de sauvegarder.
 
 ## Configuration de la plateforme Tuya
 
 Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "Overview" pour récupérer : Access ID et Access Secret. Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya et sauvegarder, ensuite sélectionner : Tuya Passer en inclusion. Les périphériques sont créés automatiquement. 
 
 ### Remarques et limitations :
-- si l'adresse IP est à 0.0.0.0 c'est que Jeedom n'a pas accès au périphérique, c'est probablement la configuration réseau à reconsidérer. Noter que l'adresse IUP 0.0.0.0 est aussi affectée aux périphériques de firmware  <3.3.
+- si l'adresse IP est à 0.0.0.0 c'est que Jeedom n'a pas accès au périphérique, c'est probablement la configuration réseau à reconsidérer. Noter que l'adresse IP 0.0.0.0 est aussi affectée aux périphériques de firmware  <3.3.
 - les périphériques multicanaux (multiprises, interrupteurs multipes) inclus par le plugin via le cloud Tuya sont regroupés dans le même périphérique
 - si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 - certaines passerelles Tuya/Zigbee ne sont pas compatibles, se renseigner sur le forum Jeedom.
@@ -625,9 +625,9 @@ Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-contro
 
 
 ### Astuces :
-- si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
+- si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 ,le connecter et relancer la procédure d'inclusion.
 - si la localkey d'un périphérique a changé, modifier le devId ou le nodeId du périphérique (en mettant par exemple @ à la fin), refaire l'inclusion et recopier le devId ou le nodeId et la nouvelle localkey dans l'ancien périphérique. Enfin, supprimer le périphérique créé par inclusion.
-- si la procédure automatique dysfonctionne ou si des commandes ne sont pas fournies par le cloud Tuya, passer en [mode apprentissage du périphérique](./tuya#tocAnchor-1-1-6) et agir uniquement sur les boutons de l'appli Tuya Smartlife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya. Mais attention, cette documentation est très technique et réservée à un public averti, ne l'utilisez pas en mode panique alors que vous n'avez pas les connaissances pour comprendre son contenu.
+- si la procédure automatique dysfonctionne ou si des commandes ne sont pas fournies par le cloud Tuya, passer en [mode apprentissage du périphérique](./tuya) et agir uniquement sur les boutons de l'appli Tuya Smartlife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya. Mais attention, cette documentation est très technique et réservée à un public averti, ne l'utilisez pas en mode panique alors que vous n'avez pas les connaissances pour comprendre son contenu.
 - de manière générale, les commandes peuvent être créées manuellement ou en mode apprentissage
 
 ### Scrutation précise d'un évènement.
@@ -646,15 +646,14 @@ Dans la nouvelle fenêtre :
 - Cloud > Api Explorer > (dans la nouvelle fenêtre) Smart Home Management System > Device Control > Get Device Specification Attribute (le 2ème de la liste sans s à Attribute)
 - coller le device ID > Submit Request > Copy (lien fenêtre droite)
 
-[Voir la documentation spécifique](./tuya#tocAnchor-1-1) ,mais attention cette documentation est très technique et réservée à un public averti, ne l'utilisez pas en mode panique alors que vous n'avez pas les connaissances pour comprendre son contenu.
+[Voir la documentation spécifique](./tuya) ,mais attention cette documentation est très technique et réservée à un public averti, ne l'utilisez pas en mode panique alors que vous n'avez pas les connaissances pour comprendre son contenu.
 
 ## Création manuelle ou semi manuelle des périphériques Tuya et Tuya/Zigbee
 
 Cette procédure nécessite de recopier manuellement la localkey depuis le cloud Tuya. 
 
- [Voir la documentation spécifique pour les passerelles Tuya/Zigbee](./tuya#tocAnchor-1-1)
+ [Voir la documentation spécifique Yuya et Tuya/Zigbee](./tuya)
  
- [Voir la documentation spécifique pour les produits Tuya Wifi](./tuya#tocAnchor-1-10)
 
 
 # Nanoleaf
