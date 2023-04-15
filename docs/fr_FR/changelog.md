@@ -10,7 +10,12 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.96e 2023-04-011 (Jeedom V4.2)
+1.96g 2023-04-15 (Jeedom V4.2)
+- Sonoff : amélioration de la recherche des périphériques 
+- retour des dépendances pour améliorer la recherche des périphériques
+- correction bogue bloquant sur version php non supportée
+
+1.96f 2023-04-11 (Jeedom V4.2)
 - Sonoff : correction mise à jour de l'état et récupération adresse mac (à améliorer)
 
 1.96e 2023-04-04 (Jeedom V4.2)

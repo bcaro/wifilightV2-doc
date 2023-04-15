@@ -2,6 +2,10 @@
 
 [voir ici](https://bcaro.github.io/wifilightV2-doc/fr_FR/changelog)
 
+# Installation
+
+Le plugin nécessite d'installer des dépendances. Si les dépendances ne sont pas installées, la recherche des périphériques Tapo, Ewelink et Kasa sera mloins performante.
+
 # Présentation
 
 Attention :
