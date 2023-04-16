@@ -71,11 +71,11 @@ Produits pouvant être compatibles et non garantis :
 -   Kasa LB100/110/120/130 : ampoules avec retour d’état !
 -   Lampe Extel Meli avec retour d'état !
 -   Xiaomi Philips : Lampe bureau, ampoule et plafonnier avec retour d'état !!!
--   Ampoules, prises, interrupteur, interrupteurs volets, humidificateur, thermostat compatibles Tuya Smartlife app avec retour d'état !!
+-   Ampoules, prises, interrupteur, interrupteurs volets, humidificateur, thermostat compatibles Tuya Smartlife app avec retour d'état !! Tuya n'est plus compatible pour l'inclusion
 -   Prises électriques Kasa HS100 HS110 avec retour d'état !!
 -   Contrôleurs de pixel strip leds compatible Magic home avec retour d'état !
 -	Périphériques contrôlés par l'appli Ewelink dont les Sonoff en mode LAN avec retour d'état !!
--	Passerelles wifi (dont Lidl) utilisant le protocole Tuya pour les périphériques Zigbee !!
+-	Passerelles wifi (dont Lidl) utilisant le protocole Tuya pour les périphériques Zigbee !! Tuya n'est plus compatible pour l'inclusion
 -   Périphériques Meross !!
 -	Produits Wiz !!
 -   Tapo !
@@ -197,7 +197,7 @@ Vous pouvez alors passer à la configuration du plugin wifilightV2.
 
 wifilightV2 ne crée pas les périphériques automatiquement sauf :
 
--   Tuya Smartlife
+-   Tuya Smartlife : Tuya n'est plus compatible pour l'inclusion
 -   Ewelink
 -   Govee
 -	Tapo
@@ -598,6 +598,8 @@ Pour les périphériques multicanaux (comme le Sonoff 4CH, les interrupteurs ou 
 Pour les périphériques non présents dans cette liste ou si la configuration ne fonctionne pas ou si un périphérique n'a pas le sous-type correct et après avoir utilisé la procédure d'intégration du périphérique, donner le contenu des logs wifilightV2_inc dans le [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) afin de permettre l'intégration du module dans le plugin.
 
 # Tuya Smartlife et cloud Tuya
+
+Tuya n'est plus compatible pour l'inclusion
 
 La création de la plupart des appareils Tuya et Tuya/Zigbee est automatique en récupérant dans le cloud Tuya leurs informations de configuration. Pour cela, les périphériques doivent fonctionner dans l'application Tuya Smartlife. Cependant, par la suite, l'accès aux appareils reste local.
 
