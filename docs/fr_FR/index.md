@@ -656,7 +656,7 @@ Dans la nouvelle fenêtre :
 
 Cette procédure nécessite de recopier manuellement la localkey depuis le cloud Tuya. 
 
- [Voir la documentation spécifique Yuya et Tuya/Zigbee](./tuya)
+ [Voir la documentation spécifique Tuya et Tuya/Zigbee](./tuya)
  
 
 
