@@ -104,11 +104,11 @@ Mi.Light/EasyBulb/LimitlessLED :
 -	Les contrôleurs de Led Milight(du type YL etc.) sans pont.
 
 LW12/Lagute :
--   La programmation des modes custom n'est pas possible, il faut utiliser l'application fournie avec le contrôleur (Magic Home). Par contre, les modes customs peuvent être déclenchés avec le plugin.
+-   La programmation des modes custom n'est pas possible, il faut utiliser l'application fournie avec le contrôleur (Magic Home). Cependant, les modes customs peuvent être déclenchés avec le plugin.
 -   Il existe plusieurs versions de LW12 qui peuvent ne pas être compatibles avec le plugin.
 
 Magic UFO, MagicHome et Arilux AL-C01/02/03/04/06/10 :
--   La programmation des modes custom, le mode radio et les timers ne sont pas gérés. Il faut utiliser l'application fournie avec le contrôleur (Magic Home). Par contre, les modes customs peuvent être déclenchés avec le plugin.
+-   La programmation des modes custom, le mode radio et les timers ne sont pas gérés. Il faut utiliser l'application fournie avec le contrôleur (Magic Home). Cependantf, les modes customs peuvent être déclenchés avec le plugin.
 -   Il existe différents modèles qui peuvent ne pas être compatibles avec le plugin.
 -	Certains périphériques compatibles Magic Home sont incompatibles car ne fonctionnent plus qu'avec le cloud
 
@@ -213,7 +213,7 @@ Paramétrage :
 -   Saisir l'objet parent
 -   Choisir la catégorie Lumière (par défaut)
 -   Activer et rendre visible (par défaut)
--   Saisir l'adresse IP du module de la prise ou de l'ampoule WiFi (voir la FAQ pour plus d'explications)
+-   Saisir l'adresse IP du module de la prise ou de l'ampoule Wifi (voir la FAQ pour plus d'explications)
 -   Pour la box Milight-hub, un identifiant et un port doivent être configurés
 -   Vous pouvez charger des images dans le dossier /data/myImages du plugin. Ces images peuvent remplacer les images associées aux périphériques dans la page d'affichage de tous les périphériques wifilightV2. Utile pour les périphériques personnalisés qui ne sont pas associés à une image. Ce dossier est aussi utilisé pour le cache des images en provenance du cloud Tuya. Si vous modifiez une image du cloud Tuya, vous pouvez la récupérer en vidant le champ de l'image alternative.
 -   Pour certains périphériques il est demandé de saisir le canal utilisé, créer un équipement wifilightV2 par canal des multiprises ou des interrupteurs
@@ -222,7 +222,7 @@ Paramétrage :
 -   Pour certains contrôleurs il faut indiquer le nombre de leds des pixel strip leds
 -   Pour certains contrôleurs il faut indiquer l'ordre des couleurs si les couleurs par défaut ne correspondent pas
 -   Saisir la marque ou le type de périphérique
--   Saisir le sous-type exact du contrôleur, de l'ampoule, de la prise ou du strip-led, ceci est indispensable pour créer les commandes afin de piloter le périphérique
+-   Saisir le sous-type exact du contrôleur, de l'ampoule, de la prise ou du strip led, ceci est indispensable pour créer les commandes afin de piloter le périphérique
 -   Saisir le nombre d'envois de commandes : permet de répéter la commande pour un équipement éloigné en cas de mauvaise transmission. (1 par défaut). Certaines ampoules ou prises ne gèrent pas cette répétition car le plugin s'assure par retour d'état de la transmission. Certaines commandes relatives (incrémentations) ne sont pas répétées.
 -   Saisir le délai d'envoi en cas de répétition (0 ms par défaut, 100 ms max)
 -   Saisir le % d'incrémentation de l'intensité lors de l'appui sur les boutons d'incrémentation ou de décrémentation de l'intensité lumineuse
@@ -330,7 +330,7 @@ Pour les ampoules couleurs, il faut avoir créé le périphérique en mode éten
 
 # liste des modes Disco et Custom
 
-Certaines lampes possèdent des modes disco et custom. Une liste à choix est associée à chaque option de ces modes. Si les commandes disco ou custom sont supprimées, la liste à choix créée automatiquement ne sera pas modifiée. Pour les commandes custom, vous pouvez ajouter de nouvelles commandes mais il faudra modifier manuellement cette nouvelle commande dans la liste. Il faut avoir créé le périphérique en mode étendu + couleurs + disco. Si les modes Disco et Custom individuels sont supprimés, la liste déroulante ne pourra plus avoir accès à ce mode. Pour ne pas être gèné dans l'interface, il faut supprimer l'affichage des commandes disco et custom.
+Certaines lampes possèdent des modes disco et custom. Une liste à choix est associée à chaque option de ces modes. Si les commandes disco ou custom sont supprimées, la liste à choix créée automatiquement ne sera pas modifiée. Pour les commandes custom, vous pouvez ajouter de nouvelles commandes mais il faudra modifier manuellement cette nouvelle commande dans la liste. Il faut avoir créé le périphérique en mode étendu + couleurs + disco. Si les modes Disco et Custom individuels sont supprimés, la liste déroulante ne pourra plus avoir accès à ce mode. Pour ne pas être gêné dans l'interface, il faut supprimer l'affichage des commandes disco et custom.
 
 Par exemple, la commande action/liste pour les customs a comme nom interne : CMD_LIST_CUSTOM. Son paramètre correspond à la construction de cette liste :
 
@@ -399,7 +399,7 @@ Il est indispensable d'activer le contrôle par réseau local via l'application 
 Le plugin permet le choix entre 2 versions :
 
 - V1 : la connexion entre le plugin et le périphérique n'est pas permanente, le temps de réaction est un peu plus important et le retour d'état n'est pas immédiat.
-- V2 : la connexion est permanente donc le plugin est plus réactif et le retour d'état est immédiat. Par contre cela entraine une plus grande sensibilité aux mauvaises connexions wifi, provoquant des déconnexions avec impossibilité pendant quelques minutes d'accéder au périphérique.
+- V2 : la connexion est permanente donc le plugin est plus réactif et le retour d'état est immédiat. Cependant, cela entraine une plus grande sensibilité aux mauvaises connexions wifi, provoquant des déconnexions avec impossibilité pendant quelques minutes d'accéder au périphérique.
 
 ## Mode Scène
 Il est possible de configurer les modes scène. Plusieurs modes scène sont préprogrammés dans le plugin mais il est possible d'ajouter d'autres modes scène.
@@ -450,7 +450,7 @@ Pour les périphériques de la liste ci-dessous, le sous-type est trouvé, dans 
 
 Si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
 
-Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas.
+Si un périphérique de même deviceId existe déjà, l'inclusion ne se fera pas.
 
 Par la suite, le contrôle des périphériques est local.
 
@@ -463,7 +463,7 @@ Notes :
 
 Il est indispensable de récupérer un jeton (token) permettant au plugin de dialoguer avec les périphériques Xiaomi Philips.
 
-La procédure est complexe et nécessite plusieurs manipulations. Faire une recherche sur le web avec comme mot clé : Xiaomi token ou sur le forum [ici](https://community.jeedom.com/t/xiaomi-philips-et-wifilightv2/48064).
+La procédure est complexe et nécessite plusieurs manipulations. Effectuer une recherche sur le web avec comme mot clé : Xiaomi token ou sur le forum [ici](https://community.jeedom.com/t/xiaomi-philips-et-wifilightv2/48064).
 
 Aucune aide ne sera donnée pour récupérer le jeton.
 
@@ -482,13 +482,13 @@ Les périphériques compatibles sont :
 - volets roulants MRS100 (retour d'état et positionnement non fonctionnels)
 - garage MSG100
 - commutateur MSS710
-- interrupteurs  MSS510 MSS550
+- interrupteurs MSS510 MSS550
 - diffuseurs MOD100 MOD150
 - thermostat MTS200
 - hub : MSH300
    - capteur de température MS100
    - têtes thermostatiques : MTS100 MTS150
-   - détecteur fumée : GS559A en beta tester les infos fumée et chaleur
+   - détecteur fumée : GS559A en beta tester les informations de fumée et de chaleur
 - purificateur MAP100 beta à tester
 - humidifieur MSXH0 beta à tester  
 
@@ -530,7 +530,7 @@ Les périphériques compatibles sont :
 
 Pour les firmware à partir de 3.3.0 et en dessous de 3.5.0 c.-à-d. le mode DIY 1.0, Sonoff donne tous les éléments [ici]( https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) pour configurer les modules en mode DIY.
 
-Un téléphone portable et un PC sous windows avec carte Wifi sont nécessaires.
+Un téléphone portable et un PC sous Windows avec carte Wifi sont nécessaires.
 Le logiciel à faire tourner pour trouver le Sonoff donne dans la colonne de gauche l'identifiant nécessaire à la configuration du périphérique.
 
 Le périphérique Sonoff doit être en firmware 3.3.0 ou plus, l'appli Windows ci-dessus permet de mettre à jour le firmware.
@@ -607,7 +607,7 @@ Les appareils Tuya utilisent différents protocoles :
 
 3.3/3.4/3.5 : Les appareils avec ces protocoles sont normalement trouvés automatiquement en inclusion Tuya, que ce soit pour un appareil wifi ou une passerelle Zigbee.
 
-Si le plugin ne trouve pas le bon protocole, il est possible de le changer manuellement sans perdre les commandes créées par le cloud Tuya, il faut choisir le sous-type personnalisé pour un périphérique et passerelle pour une passerelle Tuya/zigbee, avant de sauvegarder.
+Si le plugin ne trouve pas le bon protocole, il est possible de le changer manuellement sans perdre les commandes créées par le cloud Tuya, il faut choisir le sous-type personnalisé pour un périphérique et passerelle pour une passerelle Tuya/Zigbee, avant de sauvegarder.
 
 ## Configuration de la plateforme Tuya
 
@@ -615,42 +615,28 @@ Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-contro
 
 ### Remarques et limitations :
 - si l'adresse IP est à 0.0.0.0 c'est que Jeedom n'a pas accès au périphérique, c'est probablement la configuration réseau à reconsidérer. Noter que l'adresse IP 0.0.0.0 est aussi affectée aux périphériques de firmware  <3.3.
-- les périphériques multicanaux (multiprises, interrupteurs multipes) inclus par le plugin via le cloud Tuya sont regroupés dans le même périphérique
+- les périphériques multicanaux (multiprises, interrupteurs multiples) inclus par le plugin via le cloud Tuya sont regroupés dans le même périphérique
 - si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 - certaines passerelles Tuya/Zigbee ne sont pas compatibles, se renseigner sur le forum Jeedom.
-- les périphériques non zigbee et sur pile sont purement cloud (capteurs de fermeture, de porte, de température par exemple) seront intégrés mais le plugin ne pourra pas y accéder
+- les périphériques non Zigbee et sur pile sont purement cloud (capteurs de fermeture, de porte, de température par exemple) seront intégrés mais le plugin ne pourra pas y accéder
 - les couleurs suivant les 3 formats connus sont créées ainsi que les commandes saturation et intensité liées
 - les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
 - les périphériques ayant des informations non standard (peut éventuellement être résolu avec un bloc code dans un scénario) ne sont pas gérés
-- le plugin ne décode pas les commandes complexes et met alors dans paramètres le Json provenant du cloud Tuya
+- le plugin ne décode pas les commandes complexes et met alors dans paramètres l’information brute provenant du cloud Tuya
 - le cloud Tuya peut ne pas fournir toutes les commandes du périphérique.
 - la suppression d'une commande créée par le plugin via le cloud Tuya ne peut plus être recréée
 - le min et le max d'une valeur numérique sont remontés depuis le cloud. Selon les besoins, modifier les paramètres #slider# et #value# ainsi que le min et max Jeedom. Cette partie est à améliorer avec les retours des utilisateurs.
 
 
 ### Astuces :
-- si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 ,le connecter et relancer la procédure d'inclusion.
+- si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
 - si la localkey d'un périphérique a changé, modifier le devId ou le nodeId du périphérique (en mettant par exemple @ à la fin), refaire l'inclusion et recopier le devId ou le nodeId et la nouvelle localkey dans l'ancien périphérique. Enfin, supprimer le périphérique créé par inclusion.
 - si la procédure automatique dysfonctionne ou si des commandes ne sont pas fournies par le cloud Tuya, passer en [mode apprentissage du périphérique](./tuya) et agir uniquement sur les boutons de l'appli Tuya Smartlife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya. Mais attention, cette documentation est très technique et réservée à un public averti, ne l'utilisez pas en mode panique alors que vous n'avez pas les connaissances pour comprendre son contenu.
 - de manière générale, les commandes peuvent être créées manuellement ou en mode apprentissage
 
 ### Scrutation précise d'un évènement.
-Lorsque l'option "interrogation de l'état" est cochée, le plugin interroge le périphérique toutes les 12 secondes. Ceci permet, par exemple, de récupérer la consommation d'un périphérique lorsque celui-ci ne l'envoie pas régulièrement. Il faut néanmoins faire attention, ceci peut vider la batterie des périphériques sur batterie. Pour certtains périphériques qui mesurent la puissance consommée, l'ouverture de l'application mobile est nécessaire pour que les données soient transmises au plugin.
+Lorsque l'option "interrogation de l'état" est cochée, le plugin interroge le périphérique toutes les 12 secondes. Ceci permet, par exemple, de récupérer la consommation d'un périphérique lorsque celui-ci ne l'envoie pas régulièrement. Il faut néanmoins faire attention, ceci peut vider la batterie des périphériques sur batterie. Pour certains périphériques qui mesurent la puissance consommée, l'ouverture de l'application mobile est nécessaire pour que les données soient transmises au plugin.
 
-
-### Participation à l'amélioration de cette partie :
-Vous pouvez contribuer à l'amélioration de la création automatique en donnant le maximum de renseignements : le Json du cloud Tuya, les modifications apportées, les logs ou toute remarque pertinente. 
-
-Pour obtenir le Json du cloud Tuya :
-- dans Tuya developper : Cloud develop> Development > subscribe to cloud project 
-
-Dans la nouvelle fenêtre :
-
-- Cloud > Development > choisir le projet  > devices > copier le device ID du périphérique à déboguer
-- Cloud > Api Explorer > (dans la nouvelle fenêtre) Smart Home Management System > Device Control > Get Device Specification Attribute (le 2ème de la liste sans s à Attribute)
-- coller le device ID > Submit Request > Copy (lien fenêtre droite)
-
-[Voir la documentation spécifique](./tuya) ,mais attention cette documentation est très technique et réservée à un public averti, ne l'utilisez pas en mode panique alors que vous n'avez pas les connaissances pour comprendre son contenu.
 
 ## Création manuelle ou semi manuelle des périphériques Tuya et Tuya/Zigbee
 
@@ -658,6 +644,28 @@ Cette procédure nécessite de recopier manuellement la localkey depuis le cloud
 
  [Voir la documentation spécifique Tuya et Tuya/Zigbee](./tuya)
  
+## Pour obtenir de l'aide
+Donner le maximum de renseignements : la configuration matérielle et logicielle Jeedom, l'éventuel message d'erreur de connexion du plugin au cloud Tuya, les informations du cloud Tuya, les logs ou toute remarque pertinente. 
+
+### Donner les informations du cloud Tuya
+Ceci est à faire lorsqu'un périphérique n'est pas créé ou incomplètement créé lors de l'inclusion, le plugin va chercher ces informations en mode inclusion Tuya.
+
+Obtenir la liste des périphériques :
+- dans Tuya developper : iot platform > Cloud > Development > Open project > devices 
+- faire une copie d'écran des périphériques
+
+Obtenir les informations d'un périphérique :
+- dans Tuya developper : iot platform > Cloud > Development > Open project > devices 
+- copier le device ID du périphérique à déboguer
+- Cloud > Api Explorer > (dans la nouvelle fenêtre) Device Control > Query Properties
+- coller le device ID > Submit Request > Copy (lien fenêtre droite)
+- coller la copie dans le forum
+
+### obtenir les logs
+
+- Configurer les logs de wifilightV2, comme ils sont bavards, les configurer en augmentant le nombre de lignes dans la configuration de déboguage de Jeedom.
+- Effacer les logs _tuya, attendre 2 minutes et récupérer les logs _tuya
+- copier ces logs sur le forum
 
 
 # Nanoleaf
@@ -672,7 +680,7 @@ Appuyer pendant 5-7 s sur le bouton power du Nanoleaf et appuyer sur la commande
 
 Créer un effet avec l'appli du NanoLeaf et lui donner un nom. Créer une commande action/défaut dans la liste des commandes du périphérique dans le plugin. Mettre le nom dans paramètres. Donner ensuite un identifiant unique et un nom, ils peuvent être identiques au nom de la commande.
 
-## Envoi d'une commnande personnalisée
+## Envoi d'une commande personnalisée
 
 Créer une commande action/defaut, dans nom interne mettre un nom et dans paramètres, mettre le json  de la commande personnalisée sauf les accolades externes mais avec la commande write, par exemple :
 
