@@ -9,9 +9,9 @@ Vérifier que le cloud a bien mis :
 Le type est :  "Passerelle Tuya Zigbee fwx.x"
 La passerelle a comme sous-type :  "Gateway hub Tuya zigbee"
 Le ou les périphériques ont comme sous-type : "personnalisé"
-le x.x = 3.4 ou 3.5 à modifier manuellement.
+le x.x = 3.4 ou 3.5 ou 3.6 à modifier éventuellement manuellement.
 
-Après avoir éventuellement mis manuellement l'adresse IP identique sur la passerelle et ses périphériques et mis le même firmware sur l'ensemble, verifier que le devid est le même partout et enfin faire une inclusion Tuya pour apparairer la passerelle et ses périphériques.
+Après avoir éventuellement mis manuellement l'adresse IP identique sur la passerelle et ses périphériques et mis le même firmware sur l'ensemble, vérifier que le devid est le même partout et enfin faire une inclusion Tuya pour appairer la passerelle et ses périphériques.
 
 
 ## Mode apprentissage
@@ -40,7 +40,7 @@ le x.x = 3.4 ou 3.5 à modifier manuellement. Il est nécessaire de modifier l'a
 
 ## Mode apprentissage
 
-Pour lancer l'apprentissage, cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Smartlife pour que le plugin crée automatiquement les commandes actions et infos, utilisez toutes les possibilités offertes par l'appli. Pour terminer, cliquer sur le bouton « arrêter l’inclusion » et sauvegarder. Si rien n'est trrouvé : l'adresse IP n'est pas bonne ou le firmware n'est pas bon.
+Pour lancer l'apprentissage, cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Smartlife pour que le plugin crée automatiquement les commandes actions et infos, utilisez toutes les possibilités offertes par l'appli. Pour terminer, cliquer sur le bouton « arrêter l’inclusion » et sauvegarder. Si rien n'est trruvé : l'adresse IP n'est pas bonne ou le firmware n'est pas bon.
 
 Ce mode est uniquement là pour aider la configuration personnalisée d'un périphérique qui est mal configuré par le cloud. L'utilisation de ce mode ne peut donner un périphérique complètement fonctionnel et nécessite de comprendre de supprimer ou de modifier les commandes créées.
 
@@ -62,7 +62,7 @@ Ce mode est utile pour les commandes qui nécessitent d'être ajustées (dps, pa
 
 La procédure nécessite que le périphérique renvoie son état dans les logs. Si le périphérique ne renvoie pas son état, les dps ne pourront pas être trouvés dans les logs.
 
-Le plugin est équipé de boutons permettant de créer automatiquement les commandes des cas les plus courants, il suffira de modifier le n° de dps ou le paramètre automatiquement créés.
+Le plugin est équipé de boutons permettant de créer automatiquement les commandes des cas les plus courants, il suffira de modifier le n° de dps ou le paramètre automatiquement créé.
 
 
 ### Configuration
@@ -146,7 +146,7 @@ Dans les logs, lors de l'utilisation de l'appli Smartlife, on trouve :
 
 Ici, un curseur d'intensité a été sélectionné sur l'application du périphérique et on observe que le dps de n° 3 a changé.
 
-Cliquer sur le bouton Curseur de l'interface afin de créer automatiquement les 2 commandes pour gérer le curseur. Pour les adapter au besoin, il suffit de modifier les n° de dps et de mettre 3 (sans guillemets). Pour le paramètre de la commande action : soit ne rien mettre, soit mettre #slider# soit mettre une formule par exemple : #slider#/10. Pour le paramètre de l'info, c'est identique sauf qu'il faut utiliser #value#. Ne pas mettre de guillemets car il n'y en a pas après le n° de dps.
+Cliquer sur le bouton Curseur de l'interface afin de créer automatiquement les 2 commandes pour gérer le curseur. Pour les adapter au besoin, il suffit de modifier les n° de dps et de mettre 3 (sans guillemets). Pour le paramètre de la commande action : soit ne rien mettre, soit mettre #slider# soit mettre une formule par exemple : #slider#/10. Pour le paramètre de l'info, c'est identique mais il faut utiliser #value#. Ne pas mettre de guillemets car il n'y en a pas après le n° de dps.
 
 Pour configurer manuellement :
 	
@@ -201,11 +201,11 @@ Le codage de la couleur chez Tuya a plusieurs formats qui sont différents de ce
 
 Afin de permettre au plugin de fonctionner correctement pour les couleurs, il faut identifier les formats utilisés par Tuya lors d'un changement de couleur avec l'appli Smartlife et en observant à cet instant dans les logs le n° de dps qui a été modifié.
 
-1 - format HSV : H (codé de 0 à 360 ) S (codé de 0 à 1000) V (codé de 0 à 1000) le résultat est ensuite donné en base 16, soit 12 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya  000003E803E8 (Hue = 0000 S =03E8 V=03E8)
+1 - format HSV : H (codé de 0 à 360 ) S (codé de 0 à 1000) V (codé de 0 à 1000) le résultat est ensuite donné en base 16, soit 12 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya : 000003E803E8 (Hue = 0000 S =03E8 V=03E8)
 
-2 - format RGB00HSV : RGB est codé sur 6 digits (chacun de 00 à FF pour chaque couleur). 00 est intercalé puis H (codé de 0 à 255 ) S (codé de 0 à 255) V (codé de 0 à 255). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya  FF00000000FFFF
+2 - format RGB00HSV : RGB est codé sur 6 digits (chacun de 00 à FF pour chaque couleur). 00 est intercalé puis H (codé de 0 à 255 ) S (codé de 0 à 255) V (codé de 0 à 255). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya : FF00000000FFFF
 
-3 - format RGB0HSV : RGB sont codés comme ci-dessus. 0 est intercalé puis H (codé de 0 à 360 ) S (codé de 0 à 100) V (codé de 0 à 100). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du violet : RGB = FF00FF et H= 300° S=100% V=100% soit en codage Tuya  FF0000012C6464
+3 - format RGB0HSV : RGB sont codés comme ci-dessus. 0 est intercalé puis H (codé de 0 à 360 ) S (codé de 0 à 100) V (codé de 0 à 100). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du violet : RGB = FF00FF et H= 300° S=100% V=100% soit en codage Tuya : FF0000012C6464
 
 Dans les logs, lors de l'utilisation de la modification de la couleur de la lampe, on trouve :
 
@@ -288,14 +288,14 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 1. le périphérique à tester a été inclus dans l'appli Smartlife,
 2. le périphérique a été inclus dans le plugin via inclusion Tuya
 3. l'adresse IP est correcte, pour le firmware, il faut les essayer un par un
-4. dans le cas d'un périphérique Tuya/Zigbee, sa passerelle a été incluse dans l'appli Smartlife et le péripéhrique doit aussi avoir été inclus
+4. dans le cas d'un périphérique Tuya/Zigbee, sa passerelle a été incluse dans l'appli Smartlife et le périphérique doit aussi avoir été inclus
 5. le périphérique et son éventuelle passerelle n'ont pas été supprimés de l'appli Smartlife et l'appli Smartlife n'a pas été supprimée
 6. l'appli Smartlife est arrêtée sur tous les terminaux pouvant la faire tourner
 7. configurer les logs wifilightV2 en mode debug, redémarrer le démon
 
 ## Vérifier que le périphérique est trouvé et connecté
 
-1. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canaux) (dans la cas d'un périphérique connecté à une passerelle, la passerelle doit rester activée), le but est de ne pas mélanger tous les périphériques
+1. désactiver dans wifilightV2 tous les périphériques sauf celui à tester (ne garder qu'un seul canal en cas de périphérique multi-canaux) (dans le cas d'un périphérique connecté à une passerelle, la passerelle doit rester activée), le but est de ne pas mélanger tous les périphériques
 2. effacer les logs
 3. sauvegarder le périphérique dans le plugin : cela a pour effet de lancer le démon qui teste toutes les minutes les périphériques wifilightV2
 
@@ -328,7 +328,7 @@ ou il n'y a plus de ping dans les logs pour cette adresse ip, cela correspond à
 
 Le plugin tentera de se reconnecter au périphérique toutes les minutes ou toutes les 3 minutes ce qui lui permettra de retrouver le périphérique s'il est rebranché. 
 
-A ce stade, la seul point testé et OK est que l'adresse IP est la bonne et que le périphérique est joignable.
+A ce stade, le seul point testé et OK est que l'adresse IP est la bonne et que le périphérique est joignable.
 
 
 ## Un souci avec une commande action (les autres fonctionnent)
