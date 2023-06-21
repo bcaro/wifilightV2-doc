@@ -510,7 +510,7 @@ Attention : des utilisations répétées du getgey peuvent produire un blocage d
 Pour les équipements reliés au hub Meross MSH300 et après avoir indiqué son adresse ip et l'avoir sauvegardé, faire un appui sur getKey qui récupère la clé et tous les périphériques reliés au Hub. Lors de l'ajout d'un nouveau périphérique au hub, faire simplement getKey pour le créer dans le plugin.
 
 
-## Scrutation précise d'un évènement.
+## Scrutation précise d'un évènement
 
 Créer un scénario déclenché une seule fois au démarrage de Jeedom : mettre une boucle sur 1 000 000. Mettre à l'intérieur une autre boucle sur 1 000 000 ces 2 boucles imbriquées munies d'une pause vont empêcher la sortie du scénario pendant des centaines d'années. Dans la boucle interne mettre une pause de 10s et un appel à stateGet du périphérique pour mettre à jour les informations du périphérique. La pause peut être diminuée jusque 1s selon la puissance et la complexité de l'installation.
 
@@ -609,11 +609,11 @@ Les appareils Tuya utilisent différents protocoles :
 
 Si le plugin ne trouve pas le bon protocole, il est possible de le changer manuellement sans perdre les commandes créées par le cloud Tuya, il faut choisir le sous-type personnalisé pour un périphérique et passerelle pour une passerelle Tuya/Zigbee, avant de sauvegarder.
 
-## Configuration de la plateforme Tuya
+## Inclusion des périphériques Tuya depuis le cloud
 
 Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "Overview" pour récupérer : Access ID et Access Secret. Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya et sauvegarder, ensuite sélectionner : Tuya Passer en inclusion. Les périphériques sont créés automatiquement. 
 
-### Remarques et limitations :
+### Remarques et limitations
 - si l'adresse IP est à 0.0.0.0 c'est que Jeedom n'a pas accès au périphérique, c'est probablement la configuration réseau à reconsidérer. Noter que l'adresse IP 0.0.0.0 est aussi affectée aux périphériques de firmware  <3.3.
 - les périphériques multicanaux (multiprises, interrupteurs multiples) inclus par le plugin via le cloud Tuya sont regroupés dans le même périphérique
 - si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
@@ -628,13 +628,13 @@ Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-contro
 - le min et le max d'une valeur numérique sont remontés depuis le cloud. Selon les besoins, modifier les paramètres #slider# et #value# ainsi que le min et max Jeedom. Cette partie est à améliorer avec les retours des utilisateurs.
 
 
-### Astuces :
+### Astuces
 - si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
 - si la localkey d'un périphérique a changé, modifier le devId ou le nodeId du périphérique (en mettant par exemple @ à la fin), refaire l'inclusion et recopier le devId ou le nodeId et la nouvelle localkey dans l'ancien périphérique. Enfin, supprimer le périphérique créé par inclusion.
 - si la procédure automatique dysfonctionne ou si des commandes ne sont pas fournies par le cloud Tuya, passer en [mode apprentissage du périphérique](./tuya) et agir uniquement sur les boutons de l'appli Tuya Smartlife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya. Mais attention, cette documentation est très technique et réservée à un public averti, ne l'utilisez pas en mode panique alors que vous n'avez pas les connaissances pour comprendre son contenu.
 - de manière générale, les commandes peuvent être créées manuellement ou en mode apprentissage
 
-### Scrutation précise d'un évènement.
+### Scrutation précise d'un évènement
 Lorsque l'option "interrogation de l'état" est cochée, le plugin interroge le périphérique toutes les 12 secondes. Ceci permet, par exemple, de récupérer la consommation d'un périphérique lorsque celui-ci ne l'envoie pas régulièrement. Il faut néanmoins faire attention, ceci peut vider la batterie des périphériques sur batterie. Pour certains périphériques qui mesurent la puissance consommée, l'ouverture de l'application mobile est nécessaire pour que les données soient transmises au plugin.
 
 
