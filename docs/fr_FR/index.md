@@ -640,7 +640,7 @@ Lorsque l'option "interrogation de l'état" est cochée, le plugin interroge le 
 
 ## Création manuelle ou semi manuelle des périphériques Tuya et Tuya/Zigbee
 
-Cette procédure nécessite de recopier manuellement la localkey depuis le cloud Tuya. 
+Cette procédure permet d'ajouter manuellement un périphérique et de créer manuellement les commandes manquantes. Elle est destinée aux utilisateurs avertis.
 
  [Voir la documentation spécifique Tuya et Tuya/Zigbee](./tuya)
  
