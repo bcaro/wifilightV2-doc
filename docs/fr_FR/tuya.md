@@ -9,7 +9,7 @@ Vérifier que suite à l'inclusion :
 Le type est :  "Passerelle Tuya Zigbee fwx.x"
 La passerelle a comme sous-type :  "Gateway hub Tuya zigbee"
 Le ou les périphériques liés à la passerelle ont comme sous-type : "personnalisé"
-le x.x = 3.4 ou 3.5 ou 3.6 à modifier éventuellement manuellement.
+le x.x = 3.4 ou 3.5 à modifier éventuellement manuellement.
 
 Après avoir éventuellement mis manuellement l'adresse IP identique sur la passerelle et ses périphériques et mis le même firmware sur l'ensemble, vérifier que le devid est le même partout et enfin faire une inclusion Tuya pour appairer la passerelle et ses périphériques.
 
@@ -35,7 +35,7 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 Cette partie est à utiliser après avoir inclus le périphérique via le cloud Tuya. Si ce n'est pas le cas, revenir à la documentation principale et lire pourquoi il y a besoin d'utiliser cette partie de la documentation très technique. Elle est à utiliser lorsque le cloud Tuya n'a pas donné entière satisfaction et est réservée aux utilisateurs avertis.
 
 Pour utiliser ces périphériques sans passerelle Tuya/Zigbee, choisir le type : "Tuya Smart Life fw x.x"
-le x.x = 3.4 ou 3.5 ou 3.6 à modifier manuellement. Il est nécessaire de modifier l'adresse IP si l'inclusion l'a mise à 0.0.0.0 .
+le x.x = 3.3 ou 3.4 ou 3.5 à modifier manuellement. Il est nécessaire de modifier l'adresse IP si l'inclusion l'a mise à 0.0.0.0 .
 
 
 ## Mode apprentissage
