@@ -614,16 +614,14 @@ Si le plugin ne trouve pas le bon protocole, il est possible de le changer manue
 Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "Overview" pour récupérer : Access ID et Access Secret. Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya et sauvegarder, ensuite sélectionner : Tuya Passer en inclusion. Les périphériques sont créés automatiquement. 
 
 ### Remarques et limitations
-- si l'adresse IP est à 0.0.0.0 c'est que Jeedom n'a pas accès au périphérique, c'est probablement la configuration réseau à reconsidérer. Noter que l'adresse IP 0.0.0.0 est aussi affectée aux périphériques de firmware  <3.3.
-- les périphériques multicanaux (multiprises, interrupteurs multiples) inclus par le plugin via le cloud Tuya sont regroupés dans le même périphérique
-- si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
+- si l'adresse IP est à 0.0.0.0 c'est que Jeedom n'a pas accès au périphérique, c'est probablement la configuration réseau à reconsidérer. Noter que l'adresse IP 0.0.0.0 est aussi affectée aux périphériques de firmware  <3.3. et aux périphériques non compatibles.
 - certaines passerelles Tuya/Zigbee ne sont pas compatibles, se renseigner sur le forum Jeedom.
 - les périphériques non Zigbee et sur pile sont purement cloud (capteurs de fermeture, de porte, de température par exemple) seront intégrés mais le plugin ne pourra pas y accéder
-- les couleurs suivant les 3 formats connus sont créées ainsi que les commandes saturation et intensité liées
 - les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
 - les périphériques ayant des informations non standard (peut éventuellement être résolu avec un bloc code dans un scénario) ne sont pas gérés
 - le plugin ne décode pas les commandes complexes et met alors dans paramètres l’information brute provenant du cloud Tuya
-- le cloud Tuya peut ne pas fournir toutes les commandes du périphérique.
+- le cloud Tuya peut ne pas fournir toutes les commandes du périphérique.- les périphériques multicanaux (multiprises, interrupteurs multiples) inclus par le plugin via le cloud Tuya sont regroupés dans le même périphérique
+- si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.- les couleurs suivant les 3 formats connus sont créées ainsi que les commandes saturation et intensité liées
 - la suppression d'une commande créée par le plugin via le cloud Tuya ne peut plus être recréée
 - le min et le max d'une valeur numérique sont remontés depuis le cloud. Selon les besoins, modifier les paramètres #slider# et #value# ainsi que le min et max Jeedom. Cette partie est à améliorer avec les retours des utilisateurs.
 
