@@ -80,6 +80,7 @@ Utiliser toutes les possibilités de l'application Tuya et bien repérer dans le
 ### Cas d'un actionneur tout ou rien, true/false
 
 Dans les logs, lors de l'utilisation de l'appli Smartlife, on trouve par exemple :
+
 	[2023-06-22 06:19:32][DEBUG] : Receive from:192.168.1.106 cmd:a - {"dps":{"2":true,"103":100,"104":false},"cid":"842e14fffee35087"}     cid|842e14fffee35087 2|1 103|100 104|  - Read Json OK
 
 Ici, le bouton off a été sélectionné sur le périphérique et on observe que le dps de n° 2 a changé.
@@ -176,10 +177,7 @@ Pour configurer manuellement :
 ### Dans le cas d'un capteur tout ou rien, comme un détecteur de porte :
 
 Dans les logs, lors de l'utilisation de l'appli Smartlife, on trouve :
-	
-    Mess :{"devId":"xxxxxxxxxghekqd",dps:{"12":1}}
-		
-    Mess :{"devId":"xxxxxxxxxghekqd",dps:{"12":0}}
+
 	[2023-06-22 06:40:32][DEBUG] : Receive from:192.168.1.106 cmd:a - {dps:{"12":1},"cid":"842e14fffee35087"}     cid|842e14fffee35087 12|1 - Read Json OK
 	[2023-06-22 06:40:40][DEBUG] : Receive from:192.168.1.106 cmd:a - {dps:{"12":0},"cid":"842e14fffee35087"}     cid|842e14fffee35087 12|0 - Read Json OK
 	
@@ -301,20 +299,20 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 
 Exemple de log OK où le plugin a trouvé le périphérique donc avec la bonne adresse IP :
 
-[2023-06-22 06:19:28][DEBUG] : ** v5 SY1-ZigBee Smart Metering Switch 2 - TuyaCustom2_V4 @192.168.1.137 - cha:29 **
-[2023-06-22 06:19:28][DEBUG] :       Socket already created ADD New device OK
-[2023-06-22 06:19:28][DEBUG] : ** Conso Climatisation - TuyaCustom_V2 @192.168.1.135 - cha:1 **
-[2023-06-22 06:19:28][DEBUG] :      New device: created ADD New device OK
+    [2023-06-22 06:19:28][DEBUG] : ** v5 SY1-ZigBee Smart Metering Switch 2 - TuyaCustom2_V4 @192.168.1.137 - cha:29 **
+    [2023-06-22 06:19:28][DEBUG] :       Socket already created ADD New device OK
+    [2023-06-22 06:19:28][DEBUG] : ** Conso Climatisation - TuyaCustom_V2 @192.168.1.135 - cha:1 **
+    [2023-06-22 06:19:28][DEBUG] :      New device: created ADD New device OK
 	
-Exemple de log KO où le plugin n'a pas trouvé le périphérique donc mauvaise adresse IP
+Exemple de log KO où le plugin n'a pas trouvé le périphérique car une mauvaise adresse IP
 
-[2023-06-22 06:19:28][DEBUG] : ** Air Conditioner - TuyaCustom_V2 @192.168.1.133 - cha:1 **
-[2023-06-22 06:19:28][DEBUG] :      No connected device
+    [2023-06-22 06:19:28][DEBUG] : ** Air Conditioner - TuyaCustom_V2 @192.168.1.133 - cha:1 **
+    [2023-06-22 06:19:28][DEBUG] :      No connected device
 
 Par la suite les messages seront du type :
 
-[2023-06-22 06:18:38][DEBUG] : << Ping of: v5 SY1-ZigBee Smart Metering Switch 2 @192.168.1.137  diff:13
-[2023-06-22 06:18:38][DEBUG] : Receive from:192.168.1.137 cmd:9 - Empty response
+    [2023-06-22 06:18:38][DEBUG] : << Ping of: v5 SY1-ZigBee Smart Metering Switch 2 @192.168.1.137  diff:13
+    [2023-06-22 06:18:38][DEBUG] : Receive from:192.168.1.137 cmd:9 - Empty response
 
 
 A ce stade, l'adresse IP est la bonne, le périphérique est joignable et le firmware est correct.
