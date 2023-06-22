@@ -657,7 +657,7 @@ Obtenir les informations d'un périphérique :
 - dans Tuya developper : iot platform > Cloud > Development > Open project > devices 
 - copier le device ID du périphérique à déboguer
 - Cloud > Api Explorer > (dans la nouvelle fenêtre) Device Control > Query Properties
-- coller le device ID > Submit Request > Copy (lien fenêtre droite)
+- coller le device ID > Submit Request > Copy (lien fenêtre droite de "response")
 - coller la copie dans le forum
 
 ### Obtenir les logs
