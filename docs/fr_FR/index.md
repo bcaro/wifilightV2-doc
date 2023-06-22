@@ -620,7 +620,8 @@ Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-contro
 - les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
 - les périphériques ayant des informations non standard (peut éventuellement être résolu avec un bloc code dans un scénario) ne sont pas gérés
 - le plugin ne décode pas les commandes complexes et met alors dans paramètres l’information brute provenant du cloud Tuya
-- le cloud Tuya peut ne pas fournir toutes les commandes du périphérique.- les périphériques multicanaux (multiprises, interrupteurs multiples) inclus par le plugin via le cloud Tuya sont regroupés dans le même périphérique
+- le cloud Tuya peut ne pas fournir toutes les commandes du périphérique.
+- les périphériques multicanaux (multiprises, interrupteurs multiples) inclus par le plugin via le cloud Tuya sont regroupés dans le même périphérique
 - si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.- les couleurs suivant les 3 formats connus sont créées ainsi que les commandes saturation et intensité liées
 - la suppression d'une commande créée par le plugin via le cloud Tuya ne peut plus être recréée
 - le min et le max d'une valeur numérique sont remontés depuis le cloud. Selon les besoins, modifier les paramètres #slider# et #value# ainsi que le min et max Jeedom. Cette partie est à améliorer avec les retours des utilisateurs.
