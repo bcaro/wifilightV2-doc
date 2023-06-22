@@ -5,10 +5,10 @@
 
 Cette partie est à utiliser après avoir inclus le périphérique et sa passerelle via le cloud Tuya. Si ce n'est pas le cas, revenir à la documentation principale et lire pourquoi il y a besoin d'utiliser cette partie de la documentation très technique. Elle est à utiliser lorsque le cloud Tuya n'a pas donné entière satisfaction et est réservée aux utilisateurs avertis.
 
-Vérifier que le cloud a bien mis :
+Vérifier que suite à l'inclusion :
 Le type est :  "Passerelle Tuya Zigbee fwx.x"
 La passerelle a comme sous-type :  "Gateway hub Tuya zigbee"
-Le ou les périphériques ont comme sous-type : "personnalisé"
+Le ou les périphériques liés à la passerelle ont comme sous-type : "personnalisé"
 le x.x = 3.4 ou 3.5 ou 3.6 à modifier éventuellement manuellement.
 
 Après avoir éventuellement mis manuellement l'adresse IP identique sur la passerelle et ses périphériques et mis le même firmware sur l'ensemble, vérifier que le devid est le même partout et enfin faire une inclusion Tuya pour appairer la passerelle et ses périphériques.
@@ -24,7 +24,7 @@ Ce mode est utile pour les commandes qui nécessitent d'être ajustées (dps, pa
 
 La procédure nécessite que le périphérique renvoie son état dans les logs.
 
-Le plugin est équipé de boutons permettant de créer les commandes des cas les plus courants, il suffira de modifier le n° de dps ou le paramètre. Voir [ici](./tuya#tocAnchor-1-10-8) pour la compréhension des logs et la création manuelle des commandes.
+Le plugin est équipé de boutons permettant de créer les commandes des cas les plus courants, il suffira de modifier le n° de dps ou le paramètre. Voir [ici](./tuya#tocAnchor-1-5-2) pour la compréhension des logs et la création manuelle des commandes.
 
 ## Périphériques alimentés par pile
 
@@ -35,7 +35,7 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 Cette partie est à utiliser après avoir inclus le périphérique via le cloud Tuya. Si ce n'est pas le cas, revenir à la documentation principale et lire pourquoi il y a besoin d'utiliser cette partie de la documentation très technique. Elle est à utiliser lorsque le cloud Tuya n'a pas donné entière satisfaction et est réservée aux utilisateurs avertis.
 
 Pour utiliser ces périphériques sans passerelle Tuya/Zigbee, choisir le type : "Tuya Smart Life fw x.x"
-le x.x = 3.4 ou 3.5 à modifier manuellement. Il est nécessaire de modifier l'adresse IP si l'inclusion l'a mise à 0.0.0.0 .
+le x.x = 3.4 ou 3.5 ou 3.6 à modifier manuellement. Il est nécessaire de modifier l'adresse IP si l'inclusion l'a mise à 0.0.0.0 .
 
 
 ## Mode apprentissage
@@ -45,7 +45,7 @@ Pour lancer l'apprentissage, cocher la case « mode inclusion » et sauvegarder 
 Ce mode est uniquement là pour aider la configuration personnalisée d'un périphérique qui est mal configuré par le cloud. L'utilisation de ce mode ne peut donner un périphérique complètement fonctionnel et nécessite de comprendre de supprimer ou de modifier les commandes créées.
 
 Exemples de modifications :
-- Si au dps correspond uniquement une info dans le périphérique (par exemple 3 valeurs possibles d'un même bouton), il faudra supprimer les 3 commandes actions créées automatiquement. Cependant, les commandes actions ont comme paramètre toutes les valeurs récupérées par le plugin et permettent de connaitre les valeurs prises par l'info du dps.
+- Si au dps correspond uniquement une info dans le périphérique (par exemple 3 valeurs possibles d'un même bouton), il faudra supprimer les 3 commandes actions créées automatiquement. Cependant, les commandes actions ont comme paramètres toutes les valeurs récupérées par le plugin et permettent de connaitre les valeurs prises par l'info du dps.
 - Pour les dps numériques, une commande info et une commande action numériques sont créés automatiquement, si seule l'info est utile (cas de la température d'un capteur) il faut supprimer la commande action. Si les valeurs numériques prennent les valeurs 0 ou 1 pendant l'apprentissage, le plugin va aussi créer 3 commandes ETAT/ON/OFF, il faudra les supprimer.
 - Pour les dps contenant une info 0/1 pour un actionneur tout ou rien, comme une prise électrique, le plugin va créer une info et 2 actions ON/OFF.
 - Dans le cas d'un dps contenant true ou false, une commande info et deux commandes action (ON et OFF) sont créés automatiquement, si seule l'info est utile (cas d'un capteur de présence) il faut supprimer les commandes actions.
@@ -53,8 +53,6 @@ Exemples de modifications :
 - De manière générale, le sous-type créé par le plugin pourra ne pas correspondre à la donnée, il faudra alors faire des tests en le modifiant.
 
 Si vous partez d’une configuration standard après avoir choisi un sous-type et que vous ajoutez l’apprentissage pour vérifier les dps standards, il faudra modifier les commandes créées par la configuration standard et supprimer les commandes créées par l’apprentissage. En effet, lors de la sauvegarde, les dps standards sont toujours recréés, sinon il est possible de ne pas les afficher.
-
-Vous pouvez partager la configuration obtenue en cliquant sur le bouton Exporter. Transférer le contenu du champ configGet et une photo du périphérique au développeur.
 	
 ## Mode création manuelle des commandes
 
@@ -67,7 +65,7 @@ Le plugin est équipé de boutons permettant de créer automatiquement les comma
 
 ### Configuration
 -   désactiver tous les périphériques wifilightV2 sauf celui à tester
--   bien configurer le périphérique (adresse IP statique, firmware)
+-   configurer le périphérique (adresse IP statique, firmware)
 -   vérifier que le démon tourne, sinon le démarrer
 -   configurer les logs wifilightV2 en mode debug, redémarrer le démon
 -   effacer les logs
@@ -82,12 +80,12 @@ Utiliser toutes les possibilités de l'application Tuya et bien repérer dans le
 ### Cas d'un actionneur tout ou rien, true/false
 
 Dans les logs, lors de l'utilisation de l'appli Smartlife, on trouve par exemple :
+	[2023-06-22 06:19:32][DEBUG] : Receive from:192.168.1.106 cmd:a - {"dps":{"2":true,"103":100,"104":false},"cid":"842e14fffee35087"}     cid|842e14fffee35087 2|1 103|100 104|  - Read Json OK
 
-    Mess :{"devId":"xxxxxxxxxghekqd",dps:{"2":true,"8":true}}
-	
 Ici, le bouton off a été sélectionné sur le périphérique et on observe que le dps de n° 2 a changé.
 	
-    Mess :{"devId":"xxxxxxxxxghekqd",dps:{"2":false,"8":true}}
+	[2023-06-22 06:19:36][DEBUG] : Receive from:192.168.1.106 cmd:a - {"dps":{"2":false,"103":100,"104":false},"cid":"842e14fffee35087"}     cid|842e14fffee35087 2| 103|100 104|  - Read Json OK
+
 
 Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps de n° 2 a changé.
 
@@ -109,15 +107,15 @@ Pour configurer manuellement :
 
 Dans les logs, lors de l'utilisation de l'appli Smartlife, on trouve par exemple :
 
-    Mess :{"devId":"xxxxxxxxxghekqd",dps:{"1":"off","101":true}}
+	[2023-06-22 06:20:32][DEBUG] : Receive from:192.168.1.106 cmd:a - {"dps":dps:{"1":"up","101":true},"cid":"842e14fffee35087"}     cid|842e14fffee35087 1|up 101|1 - Read Json OK
 	
-Ici, le bouton off a été sélectionné sur le périphérique et on observe que le dps de n° 1 a changé.
+Ici, le bouton up a été sélectionné sur le périphérique et on observe que le dps de n° 1 a changé.
 	
-    Mess :{"devId":"xxxxxxxxxghekqd",dps:{"1":"on","101":true}}
+	[2023-06-22 06:20:36][DEBUG] : Receive from:192.168.1.106 cmd:a - {"dps":dps:{"1":"down","101":true},"cid":"842e14fffee35087"}     cid|842e14fffee35087 1|down 101|1 - Read Json OK
 
-Ici, le bouton on a été sélectionné sur le périphérique et on observe que le dps de n° 1 a changé.
+Ici, le bouton down a été sélectionné sur le périphérique et on observe que le dps de n° 1 a changé.
 
-    Mess :{"devId":"xxxxxxxxxghekqd",,dps:{"1":"stop","101":true}}
+	[2023-06-22 06:20:38][DEBUG] : Receive from:192.168.1.106 cmd:a - {"dps":dps:{"1":"stop","101":true},"cid":"842e14fffee35087"}     cid|842e14fffee35087 1|stop 101|1 - Read Json OK
 
 Ici, le bouton stop a été sélectionné sur le périphérique et on observe que le dps de n° 1 a changé.
 
@@ -142,7 +140,7 @@ Pour configurer manuellement :
 	
 Dans les logs, lors de l'utilisation de l'appli Smartlife, on trouve :
 
-    Mess :{"devId":"xxxxxxxxxghekqd",dps:{"3":850,"101":true}}
+	[2023-06-22 06:25:32][DEBUG] : Receive from:192.168.1.106 cmd:a - {dps:{"3":850,"101":true},"cid":"842e14fffee35087"}     cid|842e14fffee35087 3|850 101|1 - Read Json OK
 
 Ici, un curseur d'intensité a été sélectionné sur l'application du périphérique et on observe que le dps de n° 3 a changé.
 
@@ -162,7 +160,7 @@ Pour configurer manuellement :
 	
 Dans les logs, lors de l'utilisation de l'appli Smartlife, on trouve :
 
-    Mess :{"devId":"xxxxxxxxxghekqd",dps:{"8":23,"101":true}}
+	[2023-06-22 06:30:32][DEBUG] : Receive from:192.168.1.106 cmd:a - {dps:{"8":23,"101":true},"cid":"842e14fffee35087"}     cid|842e14fffee35087 8|23 101|1 - Read Json OK
 	
 Ici, c'est une température qui est envoyée régulièrement et on observe que le dps de n° 8 a changé.
 
@@ -182,6 +180,8 @@ Dans les logs, lors de l'utilisation de l'appli Smartlife, on trouve :
     Mess :{"devId":"xxxxxxxxxghekqd",dps:{"12":1}}
 		
     Mess :{"devId":"xxxxxxxxxghekqd",dps:{"12":0}}
+	[2023-06-22 06:40:32][DEBUG] : Receive from:192.168.1.106 cmd:a - {dps:{"12":1},"cid":"842e14fffee35087"}     cid|842e14fffee35087 12|1 - Read Json OK
+	[2023-06-22 06:40:40][DEBUG] : Receive from:192.168.1.106 cmd:a - {dps:{"12":0},"cid":"842e14fffee35087"}     cid|842e14fffee35087 12|0 - Read Json OK
 	
 Ici, c'est l'information d'ouverture puis de fermeture qui est envoyée et on observe que le dps de n° 12 a changé.
 
@@ -209,8 +209,8 @@ Afin de permettre au plugin de fonctionner correctement pour les couleurs, il fa
 
 Dans les logs, lors de l'utilisation de la modification de la couleur de la lampe, on trouve :
 
-    Mess:{"devId":"633225xxxxx","dps":{"1":true,"27":true,"28":"white","29":254,"31":"08ff0000766464","32":"cf38000168ffff","33":"ffff500100ff00"}
-
+	[2023-06-22 06:45:40][DEBUG] : Receive from:192.168.1.106 cmd:a - {"dps":{"1":true,"27":true,"28":"white","29":254,"31":"08ff0000766464","32":"cf38000168ffff","33":"ffff500100ff00"},"cid":"842e14fffee35087"}     cid|842e14fffee35087 1|1 27|1 28|white 29|254 31|08ff0000766464 32|cf38000168ffff 33|ffff500100ff00  - Read Json OK
+	
 Il faut repérer le n° de dps qui change, ici c'est le 31 soit 08ff0000766464 . Les 2 derniers 64 en hexadécimal font 100 en décimal. 08=R FF=G 00=B 076= hue, c'est le format 3. Cliquer sur le bouton Couleur 3 et modifier les n° de dps pour mettre 31. Ne pas modifier les paramètres. 
 
 Pour créer manuellement les 6 boutons dans le cas d'un format de couleur 1 :
@@ -287,7 +287,7 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 
 1. le périphérique à tester a été inclus dans l'appli Smartlife,
 2. le périphérique a été inclus dans le plugin via inclusion Tuya
-3. l'adresse IP est correcte, pour le firmware, il faut les essayer un par un
+3. l'adresse IP est correcte, pour le firmware, il faut les essayer un par un et vérifier que le plugin se connecte au périphérique
 4. dans le cas d'un périphérique Tuya/Zigbee, sa passerelle a été incluse dans l'appli Smartlife et le périphérique doit aussi avoir été inclus
 5. le périphérique et son éventuelle passerelle n'ont pas été supprimés de l'appli Smartlife et l'appli Smartlife n'a pas été supprimée
 6. l'appli Smartlife est arrêtée sur tous les terminaux pouvant la faire tourner
@@ -301,34 +301,23 @@ Pour que le % de capacité soit affiché dans Analyse/Equipements, le nom logiqu
 
 Exemple de log OK où le plugin a trouvé le périphérique donc avec la bonne adresse IP :
 
-    [2021-03-29 06:36:42][DEBUG] : ** Prise Zigbee - TuyaCustom2_V2 @192.168.1.106 - c:12 **
-    [2021-03-29 06:36:42][DEBUG] :     Key not set New device: created  @192.168.1.106 ADD New device @192.168.1.106 channel:12 key:1 @192.168.1.106 c:12 d:0
-
--Par la suite les logs seront du type :	
-	 [2021-03-29 06:31:21][DEBUG] : ** Prise Zigbee - TuyaCustom2_V2 @192.168.1.106 - c:12 **
-    [2021-03-29 06:31:21][DEBUG] :      key:1 @192.168.1.106 c:12 d:1
+[2023-06-22 06:19:28][DEBUG] : ** v5 SY1-ZigBee Smart Metering Switch 2 - TuyaCustom2_V4 @192.168.1.137 - cha:29 **
+[2023-06-22 06:19:28][DEBUG] :       Socket already created ADD New device OK
+[2023-06-22 06:19:28][DEBUG] : ** Conso Climatisation - TuyaCustom_V2 @192.168.1.135 - cha:1 **
+[2023-06-22 06:19:28][DEBUG] :      New device: created ADD New device OK
 	
 Exemple de log KO où le plugin n'a pas trouvé le périphérique donc mauvaise adresse IP
 
-    [2021-03-05 07:13:55][DEBUG] : ** Test vanne - TuyaCustom2_V2 @192.168.1.199 - c:11 **
-    [2021-03-05 07:13:55][DEBUG] :     Key not set New device: created  @192.168.1.199 close Connection impossible. Err=115 : Operation now in progress ADD New device @192.168.1.199 channel:11
+[2023-06-22 06:19:28][DEBUG] : ** Air Conditioner - TuyaCustom_V2 @192.168.1.133 - cha:1 **
+[2023-06-22 06:19:28][DEBUG] :      No connected device
 
 Par la suite les messages seront du type :
 
-    [2021-03-05 07:15:04][DEBUG] : << Ping of: lidl @192.168.1.130  diff:24
-    [2021-03-05 07:15:04][DEBUG] :     Cmd to 192.168.1.130 - Try:192.168.1.130  6668 - Connect OK!
+[2023-06-22 06:18:38][DEBUG] : << Ping of: v5 SY1-ZigBee Smart Metering Switch 2 @192.168.1.137  diff:13
+[2023-06-22 06:18:38][DEBUG] : Receive from:192.168.1.137 cmd:9 - Empty response
 
-Il se peut qu'il y ait ensuite des déconnexions ou que l'appli Smartlife soit aussi connectée au périphérique, dans ce cas le message dans les logs est :
 
-    [2020-12-10 07:36:40][DEBUG] : << Ping of: Vanne @192.168.1.122  diff:24
-    [2020-12-10 07:36:40][DEBUG] :     Cmd to 192.168.1.122 - Try:192.168.1.122  6668 - Connect OK!
-    [2020-12-10 07:36:40][DEBUG] :     Error on:192.168.1.122 is :Connection reset by peer n:104  diff:16
-
-ou il n'y a plus de ping dans les logs pour cette adresse ip, cela correspond à une mauvaise connexion permanente entre le périphérique et Jeedom ou si le périphérique n'est plus alimenté.
-
-Le plugin tentera de se reconnecter au périphérique toutes les minutes ou toutes les 3 minutes ce qui lui permettra de retrouver le périphérique s'il est rebranché. 
-
-A ce stade, le seul point testé et OK est que l'adresse IP est la bonne et que le périphérique est joignable.
+A ce stade, l'adresse IP est la bonne, le périphérique est joignable et le firmware est correct.
 
 
 ## Un souci avec une commande action (les autres fonctionnent)
