@@ -647,7 +647,7 @@ Cette procédure permet d'ajouter manuellement un périphérique et de créer ma
 Donner le maximum de renseignements : la configuration matérielle et logicielle Jeedom, l'éventuel message d'erreur de connexion du plugin au cloud Tuya, les informations du cloud Tuya, les logs ou toute remarque pertinente. 
 
 ### Donner les informations du cloud Tuya
-Ceci est à faire lorsqu'un périphérique n'est pas créé ou incomplètement créé lors de l'inclusion, le plugin va chercher ces informations en mode inclusion Tuya.
+Ceci est à faire lorsqu'un périphérique n'est pas créé ou incomplètement créé lors de l'inclusion, alors que le périphérique n'est pas dans ceux qui ne sont pas compatibles. Le plugin va chercher ces informations en mode inclusion Tuya.
 
 Obtenir la liste des périphériques :
 - dans Tuya developper : iot platform > Cloud > Development > Open project > devices 
@@ -660,7 +660,7 @@ Obtenir les informations d'un périphérique :
 - coller le device ID > Submit Request > Copy (lien fenêtre droite)
 - coller la copie dans le forum
 
-### obtenir les logs
+### Obtenir les logs
 
 - Configurer les logs de wifilightV2, comme ils sont bavards, les configurer en augmentant le nombre de lignes dans la configuration de déboguage de Jeedom.
 - Effacer les logs _tuya, attendre 2 minutes et récupérer les logs _tuya
