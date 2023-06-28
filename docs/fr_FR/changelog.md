@@ -14,6 +14,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Meross : intégration du MGS200
 - Amélioration des messages du plugin
 - Compatible Debian 11
+- Compatible Jeedom 4.4
 
 1.96h 2023-04-18 (Jeedom V4.2)
 - Tuya : modification pour continuer à avoir accès au cloud.
