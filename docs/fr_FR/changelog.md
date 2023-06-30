@@ -10,8 +10,11 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.96i 2023-06-21 (Jeedom V4.2)
-- Meross : intégration du MGS200
+1.96j 2023-06-30 (Jeedom V4.2)
+- Meross : correction bogue du MSG100
+
+1.96i 2023-06-28 (Jeedom V4.2)
+- Meross : intégration du MSG200
 - Amélioration des messages du plugin
 - Compatible Debian 11
 - Compatible Jeedom 4.4
