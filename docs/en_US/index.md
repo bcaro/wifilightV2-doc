@@ -327,6 +327,8 @@ The default values ​​mostly correspond to the manufacturer's data. For some 
 For some lamps, the min and max values ​​may be incorrect and the extreme values ​​not understood by the lamp. These values ​​must be adjusted so that they are within the limits accepted by the lamp.
 You can notify the developer to change the default configuration to avoid these adjustments.
 
+Note that Tuya lamps do not have these 2 sliders because the plugin cannot know that a data corresponds to a color temperature.
+
 # color list
 
 For color bulbs, you must have created the device in extended + colors + disco mode. A choice list is then associated with each color. If the color commands are deleted, the automatically created choice list will not be modified but the drop-down list will no longer be able to access this color. In order not to be disturbed in the interface, it is necessary to suppress the display of the color controls.
@@ -473,23 +475,23 @@ The procedure is complex and requires several manipulations. Do a search on the 
 Compatible devices are:
 - single sockets: MSS110 MSS210
 - single sockets + consumption: MSS310 (consumption only goes up every 30 seconds)
-- MSS120 MSS620 double sockets
-- MSS420 quad sockets
-- MSS425 quintuple sockets
+- double sockets: MSS120 MSS620
+- quadruple sockets: MSS420
+- quintuple sockets: MSS425
 - color lamps: MSL120 BR30
-- MSL420 MSL430 MSL450 lamps
+- lamps: MSL420 MSL430 MSL450
 - dimmer lamps: MSL100
 - strip led: MSL320 MSL320 pro
-- MRS100 rolling shutters (status feedback and positioning not functional)
-- MSG100 garage
-- MSS710 switch
-- MSS510 MSS550 switches
-- MOD100 MOD150 diffusers
-- MTS200 thermostat
+- rolling shutters: MRS100 (status feedback and positioning not functional)
+- garage: MSG100 MSG200
+- switch: MSS710
+- switches: MSS510 MSS550
+- diffusers: MOD100 MOD150
+- thermostat: MTS200
 - hub: MSH300
-    - MS100 temperature sensor
+    - temperature sensor: MS100
     - thermostatic heads: MTS100 MTS150
-    - smoke detector: GS559A in beta to test smoke and heat information
+    - smoke detector: GS559A in beta testing smoke and heat information
 - MAP100 beta purifier to be tested
 - MSXH0 beta humidifier to be tested
 
@@ -573,49 +575,41 @@ Many brands are compatible including Sonoff. The products tested are:
 - Sonoff THR316D temperature and humidity sensor + switch
 - Sonoff basic R2, RF, POW, Mini
 - Sonoff Dual R2
-- Sonoff Dual R3 (consumption recovery only goes up if the ewelink application is active, the engine configuration is not completely implemented)
+- Sonoff Dual R3: consumption recovery only goes up if the ewelink application is active, the engine configuration is not completely implemented. To update the consumption, you must request an action that has no impact in a scenario every minute.
 - Sonoff 4CH/4CH PRO
 - Sonoff Touch
 -Sonoff S20/S26
 - Sonoff T1/TX
 - Sonoff SLAMPHER
 - Sonoff T4EUC1
-- Ifan 2/3/4 to test
+- Sonoff Ifan 2/3/4 to test
+- Sonoff POW R316/320: to update the consumption, you must request an action, for example turn on the wifi led in a scenario every minute
 - Sonoff RF bridge 433 for sensors only (door, presence detector, remote control)
-- Sonoff Micro USB: choose channel 1, provided for 4 channels for a non-sonoff 4-channel USB model, non-functional status return in fw 3.7
+- Sonoff Micro USB
 
 Nevertheless, the compatibility of these peripherals is not guaranteed because the protocol can be modified by the manufacturers. Do not modify the device firmware without checking that it is compatible with the plugin.
 
-The sonoff DW2 is not compatible because it is purely cloud and does not go into Access Point to find apiKey and DeviceID. It is likely to be the same for all ewelink wifi sensors.
+The sonoff DW2 is not compatible because it is purely cloud and does not go into Access Point to find apiKey and DeviceID. The same is true for all ewelink-compatible battery-powered wifi sensors.
 
 The Zigbee Hub is not compatible (and purely cloud) as well as all Zigbee devices.
 
 No bulb or led strip is compatible.
 
-For multi-channel devices (like the Sonoff 4CH) you have to create as many wifilightV2 devices as there are channels, a copy of the first created makes it easy, then you have to change the channel number
+For multi-channel devices (such as Sonoff 4CH, switches or power strips) you have to create as many wifilightV2 devices as there are channels, a copy of the first created makes it easy, then you have to change the channel number which goes from 1 at 4.
 
 For devices not present in this list or if the configuration does not work or if a device does not have the correct subtype and after using the device integration procedure, give the contents of the wifilightV2_inc logs in the [forum ](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) in order to allow the integration of the module in the plugin.
 
 # Tuya Smartlife and Cloud Tuya
 
-The creation of most Tuya and Tuya/Zigbee devices is automatic. However, access to devices remains local.
+The creation of most Tuya and Tuya/Zigbee devices is automatic by retrieving their configuration information from the Tuya cloud. For this, the devices must work in the Tuya Smartlife app. However, thereafter, access to devices remains local.
 
 Tuya devices use different protocols:
 
+<3.3: This old protocol is not supported by inclusion. The plugin will find the device in the Tuya cloud, but it won't find the correct protocol. You have to manually change it using fw 1.0 and manually assign its IP address and choose a configuration from the list.
 
-<3.3 : This old protocol does not support inclusion. The plugin will find the device in the Tuya cloud, but it won't find the correct protocol. You need to change it manually using Tuya smartLife compatible type V1. There is no Tuya Zigbee gateway with this protocol.
+3.3/3.4/3.5: Devices with these protocols are normally found automatically in Tuya inclusion, either for wifi device or Zigbee gateway.
 
-
-3.3 : Devices with this protocol are normally found automatically in Tuya inclusion, either for a wifi device or a Zigbee gateway. The type used is Tuya smartlife compatible V3 or Tuya/Zigbee V1 gateway.
-
-
-3.4 : Devices with this protocol are normally found automatically in Tuya inclusion, whether for a wifi device or a Zigbee gateway. In 2022, this protocol begins to spread. The type used is: The type used is Tuya smartlife compatible V or Tuya/Zigbee V2 gateway.
-
-
-If the plugin does not find the right protocol, it is possible to change it manually without losing the commands created by the Tuya cloud, you must choose the custom subtype before saving.
-
-
-If the plugin does not find the right protocol, it is possible to change it manually without losing the commands created by the Tuya cloud, you must choose the custom subtype before saving.
+If the plugin does not find the right protocol, it is possible to change it manually without losing the commands created by the Tuya cloud, you must choose the custom subtype for a device and gateway for a Tuya/Zigbee gateway, before saving .
 
 ## Configuration of the Tuya platform
 
@@ -623,21 +617,23 @@ Follow this first [tutorial ](https://linkdhome.com/articles/local-tuya-device-c
 
 This part of the plugin requires the launch of the dependencies: if the local IP address is not found by the plugin, make the connection between the mac address and the IP address given in the device parameters of the Tuya application and your router and change the IP address. The procedure to find the IP address uses a Linux system command, if it cannot be loaded or if the system is not compatible, the IP address cannot be found automatically.
 
-### Remarks :
-- If a device with the same devId already exists, the inclusion will not be done.
-- non-zigbee and battery-powered devices are pure cloud (closure, door, temperature sensors for example) will be integrated but the plugin will not be able to access them
-- the colors according to the 3 known formats are created as well as the related saturation and intensity commands
+### Notes and Limitations
+- if the IP address is 0.0.0.0 it means that Jeedom does not have access to the device, it is probably the network configuration to reconsider. Note that the IP address 0.0.0.0 is also assigned to devices with firmware <3.3. and non-compatible devices.
+- some Tuya/Zigbee gateways are not compatible, check the Jeedom forum.
+- non-Zigbee and battery-powered devices are purely cloud (closure, door, temperature sensors for example) will be integrated but the plugin will not be able to access them
 - peripherals with coded information (actuator part of alarms in general) are not managed
 - devices with non-standard information (possibly can be solved with a code block in a scenario) are not handled
-- the plugin does not decode complex commands and then puts the Json from the Tuya cloud in the parameters
+- the plugin does not decode complex commands and then puts raw information from the Tuya cloud in parameters
 - Tuya cloud may not provide all device commands.
+- multi-channel devices (multi-sockets, multi-switches) included by the plugin via the Tuya cloud are grouped in the same device
+- if a device with the same devId already exists, the inclusion will not be done. - the colors according to the 3 known formats are created as well as the related saturation and intensity commands
 - deletion of an order created by the plugin via the Tuya cloud can no longer be recreated
 - the min and max of a numerical value are uploaded from the cloud. As needed, modify the #slider# and #value# parameters as well as the Jeedom min and max. This part is to be improved with user feedback.
 
 
-### Tips:
+### Tips
 - if the IP address was not found because the peripheral is not connected, give it the address: 0.0.0.0 , connect it and restart the inclusion procedure.
-- if the localkey of a peripheral has changed, modify the devId of the peripheral, redo the inclusion and copy the devId and the new localkey into the old peripheral. Finally, delete the device created by inclusion.
+- if the localkey of a peripheral has changed, modify the devId or the nodeId of the peripheral (by putting for example @ at the end), redo the inclusion and copy the devId or the nodeId and the new localkey in the old peripheral . Finally, delete the device created by inclusion.
 - if the automatic procedure malfunctions or if commands are not provided by the Tuya cloud, switch to [device learning mode](./tuya#tocAnchor-1-1-6) and act only on the buttons of the app Tuya Smartlife in correspondence. If other buttons are used, the plugin will create duplicates of commands created through Tuya cloud. But beware this documentation is very technical and reserved for an informed public, do not use it in panic mode when you do not have the knowledge to understand its content.
 - in general, orders can be created manually or in learning mode
 
@@ -645,33 +641,34 @@ This part of the plugin requires the launch of the dependencies: if the local IP
 ### Precise polling of an event.
 When the "status polling" option is checked, the plugin polls the device every 12 seconds. This makes it possible, for example, to recover the consumption of a peripheral when the latter does not send it regularly. However, be careful, this can drain the battery of devices on battery. For many devices that measure the power consumed, opening the mobile application is necessary for the data to be transmitted to the plugin.
 
-### Participation in the improvement of this part:
-
-You can help improve automatic creation by providing as much information as possible: the Json from the Tuya cloud, the changes made, the logs or any relevant remark.
-
-To get the Tuya cloud Json:
-- in Tuya developer: Cloud develop> Development > subscribe to cloud project
-
-In the new window:
-
-- Cloud > Development > choose the project > devices > copy the device ID of the device to debug
-- Cloud > Api Explorer > (in the new window) Smart Home Management System > Device Control > Get Device Specification Attribute (the 2nd in the list without s to Attribute)
-- paste the device ID > Submit Request > Copy (right window link)
-
-[See specific documentation ](./tuya#tocAnchor-1-1) ,but beware this documentation is very technical and reserved for an informed public, do not use it in panic mode when you do not have the knowledge to understand its content.
-
 ## Manual or semi-manual creation of Tuya and Tuya/Zigbee devices
 
-This procedure requires you to manually copy the localkey from the Tuya cloud.
+This procedure allows you to manually add a device and manually create the missing commands. It is intended for advanced users.
 
-  [See specific documentation for Tuya / Zigbee gateways](./tuya#tocAnchor-1-1)
+  [See specific Tuya and Tuya/Zigbee documentation](./tuya)
  
-  [See specific documentation for Tuya Wifi products](./tuya#tocAnchor-1-10)
+## For help
+Provide as much information as possible: Jeedom hardware and software configuration, any Tuya cloud plugin connection error message, Tuya cloud information, logs or any relevant remarks.
 
+### Give Tuya cloud information
+This is to be done when a device is not created or incompletely created during inclusion, while the device is not in those that are not compatible. The plugin will look for this information in Tuya inclusion mode.
 
-Attention :
+Get list of devices:
+- in Tuya developer: iot platform > Cloud > Development > Open project > devices
+- take a screenshot of the devices
 
-Lidl Tuya/Zigbee products paired with the Lidl application switch to protocol 3.4.
+Get device information:
+- in Tuya developer: iot platform > Cloud > Development > Open project > devices
+- copy the device ID of the device to be debugged
+- Cloud > Api Explorer > (in the new window) Device Control (Standard Onstruction Set) > Get the specification
+- paste the device ID > Submit Request > Copy (right window link of "response")
+- paste the copy in the forum
+
+### Get logs
+
+- Configure wifilightV2 logs, as they are verbose, configure them by increasing the number of lines in Jeedom's debug configuration.
+- Clear _tuya logs, wait 2 minutes and recover _tuya logs
+- copy these logs on the forum
 
 # Nanoleaf
 
