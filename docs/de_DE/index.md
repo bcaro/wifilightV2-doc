@@ -321,8 +321,6 @@ Die Defaultwerte entsprechen größtenteils den Herstellerangaben. Für einige L
 Bei einigen Lampen können die Min und Max-Werte falsch sein und die Extremwerte von der Lampe nicht verstanden werden. Diese Werte müssen so angepasst werden, dass sie innerhalb der von der Lampe akzeptierten Grenzen liegen.
 Sie können den Entwickler benachrichtigen, die Standardkonfiguration zu ändern, um diese Anpassungen zu vermeiden.
 
-Beachten Sie, dass Tuya-Lampen nicht über diese beiden Schieberegler verfügen, da das Plugin nicht wissen kann, ob ein Datenwert einer Farbtemperatur entspricht.
-
 # Farbliste
 
 Für Farbbirnen müssen Sie das Gerät im erweiterten + Farben + Disco-Modus erstellt haben. Jeder Farbe wird dann eine Auswahlliste zugeordnet. Wenn die Farbbefehle gelöscht werden, wird die automatisch erstellte Auswahlliste nicht geändert, aber die Dropdown-Liste kann nicht mehr auf diese Farbe zugreifen. Um nicht in der Oberfläche belästigt zu werden, ist es notwendig, die Anzeige der Farbsteuerelemente zu unterdrücken.
@@ -470,25 +468,25 @@ Es wird keine Hilfe beim Wiederherstellen des Tokens gegeben.
 Kompatible Geräte sind:
 - Einzelsteckdosen: MSS110 MSS210
 - Einzelsteckdosen + Verbrauch: MSS310 (Verbrauch steigt nur alle 30 Sekunden)
-- Doppelsteckdosen: MSS120 MSS620
-- Vierfachsteckdosen: MSS420
-- Fünffachsteckdosen: MSS425
+- MSS120 MSS620 Doppelsteckdosen
+- MSS420 Quad-Steckdosen
+- MSS425-Fünffachsteckdosen
 - Farblampen: MSL120 BR30
-- Lampen: MSL420 MSL430 MSL450
+- MSL420 MSL430 MSL450 Lampen
 - Dimmerlampen: MSL100
 - LED-Streifen: MSL320 MSL320 pro
-- Rollläden: MRS100 (Statusrückmeldung und Positionierung nicht funktionsfähig)
-- Garage: MSG100 MSG200
-- Schalter: MSS710
-- Schalter: MSS510 MSS550
-- Diffusoren: MOD100 MOD150
-- Thermostat: MTS200
+- Rollladen MRS100 (Statusrückmeldung und Positionierung nicht funktionsfähig)
+- MSG100-Garage
+- MSS710-Schalter
+- Schalter MSS510 MSS550
+- Diffusoren MOD100 MOD150
+- Thermostat MTS200
 - Nabe: MSH300
-    - Temperatursensor: MS100
+    - Temperatursensor MS100
     - Thermostatköpfe: MTS100 MTS150
-    - Rauchmelder: GS559A im Betatest von Rauch- und Hitzeinformationen
-- MAP100 Beta-Reiniger zum Testen
-- Zu testender Beta-Luftbefeuchter MSXH0
+    - Rauchmelder: GS559A in Beta zum Testen von Rauch- und Wärmeinformationen
+- MAP100-Beta-Reiniger soll getestet werden
+- MSXH0 Beta-Luftbefeuchter zum Testen
 
 Andere Peripheriegeräte können kompatibel gemacht werden: wenden Sie sich an den Entwickler.
 
@@ -563,48 +561,56 @@ Bemerkungen :
 ## Kompatibilität
 
 Viele Marken sind kompatibel, einschließlich Sonoff. Die getesteten Produkte sind:
-- Schalter, Steckdosen, Schalter: einfach von allen Marken
+- Schalter, Steckdosen, Schalter: einfach aller Marken
 - Schalter, Steckdosen, Schalter: mehrere aller Marken
 - Schalter, Steckdosen, Schalter: einfach mit Dimmer aller Marken
-- Sonoff D1 Smart Dimmer
-- Sonoff TH10/1H16 Temperatursensor. Neue Konfiguration für Firmware >=3.4 mit EIN/AUS OK
+- Sonoff D1 intelligenter Dimmer
+- Sonoff TH10/1H16 Temperatursensor. Neue Konfiguration für Firmware >=3.4 mit ON/OFF OK
 - Sonoff THR316D Temperatur- und Feuchtigkeitssensor + Schalter
 - Sonoff Basic R2, RF, POW, Mini
 - Sonoff Dual R2
-- Sonoff Dual R3: Die Verbrauchsrückgewinnung steigt nur, wenn die Ewelink-Anwendung aktiv ist, die Motorkonfiguration ist nicht vollständig implementiert. Um den Verbrauch zu aktualisieren, müssen Sie jede Minute eine Aktion anfordern, die in einem Szenario keine Auswirkungen hat.
+- Sonoff Dual R3 (Verbrauchsrückgewinnung geht nur hoch, wenn die ewelink-Anwendung aktiv ist, die Motorkonfiguration ist nicht vollständig implementiert)
 - Sonoff 4CH/4CH PRO
-- Sonoff Touch
+- Sonoff-Touch
 -Sonoff S20/S26
 - Sonoff T1/TX
 - Sonoff SLAMPHER
--Sonoff T4EUC1
-- Sonoff Ifan 2/3/4 zum Testen
-- Sonoff POW R316/320: Um den Verbrauch zu aktualisieren, müssen Sie eine Aktion anfordern, z. B. jede Minute die WLAN-LED in einem Szenario einschalten
+- Sonoff T4EUC1
+- Ifan 2/3/4 zum Testen
 - Sonoff RF Bridge 433 nur für Sensoren (Tür, Präsenzmelder, Fernbedienung)
-- Sonoff Micro-USB
+- Sonoff Micro USB: Wählen Sie Kanal 1, vorgesehen für 4 Kanäle für ein Nicht-Sonoff-4-Kanal-USB-Modell, nicht funktionierende Statusrückgabe in FW 3.7
 
-Dennoch kann die Kompatibilität dieser Peripheriegeräte nicht gewährleistet werden, da das Protokoll von den Herstellern geändert werden kann. Ändern Sie die Geräte-Firmware nicht, ohne zu prüfen, ob sie mit dem Plugin kompatibel ist.
+Dennoch ist die Kompatibilität dieser Peripheriegeräte nicht gewährleistet, da das Protokoll von den Herstellern modifiziert werden kann. Verändern Sie die Geräte-Firmware nicht, ohne zu überprüfen, ob sie mit dem Plugin kompatibel ist.
 
-Der Sonoff DW2 ist nicht kompatibel, da er rein cloudbasiert ist und nicht in den Access Point geht, um APIKey und DeviceID zu finden. Das Gleiche gilt für alle ewelink-kompatiblen batteriebetriebenen WLAN-Sensoren.
+Das sonoff DW2 ist nicht kompatibel, da es sich um eine reine Cloud handelt und nicht in den Access Point geht, um apiKey und DeviceID zu finden. Es ist wahrscheinlich für alle ewelink-kompatiblen wifi gleich.
 
-Der Zigbee Hub ist nicht kompatibel (und rein cloudfähig) sowie alle Zigbee-Geräte.
+Der Zigbee-Hub ist nicht kompatibel (und rein Cloud) sowie alle Zigbee-Geräte.
 
-Keine Glühbirne oder kein LED-Streifen ist kompatibel.
+Keine Glühbirne oder LED-Streifen ist kompatibel.
 
-Für Mehrkanalgeräte (wie Sonoff 4CH, Schalter oder Steckdosenleisten) müssen Sie so viele wifilightV2-Geräte erstellen, wie Kanäle vorhanden sind. Eine Kopie des zuerst erstellten Geräts macht es einfach, dann müssen Sie die Kanalnummer ändern, von der aus geht 1 um 4.
+Bei Mehrkanalgeräten (wie dem Sonoff 4CH) müssen Sie so viele wifilightV2-Geräte erstellen, wie es Kanäle gibt, eine Kopie des zuerst erstellten macht es einfach, dann müssen Sie die Kanalnummer ändern
 
-Geben Sie für Geräte, die nicht in dieser Liste enthalten sind oder wenn die Konfiguration nicht funktioniert oder wenn ein Gerät nicht den richtigen Untertyp hat, nach Verwendung des Geräteintegrationsverfahrens den Inhalt der wifilightV2_inc-Protokolle im [forum](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632), um die Integration des Moduls in das Plugin zu ermöglichen.
+Für Geräte, die nicht in dieser Liste enthalten sind oder wenn die Konfiguration nicht funktioniert oder wenn ein Gerät nicht den richtigen Subtyp hat und nachdem Sie das Geräteintegrationsverfahren verwendet haben, geben Sie den Inhalt der wifilightV2_inc-Protokolle im [Forum] (https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632), um die Integration des Moduls in das Plugin zu ermöglichen.
+
 # Tuya Smartlife und Cloud Tuya
 
-Die Erstellung der meisten Tuya- und Tuya/Zigbee-Geräte erfolgt automatisch durch den Abruf ihrer Konfigurationsinformationen aus der Tuya-Cloud. Dafür müssen die Geräte in der Tuya Smartlife App funktionieren. Danach bleibt der Zugriff auf die Geräte jedoch lokal.
+Die Erstellung der meisten Tuya- und Tuya/Zigbee-Geräte erfolgt automatisch. Der Zugriff auf Geräte bleibt jedoch lokal.
 
 Tuya-Geräte verwenden unterschiedliche Protokolle:
 
-<3.3: Dieses alte Protokoll wird durch die Aufnahme nicht unterstützt. Das Plugin findet das Gerät in der Tuya-Cloud, aber nicht das richtige Protokoll. Sie müssen es manuell mit FW 1.0 ändern, seine IP-Adresse manuell zuweisen und eine Konfiguration aus der Liste auswählen.
+<3.3 : Dieses alte Protokoll unterstützt keine Inklusion. Das Plugin findet das Gerät in der Tuya-Cloud, aber es findet nicht das richtige Protokoll. Sie müssen es manuell mit Tuya smartLife-kompatiblem Typ V1 ändern. Bei diesem Protokoll gibt es kein Tuya-Zigbee-Gateway.
 
-3.3/3.4/3.5: Geräte mit diesen Protokollen werden normalerweise automatisch in der Tuya-Einbindung gefunden, entweder für WLAN-Geräte oder Zigbee-Gateways.
 
-Wenn das Plugin nicht das richtige Protokoll findet, können Sie es manuell ändern, ohne die von der Tuya-Cloud erstellten Befehle zu verlieren. Sie müssen vor dem Speichern den benutzerdefinierten Untertyp für ein Gerät und das Gateway für ein Tuya/Zigbee-Gateway auswählen.
+3.3 : Geräte mit diesem Protokoll werden normalerweise automatisch in der Tuya-Einbindung gefunden, entweder für ein WLAN-Gerät oder ein Zigbee-Gateway. Der verwendete Typ ist Tuya Smartlife-kompatibles V3- oder Tuya/Zigbee V1-Gateway.
+
+
+3.4 : Geräte mit diesem Protokoll werden normalerweise automatisch in Tuya-Einbindung gefunden, sei es für ein WLAN-Gerät oder ein Zigbee-Gateway. Im Jahr 2022 beginnt sich dieses Protokoll zu verbreiten. Der verwendete Typ ist: Der verwendete Typ ist Tuya Smartlife-kompatibles V4- oder Tuya/Zigbee V2-Gateway.
+
+
+Wenn das Plugin nicht das richtige Protokoll findet, ist es möglich, es manuell zu ändern, ohne die von der Tuya-Cloud erstellten Befehle zu verlieren. Sie müssen vor dem Speichern den benutzerdefinierten Untertyp auswählen.
+
+
+Wenn das Plugin nicht das richtige Protokoll findet, ist es möglich, es manuell zu ändern, ohne die von der Tuya-Cloud erstellten Befehle zu verlieren. Sie müssen vor dem Speichern den benutzerdefinierten Untertyp auswählen.
 
 ## Konfiguration der Tuya-Plattform
 
@@ -612,57 +618,54 @@ Folgen Sie zunächst diesem [Tutorial](https://linkdhome.com/articles/local-tuya
 
 Dieser Teil des Plugins erfordert den Start der Abhängigkeiten: Wenn die lokale IP-Adresse vom Plugin nicht gefunden wird, stellen Sie die Verbindung zwischen der Mac-Adresse und der in den Geräteparametern der Tuya-Anwendung angegebenen IP-Adresse und Ihrem Router her und ändern Sie die IP Adresse. Das Verfahren zum Ermitteln der IP-Adresse verwendet einen Linux-Systembefehl, kann dieser nicht geladen werden oder ist das System nicht kompatibel, kann die IP-Adresse nicht automatisch ermittelt werden.
 
-### Hinweise und Einschränkungen
-- Wenn die IP-Adresse 0.0.0.0 ist, bedeutet das, dass Jeedom keinen Zugriff auf das Gerät hat. Es liegt wahrscheinlich an der Netzwerkkonfiguration, die Sie überdenken müssen. Beachten Sie, dass die IP-Adresse 0.0.0.0 auch Geräten mit Firmware <3.3 zugewiesen wird. und nicht kompatible Geräte.
-- Einige Tuya/Zigbee-Gateways sind nicht kompatibel, schauen Sie im Jeedom-Forum nach.
-- Nicht-Zigbee- und batteriebetriebene Geräte sind reine Cloud-Geräte (z. B. Verschluss, Tür, Temperatursensoren) werden integriert, das Plugin kann jedoch nicht darauf zugreifen
-- Peripheriegeräte mit codierten Informationen (Aktorteil von Alarmen im Allgemeinen) werden nicht verwaltet
+### Bemerkungen :
+- Wenn bereits ein Gerät mit derselben devId vorhanden ist, wird die Aufnahme nicht durchgeführt.
+- Nicht-Zigbee- und batteriebetriebene Geräte sind reine Cloud (z. B. Schließ-, Tür-, Temperatursensoren) werden integriert, aber das Plugin kann nicht darauf zugreifen
+- Die Farben nach den 3 bekannten Formaten werden erstellt sowie die dazugehörigen Sättigungs- und Intensitätsbefehle
+- Peripheriegeräte mit codierten Informationen (Aktuatorteil von Alarmen im Allgemeinen) werden nicht verwaltet
 - Geräte mit nicht standardmäßigen Informationen (können möglicherweise mit einem Codeblock in einem Szenario gelöst werden) werden nicht behandelt
-- Das Plugin dekodiert keine komplexen Befehle und setzt dann Rohinformationen aus der Tuya-Cloud in Parameter um
+- Das Plugin decodiert keine komplexen Befehle und fügt dann den Json aus der Tuya-Cloud in die Parameter ein
 - Die Tuya-Cloud stellt möglicherweise nicht alle Gerätebefehle bereit.
-- Mehrkanalgeräte (Mehrfachsteckdosen, Mehrfachschalter), die vom Plugin über die Tuya-Cloud eingebunden werden, werden im selben Gerät gruppiert
-- Wenn bereits ein Gerät mit derselben DevId vorhanden ist, erfolgt die Einbindung nicht. - Es werden die Farben gemäß den 3 bekannten Formaten sowie die zugehörigen Sättigungs- und Intensitätsbefehle erstellt
-- Das Löschen einer durch das Plugin erstellten Bestellung über die Tuya-Cloud kann nicht mehr wiederhergestellt werden
-- Die Mindest- und Höchstwerte eines numerischen Werts werden aus der Cloud hochgeladen. Ändern Sie nach Bedarf die Parameter #slider# und #value# sowie die Mindest- und Höchstwerte für Jeedom. Dieser Teil soll durch Benutzerfeedback verbessert werden.
+- Das Löschen einer vom Plugin erstellten Bestellung über die Tuya-Cloud kann nicht mehr neu erstellt werden
+- Min. und Max. eines numerischen Werts werden aus der Cloud hochgeladen. Ändern Sie nach Bedarf die Parameter #slider# und #value# sowie Jeedom min und max. Dieser Teil soll mit Benutzerfeedback verbessert werden.
 
 
-### Tipps
-- Wenn die IP-Adresse nicht gefunden wurde, weil das Peripheriegerät nicht angeschlossen ist, geben Sie ihm die Adresse: 0.0.0.0, schließen Sie es an und starten Sie den Einbindungsvorgang erneut.
-- Wenn sich der lokale Schlüssel eines Peripheriegeräts geändert hat, ändern Sie die Geräte-ID oder die Knoten-ID des Peripheriegeräts (indem Sie beispielsweise am Ende ein @ einfügen), wiederholen Sie die Einbindung und kopieren Sie die Geräte-ID oder die Knoten-ID und den neuen lokalen Schlüssel in das alte Peripheriegerät. Löschen Sie abschließend das durch die Einbindung erstellte Gerät.
+### Tipps:
+- Wenn die IP-Adresse nicht gefunden wurde, weil das Peripheriegerät nicht verbunden ist, geben Sie ihm die Adresse: 0.0.0.0 , verbinden Sie es und starten Sie den Aufnahmevorgang neu.
+- Wenn sich der Localkey eines Peripheriegeräts geändert hat, ändern Sie die devId des Peripheriegeräts, wiederholen Sie die Aufnahme und kopieren Sie die devId und den neuen Localkey in das alte Peripheriegerät. Löschen Sie abschließend das durch die Aufnahme erstellte Gerät.
 - Wenn der automatische Vorgang nicht funktioniert oder Befehle nicht von der Tuya-Cloud bereitgestellt werden, wechseln Sie in den [Geräte-Lernmodus] (./tuya#tocAnchor-1-1-6) und handeln Sie nur auf die Schaltflächen der App Tuya Smartlife in Korrespondenz . Wenn andere Schaltflächen verwendet werden, erstellt das Plugin Duplikate von Befehlen, die über die Tuya-Cloud erstellt wurden. Aber Vorsicht, diese Dokumentation ist sehr technisch und einer informierten Öffentlichkeit vorbehalten. Verwenden Sie sie nicht im Panikmodus, wenn Sie nicht das Wissen haben, ihren Inhalt zu verstehen.
+
 - Generell können Aufträge manuell oder im Lernmodus erstellt werden.
 
 ### Genaue Abfrage eines Ereignisses.
 Wenn die Option "Statusabfrage" aktiviert ist, fragt das Plugin das Gerät alle 12 Sekunden ab. Dadurch ist es beispielsweise möglich, den Verbrauch eines Peripheriegeräts wiederherzustellen, wenn dieses es nicht regelmäßig sendet. Seien Sie jedoch vorsichtig, dies kann den Akku von Geräten im Akkubetrieb entladen. Bei vielen Geräten, die den Stromverbrauch messen, ist das Öffnen der mobilen Anwendung notwendig, damit die Daten an das Plugin übermittelt werden.
 
+### Teilnahme an der Verbesserung dieses Teils:
+Sie können dazu beitragen, die automatische Erstellung zu verbessern, indem Sie so viele Informationen wie möglich bereitstellen: den Json aus der Tuya-Cloud, die vorgenommenen Änderungen, die Protokolle oder alle relevanten Bemerkungen.
+
+So erhalten Sie den Tuya-Cloud-Json:
+- in Tuya-Entwickler: Cloud-Entwicklung> Entwicklung> Cloud-Projekt abonnieren
+
+Im neuen Fenster:
+
+- Cloud > Entwicklung > Projekt auswählen > Geräte > Geräte-ID des zu debuggenden Geräts kopieren
+- Cloud > Api Explorer > (im neuen Fenster) Smart Home Management System > Device Control > Get Device Specification Attribute (das 2. in der Liste ohne s to Attribute)
+- Fügen Sie die Geräte-ID ein > Anfrage senden > Kopieren (Link im rechten Fenster)
+
+[Siehe die spezifische Dokumentation](./tuya#tocAnchor-1-1) ,aber Vorsicht, diese Dokumentation ist sehr technisch und einer informierten Öffentlichkeit vorbehalten. Verwenden Sie sie nicht im Panikmodus, wenn Sie nicht das Wissen haben, ihren Inhalt zu verstehen.
+
 ## Manuelle oder halbmanuelle Erstellung von Tuya- und Tuya/Zigbee-Geräten
 
-Mit diesem Verfahren können Sie ein Gerät manuell hinzufügen und die fehlenden Befehle manuell erstellen. Es ist für fortgeschrittene Benutzer gedacht.
+Dieses Verfahren erfordert, dass Sie den Localkey manuell aus der Tuya-Cloud kopieren.
 
-  [Siehe spezifische Dokumentation zu Tuya und Tuya/Zigbee](./tuya)
+ [Siehe spezifische Dokumentation für Tuya/Zigbee-Gateways](./tuya#tocAnchor-1-1)
  
-## Für Hilfe
-Geben Sie so viele Informationen wie möglich an: Jeedom-Hardware- und Softwarekonfiguration, etwaige Verbindungsfehlermeldungen zum Tuya-Cloud-Plugin, Tuya-Cloud-Informationen, Protokolle oder alle relevanten Bemerkungen.
+ [Siehe spezifische Dokumentation für Tuya Wifi-Produkte](./tuya#tocAnchor-1-10)
 
-### Geben Sie Tuya-Cloud-Informationen an
-Dies ist erforderlich, wenn ein Gerät während der Aufnahme nicht oder nur unvollständig erstellt wurde und das Gerät nicht zu den nicht kompatiblen Geräten gehört. Das Plugin sucht im Tuya-Einbindungsmodus nach diesen Informationen.
 
-Liste der Geräte abrufen:
-- im Tuya-Entwickler: IoT-Plattform > Cloud > Entwicklung > Projekt öffnen > Geräte
-- Machen Sie einen Screenshot der Geräte
+Aufmerksamkeit :
 
-Geräteinformationen abrufen:
-- im Tuya-Entwickler: IoT-Plattform > Cloud > Entwicklung > Projekt öffnen > Geräte
-- Kopieren Sie die Geräte-ID des zu debuggenden Geräts
-- Cloud > Api Explorer > (im neuen Fenster) Device Control (Standard Onstruction Set) > Spezifikation abrufen
-- Fügen Sie die Geräte-ID ein > Anfrage senden > Kopieren (Link „Antwort“ im rechten Fenster)
-- Füge die Kopie im Forum ein
-
-### Protokolle abrufen
-
-- Konfigurieren Sie wifilightV2-Protokolle, da sie ausführlich sind. Konfigurieren Sie sie, indem Sie die Anzahl der Zeilen in der Debug-Konfiguration von Jeedom erhöhen.
-- Löschen Sie die _tuya-Protokolle, warten Sie 2 Minuten und stellen Sie die _tuya-Protokolle wieder her
-- Kopieren Sie diese Protokolle im Forum
+Lidl Tuya/Zigbee-Produkte, die mit der Lidl-Anwendung gekoppelt sind, wechseln zu Protokoll 3.4.
 
 # Nanoleaf
 

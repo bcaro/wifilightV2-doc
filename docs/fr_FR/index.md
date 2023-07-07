@@ -321,9 +321,7 @@ Il suffit de mettre un nombre différent de zéro dans le champ groupe lors de l
 Il y a 2 curseurs pour la température en Kelvin. Kelvin exprimé en % de 0 (chaud) à 100 (froid) et KelvinVal exprimé en Kelvin de min à max. 
 Les valeurs par défaut correspondent la plupart du temps aux données du constructeur. Pour certaines lampes qui ne donnent pas les valeurs min et max, le plugin utilise par défaut 2700 à 6500.
 Pour certaines lampes, les valeurs min et max peuvent être erronées et les valeurs extrêmes non comprises par la lampe. Il faut ajuster ces valeurs pour qu'elles soient dans les limites acceptées par la lampe. 
-Vous pouvez prévenir le développeur pour qu'il modifie la configuration par défaut pour éviter ces ajustements.
-
-Noter que les lampes Tuya n'ont pas ces 2 curseurs car le plugin ne peut pas savoir qu'une donnée correspond à une température de couleur.
+Vous pouvez prévenir le développeur pour qu'il modifie la configuration par défaut pour éviter ces ajustements.   
 
 # liste des couleurs
 
@@ -474,21 +472,21 @@ Aucune aide ne sera donnée pour récupérer le jeton.
 Les périphériques compatibles sont :
 - prises simple : MSS110 MSS210
 - prises simple + consommation : MSS310 (la consommation ne remonte que toutes les 30 secondes)
-- prises doubles : MSS120 MSS620
-- prises quadruples : MSS420
-- prises quintuples : MSS425
+- prises doubles MSS120 MSS620
+- prises quadruples MSS420
+- prises quintuples MSS425
 - lampes couleur : MSL120 BR30
-- lampes : MSL420 MSL430 MSL450
+- lampes MSL420 MSL430 MSL450
 - lampes variateur : MSL100
 - strip led : MSL320 MSL320 pro
-- volets roulants : MRS100 (retour d'état et positionnement non fonctionnels)
-- garage : MSG100 MSG200
-- commutateur : MSS710
-- interrupteurs : MSS510 MSS550
-- diffuseurs : MOD100 MOD150
-- thermostat : MTS200
+- volets roulants MRS100 (retour d'état et positionnement non fonctionnels)
+- garage MSG100
+- commutateur MSS710
+- interrupteurs MSS510 MSS550
+- diffuseurs MOD100 MOD150
+- thermostat MTS200
 - hub : MSH300
-   - capteur de température : MS100
+   - capteur de température MS100
    - têtes thermostatiques : MTS100 MTS150
    - détecteur fumée : GS559A en beta tester les informations de fumée et de chaleur
 - purificateur MAP100 beta à tester

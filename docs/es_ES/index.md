@@ -319,8 +319,6 @@ Los valores predeterminados corresponden principalmente a los datos del fabrican
 Para algunas lámparas, los valores mínimo y máximo pueden ser incorrectos y los valores extremos no son comprendidos por la lámpara. Estos valores deben ajustarse para que estén dentro de los límites aceptados por la lámpara.
 Puede notificar al desarrollador que cambie la configuración predeterminada para evitar estos ajustes.
 
-Tenga en cuenta que las lámparas Tuya no tienen estos 2 controles deslizantes porque el complemento no puede saber que un dato corresponde a una temperatura de color.
-
 # lista de colores
 
 Para las bombillas de colores, debe haber creado el dispositivo en modo extendido + colores + disco. A continuación, se asocia una lista de opciones con cada color. Si se eliminan los comandos de color, la lista de opciones creada automáticamente no se modificará, pero la lista desplegable ya no podrá acceder a este color. Para no ser molestado en la interfaz, es necesario suprimir la visualización de los controles de color.
@@ -468,23 +466,23 @@ No se brindará ayuda para recuperar la ficha.
 Los dispositivos compatibles son:
 - enchufes individuales: MSS110 MSS210
 - enchufes individuales + consumo: MSS310 (el consumo solo sube cada 30 segundos)
-- enchufes dobles: MSS120 MSS620
-- enchufes cuádruples: MSS420
-- enchufes quíntuples: MSS425
+- MSS120 MSS620 enchufes dobles
+- Zócalos cuádruples MSS420
+- Zócalos quíntuples MSS425
 - lámparas de color: MSL120 BR30
-- lámparas: MSL420 MSL430 MSL450
+- Lámparas MSL420 MSL430 MSL450
 - lámparas de atenuación: MSL100
 - tira led: MSL320 MSL320 pro
-- persianas enrollables: MRS100 (retroalimentación de estado y posicionamiento no funcional)
-- garaje: MSG100 MSG200
-- interruptor: MSS710
-- interruptores: MSS510 MSS550
-- difusores: MOD100 MOD150
-- termostato: MTS200
+- Persianas enrollables MRS100 (retroalimentación de estado y posicionamiento no funcional)
+- garaje MSG100
+- Interruptor MSS710
+- Conmutadores MSS510 MSS550
+- Difusores MOD100 MOD150
+- Termostato MTS200
 - cubo: MSH300
-    - sensor de temperatura: MS100
+    - Sensor de temperatura MS100
     - cabezas termostáticas: MTS100 MTS150
-    - detector de humo: GS559A en pruebas beta de información de humo y calor
+    - detector de humo: GS559A en beta para probar información de humo y calor
 - Se probará el purificador MAP100 beta
 - Se probará el humidificador beta MSXH0
 
@@ -568,41 +566,49 @@ Muchas marcas son compatibles, incluida Sonoff. Los productos probados son:
 - Sonoff THR316D sensor de temperatura y humedad + interruptor
 - Sonoff básico R2, RF, POW, Mini
 -Sonoff Dual R2
-- Sonoff Dual R3: la recuperación de consumo solo sube si la aplicación ewelink está activa, la configuración del motor no está completamente implementada. Para actualizar el consumo, debe solicitar una acción que no tenga impacto en un escenario cada minuto.
+- Sonoff Dual R3 (la recuperación de consumo solo sube si la aplicación ewelink está activa, la configuración del motor no está completamente implementada)
 -Sonoff 4CH/4CH PRO
 - Toque Sonoff
 -Sonoff S20/S26
 -Sonoff T1/TX
 -Sonoff SLAMPHER
 -Sonoff T4EUC1
-- Sonoff Ifan 2/3/4 para probar
-- Sonoff POW R316/320: para actualizar el consumo, debe solicitar una acción, por ejemplo, encender el wifi led en un escenario cada minuto
+- Ifan 2/3/4 para probar
 - Sonoff RF bridge 433 solo para sensores (puerta, detector de presencia, mando a distancia)
--Sonoff Micro USB
+- Sonoff Micro USB: elija el canal 1, proporcionado para 4 canales para un modelo USB de 4 canales que no sea sonoff, retorno de estado no funcional en fw 3.7
 
 No obstante, la compatibilidad de estos periféricos no está garantizada ya que el protocolo puede ser modificado por los fabricantes. No modifique el firmware del dispositivo sin comprobar que es compatible con el complemento.
 
-El sonoff DW2 no es compatible porque es puramente en la nube y no ingresa al punto de acceso para encontrar apiKey y DeviceID. Lo mismo es cierto para todos los sensores wifi alimentados por batería compatibles con ewelink.
+El sonoff DW2 no es compatible porque es puramente en la nube y no ingresa al punto de acceso para encontrar apiKey y DeviceID. Es probable que sea el mismo para todos los sensores wifi compatibles con ewelink.
 
 Zigbee Hub no es compatible (y puramente en la nube), así como todos los dispositivos Zigbee.
 
 Ninguna bombilla o tira de led es compatible.
 
-Para dispositivos multicanal (como Sonoff 4CH, interruptores o regletas) hay que crear tantos dispositivos wifilightV2 como canales haya, una copia del primero creado lo hace fácil, luego hay que cambiar el número de canal que va de 1 a las 4.
+Para dispositivos multicanal (como el Sonoff 4CH) tienes que crear tantos dispositivos wifilightV2 como canales haya, una copia del primero creado lo hace fácil, luego tienes que cambiar el número de canal
 
 Para dispositivos que no están presentes en esta lista o si la configuración no funciona o si un dispositivo no tiene el subtipo correcto y después de usar el procedimiento de integración de dispositivos, proporcione el contenido de los registros wifilightV2_inc en el [foro] (https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) para permitir la integración del módulo en el complemento.
 
 # Tuya Smartlife y Cloud Tuya
 
-La creación de la mayoría de los dispositivos Tuya y Tuya/Zigbee es automática al recuperar su información de configuración de la nube de Tuya. Para ello, los dispositivos deben funcionar en la aplicación Tuya Smartlife. Sin embargo, a partir de entonces, el acceso a los dispositivos sigue siendo local.
+La creación de la mayoría de los dispositivos Tuya y Tuya/Zigbee es automática. Sin embargo, el acceso a los dispositivos sigue siendo local.
 
 Los dispositivos Tuya utilizan diferentes protocolos:
 
-<3.3: Este antiguo protocolo no es compatible con la inclusión. El complemento encontrará el dispositivo en la nube de Tuya, pero no encontrará el protocolo correcto. Debe cambiarlo manualmente usando fw 1.0 y asignar manualmente su dirección IP y elegir una configuración de la lista.
 
-3.3/3.4/3.5: Los dispositivos con estos protocolos normalmente se encuentran automáticamente en la inclusión de Tuya, ya sea para dispositivo wifi o puerta de enlace Zigbee.
+<3.3 : este antiguo protocolo no admite la inclusión. El complemento encontrará el dispositivo en la nube de Tuya, pero no encontrará el protocolo correcto. Debe cambiarlo manualmente utilizando el tipo V1 compatible con Tuya smartLife. No hay una puerta de enlace Tuya Zigbee con este protocolo.
 
-Si el complemento no encuentra el protocolo correcto, es posible cambiarlo manualmente sin perder los comandos creados por la nube Tuya, debe elegir el subtipo personalizado para un dispositivo y la puerta de enlace para una puerta de enlace Tuya/Zigbee, antes de guardar.
+
+3.3 : Los dispositivos con este protocolo normalmente se encuentran automáticamente en la inclusión de Tuya, ya sea para un dispositivo wifi o una puerta de enlace Zigbee. El tipo utilizado es Tuya smartlife compatible V3 o puerta de enlace Tuya/Zigbee V1.
+
+
+3.4 : Los dispositivos con este protocolo normalmente se encuentran automáticamente en la inclusión de Tuya, ya sea para un dispositivo wifi o una puerta de enlace Zigbee. En 2022, este protocolo comienza a extenderse. El tipo utilizado es Tuya smartlife compatible V4 o puerta de enlace Tuya/Zigbee V2.
+
+
+Si el complemento no encuentra el protocolo correcto, es posible cambiarlo manualmente sin perder los comandos creados por la nube Tuya, debe elegir el subtipo personalizado antes de guardar.
+
+Si el complemento no encuentra el protocolo correcto, es posible cambiarlo manualmente sin perder los comandos creados por la nube Tuya, debe elegir el subtipo personalizado antes de guardar.
+
 
 ## Configuración de la plataforma Tuya
 
@@ -610,57 +616,52 @@ Siga esto primero y [tuto](https://linkdhome.com/articles/local-tuya-device-cont
 
 Esta parte del complemento requiere el lanzamiento de las dependencias: si el complemento no encuentra la dirección IP local, establezca la conexión entre la dirección mac y la dirección IP proporcionada en los parámetros del dispositivo de la aplicación Tuya y su enrutador y cambie el Dirección IP. El procedimiento para encontrar la dirección IP utiliza un comando del sistema Linux, si no se puede cargar o si el sistema no es compatible, la dirección IP no se puede encontrar automáticamente.
 
-### Notas y limitaciones
-- si la dirección IP es 0.0.0.0, significa que Jeedom no tiene acceso al dispositivo, probablemente sea la configuración de red para reconsiderar. Tenga en cuenta que la dirección IP 0.0.0.0 también se asigna a dispositivos con firmware <3.3. y dispositivos no compatibles.
-- algunas puertas de enlace Tuya/Zigbee no son compatibles, consulte el foro de Jeedom.
-- Los dispositivos que no funcionan con Zigbee y que funcionan con baterías son puramente en la nube (cierre, puerta, sensores de temperatura, por ejemplo) se integrarán pero el complemento no podrá acceder a ellos
+### Observaciones:
+- Si ya existe un dispositivo con el mismo devId, no se realizará la inclusión.
+- Los dispositivos que no son zigbee y que funcionan con baterías son pura nube (cierre, puerta, sensores de temperatura, por ejemplo) se integrarán pero el complemento no podrá acceder a ellos
+- se crean los colores según los 3 formatos conocidos, así como los comandos de saturación e intensidad relacionados
 - los periféricos con información codificada (parte actuadora de las alarmas en general) no son gestionados
 - los dispositivos con información no estándar (posiblemente se pueden resolver con un bloque de código en un escenario) no se manejan
-- el complemento no decodifica comandos complejos y luego coloca información sin procesar de la nube Tuya en parámetros
+- el complemento no decodifica comandos complejos y luego coloca el Json de la nube Tuya en los parámetros
 - Es posible que la nube de Tuya no proporcione todos los comandos del dispositivo.
-- los dispositivos multicanal (multienchufes, multiconmutadores) incluidos por el complemento a través de la nube de Tuya se agrupan en el mismo dispositivo
-- si ya existe un dispositivo con el mismo dispositivo, no se realizará la inclusión - se crean los colores según los 3 formatos conocidos, así como los comandos de saturación e intensidad relacionados
 - la eliminación de un pedido creado por el complemento a través de la nube Tuya ya no se puede volver a crear
 - el mínimo y el máximo de un valor numérico se cargan desde la nube. Según sea necesario, modifique los parámetros #slider# y #value#, así como el mínimo y el máximo de Jeedom. Esta parte se mejorará con los comentarios de los usuarios.
 
-
-### Consejos
+### Puntas:
 - si no se encontró la dirección IP porque el periférico no está conectado, dale la dirección: 0.0.0.0, conéctalo y reinicia el procedimiento de inclusión.
-- si la clave local de un periférico ha cambiado, modifique el devId o el nodeId del periférico (poniendo por ejemplo @ al final), rehaga la inclusión y copie el devId o el nodeId y la nueva clave local en el antiguo periférico. Finalmente, elimine el dispositivo creado por inclusión.
+- si la clave local de un periférico ha cambiado, modifique el devId del periférico, rehaga la inclusión y copie el devId y la nueva clave local en el periférico antiguo. Finalmente, elimine el dispositivo creado por inclusión.
 - si el procedimiento automático falla o si la nube Tuya no proporciona los comandos, cambie al [modo de aprendizaje del dispositivo] (./tuya#tocAnchor-1-1-6) y actúe solo en los botones de la aplicación Tuya Smartlife en correspondencia . Si se usan otros botones, el complemento creará duplicados de los comandos creados a través de la nube de Tuya. Pero cuidado, esta documentación es muy técnica y está reservada para un público informado, no la use en modo de pánico cuando no tenga los conocimientos para comprender su contenido.
 - en general, los pedidos se pueden crear manualmente o en modo de aprendizaje
 
 ### Sondeo preciso de un evento.
 Cuando se marca la opción "sondeo de estado", el complemento sondea el dispositivo cada 12 segundos. Esto permite, por ejemplo, recuperar el consumo de un periférico cuando este último no lo envía regularmente. Sin embargo, tenga cuidado, esto puede agotar la batería de los dispositivos con batería. Para muchos dispositivos que miden la energía consumida, es necesario abrir la aplicación móvil para que los datos se transmitan al complemento.
 
+### Participación en la mejora de esta parte:
+Puedes ayudar a mejorar la creación automática proporcionando la mayor cantidad de información posible: el Json de la nube Tuya, los cambios realizados, los registros o cualquier comentario relevante.
+
+Para obtener la nube Tuya Json:
+- en el desarrollador de Tuya: Desarrollo en la nube> Desarrollo> suscribirse al proyecto en la nube
+
+En la nueva ventana:
+
+- Nube > Desarrollo > elija el proyecto > dispositivos > copie el ID del dispositivo para depurar
+- Nube > Api Explorer > (en la nueva ventana) Sistema de administración de hogar inteligente > Control de dispositivos > Obtener atributo de especificación del dispositivo (el segundo en la lista sin atributos)
+- pegue el ID del dispositivo > Enviar solicitud > Copiar (enlace de la ventana derecha)
+
+[Ver documentación específica](./tuya#tocAnchor-1-1) ,pero cuidado, esta documentación es muy técnica y está reservada para un público informado, no la use en modo de pánico cuando no tenga los conocimientos para comprender su contenido.
+
 ## Creación manual o semimanual de dispositivos Tuya y Tuya/Zigbee
 
-Este procedimiento le permite agregar manualmente un dispositivo y crear manualmente los comandos que faltan. Está destinado a usuarios avanzados.
+Este procedimiento requiere que copie manualmente la clave local de la nube Tuya.
 
-  [Ver documentación específica de Tuya y Tuya/Zigbee](./tuya)
+  [Ver documentación específica para las puertas de enlace Tuya / Zigbee](./tuya#tocAnchor-1-1)
  
-## Para obtener ayuda
-Proporcione tanta información como sea posible: configuración de hardware y software de Jeedom, cualquier mensaje de error de conexión del complemento de la nube de Tuya, información de la nube de Tuya, registros o cualquier comentario relevante.
+  [Ver documentación específica de los productos Tuya Wifi](./tuya#tocAnchor-1-10)
 
-### Dar información de la nube de Tuya
-Esto se debe hacer cuando un dispositivo no se crea o se crea de forma incompleta durante la inclusión, mientras que el dispositivo no está en aquellos que no son compatibles. El complemento buscará esta información en el modo de inclusión de Tuya.
 
-Obtener lista de dispositivos:
-- en el desarrollador Tuya: plataforma iot > Nube > Desarrollo > Proyecto abierto > dispositivos
-- tomar una captura de pantalla de los dispositivos
+Atención :
 
-Obtener información del dispositivo:
-- en el desarrollador Tuya: plataforma iot > Nube > Desarrollo > Proyecto abierto > dispositivos
-- copie la identificación del dispositivo del dispositivo que se va a depurar
-- Nube > Api Explorer > (en la nueva ventana) Control de dispositivos (Conjunto de instrucciones estándar) > Obtener la especificación
-- pegue el ID del dispositivo > Enviar solicitud > Copiar (enlace de la ventana derecha de "respuesta")
-- pegar la copia en el foro
-
-### Obtener registros
-
-- Configure los registros wifilightV2, ya que son detallados, configúrelos aumentando la cantidad de líneas en la configuración de depuración de Jeedom.
-- Borrar registros de _tuya, esperar 2 minutos y recuperar registros de _tuya
-- copiar estos registros en el foro
+Los productos Lidl Tuya/Zigbee combinados con la aplicación Lidl cambian al protocolo 3.4. 
 
 # NanoLeaf
 
