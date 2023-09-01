@@ -10,6 +10,12 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.96k 2023-09-31 (Jeedom V4.2)
+- Tuya : modification des messages d'erreur si pas d'accès au cloud
+- Tuya : l'adresse IP n'est plus mise à 0.0.0.0 lors de l'inclusion si le périphérique existe déjà et a une adresse IP attribuée
+- Luna : rechargement automatique de la page de configuration du plugin wifilightV2 pour obtenir les droits (contournement de bogue)
+- Corrections orthographiques
+
 1.96j 2023-06-30 (Jeedom V4.2)
 - Meross : correction bogue du MSG100
 
@@ -561,7 +567,7 @@ ATTENTION : Il est nécessaire de sauvegarder TOUS les périphériques de type l
 -   Refonte de la documentation
 
 1.25 - 2018-11-25
--   Ajout en beta des controlleur led adressable SP108 Led Shop (ON/OFF)
+-   Ajout en beta des contrôleurs led adressable SP108 Led Shop (ON/OFF)
 -   Ajout de la télécommande RGB Mi.Light 
 -   Correction de bogues mineurs
 
