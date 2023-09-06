@@ -78,7 +78,7 @@ Produits pouvant être compatibles et non garantis :
 -	Passerelles wifi (dont Lidl) utilisant le protocole Tuya pour les périphériques Zigbee !!
 -   Périphériques Meross !!
 -	Produits Wiz !!
--   Tapo !
+-   Tapo !  -> non compatible avec le dernier firmware pour certaines prises 
 
 
 Pour ces derniers contrôleurs ou périphériques wifi, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin. Certains produits particuliers peuvent ne pas être compatibles.
@@ -431,6 +431,8 @@ Les périphériques compatibles sont :
 Tapo :
 - ampoules L510 L530 L900 L920
 - prises P100 P110
+
+attention : -> non compatible avec le dernier firmware
 
 Kasa :
 -   ampoules KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130
