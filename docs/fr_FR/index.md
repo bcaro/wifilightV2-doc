@@ -613,7 +613,12 @@ Si le plugin ne trouve pas le bon protocole, il est possible de le changer manue
 
 ## Inclusion des périphériques Tuya depuis le cloud
 
-Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "Overview" pour récupérer : Access ID et Access Secret. Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya et sauvegarder, ensuite sélectionner : Tuya Passer en inclusion. Les périphériques sont créés automatiquement. 
+Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "Overview" pour récupérer : Access ID et Access Secret. 
+- Tuya change souvent sonb interface,ilfaut adapter le tuto
+- La durée du plan gratuit est limitée,il fauttrouiver pour le renouveler
+- il se peut que tous les dpsne soient pas créés,voir [ici](https://community.jeedom.com/t/borne-de-recharge-feyree/109739/23).
+
+Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya et sauvegarder, ensuite sélectionner : Tuya Passer en inclusion. Les périphériques sont créés automatiquement. 
 
 ### Remarques et limitations
 - si l'adresse IP est à 0.0.0.0 c'est que Jeedom n'a pas accès au périphérique, c'est probablement la configuration réseau à reconsidérer. Noter que l'adresse IP 0.0.0.0 est aussi affectée aux périphériques de firmware  <3.3. et aux périphériques non compatibles.

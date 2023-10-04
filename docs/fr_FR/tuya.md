@@ -1,6 +1,3 @@
-[Retour à la documentation générale](./index.md)
-
-
 # Périphériques et Passerelles Zigbee Tuya
 
 Cette partie est à utiliser après avoir inclus le périphérique et sa passerelle via le cloud Tuya. Si ce n'est pas le cas, revenir à la documentation principale et lire pourquoi il y a besoin d'utiliser cette partie de la documentation très technique. Elle est à utiliser lorsque le cloud Tuya n'a pas donné entière satisfaction et est réservée aux utilisateurs avertis.
@@ -40,7 +37,7 @@ le x.x = 3.3 ou 3.4 ou 3.5 à modifier manuellement. Il est nécessaire de modif
 
 ## Mode apprentissage
 
-Pour lancer l'apprentissage, cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Smartlife pour que le plugin crée automatiquement les commandes actions et infos, utilisez toutes les possibilités offertes par l'appli. Pour terminer, cliquer sur le bouton « arrêter l’inclusion » et sauvegarder. Si rien n'est trruvé : l'adresse IP n'est pas bonne ou le firmware n'est pas bon.
+Pour lancer l'apprentissage, cocher la case « mode inclusion » et sauvegarder le périphérique qui entre alors en mode inclusion. Attendre quelques secondes et modifier l'état du périphérique réel ou avec l'appli Smartlife pour que le plugin crée automatiquement les commandes actions et infos, utilisez toutes les possibilités offertes par l'appli. Pour terminer, cliquer sur le bouton « arrêter l’inclusion » et sauvegarder. Si rien n'est trouvé : l'adresse IP n'est pas bonne ou le firmware n'est pas bon.
 
 Ce mode est uniquement là pour aider la configuration personnalisée d'un périphérique qui est mal configuré par le cloud. L'utilisation de ce mode ne peut donner un périphérique complètement fonctionnel et nécessite de comprendre de supprimer ou de modifier les commandes créées.
 
@@ -199,11 +196,11 @@ Le codage de la couleur chez Tuya a plusieurs formats qui sont différents de ce
 
 Afin de permettre au plugin de fonctionner correctement pour les couleurs, il faut identifier les formats utilisés par Tuya lors d'un changement de couleur avec l'appli Smartlife et en observant à cet instant dans les logs le n° de dps qui a été modifié.
 
-1 - format HSV : H (codé de 0 à 360 ) S (codé de 0 à 1000) V (codé de 0 à 1000) le résultat est ensuite donné en base 16, soit 12 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya : 000003E803E8 (Hue = 0000 S =03E8 V=03E8)
+1 - format HSV : H (codé de 0 à 360) S (codé de 0 à 1000) V (codé de 0 à 1000) le résultat est ensuite donné en base 16, soit 12 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya : 000003E803E8 (Hue = 0000 S =03E8 V=03E8)
 
-2 - format RGB00HSV : RGB est codé sur 6 digits (chacun de 00 à FF pour chaque couleur). 00 est intercalé puis H (codé de 0 à 255 ) S (codé de 0 à 255) V (codé de 0 à 255). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya : FF00000000FFFF
+2 - format RGB00HSV : RGB est codé sur 6 digits (chacun de 00 à FF pour chaque couleur). 00 est intercalé puis H (codé de 0 à 255) S (codé de 0 à 255) V (codé de 0 à 255). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du rouge : RGB = FF0000 et H= 0° S=100% V=100% soit en codage Tuya : FF00000000FFFF
 
-3 - format RGB0HSV : RGB sont codés comme ci-dessus. 0 est intercalé puis H (codé de 0 à 360 ) S (codé de 0 à 100) V (codé de 0 à 100). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du violet : RGB = FF00FF et H= 300° S=100% V=100% soit en codage Tuya : FF0000012C6464
+3 - format RGB0HSV : RGB sont codés comme ci-dessus. 0 est intercalé puis H (codé de 0 à 360) S (codé de 0 à 100) V (codé de 0 à 100). Le résultat est donné en base 16, soit 14 digits hexadécimaux. Exemple pour du violet : RGB = FF00FF et H= 300° S=100% V=100% soit en codage Tuya : FF0000012C6464
 
 Dans les logs, lors de l'utilisation de la modification de la couleur de la lampe, on trouve :
 
@@ -339,7 +336,5 @@ Afin d'obtenir de l'aide rapide et de qualité, il est nécessaire de bien prép
 Si une étape est KO, ce n'est pas la peine de tester les suivantes. Si vous ne comprenez pas ce que vous faites, les aidants du forum ne pourront pas le savoir pour vous. Il est rappelé au tout début de la doc du plugin qu'utiliser des périphériques Tuya en local nécessite de savoir suivre à la lettre une procédure et d'avoir quelques notions en informatique.
 
 [Retour à la documentation générale](./index.md)
-
-
 
 
