@@ -615,7 +615,7 @@ Si le plugin ne trouve pas le bon protocole, il est possible de le changer manue
 
 Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "Overview" pour récupérer les deux paramètres : Access ID et Access Secret. 
 - Tuya change souvent son interface, il faut adapter le tuto
-- La durée du plan gratuit est limitée,il faut chercher et trouver pour le renouveler
+- La durée du plan gratuit est limitée, il faut chercher et trouver pour le renouveler
 
 Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya et sauvegarder. Ensuite, sélectionner : Tuya Passer en inclusion. Les périphériques sont créés automatiquement. 
 
