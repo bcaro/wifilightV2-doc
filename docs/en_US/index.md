@@ -596,44 +596,39 @@ For multi-channel devices (like the Sonoff 4CH) you have to create as many wifil
 
 For devices not present in this list or if the configuration does not work or if a device does not have the correct subtype and after using the device integration procedure, give the contents of the wifilightV2_inc logs in the [forum ](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632) in order to allow the integration of the module in the plugin.
 
-# Tuya Smartlife and Cloud Tuya
+# Tuya Smartlife and Tuya cloud
 
-The creation of most Tuya and Tuya/Zigbee devices is automatic. However, access to devices remains local.
+The creation of most Tuya and Tuya/Zigbee devices is automatic by retrieving their configuration information from the Tuya cloud. For this, the devices must work in the Tuya Smartlife app. However, afterward, access to the devices remains local.
 
 Tuya devices use different protocols:
 
+<3.3: This old protocol is not supported by inclusion. The plugin will find the device in the Tuya cloud, but it will not find the correct protocol. You need to modify it manually using fw 1.0 and manually assign its IP address and choose a configuration from the list.
 
-<3.3 : This old protocol does not support inclusion. The plugin will find the device in the Tuya cloud, but it won't find the correct protocol. You need to change it manually using Tuya smartLife compatible type V1. There is no Tuya Zigbee gateway with this protocol.
+3.3/3.4/3.5: Devices with these protocols are normally automatically found in Tuya inclusion, whether for a wifi device or a Zigbee gateway.
 
-
-3.3 : Devices with this protocol are normally found automatically in Tuya inclusion, either for a wifi device or a Zigbee gateway. The type used is Tuya smartlife compatible V3 or Tuya/Zigbee V1 gateway.
-
-
-3.4 : Devices with this protocol are normally found automatically in Tuya inclusion, whether for a wifi device or a Zigbee gateway. In 2022, this protocol begins to spread. The type used is: The type used is Tuya smartlife compatible V or Tuya/Zigbee V2 gateway.
-
-
-If the plugin does not find the right protocol, it is possible to change it manually without losing the commands created by the Tuya cloud, you must choose the custom subtype before saving.
-
-
-If the plugin does not find the right protocol, it is possible to change it manually without losing the commands created by the Tuya cloud, you must choose the custom subtype before saving.
+If the plugin does not find the right protocol, it is possible to change it manually without losing the commands created by the Tuya cloud, you must choose the custom subtype for a wifi or Zigbee device and gateway for a Tuya/Zigbee gateway, before saving.
 
 ## Configuration of the Tuya platform
 
-Follow this first [tutorial ](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) and go to the "Overview" tab to retrieve: Access ID and Access Secret. In the plugin configuration, enter these 2 parameters in the Tuya part and save, then select: Tuya Go to inclusion. The devices are created automatically.
+First follow this [tutorial](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) and go to the “Overview” tab to retrieve the two parameters: Access ID and Access Secret.
+- Tuya often changes its interface, you have to adapt the tutorial
+- The duration of the free plan is limited, you have to search and find to renew it
 
-This part of the plugin requires the launch of the dependencies: if the local IP address is not found by the plugin, make the connection between the mac address and the IP address given in the device parameters of the Tuya application and your router and change the IP address. The procedure to find the IP address uses a Linux system command, if it cannot be loaded or if the system is not compatible, the IP address cannot be found automatically.
+In the plugin configuration, enter these 2 parameters in the Tuya section and save. Then select: Tuya Switch to inclusion. Devices are created automatically.
 
 ### Remarks :
-- If a device with the same devId already exists, the inclusion will not be done.
-- non-zigbee and battery-powered devices are pure cloud (closure, door, temperature sensors for example) will be integrated but the plugin will not be able to access them
-- the colors according to the 3 known formats are created as well as the related saturation and intensity commands
+- Wifi and therefore non-Zigbee devices which are on battery and are purely cloud (closing, door, temperature sensors for example) will be integrated but the plugin will not be able to access them
+- if the IP address is 0.0.0.0 it means that Jeedom does not have access to the device, it is probably the network configuration to reconsider. Note that IP address 0.0.0.0 is also assigned to devices with firmware <3.3. and non-compatible devices. In order to improve this accessibility, see [here](https://community.jeedom.com/t/soucis-plugin-wifilightv2/83734/7?u=bernardfr.caron), if the device is not, it is that it is not compatible or that a network configuration prevents dialogue between it and the Jeedom box.
+- some Tuya/Zigbee gateways are not compatible, find out more on the Jeedom forum.
 - peripherals with coded information (actuator part of alarms in general) are not managed
-- devices with non-standard information (possibly can be solved with a code block in a scenario) are not handled
-- the plugin does not decode complex commands and then puts the Json from the Tuya cloud in the parameters
-- Tuya cloud may not provide all device commands.
-- deletion of an order created by the plugin via the Tuya cloud can no longer be recreated
-- the min and max of a numerical value are uploaded from the cloud. As needed, modify the #slider# and #value# parameters as well as the Jeedom min and max. This part is to be improved with user feedback.
-
+- devices with non-standard information (can possibly be resolved with a code block in a scenario) are not managed
+- the plugin does not decode complex commands and then puts raw information from the Tuya cloud into parameters
+- Tuya cloud may not provide all device controls, see [here](https://community.jeedom.com/t/borne-de-recharge-feyree/109739/23) to try to resolve the issue
+- multi-channel devices (multiple sockets, multiple switches) included by the plugin via the Tuya cloud are grouped in the same device
+- if a device with the same devId already exists, the inclusion will not take place.
+- colors according to the 3 known formats are created as well as the related saturation and intensity controls
+- the deletion of an order created by the plugin via the Tuya cloud can no longer be recreated
+- the min and max of a digital value are sent from the cloud. As needed, modify the #slider# and #value# parameters as well as the min and max Jeedom. This part needs to be improved with user feedback.
 
 ### Tips:
 - if the IP address was not found because the peripheral is not connected, give it the address: 0.0.0.0 , connect it and restart the inclusion procedure.

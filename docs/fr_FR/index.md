@@ -609,27 +609,27 @@ Les appareils Tuya utilisent différents protocoles :
 
 3.3/3.4/3.5 : Les appareils avec ces protocoles sont normalement trouvés automatiquement en inclusion Tuya, que ce soit pour un appareil wifi ou une passerelle Zigbee.
 
-Si le plugin ne trouve pas le bon protocole, il est possible de le changer manuellement sans perdre les commandes créées par le cloud Tuya, il faut choisir le sous-type personnalisé pour un périphérique et passerelle pour une passerelle Tuya/Zigbee, avant de sauvegarder.
+Si le plugin ne trouve pas le bon protocole, il est possible de le changer manuellement sans perdre les commandes créées par le cloud Tuya, il faut choisir le sous-type personnalisé pour un périphérique wifi ou Zigbee et passerelle pour une passerelle Tuya/Zigbee, avant de sauvegarder.
 
 ## Inclusion des périphériques Tuya depuis le cloud
 
-Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "Overview" pour récupérer : Access ID et Access Secret. 
-- Tuya change souvent sonb interface,ilfaut adapter le tuto
-- La durée du plan gratuit est limitée,il fauttrouiver pour le renouveler
-- il se peut que tous les dpsne soient pas créés,voir [ici](https://community.jeedom.com/t/borne-de-recharge-feyree/109739/23).
+Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) et aller dans l'onglet "Overview" pour récupérer les deux paramètres : Access ID et Access Secret. 
+- Tuya change souvent son interface, il faut adapter le tuto
+- La durée du plan gratuit est limitée,il faut chercher et trouver pour le renouveler
 
-Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya et sauvegarder, ensuite sélectionner : Tuya Passer en inclusion. Les périphériques sont créés automatiquement. 
+Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya et sauvegarder. Ensuite, sélectionner : Tuya Passer en inclusion. Les périphériques sont créés automatiquement. 
 
-### Remarques et limitations
-- si l'adresse IP est à 0.0.0.0 c'est que Jeedom n'a pas accès au périphérique, c'est probablement la configuration réseau à reconsidérer. Noter que l'adresse IP 0.0.0.0 est aussi affectée aux périphériques de firmware  <3.3. et aux périphériques non compatibles.
+### Notes and limitations
+- les périphériques Wifi et donc non Zigbee qui sont sur pile sont purement cloud (capteurs de fermeture, de porte, de température par exemple) seront intégrés mais le plugin ne pourra pas y accéder
+- si l'adresse IP est à 0.0.0.0 c'est que Jeedom n'a pas accès au périphérique, c'est probablement la configuration réseau à reconsidérer. Noter que l'adresse IP 0.0.0.0 est aussi affectée aux périphériques de firmware  <3.3. et aux périphériques non compatibles. Afin de trester cette accessibilité, voir [ici](https://community.jeedom.com/t/soucis-plugin-wifilightv2/83734/7?u=bernardfr.caron), si le périphérique ne l'est pas, c'est qu'il n'est pas compatible ou qu'une configuration réseau empêche le dialogue entre lui et la box Jeedom. 
 - certaines passerelles Tuya/Zigbee ne sont pas compatibles, se renseigner sur le forum Jeedom.
-- les périphériques non Zigbee et sur pile sont purement cloud (capteurs de fermeture, de porte, de température par exemple) seront intégrés mais le plugin ne pourra pas y accéder
 - les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
 - les périphériques ayant des informations non standard (peut éventuellement être résolu avec un bloc code dans un scénario) ne sont pas gérés
 - le plugin ne décode pas les commandes complexes et met alors dans paramètres l’information brute provenant du cloud Tuya
-- le cloud Tuya peut ne pas fournir toutes les commandes du périphérique.
+- le cloud Tuya peut ne pas fournir toutes les commandes du périphérique, voir [ici](https://community.jeedom.com/t/borne-de-recharge-feyree/109739/23) pour essayer de résoudre le problème
 - les périphériques multicanaux (multiprises, interrupteurs multiples) inclus par le plugin via le cloud Tuya sont regroupés dans le même périphérique
-- si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.- les couleurs suivant les 3 formats connus sont créées ainsi que les commandes saturation et intensité liées
+- si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
+- les couleurs suivant les 3 formats connus sont créées ainsi que les commandes saturation et intensité liées
 - la suppression d'une commande créée par le plugin via le cloud Tuya ne peut plus être recréée
 - le min et le max d'une valeur numérique sont remontés depuis le cloud. Selon les besoins, modifier les paramètres #slider# et #value# ainsi que le min et max Jeedom. Cette partie est à améliorer avec les retours des utilisateurs.
 
@@ -642,7 +642,6 @@ Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuy
 
 ### Scrutation précise d'un évènement
 Lorsque l'option "interrogation de l'état" est cochée, le plugin interroge le périphérique toutes les 12 secondes. Ceci permet, par exemple, de récupérer la consommation d'un périphérique lorsque celui-ci ne l'envoie pas régulièrement. Il faut néanmoins faire attention, ceci peut vider la batterie des périphériques sur batterie. Pour certains périphériques qui mesurent la puissance consommée, l'ouverture de l'application mobile est nécessaire pour que les données soient transmises au plugin.
-
 
 ## Création manuelle ou semi manuelle des périphériques Tuya et Tuya/Zigbee
 

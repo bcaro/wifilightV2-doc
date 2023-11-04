@@ -10,6 +10,11 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.96l 2023-10-04 (Jeedom V4.2)
+- Wiz : nombreuses corrections sur le retour d'état
+- Revogi : correction bogues
+- Corrections orthographiques
+
 1.96k 2023-08-31 (Jeedom V4.2)
 - Tuya : modification des messages d'erreur si pas d'accès au cloud
 - Tuya : l'adresse IP n'est plus mise à 0.0.0.0 lors de l'inclusion si le périphérique existe déjà et a une adresse IP attribuée

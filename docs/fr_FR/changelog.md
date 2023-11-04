@@ -12,6 +12,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 
 1.96l 2023-10-04 (Jeedom V4.2)
 - Wiz : nombreuses corrections sur le retour d'état
+- Revogi : correction bogues
 - Corrections orthographiques
 
 1.96k 2023-08-31 (Jeedom V4.2)
