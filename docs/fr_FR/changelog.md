@@ -10,6 +10,12 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.96m 2023-12-01 (Jeedom V4.2)
+- Sonoff : ajout de l'interrupteur Tx Evolution
+- Tapo : ajout du nouveau protocole
+- Luna : souci lors du chargement de la page du plugin, il suffit de la recharger avec le navigateur
+- Ajout de couleurs sur l'information de connectivité (merci @penta42)
+
 1.96l 2023-10-04 (Jeedom V4.2)
 - Wiz : nombreuses corrections sur le retour d'état
 - Revogi : correction bogues

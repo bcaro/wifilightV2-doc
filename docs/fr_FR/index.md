@@ -6,6 +6,8 @@
 
 Le plugin nécessite d'installer des dépendances. Si les dépendances ne sont pas installées, la recherche des périphériques Tapo, Ewelink et Kasa sera moins performante.
 
+Luna : souci lors du chargement de la page du plugin, il suffit de la recharger avec le navigateur
+
 # Présentation
 
 Attention :
@@ -78,7 +80,7 @@ Produits pouvant être compatibles et non garantis :
 -	Passerelles wifi (dont Lidl) utilisant le protocole Tuya pour les périphériques Zigbee !!
 -   Périphériques Meross !!
 -	Produits Wiz !!
--   Tapo !  -> non compatible avec le dernier firmware pour certaines prises 
+-   Tapo !
 
 
 Pour ces derniers contrôleurs ou périphériques wifi, le protocole d'échange ne provient pas directement du constructeur qui peut donc le modifier à tout moment. Plusieurs versions existent sur le marché qui ne sont pas toutes compatibles avec le plugin. Certains produits particuliers peuvent ne pas être compatibles.
@@ -280,9 +282,10 @@ Pour les autres périphériques il n'y a pas de retour d'état.
 
 La commande stateGet permet, pour les périphériques qui renvoient leur état, de forcer la mise à jour de l'état en interrogeant le périphérique.
 
-## Mise à jour par scénario
 
-Les commandes xxxxGet et Etat peuvent être utilisées dans un scénario Jeedom.
+## Mise à jour par scénario et scrutration rapided'un évènement
+
+Les commandes xxxxGet et Etat peuvent être utilisées dans un scénario Jeedom. Il est possible de créer un scénario déclenché une seule fois au démarrage de Jeedom : mettre une boucle sur 1 000 000. Mettre à l'intérieur une autre boucle sur 1 000 000. Ces 2 boucles imbriquées vont empêcher la sortie du scénario pendant des centaines d'années. Dans la boucle interne, mettre une pause de 10s et un appel au stateGet du périphérique pour mettre à jour les informations du périphérique. La pause peut être diminuée jusque 1s selon la puissance et la complexité de l'installation.
 
 ## Information de connexion
 
@@ -294,7 +297,7 @@ La commande ConnectedGet permet de récupérer l'état de la connexion de chaque
 -  -5 : mauvaise réponse du périphérique
 -  -6 : périphérique sans retour d'état
 
-Sur la page des périphériques, un émoticône indique si la connexion est OK ou KO.  L'émoticône indifférent est utilisé dans les cas où le plugin ne peut connaitre l'état de la connexion, soit les périphériques qui ne renvoient pas leur état. Noter que pour les périphériques avec passerelle (Tuya Zigbee, Meross), l'état de la connexion est celui de la passerelle et est appliqué à tous les périphériques connectés à la passerelle.
+Sur la page des périphériques, un émoticône indique si la connexion est OK ou KO. L'émoticône indifférent est utilisé dans les cas où le plugin ne peut connaitre l'état de la connexion, soit les périphériques qui ne renvoient pas leur état. Noter que pour les périphériques avec passerelle (Tuya Zigbee, Meross), l'état de la connexion est celui de la passerelle et est appliqué à tous les périphériques connectés à la passerelle.
 
 # Synchronisation
 
@@ -432,13 +435,13 @@ Tapo :
 - ampoules L510 L530 L900 L920
 - prises P100 P110
 
-attention : -> non compatible avec le dernier firmware
-
 Kasa :
 -   ampoules KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130
 -   prises HS100 HS110 KP105 KP110
 
 Ne pas utiliser ou supprimer la double authentification avec les applications Tapo/Kasa. Les effets ne fonctionennent pas, même si les commandes sont créées par le plugin.
+
+Pour les périphériques avec le firmware déployé vers novembre 2023, utiliser Tapo V2. L'inclusion trouve normalement le bon firmware.
 
 
 ## Configuration du cloud TP-Link
@@ -448,7 +451,7 @@ Dans la configuration du plugin, renseigner l'adresse mail et le mot de passe de
 
 Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, si elle ne peut être chargée ou si le système n'est pas compatible, l'adresse IP ne pourra pas être trouvée automatiquement.
 
-Pour les périphériques de la liste ci-dessous, le sous-type est trouvé, dans les autres cas le Tapo P100 est choisi par le plugin, vous pouvez changer le sous-type sans perdre le deviceId.
+Pour les périphériques de la liste ci-dessus, le sous-type est trouvé, dans les autres cas le Tapo P100 est choisi par le plugin, vous pouvez changer le sous-type sans perdre le deviceId.
 
 Si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
 
@@ -456,8 +459,7 @@ Si un périphérique de même deviceId existe déjà, l'inclusion ne se fera pas
 
 Par la suite, le contrôle des périphériques est local.
 
-Notes : 
-- Les prises HS100 HS110 KP105 KP110 peuvent nécessiter d'utiliser le protocole V2, faire la modification manuellement.
+Note : 
 - Tous les périphériques TP-link présents dans le cloud sont créés, en particulier les routeurs ou bornes wifi TP-link. Comme le plugin ne les reconnait pas, une prise TAPO P100 est créée, il suffit de supprimer les périphériques inutiles.
 
 
@@ -511,13 +513,6 @@ Attention : des utilisations répétées du getgey peuvent produire un blocage d
 ## Hub Meross 
 Pour les équipements reliés au hub Meross MSH300 et après avoir indiqué son adresse ip et l'avoir sauvegardé, faire un appui sur getKey qui récupère la clé et tous les périphériques reliés au Hub. Lors de l'ajout d'un nouveau périphérique au hub, faire simplement getKey pour le créer dans le plugin.
 
-
-## Scrutation précise d'un évènement
-
-Créer un scénario déclenché une seule fois au démarrage de Jeedom : mettre une boucle sur 1 000 000. Mettre à l'intérieur une autre boucle sur 1 000 000 ces 2 boucles imbriquées munies d'une pause vont empêcher la sortie du scénario pendant des centaines d'années. Dans la boucle interne mettre une pause de 10s et un appel à stateGet du périphérique pour mettre à jour les informations du périphérique. La pause peut être diminuée jusque 1s selon la puissance et la complexité de l'installation.
-
-- Permet de récupérer l'information d'ouverture du module garage
-- Permet un calcul plus précis de la consommation : récupérer alors la puissance, la diviser par 360 (pour une période de scrutation de 10s) et l’ajouter à une variable qui s’appellera consommation. Le 360 permet d'obtenir la consommation en kWh.
 
 # Sonoff en mode DIY
 
