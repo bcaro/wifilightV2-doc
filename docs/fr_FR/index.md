@@ -283,7 +283,7 @@ Pour les autres périphériques il n'y a pas de retour d'état.
 La commande stateGet permet, pour les périphériques qui renvoient leur état, de forcer la mise à jour de l'état en interrogeant le périphérique.
 
 
-## Mise à jour par scénario et scrutration rapided'un évènement
+## Mise à jour par scénario et scrutration rapide d'un évènement
 
 Les commandes xxxxGet et Etat peuvent être utilisées dans un scénario Jeedom. Il est possible de créer un scénario déclenché une seule fois au démarrage de Jeedom : mettre une boucle sur 1 000 000. Mettre à l'intérieur une autre boucle sur 1 000 000. Ces 2 boucles imbriquées vont empêcher la sortie du scénario pendant des centaines d'années. Dans la boucle interne, mettre une pause de 10s et un appel au stateGet du périphérique pour mettre à jour les informations du périphérique. La pause peut être diminuée jusque 1s selon la puissance et la complexité de l'installation.
 
