@@ -441,7 +441,7 @@ Kasa :
 
 Ne pas utiliser ou supprimer la double authentification avec les applications Tapo/Kasa. Les effets ne fonctionennent pas, même si les commandes sont créées par le plugin.
 
-Pour les périphériques avec le firmware déployé vers novembre 2023, utiliser Tapo V2. L'inclusion trouve normalement le bon firmware.
+Pour les périphériques avec le firmware déployé vers novembre 2023, utiliser Tapo V2. L'inclusion trouve normalement le bon firmware. Il peut être nécessaire au préalable de se connecter à l'appli mobile pour que l'accès au cloud fonctionne.
 
 
 ## Configuration du cloud TP-Link
