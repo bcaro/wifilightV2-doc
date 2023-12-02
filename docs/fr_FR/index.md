@@ -439,7 +439,7 @@ Kasa :
 -   ampoules KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130
 -   prises HS100 HS110 KP105 KP110
 
-Ne pas utiliser ou supprimer la double authentification avec les applications Tapo/Kasa. Les effets ne fonctionennent pas, même si les commandes sont créées par le plugin.
+Ne pas utiliser ou supprimer la double authentification avec les applications Tapo/Kasa. Les effets ne fonctionnent pas, même si les commandes sont créées par le plugin.
 
 Pour les périphériques avec le firmware déployé vers novembre 2023, utiliser Tapo V2. L'inclusion trouve normalement le bon firmware. Il peut être nécessaire au préalable de se connecter à l'appli mobile pour que l'accès au cloud fonctionne.
 
