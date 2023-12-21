@@ -12,7 +12,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 
 1.96n 2023-12-21 (Jeedom V4.2)
 
-Attention : pour les périphériques dont l'état est interrogé régulièrement, il peut être nécessaire de sauvegarder le périphérique pour que cette  interrogation persiste.
+**Attention : pour les périphériques dont l'état est interrogé régulièrement, il peut être nécessaire de sauvegarder le périphérique pour que cette  interrogation persiste.**
 - Sonoff : amélioration de l'inclusion de l'interrupteur Tx Evolution
 - Govee : ajout d'une option pour supprimer l'interrogation toutes les min de l'API pour récupérer l'état. Evite d'atteinde le quota d'appel à l'API Govee.
 
