@@ -592,39 +592,43 @@ Bei Mehrkanalgeräten (wie dem Sonoff 4CH) müssen Sie so viele wifilightV2-Ger�
 
 Für Geräte, die nicht in dieser Liste enthalten sind oder wenn die Konfiguration nicht funktioniert oder wenn ein Gerät nicht den richtigen Subtyp hat und nachdem Sie das Geräteintegrationsverfahren verwendet haben, geben Sie den Inhalt der wifilightV2_inc-Protokolle im [Forum] (https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632), um die Integration des Moduls in das Plugin zu ermöglichen.
 
-# Tuya Smartlife und Tuya Cloud
+# Tuya Smartlife und Cloud Tuya
 
-Die Erstellung der meisten Tuya- und Tuya/Zigbee-Geräte erfolgt automatisch durch den Abruf ihrer Konfigurationsinformationen aus der Tuya-Cloud. Dafür müssen die Geräte in der Tuya Smartlife App funktionieren. Danach bleibt der Zugriff auf die Geräte jedoch lokal.
+Die Erstellung der meisten Tuya- und Tuya/Zigbee-Geräte erfolgt automatisch. Der Zugriff auf Geräte bleibt jedoch lokal.
 
 Tuya-Geräte verwenden unterschiedliche Protokolle:
 
-<3.3: Dieses alte Protokoll wird durch die Aufnahme nicht unterstützt. Das Plugin findet das Gerät in der Tuya-Cloud, aber nicht das richtige Protokoll. Sie müssen es manuell mit Firmware 1.0 ändern, seine IP-Adresse manuell zuweisen und eine Konfiguration aus der Liste auswählen.
+<3.3 : Dieses alte Protokoll unterstützt keine Inklusion. Das Plugin findet das Gerät in der Tuya-Cloud, aber es findet nicht das richtige Protokoll. Sie müssen es manuell mit Tuya smartLife-kompatiblem Typ V1 ändern. Bei diesem Protokoll gibt es kein Tuya-Zigbee-Gateway.
 
-3.3/3.4/3.5: Geräte mit diesen Protokollen werden normalerweise automatisch in der Tuya-Einbindung gefunden, sei es für ein WLAN-Gerät oder ein Zigbee-Gateway.
 
-Wenn das Plugin nicht das richtige Protokoll findet, können Sie es manuell ändern, ohne die von der Tuya-Cloud erstellten Befehle zu verlieren. Sie müssen vor dem Speichern den benutzerdefinierten Untertyp für ein WLAN- oder Zigbee-Gerät und das Gateway für ein Tuya/Zigbee-Gateway auswählen.
+3.3 : Geräte mit diesem Protokoll werden normalerweise automatisch in der Tuya-Einbindung gefunden, entweder für ein WLAN-Gerät oder ein Zigbee-Gateway. Der verwendete Typ ist Tuya Smartlife-kompatibles V3- oder Tuya/Zigbee V1-Gateway.
+
+
+3.4 : Geräte mit diesem Protokoll werden normalerweise automatisch in Tuya-Einbindung gefunden, sei es für ein WLAN-Gerät oder ein Zigbee-Gateway. Im Jahr 2022 beginnt sich dieses Protokoll zu verbreiten. Der verwendete Typ ist: Der verwendete Typ ist Tuya Smartlife-kompatibles V4- oder Tuya/Zigbee V2-Gateway.
+
+
+Wenn das Plugin nicht das richtige Protokoll findet, ist es möglich, es manuell zu ändern, ohne die von der Tuya-Cloud erstellten Befehle zu verlieren. Sie müssen vor dem Speichern den benutzerdefinierten Untertyp auswählen.
+
+
+Wenn das Plugin nicht das richtige Protokoll findet, ist es möglich, es manuell zu ändern, ohne die von der Tuya-Cloud erstellten Befehle zu verlieren. Sie müssen vor dem Speichern den benutzerdefinierten Untertyp auswählen.
 
 ## Konfiguration der Tuya-Plattform
 
-Folgen Sie zunächst diesem [Tutorial](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) und gehen Sie zur Registerkarte „Übersicht“, um die beiden Parameter abzurufen: Zugriffs-ID und Zugriffsgeheimnis.
-- Tuya ändert oft seine Benutzeroberfläche, Sie müssen das Tutorial anpassen
-- Die Laufzeit des kostenlosen Plans ist begrenzt, Sie müssen suchen und finden, um ihn zu verlängern
+Folgen Sie zunächst diesem [Tutorial](https://linkdhome.com/articles/local-tuya-device-control-in-homekit) und rufen Sie den Reiter "Overview" auf, um Folgendes abzurufen: Access ID et Access Secret. Füllen Sie in der Plugin-Konfiguration diese 2 Parameter im Tuya-Teil aus und speichern Sie, dann wählen Sie: Tuya Gehe zur Aufnahme. Die Geräte werden automatisch angelegt.
 
-Geben Sie in der Plugin-Konfiguration diese beiden Parameter im Abschnitt Tuya ein und speichern Sie. Wählen Sie dann: Tuya Switch zur Inklusion. Geräte werden automatisch erstellt.
+Dieser Teil des Plugins erfordert den Start der Abhängigkeiten: Wenn die lokale IP-Adresse vom Plugin nicht gefunden wird, stellen Sie die Verbindung zwischen der Mac-Adresse und der in den Geräteparametern der Tuya-Anwendung angegebenen IP-Adresse und Ihrem Router her und ändern Sie die IP Adresse. Das Verfahren zum Ermitteln der IP-Adresse verwendet einen Linux-Systembefehl, kann dieser nicht geladen werden oder ist das System nicht kompatibel, kann die IP-Adresse nicht automatisch ermittelt werden.
 
-### Hinweise und Einschränkungen
-- WLAN und damit Nicht-Zigbee-Geräte, die auf Batteriebetrieb basieren und ausschließlich in der Cloud arbeiten (z. B. Schließ-, Tür-, Temperatursensoren), werden integriert, aber das Plugin kann nicht darauf zugreifen
-- Wenn die IP-Adresse 0.0.0.0 ist, bedeutet das, dass Jeedom keinen Zugriff auf das Gerät hat. Es liegt wahrscheinlich an der Netzwerkkonfiguration, die Sie überdenken müssen. Beachten Sie, dass die IP-Adresse 0.0.0.0 auch Geräten mit Firmware <3.3 zugewiesen und nicht kompatible Geräte wird. Um diese Zugänglichkeit zu verbessern, siehe [hier](https://community.jeedom.com/t/soucis-plugin-wifilightv2/83734/7?u=bernardfr.caron). Wenn das Gerät nicht vorhanden ist, ist es das es ist nicht kompatibel oder eine Netzwerkkonfiguration verhindert den Dialog zwischen ihm und der Jeedom-Box.
-- Einige Tuya/Zigbee-Gateways sind nicht kompatibel. Weitere Informationen finden Sie im Jeedom-Forum.
-- Peripheriegeräte mit codierten Informationen (Aktorteil von Alarmen im Allgemeinen) werden nicht verwaltet
-- Geräte mit nicht standardmäßigen Informationen (können möglicherweise mit einem Codeblock in einem Szenario behoben werden) werden nicht verwaltet
-- Das Plugin dekodiert keine komplexen Befehle und setzt dann Rohinformationen aus der Tuya-Cloud in Parameter um
-- Die Tuya-Cloud bietet möglicherweise nicht alle Gerätesteuerungen. Sehen Sie sich [hier](https://community.jeedom.com/t/borne-de-recharge-feyree/109739/23) an, um zu versuchen, das Problem zu beheben
-- Mehrkanalgeräte (mehrere Steckdosen, mehrere Schalter), die vom Plugin über die Tuya-Cloud eingebunden werden, werden im selben Gerät gruppiert
-- Wenn bereits ein Gerät mit derselben DevId vorhanden ist, erfolgt die Aufnahme nicht.
-- Es werden Farben gemäß den 3 bekannten Formaten sowie die dazugehörigen Sättigungs- und Intensitätssteuerungen erstellt
-- Das Löschen einer durch das Plugin erstellten Bestellung über die Tuya-Cloud kann nicht mehr wiederhergestellt werden
-- Die Mindest- und Höchstwerte eines digitalen Werts werden aus der Cloud gesendet. Ändern Sie nach Bedarf die Parameter #slider# und #value# sowie den minimalen und maximalen Jeedom. Dieser Teil muss anhand des Benutzerfeedbacks verbessert werden.
+### Bemerkungen :
+- Wenn bereits ein Gerät mit derselben devId vorhanden ist, wird die Aufnahme nicht durchgeführt.
+- Nicht-Zigbee- und batteriebetriebene Geräte sind reine Cloud (z. B. Schließ-, Tür-, Temperatursensoren) werden integriert, aber das Plugin kann nicht darauf zugreifen
+- Die Farben nach den 3 bekannten Formaten werden erstellt sowie die dazugehörigen Sättigungs- und Intensitätsbefehle
+- Peripheriegeräte mit codierten Informationen (Aktuatorteil von Alarmen im Allgemeinen) werden nicht verwaltet
+- Geräte mit nicht standardmäßigen Informationen (können möglicherweise mit einem Codeblock in einem Szenario gelöst werden) werden nicht behandelt
+- Das Plugin decodiert keine komplexen Befehle und fügt dann den Json aus der Tuya-Cloud in die Parameter ein
+- Die Tuya-Cloud stellt möglicherweise nicht alle Gerätebefehle bereit.
+- Das Löschen einer vom Plugin erstellten Bestellung über die Tuya-Cloud kann nicht mehr neu erstellt werden
+- Min. und Max. eines numerischen Werts werden aus der Cloud hochgeladen. Ändern Sie nach Bedarf die Parameter #slider# und #value# sowie Jeedom min und max. Dieser Teil soll mit Benutzerfeedback verbessert werden.
+
 
 ### Tipps:
 - Wenn die IP-Adresse nicht gefunden wurde, weil das Peripheriegerät nicht verbunden ist, geben Sie ihm die Adresse: 0.0.0.0 , verbinden Sie es und starten Sie den Aufnahmevorgang neu.
