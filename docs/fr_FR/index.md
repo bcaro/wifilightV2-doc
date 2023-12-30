@@ -506,7 +506,7 @@ Attention : certaines prises anciennes ont un comportement différent, utiliser 
 Ne pas créer de nouveaux périphériques avec cette option, utiliser de préférence Meross V2, ce type est présent pour assurer la compatibilité avec les périphériques configurés avant l'arrivée de la V2. Aucune aide ne sera donnée pour trouver les paramètres nécessaires à ce type.
 
 ## type "Meross V2" pour tout firmware y compris 2.2.2
-Afin d'obtenir une clé, il faut renseigner les identifiant (login) et mot de passe du compte Meross dans la configuration du plugin. Cliquer ensuite sur getKey dans l'onglet des commandes de chaque périphérique. La clé est récupérée des serveurs Meross et sauvegardée dans le champ Clé. Vous pouvez recopier cette clé dans tous vos périphériques Meross et effacer les login et mot de passe, mais alors il ne faut plus cliquer sur getKey.
+Afin d'obtenir une clé, il faut renseigner les identifiant (login) et mot de passe (Meross n'accepte pas certains caractères spéciaux pour ;e mot de passe) du compte Meross dans la configuration du plugin. Cliquer ensuite sur getKey dans l'onglet des commandes de chaque périphérique. La clé est récupérée des serveurs Meross et sauvegardée dans le champ Clé. Vous pouvez recopier cette clé dans tous vos périphériques Meross et effacer les login et mot de passe, mais alors il ne faut plus cliquer sur getKey.
 
 Attention : des utilisations répétées du getgey peuvent produire un blocage d'accès aux serveurs Meross qui peut durer plusieurs heures. Faire une copie de la Clé sur tous vos périphériques Meross, elle dépend du compte utilisateur et pas du périphérique.
 
