@@ -88,7 +88,7 @@ Pour ces derniers contrôleurs ou périphériques wifi, le protocole d'échange 
 Attention :
 - ! : intégration facile pour une personne qui lit la documentation avant d'agir
 - !! : en plus de !, nécessite de suivre une procédure particulière, adapté à une personne qui comprend qu'une procédure est faite pour être suivie scrupuleusement
-- !!! : en plus de !! nécessite des connaissances de base en informatique et être habitué à faire des recherches sur internet dans un but précis
+- !!! : en plus de !! nécessite des connaissances de base en informatique et être habitué à effectuer des recherches sur internet dans un but précis
 
 
 Il est conseillé de se renseigner sur le forum pour connaitre la compatibilité d'un produit peu diffusé.
@@ -494,7 +494,7 @@ Les périphériques compatibles sont :
    - têtes thermostatiques : MTS100 MTS150
    - détecteur fumée : GS559A en beta tester les informations de fumée et de chaleur
 - purificateur MAP100 beta à tester
-- humidifieur MSXH0 beta à tester  
+- humidificateur MSXH0 beta à tester  
 
 D'autres périphériques peuvent être rendus compatibles : contacter le développeur.
 
@@ -508,7 +508,7 @@ Ne pas créer de nouveaux périphériques avec cette option, utiliser de préfé
 ## type "Meross V2" pour tout firmware y compris 2.2.2
 Afin d'obtenir une clé, il faut renseigner les identifiant (login) et mot de passe (Meross n'accepte pas certains caractères spéciaux dans le mot de passe) du compte Meross dans la configuration du plugin. Cliquer ensuite sur getKey dans l'onglet des commandes de chaque périphérique. La clé est récupérée des serveurs Meross et sauvegardée dans le champ Clé. Vous pouvez recopier cette clé dans tous vos périphériques Meross et effacer les login et mot de passe, mais alors il ne faut plus cliquer sur getKey.
 
-Attention : des utilisations répétées du getgey peuvent produire un blocage d'accès aux serveurs Meross qui peut durer plusieurs heures. Faire une copie de la Clé sur tous vos périphériques Meross, elle dépend du compte utilisateur et pas du périphérique.
+Attention : des utilisations répétées du getKey peuvent produire un blocage d'accès aux serveurs Meross qui peut durer plusieurs heures. Faire une copie de la Clé sur tous vos périphériques Meross, elle dépend du compte utilisateur et pas du périphérique.
 
 ## Hub Meross 
 Pour les équipements reliés au hub Meross MSH300 et après avoir indiqué son adresse ip et l'avoir sauvegardé, faire un appui sur getKey qui récupère la clé et tous les périphériques reliés au Hub. Lors de l'ajout d'un nouveau périphérique au hub, faire simplement getKey pour le créer dans le plugin.
@@ -534,15 +534,15 @@ Le périphérique Sonoff doit être en firmware 3.3.0 ou plus, l'appli Windows c
 
 Pour les firmwares à partir de 3.5.0, la procédure est plus simple et est détaillée [ici sur le forum](https://community.jeedom.com/t/sonoff-diy-et-wifilightv2-en-firmware-3-5-0/48060) .
 
-# SonOff Ewelink et Cloud
+# Sonoff Ewelink et Cloud
 
-Cette procédure automatise la création de la plupart des périphériques Ewelink et Sonoff. Cependant, l'accès aux périphériques reste en local. Le périphérique doit être en firmware 3.0.1 ou plus, l'appli Ewelink permet de mettre à jour le firmware.
+Cette procédure automatise la création de la plupart des périphériques Sonoff ou compatibles Ewelink. Cependant, l'accès aux périphériques reste en local. Le périphérique doit être en firmware 3.0.1 ou plus, l'appli Ewelink permet de mettre à jour le firmware.
 
 ## Configuration du plugin
 
 Dans la configuration du plugin, renseigner le login (adresse mail uniquement) et le mot de passe de connexion à l'appli Ewelink et sauvegarder. Ensuite, sélectionner : Ewelink Passer en inclusion. Les périphériques qui se trouvent dans l'application Ewelink sont créés automatiquement. Si le périphérique est supprimé de l'application Ewelink, il ne fonctionnera plus avec le plugin.
 
-Pour la plupart des périphériques sonoff et ewelink, le sous-type est trouvé. Dans les autres cas le sonoff basic est choisi par le plugin, vous pouvez changer le sous-type sans perdre l'ApiKey et le deviceID.
+Pour la plupart des périphériques Sonoff ou compatibles Ewelink, le sous-type est trouvé. Dans les autres cas le sonoff basic est choisi par le plugin, vous pouvez changer le sous-type sans perdre l'ApiKey et le deviceID.
 
 Pour les périphériques multicanaux comme les multiprises, mettre 1 pour le canal du périphérique trouvé, le dupliquer et lui donner comme n° de canal 2, etc. pour créer autant de périphériques wifilightV2 que de canaux.
 
@@ -551,11 +551,11 @@ Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas
 
 Remarques :
 
-- si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté ou parce que l'inclusion ne le permet pas, vérifier que son adresse IP est : 0.0.0.0 , utiliser l'applicaton ewelink ou faire ON/OFF sur le périphérique afin de modifier l'état du périphérique, l'adresse IP sera automatiquement ajoutée.
+- si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté ou parce que l'inclusion ne le permet pas, vérifier que son adresse IP est : 0.0.0.0 , utiliser l'applicaton Ewelink ou faire ON/OFF sur le périphérique afin de modifier l'état du périphérique, l'adresse IP sera automatiquement ajoutée.
 - certains périphériques ne sont pas créés (le cloud Ewelink ne fournit pas les données)
 - les périphériques purement cloud seront intégrés mais le plugin ne pourra pas y accéder
 - tous les périphériques sonoff sont intégrés mais ne seront pas forcément gérés, comme les caméras  
-- quand un périphérique se connecte au wifi, le plugin sera prévenu immédiatement. Par contre, lorsqu'un périphérique est déconnecté, le plugin ne pourra le savoir que si une commande lui est envoyée par le plugin.
+- quand un périphérique se connecte au wifi, le plugin sera prévenu immédiatement. Cependant, lorsqu'un périphérique est déconnecté, le plugin ne pourra le savoir que si une commande lui est envoyée par le plugin.
 - L'ApiKey et le DeviceID sont récupérés automatiquement par l'inclusion. Néanmoins, pour récupérer manuellement ces 2 informations, vous pouvez aller [ici]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) ou [sur le forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 ) ou faire une recherche sur le web et le forum Jeedom avec comme mots clé : Ewelink ou Sonoff Apikey. Il ne faut mettre ni espace ni guillemets.
 
 
@@ -570,7 +570,7 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 - Sonoff THR316D capteur de température et humidité + interrupteur
 - Sonoff basic R2, RF, POW, Mini
 - Sonoff Dual R2
-- Sonoff Dual R3 :la récupération de la consommation ne remonte que si l'application ewelink est active, la configuration moteur n'est pas complètement implantée. Pour mettre à jour la conso, il faut demander une action qui n'a pas d'incidence dans un scénario toutes les minutes.
+- Sonoff Dual R3 :la récupération de la consommation ne remonte que si l'application Ewelink est active, la configuration moteur n'est pas complètement implantée. Pour mettre à jour la conso, il faut demander une action qui n'a pas d'incidence dans un scénario toutes les minutes.
 - Sonoff 4CH/4CH PRO
 - Sonoff Touch
 - Sonoff S20/S26
@@ -584,7 +584,7 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
-Le sonoff DW2 n'est pas compatible car purement cloud et ne se met pas en Acces Point permettant de trouver apiKey et DeviceID. Il en est de même pour tous les capteurs wifi à pile compatibles ewelink.
+Le sonoff DW2 n'est pas compatible car purement cloud et ne se met pas en Acces Point permettant de trouver apiKey et DeviceID. Il en est de même pour tous les capteurs wifi à pile compatibles Ewelink.
 
 Le Hub Zigbee n'est pas compatible (et purement cloud) ainsi que tous les périphériques Zigbee.
 
@@ -682,7 +682,7 @@ Créer un effet avec l'appli du NanoLeaf et lui donner un nom. Créer une comman
 
 ## Envoi d'une commande personnalisée
 
-Créer une commande action/defaut, dans nom interne mettre un nom et dans paramètres, mettre le json  de la commande personnalisée sauf les accolades externes mais avec la commande write, par exemple :
+Créer une commande action/defaut, dans nom interne mettre un nom et dans paramètres, mettre le json de la commande personnalisée sauf les accolades externes mais avec la commande write, par exemple :
 
     "write" : {"command" : "request", "animName" : "Northern Lights"}
 	
