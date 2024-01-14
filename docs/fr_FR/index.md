@@ -449,7 +449,7 @@ Pour les périphériques avec le firmware déployé vers novembre 2023, utiliser
 
 Dans la configuration du plugin, renseigner l'adresse mail et le mot de passe de connexion à l'appli Kasa ou Tapo et sauvegarder. Ensuite, sélectionner : Tapo-Kasa Passer en inclusion. Les périphériques sont créés automatiquement. Les identifiants sont les mêmes pour Tapo et Kasa.
 
-Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application Tuya et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, si elle ne peut être chargée ou si le système n'est pas compatible, l'adresse IP ne pourra pas être trouvée automatiquement.
+Si l'adresse IP locale n'est pas trouvée par le plugin, faire le rapprochement entre l'adresse mac et l'adresse IP données dans les paramètres du périphérique de l'application mobile et votre routeur et modifier l'adresse IP. La procédure pour trouver l'adresse IP utilise une commande du système Linux, si elle ne peut être chargée ou si le système n'est pas compatible, l'adresse IP ne pourra pas être trouvée automatiquement.
 
 Pour les périphériques de la liste ci-dessus, le sous-type est trouvé, dans les autres cas le Tapo P100 est choisi par le plugin, vous pouvez changer le sous-type sans perdre le deviceId.
 
@@ -506,7 +506,7 @@ Attention : certaines prises anciennes ont un comportement différent, utiliser 
 Ne pas créer de nouveaux périphériques avec cette option, utiliser de préférence Meross V2, ce type est présent pour assurer la compatibilité avec les périphériques configurés avant l'arrivée de la V2. Aucune aide ne sera donnée pour trouver les paramètres nécessaires à ce type.
 
 ## type "Meross V2" pour tout firmware y compris 2.2.2
-Afin d'obtenir une clé, il faut renseigner les identifiant (login) et mot de passe (Meross n'accepte pas certains caractères spéciaux pour ;e mot de passe) du compte Meross dans la configuration du plugin. Cliquer ensuite sur getKey dans l'onglet des commandes de chaque périphérique. La clé est récupérée des serveurs Meross et sauvegardée dans le champ Clé. Vous pouvez recopier cette clé dans tous vos périphériques Meross et effacer les login et mot de passe, mais alors il ne faut plus cliquer sur getKey.
+Afin d'obtenir une clé, il faut renseigner les identifiant (login) et mot de passe (Meross n'accepte pas certains caractères spéciaux dans le mot de passe) du compte Meross dans la configuration du plugin. Cliquer ensuite sur getKey dans l'onglet des commandes de chaque périphérique. La clé est récupérée des serveurs Meross et sauvegardée dans le champ Clé. Vous pouvez recopier cette clé dans tous vos périphériques Meross et effacer les login et mot de passe, mais alors il ne faut plus cliquer sur getKey.
 
 Attention : des utilisations répétées du getgey peuvent produire un blocage d'accès aux serveurs Meross qui peut durer plusieurs heures. Faire une copie de la Clé sur tous vos périphériques Meross, elle dépend du compte utilisateur et pas du périphérique.
 
@@ -726,4 +726,4 @@ Les logs du plugin ne sont pas compatibles avec syslog, mettre la configuration 
 - wifilightV2_cmd : pour les commandes envoyées vers les périphériques
 - wifilightV2_inc : lors de l'inclusion des périphériques
 - wifilight_Tuya : le daemon pour les périphériques Tuya et Yeelight. Il teste la présence de ces périphériques toutes les 30 secondes, maintient la connexion permanente et récupère l'état en temps réel.
-- wifilightV2 : le 2ème daemon pour tous les autres périphériques. Il teste la présence de ces périphériques toutes les 30 secondes.
+- wifilightV2_dem : le 2ème daemon pour tous les autres périphériques. Il teste la présence de ces périphériques toutes les 30 secondes.
