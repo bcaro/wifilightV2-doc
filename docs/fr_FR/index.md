@@ -498,6 +498,8 @@ Les périphériques compatibles sont :
 
 D'autres périphériques peuvent être rendus compatibles : contacter le développeur.
 
+Dans l'application Meross, il faut supprimer la double authentification.
+
 Il faut créer un périphérique dans le plugin pour chaque prise commandée et lui affecter un canal de 1 à n correspondant aux n prises de la multiprise. Le canal 0 est utilisé pour actionner toutes les prises en même temps.
 Attention : certaines prises anciennes ont un comportement différent, utiliser la version V1 dans le sous type.
 
