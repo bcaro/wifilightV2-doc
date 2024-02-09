@@ -14,6 +14,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Sonoff : amélioration de l'inclusion des périphériques et du retour d'état
 - Govee : ajout  Goove en mode local, partie  en alpha à tester. Sans test, il n'y aura pas de passage en stable.
 - Correction affichage de l'unité pour Tuya bouton couleur 1
+- Correction changement protocole Tuya quand le périphérique n'est pas connecté
 
 
 1.96n 2023-12-21 (Jeedom V4.2)
