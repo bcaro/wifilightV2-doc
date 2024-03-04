@@ -10,12 +10,16 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
-1.96o 2024-01-27 (Jeedom V4.2) beta
-- Sonoff : amélioration de l'inclusion des périphériques et du retour d'état
+1.96p 2024-03-02 (Jeedom V4.2) beta
 - Govee : ajout  Goove en mode local, partie  en alpha à tester. Sans test, il n'y aura pas de passage en stable.
-- Correction affichage de l'unité pour Tuya bouton couleur 1
-- Correction changement protocole Tuya quand le périphérique n'est pas connecté
 
+1.96o 2024-03-02 (Jeedom V4.2)
+- Sonoff : amélioration de l'inclusion des périphériques et du retour d'état
+- Meross : Modification adresse accès au cloud
+- Tuya : Correction affichage de l'unité pour bouton couleur 1
+- Tuya : Correction changement protocole quand le périphérique n'est pas connecté
+- Tuya : Modification interrogation cloud réglant le problème : sign invalid
+- Tuya : Modification recherche uid 
 
 1.96n 2023-12-21 (Jeedom V4.2)
 Attention : pour les périphériques dont l'état est interrogé régulièrement, il peut être nécessaire de sauvegarder le périphérique pour que cette  interrogation persiste.
