@@ -12,6 +12,8 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 
 1.96p 2024-03-02 (Jeedom V4.2) beta
 - Govee : ajout  Goove en mode local, partie  en alpha à tester. Sans test, il n'y aura pas de passage en stable.
+- Tapo : ajout L530E
+- Sonoff : ajout mini
 
 1.96o 2024-03-02 (Jeedom V4.2)
 - Sonoff : amélioration de l'inclusion des périphériques et du retour d'état
