@@ -16,7 +16,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Sonoff : ajout mini
 - Ajout d'une page santé des périphériques du plugin :
 
-	Sonoff : la mise à jour de l'état est automatique pour les sonoff avec led de connexion (nécessite éventuellement une sauvegarde du périphérique. Signaler les périphériques avec ce type de led pour l'ajouter dans la config mais cela peut être fait manuellement). Pour les autres sonoff, faire un scénario qui modifie un état qui n'est pas utilisé (inching, startoff) ou qui remet le même état, ce qui n'affecte pas le périphérique mais qui met à jour le reste de l'état du périphérique.
+	Sonoff : la mise à jour de l'état est automatique pour les sonoff avec led de connexion, le plugin crée les 3 commandes pour la gérersi besoin. Pour les autres sonoff, faire un scénario qui modifie un état qui n'est pas utilisé (inching, startoff) ou qui remet le même état, ce qui n'affecte pas le périphérique mais qui met à jour le reste de l'état du périphérique.
 	
 	Tuya : si un périphérique n'a pas son état modifié depuis 24h, il est signalé (cas des boutons qui n'envoient pas régulièrement leur état ou des périphériques sur passerelles Zigbee)
 	
