@@ -13,7 +13,10 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 1.96p 2024-03-02 (Jeedom V4.2) beta
 - Govee : ajout  Goove en mode local, partie  en alpha à tester. Sans test, il n'y aura pas de passage en stable.
 - Sonoff : ajout mini
-- Ajout d'une page santé des périphériques du plugin
+- Ajout d'une page santé des périphériques du plugin :
+	Sonoff : la mise à jour de l'état est automatique pour les sonoff avec led de connexion (nécessite éventuellement une sauvegarde du périphérique. Signaler les périphériques avec ce type de led pour l'ajouter dans la config mais cela peut être fait manuellement). Pour les autres sonoff, faire un scénario qui modifie un état qui n'est pas utilisé (inching, startoff) ou qui remet le même état, ce qui n'affecte pas le périphérique mais qui met ajour le reste de l'état du périphérique.r
+	Tuya : si un périphérique n'a pas son état modifié depuis 24h, il est signalé (cas des boutons qui n'envoient pas régulièrement leur état ou des périphériques sur passerelles Zigbee)
+	Pour les périphériques qui ne retournent pas leur état il sont signalés comme état inconnu.
 
 1.96o 2024-03-02 (Jeedom V4.2)
 - Sonoff : amélioration de l'inclusion des périphériques et du retour d'état
