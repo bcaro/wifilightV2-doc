@@ -11,6 +11,7 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
 1.96p 2024-03-02 (Jeedom V4.2) beta
+- Compatibilité Debian 12 
 - Govee : ajout  Goove en mode local, partie  en alpha à tester. Sans test, il n'y aura pas de passage en stable.
 - Sonoff : ajout mini
 - Ajout d'une page santé des périphériques du plugin :
