@@ -20,7 +20,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 	
 	Tuya : si un périphérique n'a pas son état modifié depuis 24h, il est signalé (cas des boutons qui n'envoient pas régulièrement leur état ou des périphériques sur passerelles Zigbee)
 	
-	Pour les périphériques qui ne retournent pas leur état il sont signalés comme état inconnu.
+	Pour les périphériques qui ne retournent pas leur état ils sont indiqués comme connectés si l'nvoi d'une commande a réussi
 
 1.96o 2024-03-02 (Jeedom V4.2)
 - Sonoff : amélioration de l'inclusion des périphériques et du retour d'état
