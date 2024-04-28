@@ -14,13 +14,15 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Compatibilité Debian 12 
 - Govee : ajout  Goove en mode local, partie  en alpha à tester. Sans test, il n'y aura pas de passage en stable.
 - Sonoff : ajout mini
+- Sonoff : si l'équipement a une led, utilisation de la led pour obtenir l'état de l'équipement
 - Ajout d'une page santé des périphériques du plugin :
 
 	Sonoff : la mise à jour de l'état est automatique pour les sonoff avec led de connexion, le plugin crée les 3 commandes pour la gérer si besoin. Pour les autres sonoff, faire un scénario qui modifie un état qui n'est pas utilisé (inching, startoff) ou qui remet le même état, ce qui n'affecte pas le périphérique mais qui met à jour le reste de l'état du périphérique.
 	
 	Tuya : si un périphérique n'a pas son état modifié depuis 24h, il est signalé (cas des boutons qui n'envoient pas régulièrement leur état ou des périphériques sur passerelles Zigbee)
 	
-	Pour les périphériques qui ne retournent pas leur état ils sont indiqués comme connectés si l'nvoi d'une commande a réussi
+	Pour les périphériques qui ne retournent pas leur état il sont signalés comme état inconnu.
+- Corrections bogues divers
 
 1.96o 2024-03-02 (Jeedom V4.2)
 - Sonoff : amélioration de l'inclusion des périphériques et du retour d'état
