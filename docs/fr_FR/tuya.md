@@ -71,7 +71,15 @@ Le plugin est équipé de boutons permettant de créer automatiquement les comma
 -   appuyer sur un bouton du périphérique physique (on, off, haut, bas, etc.) ou attendre que le périphérique renvoie son état ou appuyer sur un bouton de l'appli Smart Life (mais dans ce dernier cas, cela peut empêcher le retour d'état).
 -   repérer dans les logs le retour d'état
 
-Utiliser toutes les possibilités de l'application Tuya et bien repérer dans les logs le n° de dps et sa valeur qui sont envoyés au plugin. 
+Utiliser toutes les possibilités de l'application Tuya et bien repérer dans les logs le n° de dps et sa valeur qui sont envoyés au plugin.
+
+Si vous ajoutez des paramètres manuellement, il ne faut pas mettre de guillemets ni d'accolades externes :
+
+    [color=FF0000]"{"2":"color","3":"#colorR2G2B200H2S2V2_255#""}[/color]
+	
+	mais :
+	
+    "2":"color","3":"#colorR2G2B200H2S2V2_255#"
 
 
 ### Cas d'un actionneur tout ou rien, true/false

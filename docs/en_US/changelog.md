@@ -10,11 +10,32 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.96p 2024-03-02 (Jeedom V4.2)
+- Compatibilité Debian 12 
+- Govee : ajout  Goove en mode local, partie  en alpha à tester sur la version beta du plugin. Sans test, il n'y aura pas de passage en stable.
+- Sonoff : ajout mini
+- Sonoff : si l'équipement a une led, utilisation de la led pour obtenir l'état de l'équipement
+- Ajout d'une page santé des périphériques du plugin :
+
+	Sonoff : la mise à jour de l'état est automatique pour les sonoff avec led de connexion, le plugin crée les 3 commandes pour la gérer si besoin. Pour les autres sonoff, faire un scénario qui modifie un état qui n'est pas utilisé (inching, startoff) ou qui remet le même état, ce qui n'affecte pas le périphérique mais qui met à jour le reste de l'état du périphérique.
+	
+	Tuya : si un périphérique n'a pas son état modifié depuis 24h, il est signalé (cas des boutons qui n'envoient pas régulièrement leur état ou des périphériques sur passerelles Zigbee)
+	
+	Pour les périphériques qui ne retournent pas leur état il sont signalés comme état inconnu.
+- Corrections bogues divers
+
+1.96o 2024-03-02 (Jeedom V4.2)
+- Sonoff : amélioration de l'inclusion des périphériques et du retour d'état
+- Meross : Modification adresse accès au cloud
+- Tuya : Correction affichage de l'unité pour bouton couleur 1
+- Tuya : Correction changement protocole quand le périphérique n'est pas connecté
+- Tuya : Modification interrogation cloud réglant le problème : sign invalid
+- Tuya : Modification recherche uid 
+
 1.96n 2023-12-21 (Jeedom V4.2)
 Attention : pour les périphériques dont l'état est interrogé régulièrement, il peut être nécessaire de sauvegarder le périphérique pour que cette  interrogation persiste.
 - Sonoff : amélioration de l'inclusion de l'interrupteur Tx Evolution
 - Govee : ajout d'une option pour supprimer l'interrogation toutes les min de l'API pour récupérer l'état. Evite d'atteinde le quota d'appel à l'API Govee.
-
 
 1.96m 2023-12-01 (Jeedom V4.2)
 - Sonoff : ajout de l'interrupteur Tx Evolution
