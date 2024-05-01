@@ -75,7 +75,9 @@ Utiliser toutes les possibilités de l'application Tuya et bien repérer dans le
 
 Si vous ajoutez des paramètres manuellement, il ne faut pas mettre de guillemets ni d'accolades externes :
 
-    [color=FF0000]"{"2":"color","3":"#colorR2G2B200H2S2V2_255#""}[/color]
+    Ne pas utiliser :
+	
+	"{"2":"color","3":"#colorR2G2B200H2S2V2_255#"}"
 	
 	mais :
 	
