@@ -568,29 +568,45 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 - Interrupteurs, prises murales, switch : multiples de toutes marques
 - Interrupteurs, prises murales, switch : simples avec variateur de toutes marques
 - Sonoff D1 smart Dimmer
-- Sonoff TH10/1H16 capteur de température. Nouvelle config pour firmware >=3.4 avec ON/OFF OK
+- Sonoff TH10/1H16 firmware >=3.4 : pour mettre à jour l'état, le plugin agit sur la led wifi toutes les 30 secondes
 - Sonoff THR316D capteur de température et humidité + interrupteur
 - Sonoff basic R2, RF, POW, Mini
 - Sonoff Dual R2
 - Sonoff Dual R3 :la récupération de la consommation ne remonte que si l'application Ewelink est active, la configuration moteur n'est pas complètement implantée. Pour mettre à jour la conso, il faut demander une action qui n'a pas d'incidence dans un scénario toutes les minutes.
-- Sonoff 4CH/4CH PRO
+- Sonoff 4CH/4CH PRO : pour mettre à jour l'état, le plugin agit sur la led wifi toutes les 30 secondes
 - Sonoff Touch
 - Sonoff S20/S26
 - Sonoff T1/TX
 - Sonoff SLAMPHER
 - Sonoff T4EUC1
 - Sonoff Ifan 2/3/4 à tester 
-- Sonoff POW R316/320 : pour mettre à jour la conso, il faut demander une action, par exemple allumer la led wifi dans un scénario toutes les minutes
+- Sonoff POW R316/320 : pour mettre à jour la conso, le plugin agit sur la led wifi toutes les 30 secondes
 - Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur de présence, télécommande)
 - Sonoff Micro USB
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
-Le sonoff DW2 n'est pas compatible car purement cloud et ne se met pas en Acces Point permettant de trouver apiKey et DeviceID. Il en est de même pour tous les capteurs wifi à pile compatibles Ewelink.
+Périphériques non compatble car purement cloud :
 
-Le Hub Zigbee n'est pas compatible (et purement cloud) ainsi que tous les périphériques Zigbee.
+- Les produits wifi à piles
+- Sonoff POW (first) fw 2.6.1
+- Sonoff TH10/1H16 firmware <3.4 
+- Sonoff L1 (color, brightness, effects) fw 2.7.0
+- Sonoff B1 (color, brightness, color temp) fw 2.6.0
+- Sonoff B02, B05-B, B05-BL
+- Sonoff SC (five sensors) fw 2.7.0
+- Sonoff DW2
+- Sonoff SwitchMan R5
+- Sonoff S-MATE
+- Sonoff S40 fw 1.1
+- King Art - King Q4 Cover (pause, position) fw 2.7.0
+- KING-M4 (brightness) fw 2.7.0
+- Eachen WiFi Door/Window Sensor
+- Essential Oils Diffuser (fan and color light) fw 2.9.0
+- Smart USB Mosquito Killer
+- Smart Bulb RGB+CCT
+Ainsi que les passerelles et produits uniquement Zigbee.
 
-Aucune ampoule ou strip led n'est compatible.
 
 Pour les périphériques multicanaux (comme le Sonoff 4CH, les interrupteurs ou les multiprises) il faut créer autant d'équipements wifilightV2 que de canal, une copie du premier créé facile la tâche, ensuite il faut changer le n° de canal qui va de 1 à 4.
 
