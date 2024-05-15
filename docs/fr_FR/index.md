@@ -110,7 +110,7 @@ LW12/Lagute :
 -   Il existe plusieurs versions de LW12 qui peuvent ne pas être compatibles avec le plugin.
 
 Magic UFO, MagicHome et Arilux AL-C01/02/03/04/06/10 :
--   La programmation des modes custom, le mode radio et les timers ne sont pas gérés. Il faut utiliser l'application fournie avec le contrôleur (Magic Home). Cependantf, les modes customs peuvent être déclenchés avec le plugin.
+-   La programmation des modes custom, le mode radio et les timers ne sont pas gérés. Il faut utiliser l'application fournie avec le contrôleur (Magic Home). Cependant, les modes customs peuvent être déclenchés avec le plugin.
 -   Il existe différents modèles qui peuvent ne pas être compatibles avec le plugin.
 -	Certains périphériques compatibles Magic Home sont incompatibles car ne fonctionnent plus qu'avec le cloud
 
@@ -199,11 +199,11 @@ Vous pouvez alors passer à la configuration du plugin wifilightV2.
 
 wifilightV2 ne crée pas les périphériques automatiquement sauf :
 
--   Tuya Smartlife
--   Ewelink
--   Govee
--	Tapo
--	Kasa (TP-Link)
+- Tuya Smartlife
+- Ewelink
+- Govee
+- Tapo
+- Kasa (TP-Link)
 
 Aide : 
 -   Utiliser l'icône sous forme de point d'interrogation pour obtenir une aide sur chaque élément de configuration.
@@ -283,7 +283,7 @@ Pour les autres périphériques il n'y a pas de retour d'état.
 La commande stateGet permet, pour les périphériques qui renvoient leur état, de forcer la mise à jour de l'état en interrogeant le périphérique.
 
 
-## Mise à jour par scénario et scrutration rapide d'un évènement
+## Mise à jour par scénario et scrutation rapide d'un évènement
 
 Les commandes xxxxGet et Etat peuvent être utilisées dans un scénario Jeedom. Il est possible de créer un scénario déclenché une seule fois au démarrage de Jeedom : mettre une boucle sur 1 000 000. Mettre à l'intérieur une autre boucle sur 1 000 000. Ces 2 boucles imbriquées vont empêcher la sortie du scénario pendant des centaines d'années. Dans la boucle interne, mettre une pause de 10s et un appel au stateGet du périphérique pour mettre à jour les informations du périphérique. La pause peut être diminuée jusque 1s selon la puissance et la complexité de l'installation.
 
@@ -553,7 +553,7 @@ Si un périphérique de même deviceID existe déjà, l'inclusion ne se fera pas
 
 Remarques :
 
-- si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté ou parce que l'inclusion ne le permet pas, vérifier que son adresse IP est : 0.0.0.0 , utiliser l'applicaton Ewelink ou faire ON/OFF sur le périphérique afin de modifier l'état du périphérique, l'adresse IP sera automatiquement ajoutée.
+- si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté ou parce que l'inclusion ne le permet pas, vérifier que son adresse IP est : 0.0.0.0 , utiliser l'application Ewelink ou faire ON/OFF sur le périphérique afin de modifier l'état du périphérique, l'adresse IP sera automatiquement ajoutée.
 - certains périphériques ne sont pas créés (le cloud Ewelink ne fournit pas les données)
 - les périphériques purement cloud seront intégrés mais le plugin ne pourra pas y accéder
 - tous les périphériques sonoff sont intégrés mais ne seront pas forcément gérés, comme les caméras  
@@ -586,7 +586,7 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
-Périphériques non compatble car purement cloud :
+Périphériques non compatible car purement cloud :
 
 - Les produits wifi à piles
 - Sonoff POW (first) fw 2.6.1
@@ -633,13 +633,12 @@ Suivre d'abord ce [tuto](https://linkdhome.com/articles/local-tuya-device-contro
 Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuya et sauvegarder. Ensuite, sélectionner : Tuya Passer en inclusion. Les périphériques sont créés automatiquement. 
 
 ### Notes and limitations
-- les périphériques Wifi et donc non Zigbee qui sont sur pile sont purement cloud (capteurs de fermeture, de porte, de température par exemple) seront intégrés mais le plugin ne pourra pas y accéder
+- les périphériques Wifi et donc non Zigbee qui sont sur **pile** sont purement cloud (capteurs de fermeture, de porte, de température par exemple) seront intégrés mais le plugin ne pourra pas y accéder
 - si l'adresse IP est à 0.0.0.0 c'est que Jeedom n'a pas accès au périphérique, c'est probablement la configuration réseau à reconsidérer. Noter que l'adresse IP 0.0.0.0 est aussi affectée aux périphériques de firmware  <3.3. et aux périphériques non compatibles. Afin de tester cette accessibilité, voir [ici](https://community.jeedom.com/t/soucis-plugin-wifilightv2/83734/7?u=bernardfr.caron), si le périphérique ne l'est pas, c'est qu'il n'est pas compatible ou qu'une configuration réseau empêche le dialogue entre lui et la box Jeedom. 
-- certaines passerelles Tuya/Zigbee ne sont pas compatibles, se renseigner sur le forum Jeedom.
+- le cloud Tuya peut ne pas fournir **toutes les commandes du périphérique**, voir [ici](https://community.jeedom.com/t/borne-de-recharge-feyree/109739/23) pour essayer de résoudre le problème
 - les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
 - les périphériques ayant des informations non standard (peut éventuellement être résolu avec un bloc code dans un scénario) ne sont pas gérés
 - le plugin ne décode pas les commandes complexes et met alors dans paramètres l’information brute provenant du cloud Tuya
-- le cloud Tuya peut ne pas fournir toutes les commandes du périphérique, voir [ici](https://community.jeedom.com/t/borne-de-recharge-feyree/109739/23) pour essayer de résoudre le problème
 - les périphériques multicanaux (multiprises, interrupteurs multiples) inclus par le plugin via le cloud Tuya sont regroupés dans le même périphérique
 - si un périphérique de même devId existe déjà, l'inclusion ne se fera pas.
 - les couleurs suivant les 3 formats connus sont créées ainsi que les commandes saturation et intensité liées
@@ -673,15 +672,15 @@ Obtenir la liste des périphériques :
 - faire une copie d'écran des périphériques
 
 Obtenir les informations d'un périphérique :
-- dans Tuya developper : iot platform > Cloud > Development > Open project > devices 
+- dans Tuya developper : Developer Platform > Cloud > Development > Open project > Devices 
 - copier le device ID du périphérique à déboguer
-- Cloud > Api Explorer > (dans la nouvelle fenêtre) Device Control (Standard Onstruction Set) > Get the specification
-- coller le device ID > Submit Request > Copy (lien fenêtre droite de "response")
+- Cloud > Api Explorer > (dans la nouvelle fenêtre) Sélectionner Smart Home basic Service (en haut à gauche) -> Smart Home Device Control -> Get Device Specification (dernier de la liste)
+- coller le device ID > Submit Request > Copy (lien à droite de "Response"), les paramètres affichés sont ceux qui seront remontés dans le plugin lors de l’inclusion
 - coller la copie dans le forum
 
 ### Obtenir les logs
 
-- Configurer les logs de wifilightV2, comme ils sont bavards, les configurer en augmentant le nombre de lignes dans la configuration de déboguage de Jeedom.
+- Configurer les logs de wifilightV2, comme ils sont bavards, les configurer en augmentant le nombre de lignes dans la configuration de débogage de Jeedom.
 - Effacer les logs _tuya, attendre 2 minutes et récupérer les logs _tuya
 - copier ces logs sur le forum
 
