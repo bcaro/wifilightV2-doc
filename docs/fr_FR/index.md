@@ -568,12 +568,12 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 - Interrupteurs, prises murales, switch : multiples de toutes marques
 - Interrupteurs, prises murales, switch : simples avec variateur de toutes marques
 - Sonoff D1 smart Dimmer
-- Sonoff TH10/1H16 firmware >=3.4 : pour mettre à jour l'état, le plugin agit sur la led wifi toutes les 30 secondes
+- Sonoff TH10/1H16 firmware >=3.4 
 - Sonoff THR316D capteur de température et humidité + interrupteur
 - Sonoff basic R2, RF, POW, Mini
 - Sonoff Dual R2
 - Sonoff Dual R3 :la récupération de la consommation ne remonte que si l'application Ewelink est active, la configuration moteur n'est pas complètement implantée. Pour mettre à jour la conso, il faut demander une action qui n'a pas d'incidence dans un scénario toutes les minutes.
-- Sonoff 4CH/4CH PRO : pour mettre à jour l'état, le plugin agit sur la led wifi toutes les 30 secondes
+- Sonoff 4CH/4CH PRO 
 - Sonoff Touch
 - Sonoff S20/S26
 - Sonoff T1/TX
@@ -583,6 +583,8 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 - Sonoff POW R316/320 : pour mettre à jour la conso, le plugin agit sur la led wifi toutes les 30 secondes
 - Sonoff RF bridge 433 pour les capteurs uniquement (porte, détecteur de présence, télécommande)
 - Sonoff Micro USB
+
+Note : Certains périphériques ne mettent à jour leur état vers Jeedom que si il y a une action dessus (4CH, TH10/16). Pour forcer la remonté de l'état, le plugin agit sur la led de connexion et la fait clignoter. Pour désactiver ce fonctionnement, cocher "Pas de de MAJ forcée de l'état".
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
