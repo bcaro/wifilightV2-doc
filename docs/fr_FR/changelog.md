@@ -11,7 +11,6 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
 1.96s 2024-10-16 (Jeedom V4.2)
-beta 1.96s
 - Ajout Govee en mode LAN
 - Nouveaux serveurs pour Tapo
 - Refonte Govee Cloud avec la nouvelle API, l’inclusion utilisera la nouvelle API avec des fonctionnalités étendues.

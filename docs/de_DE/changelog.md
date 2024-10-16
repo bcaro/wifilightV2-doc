@@ -10,6 +10,18 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.96s 2024-10-16 (Jeedom V4.2)
+- Ajout Govee en mode LAN
+- Nouveaux serveurs pour Tapo
+- Refonte Govee Cloud avec la nouvelle API, l’inclusion utilisera la nouvelle API avec des fonctionnalités étendues.
+- Les périphériques Goove fonctionnant avec l’ancienne API ne seront plus compatibles, API devenue non fonctionnelle
+- En particulier, lors d’une sauvegarde, le type passera en API Goove V2 et le périphérique ne sera plus compatible.
+- Corrections pour Debian 12
+- Corrections Meross
+- Suppression lib monolog
+- Suppression lib guzzlehttp avec des effets de bord possibles sur : Mystrom et nanoleaf qui n’ont pas été testés
+- Ajout du tri dans certaines colonnes de la page santé
+
 1.96r 2024-05-03 (Jeedom V4.2)
 - Correction bogue quand les périphériques Tuya ne sont pas associés aux passerelles
 - faire une inclusion Tuya pour associer les périphériques Tuya aux passerelles
@@ -18,7 +30,6 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Compatibilité Debian 12 améliorée (déconnexions, latences)
 - Retour inclusion Zigbee/Tuya mais disparaitra à termes
 - Retour de la surveillance de la consommation mémoire des deamons, utile pour Debian12
-
 
 1.96p 2024-05-01 (Jeedom V4.2)
 - Compatibilité Debian 12 
