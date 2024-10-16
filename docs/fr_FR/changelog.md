@@ -14,13 +14,14 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 beta 1.96s
 - Ajout Govee en mode LAN
 - Nouveaux serveurs pour Tapo
-- Refonte Govee Cloud avec la nouvelle API : les anciens périphériques continueront de fonctionner mais l’inclusion utilisera la nouvelle API avec des fonctionnalités étendues.
-- Les périphériques Goove fonctionnant avec l’ancienne API ne seront plus compatibles
+- Refonte Govee Cloud avec la nouvelle API, l’inclusion utilisera la nouvelle API avec des fonctionnalités étendues.
+- Les périphériques Goove fonctionnant avec l’ancienne API ne seront plus compatibles, API devenue non fonctionnelle
 - En particulier, lors d’une sauvegarde, le type passera en API Goove V2 et le périphérique ne sera plus compatible.
 - Corrections pour Debian 12
 - Corrections Meross
 - Suppression lib monolog
-- Suppression lib guzzlehttp avec des effets de bord possibles sur : Mystrom Govee (ancienne API) nanoleaf qui n’ont pas été testés
+- Suppression lib guzzlehttp avec des effets de bord possibles sur : Mystrom et nanoleaf qui n’ont pas été testés
+- ajout de tri dans certaines colonnes de la page santé
 
 1.96r 2024-05-03 (Jeedom V4.2)
 - Correction bogue quand les périphériques Tuya ne sont pas associés aux passerelles

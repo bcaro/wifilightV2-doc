@@ -15,7 +15,7 @@ Le fonctionnement permanent du plugin ne peut être garanti : incompatibilité o
 
 Ce plugin permet de gérer de nombreux bandeaux de leds, ampoules leds, prises électriques, thermostats, capteur de température, capteur de porte, etc. pilotés en wifi directement ou via une box wifi vendue avec le produit. Le principe du plugin est de ne jamais utiliser le cloud et donc une connexion internet entre le plugin et le périphérique via un serveur lointain, toutes les actions sont donc locales au réseau domestique.
 
-Une exception : les produits Govee.
+Une exception : les produits Govee en mode cloud.
 
 <img src="../images/wifilightV2_screenshot01.png" alt="image" style="height:100px;"/>
 <img src="../images/wifilightV2_screenshot02.png" alt="image" style="height:100px;"/>
@@ -168,8 +168,8 @@ Wiz :
 myStrom :
 - seule la prise commandée a été testée, en attente de retours des utilisateurs pour les autres périphériques
 
-Govee :
-- la connexion avec les produits se fait via le nuage et nécessite internet.
+Govee cloud :
+- la connexion avec les produits se fait via le cloud et nécessite internet.
 - seules les commandes On/Off intensité couleur et température de couleur fonctionnent
 - ces commandes ne fonctionnent pas sur tous les modules Govee
 
@@ -202,6 +202,7 @@ wifilightV2 ne crée pas les périphériques automatiquement sauf :
 - Tuya Smartlife
 - Ewelink
 - Govee
+- Govee LAN
 - Tapo
 - Kasa (TP-Link)
 
@@ -274,6 +275,7 @@ Pour les périphériques :
  - Wiz
  - myStrom
  - Govee
+ - Govee LAN
  - Tapo
 
 Le plugin interroge régulièrement le périphérique pour connaitre son état. Le délai pour que Jeedom connaisse l'état peut dépasser 1 minute.
@@ -706,6 +708,9 @@ Créer une commande action/defaut, dans nom interne mettre un nom et dans param�
     "write" : {"command" : "request", "animName" : "Northern Lights"}
 	
 Voir la documentation Nanoleaf pour créer ces effets.
+# Govee LAN
+
+Les périphériques wifi compatibles sont indiqués dans l'appli Govee. Inclure d'abord le périphérique dans l'appli puis sélectionner "Govee LAN passer en inclusion" pour inclure les périphériques, ils seront accessibles en local sans passer par le cloud.
 
 
 # Govee
