@@ -11,18 +11,19 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
 1.96s 2024-10-16 (Jeedom V4.2)
+
 - Compatible Jeedom 4.5
 - Ajout Govee en mode LAN
 - Refonte Govee Cloud avec la nouvelle API, l’inclusion utilisera la nouvelle API avec des fonctionnalités étendues.
 - Les périphériques Goove fonctionnant avec l’ancienne API ne seront plus compatibles, API devenue non fonctionnelle
-- En particulier, lors d’une sauvegarde, le type passera en API Goove V2 et le périphérique ne sera plus compatible.
+- En particulier, lors d’une sauvegarde, le type passera en API Govee V2 et le périphérique ne sera plus compatible.
 - Nouveaux serveurs pour Tapo
 - Corrections Meross
 - Ajout du tri dans certaines colonnes de la page santé + MAJ temps réel de la date de dernière connexion
 - Suppression lib monolog
 - Suppression lib guzzlehttp avec des effets de bord possibles sur : Mystrom et nanoleaf qui n’ont pas été testés
 - Corrections pour Debian 12
-- Il y a une fuite mémoire dans les daemons qui est due au plugin virtuel, lorsqu'une info générée par le plugin est utilisée par un virtuel. Plus il y a de virtuels associés, plus la fuite est rapide. Le plugin se préserve en testant la nuit la mémoire utiliséee et relance le deamon. Il n'y a pas de solution côté plugin pour éviter cette fuite.
+- Il y a une fuite mémoire dans les daemons qui est due au plugin virtuel, lorsqu’une info générée par le plugin est utilisée par un virtuel. Plus il y a de virtuels associés, plus la fuite est rapide. Le plugin se préserve en testant la nuit la mémoire utilisée et relance le daemon. Il n’y a pas de solution côté plugin pour éviter cette fuite.
 
 1.96r 2024-05-03 (Jeedom V4.2)
 - Correction bogue quand les périphériques Tuya ne sont pas associés aux passerelles
