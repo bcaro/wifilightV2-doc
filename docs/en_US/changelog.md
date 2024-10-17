@@ -22,6 +22,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Suppression lib monolog
 - Suppression lib guzzlehttp avec des effets de bord possibles sur : Mystrom et nanoleaf qui n’ont pas été testés
 - Corrections pour Debian 12
+- Il y a une fuite mémoire dans les daemons qui est due au plugin virtuel, lorsqu'une info générée par le plugin est utilisée par un virtuel. Plus il y a de virtuels associés, plus la fuite est rapide. Le plugin se préserve en testant la nuit la mémoire utiliséee et relance le deamon. Il n'y a pas de solution côté plugin pour éviter cette fuite.
 
 1.96r 2024-05-03 (Jeedom V4.2)
 - Correction bogue quand les périphériques Tuya ne sont pas associés aux passerelles
