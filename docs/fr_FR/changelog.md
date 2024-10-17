@@ -18,7 +18,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - En particulier, lors d’une sauvegarde, le type passera en API Goove V2 et le périphérique ne sera plus compatible.
 - Nouveaux serveurs pour Tapo
 - Corrections Meross
-- Ajout du tri dans certaines colonnes de la page santé
+- Ajout du tri dans certaines colonnes de la page santé + MAJ temps réel de la date de dernière connexion
 - Suppression lib monolog
 - Suppression lib guzzlehttp avec des effets de bord possibles sur : Mystrom et nanoleaf qui n’ont pas été testés
 - Corrections pour Debian 12
