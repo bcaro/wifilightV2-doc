@@ -23,7 +23,7 @@ Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert
 - Nouveaux serveurs pour Tapo
 - Corrections Meross
 - Ajout du tri dans certaines colonnes de la page santé + MAJ temps réel de la date de dernière connexion
-- Suppression lib monolog-> impact sur les logs, il faut, dans la config des logs de Jeedom, configurer le niveau de log par défaut en debug.
+- Suppression lib monolog avec impact sur l'affichage des logs, il faut, dans la config des logs de Jeedom, configurer le niveau de log par défaut en debug.
 - Suppression lib guzzlehttp avec des effets de bord possibles sur : Mystrom et nanoleaf qui n’ont pas été testés
 - Corrections pour Debian 12
 - Il y a une fuite mémoire dans les daemons qui est due au plugin virtuel, lorsqu’une info générée par le plugin est utilisée par un virtuel. Plus il y a de virtuels associés, plus la fuite est rapide. Le plugin se préserve en testant la nuit la mémoire utilisée et relance le daemon. Il n’y a pas de solution côté plugin pour éviter cette fuite.
