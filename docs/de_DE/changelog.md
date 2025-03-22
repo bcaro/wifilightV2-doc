@@ -11,148 +11,146 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
 1.96t 2024-10-22 (Jeedom V4.2)
-- amélioration page santé (tri)
-- correction bogue lorsque la donnée Tuya ne correspond pas au type 
+- \[UPDATE] amélioration page santé (tri)
+- \[BUGFIX] correction bogue lorsque la donnée Tuya ne correspond pas au type 
 
 1.96s 2024-10-16 (Jeedom V4.2)
-- Compatible Jeedom 4.5
-- Ajout Govee en mode LAN
-- Refonte Govee Cloud avec la nouvelle API, l’inclusion utilisera la nouvelle API avec des fonctionnalités étendues.
-- Les périphériques Goove fonctionnant avec l’ancienne API ne seront plus compatibles, API devenue non fonctionnelle
-- En particulier, lors d’une sauvegarde, le type passera en API Govee V2 et le périphérique ne sera plus compatible.
-- Nouveaux serveurs pour Tapo
-- Corrections Meross
-- Ajout du tri dans certaines colonnes de la page santé + MAJ temps réel de la date de dernière connexion
-- Suppression lib monolog
-- Suppression lib guzzlehttp avec des effets de bord possibles sur : Mystrom et nanoleaf qui n’ont pas été testés
-- Corrections pour Debian 12
-- Il y a une fuite mémoire dans les daemons qui est due au plugin virtuel, lorsqu’une info générée par le plugin est utilisée par un virtuel. Plus il y a de virtuels associés, plus la fuite est rapide. Le plugin se préserve en testant la nuit la mémoire utilisée et relance le daemon. Il n’y a pas de solution côté plugin pour éviter cette fuite.
+- \[UPDATE] Compatible Jeedom 4.5
+- \[NEW] Ajout Govee en mode LAN
+- \[UPDATE] Refonte Govee Cloud avec la nouvelle API, l’inclusion utilisera la nouvelle API avec des fonctionnalités étendues.
+- \[UPDATE] Les périphériques Goove fonctionnant avec l’ancienne API ne seront plus compatibles, API devenue non fonctionnelle. En particulier, lors d’une sauvegarde, le type passera en API Govee V2 et le périphérique ne sera plus compatible.
+- \[UPDATE] Nouveaux serveurs pour Tapo
+- \[BUGFIX] Corrections Meross
+- \[UPDATE] Ajout du tri dans certaines colonnes de la page santé + MAJ temps réel de la date de dernière connexion
+- \[UPDATE] Suppression lib monolog avec impact sur l'affichage des logs, il faut, dans la config des logs de Jeedom, configurer le niveau de log par défaut en debug.
+- \[UPDATE] Suppression lib guzzlehttp avec des effets de bord possibles sur : Mystrom et nanoleaf qui n’ont pas été testés
+- \[BUGFIX] Corrections pour Debian 12
+- \[UPDATE] Il y a une fuite mémoire dans les daemons qui est due au plugin virtuel, lorsqu’une info générée par le plugin est utilisée par un virtuel. Plus il y a de virtuels associés, plus la fuite est rapide. Le plugin se préserve en testant la nuit la mémoire utilisée et relance le daemon. Il n’y a pas de solution côté plugin pour éviter cette fuite.
 
 1.96r 2024-05-03 (Jeedom V4.2)
-- Correction bogue quand les périphériques Tuya ne sont pas associés aux passerelles
-- faire une inclusion Tuya pour associer les périphériques Tuya aux passerelles
+- \[BUGFIX] Correction bogue quand les périphériques Tuya ne sont pas associés aux passerelles. Faire une inclusion Tuya pour associer les périphériques Tuya aux passerelles
 
 1.96q 2024-05-02 (Jeedom V4.2)
-- Compatibilité Debian 12 améliorée (déconnexions, latences)
-- Retour inclusion Zigbee/Tuya mais disparaitra à termes
-- Retour de la surveillance de la consommation mémoire des deamons, utile pour Debian12
+- \[UPDATE] Compatibilité Debian 12 améliorée (déconnexions, latences)
+- \[UPDATE] Retour inclusion Zigbee/Tuya mais disparaitra à termes
+- \[UPDATE] Retour de la surveillance de la consommation mémoire des deamons, utile pour Debian12
 
 1.96p 2024-05-01 (Jeedom V4.2)
-- Compatibilité Debian 12 
-- Govee : ajout  Goove en mode local, partie  en alpha à tester sur la version beta du plugin. Sans test, il n'y aura pas de passage en stable.
-- Sonoff : ajout mini
-- Sonoff : si l'équipement a une led, utilisation de la led pour obtenir l'état de l'équipement
-- Ajout d'une page santé des périphériques du plugin :
+- \[UPDATE] Compatibilité Debian 12 
+- \[UPDATE] Govee : ajout  Goove en mode local, partie  en alpha à tester sur la version beta du plugin. Sans test, il n'y aura pas de passage en stable.
+- \[UPDATE] Sonoff : ajout mini
+- \[UPDATE] Sonoff : si l'équipement a une led, utilisation de la led pour obtenir l'état de l'équipement
+- \[NEW] Ajout d'une page santé des périphériques du plugin :
 
 	Sonoff : la mise à jour de l'état est automatique pour les sonoff avec led de connexion, le plugin crée les 3 commandes pour la gérer si besoin. Pour les autres sonoff, faire un scénario qui modifie un état qui n'est pas utilisé (inching, startoff) ou qui remet le même état, ce qui n'affecte pas le périphérique mais qui met à jour le reste de l'état du périphérique.
 	
 	Tuya : si un périphérique n'a pas son état modifié depuis 24h, il est signalé (cas des boutons qui n'envoient pas régulièrement leur état ou des périphériques sur passerelles Zigbee)
 	
 	Pour les périphériques qui ne retournent pas leur état il sont signalés comme état inconnu.
-- Corrections bogues divers
+- \[BUGFIX] Corrections bogues divers
 
 1.96o 2024-03-02 (Jeedom V4.2)
-- Sonoff : amélioration de l'inclusion des périphériques et du retour d'état
-- Meross : Modification adresse accès au cloud
-- Tuya : Correction affichage de l'unité pour bouton couleur 1
-- Tuya : Correction changement protocole quand le périphérique n'est pas connecté
-- Tuya : Modification interrogation cloud réglant le problème : sign invalid
-- Tuya : Modification recherche uid 
+- \[UPDATE] Sonoff : amélioration de l'inclusion des périphériques et du retour d'état
+- \[UPDATE] Meross : Modification adresse accès au cloud
+- \[BUGFIX] Tuya : Correction affichage de l'unité pour bouton couleur 1
+- \[BUGFIX] Tuya : Correction changement protocole quand le périphérique n'est pas connecté
+- \[BUGFIX] Tuya : Modification interrogation cloud réglant le problème : sign invalid
+- \[UPDATE] Tuya : Modification recherche uid 
 
 1.96n 2023-12-21 (Jeedom V4.2)
 Attention : pour les périphériques dont l'état est interrogé régulièrement, il peut être nécessaire de sauvegarder le périphérique pour que cette  interrogation persiste.
-- Sonoff : amélioration de l'inclusion de l'interrupteur Tx Evolution
-- Govee : ajout d'une option pour supprimer l'interrogation toutes les min de l'API pour récupérer l'état. Evite d'atteinde le quota d'appel à l'API Govee.
+- \[UPDATE] Sonoff : amélioration de l'inclusion de l'interrupteur Tx Evolution
+- \[UPDATE] Govee : ajout d'une option pour supprimer l'interrogation toutes les min de l'API pour récupérer l'état. Evite d'atteinde le quota d'appel à l'API Govee.
 
 1.96m 2023-12-01 (Jeedom V4.2)
-- Sonoff : ajout de l'interrupteur Tx Evolution
-- Tapo : ajout du nouveau protocole
-- Luna : souci lors du chargement de la page du plugin, il suffit de la recharger avec le navigateur
-- Ajout de couleurs sur l'information de connectivité (merci @penta42)
+- \[UPDATE] Sonoff : ajout de l'interrupteur Tx Evolution
+- \[UPDATE] Tapo : ajout du nouveau protocole
+- \[BUGFIX] Luna : souci lors du chargement de la page du plugin, il suffit de la recharger avec le navigateur
+- \[UPDATE] Ajout de couleurs sur l'information de connectivité (merci @penta42)
 
 1.96l 2023-10-04 (Jeedom V4.2)
-- Wiz : nombreuses corrections sur le retour d'état
-- Revogi : correction bogues
-- Corrections orthographiques
+- \[BUGFIX] Wiz : nombreuses corrections sur le retour d'état
+- \[BUGFIX] Revogi : correction bogues
+- \[UPDATE] Corrections orthographiques
 
 1.96k 2023-08-31 (Jeedom V4.2)
-- Tuya : modification des messages d'erreur si pas d'accès au cloud
-- Tuya : l'adresse IP n'est plus mise à 0.0.0.0 lors de l'inclusion si le périphérique existe déjà et a une adresse IP attribuée
-- Luna : rechargement automatique de la page de configuration du plugin wifilightV2 pour obtenir les droits (contournement de bogue)
-- Corrections orthographiques
+- \[UPDATE] Tuya : modification des messages d'erreur si pas d'accès au cloud
+- \[UPDATE] Tuya : l'adresse IP n'est plus mise à 0.0.0.0 lors de l'inclusion si le périphérique existe déjà et a une adresse IP attribuée
+- \[UPDATE] Luna : rechargement automatique de la page de configuration du plugin wifilightV2 pour obtenir les droits (contournement de bogue)
+- \[UPDATE] Corrections orthographiques
 
 1.96j 2023-06-30 (Jeedom V4.2)
-- Meross : correction bogue du MSG100
+- \[BUGFIX] Meross : correction bogue du MSG100
 
 1.96i 2023-06-28 (Jeedom V4.2)
-- Meross : intégration du MSG200
-- Amélioration des messages du plugin
-- Compatible Debian 11
-- Compatible Jeedom 4.4
+- \[UPDATE] Meross : intégration du MSG200
+- \[UPDATE] Amélioration des messages du plugin
+- \[UPDATE] Compatible Debian 11
+- \[UPDATE] Compatible Jeedom 4.4
 
 1.96h 2023-04-18 (Jeedom V4.2)
 - Tuya : modification pour continuer à avoir accès au cloud.
 
 1.96g 2023-04-15 (Jeedom V4.2)
-- Sonoff : amélioration de la recherche des périphériques 
-- Retour des dépendances pour améliorer la recherche des périphériques
-- Correction bogue bloquant sur version PhP non supportée
+- \[UPDATE] Sonoff : amélioration de la recherche des périphériques 
+- \[UPDATE] Retour des dépendances pour améliorer la recherche des périphériques
+- \[BUGFIX] Correction bogue bloquant sur version PhP non supportée
 
 1.96f 2023-04-11 (Jeedom V4.2)
-- Sonoff : correction mise à jour de l'état et récupération adresse mac (à améliorer)
+- \[UPDATE] Sonoff : correction mise à jour de l'état et récupération adresse mac (à améliorer)
 
 1.96e 2023-04-04 (Jeedom V4.2)
-- Sonoff : correction création des périphériques lors de l'inclusion
+- \[UPDATE] Sonoff : correction création des périphériques lors de l'inclusion
 
 1.96d 2023-04-03 (Jeedom V4.2)
-- Tuya : amélioration inclusion
-- Sonoff : Pow R316/320 : validé
-- Sonoff : Micro USB : retour d'état fonctionnel
-- Sonoff : l'adresse IP est automatiquement trouvée pour tous les périphériques non cloud
+- \[UPDATE] Tuya : amélioration inclusion
+- \[UPDATE] Sonoff : Pow R316/320 : validé
+- \[UPDATE] Sonoff : Micro USB : retour d'état fonctionnel
+- \[UPDATE] Sonoff : l'adresse IP est automatiquement trouvée pour tous les périphériques non cloud
 
 1.96c 2023-02-23 (Jeedom V4.2)
-- Tuya : amélioration inclusion
-- Tuya : amélioration protocole 3.5 retour d'état
+- \[UPDATE] Tuya : amélioration inclusion
+- \[UPDATE] Tuya : amélioration protocole 3.5 retour d'état
 
 1.96b 2023-02-21 (Jeedom V4.2)
-- Correction bogue qui bloquait les daemons (merci 3.14r)
-- Tuya : amélioration interrogation de l'état toutes versions
+- \[BUGFIX] Correction bogue qui bloquait les daemons (merci 3.14r)
+- \[UPDATE] Tuya : amélioration interrogation de l'état toutes versions
 
 1.96 2023-02-14 (Jeedom V4.2)
-- Tuya : ajout du nouveau protocole micrologiciel 3.5 / refonte du micrologiciel 3.4, plus réactif
+- \[NEW] Tuya : ajout du nouveau protocole micrologiciel 3.5 / refonte du micrologiciel 3.4, plus réactif
 ATTENTION : vérifier que toutes les passerelles ont le sous type passerelle et que tous les périphériques reliés ont le sous type personnalisé
 Il est nécessaire de faire une inclusion pour que la passerelle et ses périphériques soient appairés dans le plugin
 Les micrologiciels suivants ont été vérifiés : <3.3 et 3.3 : 2 passerelles et 3 wifi - 3.4 : une passerelle et 1 wifi - 3.5 : une passerelle et un wifi.
 Malgré le temps passé à vérifier le fonctionnement, des bogues peuvent apparaitre, les signaler sur le forum.
 
-- Tuya : amélioration de la recherche des périphériques dans le cloud
-- Tuya : l'interrogation de la consommation des prises est maintenant bien mise à jour toutes les 12s
-- Tuya : numérotation des différents types selon le micrologiciel (sans conséquence sur les configurations existantes)
-- Tuya : mise en cache des images du cloud
-- Sonoff Pow R316/320 : ajouté pour test
-- Sonoff Pow R2 : ajout des consommations jour et mois
-- Meross MTS200 : correction remontée de la température courante (merci @t0urista)
-- Meross MTS100 MTS150 MTS200 : ajout du retour state. Il est nécessaire de sauvegarder l'équipement pour ajouter state qui se trouve dans ModeOnGet
-- Plus de dépendances
+- \[UPDATE] Tuya : amélioration de la recherche des périphériques dans le cloud
+- \[UPDATE] Tuya : l'interrogation de la consommation des prises est maintenant bien mise à jour toutes les 12s
+- \[UPDATE] Tuya : numérotation des différents types selon le micrologiciel (sans conséquence sur les configurations existantes)
+- \[UPDATE] Tuya : mise en cache des images du cloud
+- \[UPDATE] Sonoff Pow R316/320 : ajouté pour test
+- \[UPDATE] Sonoff Pow R2 : ajout des consommations jour et mois
+- \[BUGFIX] Meross MTS200 : correction remontée de la température courante (merci @t0urista)
+- \[UPDATE] Meross MTS100 MTS150 MTS200 : ajout du retour state. Il est nécessaire de sauvegarder l'équipement pour ajouter state qui se trouve dans ModeOnGet
+- \[UPDATE] Plus de dépendances
 
 1.95b 2022-12-28 (Jeedom V4.2)
-- Correction bogue passerelles Tuya/Zigbee V3 (protocole 3.4) : mélange des retours d'état des périphériques
+- \[BUGFIX] Correction bogue passerelles Tuya/Zigbee V3 (protocole 3.4) : mélange des retours d'état des périphériques
 
 1.95 2022-12-18 (Jeedom V4.2)
-- Meross MTS200 ajout de l'information d'ouverture de vanne
+- \[UPDATE] Meross MTS200 ajout de l'information d'ouverture de vanne
 	ATTENTION : pour la détection de l'ouverture de fenêtre la commandes info a changé :
 	* PIRGetZ = info d'ouverture de fenêtre (au lieu de OpenGetz)
 	* DetectionGetZ = info de permission de prise en compte de l'ouverture de la fenêtre
 	* OpenGetZ = Remonté de l'ouverture de la vanne thermostatique :
 	Il est nécessaire de sauvegarder l'équipement configuré avant la 1.95 et de revoir l'utilisation des informations concernant l'ouverture fenêtre dans les scénarios
-- Traduction améliorée (merci à ktn pour le script traduitjdm)
-- Insistance sur la lecture préalable de la doc
+- \[UPDATE] Traduction améliorée (merci à ktn pour le script traduitjdm)
+- \[UPDATE] Insistance sur la lecture préalable de la doc
 
 1.94 - 2022-11-05 (Jeedom V4.2)
-- Meross : sortie du mode beta du MOD100, le MOD150 est compatible
-- Sonoff : DualR3 mode volet roulant testé sauf le retour position
-- Corrections interface et traduction
-- Corrections bogues
+- \[UPDATE] Meross : sortie du mode beta du MOD100, le MOD150 est compatible
+- \[UPDATE] Sonoff : DualR3 mode volet roulant testé sauf le retour position
+- \[UPDATE] Corrections interface et traduction
+- \[BUGFIX] Corrections bogues
 
 1.93 - 2022-10-19 (Jeedom V4.2)
 - Meross : correction MTS200 thermostat

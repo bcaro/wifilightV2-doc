@@ -57,10 +57,10 @@ Les produits compatibles :
 -   Plafonnier WiFi Xiaomi Yeelight avec retour d'état !
 -   Lampe de chevet V2 WiFi Xiaomi Yeelight avec retour d'état !
 -   Lampe de bureau WiFi Xiaomi Mijia avec retour d'état !
-- 	Sonoff Basic R3 en mode DIY avec retour d'état !!
+- 	Sonoff en mode DIY avec retour d'état !!
 -   Nanoleaf Aurora avec retour d'état !
 -	Produits myStrom avec retour d'état !!
--   Produits Govee avec retour d'état !
+-   Produits Govee LAN avec retour d'état !
 
 
 Produits pouvant être compatibles et non garantis :
@@ -75,7 +75,7 @@ Produits pouvant être compatibles et non garantis :
 -   Xiaomi Philips : Lampe bureau, ampoule et plafonnier avec retour d'état !!!
 -   Ampoules, prises, interrupteur, interrupteurs volets, humidificateur, thermostat compatibles Tuya Smartlife app avec retour d'état !!
 -   Prises électriques Kasa HS100 HS110 avec retour d'état !!
--   Contrôleurs de pixel strip leds compatible Magic home avec retour d'état !
+-   Contrôleurs de pixel strip leds compatibles Magic home avec retour d'état !
 -	Périphériques contrôlés par l'appli Ewelink dont les Sonoff en mode LAN avec retour d'état !!
 -	Passerelles wifi (dont Lidl) utilisant le protocole Tuya pour les périphériques Zigbee !!
 -   Périphériques Meross !!
@@ -529,7 +529,7 @@ Les périphériques compatibles sont :
 
 ## Configuration
 
-Pour les firmware à partir de 3.3.0 et en dessous de 3.5.0 c.-à-d. le mode DIY 1.0, Sonoff donne tous les éléments [ici]( https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) pour configurer les modules en mode DIY.
+Pour les firmware à partir de 3.3.0 et en dessous de 3.5.0 c.-à-d. le mode DIY 1.0, Sonoff donne tous les éléments [ici](https://github.com/itead/Sonoff_Devices_DIY_Tools/tree/master/tool) pour configurer les modules en mode DIY.
 
 Un téléphone portable et un PC sous Windows avec carte Wifi sont nécessaires.
 Le logiciel à faire tourner pour trouver le Sonoff donne dans la colonne de gauche l'identifiant nécessaire à la configuration du périphérique.
@@ -544,7 +544,7 @@ Cette procédure automatise la création de la plupart des périphériques Sonof
 
 ## Configuration du plugin
 
-Dans la configuration du plugin, renseigner le login (adresse mail uniquement) et le mot de passe de connexion à l'appli Ewelink et sauvegarder. Ensuite, sélectionner : Ewelink Passer en inclusion. Les périphériques qui se trouvent dans l'application Ewelink sont créés automatiquement. Si le périphérique est supprimé de l'application Ewelink, il ne fonctionnera plus avec le plugin.
+Dans la configuration du plugin, renseigner le login (adresse électronique uniquement) et le mot de passe de connexion à l'appli Ewelink et sauvegarder. Ensuite, sélectionner : Ewelink Passer en inclusion. Les périphériques qui se trouvent dans l'application Ewelink sont créés automatiquement. Si le périphérique est supprimé de l'application Ewelink, il ne fonctionnera plus avec le plugin.
 
 Pour la plupart des périphériques Sonoff ou compatibles Ewelink, le sous-type est trouvé. Dans les autres cas le sonoff basic est choisi par le plugin, vous pouvez changer le sous-type sans perdre l'ApiKey et le deviceID.
 
@@ -558,7 +558,7 @@ Remarques :
 - si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté ou parce que l'inclusion ne le permet pas, vérifier que son adresse IP est : 0.0.0.0 , utiliser l'application Ewelink ou faire ON/OFF sur le périphérique afin de modifier l'état du périphérique, l'adresse IP sera automatiquement ajoutée.
 - certains périphériques ne sont pas créés (le cloud Ewelink ne fournit pas les données)
 - les périphériques purement cloud seront intégrés mais le plugin ne pourra pas y accéder
-- tous les périphériques sonoff sont intégrés mais ne seront pas forcément gérés, comme les caméras  
+- tous les périphériques Sonoff sont intégrés mais ne seront pas forcément gérés, comme les caméras  
 - quand un périphérique se connecte au wifi, le plugin sera prévenu immédiatement. Cependant, lorsqu'un périphérique est déconnecté, le plugin ne pourra le savoir que si une commande lui est envoyée par le plugin.
 - L'ApiKey et le DeviceID sont récupérés automatiquement par l'inclusion. Néanmoins, pour récupérer manuellement ces 2 informations, vous pouvez aller [ici]( https://blog.ipsumdomus.com/sonoff-switch-complete-hack-without-firmware-upgrade-1b2d6632c01 ) ou [sur le forum Jeedom](https://community.jeedom.com/t/plugin-wifilightv2-sonoff-ewelink-lan/2632 ) ou faire une recherche sur le web et le forum Jeedom avec comme mots clé : Ewelink ou Sonoff Apikey. Il ne faut mettre ni espace ni guillemets.
 
@@ -590,7 +590,7 @@ Note : Certains périphériques ne mettent à jour leur état vers Jeedom que si
 
 Néanmoins, la compatibilité de ces périphériques n'est pas garantie car le protocole peut être modifié par les constructeurs. Ne pas modifier le firmware du périphérique sans avoir vérifié qu'il est compatible avec le plugin.
 
-Périphériques non compatible car purement cloud :
+Périphériques non compatibles car purement cloud :
 
 - Les produits wifi à piles
 - Sonoff POW (first) fw 2.6.1
@@ -746,8 +746,18 @@ Aller sur le forum de Jeedom [ici](https://community.jeedom.com/t/plugin-wifilig
 - configuration du plugin
 - configuration du périphérique
 
-Les logs du plugin ne sont pas compatibles avec syslog, mettre la configuration standard pour les logs. Ils sont répartis en 4 catégories :
+Les logs du plugin ne sont pas compatibles avec syslog, mettre la configuration standard pour les logs. 
+Pour avoir accès aux logs wifilightV2 en Debian inférieur à 12, il faut mettre le niveau de log pas défaut à Debug :
+- aller dans Réglages/Système/Configuration onglet Logs puis Niveau de Logs
+- niveau de log par défaut : mettre "Debug"
+- nombre maximal de lignes dans un fichier de log : 1000
+- pour wifilightV2 cocher "Défaut"
+- il est conseillé de mettre tous les autres à "Aucun" ou "Erreur"
+- dès que les tests sont terminés, revenir au niveau par défaut "Error" et limiter le nombre de lignes, sinon les logs grossissent énormément 
+
+Ils sont répartis en 4 catégories :
 - wifilightV2_cmd : pour les commandes envoyées vers les périphériques
 - wifilightV2_inc : lors de l'inclusion des périphériques
 - wifilight_Tuya : le daemon pour les périphériques Tuya et Yeelight. Il teste la présence de ces périphériques toutes les 30 secondes, maintient la connexion permanente et récupère l'état en temps réel.
-- wifilightV2_dem : le 2ème daemon pour tous les autres périphériques. Il teste la présence de ces périphériques toutes les 30 secondes.
+- wifilightV2_dem : le 2ème daemon pour tous les autres périphériques. Il teste la présence de ces périphériques toutes les 30 secondes et interroge l'état toutes les 12s pour les périphériques qui ne renvoient pas automatiquement leur état.
+
