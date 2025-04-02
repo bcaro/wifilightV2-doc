@@ -753,6 +753,7 @@ Pour avoir accès aux logs wifilightV2 en Debian inférieur à 12, il faut mettr
 - nombre maximal de lignes dans un fichier de log : 1000
 - pour wifilightV2 cocher "Défaut"
 - il est conseillé de mettre tous les autres à "Aucun" ou "Erreur"
+- relancer le demon du plugin
 - dès que les tests sont terminés, revenir au niveau par défaut "Error" et limiter le nombre de lignes, sinon les logs grossissent énormément 
 
 Ils sont répartis en 4 catégories :
