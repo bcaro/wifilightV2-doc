@@ -10,12 +10,18 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.96v 2025-09-13 (Jeedom V4.2) Beta
+- \[UPDATE] L'inclusion Tuya a été revue. Les nouveaux périphériques ne peuvent plus être découverts comme auparavant. Afin de rester compatible avec les anciens (on en trouve encore à l'achat), la découverte utilise aussi l'ancienne méthode. Les périphériques ajoutés utilisent le protocole 3.5, à modifier si besoins. De plus, l'API Tuya pour connaitre les périphériques a évolué. Le plugin utilise l'ancienne et la nouvelle pour trouver plus facilement les dps pouvant entrainer des doublons faciles à supprimer.
+- \[BUGFIX] Correction bogue divers mineurs
+- \[UPDATE] L'image est conservée lors d'un changement de type Tuya avec le sous-Type Personnalisé.
+
 1.96u 2025-03-01 (Jeedom V4.2)
-- \[BUGFIX] correction bogue divers mineurs 
+
+- \[BUGFIX] Correction bogue divers mineurs 
 
 1.96t 2024-10-22 (Jeedom V4.2)
-- \[UPDATE] amélioration page santé (tri)
-- \[BUGFIX] correction bogue lorsque la donnée Tuya ne correspond pas au type 
+- \[UPDATE] Amélioration page santé (tri)
+- \[BUGFIX] Correction bogue lorsque la donnée Tuya ne correspond pas au type 
 
 1.96s 2024-10-16 (Jeedom V4.2)
 - \[UPDATE] Compatible Jeedom 4.5
