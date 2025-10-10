@@ -578,6 +578,7 @@ De nombreuses marques sont compatibles dont les Sonoff. Les produits testés son
 - Sonoff 4CH/4CH PRO 
 - Sonoff Touch
 - Sonoff S20/S26
+- Sonoff S60
 - Sonoff T1/TX
 - Sonoff SLAMPHER
 - Sonoff T4EUC1
@@ -639,7 +640,7 @@ Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuy
 ### Notes and limitations
 - les périphériques Wifi et donc non Zigbee qui sont sur **pile** sont purement cloud (capteurs de fermeture, de porte, de température par exemple) seront intégrés mais le plugin ne pourra pas y accéder
 - si l'adresse IP est à 0.0.0.0 c'est que Jeedom n'a pas accès au périphérique, c'est probablement la configuration réseau à reconsidérer. Noter que l'adresse IP 0.0.0.0 est aussi affectée aux périphériques de firmware  <3.3. et aux périphériques non compatibles. Afin de tester cette accessibilité, voir [ici](https://community.jeedom.com/t/soucis-plugin-wifilightv2/83734/7?u=bernardfr.caron), si le périphérique ne l'est pas, c'est qu'il n'est pas compatible ou qu'une configuration réseau empêche le dialogue entre lui et la box Jeedom. 
-- le cloud Tuya peut ne pas fournir **toutes les commandes du périphérique**, voir [ici](https://community.jeedom.com/t/borne-de-recharge-feyree/109739/23) pour essayer de résoudre le problème
+- Le plugin utilise deux méthodes pour inclure les périphériques, pouvant créer des doublons dans les commandes. Il suffit de supprimer les commandes inutiles.
 - les périphériques avec des informations codées (partie actionneur des alarmes en général) ne sont pas gérés
 - les périphériques ayant des informations non standard (peut éventuellement être résolu avec un bloc code dans un scénario) ne sont pas gérés
 - le plugin ne décode pas les commandes complexes et met alors dans paramètres l’information brute provenant du cloud Tuya
@@ -653,15 +654,19 @@ Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuy
 ### Astuces
 - si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
 - si la localkey d'un périphérique a changé, modifier le devId ou le nodeId du périphérique (en mettant par exemple @ à la fin), refaire l'inclusion et recopier le devId ou le nodeId et la nouvelle localkey dans l'ancien périphérique. Enfin, supprimer le périphérique créé par inclusion.
-- si la procédure automatique dysfonctionne ou si des commandes ne sont pas fournies par le cloud Tuya, passer en [mode apprentissage du périphérique](./tuya) et agir uniquement sur les boutons de l'appli Tuya Smartlife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya. Mais attention, cette documentation est très technique et réservée à un public averti, ne l'utilisez pas en mode panique alors que vous n'avez pas les connaissances pour comprendre son contenu.
-- de manière générale, les commandes peuvent être créées manuellement ou en mode apprentissage
+
+
 
 ### Scrutation précise d'un évènement
 Lorsque l'option "interrogation de l'état" est cochée, le plugin interroge le périphérique toutes les 12 secondes. Ceci permet, par exemple, de récupérer la consommation d'un périphérique lorsque celui-ci ne l'envoie pas régulièrement. Il faut néanmoins faire attention, ceci peut vider la batterie des périphériques sur batterie. Pour certains périphériques qui mesurent la puissance consommée, l'ouverture de l'application mobile est nécessaire pour que les données soient transmises au plugin.
 
 ## Création manuelle ou semi manuelle des périphériques Tuya et Tuya/Zigbee
 
-Cette procédure permet d'ajouter manuellement un périphérique et de créer manuellement les commandes manquantes. Elle est destinée aux utilisateurs avertis.
+Le cloud Tuya peut ne pas fournir **toutes les commandes du périphérique**, voir [ici](https://community.jeedom.com/t/borne-de-recharge-feyree/109739/23) pour essayer de résoudre le problème
+
+Si la procédure automatique dysfonctionne ou si des commandes ne sont pas fournies par le cloud Tuya, passer en [mode apprentissage du périphérique](./tuya) et agir uniquement sur les boutons de l'appli Tuya Smartlife en correspondance. Si d'autres boutons sont utilisés, le plugin créera des doublons des commandes créées via le cloud Tuya. Mais attention, cette documentation est très technique et réservée à un public averti, ne l'utilisez pas en mode panique alors que vous n'avez pas les connaissances pour comprendre son contenu.
+
+La procédure suivante permet d'ajouter manuellement un périphérique et de créer manuellement les commandes manquantes. Elle est destinée aux utilisateurs avertis.
 
  [Voir la documentation spécifique Tuya et Tuya/Zigbee](./tuya)
  
