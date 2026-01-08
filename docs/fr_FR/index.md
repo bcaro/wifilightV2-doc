@@ -441,7 +441,7 @@ Kasa :
 -   ampoules KL50 KL60 KL110 KL120 KL130 LB100 LB110 LB120 LB130
 -   prises HS100 HS110 KP105 KP110
 
-Ne pas utiliser ou supprimer la double authentification avec les applications Tapo/Kasa. Les effets ne fonctionnent pas, même si les commandes sont créées par le plugin.
+Dans l'application Tapo il est nécessaire d'activer la compatibilité tierce dans les services tiers dans le profil. Sur les anciennes applis, ne pas utiliser ou supprimer la double authentification avec les applications Tapo/Kasa. Les effets ne fonctionnent pas, même si les commandes sont créées par le plugin.
 
 Pour les périphériques avec le firmware déployé vers novembre 2023, utiliser Tapo V2. L'inclusion trouve normalement le bon firmware. Il peut être nécessaire au préalable de se connecter à l'appli mobile pour que l'accès au cloud fonctionne.
 
@@ -652,9 +652,7 @@ Dans la configuration du plugin, renseigner ces 2 paramètres dans la partie Tuy
 
 
 ### Astuces
-- si l'adresse IP n'a pas été trouvée parce que le périphérique n'est pas connecté, lui donner l'adresse : 0.0.0.0 , le connecter et relancer la procédure d'inclusion.
-- si la localkey d'un périphérique a changé, modifier le devId ou le nodeId du périphérique (en mettant par exemple @ à la fin), refaire l'inclusion et recopier le devId ou le nodeId et la nouvelle localkey dans l'ancien périphérique. Enfin, supprimer le périphérique créé par inclusion.
-
+- Quand un périphérique devient inaccessible sans raison apparente, c'est que sa localkey a changé : refaire une inclusion.
 
 
 ### Scrutation précise d'un évènement
@@ -713,6 +711,7 @@ Créer une commande action/defaut, dans nom interne mettre un nom et dans param�
     "write" : {"command" : "request", "animName" : "Northern Lights"}
 	
 Voir la documentation Nanoleaf pour créer ces effets.
+
 # Govee LAN
 
 Les périphériques wifi compatibles sont indiqués dans l'appli Govee. Inclure d'abord le périphérique dans l'appli puis sélectionner "Govee LAN passer en inclusion" pour inclure les périphériques, ils seront accessibles en local sans passer par le cloud.
