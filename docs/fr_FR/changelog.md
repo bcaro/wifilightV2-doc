@@ -10,6 +10,10 @@ Si rien n'est présent dans le changelog lors d'une mise à jour stable :
 
 Ne jamais utiliser la version beta sans échange avec le développeur. Elle sert à tester de nouvelles configurations ou de nouvelles marques avec les utilisateurs. Le principe du plugin est que la collaboration avec un utilisateur profite ensuite à tous les autres.
 
+1.96w 2026-01-17 (Jeedom V4.2) Beta
+- \[BUGFIX] Correction de nombreux bogues mineurs dont adaptation à Debian 12 et php 8
+- \[UPDATE] Ajout d'une option pour supprimer le message concernant l'utilisation de la mémoire des daemons
+
 1.96v 2025-10-10 (Jeedom V4.2)
 - \[UPDATE] L'inclusion Tuya a été revue. Les nouveaux périphériques ne peuvent plus être découverts comme auparavant. Afin de rester compatible avec les anciens (on en trouve encore à l'achat), la découverte utilise aussi l'ancienne méthode. Les périphériques ajoutés utilisent le protocole 3.5, à modifier si besoin. De plus, l'API Tuya pour connaitre les périphériques a évolué. Le plugin utilise l'ancienne et la nouvelle pour trouver plus facilement les dps pouvant entrainer des doublons faciles à supprimer.
 - \[UPDATE] L'image est conservée lors d'un changement de type Tuya avec le sous-type Personnalisé.
